@@ -26,12 +26,11 @@ gem 'sinatra', :require => nil
 
 gem 'devise'
 
-gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'cocoon'
 gem 'kaminari'
-
+gem 'entypo-rails'
 gem 'stringex'
 gem 'pg'
 

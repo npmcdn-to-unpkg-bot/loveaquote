@@ -45,15 +45,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
-    autoprefixer-rails (6.3.1)
-      execjs
-      json
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.6)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (8.2.1)
     capistrano (3.4.0)
@@ -91,6 +85,8 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    entypo-rails (2.2.3)
+      railties (>= 3.1, <= 5)
     erubis (2.7.0)
     execjs (2.6.0)
     figaro (1.1.1)
@@ -220,7 +216,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass
   byebug
   capistrano
   capistrano-bundler
@@ -231,6 +226,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.1.0)
   devise
+  entypo-rails
   figaro
   font-awesome-rails
   jbuilder (~> 2.0)
