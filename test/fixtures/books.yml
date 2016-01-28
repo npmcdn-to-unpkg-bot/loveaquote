@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  slug: MyString
+  published: false
+  popular: false
+  very_popular: false
+  references: 
+
+two:
+  name: MyString
+  slug: MyString
+  published: false
+  popular: false
+  very_popular: false
+  references: 
