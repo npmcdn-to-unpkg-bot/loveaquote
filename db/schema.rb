@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160128180538) do
+ActiveRecord::Schema.define(version: 20160129020856) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "name"
@@ -33,16 +33,17 @@ ActiveRecord::Schema.define(version: 20160128180538) do
     t.boolean  "published",    default: false, null: false
     t.boolean  "popular",      default: false, null: false
     t.boolean  "very_popular", default: false, null: false
-    t.integer  "author_id"
+    t.integer  "author_id",                    null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end
 
+  add_index "books", ["author_id"], name: "index_books_on_author_id"
   add_index "books", ["slug"], name: "index_books_on_slug"
 
   create_table "quote_topic_suggestions", force: :cascade do |t|
-    t.integer  "quote_id"
-    t.integer  "topic_id"
+    t.integer  "quote_id",                   null: false
+    t.integer  "topic_id",                   null: false
     t.boolean  "read",       default: false, null: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
@@ -52,8 +53,8 @@ ActiveRecord::Schema.define(version: 20160128180538) do
   add_index "quote_topic_suggestions", ["topic_id"], name: "index_quote_topic_suggestions_on_topic_id"
 
   create_table "quote_topics", force: :cascade do |t|
-    t.integer  "quote_id"
-    t.integer  "topic_id"
+    t.integer  "quote_id",   null: false
+    t.integer  "topic_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -63,13 +64,22 @@ ActiveRecord::Schema.define(version: 20160128180538) do
 
   create_table "quotes", force: :cascade do |t|
     t.text     "text"
-    t.integer  "source_id"
-    t.string   "source_type"
+    t.integer  "source_id",   null: false
+    t.string   "source_type", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   add_index "quotes", ["source_type", "source_id"], name: "index_quotes_on_source_type_and_source_id"
+
+  create_table "topic_aliases", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "topic_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "topic_aliases", ["topic_id"], name: "index_topic_aliases_on_topic_id"
 
   create_table "topics", force: :cascade do |t|
     t.string   "name"

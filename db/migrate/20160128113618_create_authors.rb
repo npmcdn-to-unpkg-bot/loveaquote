@@ -2,7 +2,7 @@ class CreateAuthors < ActiveRecord::Migration
   def change
     create_table :authors do |t|
       t.string :name
-      t.string :slug, index: true
+      t.string :slug, index: true, unique: true
       t.string :fetch_url
       t.boolean :published, default: false, null: false
       t.boolean :popular, default: false, null: false

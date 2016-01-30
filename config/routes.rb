@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     root 'dashboard#index'
     resources :authors
     resources :books  
-    resources :topics
+    resources :topics do
+      resources :topic_aliases
+    end
     resources :quote_topic_suggestions
     require 'sidekiq/web'
     mount Sidekiq::Web => '/sidekiq'

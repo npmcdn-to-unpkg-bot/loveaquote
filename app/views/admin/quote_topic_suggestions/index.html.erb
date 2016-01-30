@@ -12,8 +12,8 @@
   <tbody>
     <% @quote_topic_suggestions.each do |quote_topic_suggestion| %>
       <tr>
-        <td><%= quote_topic_suggestion.name %></td>
-        <td class="text-center"><%= quote_topic_suggestion.published %></td>
+        <td><%= quote_topic_suggestion.quote.text %></td>
+        <td class="text-center"><%= quote_topic_suggestion.topic.name %></td>
         <td class="text-center">Accept</td>
         <td class="text-center">Reject</td>
       </tr>

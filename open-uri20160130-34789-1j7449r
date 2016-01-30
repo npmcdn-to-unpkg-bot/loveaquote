@@ -1,0 +1,2767 @@
+
+<!DOCTYPE html>
+<html data-ng-app="bqApp" lang="en">
+<head>
+<meta charset="utf-8"/>
+<link rel="dns-prefetch" href="//ajax.googleapis.com">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//cf.shareasimage.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//google-analytics.com">
+<link rel="dns-prefetch" href="//googletagservices.com">
+<link rel="dns-prefetch" href="//i.po.st">
+<link rel="dns-prefetch" href="//js.bqcpu.com">
+<link rel="dns-prefetch" href="//platform.twitter.com">
+<link rel="dns-prefetch" href="//ad.doubleclick.net">
+<link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+<link rel="dns-prefetch" href="//partner.googleadservices.com">
+<link rel="dns-prefetch" href="//i.yldbt.com">
+<link rel="dns-prefetch" href="//cdn.yldbt.com">
+<link rel="dns-prefetch" href="//aka-cdn.adtechus.com">
+<link rel="dns-prefetch" href="//aka-cdn-ns.adtechus.com">
+<link rel="dns-prefetch" href="//brainyquote-d.openx.net">
+<link rel="dns-prefetch" href="//js.indexww.com">
+<link rel="dns-prefetch" href="//as.casalemedia.com/">
+<link rel="dns-prefetch" href="//c.amazon-adsystem.com">
+<link rel="dns-prefetch" href="//fls-na.amazon-adsystem.com">
+<link rel="dns-prefetch" href="//z-na.amazon-adsystem.com">
+<link rel="dns-prefetch" href="//rcm-na.amazon-adsystem.com">
+<link rel="dns-prefetch" href="//ecx.images-amazon.com">
+<link rel="dns-prefetch" href="//aax.amazon-adsystem.com/">
+<link rel="dns-prefetch" href="//ws-na.amazon-adsystem.com/">
+<link rel="dns-prefetch" href="//z-na.amazon-adsystem.com">
+<link rel="dns-prefetch" href="//rtax.criteo.com">
+<link rel="dns-prefetch" href="//dis.criteo.com">
+<link rel="dns-prefetch" href="//apex.go.sonobi.com">
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/st/js/1568746/bq_old_ie.js"></script>
+<![endif]-->
+<meta name="description" content="Enjoy the best Albert Einstein Quotes at BrainyQuote. Quotations by Albert Einstein, German Physicist, Born March 14, 1879. Share with your friends.">
+<meta name="googlebot" content="NOODP">
+<meta property="ver" content="5.5.2:1568746">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="msapplication-config" content="none">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="ts" content="1454123021">
+<meta property="og:site_name" content="BrainyQuote">
+<meta property="og:title" content="Albert Einstein Quotes at BrainyQuote">
+<meta property="og:type" content="article">
+<meta property="og:description" content="Enjoy the best Albert Einstein Quotes at BrainyQuote. Quotations by Albert Einstein, German Physicist, Born March 14, 1879. Share with your friends.">
+<meta property="og:image" content="/photos/a/alberteinstein417379.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="620">
+<meta property="og:image:height" content="400">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@BrainyQuote">
+<meta name="twitter:app:id:iphone" content="916307096">
+<meta name="twitter:app:id:ipad" content="916307096">
+<meta name="twitter:creator" content="@BrainyQuote">
+<meta name="twitter:title" content="Albert Einstein Quotes">
+<meta name="twitter:description" content="&quot;You can&#39;t blame gravity for falling in love.&quot; - Albert Einstein">
+<meta name="twitter:image:src" content="/photos/a/alberteinstein417379.jpg">
+<meta name="apple-itunes-app" content="app-id=916307096">
+<meta property="og:url" content="http://www.brainyquote.com/quotes/authors/a/albert_einstein.html">
+<link rel="canonical" href="http://www.brainyquote.com/quotes/authors/a/albert_einstein.html">
+<link rel="next" href="http://www.brainyquote.com/quotes/authors/a/albert_einstein_2.html">
+<link rel="icon" href="/favicon.ico?cbv=3" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico?cbv=3" type="image/x-icon">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-title" content="BrainyQuote">
+<meta name="application-name" content="BrainyQuote">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="http://mobile.brainyquote.com/quotes/authors/a/albert_einstein.html">
+<title>
+Albert Einstein Quotes
+- BrainyQuote
+</title>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="/st/js/1568746/angular_framework.js"></script>
+<script type="text/javascript">
+    JsLOG = [];
+    
+    BQ_MBL=0;
+    SHOW_MBR_ACTIONS = true;
+
+    BQ_APP = angular.module('bqApp', ['ngAnimate', 'ngCookies', 'ui.bootstrap', 'toastr', 'bqServices','bqServerErrors']);
+</script>
+<script type="text/javascript" src="/st/js/1568746/bq_angular_core.js"></script>
+<link href="/st/css/1568746/toastr.css" media="screen, print" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/st/js/1568746/bq_alpha.js"></script>
+<script type="text/javascript" src="/st/js/1568746/advert.js"></script>
+<script type="text/javascript">
+    if (typeof REV ===  "undefined") {
+        
+        REV=false;
+    }
+    RID = "1568746";
+    var ybotq = ybotq || [];
+
+    var visitType;
+
+    if (CookieUtil.isLI()) {
+        visitType = 'member';
+    }
+    else {
+        visitType = 'visitor';
+        SHOW_MBR_ACTIONS = true;
+        
+        
+    }
+    konsole.log("visitType: " + visitType);
+
+    //    Handle redirecting to HTTPS if not on our local box
+    BQRedirectToHTTPS.init();
+
+    
+    
+        var stickyAdHelper = new BQStickyAd(100, [{"div":"div-gpt-ad-1418667263920-2","within":".sticky_adzone"}]);
+        $(document).ready(function() {
+            konsole.log('making ads sticky');
+            stickyAdHelper.makeAdsSticky();
+        });
+    
+
+</script>
+<script type='text/javascript'>SLOTS={};</script>
+<script async="async" data-client-id="DxQMWtKbaKagQSL" type="text/javascript" src="//d3qxwzhswv93jk.cloudfront.net/esf.js"></script>
+<script>
+
+try {
+    window.googletag = window.googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    var bqTargetCmd = bqTargetCmd || [];
+    var ybotq = ybotq || [];
+    
+    
+    
+    
+    JsLOG.push("new pf(); pubfood=" + (typeof pubfood));
+    var pf = new pubfood({
+        id: '',
+        auctionProviderCbTimeout: 2000,
+        bidProviderCbTimeout: 2000,
+        randomizeBidRequests: false
+    });
+    JsLOG.push('pf timeout ' + 2000);
+    JsLOG.push('pf done timeout ' + 2000);
+
+    SLOTS = {};
+    
+    var bps = [];
+    bps.push("yieldbot");
+    bps.push("aol");
+    bps.push("openx");
+    bps.push("indexExchange");
+    bps.push("sonobi");
+    
+    var bpsNoAol = bps.filter(function (bp) { return bp != 'aol'; });
+    
+
+    
+    pf.addSlot({
+        name: '/1008298/BQ_ros_top_728x90',
+        sizes: [[728, 90],[970, 250]],
+        elementId: 'div-gpt-ad-1418667263920-5',
+        bidProviders: bps
+        
+    });
+    
+    pf.addSlot({
+        name: '/1008298/BQ_ros_square_300x250',
+        sizes: [[300, 250],[1, 1]],
+        elementId: 'div-gpt-ad-1418667263920-4',
+        bidProviders: bps
+        
+    });
+    
+    pf.addSlot({
+        name: '/1008298/BQ_ros_middle_300x250',
+        sizes: [[300, 250],[1, 1]],
+        elementId: 'div-gpt-ad-1418667263920-3',
+        bidProviders: bps
+        
+    });
+    
+    pf.addSlot({
+        name: '/1008298/BQ_ros_center_300x250',
+        sizes: [[300, 250],[300, 600],[1, 1]],
+        elementId: 'div-gpt-ad-1418667263920-2',
+        bidProviders: bps
+        
+    });
+    
+    pf.addSlot({
+        name: '/1008298/BQ_ros_bottom_300x250',
+        sizes: [[300, 250],[1, 1]],
+        elementId: 'div-gpt-ad-1418667263920-1',
+        bidProviders: bps
+        
+    });
+    
+    pf.timeout(2000);
+    
+}
+catch (err) {
+    BQErrorLog.logError("ad init scr:  ", err);
+}
+</script>
+<script>
+    bqAuctionRan = false;
+    try {
+        googletag.cmd.push(function () {
+            
+            SLOTS['div-gpt-ad-1418667263920-5'] = slot = googletag.defineSlot('/1008298/BQ_ros_top_728x90', [[728, 90],[970, 250]], 'div-gpt-ad-1418667263920-5').addService(googletag.pubads());
+            
+            SLOTS['div-gpt-ad-1418667263920-4'] = slot = googletag.defineSlot('/1008298/BQ_ros_square_300x250', [[300, 250],[1, 1]], 'div-gpt-ad-1418667263920-4').addService(googletag.pubads());
+            
+            SLOTS['div-gpt-ad-1418667263920-3'] = slot = googletag.defineSlot('/1008298/BQ_ros_middle_300x250', [[300, 250],[1, 1]], 'div-gpt-ad-1418667263920-3').addService(googletag.pubads());
+            
+            SLOTS['div-gpt-ad-1418667263920-2'] = slot = googletag.defineSlot('/1008298/BQ_ros_center_300x250', [[300, 250],[300, 600],[1, 1]], 'div-gpt-ad-1418667263920-2').addService(googletag.pubads());
+            
+            SLOTS['div-gpt-ad-1418667263920-1'] = slot = googletag.defineSlot('/1008298/BQ_ros_bottom_300x250', [[300, 250],[1, 1]], 'div-gpt-ad-1418667263920-1').addService(googletag.pubads());
+            
+        });
+    }
+    catch (err) {
+            BQErrorLog.logError("define slots err ", err);
+    }
+
+    pf.setAuctionProvider({
+        name: 'Google',
+        libUri: '//www.googletagservices.com/tag/js/gpt.js',
+        init: function(targeting, done) {
+
+        try {
+            googletag.cmd.push(function () {
+                var i;
+
+                for (i = 0; i < targeting.length; i++) {
+                    var tgtObject = targeting[i];
+                    if (tgtObject.name) {
+                        var gptslot = SLOTS[tgtObject.elementId];
+                        if (!(typeof gptslot === "undefined")) {
+                            for (var p in tgtObject.targeting) {
+                                var targetVal = '' + tgtObject.targeting[p];
+                                gptslot.setTargeting(p, targetVal);
+                                
+                            }
+                        }
+                        else {
+                            konsole.log('Targeting error, no slot found for slot ' + tgtObject.elementId);
+                        }
+                    } else {
+                        for (key in tgtObject.targeting) {
+                            var targetVal = '' + tgtObject.targeting[key];
+                            
+                            googletag.pubads().setTargeting(key, targetVal);
+                        }
+                    }
+                }
+
+                
+                
+                var stickySlot = SLOTS['div-gpt-ad-1418667263920-2'];
+                if (!(typeof stickySlot === "undefined")) {
+                    if (stickyAdHelper.isStickyOn()) {
+                        stickySlot.setTargeting('format', 'sticky');
+                    }
+                }
+                else {
+                    konsole.log('Sticky ad error, no slot found for slot div-gpt-ad-1418667263920-2');
+                }
+                
+                
+
+
+                
+                var bqPd = CookieUtil.getPageDepth();
+                
+                    googletag.pubads().setTargeting("test_group", "btest");
+                
+                googletag.pubads().setTargeting("bq_vide", "" + bqPd);
+                
+                googletag.pubads().setTargeting("bq_ct", "a");
+                
+                googletag.pubads().setTargeting("bq_aId", "125184");
+                
+                googletag.pubads().setTargeting("bq_pg", "f");
+                
+                if (CookieUtil.hasLI()) {
+                    googletag.pubads().setTargeting('bq_m', 'y');
+                } else {
+                    googletag.pubads().setTargeting('bq_m', 'n');
+                }
+                
+                googletag.pubads().setTargeting("arch", "pf");
+
+                while (bqTargetCmd.length > 0) {
+                    (bqTargetCmd.shift())();
+                }
+                googletag.pubads().enableAsyncRendering();
+                googletag.pubads().enableSingleRequest();
+                googletag.pubads().collapseEmptyDivs();
+                googletag.enableServices();
+                bqAuctionRan = true;
+                JsLOG.push("Google auction done");
+                done();
+            });
+    }
+    catch (err) {
+        BQErrorLog.logError("google auction ", err);
+    }
+
+    },
+    refresh: function(targeting, done) {
+    }
+    });
+
+</script>
+<script>
+    try {
+        pf.addBidProvider({
+                    name: 'yieldbot',
+                    libUri: '//cdn.yldbt.com/js/yieldbot.intent.js',
+                    slotParams: {
+                    "/1008298/BQ_ros_top_728x90" : "BQ_ros_top_728x90",
+                    "/1008298/BQ_ros_square_300x250" : "BQ_ros_square_300x250",
+                    "/1008298/BQ_ros_middle_300x250" : "BQ_ros_middle_300x250",
+                    "/1008298/BQ_ros_center_300x250" : "BQ_ros_center_300x250",
+                    "/1008298/BQ_ros_bottom_300x250" : "BQ_ros_bottom_300x250"
+                },
+                init: function(slots, pushBid, done) {
+            try {
+                var slotMap = {};
+                var slotParams = this.slotParams;
+
+                ybotq.push(function() {
+                    var psn = 'ffd8';
+                    yieldbot.pub(psn);
+                    for (var k = 0; k < slots.length; k++) {
+                        var slot = slots[k];
+                        var ybslot = slotParams[slot.name];
+
+                        yieldbot.defineSlot(ybslot, {
+                            sizes: slot.sizes
+                        });
+                        slotMap[ybslot] = slot.name;
+                    }
+                    yieldbot.enableAsync();
+                    yieldbot.go();
+                });
+                ybotq.push(function() {
+                    var pageCriteria = yieldbot.getPageCriteria();
+                    var pageSlots = pageCriteria !== '' ? pageCriteria.split(',') : [];
+                    for (var i = 0; i < pageSlots.length; i++) {
+                        var slotInfo = pageSlots[i].split(':');
+                        var slot = slotInfo[0];
+                        var size = slotInfo[1];
+                        var bid = 0;
+                        if (slotInfo.length && slotInfo[2]) {
+                            bid = parseFloat(slotInfo[2], 10);
+                        }
+                        var sizes = size.split('x');
+                        sizes[0] = parseInt(sizes[0], 10);
+                        sizes[1] = parseInt(sizes[1], 10);
+                        // submit my bid...
+                        var bidObject = {
+                            slot: slotMap[slot] || 'undefined_slot',
+                            value: bid,
+                            sizes: sizes,
+                            targeting: {
+                                ybot_size: size,
+                                ybot_cpm: bid,
+                                ybot_ad: 'y',
+                                ybot_slot: slot
+                            }
+                        };
+                        pushBid(bidObject);
+                    }
+                    done();
+                });
+            }
+            catch (err) {
+                BQErrorLog.logError("YB error  ", err);
+            }
+        },
+        refresh: function(slots, pushBid, done) {
+        }
+    });
+    }
+    catch (err) {
+        BQErrorLog.logError("adding yb failed  ", err);
+    }
+
+</script>
+<script>
+    try {
+        pf.addBidProvider({
+            name: 'indexExchange',
+            libUri: ' ',
+            init: function(slots, pushBid, done) {
+
+                var onDoneIdxExch = function(){
+                    googletag.cmd.push(function() {
+                        done();
+                    });
+                };
+
+                (function () {
+                    var aplSrc = window.location.protocol === 'https:' ? 'https://js-sec.indexww.com/ht/brainyquote.js' : 'http://js.indexww.com/ht/brainyquote.js';
+                    var scriptTag = document.createElement("script");
+                    scriptTag.setAttribute("src", aplSrc);
+                    scriptTag.setAttribute("type", "text/javascript");
+                    scriptTag.onload = onDoneIdxExch;
+                    scriptTag.async = true;
+                    var firstScript = document.getElementsByTagName('script')[0];
+                    if (firstScript.parentNode)
+                    { firstScript.parentNode.insertBefore(scriptTag, firstScript); }
+                })();
+            },
+            refresh: function(slots, pushBid, done) {
+            }
+        });
+    }
+    catch (err) {
+        BQErrorLog.logError("adding ie failed  ", err);
+    }
+</script>
+<script type='text/javascript' src='//c.amazon-adsystem.com/aax2/amzn_ads.js'></script>
+<script type='text/javascript'>
+    try {
+        amznads.getAds('3224');
+    } catch (e) { }
+</script>
+<script type='text/javascript'>
+    try {
+        amznads.setTargetingForGPTAsync('amznslots');
+    } catch (e) { }
+</script>
+<script type='text/javascript'>
+    try {
+        var crtg_nid = '4366';
+        var crtg_cookiename = 'crtg_rta';
+        var crtg_varname = 'crtg_content';
+
+        function crtg_getCookie(c_name) {
+            var i, x, y, ARRCookies = document.cookie.split(";");
+            for (i = 0; i < ARRCookies.length; i++) {
+                x = ARRCookies[i].substr(0, ARRCookies[i].indexOf("="));
+                y = ARRCookies[i].substr(ARRCookies[i].indexOf("=") + 1);
+                x = x.replace(/^\s+|\s+$/g, "");
+                if (x == c_name) {
+                    return unescape(y);
+                }
+            }
+            return '';
+        }
+
+        var crtg_content = crtg_getCookie(crtg_cookiename);
+        var crtg_rnd = Math.floor(Math.random() * 99999999999);
+        (function () {
+            var crtg_url = location.protocol + '//rtax.criteo.com/delivery/rta/rta.js?netId=' + escape(crtg_nid);
+            crtg_url += '&cookieName=' + escape(crtg_cookiename);
+            crtg_url += '&rnd=' + crtg_rnd;
+            crtg_url += '&varName=' + escape(crtg_varname);
+            var crtg_script = document.createElement('script');
+            crtg_script.type = 'text/javascript';
+            crtg_script.src = crtg_url;
+            crtg_script.async = true;
+            if (document.getElementsByTagName("head").length > 0)document.getElementsByTagName("head")[0].appendChild(crtg_script);
+            else if (document.getElementsByTagName("body").length > 0)document.getElementsByTagName("body")[0].appendChild(crtg_script);
+        })();
+    }
+    catch (err) {
+        konsole.log("ERROR: Criteo init failed; " + err.message);
+    }
+</script>
+<script>
+    bqTargetCmd.push(function() {
+        var crtg_split = (crtg_content || '').split(';');
+        var pubads = googletag.pubads();
+        for (var i=1;i<crtg_split.length;i++){
+            pubads.setTargeting("" + (crtg_split[i-1].split('='))[0] + "", "" + (crtg_split[i-1].split('='))[1] + "");
+        }
+        konsole.log('criteo targeting done processing ' + crtg_split);
+    });
+</script>
+<script type="text/javascript">
+    var OX_cmds = window.OX_cmds || [];
+    OX_cmds.push(function() {
+        try {
+            var oAR_aV, oAR;
+            if (oAR = (OX && OX.AdRequest)) {
+                OX.AdRequest = function() {
+                    oAR.apply(this, arguments);
+                    oAR_aV = this.addVariable;
+                    this.addVariable = function() {
+                        var args = arguments,
+                                key = args[0],
+                                cvWhitelist = ["topics"];
+                        if (cvWhitelist.indexOf(key) !== -1)
+                        { oAR_aV.apply(this, arguments);
+                        }
+                    }
+                };
+                OX.prototype = oAR.prototype;
+            }
+        }
+        catch (err) {
+            BQErrorLog.logError("openx error  ", err);
+        }
+    });
+
+    var openXDone = function () { };
+
+    OX_dfp_options = {
+        'callback': function() {
+            OX.dfp_bidder.setOxTargeting();
+            openXDone();
+            
+        }
+    };
+    OX_dfp_ads = []
+
+    function szAryToStrAry(szAry) {
+        var szStrAry = [];
+        for (var i = 0; i < szAry.length; i++) {
+            try {
+                szStrAry.push(szAry[i][0]+'x'+szAry[i][1]);
+            }
+            catch (err) {
+                BQErrorLog.logError("openx sz err  ", err);
+            }
+        }
+        return szStrAry;
+    }
+    
+    var szAryStr = szAryToStrAry([[728, 90],[970, 250]]);
+    OX_dfp_ads.push(['/1008298/BQ_ros_top_728x90',szAryStr,'div-gpt-ad-1418667263920-5']);
+    
+    var szAryStr = szAryToStrAry([[300, 250],[1, 1]]);
+    OX_dfp_ads.push(['/1008298/BQ_ros_square_300x250',szAryStr,'div-gpt-ad-1418667263920-4']);
+    
+    var szAryStr = szAryToStrAry([[300, 250],[1, 1]]);
+    OX_dfp_ads.push(['/1008298/BQ_ros_middle_300x250',szAryStr,'div-gpt-ad-1418667263920-3']);
+    
+    var szAryStr = szAryToStrAry([[300, 250],[300, 600],[1, 1]]);
+    OX_dfp_ads.push(['/1008298/BQ_ros_center_300x250',szAryStr,'div-gpt-ad-1418667263920-2']);
+    
+    var szAryStr = szAryToStrAry([[300, 250],[1, 1]]);
+    OX_dfp_ads.push(['/1008298/BQ_ros_bottom_300x250',szAryStr,'div-gpt-ad-1418667263920-1']);
+    
+    var useSSL = "https:" == document.location.protocol;
+    var openxurl = (useSSL ? "https:" : "http:") + "//brainyquote-d.openx.net/w/1.0/jstag?nc=1008298-brainyquote";
+
+    try {
+        pf.addBidProvider({
+            name: 'openx',
+            libUri: openxurl,
+            init: function(slots, pushBid, done) {
+                openXDone = done;
+            },
+            refresh: function(slots, pushBid, done) {
+            }
+        });
+    }
+    catch (err) {
+        BQErrorLog.logError("adding openx failed  ", err);
+    }
+</script>
+<script src="https://aka-cdn.adtechus.com/dt/common/DAC.js"></script>
+<script type="text/javascript">
+    var aolDone = function () {};
+    var aolPushBid = function (bid) {};
+    var aolSlots = [];
+    var aolDoneCount = 0;
+
+    function pubTagLibHandler(response) {
+        try {
+            if (!bqAuctionRan) {
+                aolDoneCount++;
+                var config = response.gpt;
+                var slotName = response.adContainerId;
+                var cpm = response.cpm;
+
+                if (!response.refreshed || (cpm == null && !config.slot)) {
+                    var pfSlot = 'undefined_slot';
+                    for (var k = 0; k < aolSlots.length; k++) {
+                        if (slotName == aolSlots[k].elementId) {
+                            pfSlot = aolSlots[k];
+                        }
+                    }
+                    if (cpm != null) {
+                        var aolT = {};
+                        aolT[response.bidKey] = [cpm];
+                        aolT[response.mpAliasKey] = [response.alias];
+                        var bidObject = {
+                            slot: pfSlot.name,
+                            value: cpm,
+                            sizes: pfSlot.sizes,
+                            targeting: aolT
+                        };
+                        aolPushBid(bidObject);
+                    }
+                }
+
+                if (aolDoneCount >= aolTotal) {
+                    aolDone();
+                }
+            }
+            else {
+                JsLOG.push('skipped late aol bid');
+                konsole.log('aol bid came in after auction ran');
+            }
+            
+        }
+        catch (err) {
+            JsLOG.push('error with bid response ' + response.alias + ' c:' + response.cpm);
+            
+            aolDone();
+        }
+    }
+
+    var bidRequestConfig = {
+        server: 'adserver.adtechus.com',
+        network: '10289.1',
+        bidKey: 'aolbid',
+        loadAd: pubTagLibHandler,
+        loadAdTimeout: 2000,
+        adjustment:  -20,
+        formatCpmToDecimal: false,
+        roundingConfig: [
+            {from: 0,  to: 2000, roundFunction: 'tenCentsRound'},
+            {from: 2001, to: -1, roundValue: 2000}
+        ]
+    };
+
+    JsLOG.push("aol adunit config [start]");
+    var dacBidRequestConfigs = [];
+    var isHTTPS = ('https:' == document.location.protocol);
+    
+    
+    dacBidRequestConfigs.push({
+        placement: 3762278,
+        alias: 'aol_ros_top',
+        adContainerId: 'div-gpt-ad-1418667263920-5',
+        secure: isHTTPS,
+        performScreenDetection: false,
+        gpt: {
+            adUnitPath: '/1008298/BQ_ros_top_728x90',
+            size: [728, 90]
+        }
+    });
+    
+    
+    
+    dacBidRequestConfigs.push({
+        placement: 3762283,
+        alias: 'aol_ros_square',
+        adContainerId: 'div-gpt-ad-1418667263920-4',
+        secure: isHTTPS,
+        performScreenDetection: false,
+        gpt: {
+            adUnitPath: '/1008298/BQ_ros_square_300x250',
+            size: [300, 250]
+        }
+    });
+    
+    
+    
+    dacBidRequestConfigs.push({
+        placement: 3762282,
+        alias: 'aol_ros_middle',
+        adContainerId: 'div-gpt-ad-1418667263920-3',
+        secure: isHTTPS,
+        performScreenDetection: false,
+        gpt: {
+            adUnitPath: '/1008298/BQ_ros_middle_300x250',
+            size: [300, 250]
+        }
+    });
+    
+    
+    
+    dacBidRequestConfigs.push({
+        placement: 3762279,
+        alias: 'aol_ros_center',
+        adContainerId: 'div-gpt-ad-1418667263920-2',
+        secure: isHTTPS,
+        performScreenDetection: false,
+        gpt: {
+            adUnitPath: '/1008298/BQ_ros_center_300x250',
+            size: [300, 250]
+        }
+    });
+    
+    
+    
+    dacBidRequestConfigs.push({
+        placement: 3762284,
+        alias: 'aol_ros_bottom',
+        adContainerId: 'div-gpt-ad-1418667263920-1',
+        secure: isHTTPS,
+        performScreenDetection: false,
+        gpt: {
+            adUnitPath: '/1008298/BQ_ros_bottom_300x250',
+            size: [300, 250]
+        }
+    });
+    
+    
+    aolTotal = dacBidRequestConfigs.length;
+    JsLOG.push("aol adunit config [end]");
+</script>
+<script>
+    try {
+        JsLOG.push("aol addbid [start]");
+        pf.addBidProvider({
+            name: 'aol',
+            libUri: ' ',
+            init: function(slots, pushBid, done) {
+                konsole.log('aol init start');
+                aolDone = done;
+                aolPushBid = pushBid;
+                aolSlots = slots;
+            },
+            refresh: function(slots, pushBid, done) {
+            }
+        });
+        JsLOG.push("aol addbid [end]");
+    }
+    catch (err) {
+        BQErrorLog.logError("adding aol pf failed  ", err);
+    }
+
+</script>
+<script type="text/javascript" src="/st/js/1568746/pubtaglib.js"></script>
+<script type="text/javascript">
+
+    var slotsByDivs = function(slts) {
+        var slotsByDivMap = {};
+        for (var k = 0; k < slts.length; k++) {
+            slotsByDivMap[slts[k].elementId] = slts[k];
+        }
+        return slotsByDivMap
+    };
+
+    var snSlotMap = {};
+    var snPushBid = function(b) {};
+    var snDone = function() {};
+
+    try {
+        pf.addBidProvider({
+            name: 'sonobi',
+            libUri: ' ',
+            init: function(slots, pushBid, done) {
+                snSlotMap = slotsByDivs(slots);
+                snPushBid = pushBid;
+                snDone = done;
+            },
+            refresh: function(slots, pushBid, done) {
+            }
+        });
+    }
+    catch (err) {
+        BQErrorLog.logError("sonobi failed  ", err);
+    }
+
+    window.load_trinity = function (sncb) {
+        var assoc = {};
+        
+        assoc['div-gpt-ad-1418667263920-5'] ='e65b1bad2707e45213fa';
+        assoc['div-gpt-ad-1418667263920-4'] ='b973c44cfac9fdce1c6b';
+        assoc['div-gpt-ad-1418667263920-3'] ='5a3a2e1ccad49807cd41';
+        assoc['div-gpt-ad-1418667263920-2'] ='302e70c6c092223ac04e';
+        assoc['div-gpt-ad-1418667263920-1'] ='ae529ee4dc67ebf94e4d';
+
+        var sbi_script = document.createElement('script');
+        sbi_script.async = true;
+        sbi_script.type = 'text/javascript';
+        sbi_script.src = '//apex.go.sonobi.com/trinity.js?key_maker=' + JSON.stringify(assoc) + '&s=' + Math.floor(Math.random() * 1000);
+
+        if (sbi_script.readyState) {
+            sbi_script.onreadystatechange = function () {
+                if (sbi_script.readyState == "loaded" || sbi_script.readyState == "complete") {
+                    sbi_script.onreadystatechange = null;
+                    sncb();
+                }
+            };
+        } else {
+            sbi_script.onload = function () {
+                sncb();
+            };
+        }
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(sbi_script, node);
+    };
+
+    var bidCb = function(){
+        var sbiDc = window.sbi_dc;
+        if (sbiDc) {
+            var snBid = { targeting: { 'sbi_dc' : window.sbi_dc } };
+            snPushBid(snBid);
+        }
+
+        var divAry = [];
+        divAry.push('div-gpt-ad-1418667263920-5');
+        divAry.push('div-gpt-ad-1418667263920-4');
+        divAry.push('div-gpt-ad-1418667263920-3');
+        divAry.push('div-gpt-ad-1418667263920-2');
+        divAry.push('div-gpt-ad-1418667263920-1');
+        
+
+        for (var d = 0; d < divAry.length; d++) {
+            var divId = divAry[d];
+            var snSlot = snSlotMap[divId];
+            if (snSlot) {
+                var sltTgt = window.sbi_trinity[divId];
+                if (sltTgt) {
+                    var snCpm = 0.0;
+                    var snCpmVal = sltTgt['sbi_mouse'];
+                    if (!isNaN(snCpmVal)) { 
+                        snCpm = Math.floor(snCpmVal * 10.0)/10.0;
+                        snCpm = Math.min(snCpm,20.0);
+                        // Replace with this after Sonobi fixes the response
+                        //snCpm = Math.min(snCpmVal,20.0);
+                        sltTgt['sbi_mouse'] = snCpm;
+                    }
+                    snBid = { slot: snSlot.name, value: snCpm, sizes: snSlot.sizes, targeting: sltTgt };
+                    snPushBid(snBid);
+                }
+            }
+            else {
+                konsole.log("no slot found for divId",divId);
+            }
+        }
+        snDone();
+    };
+    load_trinity(bidCb);
+</script>
+<script>
+    try {
+        var now = +(new Date());
+        var onStart = function(hasErrors, details){
+            if(hasErrors){
+                throw details;
+            }else {
+                konsole.log('bqAds started without errors');
+            }
+        };
+
+        pf.start(now, onStart);
+    }
+    catch (err) {
+        BQErrorLog.logError("bqAds init error  ", err);
+    }
+</script>
+<script type="text/javascript">
+IS_MBL=0;
+CURL='/quotes/authors/a/albert_einstein';
+
+var bqId = 'UA-6252296-1';
+var grpBId = 'UA-6252296-8';
+var expGrpId = grpBId;
+
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+BQ_ABTest = true;
+BQ_ABClicks = true;
+
+ga('create', bqId, 'auto');
+ga('set', 'dimension1', visitType);
+ga('send', 'pageview');
+if (BQ_ABTest) {
+    ga('create', expGrpId, 'auto', {'name': 'exp'});
+    ga('exp.set', 'dimension1', visitType);
+    ga('exp.send', 'pageview');
+}
+
+
+</script>
+<link href="//cf.shareasimage.com/static/app/css/publisher.css" type="text/css" rel="stylesheet">
+<script type="text/javascript">
+    if (window!=top){top.location.href=location.href;};
+    
+    setTimeout(function(){
+                BQPostInit.init(BQ_MBL, false);
+        }, 200
+    );
+
+</script>
+<script type="text/javascript">
+ BQCookieNotice.init(BQ_MBL);
+</script>
+<meta name="robots" content="all">
+<link href="/st/css/1568746/ws_core_msnry.css" media="screen, print" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/st/js/1568746/bq_content_page.js"></script>
+<!--[if IE 8]>
+    <style>
+        #bq-sm-nav-bar { display:none; }
+        .navbar-nav { margin: 0px !important; }
+        .navbar-form, .form-group { border: 0px !important; }
+        #wowslider-container1 .ws-title div .bq-slide-q-text { font-size: 16px; }
+    </style>
+<![endif]-->
+<!--[if lte IE 9]>
+<script>BQ_OLD_IE = true;</script>
+<![endif]-->
+<link href="/st/css/1568746/exp.css" media="screen, print" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/st/js/1568746/bq_ga_event.js"></script>
+</head>
+<body class=" is-dsk"><script type="text/javascript">
+//<![CDATA[
+try{(function(a){var b="http://",c="www.brainyquote.com",d="/cdn-cgi/cl/",e="img.gif",f=new a;f.src=[b,c,d,e].join("")})(Image)}catch(e){}
+//]]>
+</script>
+<div align="center">
+ 
+<div id='div-gpt-ad-1418667263920-5' class="bq_ad_90min bqAdCollapse ">
+<script type="text/javascript">
+		
+		
+		// Load AOL ad - some divs won't have an aol placement
+		window.ADTECH.loadPubAd('aol_ros_top');
+		
+
+		pf.observe('AUCTION_POST_RUN', function() {
+			googletag.cmd.push(function () {
+				
+				googletag.display('div-gpt-ad-1418667263920-5');
+			})
+		});
+	</script>
+</div>
+</div>
+<script type="application/javascript">
+    $(function() {
+        $("#screenSize").text($(window).width());
+        $(window).resize(function (ev) {
+            $("#screenSize").text($(window).width());
+            return true;
+        }); // load everything else if the window is resized
+    });
+</script>
+<nav id="bq-tn-id" class="bq-tnav navbar navbar-default bq-cookie-notice" data-ng-controller="NavBarCtrl">
+<div class="container bq-full-width-sm">
+<div class="navbar-header">
+<button type="button" class="bq-nav-menu bq-main-menu navbar-toggle bq-nav-dd-btn hidden" data-ng-init="navCollapsed = true" data-ng-click="toggleNavCollapsed()">
+<span class="sr-only">Toggle menu</span>
+<i class="fa fa-bars"></i>
+</button>
+<button type="button" class="navbar-toggle bq-nav-dd-btn visible-xs" data-ng-show="showMemberActions()" data-ng-init="navBQCollapsed = true" data-ng-click="toggleNavBQCollapsed()">
+<span class="sr-only">Toggle My BrainyQuote</span>
+<i class="fa fa-user"></i><span class="caret"></span>
+</button>
+<a class="bq-tnav-btn visible-xs" style="" href="/search.html"><span class="fa fa-search fa-fw"></span></a>
+<a class="brand" style="padding:0px 5px 0px 5px; color:white" href="/"><span class="bqDesktopLogo"></span></a>
+</div>
+<div class="ng-cloak" data-ng-show="showMemberActions()" data-ng-class="myBQnavBarWrapperClass()">
+<div class="collapse data-ng-cloak navbar-collapse hidden-sm" data-ng-class="myBQnavBarClass()" data-ng-click="navBQCollapsed=true">
+<ul class="nav data-ng-cloak navbar-nav hidden-sm">
+<li class="bq-ni visible-xs" data-ng-show="showLogin()"><a href="/signup?utm_source=brainyquote&utm_medium=menubar&utm_campaign=membership" class="txnav">Sign Up</a></li>
+<li class="bq-ni visible-xs" data-ng-show="showLogin()"><a href="#" class="txnav" data-ng-click="loginClicked()">Login</a></li>
+<li class="bq-ni visible-xs" data-ng-show="!showLogin()"><a href="{{getMyFavoritesUrl()}}" class="txnav" rel="nofollow">Favorites</a></li>
+<li class="bq-ni visible-xs" data-ng-show="!showLogin()"><a href="{{getMyCollectionsUrl()}}" class="txnav" rel="nofollow">Collections</a></li>
+<li class="bq-ni visible-xs" data-ng-show="!showLogin()"><a href="/users/my/account" class="txnav" rel="nofollow">Settings</a></li>
+<li><div class="visible-xs bq-tnav-divider" data-ng-show="!showLogin()"></div></li>
+<li class="bq-ni visible-xs" data-ng-show="!showLogin()"><a href="#" class="txnav" data-ng-click="logoutClicked()">Logout</a></li>
+</ul>
+</div>
+</div>
+<div class="collapse data-ng-cloak navbar-collapse" data-ng-class="navBarClass()" data-ng-click="navCollapsed=true">
+<ul class="nav navbar-nav">
+<li class="bq-ni hidden-xs bq-nav-large" id="sl-bq-nav-home-t"><a href="/" class="txnav">Home</a></li>
+<li class="bq-ni  active"><a href="/quotes/favorites.html" class="txnav">Authors</a></li>
+<li class="bq-ni"><a href="/quotes/topics.html" class="txnav">Topics</a></li>
+<li class="bq-ni"><a href="/quotes_of_the_day.html" class="txnav">Quote of the Day</a></li>
+<li class="bq-ni"><a href="/quotes/quote_pictures.html" class="txnav">Pictures</a></li>
+<li><div class="visible-xs bq-tnav-divider"></div></li>
+<li class="bq-ni visible-xs"><a href="/profession/" class="txnav visible-xs">Professions</a></li>
+<li class="bq-ni visible-xs"><a href="/birthdays/" class="txnav visible-xs">Birthdays</a></li>
+<li><div class="visible-xs bq-tnav-divider"></div></li>
+<li class="bq-ni visible-xs"><a href="/apps/" class="txnav visible-xs">iPhone/iPad App</a></li>
+<li><div class="visible-xs bq-tnav-divider"></div></li>
+<li class="bq-ni visible-xs"><a href="/search.html" class="txnav">Search</a></li>
+</ul>
+<ul class="nav data-ng-cloak navbar-nav navbar-right">
+<li class="bq-nav-small hidden-xs"><a href="/search.html"><span class="fa fa-search fa-fw"></span>
+</a>
+</li>
+<li>
+<form action="/search_results.html" class="navbar-form navbar-left bq-nav-large no-border bq-no-print navbar-left form-search" style="padding-left:8px;margin-top:5px">
+<div class="form-group bq-search">
+<input type="submit" class="s-btn fa-input fa fa-search" value="&#xf002;">
+<input type="text" id="bq-search-input" placeholder="search" maxlength="80" name="q" class="s-fld-t input-medium search-query s-small" value=""/>
+</div>
+</form>
+</li>
+<li data-ng-show="showMemberIfLoggedOut()" class="ng-cloak hidden-xs"><a href="/signup?utm_source=brainyquote&utm_medium=menubar&utm_campaign=membership">Sign Up</a></li>
+<li data-ng-show="showMemberIfLoggedOut()" class="ng-cloak hidden-xs" style="padding-right:10px"><p class="navbar-btn"><a type="submit" class="pointerCursor btn btn-default bq-navb-btn" data-ng-click="loginClicked()">Login</a></p></li>
+<li class="dropdown ng-cloak hidden-xs" dropdown data-ng-show="showMemberIfLoggedIn()">
+<a rel="nofollow" href="{{getMyFavoritesUrl()}}" dropdown-toggle class="dropdown-toggle" data-ng-click="myBQMenuClicked()" data-toggle="dropdown" role="button" aria-expanded="false">
+<i class="bq-nav-small fa fa-user"></i>
+<span class="bq-nav-large">My BrainyQuote</span>
+<span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a rel="nofollow" href="{{getMyFavoritesUrl()}}"><i class="fa fa-heart"></i> Favorites</a></li>
+<li><a rel="nofollow" href="{{getMyCollectionsUrl()}}"><i class="fa fa-plus-square-o" style="display:inline-block; width:14px"></i> Collections</a></li>
+<li class="divider">&nbsp;</li>
+<li><a rel="nofollow" href="/users/my/account"><i class="fa fa-cog"></i> Account Settings</a></li>
+<li><a class="pointerCursor" data-ng-click="logoutClicked()"><i class="fa fa-sign-out"></i> Logout</a></li>
+</ul>
+</li>
+</ul>
+</div> 
+</div> 
+<div class="bq-submenu visible-xs">
+<nav id="bq-submenu-nav" class="navbar navbar-default">
+<div style="padding-left:0px; padding-right:0px" class="container nav-mobile">
+<div>
+<ul id="bq-submenu-navbar-nav" class="nav navbar-nav navbar-left">
+<li class="bq-ni  active"><a href="/quotes/favorites.html" class="subi txnav">Authors</a></li>
+<li class="bq-ni"><a href="/quotes/topics.html" class="subi txnav">Topics</a></li>
+<li class="bq-ni"><a href="/quotes/quote_pictures.html" class="subi txnav">Pictures</a></li>
+<li class="bq-ni"><a href="/quotes_of_the_day.html" class="subi txnav">Quote of the Day</a></li>
+</ul>
+</div> 
+</div>
+</nav>
+</div>
+</nav>
+<div class="visible-xs">
+<div style="height:40px"></div>
+</div>
+<div class="letter-navbar qs-blk" style="text-align: center; letter-spacing: 2px">
+<span class="body bq-tn-letters"> <span id="bq-auth-lbl" class="bq-tn-wrap">Authors:</span>
+<span class="bq-tn-wrap">
+<a href="/authors/a">A</a>
+<a href="/authors/b">B</a>
+<a href="/authors/c">C</a>
+<a href="/authors/d">D</a>
+<a href="/authors/e">E</a>
+<a href="/authors/f">F</a>
+<a href="/authors/g">G</a>
+<a href="/authors/h">H</a>
+<a href="/authors/i">I</a>
+<a href="/authors/j">J</a>
+<a href="/authors/k">K</a>
+<a href="/authors/l">L</a>
+<a href="/authors/m">M</a>
+</span>
+<span class="bq-tn-wrap">
+<a href="/authors/n">N</a>
+<a href="/authors/o">O</a>
+<a href="/authors/p">P</a>
+<a href="/authors/q">Q</a>
+<a href="/authors/r">R</a>
+<a href="/authors/s">S</a>
+<a href="/authors/t">T</a>
+<a href="/authors/u">U</a>
+<a href="/authors/v">V</a>
+<a href="/authors/w">W</a>
+<a href="/authors/x">X</a>
+<a href="/authors/y">Y</a>
+<a href="/authors/z">Z</a>
+</span>
+</span>
+</div>
+<noscript>
+<div class="bqLn">
+<table class="container" style="background-color: yellow">
+<tr>
+<td valign="top"><img src="/images/silk/exclamation.png" alt="!">
+</td>
+<td><b>Please enable Javascript</b><br>
+This site requires Javascript be enabled to provide you the best experience. Some features may not be available with
+Javascript disabled!
+</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</div>
+</noscript>
+<div class="bq_center" style="margin-left:-8px; margin-right:-8px;">
+<div class="reflow_body bq_left">
+<div class="reflow_container">
+<div class="masonry_hf">
+<div class="container-fluid">
+<div class="row" style="padding: 5px 0px 0px 0px;">
+<div class="clearfix">
+<h1 class="pull-left quoteListH1" style="padding-right:20px">Albert Einstein Quotes
+</h1>
+<div class="pull-left hidden-xs" style="height:30px">
+<div class="share-btns-msnry" style="display: inline-block; width:500px; position:relative; top:5px">
+<div class="post_angle_btns shareSpacingClass ">
+<div class="pw-widget" style="width: 496px;margin: auto;">
+<a class="pw-btn-l pw-button-facebook"></a>
+<b class="pw-box-counter" data-channel="facebook"></b>
+<a class="pw-btn-l pw-button-twitter"></a>
+<b class="pw-box-counter" data-channel="twitter"></b>
+<a class="pw-btn-l pw-button-googleplus"></a>
+<b class="pw-box-counter" data-channel="googleplus"></b>
+<a class="pw-btn-l pw-button-linkedin"></a>
+<b class="pw-box-counter" data-channel="linkedin"></b>
+<a class="pw-btn-l pw-button-post"></a>
+<b class="pw-box-counter" data-channel="post"></b>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="" style="height:1px; padding-bottom:15px; border-bottom:1px solid #e0e0e0"></div>
+</div>
+</div>
+<div id="ss-controller-id" data-ng-controller="ShowFavoritesCtrl" data-ng-init="initSFC([{'id':417379,'url':'/quotes/quotes/a/alberteins417379.html'},{'id':118979,'url':'/quotes/quotes/a/alberteins118979.html'},{'id':386089,'url':'/quotes/quotes/a/alberteins386089.html'},{'id':106912,'url':'/quotes/quotes/a/alberteins106912.html'},{'id':131187,'url':'/quotes/quotes/a/alberteins131187.html'},{'id':125368,'url':'/quotes/quotes/a/alberteins125368.html'},{'id':133991,'url':'/quotes/quotes/a/alberteins133991.html'},{'id':100015,'url':'/quotes/quotes/a/alberteins100015.html'},{'id':100656,'url':'/quotes/quotes/a/alberteins100656.html'},{'id':148802,'url':'/quotes/quotes/a/alberteins148802.html'}])">
+<div class="clearfix m_panel sticky_adzone">
+<div class="masonryQtColumn">
+<div class="ss-in-page " style="padding-top:15px">
+<div id="wowslider-container1">
+<div id="slideshow-fav-btns" style="z-index: 99999; position:absolute; bottom: 10px; right: 10px;" class="bq-slideshow-control pointerCursor">
+<span data-ng-class="favCssClass(getCurrentTopTenQuote(), 'splash')" data-ng-click="onFavoriteClicked(getCurrentTopTenQuote())" style="padding-right:3px"></span>
+&nbsp;<span data-ng-class="collectionCssClass(getCurrentTopTenQuote(), 'splash')" data-ng-click="onAddToCollectionRedirect(getCurrentTopTenQuote(), getCurrentTopTenQuoteUrl())" style="font-size:17px; padding-right:3px;"></span>
+</div>
+<div class="ws_images">
+<ul>
+<li style="position:relative">
+<a href="/slideshow/authors/top_10_albert_einstein_quotes.html">
+<img src="/st/img/1568746/slideshow/slides/quote_84.jpg" alt="Slide 1 photo" title="" id="wows1_0"/>
+</a>
+<div class="bq-slide-q-text" data-sai-includehighlight="true"><a class="bq-sl-lnk qt_417379" href="/quotes/quotes/a/alberteins417379">You can&#39;t blame gravity for falling in love.</a></div><a class="ws-author bq-sl-lnk qt_125184" href="/quotes/authors/a/albert_einstein">Albert Einstein</a></li>
+<li style="position:relative">
+<a href="/slideshow/authors/top_10_albert_einstein_quotes.html">
+<img src="/st/img/1568746/slideshow/slides/quote_85.jpg" alt="Slide 2 photo" title="" id="wows1_1"/>
+</a>
+<div class="bq-slide-q-text" data-sai-includehighlight="true"><a class="bq-sl-lnk qt_118979" href="/quotes/quotes/a/alberteins118979">Once we accept our limits, we go beyond them.</a></div><a class="ws-author bq-sl-lnk qt_125184" href="/quotes/authors/a/albert_einstein">Albert Einstein</a></li>
+<li style="position:relative">
+<a href="/slideshow/authors/top_10_albert_einstein_quotes.html">
+<img src="/st/img/1568746/slideshow/slides/quote_86.jpg" alt="Slide 3 photo" title="" id="wows1_2"/>
+</a>
+<div class="bq-slide-q-text" data-sai-includehighlight="true"><a class="bq-sl-lnk qt_386089" href="/quotes/quotes/a/alberteins386089">You have to learn the rules of the game. And then you have to play better than anyone else.</a></div><a class="ws-author bq-sl-lnk qt_125184" href="/quotes/authors/a/albert_einstein">Albert Einstein</a></li>
+<li style="position:relative">
+<a href="/slideshow/authors/top_10_albert_einstein_quotes.html">
+<img src="/st/img/1568746/slideshow/slides/quote_87.jpg" alt="Slide 4 photo" title="" id="wows1_3"/>
+</a>
+<div class="bq-slide-q-text" data-sai-includehighlight="true"><a class="bq-sl-lnk qt_106912" href="/quotes/quotes/a/alberteins106912">Look deep into nature, and then you will understand everything better.</a></div><a class="ws-author bq-sl-lnk qt_125184" href="/quotes/authors/a/albert_einstein">Albert Einstein</a></li>
+<li style="position:relative">
+<a href="/slideshow/authors/top_10_albert_einstein_quotes.html">
+<img src="/st/img/1568746/slideshow/slides/quote_88.jpg" alt="Slide 5 photo" title="" id="wows1_4"/>
+</a>
+<div class="bq-slide-q-text" data-sai-includehighlight="true"><a class="bq-sl-lnk qt_131187" href="/quotes/quotes/a/alberteins131187">Try not to become a man of success, but rather try to become a man of value.</a></div><a class="ws-author bq-sl-lnk qt_125184" href="/quotes/authors/a/albert_einstein">Albert Einstein</a></li>
+<li style="position:relative">
+<a href="/slideshow/authors/top_10_albert_einstein_quotes.html">
+<img src="/st/img/1568746/slideshow/slides/quote_89.jpg" alt="Slide 6 photo" title="" id="wows1_5"/>
+</a>
+<div class="bq-slide-q-text" data-sai-includehighlight="true"><a class="bq-sl-lnk qt_125368" href="/quotes/quotes/a/alberteins125368">Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning.</a></div><a class="ws-author bq-sl-lnk qt_125184" href="/quotes/authors/a/albert_einstein">Albert Einstein</a></li>
+<li style="position:relative">
+<a href="/slideshow/authors/top_10_albert_einstein_quotes.html">
+<img src="/st/img/1568746/slideshow/slides/quote_90.jpg" alt="Slide 7 photo" title="" id="wows1_6"/>
+</a>
+<div class="bq-slide-q-text" data-sai-includehighlight="true"><a class="bq-sl-lnk qt_133991" href="/quotes/quotes/a/alberteins133991">Insanity: doing the same thing over and over again and expecting different results.</a></div><a class="ws-author bq-sl-lnk qt_125184" href="/quotes/authors/a/albert_einstein">Albert Einstein</a></li>
+<li style="position:relative">
+<a href="/slideshow/authors/top_10_albert_einstein_quotes.html">
+<img src="/st/img/1568746/slideshow/slides/quote_91.jpg" alt="Slide 8 photo" title="" id="wows1_7"/>
+</a>
+<div class="bq-slide-q-text" data-sai-includehighlight="true"><a class="bq-sl-lnk qt_100015" href="/quotes/quotes/a/alberteins100015">Only two things are infinite, the universe and human stupidity, and I&#39;m not sure about the former.</a></div><a class="ws-author bq-sl-lnk qt_125184" href="/quotes/authors/a/albert_einstein">Albert Einstein</a></li>
+<li style="position:relative">
+<a href="/slideshow/authors/top_10_albert_einstein_quotes.html">
+<img src="/st/img/1568746/slideshow/slides/quote_92.jpg" alt="Slide 9 photo" title="" id="wows1_8"/>
+</a>
+<div class="bq-slide-q-text" data-sai-includehighlight="true"><a class="bq-sl-lnk qt_100656" href="/quotes/quotes/a/alberteins100656">When you are courting a nice girl an hour seems like a second. When you sit on a red-hot cinder a second seems like an hour. That&#39;s relativity.</a></div><a class="ws-author bq-sl-lnk qt_125184" href="/quotes/authors/a/albert_einstein">Albert Einstein</a></li>
+<li style="position:relative">
+<a href="/slideshow/authors/top_10_albert_einstein_quotes.html">
+<img src="/st/img/1568746/slideshow/slides/quote_93.jpg" alt="Slide 10 photo" title="" id="wows1_9"/>
+</a>
+<div class="bq-slide-q-text" data-sai-includehighlight="true"><a class="bq-sl-lnk qt_148802" href="/quotes/quotes/a/alberteins148802">The true sign of intelligence is not knowledge but imagination.</a></div><a class="ws-author bq-sl-lnk qt_125184" href="/quotes/authors/a/albert_einstein">Albert Einstein</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="quote-nav-msnry ">
+<div class="container-fluid" style="padding-top:15px; padding-bottom: 5px">
+<div class="row">
+<div class="qt-grid-list" style="float:right;height:30px;margin-right:10px">
+<ul class="nav pull-right bqViewCtrls "><li><div class="btn-group btn-group-sm"><a class="btn bqGridListBtn btn-default btn-success" role="group" href="#"><i class="fa fa-th"></i></a><a class="btn bqGridListBtn btn-default" role="group" href="/quotes/authors/a/albert_einstein.html?SPvm=1&amp;vm=l"><i class="fa fa-bars"></i></a>
+</div></li></ul>
+</div>
+<div style="margin-left:8px">
+<nav style="height:29px; width:358px">
+<ul class="pagination bqNPgn pagination-sm ">
+<li class="disabled"><a>Prev</a></li>
+<li class="active"><span>1</span></li>
+<li><a href="/quotes/authors/a/albert_einstein_2.html">2</a></li>
+<li><a href="/quotes/authors/a/albert_einstein_3.html">3</a></li>
+<li><a href="/quotes/authors/a/albert_einstein_4.html">4</a></li>
+<li class="disabled"><span>..</span></li>
+<li><a href="/quotes/authors/a/albert_einstein_7.html">7</a></li>
+<li><a href="/quotes/authors/a/albert_einstein_2.html">Next</a></li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div class="">
+<div id="quotesList" data-sai-includehighlight="true" class="">
+<div class="masonryitem boxy bqQt bqShare">
+<a title="view image" href="/quotes/quotes/a/alberteins417379.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins417379','1')"><img class=" zoomc bqpht" src="/photos/a/alberteinstein417379.jpg" alt="You can&amp;#39;t blame gravity for falling in love. - Albert Einstein"></a>
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_417379" title="view quote" href="/quotes/quotes/a/alberteins417379.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins417379','1')">You can&#39;t blame gravity for falling in love.</a></span><br>
+<div class="bq-aut"><a class="qa_417379" title="view quote" href="/quotes/quotes/a/alberteins417379.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_love.html" onclick="kCl('/quotes/quotes/a/alberteins417379','/quotes/topics/topic_love','0',0)">Love</a>,
+<a title="view keyword" href="/quotes/keywords/gravity.html" onclick="kCl('/quotes/quotes/a/alberteins417379','/quotes/keywords/gravity','1',0)">Gravity</a>,
+<a title="view keyword" href="/quotes/keywords/blame.html" onclick="kCl('/quotes/quotes/a/alberteins417379','/quotes/keywords/blame','2',0)">Blame</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(417379)" data-ng-class="favCssClass(417379)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins417379','1')"></span><span data-ng-click="onAddToCollectionClicked(417379)" data-ng-class="collectionCssClass(417379)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins417379','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/417379?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/417379?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/pn/417379?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes+-+BrainyQuote" class="fa-stack fa-lg pinShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<a title="view image" href="/quotes/quotes/a/alberteins118979.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins118979','1')"><img class=" zoomc bqpht" src="/photos/a/alberteinstein118979.jpg" alt="Once we accept our limits, we go beyond them. - Albert Einstein"></a>
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_118979" title="view quote" href="/quotes/quotes/a/alberteins118979.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins118979','1')">Once we accept our limits, we go beyond them.</a></span><br>
+<div class="bq-aut"><a class="qa_118979" title="view quote" href="/quotes/quotes/a/alberteins118979.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_brainy.html" onclick="kCl('/quotes/quotes/a/alberteins118979','/quotes/topics/topic_brainy','0',0)">Brainy</a>,
+<a title="view keyword" href="/quotes/keywords/limits.html" onclick="kCl('/quotes/quotes/a/alberteins118979','/quotes/keywords/limits','1',0)">Limits</a>,
+<a title="view keyword" href="/quotes/keywords/beyond.html" onclick="kCl('/quotes/quotes/a/alberteins118979','/quotes/keywords/beyond','2',0)">Beyond</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(118979)" data-ng-class="favCssClass(118979)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins118979','1')"></span><span data-ng-click="onAddToCollectionClicked(118979)" data-ng-class="collectionCssClass(118979)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins118979','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/118979?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/118979?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/pn/118979?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes+-+BrainyQuote" class="fa-stack fa-lg pinShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_386089" title="view quote" href="/quotes/quotes/a/alberteins386089.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins386089','1')">You have to learn the rules of the game. And then you have to play better than anyone else.</a></span><br>
+<div class="bq-aut"><a class="qa_386089" title="view quote" href="/quotes/quotes/a/alberteins386089.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_motivational.html" onclick="kCl('/quotes/quotes/a/alberteins386089','/quotes/topics/topic_motivational','0',0)">Motivational</a>,
+<a title="view keyword" href="/quotes/keywords/rules.html" onclick="kCl('/quotes/quotes/a/alberteins386089','/quotes/keywords/rules','1',0)">Rules</a>,
+<a title="view keyword" href="/quotes/keywords/learn.html" onclick="kCl('/quotes/quotes/a/alberteins386089','/quotes/keywords/learn','2',0)">Learn</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(386089)" data-ng-class="favCssClass(386089)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins386089','1')"></span><span data-ng-click="onAddToCollectionClicked(386089)" data-ng-class="collectionCssClass(386089)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins386089','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/386089?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/386089?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_106912" title="view quote" href="/quotes/quotes/a/alberteins106912.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins106912','1')">Look deep into nature, and then you will understand everything better.</a></span><br>
+<div class="bq-aut"><a class="qa_106912" title="view quote" href="/quotes/quotes/a/alberteins106912.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_nature.html" onclick="kCl('/quotes/quotes/a/alberteins106912','/quotes/topics/topic_nature','0',0)">Nature</a>,
+<a title="view keyword" href="/quotes/keywords/understand.html" onclick="kCl('/quotes/quotes/a/alberteins106912','/quotes/keywords/understand','1',0)">Understand</a>,
+<a title="view keyword" href="/quotes/keywords/deep.html" onclick="kCl('/quotes/quotes/a/alberteins106912','/quotes/keywords/deep','2',0)">Deep</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(106912)" data-ng-class="favCssClass(106912)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins106912','1')"></span><span data-ng-click="onAddToCollectionClicked(106912)" data-ng-class="collectionCssClass(106912)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins106912','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/106912?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/106912?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_131187" title="view quote" href="/quotes/quotes/a/alberteins131187.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins131187','1')">Try not to become a man of success, but rather try to become a man of value.</a></span><br>
+<div class="bq-aut"><a class="qa_131187" title="view quote" href="/quotes/quotes/a/alberteins131187.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_success.html" onclick="kCl('/quotes/quotes/a/alberteins131187','/quotes/topics/topic_success','0',0)">Success</a>,
+<a title="view keyword" href="/quotes/keywords/rather.html" onclick="kCl('/quotes/quotes/a/alberteins131187','/quotes/keywords/rather','1',0)">Rather</a>,
+<a title="view keyword" href="/quotes/keywords/value.html" onclick="kCl('/quotes/quotes/a/alberteins131187','/quotes/keywords/value','2',0)">Value</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(131187)" data-ng-class="favCssClass(131187)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins131187','1')"></span><span data-ng-click="onAddToCollectionClicked(131187)" data-ng-class="collectionCssClass(131187)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins131187','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/131187?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/131187?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_125368" title="view quote" href="/quotes/quotes/a/alberteins125368.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins125368','1')">Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning.</a></span><br>
+<div class="bq-aut"><a class="qa_125368" title="view quote" href="/quotes/quotes/a/alberteins125368.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_hope.html" onclick="kCl('/quotes/quotes/a/alberteins125368','/quotes/topics/topic_hope','0',0)">Hope</a>,
+<a title="view keyword" href="/quotes/keywords/learn.html" onclick="kCl('/quotes/quotes/a/alberteins125368','/quotes/keywords/learn','1',0)">Learn</a>,
+<a title="view keyword" href="/quotes/keywords/tomorrow.html" onclick="kCl('/quotes/quotes/a/alberteins125368','/quotes/keywords/tomorrow','2',0)">Tomorrow</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(125368)" data-ng-class="favCssClass(125368)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins125368','1')"></span><span data-ng-click="onAddToCollectionClicked(125368)" data-ng-class="collectionCssClass(125368)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins125368','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/125368?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/125368?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<a title="view image" href="/quotes/quotes/a/alberteins133991.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins133991','1')"><img class=" zoomc bqpht" src="/photos/a/alberteinstein133991.jpg" alt="Insanity: doing the same thing over and over again and expecting different results. - Albert Einstein"></a>
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_133991" title="view quote" href="/quotes/quotes/a/alberteins133991.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins133991','1')">Insanity: doing the same thing over and over again and expecting different results.</a></span><br>
+<div class="bq-aut"><a class="qa_133991" title="view quote" href="/quotes/quotes/a/alberteins133991.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view keyword" href="/quotes/keywords/again.html" onclick="kCl('/quotes/quotes/a/alberteins133991','/quotes/keywords/again','0',0)">Again</a>,
+<a title="view keyword" href="/quotes/keywords/results.html" onclick="kCl('/quotes/quotes/a/alberteins133991','/quotes/keywords/results','1',0)">Results</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(133991)" data-ng-class="favCssClass(133991)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins133991','1')"></span><span data-ng-click="onAddToCollectionClicked(133991)" data-ng-class="collectionCssClass(133991)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins133991','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/133991?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/133991?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/pn/133991?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes+-+BrainyQuote" class="fa-stack fa-lg pinShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_100015" title="view quote" href="/quotes/quotes/a/alberteins100015.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins100015','1')">Only two things are infinite, the universe and human stupidity, and I&#39;m not sure about the former.</a></span><br>
+<div class="bq-aut"><a class="qa_100015" title="view quote" href="/quotes/quotes/a/alberteins100015.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_science.html" onclick="kCl('/quotes/quotes/a/alberteins100015','/quotes/topics/topic_science','0',0)">Science</a>,
+<a title="view keyword" href="/quotes/keywords/stupidity.html" onclick="kCl('/quotes/quotes/a/alberteins100015','/quotes/keywords/stupidity','1',0)">Stupidity</a>,
+<a title="view keyword" href="/quotes/keywords/infinite.html" onclick="kCl('/quotes/quotes/a/alberteins100015','/quotes/keywords/infinite','2',0)">Infinite</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(100015)" data-ng-class="favCssClass(100015)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins100015','1')"></span><span data-ng-click="onAddToCollectionClicked(100015)" data-ng-class="collectionCssClass(100015)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins100015','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/100015?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/100015?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_100656" title="view quote" href="/quotes/quotes/a/alberteins100656.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins100656','1')">When you are courting a nice girl an hour seems like a second. When you sit on a red-hot cinder a second seems like an hour. That&#39;s relativity.</a></span><br>
+<div class="bq-aut"><a class="qa_100656" title="view quote" href="/quotes/quotes/a/alberteins100656.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_funny.html" onclick="kCl('/quotes/quotes/a/alberteins100656','/quotes/topics/topic_funny','0',0)">Funny</a>,
+<a title="view keyword" href="/quotes/keywords/girl.html" onclick="kCl('/quotes/quotes/a/alberteins100656','/quotes/keywords/girl','1',0)">Girl</a>,
+<a title="view keyword" href="/quotes/keywords/courting.html" onclick="kCl('/quotes/quotes/a/alberteins100656','/quotes/keywords/courting','2',0)">Courting</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(100656)" data-ng-class="favCssClass(100656)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins100656','1')"></span><span data-ng-click="onAddToCollectionClicked(100656)" data-ng-class="collectionCssClass(100656)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins100656','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/100656?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/100656?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_148802" title="view quote" href="/quotes/quotes/a/alberteins148802.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins148802','1')">The true sign of intelligence is not knowledge but imagination.</a></span><br>
+<div class="bq-aut"><a class="qa_148802" title="view quote" href="/quotes/quotes/a/alberteins148802.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_knowledge.html" onclick="kCl('/quotes/quotes/a/alberteins148802','/quotes/topics/topic_knowledge','0',0)">Knowledge</a>,
+<a title="view keyword" href="/quotes/keywords/true.html" onclick="kCl('/quotes/quotes/a/alberteins148802','/quotes/keywords/true','1',0)">True</a>,
+<a title="view keyword" href="/quotes/keywords/sign.html" onclick="kCl('/quotes/quotes/a/alberteins148802','/quotes/keywords/sign','2',0)">Sign</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(148802)" data-ng-class="favCssClass(148802)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins148802','1')"></span><span data-ng-click="onAddToCollectionClicked(148802)" data-ng-class="collectionCssClass(148802)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins148802','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/148802?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/148802?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_136891" title="view quote" href="/quotes/quotes/a/alberteins136891.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins136891','1')">Peace cannot be kept by force; it can only be achieved by understanding.</a></span><br>
+<div class="bq-aut"><a class="qa_136891" title="view quote" href="/quotes/quotes/a/alberteins136891.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_peace.html" onclick="kCl('/quotes/quotes/a/alberteins136891','/quotes/topics/topic_peace','0',0)">Peace</a>,
+<a title="view keyword" href="/quotes/keywords/achieved.html" onclick="kCl('/quotes/quotes/a/alberteins136891','/quotes/keywords/achieved','1',0)">Achieved</a>,
+<a title="view keyword" href="/quotes/keywords/cannot.html" onclick="kCl('/quotes/quotes/a/alberteins136891','/quotes/keywords/cannot','2',0)">Cannot</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(136891)" data-ng-class="favCssClass(136891)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins136891','1')"></span><span data-ng-click="onAddToCollectionClicked(136891)" data-ng-class="collectionCssClass(136891)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins136891','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/136891?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/136891?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_108304" title="view quote" href="/quotes/quotes/a/alberteins108304.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins108304','1')">Education is what remains after one has forgotten what one has learned in school.</a></span><br>
+<div class="bq-aut"><a class="qa_108304" title="view quote" href="/quotes/quotes/a/alberteins108304.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_learning.html" onclick="kCl('/quotes/quotes/a/alberteins108304','/quotes/topics/topic_learning','0',0)">Learning</a>,
+<a title="view topic" href="/quotes/topics/topic_education.html" onclick="kCl('/quotes/quotes/a/alberteins108304','/quotes/topics/topic_education','1',0)">Education</a>,
+<a title="view keyword" href="/quotes/keywords/learned.html" onclick="kCl('/quotes/quotes/a/alberteins108304','/quotes/keywords/learned','2',0)">Learned</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(108304)" data-ng-class="favCssClass(108304)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins108304','1')"></span><span data-ng-click="onAddToCollectionClicked(108304)" data-ng-class="collectionCssClass(108304)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins108304','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/108304?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/108304?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_161262" title="view quote" href="/quotes/quotes/a/alberteins161262.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins161262','1')">It has become appallingly obvious that our technology has exceeded our humanity.</a></span><br>
+<div class="bq-aut"><a class="qa_161262" title="view quote" href="/quotes/quotes/a/alberteins161262.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_technology.html" onclick="kCl('/quotes/quotes/a/alberteins161262','/quotes/topics/topic_technology','0',0)">Technology</a>,
+<a title="view keyword" href="/quotes/keywords/humanity.html" onclick="kCl('/quotes/quotes/a/alberteins161262','/quotes/keywords/humanity','1',0)">Humanity</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(161262)" data-ng-class="favCssClass(161262)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins161262','1')"></span><span data-ng-click="onAddToCollectionClicked(161262)" data-ng-class="collectionCssClass(161262)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins161262','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/161262?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/161262?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_121643" title="view quote" href="/quotes/quotes/a/alberteins121643.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins121643','1')">Logic will get you from A to B. Imagination will take you everywhere.</a></span><br>
+<div class="bq-aut"><a class="qa_121643" title="view quote" href="/quotes/quotes/a/alberteins121643.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_imagination.html" onclick="kCl('/quotes/quotes/a/alberteins121643','/quotes/topics/topic_imagination','0',0)">Imagination</a>,
+<a title="view keyword" href="/quotes/keywords/logic.html" onclick="kCl('/quotes/quotes/a/alberteins121643','/quotes/keywords/logic','1',0)">Logic</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(121643)" data-ng-class="favCssClass(121643)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins121643','1')"></span><span data-ng-click="onAddToCollectionClicked(121643)" data-ng-class="collectionCssClass(121643)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins121643','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/121643?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/121643?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_109012" title="view quote" href="/quotes/quotes/a/alberteins109012.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins109012','1')">Anyone who has never made a mistake has never tried anything new.</a></span><br>
+<div class="bq-aut"><a class="qa_109012" title="view quote" href="/quotes/quotes/a/alberteins109012.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view keyword" href="/quotes/keywords/mistake.html" onclick="kCl('/quotes/quotes/a/alberteins109012','/quotes/keywords/mistake','0',0)">Mistake</a>,
+<a title="view keyword" href="/quotes/keywords/anyone.html" onclick="kCl('/quotes/quotes/a/alberteins109012','/quotes/keywords/anyone','1',0)">Anyone</a>,
+<a title="view keyword" href="/quotes/keywords/tried.html" onclick="kCl('/quotes/quotes/a/alberteins109012','/quotes/keywords/tried','2',0)">Tried</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(109012)" data-ng-class="favCssClass(109012)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins109012','1')"></span><span data-ng-click="onAddToCollectionClicked(109012)" data-ng-class="collectionCssClass(109012)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins109012','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/109012?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/109012?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_143096" title="view quote" href="/quotes/quotes/a/alberteins143096.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins143096','1')">The world is a dangerous place to live; not because of the people who are evil, but because of the people who don&#39;t do anything about it.</a></span><br>
+<div class="bq-aut"><a class="qa_143096" title="view quote" href="/quotes/quotes/a/alberteins143096.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view keyword" href="/quotes/keywords/evil.html" onclick="kCl('/quotes/quotes/a/alberteins143096','/quotes/keywords/evil','0',0)">Evil</a>,
+<a title="view keyword" href="/quotes/keywords/dangerous.html" onclick="kCl('/quotes/quotes/a/alberteins143096','/quotes/keywords/dangerous','1',0)">Dangerous</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(143096)" data-ng-class="favCssClass(143096)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins143096','1')"></span><span data-ng-click="onAddToCollectionClicked(143096)" data-ng-class="collectionCssClass(143096)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins143096','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/143096?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/143096?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_121993" title="view quote" href="/quotes/quotes/a/alberteins121993.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins121993','1')">We cannot solve our problems with the same thinking we used when we created them.</a></span><br>
+<div class="bq-aut"><a class="qa_121993" title="view quote" href="/quotes/quotes/a/alberteins121993.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view keyword" href="/quotes/keywords/cannot.html" onclick="kCl('/quotes/quotes/a/alberteins121993','/quotes/keywords/cannot','0',0)">Cannot</a>,
+<a title="view keyword" href="/quotes/keywords/thinking.html" onclick="kCl('/quotes/quotes/a/alberteins121993','/quotes/keywords/thinking','1',0)">Thinking</a>,
+<a title="view keyword" href="/quotes/keywords/problems.html" onclick="kCl('/quotes/quotes/a/alberteins121993','/quotes/keywords/problems','2',0)">Problems</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(121993)" data-ng-class="favCssClass(121993)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins121993','1')"></span><span data-ng-click="onAddToCollectionClicked(121993)" data-ng-class="collectionCssClass(121993)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins121993','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/121993?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/121993?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_148841" title="view quote" href="/quotes/quotes/a/alberteins148841.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins148841','1')">Weakness of attitude becomes weakness of character.</a></span><br>
+<div class="bq-aut"><a class="qa_148841" title="view quote" href="/quotes/quotes/a/alberteins148841.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_attitude.html" onclick="kCl('/quotes/quotes/a/alberteins148841','/quotes/topics/topic_attitude','0',0)">Attitude</a>,
+<a title="view keyword" href="/quotes/keywords/character.html" onclick="kCl('/quotes/quotes/a/alberteins148841','/quotes/keywords/character','1',0)">Character</a>,
+<a title="view keyword" href="/quotes/keywords/becomes.html" onclick="kCl('/quotes/quotes/a/alberteins148841','/quotes/keywords/becomes','2',0)">Becomes</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(148841)" data-ng-class="favCssClass(148841)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins148841','1')"></span><span data-ng-click="onAddToCollectionClicked(148841)" data-ng-class="collectionCssClass(148841)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins148841','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/148841?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/148841?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_148851" title="view quote" href="/quotes/quotes/a/alberteins148851.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins148851','1')">The difference between stupidity and genius is that genius has its limits.</a></span><br>
+<div class="bq-aut"><a class="qa_148851" title="view quote" href="/quotes/quotes/a/alberteins148851.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_intelligence.html" onclick="kCl('/quotes/quotes/a/alberteins148851','/quotes/topics/topic_intelligence','0',0)">Intelligence</a>,
+<a title="view keyword" href="/quotes/keywords/stupidity.html" onclick="kCl('/quotes/quotes/a/alberteins148851','/quotes/keywords/stupidity','1',0)">Stupidity</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(148851)" data-ng-class="favCssClass(148851)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins148851','1')"></span><span data-ng-click="onAddToCollectionClicked(148851)" data-ng-class="collectionCssClass(148851)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins148851','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/148851?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/148851?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_122232" title="view quote" href="/quotes/quotes/a/alberteins122232.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins122232','1')">Strive not to be a success, but rather to be of value.</a></span><br>
+<div class="bq-aut"><a class="qa_122232" title="view quote" href="/quotes/quotes/a/alberteins122232.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_success.html" onclick="kCl('/quotes/quotes/a/alberteins122232','/quotes/topics/topic_success','0',0)">Success</a>,
+<a title="view keyword" href="/quotes/keywords/value.html" onclick="kCl('/quotes/quotes/a/alberteins122232','/quotes/keywords/value','1',0)">Value</a>,
+<a title="view keyword" href="/quotes/keywords/strive.html" onclick="kCl('/quotes/quotes/a/alberteins122232','/quotes/keywords/strive','2',0)">Strive</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(122232)" data-ng-class="favCssClass(122232)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins122232','1')"></span><span data-ng-click="onAddToCollectionClicked(122232)" data-ng-class="collectionCssClass(122232)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins122232','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/122232?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/122232?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_148778" title="view quote" href="/quotes/quotes/a/alberteins148778.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins148778','1')">The only source of knowledge is experience.</a></span><br>
+<div class="bq-aut"><a class="qa_148778" title="view quote" href="/quotes/quotes/a/alberteins148778.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_experience.html" onclick="kCl('/quotes/quotes/a/alberteins148778','/quotes/topics/topic_experience','0',0)">Experience</a>,
+<a title="view topic" href="/quotes/topics/topic_knowledge.html" onclick="kCl('/quotes/quotes/a/alberteins148778','/quotes/topics/topic_knowledge','1',0)">Knowledge</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(148778)" data-ng-class="favCssClass(148778)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins148778','1')"></span><span data-ng-click="onAddToCollectionClicked(148778)" data-ng-class="collectionCssClass(148778)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins148778','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/148778?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/148778?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_130625" title="view quote" href="/quotes/quotes/a/alberteins130625.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins130625','1')">To raise new questions, new possibilities, to regard old problems from a new angle, requires creative imagination and marks real advance in science.</a></span><br>
+<div class="bq-aut"><a class="qa_130625" title="view quote" href="/quotes/quotes/a/alberteins130625.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_science.html" onclick="kCl('/quotes/quotes/a/alberteins130625','/quotes/topics/topic_science','0',0)">Science</a>,
+<a title="view keyword" href="/quotes/keywords/problems.html" onclick="kCl('/quotes/quotes/a/alberteins130625','/quotes/keywords/problems','1',0)">Problems</a>,
+<a title="view keyword" href="/quotes/keywords/creative.html" onclick="kCl('/quotes/quotes/a/alberteins130625','/quotes/keywords/creative','2',0)">Creative</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(130625)" data-ng-class="favCssClass(130625)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins130625','1')"></span><span data-ng-click="onAddToCollectionClicked(130625)" data-ng-class="collectionCssClass(130625)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins130625','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/130625?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/130625?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<a title="view image" href="/quotes/quotes/a/alberteins121030.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins121030','1')"><img class=" zoomc bqpht" src="/photos/a/alberteinstein121030.jpg" alt="Few are those who see with their own eyes and feel with their own hearts. - Albert Einstein"></a>
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_121030" title="view quote" href="/quotes/quotes/a/alberteins121030.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins121030','1')">Few are those who see with their own eyes and feel with their own hearts.</a></span><br>
+<div class="bq-aut"><a class="qa_121030" title="view quote" href="/quotes/quotes/a/alberteins121030.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view keyword" href="/quotes/keywords/few.html" onclick="kCl('/quotes/quotes/a/alberteins121030','/quotes/keywords/few','0',0)">Few</a>,
+<a title="view keyword" href="/quotes/keywords/eyes.html" onclick="kCl('/quotes/quotes/a/alberteins121030','/quotes/keywords/eyes','1',0)">Eyes</a>,
+<a title="view keyword" href="/quotes/keywords/hearts.html" onclick="kCl('/quotes/quotes/a/alberteins121030','/quotes/keywords/hearts','2',0)">Hearts</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(121030)" data-ng-class="favCssClass(121030)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins121030','1')"></span><span data-ng-click="onAddToCollectionClicked(121030)" data-ng-class="collectionCssClass(121030)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins121030','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/121030?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/121030?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/pn/121030?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes+-+BrainyQuote" class="fa-stack fa-lg pinShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-pinterest-p fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_122873" title="view quote" href="/quotes/quotes/a/alberteins122873.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins122873','1')">I know not with what weapons World War III will be fought, but World War IV will be fought with sticks and stones.</a></span><br>
+<div class="bq-aut"><a class="qa_122873" title="view quote" href="/quotes/quotes/a/alberteins122873.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_war.html" onclick="kCl('/quotes/quotes/a/alberteins122873','/quotes/topics/topic_war','0',0)">War</a>,
+<a title="view keyword" href="/quotes/keywords/weapons.html" onclick="kCl('/quotes/quotes/a/alberteins122873','/quotes/keywords/weapons','1',0)">Weapons</a>,
+<a title="view keyword" href="/quotes/keywords/fought.html" onclick="kCl('/quotes/quotes/a/alberteins122873','/quotes/keywords/fought','2',0)">Fought</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(122873)" data-ng-class="favCssClass(122873)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins122873','1')"></span><span data-ng-click="onAddToCollectionClicked(122873)" data-ng-class="collectionCssClass(122873)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins122873','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/122873?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/122873?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_148835" title="view quote" href="/quotes/quotes/a/alberteins148835.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins148835','1')">All that is valuable in human society depends upon the opportunity for development accorded the individual.</a></span><br>
+<div class="bq-aut"><a class="qa_148835" title="view quote" href="/quotes/quotes/a/alberteins148835.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_society.html" onclick="kCl('/quotes/quotes/a/alberteins148835','/quotes/topics/topic_society','0',0)">Society</a>,
+<a title="view keyword" href="/quotes/keywords/individual.html" onclick="kCl('/quotes/quotes/a/alberteins148835','/quotes/keywords/individual','1',0)">Individual</a>,
+<a title="view keyword" href="/quotes/keywords/depends.html" onclick="kCl('/quotes/quotes/a/alberteins148835','/quotes/keywords/depends','2',0)">Depends</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(148835)" data-ng-class="favCssClass(148835)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins148835','1')"></span><span data-ng-click="onAddToCollectionClicked(148835)" data-ng-class="collectionCssClass(148835)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins148835','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/148835?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/148835?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_112024" title="view quote" href="/quotes/quotes/a/alberteins112024.html" onclick="qCl('author','/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins112024','1')">The gift of fantasy has meant more to me than my talent for absorbing positive knowledge.</a></span><br>
+<div class="bq-aut"><a class="qa_112024" title="view quote" href="/quotes/quotes/a/alberteins112024.html">Albert Einstein</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_positive.html" onclick="kCl('/quotes/quotes/a/alberteins112024','/quotes/topics/topic_positive','0',0)">Positive</a>,
+<a title="view topic" href="/quotes/topics/topic_knowledge.html" onclick="kCl('/quotes/quotes/a/alberteins112024','/quotes/topics/topic_knowledge','1',0)">Knowledge</a>,
+<a title="view keyword" href="/quotes/keywords/fantasy.html" onclick="kCl('/quotes/quotes/a/alberteins112024','/quotes/keywords/fantasy','2',0)">Fantasy</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(112024)" data-ng-class="favCssClass(112024)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins112024','1')"></span><span data-ng-click="onAddToCollectionClicked(112024)" data-ng-class="collectionCssClass(112024)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/a/albert_einstein','/quotes/quotes/a/alberteins112024','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/112024?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/112024?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fa%2Falbert_einstein.html&ti=Albert+Einstein+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bq_masonry_sidenav">
+<div style="height:15px"></div>
+<div class="bq-m-center-300-ad">
+ 
+<div id='div-gpt-ad-1418667263920-4' class="bq_ad_320x250_multi bqAdCollapse ">
+<script type="text/javascript">
+		
+		
+		// Load AOL ad - some divs won't have an aol placement
+		window.ADTECH.loadPubAd('aol_ros_square');
+		
+
+		pf.observe('AUCTION_POST_RUN', function() {
+			googletag.cmd.push(function () {
+				
+				googletag.display('div-gpt-ad-1418667263920-4');
+			})
+		});
+	</script>
+</div>
+</div>
+<div class="bq_s">
+<h2>Biography</h2>
+<div class="bq_fl">
+<div class="bqLn">Nationality: <a href="/nationality/german_quotes">German</a></div>
+<div class="bqLn">Type: <a href="/profession/physicist_quotes">Physicist</a></div>
+<div class="bqLn">Born:
+<a href="/birthdays/march_14">
+March 14</a>, 1879
+</div>
+<div class="bqLn">Died:
+<a href="/birthdays/april_18">
+April 18</a>, 1955
+</div>
+<div class="bq_s">
+We all have a mental image of Albert Einstein - more a caricature than a man. We regard him as a genius with wild white hair and mathematical... <a href="/quotes/biography/albert_einstein_biography">Read full biography</a>
+</div>
+</div>
+</div>
+<div class="bq_s">
+<h2>Links</h2>
+<div class="bq_fl">
+<p><a href="/quotes/keywords/albert_einstein">Quotes about Albert Einstein</a>
+</p>
+<p>Find on Amazon:
+<a href="http://www.amazon.com/exec/obidos/external-search?tag=brainyquote-20&amp;keyword=Albert%20Einstein" target="_BLANK" rel="nofollow">
+Albert Einstein</a></p>
+Cite this Page: <a href="/citation/quotes/authors/a/albert_einstein.html?ct=Albert+Einstein" rel="nofollow">Citation</a>
+</div>
+</div>
+<div class="bq_s">
+<h2>Popular Topics</h2>
+<div class="bq_fl">
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav">
+<a class="block-sm-sidenav" href="/quotes/topics/topic_motivational.html" onclick="topicCl('/quotes/topics/topic_motivational',1,'SideBar')">
+<span class="link-name">Motivational
+<span>Quotes</span>
+</span>
+</a>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav">
+<a class="block-sm-sidenav" href="/quotes/topics/topic_inspirational.html" onclick="topicCl('/quotes/topics/topic_inspirational',2,'SideBar')">
+<span class="link-name">Inspirational
+<span>Quotes</span>
+</span>
+</a>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav">
+<a class="block-sm-sidenav" href="/quotes/topics/topic_love.html" onclick="topicCl('/quotes/topics/topic_love',3,'SideBar')">
+<span class="link-name">Love
+<span>Quotes</span>
+</span>
+</a>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav">
+<a class="block-sm-sidenav" href="/quotes/topics/topic_life.html" onclick="topicCl('/quotes/topics/topic_life',4,'SideBar')">
+<span class="link-name">Life
+<span>Quotes</span>
+</span>
+</a>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav">
+<a class="block-sm-sidenav" href="/quotes/topics/topic_funny.html" onclick="topicCl('/quotes/topics/topic_funny',5,'SideBar')">
+<span class="link-name">Funny
+<span>Quotes</span>
+</span>
+</a>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav">
+<a class="block-sm-sidenav" href="/quotes/topics/topic_positive.html" onclick="topicCl('/quotes/topics/topic_positive',6,'SideBar')">
+<span class="link-name">Positive
+<span>Quotes</span>
+</span>
+</a>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav">
+<a class="block-sm-sidenav" href="/quotes/topics/topic_success.html" onclick="topicCl('/quotes/topics/topic_success',7,'SideBar')">
+<span class="link-name">Success
+<span>Quotes</span>
+</span>
+</a>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav">
+<a class="block-sm-sidenav" href="/quotes/topics/topic_friendship.html" onclick="topicCl('/quotes/topics/topic_friendship',8,'SideBar')">
+<span class="link-name">Friendship
+<span>Quotes</span>
+</span>
+</a>
+</div>
+</div>
+</div>
+<div style="clear:both;margin-bottom:20px;"></div>
+<div class="bq_s">
+<div class="bq-m-center-300-ad">
+ 
+<div id='div-gpt-ad-1418667263920-3' class="bq_ad_320x250_multi bqAdCollapse ">
+<script type="text/javascript">
+		
+		
+		// Load AOL ad - some divs won't have an aol placement
+		window.ADTECH.loadPubAd('aol_ros_middle');
+		
+
+		pf.observe('AUCTION_POST_RUN', function() {
+			googletag.cmd.push(function () {
+				
+				googletag.display('div-gpt-ad-1418667263920-3');
+			})
+		});
+	</script>
+</div>
+</div>
+</div>
+<div style="height:150px">
+<div class="ss-tile" style="height:110px; position:relative;">
+<a href="/slideshow/authors/top_10_albert_einstein_quotes.html"><img src="/st/img/1568746/slideshow/slides/quote_84.jpg" alt="slideshow" style="width:300px;height:112px"></a>
+<div class="ss-play-btn"></div>
+</div>
+<div class="ss-link">
+<a href="/slideshow/authors/top_10_albert_einstein_quotes.html">Top 10 Albert Einstein
+Quotes
+</a>
+</div>
+</div>
+<div class="bq_s">
+<h2>Popular Authors</h2>
+<div class="bq_fl">
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav"><a class="block-sm-sidenav" href="/quotes/authors/m/martin_luther_king_jr.html" onclick="authorCl('/quotes/authors/m/martin_luther_king_jr',1,'SideBar')">Martin Luther King, Jr.</a></div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav"><a class="block-sm-sidenav" href="/quotes/authors/a/albert_einstein.html" onclick="authorCl('/quotes/authors/a/albert_einstein',2,'SideBar')">Albert Einstein</a></div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav"><a class="block-sm-sidenav" href="/quotes/authors/d/dr_seuss.html" onclick="authorCl('/quotes/authors/d/dr_seuss',3,'SideBar')">Dr. Seuss</a></div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav"><a class="block-sm-sidenav" href="/quotes/authors/w/william_shakespeare.html" onclick="authorCl('/quotes/authors/w/william_shakespeare',4,'SideBar')">William Shakespeare</a></div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav"><a class="block-sm-sidenav" href="/quotes/authors/m/mahatma_gandhi.html" onclick="authorCl('/quotes/authors/m/mahatma_gandhi',5,'SideBar')">Mahatma Gandhi</a></div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav"><a class="block-sm-sidenav" href="/quotes/authors/m/mark_twain.html" onclick="authorCl('/quotes/authors/m/mark_twain',6,'SideBar')">Mark Twain</a></div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav"><a class="block-sm-sidenav" href="/quotes/authors/b/buddha.html" onclick="authorCl('/quotes/authors/b/buddha',7,'SideBar')">Buddha</a></div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav"><a class="block-sm-sidenav" href="/quotes/authors/a/abraham_lincoln.html" onclick="authorCl('/quotes/authors/a/abraham_lincoln',8,'SideBar')">Abraham Lincoln</a></div>
+</div>
+</div>
+<div style="clear:both;margin-bottom:20px;"></div>
+<div class="bq_s">
+ 
+<div id='div-gpt-ad-1418667263920-2' class="bq_ad_320x250_multi bqAdCollapse ">
+<script type="text/javascript">
+		
+		
+		// Load AOL ad - some divs won't have an aol placement
+		window.ADTECH.loadPubAd('aol_ros_center');
+		
+
+		pf.observe('AUCTION_POST_RUN', function() {
+			googletag.cmd.push(function () {
+				
+				googletag.display('div-gpt-ad-1418667263920-2');
+			})
+		});
+	</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry_hf">
+<div class="container-fluid" style="padding-bottom:15px">
+<div class="row" style=" padding: 20px 0px 0px 0px; border-bottom: 1px solid #e0e0e0">
+<div class="clearfix">
+<div class="pull-left bq-vcenter-parent" style="height:30px; margin-bottom:20px; display:inline-block; width: 320px; ">
+<div class="bq-vcenter">
+<nav style="height:29px; width:358px">
+<ul class="pagination bqNPgn pagination-sm ">
+<li class="disabled"><a>Prev</a></li>
+<li class="active"><span>1</span></li>
+<li><a href="/quotes/authors/a/albert_einstein_2.html">2</a></li>
+<li><a href="/quotes/authors/a/albert_einstein_3.html">3</a></li>
+<li><a href="/quotes/authors/a/albert_einstein_4.html">4</a></li>
+<li class="disabled"><span>..</span></li>
+<li><a href="/quotes/authors/a/albert_einstein_7.html">7</a></li>
+<li><a href="/quotes/authors/a/albert_einstein_2.html">Next</a></li>
+</ul>
+</nav>
+</div>
+</div>
+<div class="pull-left hidden-xs" style="height:30px;margin-bottom:20px; ">
+<div class="share-btns-msnry">
+<div class="post_angle_btns shareSpacingClass ">
+<div class="pw-widget" style="width: 496px;margin: auto;">
+<a class="pw-btn-l pw-button-facebook"></a>
+<b class="pw-box-counter" data-channel="facebook"></b>
+<a class="pw-btn-l pw-button-twitter"></a>
+<b class="pw-box-counter" data-channel="twitter"></b>
+<a class="pw-btn-l pw-button-googleplus"></a>
+<b class="pw-box-counter" data-channel="googleplus"></b>
+<a class="pw-btn-l pw-button-linkedin"></a>
+<b class="pw-box-counter" data-channel="linkedin"></b>
+<a class="pw-btn-l pw-button-post"></a>
+<b class="pw-box-counter" data-channel="post"></b>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>  
+</div>
+</div>
+</div>
+<div class="container-fluid bq_left" style="max-width:1350px;margin-top:25px;margin-bottom:25px;">
+<div class="row">
+<div class="col-sm-7 col-md-8 block-style">
+<div class="bq_s">
+<h2>Related Authors</h2>
+<div class="bq_fl">
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 block-sm-holder">
+<a class="block-sm" href="/quotes/authors/s/stephen_hawking.html">
+<span class="link-name">Stephen Hawking</span>
+</a>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 block-sm-holder">
+<a class="block-sm" href="/quotes/authors/r/richard_p_feynman.html">
+<span class="link-name">Richard P. Feynman</span>
+</a>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 block-sm-holder">
+<a class="block-sm" href="/quotes/authors/n/niels_bohr.html">
+<span class="link-name">Niels Bohr</span>
+</a>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 block-sm-holder">
+<a class="block-sm" href="/quotes/authors/j/j_robert_oppenheimer.html">
+<span class="link-name">J. Robert Oppenheimer</span>
+</a>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 block-sm-holder">
+<a class="block-sm" href="/quotes/authors/a/austin_omalley.html">
+<span class="link-name">Austin O'Malley</span>
+</a>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 block-sm-holder">
+<a class="block-sm" href="/quotes/authors/p/paul_dirac.html">
+<span class="link-name">Paul Dirac</span>
+</a>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 block-sm-holder">
+<a class="block-sm" href="/quotes/authors/j/john_archibald_wheeler.html">
+<span class="link-name">John Archibald Wheeler</span>
+</a>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 block-sm-holder">
+<a class="block-sm" href="/quotes/authors/b/brian_greene.html">
+<span class="link-name">Brian Greene</span>
+</a>
+</div>
+</div>
+</div>
+<div style="clear:both;margin-bottom:20px;"></div>
+</div>
+<div class="col-sm-5 col-md-4 bottom-ad-holder">
+<div class="bq_s">
+<div class="bq-m-center-300-ad">
+ 
+<div id='div-gpt-ad-1418667263920-1' class="bq_ad_320x250 bqAdCollapse ">
+<script type="text/javascript">
+		
+		
+		// Load AOL ad - some divs won't have an aol placement
+		window.ADTECH.loadPubAd('aol_ros_bottom');
+		
+
+		pf.observe('AUCTION_POST_RUN', function() {
+			googletag.cmd.push(function () {
+				
+				googletag.display('div-gpt-ad-1418667263920-1');
+			})
+		});
+	</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
+<div class="bq_bot_nav bq-no-print" style="">
+<div class="container-fluid" style="max-width: 900px">
+<div class="row">
+<div class="col-sm-3 col-md-3" style="position:relative;top:-20px;">
+<div style="float:left; position:absolute; top:-25px">
+<img src="/st/img/1568746/pinwheel.gif" alt="Logo">
+</div>
+<div style="height:75px"></div>
+<div class="bq_s">
+<div class="bqLn bodybold">BrainyQuote Desktop</div>
+<div class="bqLn"><a href="http://mobile.brainyquote.com/changeSite/quotes/authors/a/albert_einstein.html" rel="nofollow">BrainyQuote Mobile</a></div>
+</div>
+<div class="bq_s">
+<ul class="footer-follow-icons">
+<li><a href="https://www.facebook.com/BrainyQuote" target="_blank"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/brainyquote" target="_blank"><i class="fa fa-twitter"></i></a></li>
+<li class="follow-padding-fix"><a href="https://plus.google.com/+brainyquotes" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+<li class="follow-padding-fix"><a href="https://instagram.com/brainyquote" target="_blank"><i class="fa fa-instagram"></i></a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+</div>
+<div class="col-sm-2 col-md-2">
+<div class="bq_s">
+<h3>Site</h3>
+<div class="bqLn"><a href="/">Home</a></div>
+<div class="bqLn"><a href="/quotes/favorites.html">Authors</a></div>
+<div class="bqLn"><a href="/quotes/topics.html">Topics</a></div>
+<div class="bqLn"><a href="/quotes_of_the_day.html">Quote of the Day</a></div>
+<div class="bqLn"><a href="/quotes/quote_pictures.html">Pictures</a></div>
+<div class="bqLn"><a href="/profession/">Professions</a></div>
+<div class="bqLn"><a href="/birthdays/">Birthdays</a></div>
+</div>
+</div>
+<div class="col-sm-2 col-md-2">
+<div class="bq_s">
+<h3>Social</h3>
+<div class="bqLn"><a href="https://www.facebook.com/BrainyQuote" target="_blank">BQ on Facebook</a></div>
+<div class="bqLn"><a href="https://twitter.com/brainyquote" target="_blank">BQ on Twitter</a></div>
+<div class="bqLn"><a href="http://pinterest.com/brainyquote" target="_blank">BQ on Pinterest</a></div>
+<div class="bqLn"><a href="https://google.com/+brainyquotes" target="_blank">BQ on Google+</a></div>
+<div class="bqLn"><a href="https://instagram.com/brainyquote" target="_blank">BQ on Instagram</a></div>
+</div>
+</div>
+<div class="col-sm-3 col-md-3">
+<div class="bq_s">
+<h3>Apps</h3>
+<div class="bqLn"><a href="/apps/">iPhone/iPad app</a></div>
+<br>
+<h3>Quote Of The Day Feeds</h3>
+<div class="bqLn"><a href="/link/index.html">Javascript and RSS feeds</a></div>
+<div class="bqLn"><a href="/link/wordpress_plugin.html">WordPress plugin</a></div>
+<div class="bqLn"><a href="/link/email.html">Quote of the Day Email</a></div>
+</div>
+</div>
+<div class="col-sm-2 col-md-2">
+<div class="bq_s">
+<h3>About</h3>
+<div class="bqLn"><a href="/about/">About Us</a></div>
+<div class="bqLn"><a href="/about/inquire">Inquire</a></div>
+<div class="bqLn"><a href="/about/submit_quote">Submit</a></div>
+<div class="bqLn"><a href="/about/privacy">Privacy</a></div>
+<div class="bqLn"><a href="/about/terms">Terms</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="glam-ftr">
+<div class="ftr_nav small" style="vertical-align:center"><a href="/about/copyright" style="vertical-align:top">Copyright</a> &#169; 2001 - 2016 BrainyQuote</div>
+</div>
+<script type="text/javascript" src="/st/js/1568746/bq_omega_masonry.js"></script>
+<script type="text/javascript">
+        var mQL = document.getElementById('quotesList');
+        if (mQL) {
+            MASONRY_I = new Masonry(document.getElementById('quotesList'), {
+                columnWidth: 302,
+                gutterWidth: 16
+            });
+            function masonryReload() {
+                MASONRY_I.reload();
+            }
+            setTimeout(function () {
+                masonryReload();
+                
+            }, 4000);
+        }
+    </script>
+<script type="text/javascript" src="/st/js/1568746/bq_slideshow.js"></script>
+<div class="sad">
+<div style="margin: 30px auto auto auto">
+<div style="text-align:center">
+<div style="margin: 0 auto;">
+<img src="/st/img/1568746/instruct.png" alt="Disable adblock instructions" class="img-responsive">
+</div>
+<span onclick="location.reload();" class="btn btn-primary">I have di<span></span>sabled Adb<span></span>lock</span>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+
+    new BQSimpleInit(BQ_MBL, true);
+
+    
+</script>
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "http://www.brainyquote.com/",
+   "name": "BrainyQuote",
+   "alternateName": "BrainyQuote - Famous Quotes",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "http://www.brainyquote.com/search_results?q={search_term}",
+     "query-input": "required name=search_term"
+     }
+}
+</script>
+</body>
+</html>

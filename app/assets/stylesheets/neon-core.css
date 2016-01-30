@@ -5602,8 +5602,8 @@ body {
 }
 .page-container .sidebar-menu #main-menu li.has-sub > a:before {
   position: relative;
-  content: '\e877';
-  content: '\e879';
+  content: '\e760';
+  content: '\e760';
   display: inline-block;
   font-family: "Entypo";
   color: #454a54;

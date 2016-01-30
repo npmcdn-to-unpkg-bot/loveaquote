@@ -7,9 +7,9 @@ class Book < ActiveRecord::Base
     # name should be present and unique
     # slug should be present and unique
     # author should be present
-    validates :name, presence: true, uniqueness: true
-    validates :slug, presence: true, uniqueness: true
-    validates :author_id, presence: true, uniqueness: true
+    validates :name, presence: true, uniqueness: true, blank: false
+    validates :slug, presence: true, uniqueness: true, blank: false
+    validates :author_id, presence: true, uniqueness: true, blank: false
     
     before_validation :generate_slug
     after_commit :fetch_quotes
