@@ -9,8 +9,17 @@ class Quote < ActiveRecord::Base
     validates :text, presence: true, uniqueness: true
     
     after_commit :get_topic_suggestions
+    after_update :touch_source
      
     def get_topic_suggestions
         SuggestTopicsWorker.perform_async(self.id)
     end
+    
+    def touch_source
+        if self.changed?
+            self.source.touch
+            self.topics.each {|t| t.touch }
+        end
+    end
+    
 end

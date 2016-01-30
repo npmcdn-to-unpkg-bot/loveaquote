@@ -11,6 +11,9 @@ class Author < ActiveRecord::Base
     validates :name, presence: true, uniqueness: true, blank: false
     validates :slug, presence: true, uniqueness: true, blank: false
     
+    scope :published, -> {where(published: true)}
+    scope :draft, -> {where(published: false)}
+    
     before_validation :generate_slug
     after_commit :fetch_quotes
     

@@ -1,5 +1,5 @@
 <div class="col-sm-12">
-  <h2><%= @topic.name %> <%= link_to "topics", admin_topics_url, class: "btn btn-default dtn-sm" %></h2>
+  <h2><%= @topic.name %> <%= link_to "topics", admin_topics_url, class: "btn btn-default dtn-sm" %> <%= link_to "edit", edit_admin_topic_url(@topic), class: "btn btn-default dtn-sm" %></h2>
 
   <div class="panel minimal minimal-gray">
     
