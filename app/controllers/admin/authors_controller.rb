@@ -5,7 +5,7 @@ class Admin::AuthorsController < ApplicationController
   # GET /authors
   # GET /authors.json
   def index
-    @authors = Author.all.order(name: :ASC)
+    @authors = Author.all.order(name: :ASC).page params[:page]
   end
 
   # GET /authors/1

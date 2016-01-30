@@ -14,9 +14,26 @@
       <tr>
         <td><%= quote_topic_suggestion.quote.text %></td>
         <td class="text-center"><%= quote_topic_suggestion.topic.name %></td>
-        <td class="text-center">Accept</td>
-        <td class="text-center">Reject</td>
+        <td class="text-center"><%= link_to "Accept", accept_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"accept", remote: true %></td>
+        <td class="text-center"><%= link_to "Decline", decline_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"decline", remote: true %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<div class="text-center">
+  <%= paginate @quote_topic_suggestions %>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+    $(".accept").on("ajax:success", function(event, data, status, xhr) {
+      alert("it is working");
+      $(this).closest("tr").remove();
+    });
+    
+    $(".decline").on("ajax:success", function(event, data, status, xhr) {
+      $(this).closest("tr").remove();
+    });
+  });
+</script>
