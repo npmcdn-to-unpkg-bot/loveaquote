@@ -14,8 +14,8 @@
       <tr>
         <td><%= quote_topic_suggestion.quote.text %></td>
         <td class="text-center"><%= quote_topic_suggestion.topic.name %></td>
-        <td class="text-center"><%= link_to "Accept", accept_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"accept", remote: true %></td>
-        <td class="text-center"><%= link_to "Decline", decline_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"decline", remote: true %></td>
+        <td class="text-center"><%= link_to "Accept", accept_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"accept_suggestion", remote: true %></td>
+        <td class="text-center"><%= link_to "Decline", decline_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"decline_suggestion", remote: true %></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,13 +27,14 @@
 
 <script type="text/javascript">
   $(function() {
-    $(".accept").on("ajax:success", function(event, data, status, xhr) {
-      alert("it is working");
-      $(this).closest("tr").remove();
+    $(".accept_suggestion")
+    .on("ajax:complete", function(e, data, status, xhr) {
+        $(this).closest("tr").remove();
     });
-    
-    $(".decline").on("ajax:success", function(event, data, status, xhr) {
-      $(this).closest("tr").remove();
+  
+    $(".decline_suggestion")
+    .on("ajax:complete", function(e, data, status, xhr) {
+        $(this).closest("tr").remove();
     });
   });
 </script>

@@ -28,7 +28,6 @@ class Admin::TopicAliasesController < ApplicationController
   def update
     respond_to do |format|
       if @topic_alias.update(topic_params)
-        format.json { render :show, status: :ok, location: @topic }
       else
         format.json { render json: @topic_alias.errors, status: :unprocessable_entity }
       end
