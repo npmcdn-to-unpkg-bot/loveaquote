@@ -1,28 +1,30 @@
-<h2>Quote Topic Suggestions</h2>
-
-<table class="table table-striped table-bordered table-hover">
-  <thead>
-    <tr>
-      <th width="60%" class="text-center">Quote</th>
-      <th width="20%" class="text-center">Topic</th>
-      <th width="20%" class="text-center" colspan="2">Manage</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @quote_topic_suggestions.each do |quote_topic_suggestion| %>
+<div class="col-sm-12">
+  <h2>Quote Topic Suggestions</h2>
+  
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
       <tr>
-        <td><%= quote_topic_suggestion.quote.text %></td>
-        <td class="text-center"><%= quote_topic_suggestion.topic.name %></td>
-        <td class="text-center"><%= link_to "Accept", accept_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"accept_suggestion", remote: true %></td>
-        <td class="text-center"><%= link_to "Decline", decline_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"decline_suggestion", remote: true %></td>
+        <th width="60%" class="text-center">Quote</th>
+        <th width="20%" class="text-center">Topic</th>
+        <th width="20%" class="text-center" colspan="2">Manage</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<div class="text-center">
-  <%= paginate @quote_topic_suggestions %>
+    </thead>
+  
+    <tbody>
+      <% @quote_topic_suggestions.each do |quote_topic_suggestion| %>
+        <tr>
+          <td><%= quote_topic_suggestion.quote.text %></td>
+          <td class="text-center"><%= quote_topic_suggestion.topic.name %></td>
+          <td class="text-center"><%= link_to "Accept", accept_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"accept_suggestion", remote: true %></td>
+          <td class="text-center"><%= link_to "Decline", decline_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"decline_suggestion", remote: true %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <div class="text-center">
+    <%= paginate @quote_topic_suggestions %>
+  </div>
 </div>
 
 <script type="text/javascript">

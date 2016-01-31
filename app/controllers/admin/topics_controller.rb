@@ -1,11 +1,12 @@
 class Admin::TopicsController < ApplicationController
+  before_filter :authenticate_admin!
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
   layout "admin"
 
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
+    @topics = Topic.published.order(name: :ASC).page params[:page]
   end
 
   # GET /topics/1

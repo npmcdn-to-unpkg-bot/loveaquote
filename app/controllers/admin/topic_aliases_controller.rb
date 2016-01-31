@@ -1,5 +1,5 @@
 class Admin::TopicAliasesController < ApplicationController
-
+  before_filter :authenticate_admin!
   # GET /topics/new
   def new
     @topic = Topic.new

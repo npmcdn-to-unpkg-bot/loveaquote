@@ -1,11 +1,12 @@
 class Admin::BooksController < ApplicationController
+  before_filter :authenticate_admin!
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   layout "admin"
 
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all.order(name: :ASC).page params[:page]
+    @books = Book.published.order(name: :ASC).page params[:page]
   end
 
   # GET /books/1

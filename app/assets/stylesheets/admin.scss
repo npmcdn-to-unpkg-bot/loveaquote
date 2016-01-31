@@ -5,3 +5,11 @@ $icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
 @import "neon-theme";
 @import "neon-forms";
 @import "entypo";
+
+body {
+    color: #949494;
+}
+
+.login-container .main-content {
+    padding: 20px;
+}
