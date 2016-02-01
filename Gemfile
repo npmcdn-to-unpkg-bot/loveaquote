@@ -22,6 +22,7 @@ gem 'whenever', :require => false
 gem 'rack-cache'
 
 gem 'sidekiq'
+gem 'redis-namespace'
 gem 'sinatra', :require => nil
 
 gem 'devise'

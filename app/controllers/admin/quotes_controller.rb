@@ -33,7 +33,7 @@ class Admin::QuotesController < ApplicationController
     respond_to do |format|
       if @quote.update(quote_params)
         format.html { redirect_to edit_admin_quote_url(@quote), notice: 'quote was successfully updated.' }
-        format.json { render :show, status: :ok, location: @quote }
+        format.json { render json: @quote, status: :ok }
       else
         format.html { render :edit }
         format.json { render json: @quote.errors, status: :unprocessable_entity }

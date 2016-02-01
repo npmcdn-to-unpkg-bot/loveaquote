@@ -43,6 +43,10 @@
           <li><%= link_to "Quote Topic Suggestions", admin_quote_topic_suggestions_url %></li>
         </ul>
       </li>      
+
+      <li>
+        <%= link_to '<i class="e-icon-line-graph"></i><span class="title">Sidekiq</span>'.html_safe, "/admin/sidekiq", target: "_blank" %>      
+      </li>
       
       <li>
         <%= link_to '<i class="e-icon-logout"></i><span class="title">Logout</span>'.html_safe, destroy_admin_session_path, method:"delete" %>      

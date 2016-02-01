@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160131055109) do
+ActiveRecord::Schema.define(version: 20160131115346) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -58,6 +58,17 @@ ActiveRecord::Schema.define(version: 20160131055109) do
 
   add_index "books", ["author_id"], name: "index_books_on_author_id"
   add_index "books", ["slug"], name: "index_books_on_slug"
+
+  create_table "featured_topics", force: :cascade do |t|
+    t.integer  "source_id",   null: false
+    t.string   "source_type", null: false
+    t.integer  "topic_id",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "featured_topics", ["source_type", "source_id"], name: "index_featured_topics_on_source_type_and_source_id"
+  add_index "featured_topics", ["topic_id"], name: "index_featured_topics_on_topic_id"
 
   create_table "quote_topic_suggestions", force: :cascade do |t|
     t.integer  "quote_id",                   null: false

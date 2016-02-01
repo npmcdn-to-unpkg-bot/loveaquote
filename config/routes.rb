@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :quotes
     resources :authors
     resources :books  
+    resources :featured_topics
     resources :topics do
       resources :topic_aliases
     end

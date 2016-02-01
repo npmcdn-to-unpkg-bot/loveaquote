@@ -1,7 +1,8 @@
 class Author < ActiveRecord::Base
     # has many quotes
     has_many :quotes, as: :source, dependent: :destroy
-    
+    has_many :featured_topics, as: :source, dependent: :destroy
+
     # has many books
     has_many :books
     
@@ -27,5 +28,17 @@ class Author < ActiveRecord::Base
     
     def fetch_quotes
         BrainyquoteWorker.perform_async(self.id) if self.fetch_url.present? && URI::parse(self.fetch_url).host == "www.brainyquote.com"
+    end
+    
+    def asc_featured_topics
+        Topic.where(id: self.featured_topics.pluck(:topic_id)).order(name: :ASC)
+    end
+    
+    def featured_topic_quotes(featured_topic)
+        self.quotes.includes(:quote_topics).where("quote_topics.topic_id" => featured_topic.id)
+    end
+    
+    def non_featured_quotes
+        self.quotes - self.quotes.includes(:quote_topics).where(quote_topics: { topic_id: self.featured_topics.pluck(:topic_id) })
     end
 end
