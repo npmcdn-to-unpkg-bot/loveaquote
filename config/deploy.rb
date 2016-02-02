@@ -24,3 +24,4 @@ after "deploy:updating", "figaro:symlink"
 after "deploy:finishing", "deploy:restart"
 after 'deploy:finished', 'puma:nginx_config'
 after 'deploy:finished', 'puma:monit:config'
+after "deploy:finished", "deploy:sitemap:create"

@@ -33,6 +33,8 @@ gem 'cocoon'
 gem 'kaminari'
 gem 'entypo-rails'
 gem 'stringex'
+gem 'sitemap_generator'
+
 gem 'pg'
 
 group :development, :test do

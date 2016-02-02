@@ -1,0 +1,42 @@
+<footer class="footer">
+    <div class="container">
+      <div class="widgets">
+        <div class="row">
+          <div class="col-md-4">
+            <h2 class="text-center">LoveAQuote</h2>
+            <p class="text-justify">LoveAQuote is an amazing and extensive online compendium of quotes and proverbs, diligently and carefully categorised under various topics for easy reference. We have a collection of <%= Quote.count %> Quotes from <%= Author.published.count %> <%= link_to "Authors", authors_url, :title => "Author Quotes" %> categorized under <%= Topic.published.count %> <%= link_to "Topics", topics_url, :title => "Quotes by Topic" %>.</p>
+            <p class="text-center"><%= image_tag("logo.png", width: "128") %></p>
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-center">Social Media</h4>
+            <p class="text-center">
+            <%= link_to '<i class="fa fa-twitter-square fa-2x"></i>'.html_safe, "https://twitter.com/_LoveAQuote_", target: "_blank" %> 
+            <%= link_to '<i class="fa fa-facebook-square fa-2x"></i>'.html_safe, "https://www.facebook.com/pages/Loveaquote/317577581757011", target: "_blank" %>
+            <%= link_to '<i class="fa fa-pinterest-square fa-2x"></i>'.html_safe, "https://www.pinterest.com/loveaquote/", target: "_blank" %>
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h4 class="text-center">Links</h4>
+            <div class="row">
+              <div class="col-md-6">
+                <ul>
+                  <li class="text-right"><%= link_to "Home", root_url %></li>
+                  <li class="text-right"><%= link_to "Authors", authors_url %></li>
+                  <li class="text-right"><%= link_to "Topics", topics_url %></li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li class="text-left"><%= link_to "About", "#" %></li>
+                  <li class="text-left"><%= link_to "Contact", "#" %></li>
+                  <li class="text-left"><%= link_to "Terms", "#" %></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <p class="text-muted">&copy; <%= Date.today.year %>  LoveAQuote. All rights reserved.</p>
+    </div>
+</footer>

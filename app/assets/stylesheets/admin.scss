@@ -5,9 +5,11 @@ $icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
 @import "neon-theme";
 @import "neon-forms";
 @import "entypo";
+@import "fonts";
 
 body {
     color: #949494;
+    font-family: "Open Sans", sans-serif;
 }
 
 .login-container .main-content {

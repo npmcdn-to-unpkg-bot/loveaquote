@@ -1,2 +1,53 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<% content_for :title, "LoveAQuote - The Quote Lover's Community" %>
+
+<% content_for :description, "LoveAQuote is an amazing and extensive collection of quotes from famous authors, books, movies. Quotes are categorized into various topics for easy reference." %>
+
+<% content_for :keywords, "quotes,quotations,proverbs,author quotes,book quotes" %>
+
+<% content_for :canonical, root_url %>
+
+<% content_for :content do %>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="text-center">Popular Authors</h2>
+      <div class="row">
+         <% @authors.each do |authors| %>
+          <div class="col-md-6">
+            <ul>
+              <% authors.each do |author| %>
+                <li><%= link_to author.name, author_url(author), title: author.name + " Quotes" %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>     
+        <div class="col-md-12">
+          <ul>
+            <li><%= link_to "More Authors", authors_url %> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h2 class="text-center">Popular Topics</h2>
+      <div class="row">
+        <% @topics.each do |topics| %>
+          <div class="col-md-6">
+            <ul>
+              <% topics.each do |topic| %>
+                <li><%= link_to topic.name, topic_url(topic), title: topic.name + " Quotes" %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+         <div class="col-md-12">
+          <ul>
+            <li><%= link_to "More Topics", topics_url %> </li>
+          </ul>
+        </div>
+     </div>
+    </div>
+  </div>
+  
+  </div>
+<% end %>

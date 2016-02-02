@@ -10,5 +10,6 @@ require 'capistrano/puma/nginx'
 require 'capistrano/puma/monit'
 require 'capistrano/sidekiq'
 require 'capistrano/sidekiq/monit'
+require 'capistrano/sitemap_generator'
 
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
