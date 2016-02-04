@@ -1,9 +1,21 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   
-  resources :authors, only: [:index, :show]
-  resources :books, only: [:index, :show]  
-  resources :topics, only: [:index, :show]
+  resources :authors, only: [:index, :show] do
+    collection do
+      get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
+    end
+  end
+  resources :books, only: [:index, :show] do
+    collection do
+      get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
+    end  
+  end
+  resources :topics, only: [:index, :show] do
+    collection do
+      get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
+    end
+  end
     
   devise_for :admins, path: "admin", path_names: {sign_in: "login", sign_out: "logout"}, controllers: {sessions: "admin/sessions"}
   namespace :admin do

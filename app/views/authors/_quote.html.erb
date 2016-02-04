@@ -1,0 +1,29 @@
+<li>
+    <div class="quote">
+
+      <div class="quote-text">
+        <p itemprop="itemListElement"><%= quote.text %></p>
+      </div>
+
+      <div class="quote-meta">
+
+        <div class="quote-info">
+          <%= link_to quote.topics.published.first.name, topic_url(quote.topics.published.first), title: "#{quote.topics.published.first.name} Quotes" if quote.topics.published.any? %>
+        </div>
+
+        <% if current_admin %>
+          <div class="quote-admin">
+            <%= link_to '<i class="fa fa-pencil-square-o fa-lg"></i>'.html_safe, edit_admin_quote_url(quote), target: "_blank" %>
+            <%= link_to '<i class="fa fa-trash fa-lg"></i>'.html_safe, admin_quote_url(quote), method: :delete, class: "delete-quote", remote: true %>
+          </div>
+        <% end %>
+
+        <div class="social-sharing">
+          <a rel="nofollow" class="share-twitter" title="Share this quote on Twitter" target="_blank" href="https://twitter.com/intent/tweet?text=<%= CGI::escape(quote.text) %>&amp;url=<%= URI.encode(author_url(@author)) %>&amp;via=_LoveAQuote_"><i class="fa fa-twitter-square fa-lg"></i></a>
+          <a rel="nofollow" class="share-facebook" title="Share this quote on Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= URI.encode(author_url( @author)) %>"><i class="fa fa-facebook-square fa-lg"></i></a>
+        </div>
+
+      </div>
+
+    </div>
+</li>

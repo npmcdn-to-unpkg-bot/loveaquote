@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160131115346) do
+ActiveRecord::Schema.define(version: 20160203043112) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160131115346) do
     t.boolean  "very_popular", default: false, null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.string   "image"
   end
 
   add_index "authors", ["slug"], name: "index_authors_on_slug"
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(version: 20160131115346) do
     t.integer  "author_id",                    null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.string   "image"
   end
 
   add_index "books", ["author_id"], name: "index_books_on_author_id"
@@ -118,6 +120,7 @@ ActiveRecord::Schema.define(version: 20160131115346) do
     t.boolean  "published",    default: false, null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.string   "image"
   end
 
   add_index "topics", ["slug"], name: "index_topics_on_slug"

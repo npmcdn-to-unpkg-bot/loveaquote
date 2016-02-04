@@ -1,2 +1,37 @@
-<h1>Authors#show</h1>
-<p>Find me in app/views/authors/show.html.erb</p>
+<% content_for :title, "#{@author.name} Quotes" %>
+<% content_for :canonical, "#{authors_url(@author)}" %>
+<% content_for :heading, "#{@author.name} Quotes" %>
+<% if @author.image.present? %>
+  <% content_for :image_url, URI.join( root_url, @author.image.url).to_s %>
+<% end %>
+
+<% content_for :content do %>
+
+  <ul itemscope itemtype="http://schema.org/ItemList">
+    <% @author.asc_featured_topics.each do |featured_topic| %>
+    <h2 class="featured-topic-sub-heading"><%= @author.name + " Quotes on " + featured_topic.name %></h2>
+        <% @author.featured_topic_quotes(featured_topic).order(text: :ASC).each do |quote| %>
+          <%= render partial: "authors/quote", object: quote %>
+        <% end %>
+    <% end %>
+    
+    <% if @author.featured_topics.any? %>
+      <h2 class="featured-topic-sub-heading"><%= "Other Famous " + @author.name + " Quotes" %></h2>            
+    <% else %>
+      <h2 class="featured-topic-sub-heading"><%= "Famous " + @author.name + " Quotes" %></h2>
+    <% end %>
+    
+    <% @author.non_featured_quotes.each do |quote| %>
+      <%= render partial: "authors/quote", object: quote %>
+    <% end %>
+  </ul>
+
+<% end %>
+
+<% content_for :comments do %>
+  <div class="fb-comments" data-href="<%= author_url(@author) %>" data-numposts="10" data-colorscheme="light" data-width="100%"></div>
+<% end %>
+
+<% content_for :updated do %>
+  Last Updated - <time itemprop="dateModified" datetime="<%= @author.updated_at.to_datetime %>"><%= @author.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
+<% end %>

@@ -1,2 +1,55 @@
-<h1>Authors#index</h1>
-<p>Find me in app/views/authors/index.html.erb</p>
+<% content_for :title, @title %>
+
+<% content_for :canonical, @canonical %>
+
+<% content_for :heading, "Authors" %>
+
+<% content_for :content do %>
+
+  <div class="row jumps text-center">
+    <% @authors.each do |letter, authors| %>
+      <%= link_to letter, "##{letter}" %>
+    <% end %>
+  </div>
+
+
+  <% @authors.each do |letter, authors| %>
+    <div class="alphabet">
+      <a class="name" name="<%= letter %>"><%= letter %></a>
+      <% first = authors.count / 3 + authors.count % 3 %>
+      <% second = first + authors.count / 3 %>
+      <% third =  second + authors.count / 3 %>
+      <div class="row">
+        <div class="col-md-4">
+          <ul>
+            <% ( 1..first ).each do |count| %>
+              <li><%= link_to authors[count-1].name, author_url(authors[count-1]), title: authors[count-1].name + " Quotes" %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul>
+            <% ( ( first + 1 )..second ).each do |count| %>
+              <li><%= link_to authors[count-1].name, author_url(authors[count-1]), title: authors[count-1].name + " Quotes"%></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul>
+            <% ( ( second+1 )..third ).each do |count| %>
+              <li><%= link_to authors[count-1].name, author_url(authors[count-1]), title: authors[count-1].name + " Quotes" %></li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="col-md-12">
+          <ul>
+            <li><%= link_to "More ...", alphabet_authors_url(letter.upcase) %></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  <% end %>
+
+<% end %>

@@ -34,6 +34,7 @@ gem 'kaminari'
 gem 'entypo-rails'
 gem 'stringex'
 gem 'sitemap_generator'
+gem 'carrierwave'
 
 gem 'pg'
 

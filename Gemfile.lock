@@ -66,6 +66,11 @@ GEM
     capistrano3-puma (1.2.1)
       capistrano (~> 3.0)
       puma (>= 2.6)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     chronic (0.10.2)
     cocoon (1.2.6)
     coffee-rails (4.1.1)
@@ -227,6 +232,7 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano-sidekiq!
   capistrano3-puma
+  carrierwave
   cocoon
   coffee-rails (~> 4.1.0)
   devise

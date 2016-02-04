@@ -1,0 +1,36 @@
+<% content_for :title, @title %>
+
+<% content_for :canonical, @canonical %>
+
+<% content_for :heading, "Books by Alphabet #{@alphabet}" %>
+
+<% content_for :content do %>
+
+  <% first = @books.count / 3 + @books.count % 3 %>
+  <% second = first + @books.count / 3 %>
+  <% third =  second + @books.count / 3 %>
+  <div class="row">
+    <div class="col-md-4">
+      <ul>
+        <% ( 1..first ).each do |count| %>
+          <li><%= link_to @books[count-1].name, book_url(@books[count-1]) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul>
+        <% ( ( first + 1 )..second ).each do |count| %>
+          <li><%= link_to @books[count-1].name, book_url(@books[count-1]) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul>
+        <% ( ( second+1 )..third ).each do |count| %>
+          <li><%= link_to @books[count-1].name, book_url(@books[count-1]) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+<% end %>

@@ -14,6 +14,9 @@ class Book < ActiveRecord::Base
     
     scope :published, -> {where(published: true)}
     scope :draft, -> {where(published: false)}
+    scope :popular, -> { where(popular: true) }
+    scope :very_popular, -> { where(very_popular: true) }
+    scope :by_alphabet, ->(alphabet) {where('name like ?', "#{alphabet}%")}
     
     before_validation :generate_slug
     after_commit :fetch_quotes
