@@ -20,6 +20,7 @@ class Author < ActiveRecord::Base
     
     before_validation :generate_slug
     after_commit :fetch_quotes
+    after_save :add_to_time_line
     
     def to_param
         slug
@@ -43,5 +44,9 @@ class Author < ActiveRecord::Base
     
     def non_featured_quotes
         self.quotes - self.quotes.includes(:quote_topics).where(quote_topics: { topic_id: self.featured_topics.pluck(:topic_id) })
+    end
+    
+    def add_to_time_line
+        TimeLine.create(item: self) if self.published
     end
 end

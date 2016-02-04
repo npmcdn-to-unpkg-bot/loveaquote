@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203043112) do
+ActiveRecord::Schema.define(version: 20160204141148) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -102,6 +102,15 @@ ActiveRecord::Schema.define(version: 20160203043112) do
   end
 
   add_index "quotes", ["source_type", "source_id"], name: "index_quotes_on_source_type_and_source_id"
+
+  create_table "time_lines", force: :cascade do |t|
+    t.integer  "item_id",    null: false
+    t.string   "item_type",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "time_lines", ["item_type", "item_id"], name: "index_time_lines_on_item_type_and_item_id"
 
   create_table "topic_aliases", force: :cascade do |t|
     t.string   "name"

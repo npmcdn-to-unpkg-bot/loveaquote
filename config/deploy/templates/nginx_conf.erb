@@ -14,6 +14,11 @@ end
 
 server {
   listen 80;
+  server_name laq.brahmadpk.com;
+}
+
+server {
+  listen 80;
   server_name loveaquote.com;
   return 301 $scheme://www.loveaquote.com$request_uri;
 }

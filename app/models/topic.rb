@@ -17,6 +17,7 @@ class Topic < ActiveRecord::Base
 
     before_validation :generate_slug, :capitalize_name
     after_commit :get_quote_suggestions
+    after_save :add_to_time_line    
 
     def to_param
         slug
@@ -34,5 +35,9 @@ class Topic < ActiveRecord::Base
     
     def get_quote_suggestions
         SuggestTopicQuotesWorker.perform_async(self.id)
+    end
+    
+    def add_to_time_line
+        TimeLine.create(item: self) if self.published
     end
 end
