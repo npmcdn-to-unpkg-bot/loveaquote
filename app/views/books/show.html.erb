@@ -1,2 +1,37 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<% content_for :title, "#{@book.name} Quotes" %>
+<% content_for :canonical, "#{books_url(@book)}" %>
+<% content_for :heading, "#{@book.name} Quotes" %>
+<% if @book.image.present? %>
+  <% content_for :image_url, URI.join( root_url, @book.image.url).to_s %>
+<% end %>
+
+<% content_for :content do %>
+
+  <ul itemscope itemtype="http://schema.org/ItemList">
+    <% @book.asc_featured_topics.each do |featured_topic| %>
+    <h2 class="featured-topic-sub-heading"><%= @book.name + " Quotes on " + featured_topic.name %></h2>
+        <% @book.featured_topic_quotes(featured_topic).order(text: :ASC).each do |quote| %>
+          <%= render partial: "books/featured_topic_quote", locals: {quote: quote} %>
+        <% end %>
+    <% end %>
+    
+    <% if @book.featured_topics.any? %>
+      <h2 class="featured-topic-sub-heading"><%= "Other Famous " + @book.name + " Quotes" %></h2>            
+    <% else %>
+      <h2 class="featured-topic-sub-heading"><%= "Famous " + @book.name + " Quotes" %></h2>
+    <% end %>
+    
+    <% @book.non_featured_quotes.each do |quote| %>
+      <%= render partial: "books/quote", object: quote %>
+    <% end %>
+  </ul>
+
+<% end %>
+
+<% content_for :comments do %>
+  <div class="fb-comments" data-href="<%= book_url(@book) %>" data-numposts="10" data-colorscheme="light" data-width="100%"></div>
+<% end %>
+
+<% content_for :updated do %>
+  Last Updated - <time itemprop="dateModified" datetime="<%= @book.updated_at.to_datetime %>"><%= @book.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
+<% end %>

@@ -1,2 +1,17 @@
-<h1>Topics#show</h1>
-<p>Find me in app/views/topics/show.html.erb</p>
+<% content_for :content do %>
+
+  <ul>
+    <% @topic.quotes.each do |quote| %>
+        <%= render partial: "topics/quote", object: quote %>
+    <% end %>
+  </ul>
+
+<% end %>
+
+<% content_for :comments do %>
+  <div class="fb-comments" data-href="<%= topic_url(@topic) %>" data-numposts="10" data-colorscheme="light" data-width="100%"></div>
+<% end %>
+
+<% content_for :updated do %>
+  Last Updated - <time itemprop="dateModified" datetime="<%= @topic.updated_at.to_datetime %>"><%= @topic.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
+<% end %>

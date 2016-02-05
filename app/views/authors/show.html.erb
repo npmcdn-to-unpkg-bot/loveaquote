@@ -11,7 +11,7 @@
     <% @author.asc_featured_topics.each do |featured_topic| %>
     <h2 class="featured-topic-sub-heading"><%= @author.name + " Quotes on " + featured_topic.name %></h2>
         <% @author.featured_topic_quotes(featured_topic).order(text: :ASC).each do |quote| %>
-          <%= render partial: "authors/quote", object: quote %>
+          <%= render partial: "authors/featured_topic_quote", locals: {quote: quote} %>
         <% end %>
     <% end %>
     

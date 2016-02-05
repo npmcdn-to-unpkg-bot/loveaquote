@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
   end
 
   def show
+    render layout: "topic"
   end
   
   def alphabet
