@@ -14,11 +14,22 @@ class Admin::QuotesController < ApplicationController
   # POST /quotes
   # POST /quotes.json
   def create
-    @quote = quote.new(quote_params)
-
+    @quote = Quote.new()
+    @quote.text = params[:quote][:text]
+    @quote.source = Author.find(params[:quote][:author_id]) if params[:quote][:author_id].present?
+    @quote.source = Book.find(params[:quote][:book_id]) if params[:quote][:book_id].present?
+    
     respond_to do |format|
       if @quote.save
-        format.html { redirect_to admin_quotes_url, notice: 'quote was successfully created.' }
+        format.html { 
+          if params[:quote][:author_id].present?
+            redirect_to admin_author_url(Author.find(params[:quote][:author_id])), notice: 'quote was successfully created.'            
+          elsif params[:quote][:book_id].present?
+            redirect_to admin_book_url(Book.find(params[:quote][:book_id])), notice: 'quote was successfully created.'                      
+          else
+            redirect_to admin_quotes_url, notice: 'quote was successfully created.'
+          end
+        }
         format.json { render :show, status: :created, location: @quote }
       else
         format.html { render :new }
