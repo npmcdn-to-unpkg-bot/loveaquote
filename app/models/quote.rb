@@ -10,7 +10,7 @@ class Quote < ActiveRecord::Base
     # text should be present and unique
     validates :text, presence: true, uniqueness: true
     
-    after_commit :get_topic_suggestions
+    after_commit :get_topic_suggestions, on: [:create, :update]
     after_update :touch_source
      
     def get_topic_suggestions
