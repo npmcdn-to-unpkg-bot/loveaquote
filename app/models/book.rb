@@ -10,7 +10,7 @@ class Book < ActiveRecord::Base
     # author should be present
     validates :name, presence: true, uniqueness: true, blank: false
     validates :slug, presence: true, uniqueness: true, blank: false
-    validates :author_id, presence: true, uniqueness: true, blank: false
+    validates :author_id, presence: true, blank: false
     
     scope :published, -> {where(published: true)}
     scope :draft, -> {where(published: false)}
