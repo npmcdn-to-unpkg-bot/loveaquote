@@ -8,7 +8,7 @@ class Admin::SettingsController < ApplicationController
     if Setting.first.present?
       redirect_to edit_admin_setting_url(Setting.first)
     else
-      redirect_to new_admin_settings_url
+      redirect_to new_admin_setting_url
     end
   end
 
