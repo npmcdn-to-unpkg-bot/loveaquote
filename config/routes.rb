@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
   
   resources :authors, only: [:index, :show] do
     collection do
@@ -18,6 +17,12 @@ Rails.application.routes.draw do
   end
     
   devise_for :admins, path: "admin", path_names: {sign_in: "login", sign_out: "logout"}, controllers: {sessions: "admin/sessions"}
+  
+  get "/404" => "exceptions#serve_404", as: "serve_404"
+
+  get "/500" => "exceptions#serve_500"
+
+  root 'welcome#index'
   
   namespace :admin do
     root 'dashboard#index'

@@ -34,5 +34,6 @@ module Loveaquote
     ::Sass::Script::Value::Number.precision = [8, ::Sass::Script::Value::Number.precision].max
         
     config.active_record.raise_in_transactional_callbacks = true
+    config.exceptions_app = self.routes
   end
 end

@@ -18,5 +18,6 @@ class BooksController < ApplicationController
   
   def set_book
     @book = Book.find_by_slug(params[:id])
+    redirect_to serve_404_url unless @book
   end
 end

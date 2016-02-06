@@ -20,5 +20,6 @@ class AuthorsController < ApplicationController
   
   def set_author
     @author = Author.find_by_slug(params[:id])
+    redirect_to serve_404_url unless @author
   end
 end
