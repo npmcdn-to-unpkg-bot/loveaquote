@@ -1,21 +1,41 @@
 class Setting < ActiveRecord::Base
     def self.google_verification
-        self.first.google_verification || ""
+        if self.first
+            self.first.google_verification
+        else
+            ""
+        end
     end
     
     def self.bing_verification
-        self.first.bing_verification || ""
+        if self.first
+            self.first.bing_verification
+        else
+            ""
+        end
     end
     
     def self.yandex_verification
-        self.first.yandex_verification || ""
+        if self.first
+            self.first.yandex_verification
+        else
+            ""
+        end
     end
     
     def self.alexa_verification
-        self.first.alexa_verification || ""
+        if self.first
+            self.first.alexa_verification
+        else
+            ""
+        end
     end
     
     def self.google_analytics
-        self.first.google_analytics || ""
+        if self.first
+            self.first.google_analytics
+        else
+            ""
+        end
     end
 end
