@@ -19,7 +19,7 @@ class Author < ActiveRecord::Base
     scope :by_alphabet, ->(alphabet) {where('name like ?', "#{alphabet}%")}
     
     before_validation :generate_slug
-    after_commit :fetch_quotes
+    after_commit :fetch_quotes, on: :create
     after_save :add_to_time_line
     
     def to_param

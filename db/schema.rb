@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160204141148) do
+ActiveRecord::Schema.define(version: 20160206121117) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -102,6 +102,16 @@ ActiveRecord::Schema.define(version: 20160204141148) do
   end
 
   add_index "quotes", ["source_type", "source_id"], name: "index_quotes_on_source_type_and_source_id"
+
+  create_table "settings", force: :cascade do |t|
+    t.text     "google_analytics"
+    t.string   "bing_verification"
+    t.string   "alexa_verification"
+    t.string   "google_verification"
+    t.string   "yandex_verification"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "time_lines", force: :cascade do |t|
     t.integer  "item_id",    null: false

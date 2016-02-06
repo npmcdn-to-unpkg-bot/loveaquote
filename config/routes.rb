@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
     
   devise_for :admins, path: "admin", path_names: {sign_in: "login", sign_out: "logout"}, controllers: {sessions: "admin/sessions"}
+  
   namespace :admin do
     root 'dashboard#index'
     resources :quotes
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
         get 'decline', as: 'decline'
       end
     end
+    resources :settings
     require 'sidekiq/web'
     mount Sidekiq::Web => '/sidekiq'
   end

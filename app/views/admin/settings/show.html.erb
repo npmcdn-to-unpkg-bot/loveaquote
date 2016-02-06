@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Google analytics:</strong>
+  <%= @setting.google_analytics %>
+</p>
+
+<p>
+  <strong>Bing verification:</strong>
+  <%= @setting.bing_verification %>
+</p>
+
+<p>
+  <strong>Alexa verification:</strong>
+  <%= @setting.alexa_verification %>
+</p>
+
+<p>
+  <strong>Google verification:</strong>
+  <%= @setting.google_verification %>
+</p>
+
+<p>
+  <strong>Yandex verification:</strong>
+  <%= @setting.yandex_verification %>
+</p>
+
+<%= link_to 'Edit', edit_setting_path(@setting) %> |
+<%= link_to 'Back', settings_path %>

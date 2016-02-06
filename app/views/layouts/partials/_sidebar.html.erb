@@ -19,7 +19,13 @@
 
     <ul id="main-menu" class="main-menu">
       <li class="active">
-        <%= link_to '<i class="e-icon-layout"></i><span class="title">Dashboard</span>'.html_safe, admin_root_url %>
+        <a href="#"><i class="e-icon-layout"></i><span class="title">Main</span></a>
+        <ul>
+          <li><%= link_to "Dashboard", admin_root_url %></li>
+          <li><%= link_to "Frontpage", root_url, target: "_blank" %></li>          
+          <li><%= link_to "Setting", admin_settings_url %></li>
+        </ul>
+        
       </li>
       
       <li>

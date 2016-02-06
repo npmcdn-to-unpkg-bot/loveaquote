@@ -1,0 +1,23 @@
+<%= simple_form_for([:admin, @setting],
+  html: { class: 'form-horizontal' },
+  wrapper: :horizontal_form,
+  wrapper_mappings: {
+    check_boxes: :horizontal_radio_and_checkboxes,
+    radio_buttons: :horizontal_radio_and_checkboxes,
+    file: :horizontal_file_input,
+    boolean: :horizontal_boolean
+  }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :google_verification %>
+    <%= f.input :yandex_verification %>
+    <%= f.input :bing_verification %>
+    <%= f.input :alexa_verification %>
+    <%= f.input :google_analytics, input_html: {rows: "8"} %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
