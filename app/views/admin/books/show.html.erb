@@ -168,7 +168,7 @@
     $(".edit-quote").on("click", function(e) {
       e.preventDefault();
       $(".simple_form.edit_quote").attr("action", $(this).data("url"));
-      $(".edit_quote #quote_text").val($(this).parent().prev().text());
+      $(".edit_quote #quote_text").val($(this).parent().prev().prev().text());
       $("#edit-quote-modal").modal('show');
       edit_quote = $(this);
     });
@@ -176,7 +176,7 @@
     $(".simple_form.edit_quote")
     .on("ajax:complete", function(e, xhr, status, error) {
       $("#edit-quote-modal").modal('hide');
-      edit_quote.parent().prev().text((xhr.responseJSON.text));
+      edit_quote.parent().prev().prev().text((xhr.responseJSON.text));
     });
     
     $("#new_featured_topic")
