@@ -6,7 +6,7 @@ set :repo_url, 'https://github.com/brahmadpk/loveaquote.git'
 set :user, 'dpk'
 set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/uploads')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/uploads', 'public/cache')
 
 set :keep_releases, 5
 

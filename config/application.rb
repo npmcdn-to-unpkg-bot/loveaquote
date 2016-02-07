@@ -35,5 +35,7 @@ module Loveaquote
         
     config.active_record.raise_in_transactional_callbacks = true
     config.exceptions_app = self.routes
+    
+    config.action_controller.page_cache_directory = "#{Rails.root.to_s}/public/cache"
   end
 end
