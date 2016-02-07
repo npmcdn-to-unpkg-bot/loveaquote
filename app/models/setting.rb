@@ -38,4 +38,36 @@ class Setting < ActiveRecord::Base
             ""
         end
     end
+    
+    def self.facebook_url
+        if self.first
+            self.first.facebook_url
+        else
+            ""
+        end
+    end    
+    
+    def self.pinterest_url
+        if self.first
+            self.first.pinterest_url
+        else
+            ""
+        end
+    end
+    
+    def self.google_plus_url
+        if self.first
+            self.first.google_plus_url
+        else
+            ""
+        end
+    end    
+    
+    def self.twitter_url
+        if self.first
+            self.first.twitter_url
+        else
+            ""
+        end
+    end        
 end
