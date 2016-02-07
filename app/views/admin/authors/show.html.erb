@@ -1,5 +1,5 @@
 <div class="col-sm-12">
-  <h2><%= @author.name %> <%= link_to "authors", admin_authors_url, class: "btn btn-default dtn-sm" %> <%= link_to "edit", edit_admin_author_url(@author), class: "btn btn-default btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %></h2>
+  <h2><%= @author.name %> <%= link_to "view", author_url(@author), class: "btn btn-default btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_author_url(@author), class: "btn btn-default btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %> <%= link_to "authors", admin_authors_url, class: "btn btn-default btn-sm" %></h2>
   
   <div class="panel minimal minimal-gray">
     <div class="panel-heading">
