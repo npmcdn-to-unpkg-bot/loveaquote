@@ -8,7 +8,21 @@
       <div class="quote-meta">
 
         <div class="quote-info">
-          <%= link_to quote.topics.published.first.name, topic_url(quote.topics.published.first), title: "#{quote.topics.published.first.name} Quotes" if quote.topics.published.any? %>
+          <% if quote.source_type == "Author" %>
+            <% quote_author = Author.find(quote.source_id) %>
+            <% if quote_author.published %>
+              <%= link_to quote_author.name, author_url(quote_author) %>
+            <% else %>
+              <span>quote_author.name</span>
+            <% end %>
+          <% elsif quote.source_type == "Book"  %>
+            <% quote_book = Book.find(quote.source_id) %>
+            <% if quote_book.published %>
+              <%= link_to quote_book.name, book_url(quote_book) %>
+            <% else %>
+              <span>quote_book.name</span>
+            <% end %>          
+          <% end %>
         </div>
 
         <div class="social-sharing">
