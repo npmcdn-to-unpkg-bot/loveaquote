@@ -5,7 +5,8 @@ class Author < ActiveRecord::Base
 
     # has many books
     has_many :books
-    
+    has_many :book_quotes, through: :books, source: :quotes
+
     # name should be present and unique
     # slug should be present and unique
     
@@ -30,6 +31,11 @@ class Author < ActiveRecord::Base
         self.slug = (self.name + " " + "Quotes").to_url if !self.slug.present?
     end
     
+    def all_quotes
+        quotes = self.quotes.pluck(:id) + self.book_quotes.pluck(:id)
+        Quote.where(id: quotes)
+    end
+    
     def fetch_quotes
         BrainyquoteWorker.perform_async(self.id) if self.fetch_url.present? && URI::parse(self.fetch_url).host == "www.brainyquote.com"
     end
@@ -39,11 +45,11 @@ class Author < ActiveRecord::Base
     end
     
     def featured_topic_quotes(featured_topic)
-        self.quotes.includes(:quote_topics).where("quote_topics.topic_id" => featured_topic.id)
+        self.all_quotes.includes(:quote_topics).where("quote_topics.topic_id" => featured_topic.id)
     end
     
     def non_featured_quotes
-        self.quotes - self.quotes.includes(:quote_topics).where(quote_topics: { topic_id: self.featured_topics.pluck(:topic_id) })
+        self.all_quotes - self.all_quotes.includes(:quote_topics).where(quote_topics: { topic_id: self.featured_topics.pluck(:topic_id) })
     end
     
     def add_to_time_line
