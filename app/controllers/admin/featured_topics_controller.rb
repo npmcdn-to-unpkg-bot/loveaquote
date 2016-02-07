@@ -1,5 +1,6 @@
 class Admin::FeaturedTopicsController < ApplicationController
   before_filter :authenticate_admin!
+  before_action :set_featured_topic, only: [:destroy]
   # GET /topics/new
   def new
     @featured_topic = FeaturedTopic.new
@@ -41,12 +42,14 @@ class Admin::FeaturedTopicsController < ApplicationController
   # DELETE /topics/1.json
   def destroy
     @featured_topic.destroy
-    respond_to do |format|
-      format.json { head :no_content }
-    end
+    head :ok
   end
 
   private
+    def set_featured_topic
+      @featured_topic = FeaturedTopic.find(params[:id])
+    end
+    
     # Never trust parameters from the scary internet, only allow the white list through.
     def featured_topic_params
       params.require(:featured_topic).permit(:author_id, :book_id, :topic_id)

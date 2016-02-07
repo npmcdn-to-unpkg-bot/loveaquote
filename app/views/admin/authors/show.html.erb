@@ -93,7 +93,7 @@
               <h5 class="text-center">Add new</h5>
               <div id="new_featured_topic_errors"></div>
               <%= simple_form_for([:admin, FeaturedTopic.new], remote: true) do |f|%>
-                  <%= f.association :topic %>
+                  <%= f.association :topic, collection: Topic.all.order(name: :asc) %>
                   <%= f.hidden_field :author_id, value: @author.id %>
                   <%= f.button :submit, id: "new_featured_topic_submit" %>
               <% end %>
@@ -110,7 +110,7 @@
                   <% @author.featured_topics.each do |featured_topic| %>
                     <tr>
                       <td><%= Topic.find(featured_topic.topic_id).name %></td>
-                      <td class="text-center">Delete</td>
+                      <td class="text-center"><%= link_to "Delete", admin_featured_topic_path(featured_topic), method: :delete, remote: true, class: "delete_featured_topic" %></td>
                     </tr>
                   <% end %>
                 </tbody>
@@ -178,6 +178,10 @@
     });
     
     $(".delete-quote").on("ajax:complete", function(xhr, status) {
+      $(this).closest("tr").remove();
+    });
+    
+    $(".delete_featured_topic").on("ajax:complete", function(xhr, status) {
       $(this).closest("tr").remove();
     });
     
