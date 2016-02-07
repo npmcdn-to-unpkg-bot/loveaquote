@@ -1,0 +1,2400 @@
+
+<!DOCTYPE html>
+<html data-ng-app="bqApp" lang="en">
+<head>
+<meta charset="utf-8"/>
+<link rel="dns-prefetch" href="//ajax.googleapis.com">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//cf.shareasimage.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//google-analytics.com">
+<link rel="dns-prefetch" href="//googletagservices.com">
+<link rel="dns-prefetch" href="//i.po.st">
+<link rel="dns-prefetch" href="//js.bqcpu.com">
+<link rel="dns-prefetch" href="//platform.twitter.com">
+<link rel="dns-prefetch" href="//ad.doubleclick.net">
+<link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+<link rel="dns-prefetch" href="//partner.googleadservices.com">
+<link rel="dns-prefetch" href="//i.yldbt.com">
+<link rel="dns-prefetch" href="//cdn.yldbt.com">
+<link rel="dns-prefetch" href="//aka-cdn.adtechus.com">
+<link rel="dns-prefetch" href="//aka-cdn-ns.adtechus.com">
+<link rel="dns-prefetch" href="//brainyquote-d.openx.net">
+<link rel="dns-prefetch" href="//js.indexww.com">
+<link rel="dns-prefetch" href="//as.casalemedia.com/">
+<link rel="dns-prefetch" href="//c.amazon-adsystem.com">
+<link rel="dns-prefetch" href="//fls-na.amazon-adsystem.com">
+<link rel="dns-prefetch" href="//z-na.amazon-adsystem.com">
+<link rel="dns-prefetch" href="//rcm-na.amazon-adsystem.com">
+<link rel="dns-prefetch" href="//ecx.images-amazon.com">
+<link rel="dns-prefetch" href="//aax.amazon-adsystem.com/">
+<link rel="dns-prefetch" href="//ws-na.amazon-adsystem.com/">
+<link rel="dns-prefetch" href="//z-na.amazon-adsystem.com">
+<link rel="dns-prefetch" href="//rtax.criteo.com">
+<link rel="dns-prefetch" href="//dis.criteo.com">
+<link rel="dns-prefetch" href="//apex.go.sonobi.com">
+<!--[if lt IE 9]>
+<script type="text/javascript" src="/st/js/1584028/bq_old_ie.js"></script>
+<![endif]-->
+<meta name="description" content="Enjoy the best Dmitri Mendeleev Quotes at BrainyQuote. Quotations by Dmitri Mendeleev, Russian Scientist, Born February 8, 1834. Share with your friends.">
+<meta name="googlebot" content="NOODP">
+<meta property="ver" content="5.5.4:1584028">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="msapplication-config" content="none">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="ts" content="1454870203">
+<meta property="og:site_name" content="BrainyQuote">
+<meta property="og:title" content="Dmitri Mendeleev Quotes at BrainyQuote">
+<meta property="og:type" content="article">
+<meta property="og:description" content="Enjoy the best Dmitri Mendeleev Quotes at BrainyQuote. Quotations by Dmitri Mendeleev, Russian Scientist, Born February 8, 1834. Share with your friends.">
+<meta property="og:image" content="/images/fbl.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@BrainyQuote">
+<meta name="twitter:app:id:iphone" content="916307096">
+<meta name="twitter:app:id:ipad" content="916307096">
+<meta name="twitter:creator" content="@BrainyQuote">
+<meta name="twitter:title" content="Dmitri Mendeleev Quotes">
+<meta name="twitter:description" content="&quot;There exists everywhere a medium in things, determined by equilibrium.&quot; - Dmitri Mendeleev">
+<meta name="apple-itunes-app" content="app-id=916307096">
+<meta property="og:url" content="http://www.brainyquote.com/quotes/authors/d/dmitri_mendeleev.html">
+<link rel="canonical" href="http://www.brainyquote.com/quotes/authors/d/dmitri_mendeleev.html">
+<link rel="icon" href="/favicon.ico?cbv=3" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico?cbv=3" type="image/x-icon">
+<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-title" content="BrainyQuote">
+<meta name="application-name" content="BrainyQuote">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="http://mobile.brainyquote.com/quotes/authors/d/dmitri_mendeleev.html">
+<title>
+Dmitri Mendeleev Quotes
+- BrainyQuote
+</title>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="/st/js/1584028/angular_framework.js"></script>
+<script type="text/javascript">
+    JsLOG = [];
+    
+    BQ_MBL=0;
+    SHOW_MBR_ACTIONS = true;
+
+    BQ_APP = angular.module('bqApp', ['ngAnimate', 'ngCookies', 'ui.bootstrap', 'toastr', 'bqServices','bqServerErrors']);
+</script>
+<script type="text/javascript" src="/st/js/1584028/bq_angular_core.js"></script>
+<link href="/st/css/1584028/toastr.css" media="screen, print" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/st/js/1584028/bq_alpha.js"></script>
+<script type="text/javascript" src="/st/js/1584028/advert.js"></script>
+<script type="text/javascript">
+    if (typeof REV ===  "undefined") {
+        
+        REV=false;
+    }
+    RID = "1584028";
+    var ybotq = ybotq || [];
+
+    var visitType;
+
+    if (CookieUtil.isLI()) {
+        visitType = 'member';
+    }
+    else {
+        visitType = 'visitor';
+        SHOW_MBR_ACTIONS = true;
+        
+        
+    }
+    konsole.log("visitType: " + visitType);
+
+    //    Handle redirecting to HTTPS if not on our local box
+    BQRedirectToHTTPS.init();
+
+    
+    
+        var stickyAdHelper = new BQStickyAd(100, [{"div":"div-gpt-ad-1418667263920-2","within":".sticky_adzone"}]);
+        $(document).ready(function() {
+            konsole.log('making ads sticky');
+            stickyAdHelper.makeAdsSticky();
+        });
+    
+
+</script>
+<script type='text/javascript'>SLOTS={};</script>
+<script async="async" data-client-id="DxQMWtKbaKagQSL" type="text/javascript" src="//d3qxwzhswv93jk.cloudfront.net/esf.js"></script>
+<script>
+try {
+    var bqPd = CookieUtil.getPageDepth();
+    var bqMbl = 'n';
+    if (BQ_MBL) {
+        bqMbl = 'y';
+    }
+    var bkts = {};
+    
+    bkts['div-gpt-ad-1418667263920-5'] = preC('/1008298/BQ_ros_top_728x90',{'bq_mbl':bqMbl},1.14);
+    
+    bkts['div-gpt-ad-1418667263920-4'] = preC('/1008298/BQ_ros_square_300x250',{'bq_mbl':bqMbl},1.29);
+    
+    bkts['div-gpt-ad-1418667263920-3'] = preC('/1008298/BQ_ros_middle_300x250',{'bq_mbl':bqMbl},1.27);
+    
+    bkts['div-gpt-ad-1418667263920-2'] = preC('/1008298/BQ_ros_center_300x250',{'bq_mbl':bqMbl},1.29);
+    
+    bkts['div-gpt-ad-1418667263920-1'] = preC('/1008298/BQ_ros_bottom_300x250',{'bq_mbl':bqMbl},1.16);
+    
+    window.googletag = window.googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    var bqTargetCmd = bqTargetCmd || [];
+    var ybotq = ybotq || [];
+    
+    
+    
+    
+    var pf = new pubfood({
+        id: '',
+        auctionProviderCbTimeout: 2000,
+        bidProviderCbTimeout: 2000,
+        randomizeBidRequests: false
+    });
+
+    SLOTS = {};
+    var bps = [];
+    bps.push("openx");
+    bps.push("aol");
+    bps.push("indexExchange");
+    bps.push("yieldbot");
+    bps.push("sonobi");
+    
+    var bpsNoAol = bps.filter(function (bp) { return bp != 'aol'; });
+    
+
+    
+    pf.addSlot({
+        name: '/1008298/BQ_ros_top_728x90',
+        sizes: [[728, 90],[970, 250]],
+        elementId: 'div-gpt-ad-1418667263920-5',
+        bidProviders: bps
+        
+    });
+    
+    pf.addSlot({
+        name: '/1008298/BQ_ros_square_300x250',
+        sizes: [[300, 250],[1, 1]],
+        elementId: 'div-gpt-ad-1418667263920-4',
+        bidProviders: bps
+        
+    });
+    
+    pf.addSlot({
+        name: '/1008298/BQ_ros_middle_300x250',
+        sizes: [[300, 250],[1, 1]],
+        elementId: 'div-gpt-ad-1418667263920-3',
+        bidProviders: bps
+        
+    });
+    
+    pf.addSlot({
+        name: '/1008298/BQ_ros_center_300x250',
+        sizes: [[300, 250],[300, 600],[1, 1]],
+        elementId: 'div-gpt-ad-1418667263920-2',
+        bidProviders: bps
+        
+    });
+    
+    pf.addSlot({
+        name: '/1008298/BQ_ros_bottom_300x250',
+        sizes: [[300, 250],[1, 1]],
+        elementId: 'div-gpt-ad-1418667263920-1',
+        bidProviders: bps
+        
+    });
+    
+    pf.timeout(2000);
+    
+}
+catch (err) {
+    BQErrorLog.logError("ad init scr:  ", err);
+}
+</script>
+<script>
+    bqAuctionRan = false;
+    try {
+        googletag.cmd.push(function () {
+            
+            SLOTS['div-gpt-ad-1418667263920-5'] = slot = googletag.defineSlot('/1008298/BQ_ros_top_728x90', [[728, 90],[970, 250]], 'div-gpt-ad-1418667263920-5').addService(googletag.pubads());
+            
+            SLOTS['div-gpt-ad-1418667263920-4'] = slot = googletag.defineSlot('/1008298/BQ_ros_square_300x250', [[300, 250],[1, 1]], 'div-gpt-ad-1418667263920-4').addService(googletag.pubads());
+            
+            SLOTS['div-gpt-ad-1418667263920-3'] = slot = googletag.defineSlot('/1008298/BQ_ros_middle_300x250', [[300, 250],[1, 1]], 'div-gpt-ad-1418667263920-3').addService(googletag.pubads());
+            
+            SLOTS['div-gpt-ad-1418667263920-2'] = slot = googletag.defineSlot('/1008298/BQ_ros_center_300x250', [[300, 250],[300, 600],[1, 1]], 'div-gpt-ad-1418667263920-2').addService(googletag.pubads());
+            
+            SLOTS['div-gpt-ad-1418667263920-1'] = slot = googletag.defineSlot('/1008298/BQ_ros_bottom_300x250', [[300, 250],[1, 1]], 'div-gpt-ad-1418667263920-1').addService(googletag.pubads());
+            
+        });
+    }
+    catch (err) {
+            BQErrorLog.logError("define slots err ", err);
+    }
+
+    pf.setAuctionProvider({
+        name: 'Google',
+        libUri: '//www.googletagservices.com/tag/js/gpt.js',
+        init: function(targeting, done) {
+
+        try {
+            googletag.cmd.push(function () {
+                var i;
+
+                for (i = 0; i < targeting.length; i++) {
+                    var tgtObject = targeting[i];
+                    if (tgtObject.name) {
+                        var gptslot = SLOTS[tgtObject.elementId];
+                        if (!(typeof gptslot === "undefined")) {
+                            for (var p in tgtObject.targeting) {
+                                var targetVal = '' + tgtObject.targeting[p];
+                                gptslot.setTargeting(p, targetVal);
+                                
+                            }
+                        }
+                        else {
+                            konsole.log('Targeting error, no slot found for slot ' + tgtObject.elementId);
+                        }
+                    } else {
+                        for (key in tgtObject.targeting) {
+                            var targetVal = '' + tgtObject.targeting[key];
+                            
+                            googletag.pubads().setTargeting(key, targetVal);
+                        }
+                    }
+                }
+
+                
+                
+                var stickySlot = SLOTS['div-gpt-ad-1418667263920-2'];
+                if (!(typeof stickySlot === "undefined")) {
+                    if (stickyAdHelper.isStickyOn()) {
+                        stickySlot.setTargeting('format', 'sticky');
+                    }
+                }
+                else {
+                    konsole.log('Sticky ad error, no slot found for slot div-gpt-ad-1418667263920-2');
+                }
+                
+                
+
+
+                for (var bktDivId in bkts) {
+                    var gptslot = SLOTS[bktDivId];
+                    var targetVal = '' + bkts[bktDivId];
+                    gptslot.setTargeting('bq_pcr',targetVal);
+                }
+                
+                
+                    googletag.pubads().setTargeting("test_group", "atest");
+                
+                googletag.pubads().setTargeting("bq_vide", "" + bqPd);
+                
+                googletag.pubads().setTargeting("bq_ct", "a");
+                
+                googletag.pubads().setTargeting("bq_aId", "155086");
+                
+                googletag.pubads().setTargeting("bq_pg", "l");
+                
+                if (CookieUtil.hasLI()) {
+                    googletag.pubads().setTargeting('bq_m', 'y');
+                } else {
+                    googletag.pubads().setTargeting('bq_m', 'n');
+                }
+                googletag.pubads().setTargeting('bq_mbl', bqMbl);
+
+                
+                googletag.pubads().setTargeting("arch", "pf");
+
+                while (bqTargetCmd.length > 0) {
+                    (bqTargetCmd.shift())();
+                }
+                googletag.pubads().enableAsyncRendering();
+                googletag.pubads().enableSingleRequest();
+                googletag.pubads().collapseEmptyDivs();
+                googletag.enableServices();
+                bqAuctionRan = true;
+                JsLOG.push("Google auction done");
+                done();
+            });
+    }
+    catch (err) {
+        BQErrorLog.logError("google auction ", err);
+    }
+
+    },
+    refresh: function(targeting, done) {
+    }
+    });
+
+</script>
+<script type="text/javascript">
+    var OX_cmds = window.OX_cmds || [];
+    OX_cmds.push(function() {
+        try {
+            var oAR_aV, oAR;
+            if (oAR = (OX && OX.AdRequest)) {
+                OX.AdRequest = function() {
+                    oAR.apply(this, arguments);
+                    oAR_aV = this.addVariable;
+                    this.addVariable = function() {
+                        var args = arguments,
+                                key = args[0],
+                                cvWhitelist = ["topics"];
+                        if (cvWhitelist.indexOf(key) !== -1)
+                        { oAR_aV.apply(this, arguments);
+                        }
+                    }
+                };
+                OX.prototype = oAR.prototype;
+            }
+        }
+        catch (err) {
+            BQErrorLog.logError("openx error  ", err);
+        }
+    });
+
+    var openXDone = function () { };
+
+    OX_dfp_options = {
+        'callback': function() {
+            OX.dfp_bidder.setOxTargeting();
+            openXDone();
+            
+        }
+    };
+    OX_dfp_ads = []
+
+    function szAryToStrAry(szAry) {
+        var szStrAry = [];
+        for (var i = 0; i < szAry.length; i++) {
+            try {
+                szStrAry.push(szAry[i][0]+'x'+szAry[i][1]);
+            }
+            catch (err) {
+                BQErrorLog.logError("openx sz err  ", err);
+            }
+        }
+        return szStrAry;
+    }
+    
+    var szAryStr = szAryToStrAry([[728, 90],[970, 250]]);
+    OX_dfp_ads.push(['/1008298/BQ_ros_top_728x90',szAryStr,'div-gpt-ad-1418667263920-5']);
+    
+    var szAryStr = szAryToStrAry([[300, 250],[1, 1]]);
+    OX_dfp_ads.push(['/1008298/BQ_ros_square_300x250',szAryStr,'div-gpt-ad-1418667263920-4']);
+    
+    var szAryStr = szAryToStrAry([[300, 250],[1, 1]]);
+    OX_dfp_ads.push(['/1008298/BQ_ros_middle_300x250',szAryStr,'div-gpt-ad-1418667263920-3']);
+    
+    var szAryStr = szAryToStrAry([[300, 250],[300, 600],[1, 1]]);
+    OX_dfp_ads.push(['/1008298/BQ_ros_center_300x250',szAryStr,'div-gpt-ad-1418667263920-2']);
+    
+    var szAryStr = szAryToStrAry([[300, 250],[1, 1]]);
+    OX_dfp_ads.push(['/1008298/BQ_ros_bottom_300x250',szAryStr,'div-gpt-ad-1418667263920-1']);
+    
+    var useSSL = "https:" == document.location.protocol;
+    var openxurl = (useSSL ? "https:" : "http:") + "//brainyquote-d.openx.net/w/1.0/jstag?nc=1008298-brainyquote";
+
+    try {
+        pf.addBidProvider({
+            name: 'openx',
+            libUri: openxurl,
+            init: function(slots, pushBid, done) {
+                openXDone = done;
+            },
+            refresh: function(slots, pushBid, done) {
+            }
+        });
+    }
+    catch (err) {
+        BQErrorLog.logError("adding openx failed  ", err);
+    }
+</script>
+<script src="https://aka-cdn.adtechus.com/dt/common/DAC.js"></script>
+<script type="text/javascript">
+    var aolDone = function () {};
+    var aolPushBid = function (bid) {};
+    var aolSlots = [];
+    var aolDoneCount = 0;
+
+    function pubTagLibHandler(response) {
+        try {
+            if (!bqAuctionRan) {
+                aolDoneCount++;
+                var config = response.gpt;
+                var slotName = response.adContainerId;
+                var cpm = response.cpm;
+
+                if (!response.refreshed || (cpm == null && !config.slot)) {
+                    var pfSlot = 'undefined_slot';
+                    for (var k = 0; k < aolSlots.length; k++) {
+                        if (slotName == aolSlots[k].elementId) {
+                            pfSlot = aolSlots[k];
+                        }
+                    }
+                    if (cpm != null) {
+                        var aolT = {};
+                        aolT[response.bidKey] = [cpm];
+                        aolT[response.mpAliasKey] = [response.alias];
+                        var bidObject = {
+                            slot: pfSlot.name,
+                            value: cpm,
+                            sizes: pfSlot.sizes,
+                            targeting: aolT
+                        };
+                        aolPushBid(bidObject);
+                    }
+                }
+
+                if (aolDoneCount >= aolTotal) {
+                    aolDone();
+                }
+            }
+            else {
+                JsLOG.push('skipped late aol bid');
+                konsole.log('aol bid came in after auction ran');
+            }
+            
+        }
+        catch (err) {
+            JsLOG.push('error with bid response ' + response.alias + ' c:' + response.cpm);
+            
+            aolDone();
+        }
+    }
+
+    var bidRequestConfig = {
+        server: 'adserver.adtechus.com',
+        network: '10289.1',
+        bidKey: 'aolbid',
+        loadAd: pubTagLibHandler,
+        loadAdTimeout: 2000,
+        adjustment:  -20,
+        formatCpmToDecimal: false,
+        roundingConfig: [
+            {from: 0,  to: 2000, roundFunction: 'tenCentsRound'},
+            {from: 2001, to: -1, roundValue: 2000}
+        ]
+    };
+
+    JsLOG.push("aol adunit config [start]");
+    var dacBidRequestConfigs = [];
+    var isHTTPS = ('https:' == document.location.protocol);
+    
+    
+    dacBidRequestConfigs.push({
+        placement: 3762278,
+        alias: 'aol_ros_top',
+        adContainerId: 'div-gpt-ad-1418667263920-5',
+        secure: isHTTPS,
+        performScreenDetection: false,
+        gpt: {
+            adUnitPath: '/1008298/BQ_ros_top_728x90',
+            size: [728, 90]
+        }
+    });
+    
+    
+    
+    dacBidRequestConfigs.push({
+        placement: 3762283,
+        alias: 'aol_ros_square',
+        adContainerId: 'div-gpt-ad-1418667263920-4',
+        secure: isHTTPS,
+        performScreenDetection: false,
+        gpt: {
+            adUnitPath: '/1008298/BQ_ros_square_300x250',
+            size: [300, 250]
+        }
+    });
+    
+    
+    
+    dacBidRequestConfigs.push({
+        placement: 3762282,
+        alias: 'aol_ros_middle',
+        adContainerId: 'div-gpt-ad-1418667263920-3',
+        secure: isHTTPS,
+        performScreenDetection: false,
+        gpt: {
+            adUnitPath: '/1008298/BQ_ros_middle_300x250',
+            size: [300, 250]
+        }
+    });
+    
+    
+    
+    dacBidRequestConfigs.push({
+        placement: 3762279,
+        alias: 'aol_ros_center',
+        adContainerId: 'div-gpt-ad-1418667263920-2',
+        secure: isHTTPS,
+        performScreenDetection: false,
+        gpt: {
+            adUnitPath: '/1008298/BQ_ros_center_300x250',
+            size: [300, 250]
+        }
+    });
+    
+    
+    
+    dacBidRequestConfigs.push({
+        placement: 3762284,
+        alias: 'aol_ros_bottom',
+        adContainerId: 'div-gpt-ad-1418667263920-1',
+        secure: isHTTPS,
+        performScreenDetection: false,
+        gpt: {
+            adUnitPath: '/1008298/BQ_ros_bottom_300x250',
+            size: [300, 250]
+        }
+    });
+    
+    
+    aolTotal = dacBidRequestConfigs.length;
+    JsLOG.push("aol adunit config [end]");
+</script>
+<script>
+    try {
+        JsLOG.push("aol addbid [start]");
+        pf.addBidProvider({
+            name: 'aol',
+            libUri: ' ',
+            init: function(slots, pushBid, done) {
+                konsole.log('aol init start');
+                aolDone = done;
+                aolPushBid = pushBid;
+                aolSlots = slots;
+            },
+            refresh: function(slots, pushBid, done) {
+            }
+        });
+        JsLOG.push("aol addbid [end]");
+    }
+    catch (err) {
+        BQErrorLog.logError("adding aol pf failed  ", err);
+    }
+
+</script>
+<script type="text/javascript" src="/st/js/1584028/pubtaglib.js"></script>
+<script>
+    try {
+        pf.addBidProvider({
+            name: 'indexExchange',
+            libUri: ' ',
+            init: function(slots, pushBid, done) {
+
+                var onDoneIdxExch = function(){
+                    googletag.cmd.push(function() {
+                        done();
+                    });
+                };
+
+                (function () {
+                    var aplSrc = window.location.protocol === 'https:' ? 'https://js-sec.indexww.com/ht/brainyquote.js' : 'http://js.indexww.com/ht/brainyquote.js';
+                    var scriptTag = document.createElement("script");
+                    scriptTag.setAttribute("src", aplSrc);
+                    scriptTag.setAttribute("type", "text/javascript");
+                    scriptTag.onload = onDoneIdxExch;
+                    scriptTag.async = true;
+                    var firstScript = document.getElementsByTagName('script')[0];
+                    if (firstScript.parentNode)
+                    { firstScript.parentNode.insertBefore(scriptTag, firstScript); }
+                })();
+            },
+            refresh: function(slots, pushBid, done) {
+            }
+        });
+    }
+    catch (err) {
+        BQErrorLog.logError("adding ie failed  ", err);
+    }
+</script>
+<script>
+    try {
+        pf.addBidProvider({
+                    name: 'yieldbot',
+                    libUri: '//cdn.yldbt.com/js/yieldbot.intent.js',
+                    slotParams: {
+                    "/1008298/BQ_ros_top_728x90" : "BQ_ros_top_728x90",
+                    "/1008298/BQ_ros_square_300x250" : "BQ_ros_square_300x250",
+                    "/1008298/BQ_ros_middle_300x250" : "BQ_ros_middle_300x250",
+                    "/1008298/BQ_ros_center_300x250" : "BQ_ros_center_300x250",
+                    "/1008298/BQ_ros_bottom_300x250" : "BQ_ros_bottom_300x250"
+                },
+                init: function(slots, pushBid, done) {
+            try {
+                var slotMap = {};
+                var slotParams = this.slotParams;
+
+                ybotq.push(function() {
+                    var psn = 'ffd8';
+                    yieldbot.pub(psn);
+                    for (var k = 0; k < slots.length; k++) {
+                        var slot = slots[k];
+                        var ybslot = slotParams[slot.name];
+
+                        yieldbot.defineSlot(ybslot, {
+                            sizes: slot.sizes
+                        });
+                        slotMap[ybslot] = slot.name;
+                    }
+                    yieldbot.enableAsync();
+                    yieldbot.go();
+                });
+                ybotq.push(function() {
+                    var pageCriteria = yieldbot.getPageCriteria();
+                    var pageSlots = pageCriteria !== '' ? pageCriteria.split(',') : [];
+                    for (var i = 0; i < pageSlots.length; i++) {
+                        var slotInfo = pageSlots[i].split(':');
+                        var slot = slotInfo[0];
+                        var size = slotInfo[1];
+                        var bid = 0;
+                        if (slotInfo.length && slotInfo[2]) {
+                            bid = parseFloat(slotInfo[2], 10);
+                        }
+                        var sizes = size.split('x');
+                        sizes[0] = parseInt(sizes[0], 10);
+                        sizes[1] = parseInt(sizes[1], 10);
+                        // submit my bid...
+                        var bidObject = {
+                            slot: slotMap[slot] || 'undefined_slot',
+                            value: bid,
+                            sizes: sizes,
+                            targeting: {
+                                ybot_size: size,
+                                ybot_cpm: bid,
+                                ybot_ad: 'y',
+                                ybot_slot: slot
+                            }
+                        };
+                        pushBid(bidObject);
+                    }
+                    done();
+                });
+            }
+            catch (err) {
+                BQErrorLog.logError("YB error  ", err);
+            }
+        },
+        refresh: function(slots, pushBid, done) {
+        }
+    });
+    }
+    catch (err) {
+        BQErrorLog.logError("adding yb failed  ", err);
+    }
+
+</script>
+<script type='text/javascript' src='//c.amazon-adsystem.com/aax2/amzn_ads.js'></script>
+<script type='text/javascript'>
+    try {
+        amznads.getAds('3224');
+    } catch (e) { }
+</script>
+<script type='text/javascript'>
+    try {
+        amznads.setTargetingForGPTAsync('amznslots');
+    } catch (e) { }
+</script>
+<script type='text/javascript'>
+    try {
+        var crtg_nid = '4366';
+        var crtg_cookiename = 'crtg_rta';
+        var crtg_varname = 'crtg_content';
+
+        function crtg_getCookie(c_name) {
+            var i, x, y, ARRCookies = document.cookie.split(";");
+            for (i = 0; i < ARRCookies.length; i++) {
+                x = ARRCookies[i].substr(0, ARRCookies[i].indexOf("="));
+                y = ARRCookies[i].substr(ARRCookies[i].indexOf("=") + 1);
+                x = x.replace(/^\s+|\s+$/g, "");
+                if (x == c_name) {
+                    return unescape(y);
+                }
+            }
+            return '';
+        }
+
+        var crtg_content = crtg_getCookie(crtg_cookiename);
+        var crtg_rnd = Math.floor(Math.random() * 99999999999);
+        (function () {
+            var crtg_url = location.protocol + '//rtax.criteo.com/delivery/rta/rta.js?netId=' + escape(crtg_nid);
+            crtg_url += '&cookieName=' + escape(crtg_cookiename);
+            crtg_url += '&rnd=' + crtg_rnd;
+            crtg_url += '&varName=' + escape(crtg_varname);
+            var crtg_script = document.createElement('script');
+            crtg_script.type = 'text/javascript';
+            crtg_script.src = crtg_url;
+            crtg_script.async = true;
+            if (document.getElementsByTagName("head").length > 0)document.getElementsByTagName("head")[0].appendChild(crtg_script);
+            else if (document.getElementsByTagName("body").length > 0)document.getElementsByTagName("body")[0].appendChild(crtg_script);
+        })();
+    }
+    catch (err) {
+        konsole.log("ERROR: Criteo init failed; " + err.message);
+    }
+</script>
+<script>
+    bqTargetCmd.push(function() {
+        var crtg_split = (crtg_content || '').split(';');
+        var pubads = googletag.pubads();
+        for (var i=1;i<crtg_split.length;i++){
+            pubads.setTargeting("" + (crtg_split[i-1].split('='))[0] + "", "" + (crtg_split[i-1].split('='))[1] + "");
+        }
+        konsole.log('criteo targeting done processing ' + crtg_split);
+    });
+</script>
+<script type="text/javascript">
+
+    var slotsByDivs = function(slts) {
+        var slotsByDivMap = {};
+        for (var k = 0; k < slts.length; k++) {
+            slotsByDivMap[slts[k].elementId] = slts[k];
+        }
+        return slotsByDivMap
+    };
+
+    var snSlotMap = {};
+    var snPushBid = function(b) {};
+    var snDone = function() {};
+
+    try {
+        pf.addBidProvider({
+            name: 'sonobi',
+            libUri: ' ',
+            init: function(slots, pushBid, done) {
+                snSlotMap = slotsByDivs(slots);
+                snPushBid = pushBid;
+                snDone = done;
+            },
+            refresh: function(slots, pushBid, done) {
+            }
+        });
+    }
+    catch (err) {
+        BQErrorLog.logError("sonobi failed  ", err);
+    }
+
+    window.load_trinity = function (sncb) {
+        var assoc = {};
+        
+        assoc['div-gpt-ad-1418667263920-5'] ='e65b1bad2707e45213fa';
+        assoc['div-gpt-ad-1418667263920-4'] ='b973c44cfac9fdce1c6b';
+        assoc['div-gpt-ad-1418667263920-3'] ='5a3a2e1ccad49807cd41';
+        assoc['div-gpt-ad-1418667263920-2'] ='302e70c6c092223ac04e';
+        assoc['div-gpt-ad-1418667263920-1'] ='ae529ee4dc67ebf94e4d';
+
+        var sbi_script = document.createElement('script');
+        sbi_script.async = true;
+        sbi_script.type = 'text/javascript';
+        sbi_script.src = '//apex.go.sonobi.com/trinity.js?key_maker=' + JSON.stringify(assoc) + '&s=' + Math.floor(Math.random() * 1000);
+
+        if (sbi_script.readyState) {
+            sbi_script.onreadystatechange = function () {
+                if (sbi_script.readyState == "loaded" || sbi_script.readyState == "complete") {
+                    sbi_script.onreadystatechange = null;
+                    sncb();
+                }
+            };
+        } else {
+            sbi_script.onload = function () {
+                sncb();
+            };
+        }
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(sbi_script, node);
+    };
+
+    var bidCb = function(){
+        var sbiDc = window.sbi_dc;
+        if (sbiDc) {
+            var snBid = { targeting: { 'sbi_dc' : window.sbi_dc } };
+            snPushBid(snBid);
+        }
+
+        var divAry = [];
+        divAry.push('div-gpt-ad-1418667263920-5');
+        divAry.push('div-gpt-ad-1418667263920-4');
+        divAry.push('div-gpt-ad-1418667263920-3');
+        divAry.push('div-gpt-ad-1418667263920-2');
+        divAry.push('div-gpt-ad-1418667263920-1');
+        
+
+        for (var d = 0; d < divAry.length; d++) {
+            var divId = divAry[d];
+            var snSlot = snSlotMap[divId];
+            if (snSlot) {
+                var sltTgt = window.sbi_trinity[divId];
+                if (sltTgt) {
+                    var snCpm = 0.0;
+                    var snCpmVal = sltTgt['sbi_mouse'];
+                    if (!isNaN(snCpmVal)) { 
+                        snCpm = Math.floor(snCpmVal * 10.0)/10.0;
+                        snCpm = Math.min(snCpm,20.0);
+                        // Replace with this after Sonobi fixes the response
+                        //snCpm = Math.min(snCpmVal,20.0);
+                        sltTgt['sbi_mouse'] = snCpm;
+                    }
+                    snBid = { slot: snSlot.name, value: snCpm, sizes: snSlot.sizes, targeting: sltTgt };
+                    snPushBid(snBid);
+                }
+            }
+            else {
+                konsole.log("no slot found for divId",divId);
+            }
+        }
+        snDone();
+    };
+    load_trinity(bidCb);
+</script>
+<script>
+    try {
+        var now = +(new Date());
+        var onStart = function(hasErrors, details){
+            if(hasErrors){
+                throw details;
+            }else {
+                konsole.log('bqAds started without errors');
+            }
+        };
+
+        pf.start(now, onStart);
+    }
+    catch (err) {
+        BQErrorLog.logError("bqAds init error  ", err);
+    }
+</script>
+<script type="text/javascript">
+IS_MBL=0;
+CURL='/quotes/authors/d/dmitri_mendeleev';
+
+var bqId = 'UA-6252296-1';
+var grpAId = 'UA-6252296-7';
+var expGrpId = grpAId;
+
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+BQ_ABTest = true;
+BQ_ABClicks = true;
+
+ga('create', bqId, 'auto');
+ga('set', 'dimension1', visitType);
+ga('send', 'pageview');
+if (BQ_ABTest) {
+    ga('create', expGrpId, 'auto', {'name': 'exp'});
+    ga('exp.set', 'dimension1', visitType);
+    ga('exp.send', 'pageview');
+}
+
+
+</script>
+<link href="//cf.shareasimage.com/static/app/css/publisher.css" type="text/css" rel="stylesheet">
+<script type="text/javascript">
+    if (window!=top){top.location.href=location.href;};
+    
+    setTimeout(function(){
+                BQPostInit.init(BQ_MBL, false);
+        }, 200
+    );
+
+</script>
+<script type="text/javascript">
+ BQCookieNotice.init(BQ_MBL);
+</script>
+<meta name="robots" content="all">
+<link href="/st/css/1584028/ws_core_msnry.css" media="screen, print" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/st/js/1584028/bq_content_page.js"></script>
+<!--[if IE 8]>
+    <style>
+        #bq-sm-nav-bar { display:none; }
+        .navbar-nav { margin: 0px !important; }
+        .navbar-form, .form-group { border: 0px !important; }
+        #wowslider-container1 .ws-title div .bq-slide-q-text { font-size: 16px; }
+    </style>
+<![endif]-->
+<!--[if lte IE 9]>
+<script>BQ_OLD_IE = true;</script>
+<![endif]-->
+<link href="/st/css/1584028/exp.css" media="screen, print" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/st/js/1584028/bq_ga_event.js"></script>
+</head>
+<body class=" is-dsk"><script type="text/javascript">
+//<![CDATA[
+try{(function(a){var b="http://",c="www.brainyquote.com",d="/cdn-cgi/cl/",e="img.gif",f=new a;f.src=[b,c,d,e].join("")})(Image)}catch(e){}
+//]]>
+</script>
+<div align="center">
+ 
+<div id='div-gpt-ad-1418667263920-5' class="bq_ad_90min bqAdCollapse ">
+<script type="text/javascript">
+		
+		
+		// Load AOL ad - some divs won't have an aol placement
+		window.ADTECH.loadPubAd('aol_ros_top');
+		
+
+		pf.observe('AUCTION_POST_RUN', function() {
+			googletag.cmd.push(function () {
+				
+				googletag.display('div-gpt-ad-1418667263920-5');
+			})
+		});
+	</script>
+</div>
+</div>
+<script type="application/javascript">
+    $(function() {
+        $("#screenSize").text($(window).width());
+        $(window).resize(function (ev) {
+            $("#screenSize").text($(window).width());
+            return true;
+        }); // load everything else if the window is resized
+    });
+</script>
+<div data-ng-controller="NavBarCtrl">
+<nav class="visible-xs bq-tnav navbar navbar-default">
+<div class="container bq-full-width-sm" style="height:37px">
+<div class="navbar-header">
+<div style="position:relative;top:1px;text-align:center">
+<a class="brand" style="padding:0px 5px 0px 5px; color:white" href="/"><span class="bqDesktopLogo"></span></a>
+<button type="button" class="navbar-toggle bq-nav-dd-btn visible-xs" style="position:absolute;top:1px;right:3px" data-ng-show="showMemberActions()" data-ng-init="navBQCollapsed = true" data-ng-click="toggleNavBQCollapsed()">
+<span class="sr-only">Toggle My BrainyQuote</span>
+<i class="fa fa-user"></i><span class="caret"></span>
+</button>
+</div>
+</div>
+</div>
+<div class="ng-cloak" data-ng-show="showMemberActions()" data-ng-class="myBQnavBarWrapperClass()">
+<div class="collapse data-ng-cloak navbar-collapse hidden-sm" style="margin-top:6px; padding-top:6px" data-ng-class="myBQnavBarClass()" data-ng-click="navBQCollapsed=true">
+<ul class="nav data-ng-cloak navbar-nav hidden-sm">
+<li class="bq-ni visible-xs" data-ng-show="showLogin()"><a href="/signup?utm_source=brainyquote&utm_medium=menubar&utm_campaign=membership" class="txnav">Sign Up</a></li>
+<li class="bq-ni visible-xs" data-ng-show="showLogin()"><a href="#" class="txnav" data-ng-click="loginClicked()">Login</a></li>
+<li class="bq-ni visible-xs" data-ng-show="!showLogin()"><a href="{{getMyFavoritesUrl()}}" class="txnav" rel="nofollow">Favorites</a></li>
+<li class="bq-ni visible-xs" data-ng-show="!showLogin()"><a href="{{getMyCollectionsUrl()}}" class="txnav" rel="nofollow">Collections</a></li>
+<li class="bq-ni visible-xs" data-ng-show="!showLogin()"><a href="/users/my/account" class="txnav" rel="nofollow">Settings</a></li>
+<li><div class="visible-xs bq-tnav-divider" data-ng-show="!showLogin()"></div></li>
+<li class="bq-ni visible-xs" data-ng-show="!showLogin()"><a href="#" class="txnav" data-ng-click="logoutClicked()">Logout</a></li>
+</ul>
+</div>
+</div>
+</nav>
+ 
+<nav id="bq-tn-id" class="bq-tnav navbar navbar-default bq-cookie-notice">
+<div class="hidden-xs container bq-full-width-sm">
+<div class="navbar-header">
+<button type="button" class="bq-nav-menu bq-main-menu navbar-toggle bq-nav-dd-btn hidden" data-ng-init="navCollapsed = true" data-ng-click="toggleNavCollapsed()">
+<span class="sr-only">Toggle menu</span>
+<i class="fa fa-bars"></i>
+</button>
+<button type="button" class="navbar-toggle bq-nav-dd-btn visible-xs" data-ng-show="showMemberActions()" data-ng-init="navBQCollapsed = true" data-ng-click="toggleNavBQCollapsed()">
+<span class="sr-only">Toggle My BrainyQuote</span>
+<i class="fa fa-user"></i><span class="caret"></span>
+</button>
+<a class="bq-tnav-btn visible-xs" style="" href="/search.html"><span class="fa fa-search fa-fw"></span></a>
+<a class="brand" style="padding:0px 5px 0px 5px; color:white" href="/"><span class="bqDesktopLogo"></span></a>
+</div>
+<div class="ng-cloak" data-ng-show="showMemberActions()" data-ng-class="myBQnavBarWrapperClass()">
+<div class="collapse data-ng-cloak navbar-collapse hidden-sm" data-ng-class="myBQnavBarClass()" data-ng-click="navBQCollapsed=true">
+<ul class="nav data-ng-cloak navbar-nav hidden-sm">
+<li class="bq-ni visible-xs" data-ng-show="showLogin()"><a href="/signup?utm_source=brainyquote&utm_medium=menubar&utm_campaign=membership" class="txnav">Sign Up</a></li>
+<li class="bq-ni visible-xs" data-ng-show="showLogin()"><a href="#" class="txnav" data-ng-click="loginClicked()">Login</a></li>
+<li class="bq-ni visible-xs" data-ng-show="!showLogin()"><a href="{{getMyFavoritesUrl()}}" class="txnav" rel="nofollow">Favorites</a></li>
+<li class="bq-ni visible-xs" data-ng-show="!showLogin()"><a href="{{getMyCollectionsUrl()}}" class="txnav" rel="nofollow">Collections</a></li>
+<li class="bq-ni visible-xs" data-ng-show="!showLogin()"><a href="/users/my/account" class="txnav" rel="nofollow">Settings</a></li>
+<li><div class="visible-xs bq-tnav-divider" data-ng-show="!showLogin()"></div></li>
+<li class="bq-ni visible-xs" data-ng-show="!showLogin()"><a href="#" class="txnav" data-ng-click="logoutClicked()">Logout</a></li>
+</ul>
+</div>
+</div>
+<div class="collapse data-ng-cloak navbar-collapse" data-ng-class="navBarClass()" data-ng-click="navCollapsed=true">
+<ul class="nav navbar-nav">
+<li class="bq-ni hidden-xs bq-nav-large" id="sl-bq-nav-home-t"><a href="/" class="txnav">Home</a></li>
+<li class="bq-ni  active"><a href="/quotes/favorites.html" class="txnav">Authors</a></li>
+<li class="bq-ni"><a href="/quotes/topics.html" class="txnav">Topics</a></li>
+<li class="bq-ni"><a href="/quotes_of_the_day.html" class="txnav">Quote of the Day</a></li>
+<li class="bq-ni"><a href="/quotes/quote_pictures.html" class="txnav">Pictures</a></li>
+<li><div class="visible-xs bq-tnav-divider"></div></li>
+<li class="bq-ni visible-xs"><a href="/profession/" class="txnav visible-xs">Professions</a></li>
+<li class="bq-ni visible-xs"><a href="/birthdays/" class="txnav visible-xs">Birthdays</a></li>
+<li><div class="visible-xs bq-tnav-divider"></div></li>
+<li class="bq-ni visible-xs"><a href="/apps/" class="txnav visible-xs">iPhone/iPad App</a></li>
+<li><div class="visible-xs bq-tnav-divider"></div></li>
+<li class="bq-ni visible-xs"><a href="/search.html" class="txnav">Search</a></li>
+</ul>
+<ul class="nav data-ng-cloak navbar-nav navbar-right">
+<li class="bq-nav-small hidden-xs"><a href="/search.html"><span class="fa fa-search fa-fw"></span>
+</a>
+</li>
+<li>
+<form action="/search_results.html" class="navbar-form navbar-left bq-nav-large no-border bq-no-print navbar-left form-search" style="padding-left:8px;margin-top:5px">
+<div class="form-group bq-search">
+<input type="submit" class="s-btn fa-input fa fa-search" value="&#xf002;">
+<input type="text" id="bq-search-input" placeholder="search" maxlength="80" name="q" class="s-fld-t input-medium search-query s-small" value=""/>
+</div>
+</form>
+</li>
+<li data-ng-show="showMemberIfLoggedOut()" class="ng-cloak hidden-xs"><a href="/signup?utm_source=brainyquote&utm_medium=menubar&utm_campaign=membership">Sign Up</a></li>
+<li data-ng-show="showMemberIfLoggedOut()" class="ng-cloak hidden-xs" style="padding-right:10px"><p class="navbar-btn"><a type="submit" class="pointerCursor btn btn-default bq-navb-btn" data-ng-click="loginClicked()">Login</a></p></li>
+<li class="dropdown ng-cloak hidden-xs" dropdown data-ng-show="showMemberIfLoggedIn()">
+<a rel="nofollow" href="{{getMyFavoritesUrl()}}" dropdown-toggle class="dropdown-toggle" data-ng-click="myBQMenuClicked()" data-toggle="dropdown" role="button" aria-expanded="false">
+<i class="bq-nav-small fa fa-user"></i>
+<span class="bq-nav-large">My BrainyQuote</span>
+<span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a rel="nofollow" href="{{getMyFavoritesUrl()}}"><i class="fa fa-heart"></i> Favorites</a></li>
+<li><a rel="nofollow" href="{{getMyCollectionsUrl()}}"><i class="fa fa-plus-square-o" style="display:inline-block; width:14px"></i> Collections</a></li>
+<li class="divider">&nbsp;</li>
+<li><a rel="nofollow" href="/users/my/account"><i class="fa fa-cog"></i> Account Settings</a></li>
+<li><a class="pointerCursor" data-ng-click="logoutClicked()"><i class="fa fa-sign-out"></i> Logout</a></li>
+</ul>
+</li>
+</ul>
+</div> 
+</div> 
+<div class="visible-xs s-nav-bar-blue">
+<table class="tbl_c" style="width:100%;">
+<tr>
+<td>
+<div>
+<form action="/search_results.html" style="margin-top:10px" class="form-search s-blue-form-xs">
+<div class="bq-search">
+<img src="/st/img/1584028/pin_ftr_r.png" alt="Favorite" class="bqSearchPinIcon">
+<input type="text" id="qbluei" placeholder="Search for quotes" maxlength="120" name="q" class="s-fld input-medium search-query s-blue s-mwide" value=""/>
+<input type="submit" class="s-btn fa-input fa fa-search" style="left:auto; top:6px; right:5px" value="&#xf002;">
+</div>
+</form>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="bq-submenu visible-xs">
+<nav id="bq-submenu-nav" class="navbar navbar-default">
+<div style="padding-left:0px; padding-right:0px" class="container nav-mobile">
+<div>
+<ul id="bq-submenu-navbar-nav" class="nav navbar-nav navbar-left" style="float:none; margin: 0 auto; display: table; table-layout: fixed;">
+<li class="bq-ni  active"><a href="/quotes/favorites.html" class="subi txnav">Authors</a></li>
+<li class="bq-ni"><a href="/quotes/topics.html" class="subi txnav">Topics</a></li>
+<li class="bq-ni"><a href="/quotes/quote_pictures.html" class="subi txnav">Pictures</a></li>
+<li class="bq-ni"><a href="/quotes_of_the_day.html" class="subi txnav">Quote of the Day</a></li>
+</ul>
+</div> 
+</div>
+</nav>
+</div>
+</nav>
+</div>
+<div class="visible-xs">
+<div style="height:40px"></div>
+</div>
+<div class="visible-xs">
+<div style="height:18px"></div>
+</div>
+<div class="letter-navbar qs-blk" style="text-align: center; letter-spacing: 2px">
+<span class="body bq-tn-letters"> <span id="bq-auth-lbl" class="bq-tn-wrap">Authors:</span>
+<span class="bq-tn-wrap">
+<a href="/authors/a">A</a>
+<a href="/authors/b">B</a>
+<a href="/authors/c">C</a>
+<a href="/authors/d">D</a>
+<a href="/authors/e">E</a>
+<a href="/authors/f">F</a>
+<a href="/authors/g">G</a>
+<a href="/authors/h">H</a>
+<a href="/authors/i">I</a>
+<a href="/authors/j">J</a>
+<a href="/authors/k">K</a>
+<a href="/authors/l">L</a>
+<a href="/authors/m">M</a>
+</span>
+<span class="bq-tn-wrap">
+<a href="/authors/n">N</a>
+<a href="/authors/o">O</a>
+<a href="/authors/p">P</a>
+<a href="/authors/q">Q</a>
+<a href="/authors/r">R</a>
+<a href="/authors/s">S</a>
+<a href="/authors/t">T</a>
+<a href="/authors/u">U</a>
+<a href="/authors/v">V</a>
+<a href="/authors/w">W</a>
+<a href="/authors/x">X</a>
+<a href="/authors/y">Y</a>
+<a href="/authors/z">Z</a>
+</span>
+</span>
+</div>
+<noscript>
+<div class="bqLn">
+<table class="container" style="background-color: yellow">
+<tr>
+<td valign="top"><img src="/images/silk/exclamation.png" alt="!">
+</td>
+<td><b>Please enable Javascript</b><br>
+This site requires Javascript be enabled to provide you the best experience. Some features may not be available with
+Javascript disabled!
+</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</div>
+</noscript>
+<div class="bq_center" style="margin-left:-8px; margin-right:-8px;">
+<div class="reflow_body bq_left">
+<div class="reflow_container">
+<div class="masonry_hf">
+<div class="container-fluid">
+<div class="row" style="padding: 5px 0px 0px 0px;">
+<div class="clearfix">
+<h1 class="pull-left quoteListH1" style="padding-right:20px">Dmitri Mendeleev Quotes
+</h1>
+<div class="pull-left hidden-xs" style="height:30px">
+<div class="share-btns-msnry" style="display: inline-block; width:530px; position:relative; top:5px">
+<div class="miniVertSep hidden-sm"></div>
+<div class="post_angle_btns shareSpacingClass ">
+<div class="pw-widget" style="width: 496px;margin: auto;">
+<a class="pw-btn-l pw-button-facebook"></a>
+<b class="pw-box-counter" data-channel="facebook"></b>
+<a class="pw-btn-l pw-button-twitter"></a>
+<b class="pw-box-counter" data-channel="twitter"></b>
+<a class="pw-btn-l pw-button-googleplus"></a>
+<b class="pw-box-counter" data-channel="googleplus"></b>
+<a class="pw-btn-l pw-button-linkedin"></a>
+<b class="pw-box-counter" data-channel="linkedin"></b>
+<a class="pw-btn-l pw-button-post"></a>
+<b class="pw-box-counter" data-channel="post"></b>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="" style="height:1px; padding-bottom:19px; border-bottom:1px solid #e0e0e0"></div>
+</div>
+</div>
+<div id="ss-controller-id" data-ng-controller="ShowFavoritesCtrl" data-ng-init="initSFC()">
+<div class="clearfix m_panel sticky_adzone">
+<div class="masonryQtColumn">
+<div class="quote-nav-msnry ">
+<div class="container-fluid" style="padding-top:15px; padding-bottom: 5px">
+<div class="row">
+<div class="qt-grid-list" style="float:right;height:30px;margin-right:10px">
+<ul class="nav pull-right bqViewCtrls "><li><div class="btn-group btn-group-sm"><a class="btn bqGridListBtn btn-default btn-success" role="group" href="#"><i class="fa fa-th"></i></a><a class="btn bqGridListBtn btn-default" role="group" href="/quotes/authors/d/dmitri_mendeleev.html?SPvm=1&amp;vm=l"><i class="fa fa-bars"></i></a>
+</div></li></ul>
+</div>
+<div style="margin-left:8px">
+</div>
+</div>
+</div>
+</div>
+<div class="">
+<div id="quotesList" data-sai-includehighlight="true" class="">
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304389" title="view quote" href="/quotes/quotes/d/dmitrimend304389.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304389','1')">There exists everywhere a medium in things, determined by equilibrium.</a></span><br>
+<div class="bq-aut"><a class="qa_304389" title="view quote" href="/quotes/quotes/d/dmitrimend304389.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view keyword" href="/quotes/keywords/everywhere.html" onclick="kCl('/quotes/quotes/d/dmitrimend304389','/quotes/keywords/everywhere','0',0)">Everywhere</a>,
+<a title="view keyword" href="/quotes/keywords/exists.html" onclick="kCl('/quotes/quotes/d/dmitrimend304389','/quotes/keywords/exists','1',0)">Exists</a>,
+<a title="view keyword" href="/quotes/keywords/medium.html" onclick="kCl('/quotes/quotes/d/dmitrimend304389','/quotes/keywords/medium','2',0)">Medium</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304389)" data-ng-class="favCssClass(304389)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304389','1')"></span><span data-ng-click="onAddToCollectionClicked(304389)" data-ng-class="collectionCssClass(304389)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304389','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304389?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304389?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304384" title="view quote" href="/quotes/quotes/d/dmitrimend304384.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304384','1')">The elements, if arranged according to their atomic weights, exhibit an apparent periodicity of properties.</a></span><br>
+<div class="bq-aut"><a class="qa_304384" title="view quote" href="/quotes/quotes/d/dmitrimend304384.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view keyword" href="/quotes/keywords/according.html" onclick="kCl('/quotes/quotes/d/dmitrimend304384','/quotes/keywords/according','0',0)">According</a>,
+<a title="view keyword" href="/quotes/keywords/elements.html" onclick="kCl('/quotes/quotes/d/dmitrimend304384','/quotes/keywords/elements','1',0)">Elements</a>,
+<a title="view keyword" href="/quotes/keywords/atomic.html" onclick="kCl('/quotes/quotes/d/dmitrimend304384','/quotes/keywords/atomic','2',0)">Atomic</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304384)" data-ng-class="favCssClass(304384)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304384','1')"></span><span data-ng-click="onAddToCollectionClicked(304384)" data-ng-class="collectionCssClass(304384)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304384','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304384?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304384?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304393" title="view quote" href="/quotes/quotes/d/dmitrimend304393.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304393','1')">Work, look for peace and calm in work: you will find it nowhere else.</a></span><br>
+<div class="bq-aut"><a class="qa_304393" title="view quote" href="/quotes/quotes/d/dmitrimend304393.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_work.html" onclick="kCl('/quotes/quotes/d/dmitrimend304393','/quotes/topics/topic_work','0',0)">Work</a>,
+<a title="view topic" href="/quotes/topics/topic_peace.html" onclick="kCl('/quotes/quotes/d/dmitrimend304393','/quotes/topics/topic_peace','1',0)">Peace</a>,
+<a title="view keyword" href="/quotes/keywords/calm.html" onclick="kCl('/quotes/quotes/d/dmitrimend304393','/quotes/keywords/calm','2',0)">Calm</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304393)" data-ng-class="favCssClass(304393)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304393','1')"></span><span data-ng-click="onAddToCollectionClicked(304393)" data-ng-class="collectionCssClass(304393)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304393','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304393?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304393?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304377" title="view quote" href="/quotes/quotes/d/dmitrimend304377.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304377','1')">It is the function of science to discover the existence of a general reign of order in nature and to find the causes governing this order. And this refers in equal measure to the relations of man - social and political - and to the entire universe as a whole.</a></span><br>
+<div class="bq-aut"><a class="qa_304377" title="view quote" href="/quotes/quotes/d/dmitrimend304377.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_nature.html" onclick="kCl('/quotes/quotes/d/dmitrimend304377','/quotes/topics/topic_nature','0',0)">Nature</a>,
+<a title="view topic" href="/quotes/topics/topic_science.html" onclick="kCl('/quotes/quotes/d/dmitrimend304377','/quotes/topics/topic_science','1',0)">Science</a>,
+<a title="view keyword" href="/quotes/keywords/political.html" onclick="kCl('/quotes/quotes/d/dmitrimend304377','/quotes/keywords/political','2',0)">Political</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304377)" data-ng-class="favCssClass(304377)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304377','1')"></span><span data-ng-click="onAddToCollectionClicked(304377)" data-ng-class="collectionCssClass(304377)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304377','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304377?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304377?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304391" title="view quote" href="/quotes/quotes/d/dmitrimend304391.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304391','1')">We could live at the present day without a Plato, but a double number of Newtons is required to discover the secrets of nature, and to bring life into harmony with the laws of nature.</a></span><br>
+<div class="bq-aut"><a class="qa_304391" title="view quote" href="/quotes/quotes/d/dmitrimend304391.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_life.html" onclick="kCl('/quotes/quotes/d/dmitrimend304391','/quotes/topics/topic_life','0',0)">Life</a>,
+<a title="view topic" href="/quotes/topics/topic_nature.html" onclick="kCl('/quotes/quotes/d/dmitrimend304391','/quotes/topics/topic_nature','1',0)">Nature</a>,
+<a title="view keyword" href="/quotes/keywords/bring.html" onclick="kCl('/quotes/quotes/d/dmitrimend304391','/quotes/keywords/bring','2',0)">Bring</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304391)" data-ng-class="favCssClass(304391)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304391','1')"></span><span data-ng-click="onAddToCollectionClicked(304391)" data-ng-class="collectionCssClass(304391)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304391','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304391?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304391?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304383" title="view quote" href="/quotes/quotes/d/dmitrimend304383.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304383','1')">The elements which are the most widely diffused have small atomic weights.</a></span><br>
+<div class="bq-aut"><a class="qa_304383" title="view quote" href="/quotes/quotes/d/dmitrimend304383.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view keyword" href="/quotes/keywords/small.html" onclick="kCl('/quotes/quotes/d/dmitrimend304383','/quotes/keywords/small','0',0)">Small</a>,
+<a title="view keyword" href="/quotes/keywords/elements.html" onclick="kCl('/quotes/quotes/d/dmitrimend304383','/quotes/keywords/elements','1',0)">Elements</a>,
+<a title="view keyword" href="/quotes/keywords/atomic.html" onclick="kCl('/quotes/quotes/d/dmitrimend304383','/quotes/keywords/atomic','2',0)">Atomic</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304383)" data-ng-class="favCssClass(304383)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304383','1')"></span><span data-ng-click="onAddToCollectionClicked(304383)" data-ng-class="collectionCssClass(304383)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304383','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304383?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304383?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304376" title="view quote" href="/quotes/quotes/d/dmitrimend304376.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304376','1')">I want you to have this feeling too - it is my moral responsibility to help you achieve this inner freedom.</a></span><br>
+<div class="bq-aut"><a class="qa_304376" title="view quote" href="/quotes/quotes/d/dmitrimend304376.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_freedom.html" onclick="kCl('/quotes/quotes/d/dmitrimend304376','/quotes/topics/topic_freedom','0',0)">Freedom</a>,
+<a title="view keyword" href="/quotes/keywords/help.html" onclick="kCl('/quotes/quotes/d/dmitrimend304376','/quotes/keywords/help','1',0)">Help</a>,
+<a title="view keyword" href="/quotes/keywords/feeling.html" onclick="kCl('/quotes/quotes/d/dmitrimend304376','/quotes/keywords/feeling','2',0)">Feeling</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304376)" data-ng-class="favCssClass(304376)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304376','1')"></span><span data-ng-click="onAddToCollectionClicked(304376)" data-ng-class="collectionCssClass(304376)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304376','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304376?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304376?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304386" title="view quote" href="/quotes/quotes/d/dmitrimend304386.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304386','1')">The magnitude of the atomic weight determines the character of the element, just as the magnitude of the molecule determines the character of a compound body.</a></span><br>
+<div class="bq-aut"><a class="qa_304386" title="view quote" href="/quotes/quotes/d/dmitrimend304386.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view keyword" href="/quotes/keywords/character.html" onclick="kCl('/quotes/quotes/d/dmitrimend304386','/quotes/keywords/character','0',0)">Character</a>,
+<a title="view keyword" href="/quotes/keywords/body.html" onclick="kCl('/quotes/quotes/d/dmitrimend304386','/quotes/keywords/body','1',0)">Body</a>,
+<a title="view keyword" href="/quotes/keywords/weight.html" onclick="kCl('/quotes/quotes/d/dmitrimend304386','/quotes/keywords/weight','2',0)">Weight</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304386)" data-ng-class="favCssClass(304386)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304386','1')"></span><span data-ng-click="onAddToCollectionClicked(304386)" data-ng-class="collectionCssClass(304386)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304386','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304386?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304386?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304375" title="view quote" href="/quotes/quotes/d/dmitrimend304375.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304375','1')">I have achieved an inner freedom.</a></span><br>
+<div class="bq-aut"><a class="qa_304375" title="view quote" href="/quotes/quotes/d/dmitrimend304375.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_freedom.html" onclick="kCl('/quotes/quotes/d/dmitrimend304375','/quotes/topics/topic_freedom','0',0)">Freedom</a>,
+<a title="view keyword" href="/quotes/keywords/inner.html" onclick="kCl('/quotes/quotes/d/dmitrimend304375','/quotes/keywords/inner','1',0)">Inner</a>,
+<a title="view keyword" href="/quotes/keywords/achieved.html" onclick="kCl('/quotes/quotes/d/dmitrimend304375','/quotes/keywords/achieved','2',0)">Achieved</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304375)" data-ng-class="favCssClass(304375)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304375','1')"></span><span data-ng-click="onAddToCollectionClicked(304375)" data-ng-class="collectionCssClass(304375)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304375','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304375?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304375?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304390" title="view quote" href="/quotes/quotes/d/dmitrimend304390.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304390','1')">There is nothing in this world that I fear to say.</a></span><br>
+<div class="bq-aut"><a class="qa_304390" title="view quote" href="/quotes/quotes/d/dmitrimend304390.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_fear.html" onclick="kCl('/quotes/quotes/d/dmitrimend304390','/quotes/topics/topic_fear','0',0)">Fear</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304390)" data-ng-class="favCssClass(304390)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304390','1')"></span><span data-ng-click="onAddToCollectionClicked(304390)" data-ng-class="collectionCssClass(304390)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304390','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304390?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304390?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304380" title="view quote" href="/quotes/quotes/d/dmitrimend304380.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304380','1')">Pleasures flit by - they are only for yourself; work leaves a mark of long-lasting joy, work is for others.</a></span><br>
+<div class="bq-aut"><a class="qa_304380" title="view quote" href="/quotes/quotes/d/dmitrimend304380.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_work.html" onclick="kCl('/quotes/quotes/d/dmitrimend304380','/quotes/topics/topic_work','0',0)">Work</a>,
+<a title="view keyword" href="/quotes/keywords/others.html" onclick="kCl('/quotes/quotes/d/dmitrimend304380','/quotes/keywords/others','1',0)">Others</a>,
+<a title="view keyword" href="/quotes/keywords/joy.html" onclick="kCl('/quotes/quotes/d/dmitrimend304380','/quotes/keywords/joy','2',0)">Joy</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304380)" data-ng-class="favCssClass(304380)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304380','1')"></span><span data-ng-click="onAddToCollectionClicked(304380)" data-ng-class="collectionCssClass(304380)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304380','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304380?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304380?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304379" title="view quote" href="/quotes/quotes/d/dmitrimend304379.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304379','1')">No one nor anything can silence me.</a></span><br>
+<div class="bq-aut"><a class="qa_304379" title="view quote" href="/quotes/quotes/d/dmitrimend304379.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view keyword" href="/quotes/keywords/silence.html" onclick="kCl('/quotes/quotes/d/dmitrimend304379','/quotes/keywords/silence','0',0)">Silence</a>,
+<a title="view keyword" href="/quotes/keywords/nor.html" onclick="kCl('/quotes/quotes/d/dmitrimend304379','/quotes/keywords/nor','1',0)">Nor</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304379)" data-ng-class="favCssClass(304379)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304379','1')"></span><span data-ng-click="onAddToCollectionClicked(304379)" data-ng-class="collectionCssClass(304379)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304379','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304379?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304379?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304373" title="view quote" href="/quotes/quotes/d/dmitrimend304373.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304373','1')">Elements which are similar as regards their chemical properties have atomic weights which are either of nearly the same value (eg. Pt, Ir, Os) or which increase regularly (eg. K, Ru, Cs).</a></span><br>
+<div class="bq-aut"><a class="qa_304373" title="view quote" href="/quotes/quotes/d/dmitrimend304373.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view keyword" href="/quotes/keywords/either.html" onclick="kCl('/quotes/quotes/d/dmitrimend304373','/quotes/keywords/either','0',0)">Either</a>,
+<a title="view keyword" href="/quotes/keywords/value.html" onclick="kCl('/quotes/quotes/d/dmitrimend304373','/quotes/keywords/value','1',0)">Value</a>,
+<a title="view keyword" href="/quotes/keywords/nearly.html" onclick="kCl('/quotes/quotes/d/dmitrimend304373','/quotes/keywords/nearly','2',0)">Nearly</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304373)" data-ng-class="favCssClass(304373)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304373','1')"></span><span data-ng-click="onAddToCollectionClicked(304373)" data-ng-class="collectionCssClass(304373)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304373','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304373?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304373?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304378" title="view quote" href="/quotes/quotes/d/dmitrimend304378.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304378','1')">No law of nature, however general, has been established all at once; its recognition has always been preceded by many presentiments.</a></span><br>
+<div class="bq-aut"><a class="qa_304378" title="view quote" href="/quotes/quotes/d/dmitrimend304378.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view topic" href="/quotes/topics/topic_nature.html" onclick="kCl('/quotes/quotes/d/dmitrimend304378','/quotes/topics/topic_nature','0',0)">Nature</a>,
+<a title="view keyword" href="/quotes/keywords/law.html" onclick="kCl('/quotes/quotes/d/dmitrimend304378','/quotes/keywords/law','1',0)">Law</a>,
+<a title="view keyword" href="/quotes/keywords/general.html" onclick="kCl('/quotes/quotes/d/dmitrimend304378','/quotes/keywords/general','2',0)">General</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304378)" data-ng-class="favCssClass(304378)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304378','1')"></span><span data-ng-click="onAddToCollectionClicked(304378)" data-ng-class="collectionCssClass(304378)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304378','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304378?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304378?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304392" title="view quote" href="/quotes/quotes/d/dmitrimend304392.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304392','1')">We must expect the discovery of many as yet unknown elements-for example, elements analogous to aluminum and silicon- whose atomic weight would be between 65 and 75.</a></span><br>
+<div class="bq-aut"><a class="qa_304392" title="view quote" href="/quotes/quotes/d/dmitrimend304392.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view keyword" href="/quotes/keywords/expect.html" onclick="kCl('/quotes/quotes/d/dmitrimend304392','/quotes/keywords/expect','0',0)">Expect</a>,
+<a title="view keyword" href="/quotes/keywords/whose.html" onclick="kCl('/quotes/quotes/d/dmitrimend304392','/quotes/keywords/whose','1',0)">Whose</a>,
+<a title="view keyword" href="/quotes/keywords/example.html" onclick="kCl('/quotes/quotes/d/dmitrimend304392','/quotes/keywords/example','2',0)">Example</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304392)" data-ng-class="favCssClass(304392)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304392','1')"></span><span data-ng-click="onAddToCollectionClicked(304392)" data-ng-class="collectionCssClass(304392)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304392','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304392?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304392?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304372" title="view quote" href="/quotes/quotes/d/dmitrimend304372.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304372','1')">Certain characteristic properties of elements can be foretold from their atomic weights.</a></span><br>
+<div class="bq-aut"><a class="qa_304372" title="view quote" href="/quotes/quotes/d/dmitrimend304372.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view keyword" href="/quotes/keywords/certain.html" onclick="kCl('/quotes/quotes/d/dmitrimend304372','/quotes/keywords/certain','0',0)">Certain</a>,
+<a title="view keyword" href="/quotes/keywords/elements.html" onclick="kCl('/quotes/quotes/d/dmitrimend304372','/quotes/keywords/elements','1',0)">Elements</a>,
+<a title="view keyword" href="/quotes/keywords/atomic.html" onclick="kCl('/quotes/quotes/d/dmitrimend304372','/quotes/keywords/atomic','2',0)">Atomic</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304372)" data-ng-class="favCssClass(304372)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304372','1')"></span><span data-ng-click="onAddToCollectionClicked(304372)" data-ng-class="collectionCssClass(304372)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304372','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304372?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304372?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304385" title="view quote" href="/quotes/quotes/d/dmitrimend304385.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304385','1')">The establishment of a law, moreover, does not take place when the first thought of it takes form, or even when its significance is recognised, but only when it has been confirmed by the results of the experiment.</a></span><br>
+<div class="bq-aut"><a class="qa_304385" title="view quote" href="/quotes/quotes/d/dmitrimend304385.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view keyword" href="/quotes/keywords/law.html" onclick="kCl('/quotes/quotes/d/dmitrimend304385','/quotes/keywords/law','0',0)">Law</a>,
+<a title="view keyword" href="/quotes/keywords/takes.html" onclick="kCl('/quotes/quotes/d/dmitrimend304385','/quotes/keywords/takes','1',0)">Takes</a>,
+<a title="view keyword" href="/quotes/keywords/form.html" onclick="kCl('/quotes/quotes/d/dmitrimend304385','/quotes/keywords/form','2',0)">Form</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304385)" data-ng-class="favCssClass(304385)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304385','1')"></span><span data-ng-click="onAddToCollectionClicked(304385)" data-ng-class="collectionCssClass(304385)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304385','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304385?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304385?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="masonryitem boxy bqQt bqShare">
+<div class="boxyPaddingBig">
+<span class="bqQuoteLink"><a class="qt_304388" title="view quote" href="/quotes/quotes/d/dmitrimend304388.html" onclick="qCl('author','/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304388','1')">The most all penetrating spirit before which will open the possibility of tilting not tables, but planets, is the spirit of free human inquiry. Believe only in that.</a></span><br>
+<div class="bq-aut"><a class="qa_304388" title="view quote" href="/quotes/quotes/d/dmitrimend304388.html">Dmitri Mendeleev</a></div>
+</div>
+<div class="bq_q_nav boxyBottom boxyPaddingSmall" style="overflow:hidden;">
+<div class="body bq_boxyRelatedLeft bqBlackLink">
+<a title="view keyword" href="/quotes/keywords/free.html" onclick="kCl('/quotes/quotes/d/dmitrimend304388','/quotes/keywords/free','0',0)">Free</a>,
+<a title="view keyword" href="/quotes/keywords/open.html" onclick="kCl('/quotes/quotes/d/dmitrimend304388','/quotes/keywords/open','1',0)">Open</a>,
+<a title="view keyword" href="/quotes/keywords/spirit.html" onclick="kCl('/quotes/quotes/d/dmitrimend304388','/quotes/keywords/spirit','2',0)">Spirit</a>
+</div>
+</div>
+<div class="bq_q_nav bq_q_btns boxyPaddingSmall" style="overflow:hidden;">
+<div class="bq20">
+<div ng-show="showMemberButtons()" class="bqAddQuote bqAddQuoteLg" style="float:right">
+<span data-ng-click="onFavoriteClicked(304388)" data-ng-class="favCssClass(304388)" class="fa favHeart pointerCursor" onclick="hCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304388','1')"></span><span data-ng-click="onAddToCollectionClicked(304388)" data-ng-class="collectionCssClass(304388)" class="fa favAddToCol pointerCursor" onclick="pCl('/quotes/authors/d/dmitri_mendeleev','/quotes/quotes/d/dmitrimend304388','1')"></span>
+</div>
+<table class="bq_tbl_nospc">
+<tr>
+<td valign="top">
+<div class="nonJsIcons">
+<a href="/share/fb/304388?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html" class="fa-stack fa-lg fbShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</a>
+<a href="/share/tw/304388?sr=ql&amp;from=%2Fquotes%2Fauthors%2Fd%2Fdmitri_mendeleev.html&ti=Dmitri+Mendeleev+Quotes" class="fa-stack fa-lg twShare" rel="nofollow" target="_blank">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+<td valign="top">
+<div class="saiHolder">
+<a href="#" rel="nofollow" class="bqSaiIcn sai-btn sai-btnSq fa-stack fa-lg saiShare">
+<i class="fa fa-circle fa-stack-2x"></i>
+<i class="fa fa-camera fa-stack-1x fa-inverse"></i>
+</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bq_masonry_sidenav">
+<div style="height:15px"></div>
+<div class="bq_s">
+<div class="bq-m-center-300-ad">
+ 
+<div id='div-gpt-ad-1418667263920-4' class="bq_ad_320x250_multi bqAdCollapse ">
+<script type="text/javascript">
+		
+		
+		// Load AOL ad - some divs won't have an aol placement
+		window.ADTECH.loadPubAd('aol_ros_square');
+		
+
+		pf.observe('AUCTION_POST_RUN', function() {
+			googletag.cmd.push(function () {
+				
+				googletag.display('div-gpt-ad-1418667263920-4');
+			})
+		});
+	</script>
+</div>
+</div>
+</div>
+<div class="bq_s">
+<h2>Biography</h2>
+<div class="bq_fl">
+<div class="bqLn">Nationality: <a href="/nationality/russian_quotes">Russian</a></div>
+<div class="bqLn">Type: <a href="/profession/scientist_quotes">Scientist</a></div>
+<div class="bqLn">Born:
+<a href="/birthdays/february_8">
+February 8</a>, 1834
+</div>
+<div class="bqLn">Died:
+<a href="/birthdays/february_2">
+February 2</a>, 1907
+</div>
+</div>
+</div>
+<div class="bq_s">
+<h2>Links</h2>
+<div class="bq_fl">
+<p>Find on Amazon:
+<a href="http://www.amazon.com/exec/obidos/external-search?tag=brainyquote-20&amp;keyword=Dmitri%20Mendeleev" target="_BLANK" rel="nofollow">
+Dmitri Mendeleev</a></p>
+Cite this Page: <a href="/citation/quotes/authors/d/dmitri_mendeleev.html?ct=Dmitri+Mendeleev" rel="nofollow">Citation</a>
+</div>
+</div>
+<div class="bq_s">
+<h2>Popular Topics</h2>
+<div class="bq_fl">
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav">
+<a class="block-sm-sidenav" href="/quotes/topics/topic_love.html" onclick="topicCl('/quotes/topics/topic_love',1,'SideBar')">
+<span class="link-name">Love
+<span>Quotes</span>
+</span>
+</a>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav">
+<a class="block-sm-sidenav" href="/quotes/topics/topic_motivational.html" onclick="topicCl('/quotes/topics/topic_motivational',2,'SideBar')">
+<span class="link-name">Motivational
+<span>Quotes</span>
+</span>
+</a>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav">
+<a class="block-sm-sidenav" href="/quotes/topics/topic_inspirational.html" onclick="topicCl('/quotes/topics/topic_inspirational',3,'SideBar')">
+<span class="link-name">Inspirational
+<span>Quotes</span>
+</span>
+</a>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav">
+<a class="block-sm-sidenav" href="/quotes/topics/topic_life.html" onclick="topicCl('/quotes/topics/topic_life',4,'SideBar')">
+<span class="link-name">Life
+<span>Quotes</span>
+</span>
+</a>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav">
+<a class="block-sm-sidenav" href="/quotes/topics/topic_friendship.html" onclick="topicCl('/quotes/topics/topic_friendship',5,'SideBar')">
+<span class="link-name">Friendship
+<span>Quotes</span>
+</span>
+</a>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav">
+<a class="block-sm-sidenav" href="/quotes/topics/topic_funny.html" onclick="topicCl('/quotes/topics/topic_funny',6,'SideBar')">
+<span class="link-name">Funny
+<span>Quotes</span>
+</span>
+</a>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav">
+<a class="block-sm-sidenav" href="/quotes/topics/topic_positive.html" onclick="topicCl('/quotes/topics/topic_positive',7,'SideBar')">
+<span class="link-name">Positive
+<span>Quotes</span>
+</span>
+</a>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav">
+<a class="block-sm-sidenav" href="/quotes/topics/topic_valentinesday.html" onclick="topicCl('/quotes/topics/topic_valentinesday',8,'SideBar')">
+<span class="link-name">Valentine's Day
+<span>Quotes</span>
+</span>
+</a>
+</div>
+</div>
+</div>
+<div style="clear:both;margin-bottom:20px;"></div>
+<div class="bq_s">
+<div class="bq-m-center-300-ad">
+ 
+<div id='div-gpt-ad-1418667263920-3' class="bq_ad_320x250_multi bqAdCollapse ">
+<script type="text/javascript">
+		
+		
+		// Load AOL ad - some divs won't have an aol placement
+		window.ADTECH.loadPubAd('aol_ros_middle');
+		
+
+		pf.observe('AUCTION_POST_RUN', function() {
+			googletag.cmd.push(function () {
+				
+				googletag.display('div-gpt-ad-1418667263920-3');
+			})
+		});
+	</script>
+</div>
+</div>
+</div>
+<div class="bq_s">
+<h2>Popular Authors</h2>
+<div class="bq_fl">
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav"><a class="block-sm-sidenav" href="/quotes/authors/a/albert_einstein.html" onclick="authorCl('/quotes/authors/a/albert_einstein',1,'SideBar')">Albert Einstein</a></div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav"><a class="block-sm-sidenav" href="/quotes/authors/w/william_shakespeare.html" onclick="authorCl('/quotes/authors/w/william_shakespeare',2,'SideBar')">William Shakespeare</a></div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav"><a class="block-sm-sidenav" href="/quotes/authors/b/bob_marley.html" onclick="authorCl('/quotes/authors/b/bob_marley',3,'SideBar')">Bob Marley</a></div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav"><a class="block-sm-sidenav" href="/quotes/authors/b/buddha.html" onclick="authorCl('/quotes/authors/b/buddha',4,'SideBar')">Buddha</a></div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav"><a class="block-sm-sidenav" href="/quotes/authors/m/martin_luther_king_jr.html" onclick="authorCl('/quotes/authors/m/martin_luther_king_jr',5,'SideBar')">Martin Luther King, Jr.</a></div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav"><a class="block-sm-sidenav" href="/quotes/authors/c/confucius.html" onclick="authorCl('/quotes/authors/c/confucius',6,'SideBar')">Confucius</a></div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav"><a class="block-sm-sidenav" href="/quotes/authors/m/mark_twain.html" onclick="authorCl('/quotes/authors/m/mark_twain',7,'SideBar')">Mark Twain</a></div>
+<div class="col-md-12 col-sm-12 col-xs-12 block-sm-holder-sidenav"><a class="block-sm-sidenav" href="/quotes/authors/m/mahatma_gandhi.html" onclick="authorCl('/quotes/authors/m/mahatma_gandhi',8,'SideBar')">Mahatma Gandhi</a></div>
+</div>
+</div>
+<div style="clear:both;margin-bottom:20px;"></div>
+<div class="bq_s">
+ 
+<div id='div-gpt-ad-1418667263920-2' class="bq_ad_320x250_multi bqAdCollapse ">
+<script type="text/javascript">
+		
+		
+		// Load AOL ad - some divs won't have an aol placement
+		window.ADTECH.loadPubAd('aol_ros_center');
+		
+
+		pf.observe('AUCTION_POST_RUN', function() {
+			googletag.cmd.push(function () {
+				
+				googletag.display('div-gpt-ad-1418667263920-2');
+			})
+		});
+	</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry_hf">
+<div class="container-fluid" style="padding-bottom:15px">
+<div class="row paginationContainer">
+<div class="clearfix">
+<div class="pull-left bq-vcenter-parent" style="height:30px;display:inline-block; width: 320px;">
+<div class="bq-vcenter">
+</div>
+</div>
+<div class="pull-left hidden-xs" style="height:30px;">
+<div class="share-btns-msnry">
+<div class="pull-left shareThisPage">
+<span>Share this page: </span>
+</div>
+<div class="pull-left bottom-share">
+<div class="post_angle_btns shareSpacingClass ">
+<div class="pw-widget" style="width: 496px;margin: auto;">
+<a class="pw-btn-l pw-button-facebook"></a>
+<b class="pw-box-counter" data-channel="facebook"></b>
+<a class="pw-btn-l pw-button-twitter"></a>
+<b class="pw-box-counter" data-channel="twitter"></b>
+<a class="pw-btn-l pw-button-googleplus"></a>
+<b class="pw-box-counter" data-channel="googleplus"></b>
+<a class="pw-btn-l pw-button-linkedin"></a>
+<b class="pw-box-counter" data-channel="linkedin"></b>
+<a class="pw-btn-l pw-button-post"></a>
+<b class="pw-box-counter" data-channel="post"></b>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>  
+</div>
+</div>
+</div>
+<div class="container-fluid bq_left" style="max-width:1350px;margin-top:25px;margin-bottom:25px;">
+<div class="row">
+<div class="col-sm-7 col-md-8 block-style">
+<div class="bq_s">
+<h2>Related Authors</h2>
+<div class="bq_fl">
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 block-sm-holder">
+<a class="block-sm" href="/quotes/authors/m/margaret_mead.html">
+<span class="link-name">Margaret Mead</span>
+</a>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 block-sm-holder">
+<a class="block-sm" href="/quotes/authors/i/isaac_asimov.html">
+<span class="link-name">Isaac Asimov</span>
+</a>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 block-sm-holder">
+<a class="block-sm" href="/quotes/authors/c/carl_sagan.html">
+<span class="link-name">Carl Sagan</span>
+</a>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 block-sm-holder">
+<a class="block-sm" href="/quotes/authors/g/george_washington_carver.html">
+<span class="link-name">George Washington Carver</span>
+</a>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 block-sm-holder">
+<a class="block-sm" href="/quotes/authors/c/charles_darwin.html">
+<span class="link-name">Charles Darwin</span>
+</a>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 block-sm-holder">
+<a class="block-sm" href="/quotes/authors/r/richard_dawkins.html">
+<span class="link-name">Richard Dawkins</span>
+</a>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 block-sm-holder">
+<a class="block-sm" href="/quotes/authors/g/galileo_galilei.html">
+<span class="link-name">Galileo Galilei</span>
+</a>
+</div>
+<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 block-sm-holder">
+<a class="block-sm" href="/quotes/authors/t/thomas_huxley.html">
+<span class="link-name">Thomas Huxley</span>
+</a>
+</div>
+</div>
+</div>
+<div style="clear:both;margin-bottom:20px;"></div>
+</div>
+<div class="col-sm-5 col-md-4 bottom-ad-holder">
+<div class="bq_s">
+<div class="bq-m-center-300-ad">
+ 
+<div id='div-gpt-ad-1418667263920-1' class="bq_ad_320x250 bqAdCollapse ">
+<script type="text/javascript">
+		
+		
+		// Load AOL ad - some divs won't have an aol placement
+		window.ADTECH.loadPubAd('aol_ros_bottom');
+		
+
+		pf.observe('AUCTION_POST_RUN', function() {
+			googletag.cmd.push(function () {
+				
+				googletag.display('div-gpt-ad-1418667263920-1');
+			})
+		});
+	</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
+<div class="bq_bot_nav bq-no-print" style="">
+<div class="container-fluid" style="max-width: 900px">
+<div class="row">
+<div class="col-sm-3 col-md-3" style="position:relative;top:-20px;">
+<div style="float:left; position:absolute; top:-25px">
+<img src="/st/img/1584028/pinwheel.gif" alt="Logo">
+</div>
+<div style="height:75px"></div>
+<div class="bq_s">
+<div class="bqLn bodybold">BrainyQuote Desktop</div>
+<div class="bqLn"><a href="http://mobile.brainyquote.com/changeSite/quotes/authors/d/dmitri_mendeleev.html" rel="nofollow">BrainyQuote Mobile</a></div>
+</div>
+<div class="bq_s">
+<ul class="footer-follow-icons">
+<li><a href="https://www.facebook.com/BrainyQuote" target="_blank"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://twitter.com/brainyquote" target="_blank"><i class="fa fa-twitter"></i></a></li>
+<li class="follow-padding-fix"><a href="https://plus.google.com/+brainyquotes" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+<li class="follow-padding-fix"><a href="https://instagram.com/brainyquote" target="_blank"><i class="fa fa-instagram"></i></a></li>
+</ul>
+<div style="clear:both"></div>
+</div>
+</div>
+<div class="col-sm-2 col-md-2">
+<div class="bq_s">
+<h3>Site</h3>
+<div class="bqLn"><a href="/">Home</a></div>
+<div class="bqLn"><a href="/quotes/favorites.html">Authors</a></div>
+<div class="bqLn"><a href="/quotes/topics.html">Topics</a></div>
+<div class="bqLn"><a href="/quotes_of_the_day.html">Quote of the Day</a></div>
+<div class="bqLn"><a href="/quotes/quote_pictures.html">Pictures</a></div>
+<div class="bqLn"><a href="/profession/">Professions</a></div>
+<div class="bqLn"><a href="/birthdays/">Birthdays</a></div>
+</div>
+</div>
+<div class="col-sm-2 col-md-2">
+<div class="bq_s">
+<h3>Social</h3>
+<div class="bqLn"><a href="https://www.facebook.com/BrainyQuote" target="_blank">BQ on Facebook</a></div>
+<div class="bqLn"><a href="https://twitter.com/brainyquote" target="_blank">BQ on Twitter</a></div>
+<div class="bqLn"><a href="http://pinterest.com/brainyquote" target="_blank">BQ on Pinterest</a></div>
+<div class="bqLn"><a href="https://google.com/+brainyquotes" target="_blank">BQ on Google+</a></div>
+<div class="bqLn"><a href="https://instagram.com/brainyquote" target="_blank">BQ on Instagram</a></div>
+</div>
+</div>
+<div class="col-sm-3 col-md-3">
+<div class="bq_s">
+<h3>Apps</h3>
+<div class="bqLn"><a href="/apps/">iPhone/iPad app</a></div>
+<br>
+<h3>Quote Of The Day Feeds</h3>
+<div class="bqLn"><a href="/link/index.html">Javascript and RSS feeds</a></div>
+<div class="bqLn"><a href="/link/wordpress_plugin.html">WordPress plugin</a></div>
+<div class="bqLn"><a href="/link/email.html">Quote of the Day Email</a></div>
+</div>
+</div>
+<div class="col-sm-2 col-md-2">
+<div class="bq_s">
+<h3>About</h3>
+<div class="bqLn"><a href="/about/">About Us</a></div>
+<div class="bqLn"><a href="/about/inquire">Inquire</a></div>
+<div class="bqLn"><a href="/about/submit_quote">Submit</a></div>
+<div class="bqLn"><a href="/about/privacy">Privacy</a></div>
+<div class="bqLn"><a href="/about/terms">Terms</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="glam-ftr">
+<div class="ftr_nav small" style="vertical-align:center"><a href="/about/copyright" style="vertical-align:top">Copyright</a> &#169; 2001 - 2016 BrainyQuote</div>
+</div>
+<script type="text/javascript" src="/st/js/1584028/bq_omega_masonry.js"></script>
+<script type="text/javascript">
+        var mQL = document.getElementById('quotesList');
+        if (mQL) {
+            MASONRY_I = new Masonry(document.getElementById('quotesList'), {
+                columnWidth: 302,
+                gutterWidth: 16
+            });
+            function masonryReload() {
+                MASONRY_I.reload();
+            }
+            setTimeout(function () {
+                masonryReload();
+                
+            }, 4000);
+        }
+    </script>
+<div class="sad">
+<div style="margin: 30px auto auto auto">
+<div style="text-align:center">
+<div style="margin: 0 auto;">
+<img src="/st/img/1584028/instruct.png" alt="Disable adblock instructions" class="img-responsive">
+</div>
+<span onclick="location.reload();" class="btn btn-primary">I have di<span></span>sabled Adb<span></span>lock</span>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+
+    new BQSimpleInit(BQ_MBL, true);
+
+    
+</script>
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "http://www.brainyquote.com/",
+   "name": "BrainyQuote",
+   "alternateName": "BrainyQuote - Famous Quotes",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "http://www.brainyquote.com/search_results?q={search_term}",
+     "query-input": "required name=search_term"
+     }
+}
+</script>
+</body>
+</html>

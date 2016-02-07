@@ -1,7 +1,7 @@
 class QuoteSweeper < ActionController::Caching::Sweeper
     observe Quote
     
-    def after_save(quote)
+    def after_update(quote)
         if quote.source_type == "Author"
             author = Author.find(quote.source_id)
             expire_page(author_path(author))
