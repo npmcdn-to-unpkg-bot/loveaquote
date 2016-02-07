@@ -39,6 +39,7 @@ gem 'carrierwave'
 gem 'pg'
 
 gem 'actionpack-page_caching'
+gem 'rails-observers'
 
 group :development, :test do
   gem 'byebug'
