@@ -1,5 +1,5 @@
 <%= simple_form_for([:admin, @setting],
-  html: { class: 'form-horizontal' },
+  html: { class: 'form-horizontal form-groups-bordered' },
   wrapper: :horizontal_form,
   wrapper_mappings: {
     check_boxes: :horizontal_radio_and_checkboxes,
@@ -10,6 +10,12 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :facebook_url %>
+    <%= f.input :twitter_url %>
+    <%= f.input :google_plus_url %>
+    <%= f.input :pinterest_url %>
     <%= f.input :google_verification %>
     <%= f.input :yandex_verification %>
     <%= f.input :bing_verification %>

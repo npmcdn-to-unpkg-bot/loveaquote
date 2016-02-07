@@ -1,3 +1,14 @@
+<% content_for :title,"#{@topic.name} Quotes - #{@topic.quotes.count.to_s} quotes about #{@topic.name}"  %>
+<% content_for :description, "Quotes about #{@topic.name}. Best collection of #{@topic.name} quotes. Read, comment and share these #{@topic.name} quotes." %>
+
+<% content_for :canonical, "#{topic_url(@topic)}" %>
+
+<% content_for :heading, "#{@topic.name} Quotes" %>
+
+<% if @topic.image.present? %>
+  <% content_for :image_url, URI.join( root_url, @topic.image.url).to_s %>
+<% end %>
+
 <% content_for :content do %>
 
   <ul>

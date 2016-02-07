@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160206121117) do
+ActiveRecord::Schema.define(version: 20160207142520) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -111,6 +111,12 @@ ActiveRecord::Schema.define(version: 20160206121117) do
     t.string   "yandex_verification"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.string   "title"
+    t.text     "description"
+    t.string   "facebook_url"
+    t.string   "twitter_url"
+    t.string   "google_plus_url"
+    t.string   "pinterest_url"
   end
 
   create_table "time_lines", force: :cascade do |t|

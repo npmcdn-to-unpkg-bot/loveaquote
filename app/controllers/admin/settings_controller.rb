@@ -74,6 +74,6 @@ class Admin::SettingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def setting_params
-      params.require(:setting).permit(:google_analytics, :bing_verification, :alexa_verification, :google_verification, :yandex_verification)
+      params.require(:setting).permit(:google_analytics, :bing_verification, :alexa_verification, :google_verification, :yandex_verification, :title, :description, :facebook_url, :twitter_url, :google_plus_url, :pinterest_url)
     end
 end

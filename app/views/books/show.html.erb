@@ -1,6 +1,10 @@
-<% content_for :title, "#{@book.name} Quotes" %>
-<% content_for :canonical, "#{books_url(@book)}" %>
+<% content_for :title, "#{@book.name} Quotes - #{@book.quotes.count.to_s} quotes from #{@book.name} book" %>
+<% content_for :description, "Quotes from #{@book.name}. Best collection of #{@book.name} quotes. Read, comment and share these #{@book.name} quotes." %>
+
+<% content_for :canonical, "#{book_url(@book)}" %>
+
 <% content_for :heading, "#{@book.name} Quotes" %>
+
 <% if @book.image.present? %>
   <% content_for :image_url, URI.join( root_url, @book.image.url).to_s %>
 <% end %>

@@ -1,6 +1,9 @@
-<% content_for :title, "#{@author.name} Quotes" %>
-<% content_for :canonical, "#{authors_url(@author)}" %>
+<% content_for :title, "#{@author.name} Quotes - #{@author.quotes.count.to_s} quotes by #{@author.name}" %>
+<% content_for :description, "Quotes by #{@author.name}. Best collection of #{@author.name} quotes. Read, comment and share these #{@author.name} quotes."%>
+<% content_for :canonical, "#{author_url(@author)}" %>
+
 <% content_for :heading, "#{@author.name} Quotes" %>
+
 <% if @author.image.present? %>
   <% content_for :image_url, URI.join( root_url, @author.image.url).to_s %>
 <% end %>
