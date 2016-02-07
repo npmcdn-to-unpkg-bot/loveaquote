@@ -21,11 +21,15 @@ SitemapGenerator::Sitemap.create do
   #
   # Add all authors:
   
-#  Author.published.each do |author|
-#    add author_path(author), :lastmod => author.updated_at
-#  end
+  Author.published.each do |author|
+    add author_path(author), :lastmod => author.updated_at
+  end
   
-#  Book.published.each do |book|
-#    add book_path(book), :lastmod => book.updated_at
-#  end
+  Book.published.each do |book|
+    add book_path(book), :lastmod => book.updated_at
+  end
+  
+  Topic.published.each do |topic|
+    add topic_path(topic), :lastmod => topic.updated_at
+  end
 end
