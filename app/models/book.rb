@@ -18,12 +18,16 @@ class Book < ActiveRecord::Base
     scope :very_popular, -> { where(very_popular: true) }
     scope :by_alphabet, ->(alphabet) {where('name like ?', "#{alphabet}%")}
     
-    before_validation :generate_slug
+    before_validation :strip_name, :generate_slug
     after_commit :fetch_quotes, on: :create
     after_save :add_to_time_line
     
     def to_param
         slug
+    end
+    
+    def strip_name
+        self.name = self.name.strip
     end
     
     def generate_slug

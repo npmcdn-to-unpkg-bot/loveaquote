@@ -15,7 +15,7 @@ class Topic < ActiveRecord::Base
     scope :very_popular, -> {where(very_popular: true)}
     scope :by_alphabet, ->(alphabet) {where('name like ?', "#{alphabet}%")}
 
-    before_validation :generate_slug, :capitalize_name
+    before_validation :strip_name, :capitalize_name, :generate_slug
     after_commit :get_quote_suggestions
     after_save :add_to_time_line    
 
@@ -23,14 +23,16 @@ class Topic < ActiveRecord::Base
         slug
     end
     
+    def strip_name
+        self.name = self.name.strip
+    end
+    
     def generate_slug
         self.slug = (self.name + " " + "Quotes").to_url if !self.slug.present?
     end
     
     def capitalize_name
-        if self.name.present?
-            self.name = self.name.capitalize
-        end
+        self.name = self.name.capitalize
     end
     
     def get_quote_suggestions
