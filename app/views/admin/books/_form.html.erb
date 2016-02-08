@@ -11,7 +11,7 @@
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :fetch_url %>
-    <%= f.association :author %>
+    <%= f.association :author, collection: Author.all.order(name: :asc) %>
     <%= f.input :published %>
     <%= f.input :popular %>
     <%= f.input :very_popular %>

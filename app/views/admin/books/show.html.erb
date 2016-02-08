@@ -19,6 +19,9 @@
           <li>
             <a href="#featured-topics" data-toggle="tab">Featured Topics</a>
           </li>
+          <li>
+            <a href="#quote-topic-suggestions" data-toggle="tab">Topic Suggestions</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -108,6 +111,31 @@
           </div>          
         </div>
         
+        <div class="tab-pane" id="quote-topic-suggestions">
+          <div class="row">
+            <table class="table table-striped table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th width="60%" class="text-center">Quote</th>
+                  <th width="20%" class="text-center">Topic</th>
+                  <th width="20%" class="text-center" colspan="2">Manage</th>
+                </tr>
+              </thead>
+            
+              <tbody>
+                <% @book.quote_topic_suggestions.where(read: false).each do |quote_topic_suggestion| %>
+                  <tr>
+                    <td><%= quote_topic_suggestion.quote.text %></td>
+                    <td class="text-center"><%= quote_topic_suggestion.topic.name %></td>
+                    <td class="text-center"><%= link_to "Accept", accept_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"accept_suggestion", remote: true %></td>
+                    <td class="text-center"><%= link_to "Decline", decline_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"decline_suggestion", remote: true %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>          
+        </div>
+        
       </div>
     </div>
   </div>
@@ -160,6 +188,16 @@
 <script type="text/javascript">
   $(function() {
     var edit_quote;
+    
+    $(".accept_suggestion")
+    .on("ajax:complete", function(e, data, status, xhr) {
+        $(this).closest("tr").remove();
+    });
+  
+    $(".decline_suggestion")
+    .on("ajax:complete", function(e, data, status, xhr) {
+        $(this).closest("tr").remove();
+    });
     
     $(".add_new_quote").on("click", function(e) {
       e.preventDefault();

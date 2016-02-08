@@ -1,6 +1,7 @@
 class Author < ActiveRecord::Base
     # has many quotes
     has_many :quotes, as: :source, dependent: :destroy
+    has_many :quote_topic_suggestions, through: :quotes
     has_many :featured_topics, as: :source, dependent: :destroy
 
     # has many books
