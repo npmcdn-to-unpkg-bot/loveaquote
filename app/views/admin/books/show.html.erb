@@ -1,7 +1,7 @@
 <div class="col-sm-12">
   <ol class="breadcrumb bc-3"> 
     <li><%= link_to "Home", admin_root_url %></li>
-    <li><%= link_to "Book", admin_books_url %></li> 
+    <li><%= link_to "Books", admin_books_url %></li> 
     <li class="active"><%= @book.name %></li>
   </ol>
   <h2><%= @book.name %> <%= link_to "view", book_url(@book), class: "btn btn-default btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_book_url(@book), class: "btn btn-default btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %></h2>
@@ -85,7 +85,7 @@
               <h5 class="text-center">Add new</h5>
               <div id="new_featured_topic_errors"></div>
               <%= simple_form_for([:admin, FeaturedTopic.new], remote: true) do |f|%>
-                  <%= f.association :topic %>
+                  <%= f.association :topic, collection: Topic.all.order(name: :ASC) %>
                   <%= f.hidden_field :book_id, value: @book.id %>
                   <%= f.button :submit, id: "new_featured_topic_submit" %>
               <% end %>
