@@ -16,5 +16,6 @@
 //= require TweenMax
 //= require resizeable
 //= require neon-api
-//= require neon-custom  
+//= require neon-custom 
+//= require joinable
 //= require_tree .
