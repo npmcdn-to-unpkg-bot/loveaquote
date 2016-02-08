@@ -1,5 +1,10 @@
 <div class="col-sm-12">
-  <h2><%= @author.name %> <%= link_to "view", author_url(@author), class: "btn btn-default btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_author_url(@author), class: "btn btn-default btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %> <%= link_to "authors", admin_authors_url, class: "btn btn-default btn-sm" %></h2>
+  <ol class="breadcrumb bc-3"> 
+    <li><%= link_to "Home", admin_root_url %></li>
+    <li><%= link_to "Authors", admin_authors_url %></li> 
+    <li class="active"><%= @author.name %></li>
+  </ol>
+  <h2><%= @author.name %> <%= link_to "view", author_url(@author), class: "btn btn-default btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_author_url(@author), class: "btn btn-default btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %></h2>
   
   <div class="panel minimal minimal-gray">
     <div class="panel-heading">

@@ -1,5 +1,10 @@
 <div class="col-sm-12">
-  <h2><%= @topic.name %> <%= link_to "view", topic_url(@topic), class: "btn btn-default btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_topic_url(@topic), class: "btn btn-default btn-sm" %> <%= link_to "topics", admin_topics_url, class: "btn btn-default btn-sm" %></h2>
+  <ol class="breadcrumb bc-3"> 
+    <li><%= link_to "Home", admin_root_url %></li>
+    <li><%= link_to "Topic", admin_topics_url %></li> 
+    <li class="active"><%= @topic.name %></li>
+  </ol>
+  <h2><%= @topic.name %> <%= link_to "view", topic_url(@topic), class: "btn btn-default btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_topic_url(@topic), class: "btn btn-default btn-sm" %></h2>
 
   <div class="panel minimal minimal-gray">
     
