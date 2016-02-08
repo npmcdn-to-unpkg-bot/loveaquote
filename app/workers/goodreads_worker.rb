@@ -5,6 +5,8 @@ class GoodreadsWorker
     book = Book.find(id)
     require 'open-uri'
     fetch_quotes(book, book.fetch_url, 1)
+    book.fetch_url = ""
+    book.save
   end
 
   def fetch_quotes(book, fetch_url, current_page)
