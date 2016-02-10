@@ -31,84 +31,15 @@
       <div class="tab-content">
         
         <div class="tab-pane active" id="quotes">
-          
-          <% @book.asc_featured_topics.each do |featured_topic| %>
-            <h4><%= @book.name + " Quotes on " + featured_topic.name %></h4>
-              <table class="table table-striped table-bordered table-hover">
-                <thead>
-                  <tr>
-                    <th width="70%" class="text-center">Quote</th>
-                    <th width="30%" class="text-center" colspan="2">Manage</th>
-                  </tr>
-                </thead>
-              
-                <tbody>
-                  <% @book.featured_topic_quotes(featured_topic).order(text: :ASC).each do |quote| %>
-                      <tr>
-                          <td><%= quote.text %></td>
-                          <td class="text-center"><%= link_to "Edit", "#", class: "edit-quote", data: {url: "/admin/quotes/#{quote.id}" } %></td>
-                          <td class="text-center"><%= link_to "Delete", admin_quote_url(quote), method: :delete, remote: true, class: "delete-quote" %></td>
-                      </tr>
-                  <% end %>
-                </tbody>
-              </table>                      
+
+          <% @book.quotes.order(text: :ASC).each do |quote| %>
+            <blockquote>
+              <p><%= quote.text %></p>
+            </blockquote>
+            <%= link_to "Edit", "#", class: "edit-quote btn btn-default btn-xs", data: { url: "/admin/quotes/#{quote.id}" } %>
+            <%= link_to "Delete", admin_quote_url(quote), method: :delete, remote: true, class: "delete-quote btn btn-red btn-xs" %>
+            <hr>
           <% end %>
-          
-          <% if @book.featured_topics.any? %>
-            <h4><%= "Other Famous " + @book.name + " Quotes" %></h4>            
-          <% else %>
-            <h4><%= "Famous " + @book.name + " Quotes" %></h4>
-          <% end %>
-          <table class="table table-striped table-bordered table-hover">
-            <thead>
-              <tr>
-                <th width="70%" class="text-center">Quote</th>
-                <th width="30%" class="text-center" colspan="2">Manage</th>
-              </tr>
-            </thead>
-          
-            <tbody>
-              <% @book.non_featured_quotes.each do |quote| %>
-                  <tr>
-                      <td><%= quote.text %></td>
-                      <td class="text-center"><%= link_to "Edit", "#", class: "edit-quote", data: { url: "/admin/quotes/#{quote.id}" } %></td>
-                      <td class="text-center"><%= link_to "Delete", admin_quote_url(quote), method: :delete, remote: true, class: "delete-quote" %></td>
-                  </tr>
-              <% end %>
-            </tbody>
-          </table>          
-        </div>
-        
-        <div class="tab-pane" id="featured-topics">
-          <div class="row">
-            <div class="col-sm-6">
-              <h5 class="text-center">Add new</h5>
-              <div id="new_featured_topic_errors"></div>
-              <%= simple_form_for([:admin, FeaturedTopic.new], remote: true) do |f|%>
-                  <%= f.association :topic, collection: Topic.all.order(name: :ASC) %>
-                  <%= f.hidden_field :book_id, value: @book.id %>
-                  <%= f.button :submit, id: "new_featured_topic_submit" %>
-              <% end %>
-            </div>
-            <div class="col-sm-6">
-              <h5 class="text-center">Featured Topics</h5>
-              <table id="featured_topics_table" class="table table-striped table-bordered table-hover">
-                <thead>
-                  <th class="text-center" width="80%">Featured Topic</th>
-                  <th class="text-center" width="20%">Manage</th>
-                </thead>
-                
-                <tbody>
-                  <% @book.featured_topics.each do |featured_topic| %>
-                    <tr>
-                      <td><%= Topic.find(featured_topic.topic_id).name %></td>
-                      <td class="text-center">Delete</td>
-                    </tr>
-                  <% end %>
-                </tbody>
-              </table>
-            </div>
-          </div>          
         </div>
         
         <div class="tab-pane" id="quote-topic-suggestions">
@@ -221,25 +152,5 @@
       $("#edit-quote-modal").modal('hide');
       edit_quote.parent().prev().text((xhr.responseJSON.text));
     });
-    
-    $("#new_featured_topic")
-    .on("ajax:before", function() {
-      $("#new_featured_topic_errors").empty();
-      $("#new_featured_topic_submit").val("Submitting ...");
-    })
-    .on("ajax:success", function(e, data, status, xhr) {
-      var featured_topic = $("#featured_topic_topic_id option:selected").text();
-      $("#featured_topic_topic_id").prop('selectedIndex',0);
-      $('#featured_topics_table').append("<tr><td>" + featured_topic + "</td><td class='text-center'>Delete</td></tr>");
-    })
-    .on("ajax:error", function(e, xhr, status, error){
-      $.each(xhr.responseJSON.topic_id, function(index, value) {
-        $("#new_featured_topic_errors").append('<div class="alert alert-danger">' + value + '</div>');
-      });
-    })
-    .on("ajax:complete", function() {
-      $("#new_featured_topic_submit").val("Create Featured topic");
-    });
-    
   });
 </script>

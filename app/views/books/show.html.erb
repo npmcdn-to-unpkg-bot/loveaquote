@@ -12,20 +12,7 @@
 <% content_for :content do %>
 
   <ul itemscope itemtype="http://schema.org/ItemList">
-    <% @book.asc_featured_topics.each do |featured_topic| %>
-    <h2 class="featured-topic-sub-heading"><%= @book.name + " Quotes on " + featured_topic.name %></h2>
-        <% @book.featured_topic_quotes(featured_topic).order(text: :ASC).each do |quote| %>
-          <%= render partial: "books/featured_topic_quote", locals: {quote: quote} %>
-        <% end %>
-    <% end %>
-    
-    <% if @book.featured_topics.any? %>
-      <h2 class="featured-topic-sub-heading"><%= "Other Famous " + @book.name + " Quotes" %></h2>            
-    <% else %>
-      <h2 class="featured-topic-sub-heading"><%= "Famous " + @book.name + " Quotes" %></h2>
-    <% end %>
-    
-    <% @book.non_featured_quotes.each do |quote| %>
+    <% @book.quotes.order(text: :asc).each do |quote| %>
       <%= render partial: "books/quote", object: quote %>
     <% end %>
   </ul>

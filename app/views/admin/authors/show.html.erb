@@ -13,15 +13,8 @@
       </div>
       <div class="panel-options">
         <ul class="nav nav-tabs">
-          <li class="active">
-            <a href="#quotes" data-toggle="tab">Quotes</a>
-          </li>
-          <li>
-            <a href="#featured-topics" data-toggle="tab">Featured Topics</a>
-          </li>
-          <li>
-            <a href="#quote-topic-suggestions" data-toggle="tab">Topic Suggestions</a>
-          </li>
+          <li class="active"><a href="#quotes" data-toggle="tab">Quotes</a></li>
+          <li><a href="#quote-topic-suggestions" data-toggle="tab">Topic Suggestions</a></li>
         </ul>
       </div>
     </div>
@@ -31,100 +24,20 @@
       <div class="tab-content">
         
         <div class="tab-pane active" id="quotes">
-          
-          <% @author.asc_featured_topics.each do |featured_topic| %>
-            <h4><%= @author.name + " Quotes on " + featured_topic.name %></h4>
-              <table class="table table-striped table-bordered table-hover">
-                <thead>
-                  <tr>
-                    <th width="60%" class="text-center">Quote</th>
-                    <th width="20%" class="text-center">Source</th>                    
-                    <th width="20%" class="text-center" colspan="2">Manage</th>
-                  </tr>
-                </thead>
-              
-                <tbody>
-                  <% @author.featured_topic_quotes(featured_topic).order(text: :ASC).each do |quote| %>
-                      <tr>
-                          <td><%= quote.text %></td>
-                          <td class="text-center">
-                            <% if quote.source_type == "Author" %>
-                              Self
-                            <% elsif quote.source_type == "Book" %>
-                              <%= Book.find(quote.source_id).name %>
-                            <% end %>                          
-                          </td>
-                          <td class="text-center"><%= link_to "Edit", "#", class: "edit-quote", data: {url: "/admin/quotes/#{quote.id}" } %></td>
-                          <td class="text-center"><%= link_to "Delete", admin_quote_url(quote), method: :delete, remote: true, class: "delete-quote" %></td>
-                      </tr>
-                  <% end %>
-                </tbody>
-              </table>                      
-          <% end %>
-          
-          <% if @author.featured_topics.any? %>
-            <h4><%= "Other Famous " + @author.name + " Quotes" %></h4>            
-          <% else %>
-            <h4><%= "Famous " + @author.name + " Quotes" %></h4>
-          <% end %>
-          <table class="table table-striped table-bordered table-hover">
-            <thead>
-              <tr>
-                <th width="60%" class="text-center">Quote</th>
-                <th width="20%" class="text-center">Source</th>
-                <th width="20%" class="text-center" colspan="2">Manage</th>
-              </tr>
-            </thead>
-          
-            <tbody>
-              <% @author.non_featured_quotes.each do |quote| %>
-                  <tr>
-                      <td><%= quote.text %></td>
-                      <td class="text-center">
-                        <% if quote.source_type == "Author" %>
-                          Self
-                        <% elsif quote.source_type == "Book" %>
-                          <%= Book.find(quote.source_id).name %>
-                        <% end %>
-                      </td>
-                      <td class="text-center"><%= link_to "Edit", "#", class: "edit-quote", data: { url: "/admin/quotes/#{quote.id}" } %></td>
-                      <td class="text-center"><%= link_to "Delete", admin_quote_url(quote), method: :delete, remote: true, class: "delete-quote" %></td>
-                  </tr>
-              <% end %>
-            </tbody>
-          </table>          
-        </div>
-        
-        <div class="tab-pane" id="featured-topics">
-          <div class="row">
-            <div class="col-sm-6">
-              <h5 class="text-center">Add new</h5>
-              <div id="new_featured_topic_errors"></div>
-              <%= simple_form_for([:admin, FeaturedTopic.new], remote: true) do |f|%>
-                  <%= f.association :topic, collection: Topic.all.order(name: :asc) %>
-                  <%= f.hidden_field :author_id, value: @author.id %>
-                  <%= f.button :submit, id: "new_featured_topic_submit" %>
-              <% end %>
-            </div>
-            <div class="col-sm-6">
-              <h5 class="text-center">Featured Topics</h5>
-              <table id="featured_topics_table" class="table table-striped table-bordered table-hover">
-                <thead>
-                  <th class="text-center" width="80%">Featured Topic</th>
-                  <th class="text-center" width="20%">Manage</th>
-                </thead>
-                
-                <tbody>
-                  <% @author.featured_topics.each do |featured_topic| %>
-                    <tr>
-                      <td><%= Topic.find(featured_topic.topic_id).name %></td>
-                      <td class="text-center"><%= link_to "Delete", admin_featured_topic_path(featured_topic), method: :delete, remote: true, class: "delete_featured_topic" %></td>
-                    </tr>
-                  <% end %>
-                </tbody>
-              </table>
-            </div>
-          </div>          
+            <% @author.all_quotes.order(text: :asc).each do |quote| %>
+              <blockquote>
+                <p><%= quote.text %></p>
+                <% if quote.source_type == "Book" %>
+                <small>
+                  <% book = Book.find(quote.source_id) %>
+                  <%= link_to book.name, admin_book_url(book), title: "#{book.name} Quotes" %> by <%= @author.name %>
+                </small>
+                <% end %>
+              </blockquote>
+              <%= link_to "Edit", "#", class: "edit-quote btn btn-default btn-xs", data: { url: "/admin/quotes/#{quote.id}" } %>
+              <%= link_to "Delete", admin_quote_url(quote), method: :delete, remote: true, class: "delete-quote btn btn-red btn-xs" %>
+              <hr>
+            <% end %>
         </div>
         
         <div class="tab-pane" id="quote-topic-suggestions">
@@ -241,25 +154,5 @@
       $("#edit-quote-modal").modal('hide');
       edit_quote.parent().prev().prev().text((xhr.responseJSON.text));
     });
-    
-    $("#new_featured_topic")
-    .on("ajax:before", function() {
-      $("#new_featured_topic_errors").empty();
-      $("#new_featured_topic_submit").val("Submitting ...");
-    })
-    .on("ajax:success", function(e, data, status, xhr) {
-      var featured_topic = $("#featured_topic_topic_id option:selected").text();
-      $("#featured_topic_topic_id").prop('selectedIndex',0);
-      $('#featured_topics_table').append("<tr><td>" + featured_topic + "</td><td class='text-center'>Delete</td></tr>");
-    })
-    .on("ajax:error", function(e, xhr, status, error){
-      $.each(xhr.responseJSON.topic_id, function(index, value) {
-        $("#new_featured_topic_errors").append('<div class="alert alert-danger">' + value + '</div>');
-      });
-    })
-    .on("ajax:complete", function() {
-      $("#new_featured_topic_submit").val("Create Featured topic");
-    });
-    
   });
 </script>
