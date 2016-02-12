@@ -77,7 +77,7 @@ server_name www.loveaquote.com;
 rewrite ^/(.*)/$ /$1 permanent;
 
 root <%= current_path %>/public;
-try_files $uri /cache/$uri.html @puma_<%= fetch(:nginx_config_name) %>;
+try_files $uri @puma_<%= fetch(:nginx_config_name) %>;
 
 location @puma_<%= fetch(:nginx_config_name) %> {
 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
