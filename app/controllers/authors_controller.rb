@@ -15,7 +15,7 @@ class AuthorsController < ApplicationController
   end
 
   def show
-    @quotes = @author.quotes.page(params[:page])
+    @quotes = @author.all_quotes.page(params[:page])
     render layout: "author"
   end
   
