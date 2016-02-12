@@ -1,6 +1,4 @@
 class AuthorsController < ApplicationController
-  caches_page :show
-  
   before_action :set_author, only: [:show]
   
   def index

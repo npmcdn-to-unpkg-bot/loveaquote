@@ -19,6 +19,8 @@
 
           <main id="content" role="main" itemprop="mainContentOfPage">
           <article itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+          
+					<%= image_tag @author.image_url(:thumb), class: "thumbnail", style: "margin: 0 auto;" if @author.image.present? %>
 
             <header>
               <h1 itemprop="headline" class="text-center"><%= yield :heading %></h1>
