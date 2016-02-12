@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
   end
 
   def show
+    @quotes = @topic.quotes.page(params[:page])
     render layout: "topic"
   end
   

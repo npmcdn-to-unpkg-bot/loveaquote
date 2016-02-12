@@ -35,6 +35,7 @@ gem 'entypo-rails'
 gem 'stringex'
 gem 'sitemap_generator'
 gem 'carrierwave'
+gem 'mini_magick'
 
 gem 'pg'
 
@@ -46,4 +47,3 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
-

@@ -4,15 +4,29 @@ Rails.application.routes.draw do
     collection do
       get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
     end
+    
+    member do
+      get ':page', action: 'show', constraints: { page: /\d+/ }
+    end
   end
+  
   resources :books, only: [:index, :show] do
     collection do
       get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
     end  
+    
+    member do
+      get ':page', action: 'show', constraints: { page: /\d+/ }
+    end
   end
+  
   resources :topics, only: [:index, :show] do
     collection do
       get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
+    end
+    
+    member do
+      get ':page', action: 'show', constraints: { page: /\d+/ }
     end
   end
     

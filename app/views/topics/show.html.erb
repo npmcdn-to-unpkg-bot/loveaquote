@@ -12,11 +12,12 @@
 <% content_for :content do %>
 
   <ul>
-    <% @topic.quotes.each do |quote| %>
+    <% @quotes.each do |quote| %>
         <%= render partial: "topics/quote", object: quote %>
     <% end %>
   </ul>
 
+  <%= paginate @quotes %>
 <% end %>
 
 <% content_for :comments do %>

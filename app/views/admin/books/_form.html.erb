@@ -9,9 +9,20 @@
   }) do |f| %>
 
   <div class="form-inputs">
+    <div class="form-group">
+      <div class="col-sm-9 col-sm-offset-3">
+          <% if @book.image.present? %>
+            <%= image_tag @book.image_url(:small), class: "thumbnail", style: "margin-bottom: 0px" %>
+          <% else %>
+            <%= image_tag "http://placehold.it/150x150" %>
+          <% end %>
+      </div>
+    </div>
+    
     <%= f.input :name %>
     <%= f.input :fetch_url %>
     <%= f.association :author, collection: Author.all.order(name: :asc) %>
+    <%= f.input :image %>
     <%= f.input :published %>
     <%= f.input :popular %>
     <%= f.input :very_popular %>

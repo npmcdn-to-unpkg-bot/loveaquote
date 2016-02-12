@@ -6,6 +6,7 @@ class BooksController < ApplicationController
   end
 
   def show
+    @quotes = @book.quotes.page(params[:page])
     render layout: "book"
   end
   

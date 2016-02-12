@@ -15,13 +15,14 @@ class AuthorsController < ApplicationController
   end
 
   def show
+    @quotes = @author.quotes.page(params[:page])
     render layout: "author"
   end
   
   private
   
   def set_author
-    @author = Author.find_by_slug(params[:id])
+    @author = Author.published.find_by_slug(params[:id])
     redirect_to serve_404_url unless @author
   end
 end

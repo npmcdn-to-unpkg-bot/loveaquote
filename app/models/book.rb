@@ -6,6 +6,8 @@ class Book < ActiveRecord::Base
     
     belongs_to :author
     
+    mount_uploader :image, ImageUploader
+    
     # name should be present and unique
     # slug should be present and unique
     # author should be present

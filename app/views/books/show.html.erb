@@ -10,13 +10,15 @@
 <% end %>
 
 <% content_for :content do %>
-
   <ul itemscope itemtype="http://schema.org/ItemList">
-    <% @book.quotes.order(text: :asc).each do |quote| %>
+    <% @quotes.order(text: :asc).each do |quote| %>
       <%= render partial: "books/quote", object: quote %>
     <% end %>
   </ul>
-
+  
+  <div class="text-center">
+    <%= paginate @quotes %>
+  </div>
 <% end %>
 
 <% content_for :comments do %>

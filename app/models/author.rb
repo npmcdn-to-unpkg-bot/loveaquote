@@ -7,6 +7,8 @@ class Author < ActiveRecord::Base
     # has many books
     has_many :books
     has_many :book_quotes, through: :books, source: :quotes
+    
+    mount_uploader :image, ImageUploader
 
     # name should be present and unique
     # slug should be present and unique

@@ -71,6 +71,6 @@ class Admin::AuthorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def author_params
-      params.require(:author).permit(:name, :fetch_url, :published, :popular, :very_popular)
+      params.require(:author).permit(:name, :fetch_url, :published, :popular, :very_popular, :image)
     end
 end
