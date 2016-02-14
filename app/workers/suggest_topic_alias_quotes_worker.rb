@@ -22,6 +22,7 @@ class SuggestTopicAliasQuotesWorker
     word.chop! if word[-1] == "."
     word.chop! if word[-1] == ","
     word.chop! if word[-1] == ";"
+    word.chop! if word[-1] == ":"
     return word
   end
 

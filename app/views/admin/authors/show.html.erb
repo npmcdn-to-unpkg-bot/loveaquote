@@ -216,7 +216,7 @@
     $(".simple_form.edit_quote")
     .on("ajax:complete", function(e, xhr, status, error) {
       $("#edit-quote-modal").modal('hide');
-      edit_quote.parent().prev().prev().text((xhr.responseJSON.text));
+      edit_quote.parent().prev().text((xhr.responseJSON.text));
     });
   });
 </script>
