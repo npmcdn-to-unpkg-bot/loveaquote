@@ -14,11 +14,11 @@
     <tbody>
       <% @authors.each do |author| %>
         <tr>
-          <td class="text-center"><%= author.image.present? ? (image_tag author.image_url(:tiny)) : (image_tag "http://placehold.it/50x50") %></td>
-          <td><%= author.name %></td>
-          <td class="text-center"><%= link_to 'Show', admin_author_url(author), class: "btn btn-primary btn-xs" %></td>
-          <td class="text-center"><%= link_to 'Edit', edit_admin_author_url(author), class: "btn btn-blue btn-xs" %></td>
-          <td class="text-center"><%= link_to 'Destroy', admin_author_url(author) , method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-red btn-xs" %></td>
+          <td class="text-center" ><%= author.image.present? ? (image_tag author.image_url(:tiny)) : (image_tag "http://placehold.it/50x50") %></td>
+          <td style="vertical-align: middle"><%= author.name %></td>
+          <td class="text-center" style="vertical-align: middle"><%= link_to 'Show', admin_author_url(author), class: "btn btn-primary btn-xs" %></td>
+          <td class="text-center" style="vertical-align: middle"><%= link_to 'Edit', edit_admin_author_url(author), class: "btn btn-blue btn-xs" %></td>
+          <td class="text-center" style="vertical-align: middle"><%= link_to 'Destroy', admin_author_url(author) , method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-red btn-xs" %></td>
         </tr>
       <% end %>
     </tbody>

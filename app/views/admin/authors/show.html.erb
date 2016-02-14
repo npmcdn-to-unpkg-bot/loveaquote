@@ -4,7 +4,19 @@
     <li><%= link_to "Authors", admin_authors_url %></li> 
     <li class="active"><%= @author.name %></li>
   </ol>
-  <h2><%= @author.name %> <%= link_to "view", author_url(@author), class: "btn btn-default btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_author_url(@author), class: "btn btn-default btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %></h2>
+  
+  <div class="row">
+    <div class="col-sm-2">
+      <% if @author.image.present? %>
+        <%= image_tag @author.image_url(:small), class: "thumbnail", style: "margin-bottom: 0px" %>
+      <% else %>
+        <%= image_tag "http://placehold.it/150x150", class: "thumbnail" %>
+      <% end %>
+    </div>
+    <div class="col-sm-7">
+      <h2 class="text-right"><%= @author.name %> <%= link_to "view", author_url(@author), class: "btn btn-default btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_author_url(@author), class: "btn btn-default btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %></h2>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-sm-9">
@@ -15,7 +27,8 @@
           </div>
           <div class="panel-options">
             <ul class="nav nav-tabs">
-              <li class="active"><a href="#quotes" data-toggle="tab">Quotes</a></li>
+              <li class="active"><a href="#quotes" data-toggle="tab">Self Quotes</a></li>
+              <li><a href="#book-quotes" data-toggle="tab">Book Quotes</a></li>
               <li><a href="#quote-topic-suggestions" data-toggle="tab">Topic Suggestions</a></li>
             </ul>
           </div>
@@ -43,6 +56,28 @@
                 </tbody>
               </table>
             </div>
+            
+            <div class="tab-pane active" id="book-quotes">
+              <table class="table table-striped table-bordered table-hover">
+                <thead>
+                  <th width="20%" class="text-center">Book</th>
+                  <th width="70%" class="text-center">Quote</th>
+                  <th width="10%" class="text-center" colspan="2">Manage</th>
+                </thead>
+                
+                <tbody>
+                  <% @author.book_quotes.order(text: :asc).each do |quote| %>  
+                  <tr>
+                    <% book = Book.find(quote.source_id) %>
+                    <td class="text-center"><%= link_to book.name, admin_book_url(book) %></td>
+                    <td><%= quote.text %></td>
+                    <td class="text-center"><%= link_to "Edit", "#", class: "edit-quote btn btn-default btn-xs", data: { url: "/admin/quotes/#{quote.id}" } %></td>
+                    <td class="text-center"><%= link_to "Delete", admin_quote_url(quote), method: :delete, remote: true, class: "delete-quote btn btn-red btn-xs" %></td>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>            
             
             <div class="tab-pane" id="quote-topic-suggestions">
               <div class="row">
@@ -149,7 +184,7 @@
     $(".edit-quote").on("click", function(e) {
       e.preventDefault();
       $(".simple_form.edit_quote").attr("action", $(this).data("url"));
-      $(".edit_quote #quote_text").val($(this).parent().prev().prev().text());
+      $(".edit_quote #quote_text").val($(this).parent().prev().text());
       $("#edit-quote-modal").modal('show');
       edit_quote = $(this);
     });

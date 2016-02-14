@@ -15,11 +15,11 @@
       <% @books.each do |book| %>
         <tr>
           <td class="text-center"><%= book.image.present? ? (image_tag book.image_url(:tiny)) : (image_tag "http://placehold.it/50x50") %></td>
-          <td><%= book.name %></td>
-          <td class="text-center"><%= link_to book.author.name, admin_author_url(book.author) %></td>
-          <td class="text-center"><%= link_to 'Show', admin_book_url(book), class: "btn btn-primary btn-xs" %></td>
-          <td class="text-center"><%= link_to 'Edit', edit_admin_book_url(book), class: "btn btn-blue btn-xs" %></td>
-          <td class="text-center"><%= link_to 'Destroy', admin_book_url(book) , method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-red btn-xs" %></td>
+          <td style="vertical-align: middle"><%= book.name %></td>
+          <td class="text-center" style="vertical-align: middle"><%= link_to book.author.name, admin_author_url(book.author) %></td>
+          <td class="text-center" style="vertical-align: middle"><%= link_to 'Show', admin_book_url(book), class: "btn btn-primary btn-xs" %></td>
+          <td class="text-center" style="vertical-align: middle"><%= link_to 'Edit', edit_admin_book_url(book), class: "btn btn-blue btn-xs" %></td>
+          <td class="text-center" style="vertical-align: middle"><%= link_to 'Destroy', admin_book_url(book) , method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-red btn-xs" %></td>
         </tr>
       <% end %>
     </tbody>
