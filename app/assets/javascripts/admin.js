@@ -18,4 +18,5 @@
 //= require neon-api
 //= require neon-custom 
 //= require joinable
+//= require multiselect/js/jquery.multi-select
 //= require_tree .
