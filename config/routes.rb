@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     end
     
     member do
-      get ':page', action: 'show', constraints: { page: /\d+/ }
+      get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
     end
   end
   
@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end  
     
     member do
-      get ':page', action: 'show', constraints: { page: /\d+/ }
+      get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
     end
   end
   
@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     end
     
     member do
-      get ':page', action: 'show', constraints: { page: /\d+/ }
+      get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
     end
   end
     

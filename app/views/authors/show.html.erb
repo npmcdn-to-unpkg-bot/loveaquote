@@ -1,6 +1,12 @@
-<% content_for :title, "#{@author.name} Quotes - #{@author.quotes.count.to_s} quotes by #{@author.name}" %>
-<% content_for :description, "Quotes by #{@author.name}. Best collection of #{@author.name} quotes. Read, comment and share these #{@author.name} quotes."%>
-<% content_for :canonical, "#{author_url(@author)}" %>
+<% if params.has_key?(:page) %>
+  <% content_for :canonical, "#{page_author_url(@author, params[:page])}" %>
+  <% content_for :title, "#{@author.name} Quotes - #{@author.quotes.count.to_s} quotes - Page #{params[:page]}" %>
+  <% content_for :description, "Quotes by #{@author.name} - page #{params[:page]}. Best collection of #{@author.name} quotes. Read, comment and share these quotes."%>
+<% else %>
+  <% content_for :canonical, "#{author_url(@author)}" %>
+  <% content_for :title, "#{@author.name} Quotes - #{@author.quotes.count.to_s} quotes" %>
+  <% content_for :description, "Quotes by #{@author.name}. Best collection of #{@author.name} quotes. Read, comment and share these quotes."%>
+<% end %>
 
 <% content_for :heading, "#{@author.name} Quotes" %>
 
