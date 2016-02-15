@@ -1,5 +1,15 @@
 <div class="col-sm-12">
-  <h2>Quote Topic Suggestions</h2>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <h2>Quote Topic Suggestions</h2>
+    </div>
+    
+    <div class="col-sm-12 col-md-6">
+      <%= form_tag admin_quote_topic_suggestions_url, method: :get do %>
+        <%= select_tag "topic", options_for_select(Topic.all.collect { |t| [t.name, t.id] }, params[:topic]), prompt: "Filter by Topic",onchange: "this.form.submit();", class: "select form-control inline" %>
+      <% end %>
+    </div>
+  </div>
   
   <table class="table table-striped table-bordered table-hover">
     <thead>
