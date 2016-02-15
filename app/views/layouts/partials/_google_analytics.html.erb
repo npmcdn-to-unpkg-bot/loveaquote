@@ -1,1 +1,1 @@
-<%= raw Setting.google_analytics %>
+<%= raw Setting.google_analytics unless admin_signed_in? %>
