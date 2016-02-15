@@ -11,10 +11,8 @@
       <%= render "layouts/partials/nav_bar_admin" %>
       <%= render "layouts/partials/sidebar" %>
       <div class="main-content">
-        <div class="row">
-          <div class="col-sm-12">
-            <%= render "layouts/partials/notification" %>
-          </div>
+        <%= render "layouts/partials/notification" %>
+        <div class="row">  
           <%= yield %>
         </div>
         <%= render "layouts/partials/admin_footer" %>

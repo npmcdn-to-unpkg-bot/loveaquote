@@ -53,7 +53,7 @@
                   <% @book.quotes.order(text: :asc).each do |quote| %>  
                   <tr>
                     <td><%= quote.text %></td>
-                    <td class="text-center"><%= link_to "Edit", "#", class: "edit-quote btn btn-default btn-xs", data: { "quote-id": quote.id } %></td>
+                    <td class="text-center"><%= link_to "Edit", edit_admin_quote_url(quote), target: "_blank", class: "btn btn-primary btn-xs" %></td>
                     <td class="text-center"><%= link_to "Delete", admin_quote_url(quote), method: :delete, remote: true, class: "delete-quote btn btn-red btn-xs" %></td>
                   </tr>
                   <% end %>
@@ -116,35 +116,8 @@
   </div>
 </div>
 
-<% @book.quotes.order(text: :asc).each do |quote| %>
-  <div class="modal fade in" id=<%= "edit-quote-#{quote.id}" %>>
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h4 class="modal-title">Edit Quote</h4>
-        </div>
-        <div class="modal-body">
-          <%= simple_form_for([:admin, quote], remote: true, html: {"data-type": "json"}) do |f| %>
-            <div class="form-inputs">          
-              <%= f.input :text, input_html: {rows: 5} %>
-              <%= f.association :topics, collection: Topic.all.order(name: :asc), input_html: { class: "quote_topic_ids" } %>
-            </div>
-            <div class="form-actions">
-              <%= f.button :submit %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
-
 <script type="text/javascript">
   $(function() {
-    var edit_quote;
-    var quote_id;
-    
     $(".accept_suggestion")
     .on("ajax:complete", function(e, data, status, xhr) {
         $(this).closest("tr").remove();
@@ -163,20 +136,5 @@
     $(".delete-quote").on("ajax:complete", function(xhr, status) {
       $(this).closest("tr").remove();
     });
-    
-    $(".edit-quote").on("click", function(e) {
-      e.preventDefault();
-      quote_id = $(this).data("quote-id");
-      $("#edit-quote-" + quote_id).modal('show');
-      edit_quote = $(this);
-    });
-    
-    $(".simple_form.edit_quote")
-    .on("ajax:complete", function(e, xhr, status, error) {
-      $("#edit-quote-" + quote_id).modal('hide');
-      edit_quote.parent().prev().text((xhr.responseJSON.text));
-    });
-    
-    $(".quote_topic_ids").multiSelect();
   });
 </script>
