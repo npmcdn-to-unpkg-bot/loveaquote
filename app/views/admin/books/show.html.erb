@@ -103,8 +103,7 @@
       <div class="modal-body">
         <%= simple_form_for([:admin, Quote.new]) do |f| %>
           <div class="form-inputs">          
-            <%= f.input :text %>
-            <%= f.association :topics, collection: Topic.all.order(name: :asc), input_html: { class: "quote_topic_ids" } %>
+            <%= f.input :text, input_html: {rows: 5} %>
             <%= f.hidden_field :book_id, value: @book.id %>
           </div>
           <div class="form-actions">

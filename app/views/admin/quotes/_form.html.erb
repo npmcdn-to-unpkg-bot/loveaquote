@@ -8,7 +8,7 @@
     boolean: :horizontal_boolean
   }) do |f| %>
     <div class="form-inputs">
-        <%= f.input :text %>
+        <%= f.input :text, input_html: {rows: 5} %>
         <%= f.association :topics, collection: Topic.all.order(name: :asc) %>
     </div>
     <%= f.button :submit %>
