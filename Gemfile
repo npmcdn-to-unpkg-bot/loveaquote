@@ -36,6 +36,7 @@ gem 'stringex'
 gem 'sitemap_generator'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog'
 
 gem 'pg'
 
