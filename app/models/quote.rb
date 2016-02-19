@@ -32,9 +32,9 @@ class Quote < ActiveRecord::Base
     def source_url
         case self.source_type
         when "Author"
-            "http://www.loveaquote.com/authors/#{Author.find(self.source_id).slug}"
+            "http://www.loveaquote.com/authors/#{self.source.slug}"
         when "Book"
-            "http://www.loveaquote.com/books/#{Book.find(self.source_id).slug}"
+            "http://www.loveaquote.com/books/#{self.source.slug}"
         else
             "http://www.loveaquote.com"
         end

@@ -9,6 +9,20 @@ class QuotesController < ApplicationController
     redirect_to "https://twitter.com/intent/tweet?text=#{text}&amp;url=#{url}&amp;via=DoYouLoveAQuote"
   end
   
+  def facebook
+    QuoteFacebookWorker.perform_async(@quote.id)
+    url = URI.encode(@quote.source_url)
+    redirect_to "https://www.facebook.com/sharer/sharer.php?u=#{url}"
+  end
+  
+  def pinterest
+    QuotePinterestWorker.perform_async(@quote.id)
+    url = URI.encode(@quote.source_url)
+    media = URI.encode(@quote.source.image_url(:large))
+    description = CGI::escape(@quote.text + ' - ' + @quote.source.name +  ' #quotes')
+    redirect_to "http://www.pinterest.com/pin/create/bookmarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"
+  end
+  
   private
   
   def set_quote
