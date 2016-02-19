@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219131621) do
+ActiveRecord::Schema.define(version: 20160219184211) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 20160219131621) do
     t.integer  "facebook_share_count",    default: 0
     t.integer  "pinterest_share_count",   default: 0
     t.integer  "google_plus_share_count", default: 0
+    t.integer  "total_share_count",       default: 0
   end
 
   add_index "quotes", ["source_type", "source_id"], name: "index_quotes_on_source_type_and_source_id"
