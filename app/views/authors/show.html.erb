@@ -17,7 +17,7 @@
 <% content_for :content do %>
 
   <ul itemscope itemtype="http://schema.org/ItemList">
-    <% @quotes.order(text: :asc).each do |quote| %>
+    <% @quotes.order(total_share_count: :desc).order(text: :asc).each do |quote| %>
       <%= render partial: "authors/quote", object: quote %>
     <% end %>
   </ul>
