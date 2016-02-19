@@ -29,6 +29,15 @@ Rails.application.routes.draw do
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
     end
   end
+  
+  resources :quotes, only: [] do
+    member do
+      get 'pinterest'
+      get 'facebook'
+      get 'twitter'
+      get 'google_plus'
+    end
+  end
     
   devise_for :admins, path: "admin", path_names: {sign_in: "login", sign_out: "logout"}, controllers: {sessions: "admin/sessions"}
   

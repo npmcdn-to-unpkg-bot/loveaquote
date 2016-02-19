@@ -23,10 +23,20 @@ class Quote < ActiveRecord::Base
     end
     
     def touch_source
-        if self.changed?
+        if self.text_changed?
             self.source.touch
             self.topics.each {|t| t.touch }
         end
     end
     
+    def source_url
+        case self.source_type
+        when "Author"
+            "http://www.loveaquote.com/authors/#{Author.find(self.source_id).slug}"
+        when "Book"
+            "http://www.loveaquote.com/books/#{Book.find(self.source_id).slug}"
+        else
+            "http://www.loveaquote.com"
+        end
+    end
 end

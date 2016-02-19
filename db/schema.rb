@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160207142520) do
+ActiveRecord::Schema.define(version: 20160219131621) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -95,10 +95,14 @@ ActiveRecord::Schema.define(version: 20160207142520) do
 
   create_table "quotes", force: :cascade do |t|
     t.text     "text"
-    t.integer  "source_id",   null: false
-    t.string   "source_type", null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "source_id",                           null: false
+    t.string   "source_type",                         null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "twitter_share_count",     default: 0
+    t.integer  "facebook_share_count",    default: 0
+    t.integer  "pinterest_share_count",   default: 0
+    t.integer  "google_plus_share_count", default: 0
   end
 
   add_index "quotes", ["source_type", "source_id"], name: "index_quotes_on_source_type_and_source_id"

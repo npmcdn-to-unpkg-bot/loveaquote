@@ -12,7 +12,7 @@
         </div>
 
         <div class="social-sharing">
-          <a rel="nofollow" class="share-twitter" title="Share this quote on Twitter" target="_blank" href="https://twitter.com/intent/tweet?text=<%= CGI::escape(quote.text) %>&amp;url=<%= URI.encode(author_url(@author)) %>&amp;via=_LoveAQuote_"><i class="fa fa-twitter-square fa-lg"></i></a>
+          <a rel="nofollow" class="share-twitter" title="Share this quote on Twitter" target="_blank" href="<%= twitter_quote_url(quote) %>"><i class="fa fa-twitter-square fa-lg"></i></a>
           <a rel="nofollow" class="share-facebook" title="Share this quote on Facebook" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<%= URI.encode(author_url( @author)) %>"><i class="fa fa-facebook-square fa-lg"></i></a>
         </div>
 
