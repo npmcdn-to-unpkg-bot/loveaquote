@@ -17,7 +17,7 @@
 <% content_for :content do %>
 
   <ul>
-    <% @quotes.order(total_share_count: :desc).order(text: :asc).each do |quote| %>
+    <% @quotes.each do |quote| %>
         <%= render partial: "topics/quote", object: quote %>
     <% end %>
   </ul>

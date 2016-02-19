@@ -5,8 +5,6 @@ class Quote < ActiveRecord::Base
     has_many :topics, through: :quote_topics
     has_many :quote_topic_suggestions, dependent: :destroy
     
-    default_scope {order(text: :ASC)}
-    
     # text should be present and unique
     validates :text, presence: true, uniqueness: true
     

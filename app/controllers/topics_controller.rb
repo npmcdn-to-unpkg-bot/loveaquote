@@ -6,7 +6,7 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @quotes = @topic.quotes.page(params[:page])
+    @quotes = @topic.quotes.order(total_share_count: :desc).order(text: :asc).page params[:page]
     render layout: "topic"
   end
   
