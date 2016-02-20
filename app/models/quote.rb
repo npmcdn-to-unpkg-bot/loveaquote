@@ -26,15 +26,4 @@ class Quote < ActiveRecord::Base
             self.topics.each {|t| t.touch }
         end
     end
-    
-    def source_url
-        case self.source_type
-        when "Author"
-            "http://www.loveaquote.com/authors/#{self.source.slug}"
-        when "Book"
-            "http://www.loveaquote.com/books/#{self.source.slug}"
-        else
-            "http://www.loveaquote.com"
-        end
-    end
 end
