@@ -17,7 +17,7 @@ class QuotesController < ApplicationController
   
   def pinterest
     QuotePinterestWorker.perform_async(@quote.id)
-    url = UURI.encode(view_context.quote_source_url(@quote))
+    url = URI.encode(view_context.quote_source_url(@quote))
     media = URI.encode(@quote.source.image_url(:large))
     description = CGI::escape(@quote.text + ' - ' + @quote.source.name +  ' #quotes')
     redirect_to "http://www.pinterest.com/pin/create/bookmarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"
