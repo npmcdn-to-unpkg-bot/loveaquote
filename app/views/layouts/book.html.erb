@@ -19,11 +19,21 @@
 
           <main id="content" role="main" itemprop="mainContentOfPage">
           <article itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
-            <%= image_tag @book.image_url(:thumb), class: "thumbnail", style: "margin: 0 auto;" if @book.image.present? %>
 
-            <header>
-              <h1 itemprop="headline" class="text-center"><%= yield :heading %></h1>
-            </header>
+            <div class="row">
+              <div class="col-md-3 hidden-xs hidden-sm">
+                <% if @book.image.present? %>
+                  <%= image_tag @book.image_url(:thumb), class: "thumbnail" %>
+                <% else %>
+                  <%= image_tag "http://placehold.it/150x150", class: "thumbnail" %>
+                <% end %>
+              </div>
+              <div class="col-md-9 col-sm-12">
+                <header>
+                  <h1 itemprop="headline" class="text-right"><%= yield :heading %></h1>
+                </header>
+              </div>
+            </div>
 
             <div itemprop="text">
               <%= yield :content %>

@@ -22,7 +22,10 @@
     <% end %>
   </ul>
 
-  <%= paginate @quotes %>
+  <div class="text-center">
+    <%= paginate @quotes %>    
+  </div>
+  
 <% end %>
 
 <% content_for :comments do %>
