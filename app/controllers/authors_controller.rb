@@ -13,7 +13,7 @@ class AuthorsController < ApplicationController
   end
 
   def show
-    @quotes = @author.all_quotes.order(twitter_share_count: :desc).order(text: :asc).page params[:page]
+    @quotes = @author.all_quotes.order(total_share_count: :desc).order(text: :asc).page params[:page]
     render layout: "author"
   end
   
