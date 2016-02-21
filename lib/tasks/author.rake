@@ -6,6 +6,6 @@ namespace :author do
         end
     end
     
-    rename :image => :environment do
+    task :image => :environment do
     end
 end
