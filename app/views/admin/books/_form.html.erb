@@ -21,7 +21,7 @@
     
     <%= f.input :name %>
     <%= f.input :fetch_url %>
-    <%= f.association :author, collection: Author.all.order(name: :asc) %>
+    <%= f.association :person, collection: Person.all.order(name: :asc) %>
     <%= f.input :image %>
     <%= f.input :published %>
     <%= f.input :popular %>

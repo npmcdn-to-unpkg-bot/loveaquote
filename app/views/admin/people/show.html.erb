@@ -1,8 +1,8 @@
 <div class="col-sm-12">
   <ol class="breadcrumb bc-3"> 
     <li><%= link_to "Home", admin_root_url %></li>
-    <li><%= link_to "Authors", admin_authors_url %></li> 
-    <li class="active"><%= @author.name %></li>
+    <li><%= link_to "People", admin_people_url %></li> 
+    <li class="active"><%= @person.name %></li>
   </ol>
   
   <div class="row">
@@ -10,14 +10,14 @@
       
       <div class="row">
         <div class="col-sm-3">
-          <% if @author.image.present? %>
-            <%= image_tag @author.image_url(:small), class: "thumbnail", style: "margin-bottom: 0px" %>
+          <% if @person.image.present? %>
+            <%= image_tag @person.image_url(:small), class: "thumbnail", style: "margin-bottom: 0px" %>
           <% else %>
             <%= image_tag "http://placehold.it/150x150", class: "thumbnail" %>
           <% end %>
         </div>
         <div class="col-sm-9">
-          <h2 class="text-right"><%= link_to "view", author_url(@author), class: "btn btn-primary btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_author_url(@author), class: "btn btn-blue btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %> <%= @author.name %></h2>
+          <h2 class="text-right"><%= link_to "view", person_url(@person), class: "btn btn-primary btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_person_url(@person), class: "btn btn-blue btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %> <%= @person.name %></h2>
         </div>
       </div>
   
@@ -48,7 +48,7 @@
                 </thead>
                 
                 <tbody>
-                  <% @author.quotes.order(text: :asc).each do |quote| %>  
+                  <% @person.quotes.order(text: :asc).each do |quote| %>  
                   <tr>
                     <td><%= quote.text %></td>
                     <td class="text-center"><%= link_to "Edit", edit_admin_quote_url(quote), target: "_blank", class: "btn btn-primary btn-xs" %></td>
@@ -68,7 +68,7 @@
                 </thead>
                 
                 <tbody>
-                  <% @author.book_quotes.order(text: :asc).each do |quote| %>  
+                  <% @person.book_quotes.order(text: :asc).each do |quote| %>  
                   <tr>
                     <% book = Book.find(quote.source_id) %>
                     <td class="text-center"><%= link_to book.name, admin_book_url(book) %></td>
@@ -93,7 +93,7 @@
                   </thead>
                 
                   <tbody>
-                    <% @author.quote_topic_suggestions.where(read: false).each do |quote_topic_suggestion| %>
+                    <% @person.quote_topic_suggestions.where(read: false).each do |quote_topic_suggestion| %>
                       <tr>
                         <td><%= quote_topic_suggestion.quote.text %></td>
                         <td class="text-center"><%= quote_topic_suggestion.topic.name %></td>
@@ -114,16 +114,16 @@
     </div>
     
     <div class="col-sm-3">
-      <% if @author.books.any? %>
+      <% if @person.books.any? %>
       <div class="panel panel-default panel-shadow">
         <div class="panel-heading">
           <div class="panel-title">
-            <%= "Books by #{@author.name}" %>
+            <%= "Books by #{@person.name}" %>
           </div>
         </div>
         <div class="panel-body">
           <ul class="list-unstyled">
-            <% @author.books.each do |book| %>
+            <% @person.books.each do |book| %>
               <li><%= link_to book.name, admin_book_url(book) %></li>
             <% end %>
           </ul>
@@ -146,7 +146,7 @@
         <%= simple_form_for([:admin, Quote.new]) do |f| %>
           <div class="form-inputs">          
             <%= f.input :text, input_html: {rows: 5} %>
-            <%= f.hidden_field :author_id, value: @author.id %>
+            <%= f.hidden_field :person_id, value: @person.id %>
           </div>
           <div class="form-actions">
             <%= f.button :submit %>

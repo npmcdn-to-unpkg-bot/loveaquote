@@ -4,16 +4,16 @@ class Book < ActiveRecord::Base
     has_many :quote_topic_suggestions, through: :quotes
     has_many :featured_topics, as: :source, dependent: :destroy
     
-    belongs_to :author
+    belongs_to :person
     
     mount_uploader :image, ImageUploader
     
     # name should be present and unique
     # slug should be present and unique
-    # author should be present
+    # person should be present
     validates :name, presence: true, uniqueness: true, blank: false
     validates :slug, presence: true, uniqueness: true, blank: false
-    validates :author_id, presence: true, blank: false
+    validates :person_id, presence: true, blank: false
     
     scope :published, -> {where(published: true)}
     scope :draft, -> {where(published: false)}

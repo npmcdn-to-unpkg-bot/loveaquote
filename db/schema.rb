@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221051410) do
+ActiveRecord::Schema.define(version: 20160221121943) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -31,20 +31,6 @@ ActiveRecord::Schema.define(version: 20160221051410) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
-  create_table "authors", force: :cascade do |t|
-    t.string   "name"
-    t.string   "slug"
-    t.string   "fetch_url"
-    t.boolean  "published",    default: false, null: false
-    t.boolean  "popular",      default: false, null: false
-    t.boolean  "very_popular", default: false, null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "image"
-  end
-
-  add_index "authors", ["slug"], name: "index_authors_on_slug"
-
   create_table "books", force: :cascade do |t|
     t.string   "name"
     t.string   "fetch_url"
@@ -52,13 +38,13 @@ ActiveRecord::Schema.define(version: 20160221051410) do
     t.boolean  "published",    default: false, null: false
     t.boolean  "popular",      default: false, null: false
     t.boolean  "very_popular", default: false, null: false
-    t.integer  "author_id",                    null: false
+    t.integer  "person_id",                    null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.string   "image"
   end
 
-  add_index "books", ["author_id"], name: "index_books_on_author_id"
+  add_index "books", ["person_id"], name: "index_books_on_person_id"
   add_index "books", ["slug"], name: "index_books_on_slug"
 
   create_table "character_sources", force: :cascade do |t|
@@ -90,6 +76,20 @@ ActiveRecord::Schema.define(version: 20160221051410) do
 
   add_index "featured_topics", ["source_type", "source_id"], name: "index_featured_topics_on_source_type_and_source_id"
   add_index "featured_topics", ["topic_id"], name: "index_featured_topics_on_topic_id"
+
+  create_table "people", force: :cascade do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.string   "fetch_url"
+    t.boolean  "published",    default: false, null: false
+    t.boolean  "popular",      default: false, null: false
+    t.boolean  "very_popular", default: false, null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "image"
+  end
+
+  add_index "people", ["slug"], name: "index_people_on_slug"
 
   create_table "quote_topic_suggestions", force: :cascade do |t|
     t.integer  "quote_id",                   null: false

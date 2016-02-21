@@ -1,11 +1,11 @@
 class WelcomeController < ApplicationController
   def index
-    author_count = Author.very_popular.count
+    person_count = Person.very_popular.count
     columns = 2
 
-    @authors = []
-    @authors << Author.very_popular.published.order(name: "ASC").limit(author_count/columns + author_count%columns)
-    @authors << Author.very_popular.published.order(name: "ASC").limit(author_count/columns).offset( author_count/columns + author_count%columns)
+    @people = []
+    @people << Person.very_popular.published.order(name: "ASC").limit(person_count/columns + person_count%columns)
+    @people << Person.very_popular.published.order(name: "ASC").limit(person_count/columns).offset( person_count/columns + person_count%columns)
 
     topic_count = Topic.very_popular.count
     @topics = []

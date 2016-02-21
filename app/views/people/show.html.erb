@@ -1,0 +1,37 @@
+<% if params.has_key?(:page) %>
+  <% content_for :canonical, "#{page_person_url(@person, params[:page])}" %>
+  <% content_for :title, "#{@person.name} Quotes - #{@person.quotes.count.to_s} quotes - Page #{params[:page]}" %>
+  <% content_for :description, "Quotes by #{@person.name} - page #{params[:page]}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
+<% else %>
+  <% content_for :canonical, "#{person_url(@person)}" %>
+  <% content_for :title, "#{@person.name} Quotes - #{@person.quotes.count.to_s} quotes" %>
+  <% content_for :description, "Quotes by #{@person.name}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
+<% end %>
+
+<% content_for :heading, "#{@person.name} Quotes" %>
+
+<% if @person.image.present? %>
+  <% content_for :image_url, URI.join( root_url, @person.image.url).to_s %>
+<% end %>
+
+<% content_for :content do %>
+
+  <ul itemscope itemtype="http://schema.org/ItemList">
+    <% @quotes.each do |quote| %>
+      <%= render partial: "people/quote", object: quote %>
+    <% end %>
+  </ul>
+  
+  <div class="text-center">
+    <%= paginate @quotes %>
+  </div>
+  
+<% end %>
+
+<% content_for :comments do %>
+  <div class="fb-comments" data-href="<%= person_url(@person) %>" data-numposts="10" data-colorscheme="light" data-width="100%"></div>
+<% end %>
+
+<% content_for :updated do %>
+  Last Updated - <time itemprop="dateModified" datetime="<%= @person.updated_at.to_datetime %>"><%= @person.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
+<% end %>

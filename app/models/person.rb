@@ -1,4 +1,4 @@
-class Author < ActiveRecord::Base
+class Person < ActiveRecord::Base
     # has many quotes
     has_many :quotes, as: :source, dependent: :destroy
     has_many :quote_topic_suggestions, through: :quotes

@@ -1,5 +1,5 @@
 <div class="col-sm-4">
-    <h3>Pending Authors</h3>
+    <h3>Pending People</h3>
     <table class="table table-striped table-bordered table-hover">
       <thead>
         <tr>
@@ -9,12 +9,12 @@
       </thead>
     
       <tbody>
-        <% @authors.each do |author| %>
+        <% @people.each do |person| %>
           <tr>
-            <td><%= author.name %></td>
-            <td class="text-center"><%= link_to 'Show', admin_author_url(author) %></td>
-            <td class="text-center"><%= link_to 'Edit', edit_admin_author_url(author) %></td>
-            <td class="text-center"><%= link_to 'Destroy', admin_author_url(author) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= person.name %></td>
+            <td class="text-center"><%= link_to 'Show', admin_person_url(person) %></td>
+            <td class="text-center"><%= link_to 'Edit', edit_admin_person_url(person) %></td>
+            <td class="text-center"><%= link_to 'Destroy', admin_person_url(person) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>

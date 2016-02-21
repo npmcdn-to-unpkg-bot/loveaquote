@@ -1,4 +1,4 @@
-<%= simple_form_for([:admin, @author],
+<%= simple_form_for([:admin, @person],
   html: { class: 'form-horizontal' },
   wrapper: :horizontal_form,
   wrapper_mappings: {
@@ -11,8 +11,8 @@
   <div class="form-inputs">
     <div class="form-group">
       <div class="col-sm-9 col-sm-offset-3">
-          <% if @author.image.present? %>
-            <%= image_tag @author.image_url(:small), class: "thumbnail", style: "margin-bottom: 0px" %>
+          <% if @person.image.present? %>
+            <%= image_tag @person.image_url(:small), class: "thumbnail", style: "margin-bottom: 0px" %>
           <% else %>
             <%= image_tag "http://placehold.it/150x150" %>
           <% end %>

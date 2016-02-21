@@ -13,8 +13,8 @@
 
           <ul class="breadcrumb">
             <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
-            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= authors_url %>" itemprop="url"><span itemprop="title">Authors</span></a></li>
-            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @author.name %></span></li>
+            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= people_url %>" itemprop="url"><span itemprop="title">People</span></a></li>
+            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @person.name %></span></li>
           </ul>
 
           <main id="content" role="main" itemprop="mainContentOfPage">
@@ -22,8 +22,8 @@
           
             <div class="row">
               <div class="col-md-3 hidden-xs hidden-sm">
-                <% if @author.image.present? %>
-                  <%= image_tag @author.image_url(:thumb), class: "thumbnail" %>
+                <% if @person.image.present? %>
+                  <%= image_tag @person.image_url(:thumb), class: "thumbnail" %>
                 <% else %>
                   <%= image_tag "http://placehold.it/150x150", class: "thumbnail" %>
                 <% end %>

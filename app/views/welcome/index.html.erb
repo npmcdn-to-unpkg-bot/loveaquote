@@ -9,20 +9,20 @@
 <% content_for :content do %>
   <div class="row">
     <div class="col-md-6">
-      <h2 class="text-center">Popular Authors</h2>
+      <h2 class="text-center">Popular People</h2>
       <div class="row">
-         <% @authors.each do |authors| %>
+         <% @people.each do |people| %>
           <div class="col-md-6">
             <ul>
-              <% authors.each do |author| %>
-                <li><%= link_to author.name, author_url(author), title: author.name + " Quotes" %></li>
+              <% people.each do |person| %>
+                <li><%= link_to person.name, person_url(person), title: person.name + " Quotes" %></li>
               <% end %>
             </ul>
           </div>
         <% end %>     
         <div class="col-md-12">
           <ul>
-            <li><%= link_to "More Authors", authors_url %> </li>
+            <li><%= link_to "More People", people_url %> </li>
           </ul>
         </div>
       </div>

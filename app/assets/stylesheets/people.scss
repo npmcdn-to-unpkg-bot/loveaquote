@@ -1,15 +1,15 @@
-.authors.index main ul,
-.authors.alphabet main ul {
+.people.index main ul,
+.people.alphabet main ul {
   list-style-type: none;
 }
 
-.authors.show main ul,
-.authors.alphabet main ul {
+.people.show main ul,
+.people.alphabet main ul {
   list-style-type: none;
 }
 
-.authors.index main ul li,
-.authors.alphabet main ul li {
+.people.index main ul li,
+.people.alphabet main ul li {
   background-color: #F2F2F2;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
@@ -17,7 +17,7 @@
   border: 1px solid #E7E7E7;
 }
 
-.authors.show {
+.people.show {
   main#content {
     margin: 20px 0;
 

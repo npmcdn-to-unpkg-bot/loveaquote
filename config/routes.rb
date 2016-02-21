@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :authors, only: [:index, :show] do
+  resources :people, only: [:index, :show] do
     collection do
       get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
     end
@@ -50,7 +50,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'dashboard#index'
     resources :quotes
-    resources :authors
+    resources :people
     resources :books
     resources :characters
     resources :featured_topics

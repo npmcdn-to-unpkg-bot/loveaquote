@@ -15,7 +15,7 @@
     </div>
     <div class="col-sm-7">
       <h2 class="text-right"><%= link_to "view", book_url(@book), class: "btn btn-primary btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_book_url(@book), class: "btn btn-blue btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %> <%= @book.name %></h2>
-      <h4 class="text-right"><em>by</em> <%= link_to @book.author.name, admin_author_url(@book.author) %></h4>
+      <h4 class="text-right"><em>by</em> <%= link_to @book.person.name, admin_person_url(@book.person) %></h4>
     </div>
   </div>
   
