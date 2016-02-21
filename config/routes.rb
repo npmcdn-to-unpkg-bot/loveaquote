@@ -51,7 +51,8 @@ Rails.application.routes.draw do
     root 'dashboard#index'
     resources :quotes
     resources :authors
-    resources :books  
+    resources :books
+    resources :characters
     resources :featured_topics
     resources :topics do
       resources :topic_aliases
