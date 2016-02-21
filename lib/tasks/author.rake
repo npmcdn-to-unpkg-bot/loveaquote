@@ -5,7 +5,4 @@ namespace :author do
             quote.save
         end
     end
-    
-    task :image => :environment do
-    end
 end
