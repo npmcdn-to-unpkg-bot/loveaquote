@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get "authors/:slug", to: redirect("/people/%{slug}", status: 301)
+  
   resources :people, only: [:index, :show] do
     collection do
       get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
