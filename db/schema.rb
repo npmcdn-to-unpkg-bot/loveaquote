@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221121943) do
+ActiveRecord::Schema.define(version: 20160221171519) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -48,9 +48,9 @@ ActiveRecord::Schema.define(version: 20160221121943) do
   add_index "books", ["slug"], name: "index_books_on_slug"
 
   create_table "character_sources", force: :cascade do |t|
-    t.integer  "character_id"
-    t.integer  "source_id"
-    t.string   "source_type"
+    t.integer  "character_id", null: false
+    t.integer  "source_id",    null: false
+    t.string   "source_type",  null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -123,8 +123,10 @@ ActiveRecord::Schema.define(version: 20160221121943) do
     t.integer  "pinterest_share_count",   default: 0
     t.integer  "google_plus_share_count", default: 0
     t.integer  "total_share_count",       default: 0
+    t.integer  "character_id"
   end
 
+  add_index "quotes", ["character_id"], name: "index_quotes_on_character_id"
   add_index "quotes", ["source_type", "source_id"], name: "index_quotes_on_source_type_and_source_id"
 
   create_table "settings", force: :cascade do |t|

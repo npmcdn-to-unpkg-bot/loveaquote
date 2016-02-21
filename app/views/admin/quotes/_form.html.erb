@@ -10,6 +10,7 @@
     <div class="form-inputs">
         <%= f.input :text, input_html: {rows: 5} %>
         <%= f.association :topics, collection: Topic.all.order(name: :asc) %>
+        <%= f.association :character, collection: @quote.source.characters.order(name: :asc), input_html: {multiple: false} if @quote.source_type == "Book" %>
     </div>
     <%= f.button :submit %>
 <% end %>

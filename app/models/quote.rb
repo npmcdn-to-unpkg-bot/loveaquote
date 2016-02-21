@@ -1,6 +1,7 @@
 class Quote < ActiveRecord::Base
     # belongs to source
     belongs_to :source, polymorphic: true
+    belongs_to :character
     has_many :quote_topics, dependent: :destroy
     has_many :topics, through: :quote_topics
     has_many :quote_topic_suggestions, dependent: :destroy
@@ -25,5 +26,9 @@ class Quote < ActiveRecord::Base
             self.source.touch
             self.topics.each {|t| t.touch }
         end
+    end
+    
+    def character
+        self.characters.first
     end
 end

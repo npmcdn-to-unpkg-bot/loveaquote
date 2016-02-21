@@ -1,0 +1,5 @@
+class AddCharacterToQuotes < ActiveRecord::Migration
+  def change
+    add_reference :quotes, :character, index: true, foreign_key: true
+  end
+end
