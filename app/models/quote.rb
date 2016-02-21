@@ -27,8 +27,4 @@ class Quote < ActiveRecord::Base
             self.topics.each {|t| t.touch }
         end
     end
-    
-    def character
-        self.characters.first
-    end
 end
