@@ -1,3 +1,35 @@
-// Place all the styles related to the Characters controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.characters.index main ul,
+.characters.alphabet main ul {
+  list-style-type: none;
+}
+
+.characters.show main ul,
+.characters.alphabet main ul {
+  list-style-type: none;
+}
+
+.characters.index main ul li,
+.characters.alphabet main ul li {
+  background-color: #F2F2F2;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  border: 1px solid #E7E7E7;
+}
+
+.characters.show {
+  main#content {
+    margin: 20px 0;
+
+    .entry-image .thumbnail {
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+    
+    .featured-topic-sub-heading {
+      font-weight: bold;
+      font-size: 100%;
+      margin-bottom: 5px;
+    }
+  }
+}

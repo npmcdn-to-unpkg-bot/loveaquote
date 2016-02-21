@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221171519) do
+ActiveRecord::Schema.define(version: 20160221172417) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -62,8 +62,11 @@ ActiveRecord::Schema.define(version: 20160221171519) do
     t.string   "name"
     t.string   "slug"
     t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "published",    default: false, null: false
+    t.boolean  "popular",      default: false, null: false
+    t.boolean  "very_popular", default: false, null: false
   end
 
   create_table "featured_topics", force: :cascade do |t|

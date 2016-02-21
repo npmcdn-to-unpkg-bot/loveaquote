@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+  <head>
+    <%= render "layouts/partials/head" %>
+  </head>
+  <body class="<%= controller.controller_name %> <%= controller.action_name  %>" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+    <%= render "layouts/partials/google_analytics" %>
+    <%= render "layouts/partials/facebook_sdk" %>
+    <%= render "layouts/partials/nav_bar" %>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+
+          <ul class="breadcrumb">
+            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
+            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= characters_url %>" itemprop="url"><span itemprop="title">Characters</span></a></li>
+            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @character.name %></span></li>
+          </ul>
+
+          <main id="content" role="main" itemprop="mainContentOfPage">
+          <article itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+
+            <div class="row">
+              <div class="col-md-3 hidden-xs hidden-sm">
+                <% if @character.image.present? %>
+                  <%= image_tag @character.image_url(:thumb), class: "thumbnail" %>
+                <% else %>
+                  <%= image_tag "http://placehold.it/150x150", class: "thumbnail" %>
+                <% end %>
+              </div>
+              <div class="col-md-9 col-sm-12">
+                <header>
+                  <h1 itemprop="headline" class="text-right"><%= yield :heading %></h1>
+                </header>
+              </div>
+            </div>
+
+            <div itemprop="text">
+              <%= yield :content %>
+            </div>
+
+            <footer>
+              <div class="entry-meta">
+                <span class="last-updated">
+                  <%= yield :updated %>
+                </span>
+              </div>
+            </footer>
+
+          </article>
+
+          <%= yield :comments %>
+
+          </main>
+        </div>
+
+        <div class="col-sm-4">
+          <aside>
+            <%= render "layouts/partials/aside" %>
+          </aside>
+        </div>
+
+      </div>
+    </div>
+    <%= render "layouts/partials/footer" %>
+    <%= render "layouts/partials/bottom_scripts" %>
+  </body>
+</html>

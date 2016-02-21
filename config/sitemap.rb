@@ -29,6 +29,10 @@ SitemapGenerator::Sitemap.create do
     add book_path(book), :lastmod => book.updated_at
   end
   
+  Character.published.each do |character|
+    add character_path(character), :lastmod => character.updated_at
+  end
+  
   Topic.published.each do |topic|
     add topic_path(topic), :lastmod => topic.updated_at
   end

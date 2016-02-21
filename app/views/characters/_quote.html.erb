@@ -1,0 +1,25 @@
+<li>
+    <div class="quote">
+
+      <div class="quote-text">
+        <p itemprop="itemListElement"><%= quote.text %></p>
+      </div>
+
+      <div class="quote-meta">
+
+        <div class="quote-info">
+          <%= link_to quote.topics.published.first.name, topic_url(quote.topics.published.first), title: "#{quote.topics.published.first.name} Quotes" if quote.topics.published.any? %>
+        </div>
+
+        <div class="social-sharing">
+          <a rel="nofollow" class="share-twitter" title="Share this quote on Twitter" target="_blank" href="<%= twitter_quote_url(quote) %>"><i class="fa fa-twitter-square fa-lg"></i></a>
+          <a rel="nofollow" class="share-facebook" title="Share this quote on Facebook" target="_blank" href="<%= facebook_quote_url(quote) %>"><i class="fa fa-facebook-square fa-lg"></i></a>
+          <% if quote.source.image.present? %>
+            <a rel="nofollow" class="share-pinterest" title="Share this quote on Pinterest" target="_blank" href="<%= pinterest_quote_url(quote) %>"><i class="fa fa-pinterest-square fa-lg"></i></a>
+            <% end %>
+        </div>
+
+      </div>
+
+    </div>
+</li>
