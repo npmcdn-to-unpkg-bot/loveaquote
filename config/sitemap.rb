@@ -21,8 +21,8 @@ SitemapGenerator::Sitemap.create do
   #
   # Add all authors:
   
-  Author.published.each do |author|
-    add author_path(author), :lastmod => author.updated_at
+  Person.published.each do |person|
+    add person_path(person), :lastmod => person.updated_at
   end
   
   Book.published.each do |book|

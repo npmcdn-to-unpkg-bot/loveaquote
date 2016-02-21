@@ -2,9 +2,9 @@ class BrainyquoteWorker
   include Sidekiq::Worker
 
   def perform(id)
-    author = Author.find(id)
+    person = Person.find(id)
     require 'open-uri'
-    fetch_url = author.fetch_url
+    fetch_url = person.fetch_url
     page = Nokogiri::HTML(open(fetch_url))
     total_pages = 1
 
@@ -18,15 +18,15 @@ class BrainyquoteWorker
 
     (1..total_pages).each do |page_number|
       if page_number != 1
-        fetch_url = author.fetch_url[0..-6] + '_' + page_number.to_s + '.html'
+        fetch_url = person.fetch_url[0..-6] + '_' + page_number.to_s + '.html'
       end
 
       page = Nokogiri::HTML(open(fetch_url))
       page.css('span.bqQuoteLink').each do |q|
-        Quote.create(text: q.text.strip, source: author)
+        Quote.create(text: q.text.strip, source: person)
       end
     end
-    author.fetch_url = ""
-    author.save
+    person.fetch_url = ""
+    person.save
   end
 end
