@@ -22,8 +22,8 @@ class Admin::QuotesController < ApplicationController
     respond_to do |format|
       if @quote.save
         format.html { 
-          if params[:quote][:author_id].present?
-            redirect_to admin_author_url(Author.find(params[:quote][:author_id])), notice: 'quote was successfully created.'            
+          if params[:quote][:person_id].present?
+            redirect_to admin_person_url(Person.find(params[:quote][:person_id])), notice: 'quote was successfully created.'
           elsif params[:quote][:book_id].present?
             redirect_to admin_book_url(Book.find(params[:quote][:book_id])), notice: 'quote was successfully created.'                      
           else
