@@ -6,7 +6,8 @@
           <%= quote.text %>
           <% if quote.character.present? %>
             <% if quote.character.published? %>
-              <%= link_to " - #{quote.character.name}", character_url(quote.character) %>
+              <%= " - " %>
+              <%= link_to quote.character.name, character_url(quote.character), title: "#{quote.character.name} Quotes" %>
             <% else %>
               <%= " - #{quote.character.name}" %>
             <% end %>
