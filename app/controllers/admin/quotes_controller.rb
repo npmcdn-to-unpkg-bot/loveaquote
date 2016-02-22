@@ -16,7 +16,7 @@ class Admin::QuotesController < ApplicationController
   def create
     @quote = Quote.new()
     @quote.text = params[:quote][:text]
-    @quote.source = Author.find(params[:quote][:author_id]) if params[:quote][:author_id].present?
+    @quote.source = Person.find(params[:quote][:person_id]) if params[:quote][:person_id].present?
     @quote.source = Book.find(params[:quote][:book_id]) if params[:quote][:book_id].present?
     
     respond_to do |format|
