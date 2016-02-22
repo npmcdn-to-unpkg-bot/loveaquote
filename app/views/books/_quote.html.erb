@@ -2,7 +2,16 @@
     <div class="quote">
 
       <div class="quote-text">
-        <p itemprop="itemListElement"><%= quote.text %></p>
+        <p itemprop="itemListElement">
+          <%= quote.text %>
+          <% if quote.character.present? %>
+            <% if quote.character.published? %>
+              <%= link_to " - #{quote.character.name}", character.url(quote.character) %>
+            <% else %>
+              <%= " - #{quote.character.name}" %>
+            <% end %>
+          <% end %>
+          </p>
       </div>
 
       <div class="quote-meta">
