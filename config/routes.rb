@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   get "authors/:slug", to: redirect("/people/%{slug}", status: 301)
+  get "authors/:slug/:page", to: redirect("/people/%{slug}/%{page}", status: 301)
   
   resources :people, only: [:index, :show] do
     collection do
