@@ -5,7 +5,7 @@ class Admin::QuoteTopicSuggestionsController < ApplicationController
 
   def index
     if params[:topic].present?
-      @quote_topic_suggestions = QuoteTopicSuggestion.where(topic_id: params[:topic_id]).where(read: false).order(quote_id: :ASC).page params[:page]
+      @quote_topic_suggestions = QuoteTopicSuggestion.where(topic_id: params[:topic]).where(read: false).order(quote_id: :ASC).page params[:page]
     else
       @quote_topic_suggestions = QuoteTopicSuggestion.where(read: false).order(quote_id: :ASC).page params[:page]
     end
