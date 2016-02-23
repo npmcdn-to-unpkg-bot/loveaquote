@@ -30,8 +30,4 @@ class Quote < ActiveRecord::Base
             self.topics.each {|t| t.touch }
         end
     end
-    
-    def published
-        self.source.published
-    end
 end
