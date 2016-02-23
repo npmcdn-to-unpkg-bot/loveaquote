@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160221172417) do
+ActiveRecord::Schema.define(version: 20160223103020) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -114,6 +114,16 @@ ActiveRecord::Schema.define(version: 20160221172417) do
 
   add_index "quote_topics", ["quote_id"], name: "index_quote_topics_on_quote_id"
   add_index "quote_topics", ["topic_id"], name: "index_quote_topics_on_topic_id"
+
+  create_table "quoted_in_books", force: :cascade do |t|
+    t.string   "name"
+    t.string   "author"
+    t.integer  "quote_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "quoted_in_books", ["quote_id"], name: "index_quoted_in_books_on_quote_id"
 
   create_table "quotes", force: :cascade do |t|
     t.text     "text"

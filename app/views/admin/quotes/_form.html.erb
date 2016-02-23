@@ -12,6 +12,18 @@
         <%= f.association :topics, collection: Topic.all.order(name: :asc) %>
         <%= f.association :character, collection: @quote.source.characters.order(name: :asc), input_html: {multiple: false} if @quote.source_type == "Book" %>
     </div>
+    
+    <div class="row">
+      <h4 class="col-sm-9 col-sm-offset-3">Quoted in Books</h4>
+    </div>
+    <div id='quoted_in_books'>
+      <%= f.simple_fields_for :quoted_in_books do |quoted_in_book| %>
+        <%= render 'quoted_in_book_fields', :f => quoted_in_book %>
+      <% end %>
+      <div class='links'>
+        <%= link_to_add_association '<i class="e-icon-squared-plus"></i> quoted in book'.html_safe, f, :quoted_in_books %>
+      </div>
+    </div>
     <%= f.button :submit %>
 <% end %>
 

@@ -2,6 +2,9 @@ class Quote < ActiveRecord::Base
     # belongs to source
     belongs_to :source, polymorphic: true
     belongs_to :character
+    has_many :quoted_in_books, dependent: :destroy
+    accepts_nested_attributes_for :quoted_in_books, reject_if: :all_blank, allow_destroy: true
+    
     has_many :quote_topics, dependent: :destroy
     has_many :topics, through: :quote_topics
     has_many :quote_topic_suggestions, dependent: :destroy
@@ -26,5 +29,9 @@ class Quote < ActiveRecord::Base
             self.source.touch
             self.topics.each {|t| t.touch }
         end
+    end
+    
+    def published
+        self.source.published
     end
 end
