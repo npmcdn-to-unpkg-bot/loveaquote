@@ -46,8 +46,12 @@
             <div class="tab-pane active" id="quotes">
               <table class="table table-striped table-bordered table-hover">
                 <thead>
-                  <th width="70%" class="text-center">Quote</th>
-                  <th width="20%" class="text-center">Character</th>
+                  <% if @book.characters.any? %>
+                    <th width="70%" class="text-center">Quote</th>
+                    <th width="20%" class="text-center">Character</th>
+                  <% else %>
+                    <th width="90%" class="text-center">Quote</th>
+                  <% end %>
                   <th width="10%" class="text-center" colspan="2">Manage</th>
                 </thead>
                 
@@ -55,7 +59,9 @@
                   <% @book.quotes.order(text: :asc).each do |quote| %>  
                   <tr>
                     <td><%= quote.text %></td>
-                    <td><%= link_to quote.character.name, admin_character_path(quote.character) if quote.character.present? %></td>
+                    <% if @book.characters.any? %>
+                      <td><%= link_to quote.character.name, admin_character_path(quote.character) if quote.character.present? %></td>
+                    <% end %>
                     <td class="text-center"><%= link_to "Edit", edit_admin_quote_url(quote), target: "_blank", class: "btn btn-primary btn-xs" %></td>
                     <td class="text-center"><%= link_to "Delete", admin_quote_url(quote), method: :delete, remote: true, class: "delete-quote btn btn-red btn-xs" %></td>
                   </tr>
@@ -95,20 +101,22 @@
     </div>
     
     <div class="col-sm-3">
-      <div class="panel panel-default panel-shadow">
-        <div class="panel-heading">
-          <div class="panel-title">
-            <h4>Characters</h4>
+      <% if @book.characters.any? %>
+        <div class="panel panel-default panel-shadow">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h4>Characters</h4>
+            </div>
+          </div>
+          <div class="panel-body">
+            <ul>
+              <% @book.characters.each do |character| %>
+                <li><%= link_to character.name, admin_character_path(character) %></li>
+              <% end %>
+            </ul>
           </div>
         </div>
-        <div class="panel-body">
-          <ul>
-            <% @book.characters.each do |character| %>
-              <li><%= link_to character.name, admin_character_path(character) %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>  
 </div>
