@@ -20,4 +20,20 @@ module ApplicationHelper
             "http://www.loveaquote.com/admin"
         end
     end
+    
+    def model_url(model)
+        eval("#{model.class.to_s.downcase}_url(model)")
+    end
+    
+    def admin_model_url(model)
+        eval("admin_#{model.class.to_s.downcase}_url(model)")
+    end
+    
+    def edit_model_url(model)
+        eval("edit_#{model.class.to_s.downcase}_url(model)")
+    end
+    
+    def edit_admin_model_url(model)
+        eval("edit_admin_#{model.class.to_s.downcase}_url(model)")
+    end
 end

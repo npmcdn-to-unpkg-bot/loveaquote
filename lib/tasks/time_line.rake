@@ -15,4 +15,14 @@ namespace :time_line do
             duplicates.destroy_all
         end
     end
+    
+    task :remove_non_existant => :environment do
+        all_people = Person.all.select(:id)
+        all_books = Book.all.select(:id)
+        all_topics = Topic.all.select(:id)
+        
+        TimeLine.where.not(item_type: "Person", item_id: all_people).destroy_all
+        TimeLine.where.not(item_type: "Book", item_id: all_books).destroy_all
+        TimeLine.where.not(item_type: "Topic", item_id: all_topics).destroy_all
+    end    
 end

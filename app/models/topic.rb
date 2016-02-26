@@ -1,4 +1,6 @@
 class Topic < ActiveRecord::Base
+    
+    has_one :time_line, as: :item, dependent: :destroy
     has_many :quote_topics, dependent: :destroy
     has_many :quotes, through: :quote_topics
     has_many :topic_aliases, dependent: :destroy
