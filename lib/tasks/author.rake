@@ -5,4 +5,11 @@ namespace :author do
             quote.save
         end
     end
+    
+    task :rename_time_line_item => :environment  do
+        TimeLine.all.each do |tl|
+            tl.item_type = "Person" if tl.item_type == "Author"
+            tl.save
+        end
+    end
 end
