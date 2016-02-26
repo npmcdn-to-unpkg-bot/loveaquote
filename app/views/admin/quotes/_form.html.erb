@@ -7,28 +7,74 @@
     file: :horizontal_file_input,
     boolean: :horizontal_boolean
   }) do |f| %>
-    <div class="form-inputs">
-        <%= f.input :text, input_html: {rows: 5} %>
-        <%= f.association :topics, collection: Topic.all.order(name: :asc) %>
-        <%= f.association :character, collection: @quote.source.characters.order(name: :asc), input_html: {multiple: false} if @quote.source_type == "Book" %>
-    </div>
-    
-    <div class="row">
-      <h4 class="col-sm-9 col-sm-offset-3">Quoted in Books</h4>
-    </div>
-    <div id='quoted_in_books'>
-      <%= f.simple_fields_for :quoted_in_books do |quoted_in_book| %>
-        <%= render 'quoted_in_book_fields', :f => quoted_in_book %>
-      <% end %>
-      <div class='links'>
-        <%= link_to_add_association '<i class="e-icon-squared-plus"></i> quoted in book'.html_safe, f, :quoted_in_books %>
+<div class="row">
+    <div class="col-sm-9">
+    <div class="panel minimal minimal-gray">
+      <div class="panel-heading">
+        <div class="panel-title">
+          
+        </div>
+        <div class="panel-options">
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#quote" data-toggle="tab">Quote</a></li>
+            <li><a href="#quote-topics" data-toggle="tab">Topics</a></li>
+            <li><a href="#quoted-in-books" data-toggle="tab">Quoted in Books</a></li>
+            <% if @quote.source_type == "Book" && @quote.source.characters.any? %>
+              <li><a href="#quote-character" data-toggle="tab">Quote Character</a></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="panel-body">
+        <div class="tab-content">
+          <div class="tab-pane active" id="quote">
+            <div class="form-inputs">
+              <%= f.input :text, input_html: {rows: 5} %>
+            </div>
+          </div>
+          
+          <div class="tab-pane" id="quote-topics">
+            <div id='quote_topics'>
+              <%= f.simple_fields_for :quote_topics do |quote_topic| %>
+                <%= render 'quote_topic_fields', :f => quote_topic %>
+              <% end %>
+              <div class='links'>
+                <%= link_to_add_association '<i class="e-icon-squared-plus"></i> topic'.html_safe, f, :quote_topics %>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane" id="quoted-in-books">
+            <div id='quoted_in_books'>
+              <%= f.simple_fields_for :quoted_in_books do |quoted_in_book| %>
+                <%= render 'quoted_in_book_fields', :f => quoted_in_book %>
+              <% end %>
+              <div class='links'>
+                <%= link_to_add_association '<i class="e-icon-squared-plus"></i> quoted in book'.html_safe, f, :quoted_in_books %>
+              </div>
+            </div>
+          </div>
+          
+          <% if @quote.source_type == "Book" && @quote.source.characters.any? %>
+            <div class="tab-pane" id="quote-character">
+              <%= f.association :character, collection: @quote.source.characters.order(name: :asc), input_html: {multiple: false} if @quote.source_type == "Book" %>
+            </div>
+          <% end %>
+          
+        </div>
       </div>
     </div>
+  </div>
+  
+  <div class="col-sm-3 text-center">
+    <% if @quote.errors.any? %>
+      <div class="alert alert-danger">
+        <%= "#{@quote.errors.count} error found" %>
+      </div>
+    <% end %>
     <%= f.button :submit %>
-<% end %>
+  </div>
+</div>
 
-<script type="text/javascript">
-  $(function() {
-    $("#quote_topic_ids").multiSelect();
-  });
-</script>
+<% end %>

@@ -2,7 +2,10 @@ class QuoteTopic < ActiveRecord::Base
     belongs_to :quote
     belongs_to :topic
     
-    validates_uniqueness_of :quote_id, scope: :topic_id
+    validates :topic_id, presence: true
+    validates :topic_id, presence: true
+    
+    validates_uniqueness_of :topic_id, scope: :quote_id
     
     after_create :touch_topic
     

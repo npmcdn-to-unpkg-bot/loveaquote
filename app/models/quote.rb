@@ -6,6 +6,8 @@ class Quote < ActiveRecord::Base
     accepts_nested_attributes_for :quoted_in_books, reject_if: :all_blank, allow_destroy: true
     
     has_many :quote_topics, dependent: :destroy
+    accepts_nested_attributes_for :quote_topics, reject_if: :all_blank, allow_destroy: true
+    
     has_many :topics, through: :quote_topics
     has_many :quote_topic_suggestions, dependent: :destroy
     
