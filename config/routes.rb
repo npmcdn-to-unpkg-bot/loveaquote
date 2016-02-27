@@ -77,6 +77,8 @@ Rails.application.routes.draw do
       end
     end
     resources :settings
+    resources :nationalities
+    resources :professions
     require 'sidekiq/web'
     mount Sidekiq::Web => '/sidekiq'
   end

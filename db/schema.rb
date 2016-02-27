@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160226174330) do
+ActiveRecord::Schema.define(version: 20160227192106) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -80,19 +80,33 @@ ActiveRecord::Schema.define(version: 20160226174330) do
   add_index "featured_topics", ["source_type", "source_id"], name: "index_featured_topics_on_source_type_and_source_id"
   add_index "featured_topics", ["topic_id"], name: "index_featured_topics_on_topic_id"
 
+  create_table "nationalities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "people", force: :cascade do |t|
     t.string   "name"
     t.string   "slug"
     t.string   "fetch_url"
-    t.boolean  "published",    default: false, null: false
-    t.boolean  "popular",      default: false, null: false
-    t.boolean  "very_popular", default: false, null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.boolean  "published",      default: false, null: false
+    t.boolean  "popular",        default: false, null: false
+    t.boolean  "very_popular",   default: false, null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "image"
+    t.integer  "nationality_id"
+    t.integer  "profession_id"
   end
 
   add_index "people", ["slug"], name: "index_people_on_slug"
+
+  create_table "professions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "quote_topic_suggestions", force: :cascade do |t|
     t.integer  "quote_id",                   null: false

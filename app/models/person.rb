@@ -1,5 +1,6 @@
 class Person < ActiveRecord::Base
-    # has many quotes
+    belongs_to :nationality
+    belongs_to :profession
     has_one :time_line, as: :item, dependent: :destroy
     has_many :quotes, as: :source, dependent: :destroy
     has_many :quote_topic_suggestions, through: :quotes
