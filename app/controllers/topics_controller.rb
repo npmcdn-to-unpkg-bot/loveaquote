@@ -35,7 +35,7 @@ class TopicsController < ApplicationController
   
   private
   def set_topic
-    @topic = Topic.find_by_slug(params[:id])
+    @topic = Topic.published.find_by_slug(params[:id])
     redirect_to serve_404_url unless @topic    
   end
 end

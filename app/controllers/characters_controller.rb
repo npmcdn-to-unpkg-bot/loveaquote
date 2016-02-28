@@ -36,7 +36,7 @@ class CharactersController < ApplicationController
   private
   
   def set_character
-    @character = Character.find_by_slug(params[:id])
+    @character = Character.published.find_by_slug(params[:id])
     redirect_to serve_404_url unless @character
   end
 end

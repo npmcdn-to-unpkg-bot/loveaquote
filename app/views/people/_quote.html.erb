@@ -6,7 +6,11 @@
           <%= quote.text %>
           <% if quote.source_type == "Book" %>
             <%= " - " %>
-            <%= link_to quote.source.name, book_url(quote.source), title: "Quotes from #{quote.source.name} book by #{@person.name}" %>
+            <% if quote.source.published? %>
+              <%= link_to quote.source.name, book_url(quote.source), title: "Quotes from #{quote.source.name} book by #{@person.name}" %>
+            <% else %>
+              <%= quote.source.name %>
+            <% end %>
           <% end %>
           </p>
       </div>
