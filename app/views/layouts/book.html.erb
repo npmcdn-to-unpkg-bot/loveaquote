@@ -33,10 +33,10 @@
                   <h1 itemprop="headline" class="text-right"><%= yield :heading %></h1>
                 </header>
                 <div class="social-sharing">
-                  <a rel="nofollow" class="share-book-twitter" title="Share this book on Twitter" target="_blank" href="<%= twitter_book_url(@book) %>"><i class="fa fa-twitter-square fa-2x"></i></a>
-                  <a rel="nofollow" class="share-book-facebook" title="Share this book on Facebook" target="_blank" href="<%= facebook_book_url(@book) %>"><i class="fa fa-facebook-square fa-2x"></i></a>
+                  <a rel="nofollow" class="share-book-twitter" title="Share this book on Twitter" target="_blank" href="<%= twitter_book_url(@book) %>"><i class="fa fa-twitter-square fa-lg"></i></a>
+                  <a rel="nofollow" class="share-book-facebook" title="Share this book on Facebook" target="_blank" href="<%= facebook_book_url(@book) %>"><i class="fa fa-facebook-square fa-lg"></i></a>
                   <% if @book.image.present? %>
-                    <a rel="nofollow" class="share-book-pinterest" title="Share this book on Pinterest" target="_blank" href="<%= pinterest_book_url(@book) %>"><i class="fa fa-pinterest-square fa-2x"></i></a>
+                    <a rel="nofollow" class="share-book-pinterest" title="Share this book on Pinterest" target="_blank" href="<%= pinterest_book_url(@book) %>"><i class="fa fa-pinterest-square fa-lg"></i></a>
                   <% end %>    
                 </div>
               </div>

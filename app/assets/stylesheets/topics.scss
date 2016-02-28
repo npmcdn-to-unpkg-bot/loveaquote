@@ -16,6 +16,15 @@
   border: 1px solid #E7E7E7;
 }
 
+.topics.show {
+  header {
+    h1 {
+      font-size: 30px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
 .topics.edit {
   .remove_fields.existing {
    float: right;

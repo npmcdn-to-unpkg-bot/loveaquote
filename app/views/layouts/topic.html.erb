@@ -16,13 +16,23 @@
             <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= topics_url %>" itemprop="url"><span itemprop="title">Topics</span></a></li>
             <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @topic.name %></span></li>
           </ul>
-
+          
           <main id="content" role="main" itemprop="mainContentOfPage">
           <article itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
-
-            <header>
-              <h1 itemprop="headline" class="text-center"><%= yield :heading %></h1>
-            </header>
+            <div class="row">
+              <div class="col-sm-12">
+                <header>
+                  <h1 itemprop="headline" class="text-center"><%= yield :heading %></h1>
+                </header>
+                <div class="social-sharing" style="float:none; text-align:center">
+                  <a rel="nofollow" class="share-topic-twitter" title="Share this topic on Twitter" target="_blank" href="<%= twitter_topic_url(@topic) %>"><i class="fa fa-twitter-square fa-lg"></i></a>
+                  <a rel="nofollow" class="share-topic-facebook" title="Share this topic on Facebook" target="_blank" href="<%= facebook_topic_url(@topic) %>"><i class="fa fa-facebook-square fa-lg"></i></a>
+                  <% if @topic.image.present? %>
+                    <a rel="nofollow" class="share-topic-pinterest" title="Share this topic on Pinterest" target="_blank" href="<%= pinterest_topic_url(@topic) %>"><i class="fa fa-pinterest-square fa-lg"></i></a>
+                  <% end %>    
+                </div>
+              </div>
+            </div>
 
             <div itemprop="text">
               <%= yield :content %>
