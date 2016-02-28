@@ -2,32 +2,32 @@
 
 <% content_for :canonical, @canonical %>
 
-<% content_for :heading, "Authors by Alphabet #{@alphabet}" %>
+<% content_for :heading, "People by Alphabet #{@alphabet}" %>
 
 <% content_for :content do %>
 
-  <% first = @authors.count / 3 + @authors.count % 3 %>
-  <% second = first + @authors.count / 3 %>
-  <% third =  second + @authors.count / 3 %>
+  <% first = @people.count / 3 + @people.count % 3 %>
+  <% second = first + @people.count / 3 %>
+  <% third =  second + @people.count / 3 %>
   <div class="row">
     <div class="col-md-4">
       <ul>
         <% ( 1..first ).each do |count| %>
-          <li><%= link_to @authors[count-1].name, author_url(@authors[count-1]) %></li>
+          <li><%= link_to @people[count-1].name, person_url(@people[count-1]) %></li>
         <% end %>
       </ul>
     </div>
     <div class="col-md-4">
       <ul>
         <% ( ( first + 1 )..second ).each do |count| %>
-          <li><%= link_to @authors[count-1].name, author_url(@authors[count-1]) %></li>
+          <li><%= link_to @people[count-1].name, person_url(@people[count-1]) %></li>
         <% end %>
       </ul>
     </div>
     <div class="col-md-4">
       <ul>
         <% ( ( second+1 )..third ).each do |count| %>
-          <li><%= link_to @authors[count-1].name, author_url(@authors[count-1]) %></li>
+          <li><%= link_to @people[count-1].name, person_url(@people[count-1]) %></li>
         <% end %>
       </ul>
     </div>

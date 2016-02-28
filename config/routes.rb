@@ -21,6 +21,10 @@ Rails.application.routes.draw do
     member do
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
     end
+    
+    member do
+      get ':quote', action: 'quote', as: :quote
+    end
   end
   
   resources :topics, only: [:index, :show] do

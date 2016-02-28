@@ -14,14 +14,14 @@ class Quote < ActiveRecord::Base
     # text should be present and unique
     validates :text, presence: true, uniqueness: true
     
-    before_save :strip_text
+    before_validation :strip_text
     after_commit :get_topic_suggestions, on: [:create, :update]
     after_update :touch_source
     
     def strip_text
         self.text = self.text.strip
     end
-     
+    
     def get_topic_suggestions
         SuggestTopicsWorker.perform_async(self.id)
     end
