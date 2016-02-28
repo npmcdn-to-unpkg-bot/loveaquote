@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     
     member do
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
+      get 'pinterest'
+      get 'facebook'
+      get 'twitter'
+      get 'google_plus'
     end
   end
   
@@ -20,10 +24,10 @@ Rails.application.routes.draw do
     
     member do
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
-    end
-    
-    member do
-      get ':quote', action: 'quote', as: :quote
+      get 'pinterest'
+      get 'facebook'
+      get 'twitter'
+      get 'google_plus'
     end
   end
   
@@ -34,6 +38,10 @@ Rails.application.routes.draw do
     
     member do
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
+      get 'pinterest'
+      get 'facebook'
+      get 'twitter'
+      get 'google_plus'
     end
   end
   
@@ -44,6 +52,10 @@ Rails.application.routes.draw do
     
     member do
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
+      get 'pinterest'
+      get 'facebook'
+      get 'twitter'
+      get 'google_plus'
     end
   end
   
