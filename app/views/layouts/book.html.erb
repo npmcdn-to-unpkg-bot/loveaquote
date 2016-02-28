@@ -19,28 +19,17 @@
 
           <main id="content" role="main" itemprop="mainContentOfPage">
           <article itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
-
-            <div class="row">
-              <div class="col-md-3 hidden-xs hidden-sm">
-                <% if @book.image.present? %>
-                  <%= image_tag @book.image_url(:thumb), class: "thumbnail" %>
-                <% else %>
-                  <%= image_tag "http://placehold.it/150x150", class: "thumbnail" %>
-                <% end %>
-              </div>
-              <div class="col-md-9 col-sm-12">
+            
                 <header>
-                  <h1 itemprop="headline" class="text-right"><%= yield :heading %></h1>
+                  <h1 itemprop="headline" class="text-center"><%= yield :heading %></h1>
+                  <div class="book-social-sharing">
+                    <a rel="nofollow" class="share-book-twitter" title="Share this book on Twitter" target="_blank" href="<%= twitter_book_url(@book) %>"><i class="fa fa-twitter-square fa-lg"></i></a>
+                    <a rel="nofollow" class="share-book-facebook" title="Share this book on Facebook" target="_blank" href="<%= facebook_book_url(@book) %>"><i class="fa fa-facebook-square fa-lg"></i></a>
+                    <% if @book.image.present? %>
+                      <a rel="nofollow" class="share-book-pinterest" title="Share this book on Pinterest" target="_blank" href="<%= pinterest_book_url(@book) %>"><i class="fa fa-pinterest-square fa-lg"></i></a>
+                    <% end %>    
+                  </div>
                 </header>
-                <div class="social-sharing">
-                  <a rel="nofollow" class="share-book-twitter" title="Share this book on Twitter" target="_blank" href="<%= twitter_book_url(@book) %>"><i class="fa fa-twitter-square fa-lg"></i></a>
-                  <a rel="nofollow" class="share-book-facebook" title="Share this book on Facebook" target="_blank" href="<%= facebook_book_url(@book) %>"><i class="fa fa-facebook-square fa-lg"></i></a>
-                  <% if @book.image.present? %>
-                    <a rel="nofollow" class="share-book-pinterest" title="Share this book on Pinterest" target="_blank" href="<%= pinterest_book_url(@book) %>"><i class="fa fa-pinterest-square fa-lg"></i></a>
-                  <% end %>    
-                </div>
-              </div>
-            </div>
 
             <div itemprop="text">
               <%= yield :content %>
