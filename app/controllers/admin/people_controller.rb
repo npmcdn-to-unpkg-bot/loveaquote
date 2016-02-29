@@ -6,7 +6,18 @@ class Admin::PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Person.published.order(name: :ASC).page params[:page]
+    if params.has_key?(:status)
+      case params[:status]
+      when "Draft"
+        @people = Person.draft.order(name: :ASC).page params[:page]
+      when "Published"
+        @people = Person.published.order(name: :ASC).page params[:page]
+      when ""
+        @people = Person.order(name: :ASC).page params[:page]
+      end
+    else
+      @people = Person.order(name: :ASC).page params[:page]
+    end
   end
 
   # GET /people/1

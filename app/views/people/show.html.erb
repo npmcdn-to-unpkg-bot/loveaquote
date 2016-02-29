@@ -1,10 +1,10 @@
 <% if params.has_key?(:page) %>
   <% content_for :canonical, "#{page_person_url(@person, params[:page])}" %>
-  <% content_for :title, "#{@person.name} Quotes - #{@person.quotes.count.to_s} quotes - Page #{params[:page]}" %>
+  <% content_for :title, "#{@person.name} Quotes - #{@person.all_quotes.count.to_s} quotes - Page #{params[:page]}" %>
   <% content_for :description, "Quotes by #{@person.name} - page #{params[:page]}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
 <% else %>
   <% content_for :canonical, "#{person_url(@person)}" %>
-  <% content_for :title, "#{@person.name} Quotes - #{@person.quotes.count.to_s} quotes" %>
+  <% content_for :title, "#{@person.name} Quotes - #{@person.all_quotes.count.to_s} quotes" %>
   <% content_for :description, "Quotes by #{@person.name}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
 <% end %>
 
