@@ -6,7 +6,29 @@ class Admin::CharactersController < ApplicationController
   # GET /characters
   # GET /characters.json
   def index
-    @characters = Character.all.order(name: :asc).page params[:page]
+    if params[:search].present?
+      if params[:status].present?
+        case params[:status]
+        when "Draft"
+          @characters = Character.draft.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+        when "Published"
+          @characters = Character.published.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+        end
+      else
+        @characters = Character.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+      end
+    else
+      if params[:status].present?
+        case params[:status]
+        when "Draft"
+          @characters = Character.draft.order(name: :ASC).page params[:page]
+        when "Published"
+          @characters = Character.published.order(name: :ASC).page params[:page]
+        end
+      else
+        @characters = Character.order(name: :ASC).page params[:page]
+      end
+    end
   end
 
   # GET /characters/1
