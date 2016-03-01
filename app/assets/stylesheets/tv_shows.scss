@@ -1,3 +1,46 @@
-// Place all the styles related to the TvShows controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.tv_shows.index main ul,
+.tv_shows.alphabet main ul {
+  list-style-type: none;
+}
+
+.tv_shows.show main ul,
+.tv_shows.alphabet main ul {
+  list-style-type: none;
+}
+
+.tv_shows.index main ul li,
+.tv_shows.alphabet main ul li {
+  background-color: #F2F2F2;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  border: 1px solid #E7E7E7;
+}
+
+.tv_shows.show {
+  header {
+    h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+    .tv_show-social-sharing {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+  
+  main#content {
+    margin: 20px 0;
+
+    .entry-image .thumbnail {
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+    
+    .featured-topic-sub-heading {
+      font-weight: bold;
+      font-size: 100%;
+      margin-bottom: 5px;
+    }
+  }
+}

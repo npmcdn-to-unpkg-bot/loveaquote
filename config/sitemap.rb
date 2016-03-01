@@ -29,6 +29,14 @@ SitemapGenerator::Sitemap.create do
     add book_path(book), :lastmod => book.updated_at
   end
   
+  Movie.published.each do |movie|
+    add movie_path(movie), :lastmod => movie.updated_at
+  end
+  
+  TvShow.published.each do |tv_show|
+    add tv_show_path(tv_show), :lastmod => tv_show.updated_at
+  end  
+  
   Character.published.each do |character|
     add character_path(character), :lastmod => character.updated_at
   end
