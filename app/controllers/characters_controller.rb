@@ -1,9 +1,31 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :twitter, :facebook, :pinterest]
+  before_action :set_character, only: [:show, :twitter, :facecharacter, :pinterest]
   
   def index
-    @characters = Character.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
-  end
+    if params[:search].present?
+      if params[:status].present?
+        case params[:status]
+        when "Draft"
+          @characters = Character.draft.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+        when "Published"
+          @characters = Character.published.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+        end
+      else
+        @characters = Character.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+      end
+    else
+      if params[:status].present?
+        case params[:status]
+        when "Draft"
+          @characters = Character.draft.order(name: :ASC).page params[:page]
+        when "Published"
+          @characters = Character.published.order(name: :ASC).page params[:page]
+        end
+      else
+        @characters = Character.order(name: :ASC).page params[:page]
+      end
+    end
+  __END__
 
   def show
     @quotes = @character.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])

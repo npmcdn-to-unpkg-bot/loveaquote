@@ -6,7 +6,29 @@ class Admin::TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.published.order(name: :ASC).page params[:page]
+    if params[:search].present?
+      if params[:status].present?
+        case params[:status]
+        when "Draft"
+          @topics = Topic.draft.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+        when "Published"
+          @topics = Topic.published.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+        end
+      else
+        @topics = Topic.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+      end
+    else
+      if params[:status].present?
+        case params[:status]
+        when "Draft"
+          @topics = Topic.draft.order(name: :ASC).page params[:page]
+        when "Published"
+          @topics = Topic.published.order(name: :ASC).page params[:page]
+        end
+      else
+        @topics = Topic.order(name: :ASC).page params[:page]
+      end
+    end
   end
 
   # GET /topics/1

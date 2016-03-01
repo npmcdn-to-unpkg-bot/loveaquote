@@ -1,37 +1,71 @@
-<%= simple_form_for([:admin, @book],
-  html: { class: 'form-horizontal' },
-  wrapper: :horizontal_form,
-  wrapper_mappings: {
-    check_boxes: :horizontal_radio_and_checkboxes,
-    radio_buttons: :horizontal_radio_and_checkboxes,
-    file: :horizontal_file_input,
-    boolean: :horizontal_boolean
-  }) do |f| %>
+<%= simple_form_for([:admin, @book]) do |f| %>
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="panel minimal minimal-gray">
+        <div class="panel-heading">
+          <div class="panel-title">
+            
+          </div>
+          <div class="panel-options">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#book" data-toggle="tab">Book</a></li>
+              <li><a href="#fetch" data-toggle="tab">Fetch</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="panel-body">
+          <div class="tab-content">
+            <div class="tab-pane active" id="book">
+              <div class="form-inputs">
+                <%= f.input :name %>
+                <%= f.association :person, collection: Person.all.order(name: :asc) %>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <%= f.input :published %>
+                    <%= f.input :popular %>
+                    <%= f.input :very_popular %>
+                  </div>
+                  
+                  <div class="col-sm-8">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <% if @book.image.present? %>
+                          <%= image_tag @book.image_url(:small), class: "thumbnail", style: "margin-bottom: 0px" %>
+                        <% else %>
+                          <%= image_tag "http://placehold.it/150x150" %>
+                        <% end %>
+                      </div>
+                      <div class="col-sm-6">
+                        <%= f.input :image %>                        
+                      </div>
+                    </div>
+                  </div>
+                </div>  
+              </div>
+            </div>
+            
+            <div class="tab-pane" id="fetch">
+              <div class="form-inputs">
+                <%= f.input :fetch_url %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>  
 
-  <div class="form-inputs">
-    <div class="form-group">
-      <div class="col-sm-9 col-sm-offset-3">
-          <% if @book.image.present? %>
-            <%= image_tag @book.image_url(:small), class: "thumbnail", style: "margin-bottom: 0px" %>
-          <% else %>
-            <%= image_tag "http://placehold.it/150x150" %>
-          <% end %>
+    <div class="col-sm-3 text-center">
+      <% if @book.errors.any? %>
+        <div class="alert alert-danger">
+          <%= "#{@book.errors.count} error found" %>
+        </div>
+      <% end %>
+      <div class="form-actions">
+        <%= f.button :submit %>
       </div>
     </div>
-    
-    <%= f.input :name %>
-    <%= f.input :fetch_url %>
-    <%= f.association :person, collection: Person.all.order(name: :asc) %>
-    <%= f.association :characters, collection: Character.all.order(name: :asc) %>
-    <%= f.input :image %>
-    <%= f.input :published %>
-    <%= f.input :popular %>
-    <%= f.input :very_popular %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  </div>  
 <% end %>
 
 <script type="text/javascript">
