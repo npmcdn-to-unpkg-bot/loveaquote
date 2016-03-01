@@ -1,0 +1,35 @@
+<% if params.has_key?(:page) %>
+  <% content_for :canonical, "#{page_tv_show_url(@tv_show, params[:page])}" %>
+  <% content_for :title, "#{@tv_show.name} Quotes - #{@tv_show.quotes.count.to_s} quotes - Page #{params[:page]}" %>
+  <% content_for :description, "Quotes from #{@tv_show.name} - page #{params[:page]}. Best collection of #{@tv_show.name} quotes. Read, comment and share these quotes." %>
+<% else %>
+  <% content_for :canonical, "#{tv_show_url(@tv_show)}" %>
+  <% content_for :title, "#{@tv_show.name} Quotes - #{@tv_show.quotes.count.to_s} quotes" %>
+  <% content_for :description, "Quotes from #{@tv_show.name}. Best collection of #{@tv_show.name} quotes. Read, comment and share these quotes." %>
+<% end %>
+
+<% content_for :heading, "#{@tv_show.name} Quotes" %>
+
+<% if @tv_show.image.present? %>
+  <% content_for :image_url, URI.join( root_url, @tv_show.image.url).to_s %>
+<% end %>
+
+<% content_for :content do %>
+  <ul itemscope itemtype="http://schema.org/ItemList">
+    <% @quotes.each do |quote| %>
+      <%= render partial: "tv_shows/quote", object: quote %>
+    <% end %>
+  </ul>
+  
+  <div class="text-center">
+    <%= paginate @quotes %>
+  </div>
+<% end %>
+
+<% content_for :comments do %>
+  <div class="fb-comments" data-href="<%= tv_show_url(@tv_show) %>" data-numposts="10" data-colorscheme="light" data-width="100%"></div>
+<% end %>
+
+<% content_for :updated do %>
+  Last Updated - <time itemprop="dateModified" datetime="<%= @tv_show.updated_at.to_datetime %>"><%= @tv_show.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
+<% end %>

@@ -5,6 +5,10 @@ module ApplicationHelper
             person_url(quote.source)
         when "Book"
             book_url(quote.source)
+        when "Movie"
+            movie_url(quote.source)
+        when "TvShow"
+            tv_show_url(quote.source)            
         else
             "http://www.loveaquote.com"
         end
@@ -16,6 +20,10 @@ module ApplicationHelper
             admin_person_url(quote.source)
         when "Book"
             admin_book_url(quote.source)
+        when "Movie"
+            movie_url(quote.source)
+        when "TvShow"
+            tv_show_url(quote.source)                        
         else
             "http://www.loveaquote.com/admin"
         end

@@ -1,0 +1,55 @@
+<% content_for :title, @title %>
+
+<% content_for :canonical, @canonical %>
+
+<% content_for :heading, "Tv Shows" %>
+
+<% content_for :content do %>
+
+  <div class="row jumps text-center">
+    <% @tv_shows.each do |letter, tv_shows| %>
+      <%= link_to letter, "##{letter}" %>
+    <% end %>
+  </div>
+
+
+  <% @tv_shows.each do |letter, tv_shows| %>
+    <div class="alphabet">
+      <a class="name" name="<%= letter %>"><%= letter %></a>
+      <% first = tv_shows.count / 3 + tv_shows.count % 3 %>
+      <% second = first + tv_shows.count / 3 %>
+      <% third =  second + tv_shows.count / 3 %>
+      <div class="row">
+        <div class="col-md-4">
+          <ul>
+            <% ( 1..first ).each do |count| %>
+              <li><%= link_to tv_shows[count-1].name, tv_show_url(tv_shows[count-1]), title: tv_shows[count-1].name + " Quotes" %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul>
+            <% ( ( first + 1 )..second ).each do |count| %>
+              <li><%= link_to tv_shows[count-1].name, tv_show_url(tv_shows[count-1]), title: tv_shows[count-1].name + " Quotes"%></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul>
+            <% ( ( second+1 )..third ).each do |count| %>
+              <li><%= link_to tv_shows[count-1].name, tv_show_url(tv_shows[count-1]), title: tv_shows[count-1].name + " Quotes" %></li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="col-md-12">
+          <ul>
+            <li><%= link_to "More ...", alphabet_tv_shows_url(letter.upcase) %></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  <% end %>
+
+<% end %>

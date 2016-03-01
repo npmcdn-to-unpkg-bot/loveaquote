@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301173256) do
+ActiveRecord::Schema.define(version: 20160301180733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -218,6 +218,17 @@ ActiveRecord::Schema.define(version: 20160301173256) do
   end
 
   add_index "topics", ["slug"], name: "index_topics_on_slug", using: :btree
+
+  create_table "tv_shows", force: :cascade do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.boolean  "published"
+    t.boolean  "popular"
+    t.boolean  "very_popular"
+    t.string   "image"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   add_foreign_key "books", "people"
   add_foreign_key "character_sources", "characters"
