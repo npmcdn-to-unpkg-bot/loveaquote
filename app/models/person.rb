@@ -1,4 +1,7 @@
 class Person < ActiveRecord::Base
+    include PgSearch
+    pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
+    
     belongs_to :nationality
     belongs_to :profession
     has_one :time_line, as: :item, dependent: :destroy

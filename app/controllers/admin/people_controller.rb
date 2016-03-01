@@ -6,20 +6,31 @@ class Admin::PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    if params.has_key?(:status)
-      case params[:status]
-      when "Draft"
-        @people = Person.draft.order(name: :ASC).page params[:page]
-      when "Published"
-        @people = Person.published.order(name: :ASC).page params[:page]
-      when ""
-        @people = Person.order(name: :ASC).page params[:page]
+    if params[:search].present?
+      if params[:status].present?
+        case params[:status]
+        when "Draft"
+          @people = Person.draft.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+        when "Published"
+          @people = Person.published.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+        end
+      else
+        @people = Person.search_by_name(params[:search]).order(name: :ASC).page params[:page]
       end
     else
-      @people = Person.order(name: :ASC).page params[:page]
+      if params[:status].present?
+        case params[:status]
+        when "Draft"
+          @people = Person.draft.order(name: :ASC).page params[:page]
+        when "Published"
+          @people = Person.published.order(name: :ASC).page params[:page]
+        end
+      else
+        @people = Person.order(name: :ASC).page params[:page]
+      end
     end
   end
-
+  
   # GET /people/1
   # GET /people/1.json
   def show

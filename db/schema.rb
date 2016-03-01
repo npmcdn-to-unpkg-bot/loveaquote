@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160227192106) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -28,8 +31,8 @@ ActiveRecord::Schema.define(version: 20160227192106) do
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "books", force: :cascade do |t|
     t.string   "name"
@@ -44,8 +47,8 @@ ActiveRecord::Schema.define(version: 20160227192106) do
     t.string   "image"
   end
 
-  add_index "books", ["person_id"], name: "index_books_on_person_id"
-  add_index "books", ["slug"], name: "index_books_on_slug"
+  add_index "books", ["person_id"], name: "index_books_on_person_id", using: :btree
+  add_index "books", ["slug"], name: "index_books_on_slug", using: :btree
 
   create_table "character_sources", force: :cascade do |t|
     t.integer  "character_id", null: false
@@ -55,8 +58,8 @@ ActiveRecord::Schema.define(version: 20160227192106) do
     t.datetime "updated_at",   null: false
   end
 
-  add_index "character_sources", ["character_id"], name: "index_character_sources_on_character_id"
-  add_index "character_sources", ["source_type", "source_id"], name: "index_character_sources_on_source_type_and_source_id"
+  add_index "character_sources", ["character_id"], name: "index_character_sources_on_character_id", using: :btree
+  add_index "character_sources", ["source_type", "source_id"], name: "index_character_sources_on_source_type_and_source_id", using: :btree
 
   create_table "characters", force: :cascade do |t|
     t.string   "name"
@@ -77,8 +80,8 @@ ActiveRecord::Schema.define(version: 20160227192106) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "featured_topics", ["source_type", "source_id"], name: "index_featured_topics_on_source_type_and_source_id"
-  add_index "featured_topics", ["topic_id"], name: "index_featured_topics_on_topic_id"
+  add_index "featured_topics", ["source_type", "source_id"], name: "index_featured_topics_on_source_type_and_source_id", using: :btree
+  add_index "featured_topics", ["topic_id"], name: "index_featured_topics_on_topic_id", using: :btree
 
   create_table "nationalities", force: :cascade do |t|
     t.string   "name"
@@ -100,7 +103,7 @@ ActiveRecord::Schema.define(version: 20160227192106) do
     t.integer  "profession_id"
   end
 
-  add_index "people", ["slug"], name: "index_people_on_slug"
+  add_index "people", ["slug"], name: "index_people_on_slug", using: :btree
 
   create_table "professions", force: :cascade do |t|
     t.string   "name"
@@ -116,8 +119,8 @@ ActiveRecord::Schema.define(version: 20160227192106) do
     t.datetime "updated_at",                 null: false
   end
 
-  add_index "quote_topic_suggestions", ["quote_id"], name: "index_quote_topic_suggestions_on_quote_id"
-  add_index "quote_topic_suggestions", ["topic_id"], name: "index_quote_topic_suggestions_on_topic_id"
+  add_index "quote_topic_suggestions", ["quote_id"], name: "index_quote_topic_suggestions_on_quote_id", using: :btree
+  add_index "quote_topic_suggestions", ["topic_id"], name: "index_quote_topic_suggestions_on_topic_id", using: :btree
 
   create_table "quote_topics", force: :cascade do |t|
     t.integer  "quote_id",   null: false
@@ -126,8 +129,8 @@ ActiveRecord::Schema.define(version: 20160227192106) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "quote_topics", ["quote_id"], name: "index_quote_topics_on_quote_id"
-  add_index "quote_topics", ["topic_id"], name: "index_quote_topics_on_topic_id"
+  add_index "quote_topics", ["quote_id"], name: "index_quote_topics_on_quote_id", using: :btree
+  add_index "quote_topics", ["topic_id"], name: "index_quote_topics_on_topic_id", using: :btree
 
   create_table "quoted_in_books", force: :cascade do |t|
     t.string   "name"
@@ -139,7 +142,7 @@ ActiveRecord::Schema.define(version: 20160227192106) do
     t.integer  "page"
   end
 
-  add_index "quoted_in_books", ["quote_id"], name: "index_quoted_in_books_on_quote_id"
+  add_index "quoted_in_books", ["quote_id"], name: "index_quoted_in_books_on_quote_id", using: :btree
 
   create_table "quotes", force: :cascade do |t|
     t.text     "text"
@@ -155,8 +158,8 @@ ActiveRecord::Schema.define(version: 20160227192106) do
     t.integer  "character_id"
   end
 
-  add_index "quotes", ["character_id"], name: "index_quotes_on_character_id"
-  add_index "quotes", ["source_type", "source_id"], name: "index_quotes_on_source_type_and_source_id"
+  add_index "quotes", ["character_id"], name: "index_quotes_on_character_id", using: :btree
+  add_index "quotes", ["source_type", "source_id"], name: "index_quotes_on_source_type_and_source_id", using: :btree
 
   create_table "settings", force: :cascade do |t|
     t.text     "google_analytics"
@@ -181,7 +184,7 @@ ActiveRecord::Schema.define(version: 20160227192106) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "time_lines", ["item_type", "item_id"], name: "index_time_lines_on_item_type_and_item_id"
+  add_index "time_lines", ["item_type", "item_id"], name: "index_time_lines_on_item_type_and_item_id", using: :btree
 
   create_table "topic_aliases", force: :cascade do |t|
     t.string   "name"
@@ -190,7 +193,7 @@ ActiveRecord::Schema.define(version: 20160227192106) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "topic_aliases", ["topic_id"], name: "index_topic_aliases_on_topic_id"
+  add_index "topic_aliases", ["topic_id"], name: "index_topic_aliases_on_topic_id", using: :btree
 
   create_table "topics", force: :cascade do |t|
     t.string   "name"
@@ -203,6 +206,15 @@ ActiveRecord::Schema.define(version: 20160227192106) do
     t.string   "image"
   end
 
-  add_index "topics", ["slug"], name: "index_topics_on_slug"
+  add_index "topics", ["slug"], name: "index_topics_on_slug", using: :btree
 
+  add_foreign_key "books", "people"
+  add_foreign_key "character_sources", "characters"
+  add_foreign_key "quote_topic_suggestions", "quotes"
+  add_foreign_key "quote_topic_suggestions", "topics"
+  add_foreign_key "quote_topics", "quotes"
+  add_foreign_key "quote_topics", "topics"
+  add_foreign_key "quoted_in_books", "quotes"
+  add_foreign_key "quotes", "characters"
+  add_foreign_key "topic_aliases", "topics"
 end

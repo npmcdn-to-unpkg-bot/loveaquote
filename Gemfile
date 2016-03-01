@@ -39,6 +39,7 @@ gem 'mini_magick'
 gem 'fog'
 
 gem 'pg'
+gem 'pg_search'
 
 group :development, :test do
   gem 'byebug'

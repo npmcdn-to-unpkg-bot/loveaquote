@@ -1,4 +1,6 @@
 class Topic < ActiveRecord::Base
+    include PgSearch
+    pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
     
     has_one :time_line, as: :item, dependent: :destroy
     has_many :quote_topics, dependent: :destroy

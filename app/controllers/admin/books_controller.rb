@@ -6,7 +6,29 @@ class Admin::BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.published.order(name: :ASC).page params[:page]
+    if params[:search].present?
+      if params[:status].present?
+        case params[:status]
+        when "Draft"
+          @books = Book.draft.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+        when "Published"
+          @books = Book.published.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+        end
+      else
+        @books = Book.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+      end
+    else
+      if params[:status].present?
+        case params[:status]
+        when "Draft"
+          @books = Book.draft.order(name: :ASC).page params[:page]
+        when "Published"
+          @books = Book.published.order(name: :ASC).page params[:page]
+        end
+      else
+        @books = Book.order(name: :ASC).page params[:page]
+      end
+    end
   end
 
   # GET /books/1
@@ -71,6 +93,6 @@ class Admin::BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:name, :fetch_url, :published, :popular, :very_popular, :person_id, :image, :character_ids => [])
+      params.require(:book).permit(:name, :fetch_url, :published, :popular, :very_popular, :book_id, :image, :character_ids => [])
     end
 end
