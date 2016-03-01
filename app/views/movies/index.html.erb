@@ -1,0 +1,55 @@
+<% content_for :title, @title %>
+
+<% content_for :canonical, @canonical %>
+
+<% content_for :heading, "Movies" %>
+
+<% content_for :content do %>
+
+  <div class="row jumps text-center">
+    <% @movies.each do |letter, movies| %>
+      <%= link_to letter, "##{letter}" %>
+    <% end %>
+  </div>
+
+
+  <% @movies.each do |letter, movies| %>
+    <div class="alphabet">
+      <a class="name" name="<%= letter %>"><%= letter %></a>
+      <% first = movies.count / 3 + movies.count % 3 %>
+      <% second = first + movies.count / 3 %>
+      <% third =  second + movies.count / 3 %>
+      <div class="row">
+        <div class="col-md-4">
+          <ul>
+            <% ( 1..first ).each do |count| %>
+              <li><%= link_to movies[count-1].name, movie_url(movies[count-1]), title: movies[count-1].name + " Quotes" %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul>
+            <% ( ( first + 1 )..second ).each do |count| %>
+              <li><%= link_to movies[count-1].name, movie_url(movies[count-1]), title: movies[count-1].name + " Quotes"%></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <ul>
+            <% ( ( second+1 )..third ).each do |count| %>
+              <li><%= link_to movies[count-1].name, movie_url(movies[count-1]), title: movies[count-1].name + " Quotes" %></li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="col-md-12">
+          <ul>
+            <li><%= link_to "More ...", alphabet_movies_url(letter.upcase) %></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  <% end %>
+
+<% end %>

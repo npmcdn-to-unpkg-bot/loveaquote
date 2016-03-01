@@ -45,6 +45,20 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :movies, only: [:index, :show] do
+    collection do
+      get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
+    end
+    
+    member do
+      get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
+      get 'pinterest'
+      get 'facebook'
+      get 'twitter'
+      get 'google_plus'
+    end
+  end
+  
   resources :characters, only: [:index, :show] do
     collection do
       get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
@@ -81,6 +95,7 @@ Rails.application.routes.draw do
     resources :quotes
     resources :people
     resources :books
+    resources :movies
     resources :characters
     resources :featured_topics
     resources :topics do
