@@ -30,18 +30,18 @@ module ApplicationHelper
     end
     
     def model_url(model)
-        eval("#{model.class.to_s.downcase}_url(model)")
+        eval("#{model.model_name.param_key}_url(model)")
     end
     
     def admin_model_url(model)
-        eval("admin_#{model.class.to_s.downcase}_url(model)")
+        eval("admin_#{model.model_name.param_key}_url(model)")
     end
     
     def edit_model_url(model)
-        eval("edit_#{model.class.to_s.downcase}_url(model)")
+        eval("edit_#{model.model_name.param_key}_url(model)")
     end
     
     def edit_admin_model_url(model)
-        eval("edit_admin_#{model.class.to_s.downcase}_url(model)")
+        eval("edit_admin_#{model.model_name.param_key}_url(model)")
     end
 end
