@@ -1,4 +1,4 @@
-namespace :loveaquote do
+namespace :loveaquote_sep do
     task :import_topics => :environment do
         require 'open-uri'
         fetch_url = "https://web.archive.org/web/20140920213551/http://www.loveaquote.com/topics/"
