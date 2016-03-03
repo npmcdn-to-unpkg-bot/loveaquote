@@ -14,6 +14,14 @@
   <% content_for :image_url, URI.join( root_url, @book.image.url).to_s %>
 <% end %>
 
+<% content_for :breadcrumbs do %>
+	<ul class="breadcrumbs">
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= books_url %>" itemprop="url"><span itemprop="title">Books</span></a></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @book.name %></span></li>
+  </ul>
+<% end %>
+
 <% content_for :content do %>
   <ul itemscope itemtype="http://schema.org/ItemList">
     <% @quotes.each do |quote| %>

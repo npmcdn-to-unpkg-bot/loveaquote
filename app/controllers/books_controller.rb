@@ -7,7 +7,7 @@ class BooksController < ApplicationController
 
   def show
     @quotes = @book.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
-    render layout: "book"
+    render layout: "single"
   end
   
   def alphabet

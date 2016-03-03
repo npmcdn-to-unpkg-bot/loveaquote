@@ -14,7 +14,7 @@ class PeopleController < ApplicationController
 
   def show
     @quotes = @person.all_quotes.order(total_share_count: :desc).order(text: :asc).page params[:page]
-    render layout: "person"
+    render layout: "single"
   end
   
   def twitter

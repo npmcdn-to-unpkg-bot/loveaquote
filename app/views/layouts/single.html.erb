@@ -13,11 +13,7 @@
         <div class="row">
 					<div class="large-8 medium-12 small-12 columns">
 					  <div class="wrapper">
-      				<ul class="breadcrumbs">
-                <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
-                <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= characters_url %>" itemprop="url"><span itemprop="title">Characters</span></a></li>
-                <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @character.name %></span></li>
-              </ul>
+					    <%= yield :breadcrumbs %>
               
               <main id="content" role="main" itemprop="mainContentOfPage">
                 <article itemscope="itemscope" itemtype="http://schema.org/CreativeWork">

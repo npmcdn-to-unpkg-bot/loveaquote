@@ -7,7 +7,7 @@ class TvShowsController < ApplicationController
 
   def show
     @quotes = @tv_show.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
-    render layout: "tv_show"
+    render layout: "single"
   end
   
   def alphabet

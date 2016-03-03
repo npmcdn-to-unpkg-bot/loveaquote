@@ -7,7 +7,7 @@ class CharactersController < ApplicationController
 
   def show
     @quotes = @character.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
-    render layout: "character"
+    render layout: "single"
   end
   
   def alphabet

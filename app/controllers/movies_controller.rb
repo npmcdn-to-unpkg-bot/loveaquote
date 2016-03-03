@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
 
   def show
     @quotes = @movie.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
-    render layout: "movie"
+    render layout: "single"
   end
   
   def alphabet
