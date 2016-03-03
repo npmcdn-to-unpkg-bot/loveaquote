@@ -1,0 +1,27 @@
+.wrapper {
+	background-color: #FFF;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	border-radius: 2px;
+}
+
+@media only screen and (min-width: 64.063em) {
+	.wrapper {
+	padding: 0 2rem;
+}
+}
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+	.wrapper {
+		padding: 0 1rem;
+	}
+}
+
+@media only screen and (max-width: 40em) {
+	.wrapper {
+		padding: 0 0.25rem;
+	}
+}
+
+.application main {
+	padding: 2rem 0;
+}

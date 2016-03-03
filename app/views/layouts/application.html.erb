@@ -3,17 +3,26 @@
 <head>
   <%= render "layouts/partials/head" %>
 </head>
-<body class="<%= controller.controller_name %> <%= controller.action_name  %>">
+<body class="application antialiased <%= controller.controller_name %> <%= controller.action_name  %>">
   <%= render "layouts/partials/google_analytics" %>
   <%= render "layouts/partials/facebook_sdk" %>
-  <%= render "layouts/partials/nav_bar" %>
-  <div class="container">
-    <main id="content" role="main">
-      <h1 class="text-center"><%= yield :heading %></h1>
-      <%= yield :content %>
-    </main>
-  </div>
-  <%= render "layouts/partials/footer" %>
-  <%= render "layouts/partials/bottom_scripts" %>
+  <div class="row">
+		<div class="large-12 columns">
+		  <%= render "layouts/partials/nav_bar" %>
+		  <div class="wrapper">
+		    <main id="content" role="main" itemprop="mainContentOfPage">
+					<header>
+						<h1 itemprop="headline" class="text-center"><%= yield :heading %></h1>
+					</header>
+					<div itemprop="text">
+						<%= yield :content %>
+					</div>
+			  </main>
+		  </div>
+			<%= render "layouts/partials/footer_widgets" %>
+		  <%= render "layouts/partials/footer" %>
+      <%= render "layouts/partials/bottom_scripts" %>
+		</div>
+	</div>
 </body>
 </html>

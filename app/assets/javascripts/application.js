@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require_tree .
 
 /*
@@ -31,3 +32,5 @@ $(function() {
         ga('send', 'event', 'Quote', 'Shared', 'Pinterest');
     })
 });
+
+$(function(){ $(document).foundation(); });

@@ -6,58 +6,55 @@
   <body class="<%= controller.controller_name %> <%= controller.action_name  %>" itemscope="itemscope" itemtype="http://schema.org/WebPage">
     <%= render "layouts/partials/google_analytics" %>
     <%= render "layouts/partials/facebook_sdk" %>
-    <%= render "layouts/partials/nav_bar" %>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8">
-
-          <ul class="breadcrumb">
-            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
-            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= movies_url %>" itemprop="url"><span itemprop="title">Movies</span></a></li>
-            <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @movie.name %></span></li>
-          </ul>
-
-          <main id="content" role="main" itemprop="mainContentOfPage">
-          <article itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
-            
-                <header>
-                  <h1 itemprop="headline" class="text-center"><%= yield :heading %></h1>
-                  <div class="movie-social-sharing">
-                    <a rel="nofollow" class="share-movie-twitter" title="Share this movie on Twitter" target="_blank" href="<%= twitter_movie_url(@movie) %>"><i class="fa fa-twitter-square fa-lg"></i></a>
-                    <a rel="nofollow" class="share-movie-facebook" title="Share this movie on Facemovie" target="_blank" href="<%= facebook_movie_url(@movie) %>"><i class="fa fa-facebook-square fa-lg"></i></a>
-                    <% if @movie.image.present? %>
-                      <a rel="nofollow" class="share-movie-pinterest" title="Share this movie on Pinterest" target="_blank" href="<%= pinterest_movie_url(@movie) %>"><i class="fa fa-pinterest-square fa-lg"></i></a>
-                    <% end %>    
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <%= render "layouts/partials/nav_bar" %>
+        <div class="row">
+					<div class="large-8 medium-12 small-12 columns">
+					  <div class="wrapper">
+      				<ul class="breadcrumbs">
+                <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
+                <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= movies_url %>" itemprop="url"><span itemprop="title">Movies</span></a></li>
+                <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @movie.name %></span></li>
+              </ul>
+              
+              <main id="content" role="main" itemprop="mainContentOfPage">
+                <article itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+                  <header>
+                    <h1 itemprop="headline" class="text-center"><%= yield :heading %></h1>
+                  </header>
+        
+                  <div itemprop="text">
+                    <%= yield :content %>
                   </div>
-                </header>
-
-            <div itemprop="text">
-              <%= yield :content %>
-            </div>
-
-            <footer>
-              <div class="entry-meta">
-                <span class="last-updated">
-                  <%= yield :updated %>
-                </span>
-              </div>
-            </footer>
-
-          </article>
-
-          <%= yield :comments %>
-
-          </main>
-        </div>
-
-        <div class="col-sm-4">
-          <aside>
-            <%= render "layouts/partials/aside" %>
-          </aside>
-        </div>
-
+        
+                  <footer>
+                    <div class="entry-meta">
+                      <span class="last-updated">
+                        <%= yield :updated %>
+                      </span>
+                    </div>
+                  </footer>
+        
+                </article>
+        
+                <%= yield :comments %>
+        
+                </main>
+					  </div>
+					</div>
+		    </div>
       </div>
+
+      <div class="col-sm-4">
+        <aside>
+          <%= render "layouts/partials/aside" %>
+        </aside>
+      </div>
+
     </div>
+
     <%= render "layouts/partials/footer" %>
     <%= render "layouts/partials/bottom_scripts" %>
   </body>

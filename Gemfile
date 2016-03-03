@@ -27,6 +27,7 @@ gem 'sinatra', :require => nil
 
 gem 'devise'
 
+gem 'foundation-rails'
 gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'cocoon'

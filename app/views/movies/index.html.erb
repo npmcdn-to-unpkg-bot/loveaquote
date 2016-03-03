@@ -16,40 +16,19 @@
   <% @movies.each do |letter, movies| %>
     <div class="alphabet">
       <a class="name" name="<%= letter %>"><%= letter %></a>
-      <% first = movies.count / 3 + movies.count % 3 %>
-      <% second = first + movies.count / 3 %>
-      <% third =  second + movies.count / 3 %>
-      <div class="row">
-        <div class="col-md-4">
-          <ul>
-            <% ( 1..first ).each do |count| %>
-              <li><%= link_to movies[count-1].name, movie_url(movies[count-1]), title: movies[count-1].name + " Quotes" %></li>
-            <% end %>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <ul>
-            <% ( ( first + 1 )..second ).each do |count| %>
-              <li><%= link_to movies[count-1].name, movie_url(movies[count-1]), title: movies[count-1].name + " Quotes"%></li>
-            <% end %>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <ul>
-            <% ( ( second+1 )..third ).each do |count| %>
-              <li><%= link_to movies[count-1].name, movie_url(movies[count-1]), title: movies[count-1].name + " Quotes" %></li>
-            <% end %>
-          </ul>
-        </div>
-
-        <div class="col-md-12">
-          <ul>
-            <li><%= link_to "More ...", alphabet_movies_url(letter.upcase) %></li>
-          </ul>
-        </div>
-
+      <div class="row small-up-1 medium-up-2 large-up-3">
+        <% movies.each do |movie| %>
+          <div class="column text-center">
+            <div class="more-link">
+              <%= link_to movie.name, movie_url(movie), title: movie.name + " Quotes" %>
+            </div>
+          </div>
+        <% end %>
       </div>
-    </div>
+      <div class="more-link">
+        <%= link_to "More ...", alphabet_movies_url(letter.upcase) %>
+      </div>
+    </div>  
   <% end %>
 
 <% end %>
