@@ -3,7 +3,7 @@
   background-color: #F2F2F2;
   border: 1px solid #E7E7E7;
   border-radius: 2px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .quote-text,
@@ -39,15 +39,15 @@
 }
 .social-sharing {
   float: right;
-  padding: 2px;
+  padding: 2px 10px;
 }
 
-.social-sharing i.fa {
+.social-sharing img {
   opacity: 0.50;
   filter: alpha(opacity=50);
 }
 
-.social-sharing i.fa:hover {
+.social-sharing img:hover {
   opacity: 1;
   filter: alpha(opacity=100);
 }

@@ -14,17 +14,14 @@
 					<div class="large-8 medium-12 small-12 columns">
 					  <div class="wrapper">
 					    <%= yield :breadcrumbs %>
-              
               <main id="content" role="main" itemprop="mainContentOfPage">
                 <article itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
                   <header>
                     <h1 itemprop="headline" class="text-center"><%= yield :heading %></h1>
                   </header>
-        
                   <div itemprop="text">
                     <%= yield :content %>
                   </div>
-        
                   <footer>
                     <div class="entry-meta">
                       <span class="last-updated">
@@ -32,12 +29,9 @@
                       </span>
                     </div>
                   </footer>
-        
                 </article>
-        
                 <%= yield :comments %>
-        
-                </main>
+              </main>
 					  </div>
 					</div>
     			<div class="large-4 medium-12 small-12 columns">
