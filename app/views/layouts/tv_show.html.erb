@@ -44,18 +44,16 @@
                 </main>
 					  </div>
 					</div>
+    			<div class="large-4 medium-12 small-12 columns">
+            <aside>
+              <%= render "layouts/partials/aside" %>
+            </aside>
+          </div>
 		    </div>
+		    <%= render "layouts/partials/footer_widgets" %>
+  		  <%= render "layouts/partials/footer" %>
+        <%= render "layouts/partials/bottom_scripts" %>
       </div>
-
-      <div class="col-sm-4">
-        <aside>
-          <%= render "layouts/partials/aside" %>
-        </aside>
-      </div>
-
     </div>
-
-    <%= render "layouts/partials/footer" %>
-    <%= render "layouts/partials/bottom_scripts" %>
   </body>
 </html>
