@@ -20,7 +20,7 @@ class Topic < ActiveRecord::Base
     scope :by_alphabet, ->(alphabet) {where('name like ?', "#{alphabet}%")}
 
     before_validation :strip_name, :capitalize_name, :generate_slug
-    after_commit :get_quote_suggestions
+    after_create :get_quote_suggestions
     after_save :add_to_time_line    
 
     def to_param
