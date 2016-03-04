@@ -7,27 +7,18 @@ class Admin::BooksController < ApplicationController
   # GET /books.json
   def index
     if params[:search].present?
-      if params[:status].present?
-        case params[:status]
-        when "Draft"
-          @books = Book.draft.search_by_name(params[:search]).order(name: :ASC).page params[:page]
-        when "Published"
-          @books = Book.published.search_by_name(params[:search]).order(name: :ASC).page params[:page]
-        end
-      else
-        @books = Book.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+      @books = Book.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+    elsif params[:status].present?
+      case params[:status]
+      when "Draft"
+        @books = Book.draft.search_by_name(params[:search]).order(name: :ASC).page params[:page]
+      when "Published"
+        @books = Book.published.search_by_name(params[:search]).order(name: :ASC).page params[:page]
       end
+    elsif params[:person].present?
+      @books = Book.where(person_id: params[:person]).order(name: :ASC).page params[:page]
     else
-      if params[:status].present?
-        case params[:status]
-        when "Draft"
-          @books = Book.draft.order(name: :ASC).page params[:page]
-        when "Published"
-          @books = Book.published.order(name: :ASC).page params[:page]
-        end
-      else
-        @books = Book.order(name: :ASC).page params[:page]
-      end
+      @books = Book.order(name: :ASC).page params[:page]
     end
   end
 
