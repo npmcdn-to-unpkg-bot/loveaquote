@@ -15,51 +15,6 @@ namespace :loveaquote_mar do
         end
     end
     
-    task :quotes_to_topics => :environment do
-        require 'open-uri'
-        fetch_url = "https://web.archive.org/web/20140226021056/http://www.loveaquote.com/topics/"
-        page = Nokogiri::HTML(open(fetch_url))
-        
-        topics = page.css("article .alphabet ul li a")
-        cant_find_quotes = []
-        
-        topics.each do |topic|
-            if Topic.exists?(name: topic.text.strip)
-                puts "== Updating quotes for #{topic.text.strip} =="
-                topic_url = "https://web.archive.org" + topic.attr('href')
-                
-                begin
-                    topic_page = Nokogiri::HTML(open(topic_url))
-                rescue OpenURI::HTTPError
-                    puts "Oops! some HTTP error occured for #{topic.text}"
-                else
-                    topic = Topic.find_by_name(topic.text.strip)
-                    quotes = topic_page.css(".quote-text p")
-                    quotes.each do |quote|
-                        if Quote.exists?(text: quote.text.strip)
-                            quote = Quote.find_by_text(quote.text.strip)
-                            QuoteTopic.create(quote_id: quote.id, topic_id: topic.id)
-                            puts "Added quote - #{quote.text}"
-                            qts = QuoteTopicSuggestion.where(quote_id: quote.id, topic_id: topic.id).first
-                            if qts
-                                qts.read = true
-                                qts.save
-                            end
-                            sleep(0.1)
-                        else
-                            cant_find_quotes << quote.text.strip
-                        end
-                    end
-                end
-            end
-            sleep(0.5)
-        end
-        puts "============== Cant Find Quotes =============="
-        cant_find_quotes.each do |quote|
-            puts quote
-        end
-    end
-    
     task :import_people => :environment do
         require 'open-uri'
         fetch_url = "https://web.archive.org/web/20140306051612/http://www.loveaquote.com/authors/"
