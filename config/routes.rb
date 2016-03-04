@@ -95,7 +95,13 @@ Rails.application.routes.draw do
       get 'google_plus'
     end
   end
-    
+
+  resources :messages, path: "contact-us", only: [:new, :create] do
+    collection do
+      get "success", action: "success", as: "success"
+    end
+  end
+  
   devise_for :admins, path: "admin", path_names: {sign_in: "login", sign_out: "logout"}, controllers: {sessions: "admin/sessions"}
   
   get "/404" => "exceptions#serve_404", as: "serve_404"
@@ -122,6 +128,7 @@ Rails.application.routes.draw do
         get 'decline', as: 'decline'
       end
     end
+    resources :messages, only: [:index, :show, :destroy]
     resources :settings
     resources :nationalities
     resources :professions
