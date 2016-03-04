@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160304024420) do
+ActiveRecord::Schema.define(version: 20160304194446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,17 @@ ActiveRecord::Schema.define(version: 20160304024420) do
 
   add_index "featured_topics", ["source_type", "source_id"], name: "index_featured_topics_on_source_type_and_source_id", using: :btree
   add_index "featured_topics", ["topic_id"], name: "index_featured_topics_on_topic_id", using: :btree
+
+  create_table "logs", force: :cascade do |t|
+    t.integer  "source_id"
+    t.string   "source_type"
+    t.string   "category"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "logs", ["source_type", "source_id"], name: "index_logs_on_source_type_and_source_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
     t.string   "name"

@@ -37,6 +37,7 @@ class CharactersController < ApplicationController
   
   def set_character
     @character = Character.published.find_by_slug(params[:id])
+    NotFoundWorker.perform_async("/topics/#{params[:id]}") unless @character
     redirect_to serve_404_url unless @character
   end
 end

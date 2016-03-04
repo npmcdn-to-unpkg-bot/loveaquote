@@ -36,6 +36,7 @@ class TopicsController < ApplicationController
   private
   def set_topic
     @topic = Topic.published.find_by_slug(params[:id])
-    redirect_to serve_404_url unless @topic    
+    NotFoundWorker.perform_async("/topics/#{params[:id]}") unless @topic
+    redirect_to serve_404_url unless @topic
   end
 end

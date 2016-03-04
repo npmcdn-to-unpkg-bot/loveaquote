@@ -37,6 +37,7 @@ class MoviesController < ApplicationController
   
   def set_movie
     @movie = Movie.published.find_by_slug(params[:id])
+    NotFoundWorker.perform_async("/topics/#{params[:id]}") unless @movie
     redirect_to serve_404_url unless @movie
   end
 end

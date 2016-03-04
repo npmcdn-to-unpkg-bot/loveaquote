@@ -1,0 +1,36 @@
+<div class="col-sm-12">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2 style="margin-top: 0px">Logs</h2>
+    </div>
+    <div class="col-sm-6">
+      <%= form_tag "", method: :get, style: "width:50%; float:right; padding-right: 10px;" do %>
+        <%= select_tag "category", options_for_select(Log.select(:category).distinct.map {|c| c.category}, params[:category]), prompt: "Filter by Category", onchange: "this.form.submit()", class: "form-control" %>
+      <% end %>          
+    </div>
+  </div>
+
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th width="10%" class="text-center">Date</th>
+        <th width="30%" class="text-center">Category</th>
+        <th width="60%">Description</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @logs.each do |log| %>
+        <tr>
+          <td class="text-center"><%= log.created_at.strftime("%B %d, %Y") %></td>
+          <td class="text-center"><%= log.category %></td>
+          <td><%= log.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <div class="text-center">
+    <%= paginate @logs %>
+  </div>
+</div>

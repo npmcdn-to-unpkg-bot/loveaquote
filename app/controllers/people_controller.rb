@@ -39,6 +39,7 @@ class PeopleController < ApplicationController
   
   def set_person
     @person = Person.published.find_by_slug(params[:id])
+    NotFoundWorker.perform_async("/topics/#{params[:id]}") unless @person
     redirect_to serve_404_url unless @person
   end
 end

@@ -142,6 +142,7 @@ Rails.application.routes.draw do
       end
     end
     resources :messages, only: [:index, :show, :destroy]
+    resources :logs, only: [:index]
     resources :settings
     resources :nationalities
     resources :professions
