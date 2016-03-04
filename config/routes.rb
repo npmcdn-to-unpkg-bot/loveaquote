@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  get 'static_pages/privacy_policy'
+
+  get 'static_pages/about_us'
+
+  get 'static_pages/disclaimer'
+
+  get 'static_pages/terms_and_conditions'
+
   get "authors/:slug", to: redirect("/people/%{slug}", status: 301)
   get "authors/:slug/:page", to: redirect("/people/%{slug}/%{page}", status: 301)
   
@@ -101,6 +109,11 @@ Rails.application.routes.draw do
       get "success", action: "success", as: "success"
     end
   end
+  
+  get 'privacy-policy' => 'static_pages#privacy_policy', as: :privacy_policy
+	get 'about-us' => 'static_pages#about_us', as: :about_us
+	get 'disclaimer' => 'static_pages#disclaimer', as: :disclaimer
+	get 'terms-and-conditions' => 'static_pages#terms_and_conditions', as: :terms_and_conditions
   
   devise_for :admins, path: "admin", path_names: {sign_in: "login", sign_out: "logout"}, controllers: {sessions: "admin/sessions"}
   
