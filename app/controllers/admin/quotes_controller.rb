@@ -2,6 +2,14 @@ class Admin::QuotesController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_quote, only: [:edit, :update, :destroy]
   layout "admin"
+  
+  def index
+    if params[:search].present?
+      @quotes = Quote.search_by_text(params[:search]).page params[:page]
+    else
+      @quotes = Quote.order(created_at: :DESC).page params[:page]
+    end
+  end
 
   # GET /quotes/new
   def new

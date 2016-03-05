@@ -1,4 +1,7 @@
 class Quote < ActiveRecord::Base
+    include PgSearch
+    pg_search_scope :search_by_text, against: :text, using: { tsearch: {prefix: true} }
+    
     # belongs to source
     belongs_to :source, polymorphic: true
     belongs_to :character
