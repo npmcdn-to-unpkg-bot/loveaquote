@@ -7,6 +7,7 @@ class QuoteTwitterWorker
         quote.update(
             pinterest_share_count: quote.pinterest_share_count + 1,
             total_share_count: total_share_count + 1
-        )      
+        )   
+        Log.create(source: quote, category: "Social Share", sub_category: "Twitter")
     end
 end

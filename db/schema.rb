@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160304194446) do
+ActiveRecord::Schema.define(version: 20160305053227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,8 +88,9 @@ ActiveRecord::Schema.define(version: 20160304194446) do
     t.string   "source_type"
     t.string   "category"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "sub_category"
   end
 
   add_index "logs", ["source_type", "source_id"], name: "index_logs_on_source_type_and_source_id", using: :btree

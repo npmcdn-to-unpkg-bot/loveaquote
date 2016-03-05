@@ -12,6 +12,7 @@ class Person < ActiveRecord::Base
     # has many books
     has_many :books
     has_many :book_quotes, through: :books, source: :quotes
+    has_many :logs, as: :source, dependent: :destroy
     
     mount_uploader :image, ImageUploader
 

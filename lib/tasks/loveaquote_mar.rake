@@ -40,10 +40,9 @@ namespace :loveaquote_mar do
                             quote = Quote.find_by_text(quote.text.strip)
                             QuoteTopic.create(quote_id: quote.id, topic_id: topic.id)
                             puts "Added quote - #{quote.text}"
-                            qts = QuoteTopicSuggestion.where(quote_id: quote.id, topic_id: topic.id).first
-                            if qts
-                                qts.read = true
-                                qts.save
+                            quote.quote_topic_suggestions.each do |suggest|
+                                suggest.read = true
+                                suggest.save
                             end
                             sleep(0.1)
                         else
