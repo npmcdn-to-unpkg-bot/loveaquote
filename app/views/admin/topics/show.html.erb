@@ -4,6 +4,7 @@
     <li><%= link_to "Topics", admin_topics_url %></li> 
     <li class="active"><%= @topic.name %></li>
   </ol>
+  
   <h2><%= @topic.name %> <%= link_to "view", topic_url(@topic), class: "btn btn-default btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_topic_url(@topic), class: "btn btn-default btn-sm" %></h2>
 
   <div class="panel minimal minimal-gray">

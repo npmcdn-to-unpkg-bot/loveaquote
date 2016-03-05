@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160305053227) do
+ActiveRecord::Schema.define(version: 20160305095413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -192,6 +192,13 @@ ActiveRecord::Schema.define(version: 20160305053227) do
 
   add_index "quotes", ["character_id"], name: "index_quotes_on_character_id", using: :btree
   add_index "quotes", ["source_type", "source_id"], name: "index_quotes_on_source_type_and_source_id", using: :btree
+
+  create_table "redirects", force: :cascade do |t|
+    t.string   "from"
+    t.string   "to"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "settings", force: :cascade do |t|
     t.text     "google_analytics"
