@@ -37,7 +37,14 @@ class BooksController < ApplicationController
   
   def set_book
     @book = Book.published.find_by_slug(params[:id])
-    NotFoundWorker.perform_async("/topics/#{params[:id]}") unless @book
-    redirect_to serve_404_url unless @book
+      if ! @book
+        @redirect = Redirect.find_by_from(book_path(id: params[:id]))
+        if ! @redirect
+          NotFoundWorker.perform_async(book_path(id: params[:id]))
+          redirect_to serve_404_url
+        else
+          redirect_to @redirect.to, status: 301
+        end
+      end
   end
 end

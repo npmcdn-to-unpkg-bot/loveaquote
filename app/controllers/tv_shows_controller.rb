@@ -37,7 +37,14 @@ class TvShowsController < ApplicationController
   
   def set_tv_show
     @tv_show = TvShow.published.find_by_slug(params[:id])
-    NotFoundWorker.perform_async("/topics/#{params[:id]}") unless @tv_show
-    redirect_to serve_404_url unless @tv_show
+    if ! @tv_show
+      @redirect = Redirect.find_by_from(tv_show_path(id: params[:id]))
+      if ! @redirect
+        NotFoundWorker.perform_async(tv_show_path(id: params[:id]))
+        redirect_to serve_404_url
+      else
+        redirect_to @redirect.to, status: 301
+      end
+    end
   end
 end
