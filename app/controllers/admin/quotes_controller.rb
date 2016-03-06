@@ -18,6 +18,7 @@ class Admin::QuotesController < ApplicationController
   
   def edit
     @quote.build_chapter_and_page if @quote.chapter_and_page.nil? && @quote.source_type == "Book"
+    @quote.build_season_and_episode if @quote.season_and_episode.nil? && @quote.source_type == "TvShow"
   end
 
   # POST /quotes
@@ -76,6 +77,6 @@ class Admin::QuotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quote_params
-      params.require(:quote).permit(:text, :character_id, :topic_ids => [], quote_topics_attributes: [:id, :topic_id, :_destroy], chapter_and_page_attributes: [:id, :chapter, :page, :_destroy], quoted_in_books_attributes: [:id, :name, :author, :chapter, :page, :_destroy])
+      params.require(:quote).permit(:text, :character_id, :topic_ids => [], quote_topics_attributes: [:id, :topic_id, :_destroy], chapter_and_page_attributes: [:id, :chapter, :page, :_destroy], quoted_in_books_attributes: [:id, :name, :author, :chapter, :page, :_destroy], season_and_episode_attributes: [:id, :season, :episode, :_destroy])
     end
 end

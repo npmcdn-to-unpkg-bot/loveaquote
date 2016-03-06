@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160306042443) do
+ActiveRecord::Schema.define(version: 20160306081316) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -210,6 +210,16 @@ ActiveRecord::Schema.define(version: 20160306042443) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "season_and_episodes", force: :cascade do |t|
+    t.integer  "quote_id",   null: false
+    t.integer  "season"
+    t.integer  "episode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "season_and_episodes", ["quote_id"], name: "index_season_and_episodes_on_quote_id", using: :btree
+
   create_table "settings", force: :cascade do |t|
     t.text     "google_analytics"
     t.string   "bing_verification"
@@ -277,5 +287,6 @@ ActiveRecord::Schema.define(version: 20160306042443) do
   add_foreign_key "quote_topics", "topics"
   add_foreign_key "quoted_in_books", "quotes"
   add_foreign_key "quotes", "characters"
+  add_foreign_key "season_and_episodes", "quotes"
   add_foreign_key "topic_aliases", "topics"
 end

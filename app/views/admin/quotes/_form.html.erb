@@ -18,12 +18,19 @@
           <ul class="nav nav-tabs">
             <li class="active"><a href="#quote" data-toggle="tab">Quote</a></li>
             <li><a href="#quote-topics" data-toggle="tab">Topics</a></li>
+            
             <% if @quote.source_type == "Person" %>
               <li><a href="#quoted-in-books" data-toggle="tab">Quoted in Books</a></li>
             <% end %>
+            
             <% if @quote.source_type == "Book" %>
               <li><a href="#chapter-and-page" data-toggle="tab">Chapter And Page</a></li>
             <% end %>
+            
+            <% if @quote.source_type == "TvShow" %>
+              <li><a href="#season-and-episode" data-toggle="tab">Season And Episode</a></li>
+            <% end %>
+            
             <% if @quote.source_type == "Book" && @quote.source.characters.any? %>
               <li><a href="#quote-character" data-toggle="tab">Quote Character</a></li>
             <% end %>
@@ -68,6 +75,15 @@
               <%= f.simple_fields_for :chapter_and_page do |cap| %>
                <%= cap.input :chapter %>
                <%= cap.input :page %>
+              <% end %>
+            </div>
+          <% end %>
+          
+          <% if @quote.source_type == "TvShow" %>
+            <div class="tab-pane" id="season-and-episode">
+              <%= f.simple_fields_for :season_and_episode do |sae| %>
+               <%= sae.input :season %>
+               <%= sae.input :episode %>
               <% end %>
             </div>
           <% end %>

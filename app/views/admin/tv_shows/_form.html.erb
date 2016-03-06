@@ -9,6 +9,7 @@
           <div class="panel-options">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#tv_show" data-toggle="tab">Tv Show</a></li>
+              <li><a href="#characters" data-toggle="tab">Characters</a></li>
             </ul>
           </div>
         </div>
@@ -42,6 +43,18 @@
                 </div>  
               </div>
             </div>
+            
+            <div class="tab-pane" id="characters">
+              <div id='character_sources'>
+                <%= f.simple_fields_for :character_sources do |character_source| %>
+                  <%= render 'character_source_fields', :f => character_source %>
+                <% end %>
+                <div class='links'>
+                  <%= link_to_add_association '<i class="e-icon-squared-plus"></i> character'.html_safe, f, :character_sources %>
+                </div>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>  

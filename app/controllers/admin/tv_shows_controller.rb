@@ -93,6 +93,6 @@ class Admin::TvShowsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tv_show_params
-      params.require(:tv_show).permit(:name, :slug, :published, :popular, :very_popular, :image)
+      params.require(:tv_show).permit(:name, :slug, :published, :popular, :very_popular, :image, character_sources_attributes: [:id, :character_id, :_destroy])
     end
 end
