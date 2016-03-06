@@ -3,7 +3,7 @@ namespace :quote_share_count do
 
         Log::BOTS.each do |bot|
             Log.search_by_description(bot).where(category: "Social Share").each do |log|
-                case bot.sub_category
+                case log.sub_category
                 when "Twitter"
                     quote = Quote.find(log.source_id)
                     puts "Quote id - #{quote.id}"
