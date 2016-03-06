@@ -24,12 +24,7 @@ class Admin::QuotesController < ApplicationController
   # POST /quotes
   # POST /quotes.json
   def create
-    @quote = Quote.new()
-    @quote.text = params[:quote][:text]
-    @quote.source = Person.find(params[:quote][:person_id]) if params[:quote][:person_id].present?
-    @quote.source = Book.find(params[:quote][:book_id]) if params[:quote][:book_id].present?
-    @quote.source = Movie.find(params[:quote][:movie_id]) if params[:quote][:movie_id].present?
-    @quote.source = TvShow.find(params[:quote][:tv_show_id]) if params[:quote][:tv_show_id].present?
+    @quote = Quote.new(quote_params)
     
     respond_to do |format|
       if @quote.save
@@ -73,6 +68,6 @@ class Admin::QuotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quote_params
-      params.require(:quote).permit(:text, :character_id, :topic_ids => [], quote_topics_attributes: [:id, :topic_id, :_destroy], chapter_and_page_attributes: [:id, :chapter, :page, :_destroy], quoted_in_books_attributes: [:id, :name, :author, :chapter, :page, :_destroy], season_and_episode_attributes: [:id, :season, :episode, :_destroy])
+      params.require(:quote).permit(:text, :character_id, :source_id, :source_type, :topic_ids => [], quote_topics_attributes: [:id, :topic_id, :_destroy], chapter_and_page_attributes: [:id, :chapter, :page, :_destroy], quoted_in_books_attributes: [:id, :name, :author, :chapter, :page, :_destroy], season_and_episode_attributes: [:id, :season, :episode, :_destroy])
     end
 end

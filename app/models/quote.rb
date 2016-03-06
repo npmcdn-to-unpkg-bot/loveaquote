@@ -9,7 +9,7 @@ class Quote < ActiveRecord::Base
     has_one :chapter_and_page, dependent: :destroy
     accepts_nested_attributes_for :chapter_and_page, reject_if: :all_blank, allow_destroy: true
     
-        has_one :season_and_episode, dependent: :destroy
+    has_one :season_and_episode, inverse_of: :quote, dependent: :destroy
     accepts_nested_attributes_for :season_and_episode, reject_if: :all_blank, allow_destroy: true
     
     has_many :quoted_in_books, dependent: :destroy

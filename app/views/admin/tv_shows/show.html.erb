@@ -112,7 +112,7 @@
           </div>
           <div class="panel-body">
             <ul>
-              <% @tv_show.characters.each do |character| %>
+              <% @tv_show.characters.order(name: :ASC).each do |character| %>
                 <li><%= link_to character.name, admin_character_path(character) %></li>
               <% end %>
             </ul>
@@ -131,10 +131,18 @@
         <h4 class="modal-title">Edit Quote</h4>
       </div>
       <div class="modal-body">
-        <%= simple_form_for([:admin, Quote.new]) do |f| %>
+        <% @new_quote = Quote.new %>
+        <% @new_quote.build_season_and_episode %>
+        <%= simple_form_for([:admin, @new_quote]) do |f| %>
           <div class="form-inputs">          
             <%= f.input :text, input_html: {rows: 5} %>
-            <%= f.hidden_field :tv_show_id, value: @tv_show.id %>
+            <%= f.association :character, collection: @tv_show.characters.order(name: :asc) if @tv_show.characters.any? %>
+            <%= f.simple_fields_for :season_and_episode do |sae| %>
+              <%= sae.input :season %>
+              <%= sae.input :episode %>
+            <% end %>
+            <%= f.hidden_field :source_id, value: @tv_show.id %>
+            <%= f.hidden_field :source_type, value: @tv_show.class.name %>
           </div>
           <div class="form-actions">
             <%= f.button :submit %>
