@@ -88,7 +88,7 @@
             </div>
           <% end %>
           
-          <% if @quote.source_type == "Book" && @quote.source.characters.any? %>
+          <% if @quote.source.characters.any? %>
             <div class="tab-pane" id="quote-character">
               <%= f.association :character, collection: @quote.source.characters.order(name: :asc), input_html: {multiple: false} if @quote.source_type == "Book" %>
             </div>
