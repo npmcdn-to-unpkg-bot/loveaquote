@@ -5,6 +5,10 @@ class Quote < ActiveRecord::Base
     # belongs to source
     belongs_to :source, polymorphic: true
     belongs_to :character
+    
+    has_one :chapter_and_page, dependent: :destroy
+    accepts_nested_attributes_for :chapter_and_page, reject_if: :all_blank, allow_destroy: true
+    
     has_many :quoted_in_books, dependent: :destroy
     accepts_nested_attributes_for :quoted_in_books, reject_if: :all_blank, allow_destroy: true
     

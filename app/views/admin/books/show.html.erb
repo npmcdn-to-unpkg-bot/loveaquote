@@ -47,10 +47,12 @@
               <table class="table table-striped table-bordered table-hover">
                 <thead>
                   <% if @book.characters.any? %>
-                    <th width="70%" class="text-center">Quote</th>
+                    <th width="5%" class="text-center">Verified</th>
+                    <th width="65%" class="text-center">Quote</th>
                     <th width="20%" class="text-center">Character</th>
                   <% else %>
-                    <th width="90%" class="text-center">Quote</th>
+                    <th width="5%" class="text-center">Verified</th>
+                    <th width="85%" class="text-center">Quote</th>
                   <% end %>
                   <th width="10%" class="text-center" colspan="2">Manage</th>
                 </thead>
@@ -58,6 +60,7 @@
                 <tbody>
                   <% @book.quotes.order(text: :asc).each do |quote| %>  
                   <tr>
+                    <td class="text-center"><%= quote.chapter_and_page.present? ? '<i class="e-icon-check"></i>'.html_safe : '<i class="e-icon-cross"></i>'.html_safe %></td>
                     <td><%= quote.text %></td>
                     <% if @book.characters.any? %>
                       <td><%= link_to quote.character.name, admin_character_path(quote.character) if quote.character.present? %></td>

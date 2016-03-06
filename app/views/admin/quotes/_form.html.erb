@@ -21,7 +21,11 @@
             <% if @quote.source_type == "Person" %>
               <li><a href="#quoted-in-books" data-toggle="tab">Quoted in Books</a></li>
             <% end %>
+            <% if @quote.source_type == "Book" %>
+              <li><a href="#chapter-and-page" data-toggle="tab">Chapter And Page</a></li>
+            <% end %>
             <% if @quote.source_type == "Book" && @quote.source.characters.any? %>
+              <li><a href="#chapter-and-page" data-toggle="tab">Chapter And Page</a></li>
               <li><a href="#quote-character" data-toggle="tab">Quote Character</a></li>
             <% end %>
           </ul>
@@ -57,6 +61,15 @@
                   <%= link_to_add_association '<i class="e-icon-squared-plus"></i> quoted in book'.html_safe, f, :quoted_in_books %>
                 </div>
               </div>
+            </div>
+          <% end %>
+          
+          <% if @quote.source_type == "Book" %>
+            <div class="tab-pane" id="chapter-and-page">
+              <%= f.simple_fields_for :chapter_and_page do |cap| %>
+               <%= cap.input :chapter %>
+               <%= cap.input :page %>
+              <% end %>
             </div>
           <% end %>
           
