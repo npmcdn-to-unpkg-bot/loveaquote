@@ -1,4 +1,9 @@
 <div class="col-sm-12">
+    <ol class="breadcrumb bc-3"> 
+    <li><%= link_to "Home", admin_root_url %></li>
+    <li><%= link_to @quote.source.name, admin_model_url(@quote.source) %></li> 
+    <li class="active"><%= truncate @quote.text %></li>
+    </ol>    
     <h2>Edit</h2>
     <%= render "form" %>
 </div>
