@@ -2,7 +2,7 @@ class QuotesController < ApplicationController
   before_action :set_quote, only: [:pinterest, :facebook, :twitter, :google_plus]
   
   def twitter
-    QuoteTwitterWorker.perform_async(@quote.id)
+    QuoteTwitterWorker.perform_async(@quote.id, request.user_agent)
     url = URI.encode(view_context.quote_source_url(@quote))
     text = CGI::escape(view_context.truncate(@quote.text, length: (140 - 22 - 23), seperator: " "))
     
@@ -10,13 +10,13 @@ class QuotesController < ApplicationController
   end
   
   def facebook
-    QuoteFacebookWorker.perform_async(@quote.id)
+    QuoteFacebookWorker.perform_async(@quote.id, request.user_agent)
     url = URI.encode(view_context.quote_source_url(@quote))
     redirect_to "https://www.facebook.com/sharer/sharer.php?u=#{url}"
   end
   
   def pinterest
-    QuotePinterestWorker.perform_async(@quote.id)
+    QuotePinterestWorker.perform_async(@quote.id, request.user_agent)
     url = URI.encode(view_context.quote_source_url(@quote))
     media = URI.encode(@quote.source.image_url(:large))
     description = CGI::escape(@quote.text + ' - ' + @quote.source.name +  ' #quotes')
