@@ -8,7 +8,9 @@ class Book < ActiveRecord::Base
     has_many :logs, as: :source, dependent: :destroy
     has_many :quote_topic_suggestions, through: :quotes
     has_many :featured_topics, as: :source, dependent: :destroy
+    
     has_many :character_sources, as: :source, dependent: :destroy
+    accepts_nested_attributes_for :character_sources, reject_if: :all_blank, allow_destroy: true
     has_many :characters, through: :character_sources
     
     belongs_to :person
