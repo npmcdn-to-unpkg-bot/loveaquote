@@ -3,4 +3,6 @@ class Log < ActiveRecord::Base
     pg_search_scope :search_by_description, against: :description, using: { tsearch: {prefix: true} }    
     
     belongs_to :source, polymorphic: true
+    
+    BOTS = ["seokicks"]
 end

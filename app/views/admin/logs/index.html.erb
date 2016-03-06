@@ -24,7 +24,7 @@
     <tbody>
       <% @logs.each do |log| %>
         <tr>
-          <td class="text-center"><%= log.created_at.strftime("%B %d, %Y") %></td>
+          <td class="text-center"><%= log.created_at.strftime("%B %d, %Y") %><br><%= log.created_at.strftime("%T") %></td>
           <td class="text-center"><%= log.category %></td>
           <td class="text-center"><%= log.sub_category %></td>
           <td class="text-center"><%= link_to "View", edit_admin_model_url(log.source) if log.source.present? %></td>
