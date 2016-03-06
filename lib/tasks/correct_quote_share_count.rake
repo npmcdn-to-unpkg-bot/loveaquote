@@ -9,6 +9,7 @@ namespace :quote_share_count do
                 quote.save
                 log.destroy
             end
+        end
             
         Log.where(source_type: "Quote", category: "Social Share", sub_category: "Facebook").each do |log|
             unless log.description.present?
