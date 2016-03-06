@@ -28,17 +28,13 @@ class Admin::QuotesController < ApplicationController
     @quote.text = params[:quote][:text]
     @quote.source = Person.find(params[:quote][:person_id]) if params[:quote][:person_id].present?
     @quote.source = Book.find(params[:quote][:book_id]) if params[:quote][:book_id].present?
+    @quote.source = Movie.find(params[:quote][:movie_id]) if params[:quote][:movie_id].present?
+    @quote.source = TvShow.find(params[:quote][:tv_show_id]) if params[:quote][:tv_show_id].present?
     
     respond_to do |format|
       if @quote.save
         format.html { 
-          if params[:quote][:person_id].present?
-            redirect_to admin_person_url(Person.find(params[:quote][:person_id])), notice: 'quote was successfully created.'
-          elsif params[:quote][:book_id].present?
-            redirect_to admin_book_url(Book.find(params[:quote][:book_id])), notice: 'quote was successfully created.'                      
-          else
-            redirect_to admin_quotes_url, notice: 'quote was successfully created.'
-          end
+          redirect_to view_context.admin_model_url(@quote.source), notice: 'quote was successfully created.'
         }
         format.json { render :show, status: :created, location: @quote }
       else
