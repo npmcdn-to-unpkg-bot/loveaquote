@@ -19,7 +19,6 @@ gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
 gem 'puma'
 gem 'figaro'
 gem 'whenever', :require => false
-gem 'rack-cache'
 
 gem 'sidekiq'
 gem 'redis-namespace'
