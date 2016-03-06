@@ -52,7 +52,7 @@ class Admin::MoviesController < ApplicationController
 
     respond_to do |format|
       if @movie.save
-        format.html { redirect_to admin_movies_url, notice: 'Movie was successfully created.' }
+        format.html { redirect_to admin_movie_path(@movie), notice: 'Movie was successfully created.' }
         format.json { render :show, status: :created, location: @movie }
       else
         format.html { render :new }
@@ -66,7 +66,7 @@ class Admin::MoviesController < ApplicationController
   def update
     respond_to do |format|
       if @movie.update(movie_params)
-        format.html { redirect_to admin_movies_url, notice: 'Movie was successfully updated.' }
+        format.html { redirect_to admin_movie_path(@movie), notice: 'Movie was successfully updated.' }
         format.json { render :show, status: :ok, location: @movie }
       else
         format.html { render :edit }
@@ -93,6 +93,6 @@ class Admin::MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.require(:movie).permit(:name, :slug, :published, :popular, :very_popular, :image)
+      params.require(:movie).permit(:name, :slug, :published, :popular, :very_popular, :image, character_sources_attributes: [:id, :character_id, :_destroy])
     end
 end
