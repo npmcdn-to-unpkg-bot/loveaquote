@@ -42,6 +42,8 @@ gem 'fog'
 gem 'pg'
 gem 'pg_search'
 
+gem "rack-cache"
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
