@@ -31,7 +31,7 @@
               <li><a href="#season-and-episode" data-toggle="tab">Season And Episode</a></li>
             <% end %>
             
-            <% if @quote.source.characters.any? %>
+            <% if (@quote.source == "Book" or @quote.source == "TvShow"  or @quote.source == "Movie") && quote.source.characters.any? %>
               <li><a href="#quote-character" data-toggle="tab">Quote Character</a></li>
             <% end %>
           </ul>
@@ -88,7 +88,7 @@
             </div>
           <% end %>
           
-          <% if @quote.source.characters.any? %>
+          <% if (@quote.source == "Book" or @quote.source == "TvShow"  or @quote.source == "Movie") && quote.source.characters.any? %>
             <div class="tab-pane" id="quote-character">
               <%= f.association :character, collection: @quote.source.characters.order(name: :asc) %>
             </div>
