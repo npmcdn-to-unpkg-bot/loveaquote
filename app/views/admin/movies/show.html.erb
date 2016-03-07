@@ -128,10 +128,13 @@
         <h4 class="modal-title">Edit Quote</h4>
       </div>
       <div class="modal-body">
-        <%= simple_form_for([:admin, Quote.new]) do |f| %>
+        <% @new_quote = Quote.new %>
+        <%= simple_form_for([:admin, @new_quote]) do |f| %>
           <div class="form-inputs">          
             <%= f.input :text, input_html: {rows: 5} %>
-            <%= f.hidden_field :movie_id, value: @movie.id %>
+            <%= f.association :character, collection: @movie.characters.order(name: :asc) if @movie.characters.any? %>
+            <%= f.hidden_field :source_id, value: @movie.id %>
+            <%= f.hidden_field :source_type, value: @movie.class.name %>
           </div>
           <div class="form-actions">
             <%= f.button :submit %>

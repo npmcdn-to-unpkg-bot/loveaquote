@@ -4,5 +4,5 @@ class Log < ActiveRecord::Base
     
     belongs_to :source, polymorphic: true
     
-    BOTS = ["seokicks"]
+    BOTS = ["seokicks", "deusu"]
 end

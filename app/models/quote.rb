@@ -6,7 +6,7 @@ class Quote < ActiveRecord::Base
     belongs_to :source, polymorphic: true
     belongs_to :character
     
-    has_one :chapter_and_page, dependent: :destroy
+    has_one :chapter_and_page, inverse_of: :quote, dependent: :destroy
     accepts_nested_attributes_for :chapter_and_page, reject_if: :all_blank, allow_destroy: true
     
     has_one :season_and_episode, inverse_of: :quote, dependent: :destroy
