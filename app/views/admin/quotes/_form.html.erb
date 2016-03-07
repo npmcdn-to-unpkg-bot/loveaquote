@@ -31,7 +31,7 @@
               <li><a href="#season-and-episode" data-toggle="tab">Season And Episode</a></li>
             <% end %>
             
-            <% if (@quote.source == "Book" || @quote.source || "TvShow"  or @quote.source || "Movie") && @quote.source.characters.any? %>
+            <% if (@quote.source == "Book" || @quote.source == "TvShow" || @quote.source == "Movie") && @quote.source.characters.any? %>
               <li><a href="#quote-character" data-toggle="tab">Quote Character</a></li>
             <% end %>
           </ul>
