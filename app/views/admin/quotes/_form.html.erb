@@ -88,7 +88,7 @@
             </div>
           <% end %>
           
-          <% if (@quote.source == "Book" || @quote.source || "TvShow"  || @quote.source == "Movie") && @quote.source.characters.any? %>
+          <% if (@quote.source == "Book" || @quote.source == "TvShow"  || @quote.source == "Movie") && @quote.source.characters.any? %>
             <div class="tab-pane" id="quote-character">
               <%= f.association :character, collection: @quote.source.characters.order(name: :asc) %>
             </div>
