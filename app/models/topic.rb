@@ -6,6 +6,9 @@ class Topic < ActiveRecord::Base
     has_many :quote_topics, dependent: :destroy
     has_many :quotes, through: :quote_topics
     has_many :topic_aliases, dependent: :destroy
+    has_many :topic_combinations, foreign_key: "primary_topic_id", dependent: :destroy
+    accepts_nested_attributes_for :topic_combinations, reject_if: :all_blank, allow_destroy: true
+    
     has_many :quote_topic_suggestions, dependent: :destroy
     
     # name should be present and unique
@@ -45,5 +48,9 @@ class Topic < ActiveRecord::Base
     
     def add_to_time_line
         TimeLine.create(item: self) if self.published
+    end
+    
+    def all_topic_combinations
+        TopicCombination.where("primary_topic_id = ? OR secondary_topic_id = ?", self.id, self.id)
     end
 end

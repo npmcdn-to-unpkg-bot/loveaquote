@@ -93,6 +93,6 @@ class Admin::TopicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
-      params.require(:topic).permit(:name, :slug, :popular, :very_popular, :published)
+      params.require(:topic).permit(:name, :slug, :popular, :very_popular, :published, topic_combinations_attributes: [:id, :secondary_topic_id, :_destroy])
     end
 end

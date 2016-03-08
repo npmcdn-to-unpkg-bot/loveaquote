@@ -135,6 +135,7 @@ Rails.application.routes.draw do
     resources :topics do
       resources :topic_aliases
     end
+    resources :topic_combinations, only: [:index, :show], path: "topic-combinations"
     resources :quote_topic_suggestions, only: [:index], path: "quote-topic-suggestions" do
       member do
         get 'accept', as: 'accept'

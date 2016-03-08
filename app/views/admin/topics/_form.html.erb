@@ -9,11 +9,44 @@
   }) do |f| %>
   <div class="row">
     <div class="col-sm-9">
-      <div class="form-inputs">
-        <%= f.input :name %>
-        <%= f.input :popular %>
-        <%= f.input :very_popular %>
-        <%= f.input :published %>
+      <div class="panel minimal minimal-gray">
+        <div class="panel-heading">
+          <div class="panel-title">
+            
+          </div>
+          <div class="panel-options">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#topic" data-toggle="tab">Topic</a></li>
+              <li><a href="#combinations" data-toggle="tab">Combinations</a></li>              
+            </ul>
+          </div>
+        </div>
+        
+        <div class="panel-body">
+          <div class="tab-content">
+            
+            <div class="tab-pane active" id="book">
+              <div class="form-inputs">
+                <%= f.input :name %>
+                <%= f.input :popular %>
+                <%= f.input :very_popular %>
+                <%= f.input :published %>
+              </div>
+            </div>
+            
+            <div class="tab-pane" id="combinations">
+              <div id='topic_combinations'>
+                <%= f.simple_fields_for :topic_combinations do |topic_combination| %>
+                  <%= render 'topic_combination_fields', :f => topic_combination %>
+                <% end %>
+                <div class='links'>
+                  <%= link_to_add_association '<i class="e-icon-squared-plus"></i> combination'.html_safe, f, :topic_combinations %>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
       </div>
     </div>
 
@@ -21,6 +54,11 @@
       <% if @topic.errors.any? %>
         <div class="alert alert-danger">
           <%= "#{@topic.errors.count} error found" %>
+          <ul class="list-unstyled text-left">
+            <% @topic.errors.full_messages.each do |msg| %>
+              <li><%= "=> #{msg}" %></li>
+            <% end %>
+          </ul>
         </div>
       <% end %>
       <div class="form-actions">

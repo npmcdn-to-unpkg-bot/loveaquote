@@ -1,0 +1,41 @@
+<div class="col-sm-12">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-6">
+          <h2 style="margin-top: 0px">Topic Combinations</h2>
+        </div>
+        <div class="col-sm-6" style="margin-bottom: 10px;">
+          <%= form_tag "", method: :get, style: "width:35%; float:right; padding-right: 10px;" do %>
+            <%= select_tag "topic", options_for_select(Topic.all.order(:name).pluck(:name, :id).map {|t| [t[0], t[1]]}, params[:topic]), prompt: "Filter by Topic", onchange: "this.form.submit()", class: "form-control" %>
+            <%= hidden_field_tag :search, params[:search] %>
+          <% end %>          
+        </div>
+      </div>
+  
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th width="40%" class="text-center">Primary Topic</th>
+            <th width="40%" class="text-center">Secondary Topic</th>
+            <th width="15%" class="text-center" colspan="2">Manage</th>
+          </tr>
+        </thead>
+      
+        <tbody>
+          <% @topic_combinations.each do |topic_combination| %>
+            <tr>
+              <td><%= topic_combination.primary_topic.name %></td>
+              <td><%= topic_combination.secondary_topic.name %></td>
+              <td class="text-center"><%= link_to '<i class="fa fa-arrow-right"></i>'.html_safe, admin_topic_combination_url(topic_combination) %></td>
+              <td class="text-center"><%= link_to '<i class="fa fa-times"></i>'.html_safe, admin_topic_combination_url(topic_combination) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="text-center">
+        <%= paginate @topic_combinations, :views_prefix => 'kaminari_bootstrap' %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160306081316) do
+ActiveRecord::Schema.define(version: 20160308164038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -254,6 +254,17 @@ ActiveRecord::Schema.define(version: 20160306081316) do
 
   add_index "topic_aliases", ["topic_id"], name: "index_topic_aliases_on_topic_id", using: :btree
 
+  create_table "topic_combinations", force: :cascade do |t|
+    t.integer  "primary_topic_id",   null: false
+    t.integer  "secondary_topic_id", null: false
+    t.string   "slug"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "topic_combinations", ["primary_topic_id"], name: "index_topic_combinations_on_primary_topic_id", using: :btree
+  add_index "topic_combinations", ["secondary_topic_id"], name: "index_topic_combinations_on_secondary_topic_id", using: :btree
+
   create_table "topics", force: :cascade do |t|
     t.string   "name"
     t.string   "slug"
@@ -289,4 +300,6 @@ ActiveRecord::Schema.define(version: 20160306081316) do
   add_foreign_key "quotes", "characters"
   add_foreign_key "season_and_episodes", "quotes"
   add_foreign_key "topic_aliases", "topics"
+  add_foreign_key "topic_combinations", "topics", column: "primary_topic_id", on_delete: :cascade
+  add_foreign_key "topic_combinations", "topics", column: "secondary_topic_id", on_delete: :cascade
 end

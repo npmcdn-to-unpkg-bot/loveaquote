@@ -4,77 +4,100 @@
     <li><%= link_to "Topics", admin_topics_url %></li> 
     <li class="active"><%= @topic.name %></li>
   </ol>
-  
-  <h2><%= @topic.name %> <%= link_to "view", topic_url(@topic), class: "btn btn-default btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_topic_url(@topic), class: "btn btn-default btn-sm" %></h2>
 
-  <div class="panel minimal minimal-gray">
+  <div class="row">
+    <div class="col-sm-9">  
+      <h2><%= @topic.name %> <%= link_to "view", topic_url(@topic), class: "btn btn-default btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_topic_url(@topic), class: "btn btn-default btn-sm" %></h2>
     
-    <div class="panel-heading">
-      <div class="panel-title">
-      </div> 
-      <div class="panel-options">
-        <ul class="nav nav-tabs">
-          <li class="active"><a href="#quotes" data-toggle="tab" aria-expanded="true">Quotes</a></li>
-          <li class=""><a href="#topic-aliases" data-toggle="tab" aria-expanded="false">Topic Aliases</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="panel-body">
-      <div class="tab-content">
-        <div class="tab-pane active" id="quotes">
-          <table class="table table-striped table-bordered table-hover">
-            <thead>
-              <tr>
-                <th width="70%" class="text-center">Quote</th>
-                <th width="30%" class="text-center" colspan="2">Manage</th>
-              </tr>
-            </thead>
-          
-            <tbody>
-                <% @topic.quotes.order(text: :ASC).each do |quote| %>
-                    <tr>
-                        <td><%= quote.text %></td>
-                        <td class="text-center">Edit</td>
-                        <td class="text-center">Delete</td>
-                    </tr>
-                <% end %>
-            </tbody>
-          </table>
-        </div>
+      <div class="panel minimal minimal-gray">
         
-        <div class="tab-pane" id="topic-aliases">
-          <div class="row">
-            <div class="col-sm-6">
-              <h5 class="text-center">Add new</h5>
-              <div id="new_topic_alias_errors"></div>
-              <%= simple_form_for([:admin, @topic, TopicAlias.new], remote: true) do |f|%>
-                  <%= f.input :name %>
-                  <%= f.hidden_field :topic_id, value: @topic.id %>
-                  <%= f.button :submit, id: "new_topic_alias_submit" %>
-              <% end %>
-            </div>
-            <div class="col-sm-6">
-              <h5 class="text-center">Topic Aliases</h5>
-              <table id="topic_aliases_table" class="table table-striped table-bordered table-hover">
+        <div class="panel-heading">
+          <div class="panel-title">
+          </div> 
+          <div class="panel-options">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#quotes" data-toggle="tab" aria-expanded="true">Quotes</a></li>
+              <li class=""><a href="#topic-aliases" data-toggle="tab" aria-expanded="false">Topic Aliases</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="tab-content">
+            <div class="tab-pane active" id="quotes">
+              <table class="table table-striped table-bordered table-hover">
                 <thead>
-                  <th class="text-center" width="60%">Alias Name</th>
-                  <th class="text-center" width="40%" colspan="2">Manage</th>
+                  <tr>
+                    <th width="70%" class="text-center">Quote</th>
+                    <th width="30%" class="text-center" colspan="2">Manage</th>
+                  </tr>
                 </thead>
-                
+              
                 <tbody>
-                  <% @topic.topic_aliases.each do |topic_alias| %>
-                    <tr>
-                      <td><%= topic_alias.name %></td>
-                      <td class="text-center">Edit</td>
-                      <td class="text-center">Delete</td>
-                    </tr>
-                  <% end %>
+                    <% @topic.quotes.order(text: :ASC).each do |quote| %>
+                        <tr>
+                            <td><%= quote.text %></td>
+                            <td class="text-center">Edit</td>
+                            <td class="text-center">Delete</td>
+                        </tr>
+                    <% end %>
                 </tbody>
               </table>
+            </div>
+            
+            <div class="tab-pane" id="topic-aliases">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h5 class="text-center">Add new</h5>
+                  <div id="new_topic_alias_errors"></div>
+                  <%= simple_form_for([:admin, @topic, TopicAlias.new], remote: true) do |f|%>
+                      <%= f.input :name %>
+                      <%= f.hidden_field :topic_id, value: @topic.id %>
+                      <%= f.button :submit, id: "new_topic_alias_submit" %>
+                  <% end %>
+                </div>
+                <div class="col-sm-6">
+                  <h5 class="text-center">Topic Aliases</h5>
+                  <table id="topic_aliases_table" class="table table-striped table-bordered table-hover">
+                    <thead>
+                      <th class="text-center" width="60%">Alias Name</th>
+                      <th class="text-center" width="40%" colspan="2">Manage</th>
+                    </thead>
+                    
+                    <tbody>
+                      <% @topic.topic_aliases.each do |topic_alias| %>
+                        <tr>
+                          <td><%= topic_alias.name %></td>
+                          <td class="text-center">Edit</td>
+                          <td class="text-center">Delete</td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>      
+
+    <div class="col-sm-3">
+      <% if @topic.topic_combinations.any? %>
+        <div class="panel panel-default panel-shadow">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h4>Combinations</h4>
+            </div>
+          </div>
+          <div class="panel-body">
+            <ul>
+              <% @topic.all_topic_combinations.each do |combination| %>
+                <li><%= link_to combination.primary_topic.name + " and " + combination.secondary_topic.name, admin_topic_combination_path(combination) %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
