@@ -18,11 +18,11 @@ class TopicCombination < ActiveRecord::Base
     end
     
     def primary_topic
-        Topic.find(primary_topic_id)
+        Topic.find(self.primary_topic_id)
     end
     
     def secondary_topic
-        Topic.find(secondary_topic_id)
+        Topic.find(self.secondary_topic_id)
     end
     
     def name
@@ -33,6 +33,12 @@ class TopicCombination < ActiveRecord::Base
         primary_topic_quotes = self.primary_topic.quotes.pluck(:id)
         secondary_topic_quotes = self.secondary_topic.quotes.pluck(:id)
         Quote.where(id: primary_topic_quotes & secondary_topic_quotes)
+    end
+    
+    def suggested_quotes
+        primary_topic_suggested_quotes = self.primary_topic.quote_topic_suggestions.where(read: false).pluck(:quote_id)
+        secondary_topic_suggested_quotes = self.secondary_topic.quote_topic_suggestions.where(read: false).pluck(:quote_id)
+        QuoteTopicSuggestion.where(quote_id: primary_topic_suggested_quotes & secondary_topic_suggested_quotes)
     end
     
     def combination_should_not_exist
