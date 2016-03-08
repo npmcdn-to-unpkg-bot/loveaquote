@@ -18,6 +18,10 @@
           <ul class="nav nav-tabs">
             <li class="active"><a href="#quote" data-toggle="tab">Quote</a></li>
             <li><a href="#quote-topics" data-toggle="tab">Topics</a></li>
+
+            <% if @quote.quote_topic_suggestions.where(read: false)  .any? %>
+              <li><a href="#quote-topic-suggestions" data-toggle="tab">Topic Suggestions</a></li>
+            <% end %>
             
             <% if @quote.source_type == "Person" %>
               <li><a href="#quoted-in-books" data-toggle="tab">Quoted in Books</a></li>
@@ -56,6 +60,45 @@
               </div>
             </div>
           </div>
+          
+          <% if @quote.quote_topic_suggestions.any? %>
+            <div class="tab-pane" id="quote-topic-suggestions">
+              <div id='quote_topic_suggestions'>
+                <table class="table table-striped table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th width="60%" class="text-center">Topic</th>
+                      <th width="40%" class="text-center" colspan="2">Manage</th>
+                    </tr>
+                  </thead>
+                
+                  <tbody>
+                    <% @quote.quote_topic_suggestions.where(read: false).each do |quote_topic_suggestion| %>
+                      <tr>
+                        <td class="text-center"><%= link_to quote_topic_suggestion.topic.name, admin_topic_url(quote_topic_suggestion.topic) %></td>
+                        <td class="text-center"><%= link_to '<i class="e-icon-check"></i>'.html_safe, accept_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"accept_suggestion", remote: true %></td>
+                        <td class="text-center"><%= link_to '<i class="e-icon-cross"></i>'.html_safe, decline_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"decline_suggestion", remote: true %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            
+            <script type="text/javascript">
+              $(function() {
+                $(".accept_suggestion")
+                .on("ajax:complete", function(e, data, status, xhr) {
+                    $(this).closest("tr").remove();
+                });
+              
+                $(".decline_suggestion")
+                .on("ajax:complete", function(e, data, status, xhr) {
+                    $(this).closest("tr").remove();
+                });
+              });
+            </script>
+          <% end %>
           
           <% if @quote.source_type == "Person" %>
             <div class="tab-pane" id="quoted-in-books">
