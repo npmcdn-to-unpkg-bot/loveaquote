@@ -4,6 +4,7 @@ class Character < ActiveRecord::Base
     
     has_many :character_sources, dependent: :destroy
     has_many :books, through: :character_sources, source: :source, source_type: "Book"
+    has_many :people, through: :character_sources
     has_many :quotes
     has_many :logs, as: :source, dependent: :destroy
     

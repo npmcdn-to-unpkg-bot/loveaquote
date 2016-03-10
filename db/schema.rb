@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160308164038) do
+ActiveRecord::Schema.define(version: 20160310043723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,9 +66,11 @@ ActiveRecord::Schema.define(version: 20160308164038) do
     t.string   "source_type",  null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "person_id"
   end
 
   add_index "character_sources", ["character_id"], name: "index_character_sources_on_character_id", using: :btree
+  add_index "character_sources", ["person_id"], name: "index_character_sources_on_person_id", using: :btree
   add_index "character_sources", ["source_type", "source_id"], name: "index_character_sources_on_source_type_and_source_id", using: :btree
 
   create_table "characters", force: :cascade do |t|
@@ -292,12 +294,13 @@ ActiveRecord::Schema.define(version: 20160308164038) do
   add_foreign_key "books", "people"
   add_foreign_key "chapter_and_pages", "quotes"
   add_foreign_key "character_sources", "characters"
+  add_foreign_key "character_sources", "people"
   add_foreign_key "quote_topic_suggestions", "quotes"
   add_foreign_key "quote_topic_suggestions", "topics"
   add_foreign_key "quote_topics", "quotes"
   add_foreign_key "quote_topics", "topics"
   add_foreign_key "quoted_in_books", "quotes"
-  add_foreign_key "quotes", "characters"
+  add_foreign_key "quotes", "characters", on_delete: :nullify
   add_foreign_key "season_and_episodes", "quotes"
   add_foreign_key "topic_aliases", "topics"
   add_foreign_key "topic_combinations", "topics", column: "primary_topic_id", on_delete: :cascade

@@ -8,6 +8,9 @@ class Person < ActiveRecord::Base
     has_many :quotes, as: :source, dependent: :destroy
     has_many :quote_topic_suggestions, through: :quotes
     has_many :featured_topics, as: :source, dependent: :destroy
+    has_many :character_sources
+    has_many :characters, -> {uniq}, through: :character_sources
+    has_many :character_quotes, through: :characters, source: :quotes
 
     # has many books
     has_many :books
