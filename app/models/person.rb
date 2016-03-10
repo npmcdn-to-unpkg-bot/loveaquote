@@ -48,7 +48,7 @@ class Person < ActiveRecord::Base
     end
     
     def all_quotes
-        quotes = self.quotes.pluck(:id) + self.book_quotes.pluck(:id)
+        quotes = self.quotes.pluck(:id) + self.book_quotes.pluck(:id) + self.character_quotes.pluck(:id)
         Quote.where(id: quotes)
     end
     
