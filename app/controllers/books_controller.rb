@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :twitter, :facebook, :pinterest]
+  before_action :set_book, only: [:show, :redirect_to_book, :twitter, :facebook, :pinterest]
   
   def index
     @books = Book.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
@@ -13,6 +13,10 @@ class BooksController < ApplicationController
   def alphabet
     @alphabet = params[:alphabet].upcase
     @books = Book.by_alphabet(@alphabet).published.order(name: "ASC")
+  end
+  
+  def redirect_to_book
+    redirect_to book_url(@book), status: 301
   end
   
   def twitter

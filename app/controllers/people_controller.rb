@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_action :set_person, only: [:show, :twitter, :facebook, :pinterest]
+  before_action :set_person, only: [:show, :redirect_to_person, :twitter, :facebook, :pinterest]
   
   def index
     @people = Person.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
@@ -15,6 +15,10 @@ class PeopleController < ApplicationController
   def show
     @quotes = @person.all_quotes.order(total_share_count: :desc).order(text: :asc).page params[:page]
     render layout: "single"
+  end
+  
+  def redirect_to_person
+    redirect_to person_url(@person), status: 301
   end
   
   def twitter
