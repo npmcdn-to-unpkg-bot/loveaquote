@@ -43,3 +43,18 @@
 <% content_for :updated do %>
   Last Updated - <time itemprop="dateModified" datetime="<%= @topic.updated_at.to_datetime %>"><%= @topic.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
 <% end %>
+
+<% content_for :aside do %>
+  <div class="widget">
+    <div class="heading">
+      <h5>Popular Topics</h5>
+    </div>
+    <div class="content">
+      <ul class="list-unstyled">
+        <% Topic.very_popular.published.where.not(id: @topic.id).order(name: :asc).each do |topic| %>
+          <li><%= link_to topic.name + " Quotes", topic_url(topic) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
