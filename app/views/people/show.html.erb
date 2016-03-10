@@ -43,3 +43,20 @@
 <% content_for :updated do %>
   Last Updated - <time itemprop="dateModified" datetime="<%= @person.updated_at.to_datetime %>"><%= @person.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
 <% end %>
+
+<% content_for :aside do %>
+  <% if @person.books.any? %>
+    <div class="widget">
+      <div class="heading">
+        <h5>Books by <%= @person.name %></h5>
+      </div>
+      <div class="content">
+        <ul class="list-unstyled">
+          <% @person.books.each do |book| %>
+            <li><%= book.published? ? (link_to book.name, book_url(book)) : (book.name) %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+<% end %>

@@ -7,7 +7,6 @@
 @import "characters";
 @import "topics";
 @import "quotes";
-@import "aside";
 
 @import "foundation_and_overrides";
 @import "global";
@@ -15,3 +14,10 @@
 @import "header";
 @import "footer";
 @import "single";
+@import "aside";
+@import "widgets";
+
+ul.list-unstyled, 
+ol.list-unstyled {
+    list-style-type: none;
+}
