@@ -7,7 +7,21 @@
           <% if quote.source_type == "Book" %>
             <%= " - " %>
             <% if quote.source.published? %>
-              <%= link_to quote.source.name, book_url(quote.source), title: "Quotes from #{quote.source.name} book by #{@person.name}" %>
+              <%= link_to quote.source.name, model_url(quote.source), title: "Quotes from #{quote.source.name} book" %>
+            <% else %>
+              <%= quote.source.name %>
+            <% end %>
+          <% end %>
+          <% if quote.source_type == "Movie" || quote.source_type == "TvShow" %>
+            <%= " - as " %>
+            <% if quote.character.published? %>
+              <%= link_to quote.character.name, model_url(quote.character) %>
+            <% else %>
+              <%= quote.character.name %>
+            <% end %>
+            <%= " in " %>
+            <% if quote.source.published? %>
+              <%= link_to quote.source.name, model_url(quote.source), title: "Quotes from #{quote.source.name}" %>
             <% else %>
               <%= quote.source.name %>
             <% end %>
