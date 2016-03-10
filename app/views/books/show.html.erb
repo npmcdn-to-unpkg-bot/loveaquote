@@ -41,3 +41,14 @@
 <% content_for :updated do %>
   Last Updated - <time itemprop="dateModified" datetime="<%= @book.updated_at.to_datetime %>"><%= @book.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
 <% end %>
+
+<% content_for :aside do %>
+  <div class="widget">
+    <div class="heading">
+      <h5>Follow on Facebook</h5>
+    </div>
+    <div class="content">
+      <div class="fb-page" data-href="https://www.facebook.com/doyouloveaquote/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/doyouloveaquote/"><a href="https://www.facebook.com/doyouloveaquote/">Doyouloveaquote</a></blockquote></div></div>
+    </div>
+  </div>
+<% end %>
