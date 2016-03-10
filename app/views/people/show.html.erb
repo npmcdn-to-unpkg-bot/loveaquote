@@ -79,7 +79,7 @@
     </div>
     <div class="content">
       <div class="row small-up-1 medium-up-1 large-up-1">
-        <% Person.very_popular.published.where.not(id: @person.id).order(name: :asc).each do |topic| %>
+        <% Person.very_popular.published.where.not(id: @person.id).order(name: :asc).each do |person| %>
           <div class="column text-center">
             <div class="more-link">
               <%= link_to person.name, person_url(person) %>
