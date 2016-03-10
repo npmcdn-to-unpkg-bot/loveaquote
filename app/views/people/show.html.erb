@@ -51,11 +51,15 @@
         <h5>Books by <%= @person.name %></h5>
       </div>
       <div class="content">
-        <ul class="list-unstyled">
+        <div class="row small-up-1 medium-up-1 large-up-1">
           <% @person.books.each do |book| %>
-            <li><%= book.published? ? (link_to book.name, book_url(book)) : (book.name) %></li>
+            <div class="column">
+              <div class="more-link">
+                <%= book.published? ? (link_to book.name, book_url(book)) : (book.name) %>
+              </div>
+            </div>
           <% end %>
-        </ul>
+        </div>
       </div>
     </div>
   <% end %>

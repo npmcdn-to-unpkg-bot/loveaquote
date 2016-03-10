@@ -47,14 +47,18 @@
 <% content_for :aside do %>
   <div class="widget">
     <div class="heading">
-      <h5>Popular Topics</h5>
+      <h5>Read Quotes on</h5>
     </div>
     <div class="content">
-      <ul class="list-unstyled">
+      <div class="row small-up-1 medium-up-2 large-up-2">
         <% Topic.very_popular.published.where.not(id: @topic.id).order(name: :asc).each do |topic| %>
-          <li><%= link_to topic.name + " Quotes", topic_url(topic) %></li>
+          <div class="column text-center">
+            <div class="more-link">
+              <%= link_to topic.name, topic_url(topic) %>
+            </div>
+          </div>
         <% end %>
-      </ul>
+      </div>
     </div>
   </div>
 <% end %>
