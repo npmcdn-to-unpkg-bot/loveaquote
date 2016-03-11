@@ -130,7 +130,7 @@ namespace :loveaquote_sep do
     
     task :import_proverbs => :environment do
         require 'open-uri'
-        fetch_url = "https://web.archive.org/web/20140920213551/http://www.loveaquote.com/proverbs/"
+        fetch_url = "https://web.archive.org/web/20140227094944/http://www.loveaquote.com/proverbs/"
         page = Nokogiri::HTML(open(fetch_url))
     
         proverbs = page.css("article .alphabet ul li a")
