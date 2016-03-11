@@ -8,7 +8,7 @@
   <% content_for :description, "Proverbs from #{@proverb.name}. Best collection of #{@proverb.name} proverbs. Read, comment and share these proverbs." %>
 <% end %>
 
-<% content_for :heading, "#{@proverb.name} Quotes" %>
+<% content_for :heading, "#{@proverb.name} Proverbs" %>
 
 <% if @proverb.image.present? %>
   <% content_for :image_url, URI.join( root_url, @proverb.image.url).to_s %>
