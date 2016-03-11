@@ -25,6 +25,20 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :proverbs, only: [:index, :show] do
+    collection do
+      get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
+    end  
+    member do
+      get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
+      get ':redirect_to_proverb', action: 'redirect_to_proverb', constraints: { page: /\D+/ }
+      get 'pinterest'
+      get 'facebook'
+      get 'twitter'
+      get 'google_plus'
+    end
+  end
+  
   resources :books, only: [:index, :show] do
     collection do
       get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
@@ -130,6 +144,7 @@ Rails.application.routes.draw do
     resources :people
     resources :books
     resources :movies
+    resources :proverbs
     resources :tv_shows, path: "tv-shows"
     resources :characters
     resources :featured_topics

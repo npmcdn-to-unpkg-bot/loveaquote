@@ -1,0 +1,61 @@
+<%= simple_form_for([:admin, @proverb]) do |f| %>
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="panel minimal minimal-gray">
+        <div class="panel-heading">
+          <div class="panel-title">
+            
+          </div>
+          <div class="panel-options">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#proverb" data-toggle="tab">Proverb</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="panel-body">
+          <div class="tab-content">
+            <div class="tab-pane active" id="proverb">
+              <div class="form-inputs">
+                <%= f.input :name %>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <%= f.input :published %>
+                    <%= f.input :popular %>
+                    <%= f.input :very_popular %>
+                  </div>
+                  
+                  <div class="col-sm-8">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <% if @proverb.image.present? %>
+                          <%= image_tag @proverb.image_url(:small), class: "thumbnail", style: "margin-bottom: 0px" %>
+                        <% else %>
+                          <%= image_tag "http://placehold.it/150x150" %>
+                        <% end %>
+                      </div>
+                      <div class="col-sm-6">
+                        <%= f.input :image %>                        
+                      </div>
+                    </div>
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>  
+
+    <div class="col-sm-3 text-center">
+      <% if @proverb.errors.any? %>
+        <div class="alert alert-danger">
+          <%= "#{@proverb.errors.count} error found" %>
+        </div>
+      <% end %>
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+    </div>
+  </div>  
+<% end %>

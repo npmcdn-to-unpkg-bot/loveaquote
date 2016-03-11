@@ -1,0 +1,43 @@
+<% if params.has_key?(:page) %>
+  <% content_for :canonical, "#{page_proverb_url(@proverb, params[:page])}" %>
+  <% content_for :title, "#{@proverb.name} Proverbs - #{@proverb.quotes.count.to_s} quotes - Page #{params[:page]}" %>
+  <% content_for :description, "Proverbs from #{@proverb.name} - page #{params[:page]}. Best collection of #{@proverb.name} proverbs. Read, comment and share these proverbs." %>
+<% else %>
+  <% content_for :canonical, "#{proverb_url(@proverb)}" %>
+  <% content_for :title, "#{@proverb.name} Proverbs - #{@proverb.quotes.count.to_s} quotes" %>
+  <% content_for :description, "Proverbs from #{@proverb.name}. Best collection of #{@proverb.name} proverbs. Read, comment and share these proverbs." %>
+<% end %>
+
+<% content_for :heading, "#{@proverb.name} Quotes" %>
+
+<% if @proverb.image.present? %>
+  <% content_for :image_url, URI.join( root_url, @proverb.image.url).to_s %>
+<% end %>
+
+<% content_for :breadcrumbs do %>
+	<ul class="breadcrumbs">
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= proverbs_url %>" itemprop="url"><span itemprop="title">Proverbs</span></a></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @proverb.name %></span></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <ul itemscope itemtype="http://schema.org/ItemList">
+    <% @quotes.each do |quote| %>
+      <%= render partial: "proverbs/quote", object: quote %>
+    <% end %>
+  </ul>
+  
+  <div class="text-center">
+    <%= paginate @quotes, :views_prefix => 'kaminari_foundation' %>
+  </div>
+<% end %>
+
+<% content_for :comments do %>
+  <div class="fb-comments" data-href="<%= proverb_url(@proverb) %>" data-numposts="10" data-colorscheme="light" data-width="100%"></div>
+<% end %>
+
+<% content_for :updated do %>
+  Last Updated - <time itemprop="dateModified" datetime="<%= @proverb.updated_at.to_datetime %>"><%= @proverb.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
+<% end %>

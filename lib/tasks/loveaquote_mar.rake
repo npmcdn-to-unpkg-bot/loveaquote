@@ -171,4 +171,32 @@ namespace :loveaquote_mar do
             end
         end
     end
+    
+    task :import_proverbs => :environment do
+        require 'open-uri'
+        fetch_url = "https://web.archive.org/web/20140306051612/http://www.loveaquote.com/proverbs/"
+        page = Nokogiri::HTML(open(fetch_url))
+    
+        proverbs = page.css("article .alphabet ul li a")
+        proverbs.each do |proverb|
+            if !Proverb.exists?(name: proverb.text.strip)            
+                puts "Creating proverb - #{proverb.text}"
+                proverb_url = "https://web.archive.org" + proverb.attr('href')
+                
+                begin
+                    proverb_page = Nokogiri::HTML(open(proverb_url))
+                rescue OpenURI::HTTPError
+                    puts "Oops! some HTTP error occured for #{proverb.text}"
+                else
+                    proverb = Proverb.create(name: proverb.text.strip, published: true)
+                
+                    quotes = proverb_page.css(".proverb-text p")
+                    quotes.each do |quote|
+                        Quote.create(text: quote.text, source: proverb)
+                    end
+                end
+                sleep(0.5)
+            end
+        end
+    end    
 end
