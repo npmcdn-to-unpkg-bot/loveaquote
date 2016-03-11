@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310043723) do
+ActiveRecord::Schema.define(version: 20160311042719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -211,6 +211,16 @@ ActiveRecord::Schema.define(version: 20160310043723) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "search_suggestions", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "source_id",   null: false
+    t.string   "source_type", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "search_suggestions", ["source_type", "source_id"], name: "index_search_suggestions_on_source_type_and_source_id", using: :btree
 
   create_table "season_and_episodes", force: :cascade do |t|
     t.integer  "quote_id",   null: false

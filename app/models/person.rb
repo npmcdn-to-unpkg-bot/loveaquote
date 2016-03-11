@@ -1,22 +1,24 @@
 class Person < ActiveRecord::Base
     include PgSearch
+    include Quotable
+    include Loggable
+    
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
     
     belongs_to :nationality
     belongs_to :profession
     has_one :time_line, as: :item, dependent: :destroy
-    has_many :quotes, as: :source, dependent: :destroy
     has_many :quote_topic_suggestions, through: :quotes
     has_many :featured_topics, as: :source, dependent: :destroy
     has_many :character_sources
     has_many :characters, -> {uniq}, through: :character_sources
     has_many :character_quotes, through: :characters, source: :quotes
+    has_many :search_suggestions, dependent: :destroy
 
     # has many books
     has_many :books
     has_many :book_quotes, through: :books, source: :quotes
-    has_many :logs, as: :source, dependent: :destroy
-    
+
     mount_uploader :image, ImageUploader
 
     # name should be present and unique

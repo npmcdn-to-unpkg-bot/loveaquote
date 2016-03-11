@@ -1,17 +1,19 @@
 class Book < ActiveRecord::Base
     include PgSearch
+    include Quotable
+    include Loggable
+    
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
     
     # has many quotes
     has_one :time_line, as: :item, dependent: :destroy
-    has_many :quotes, as: :source, dependent: :destroy
-    has_many :logs, as: :source, dependent: :destroy
     has_many :quote_topic_suggestions, through: :quotes
     has_many :featured_topics, as: :source, dependent: :destroy
     
     has_many :character_sources, as: :source, dependent: :destroy
     accepts_nested_attributes_for :character_sources, reject_if: :all_blank, allow_destroy: true
     has_many :characters, through: :character_sources
+    has_many :search_suggestions, dependent: :destroy
     
     belongs_to :person
     

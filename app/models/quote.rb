@@ -1,5 +1,7 @@
 class Quote < ActiveRecord::Base
     include PgSearch
+    include Loggable
+    
     pg_search_scope :search_by_text, against: :text, using: { tsearch: {prefix: true} }
     
     # belongs to source
@@ -20,8 +22,7 @@ class Quote < ActiveRecord::Base
 
     has_many :topics, through: :quote_topics
     has_many :quote_topic_suggestions, dependent: :destroy
-    has_many :logs, as: :source, dependent: :destroy
-    
+
     # text should be present and unique
     validates :text, presence: true, uniqueness: true
     

@@ -1,12 +1,14 @@
 class Character < ActiveRecord::Base
     include PgSearch
+    include Loggable
+    
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
     
     has_many :character_sources, dependent: :destroy
     has_many :books, through: :character_sources, source: :source, source_type: "Book"
     has_many :people, through: :character_sources
     has_many :quotes
-    has_many :logs, as: :source, dependent: :destroy
+    has_many :search_suggestions, dependent: :destroy
     
     mount_uploader :image, ImageUploader
     

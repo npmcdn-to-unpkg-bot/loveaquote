@@ -1,5 +1,7 @@
 class Topic < ActiveRecord::Base
     include PgSearch
+    include Loggable
+    
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
     
     has_one :time_line, as: :item, dependent: :destroy
@@ -8,7 +10,7 @@ class Topic < ActiveRecord::Base
     has_many :topic_aliases, dependent: :destroy
     has_many :topic_combinations, foreign_key: "primary_topic_id", dependent: :destroy
     accepts_nested_attributes_for :topic_combinations, reject_if: :all_blank, allow_destroy: true
-    
+    has_many :search_suggestions, dependent: :destroy
     has_many :quote_topic_suggestions, dependent: :destroy
     
     # name should be present and unique
