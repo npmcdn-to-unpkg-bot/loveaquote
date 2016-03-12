@@ -41,3 +41,11 @@
 <% content_for :updated do %>
   Last Updated - <time itemprop="dateModified" datetime="<%= @proverb.updated_at.to_datetime %>"><%= @proverb.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
 <% end %>
+
+<% content_for :social_sharing do %>
+    <a rel="nofollow" class="share-proverb-twitter" title="<%= "Share #{@proverb.name} quotes on Twitter" %>" target="_blank" href="<%= twitter_proverb_url(@proverb) %>"><%= image_tag('social/twitter.png') %></a>
+    <a rel="nofollow" class="share-proverb-facebook" title="<%= "Share #{@proverb.name} quotes on Facebook" %>" target="_blank" href="<%= facebook_proverb_url(@proverb) %>"><%= image_tag('social/facebook.png') %></a>
+    <% if @proverb.image.present? %>
+      <a rel="nofollow" class="share-proverb-pinterest" title="<%= "Share #{@proverb.name} quotes on Pinterest" %>" target="_blank" href="<%= pinterest_proverb_url(@proverb) %>"><%= image_tag('social/pinterest.png') %></a>
+    <% end %>
+<% end %>

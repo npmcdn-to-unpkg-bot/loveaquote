@@ -77,7 +77,7 @@
 <% content_for :social_sharing do %>
     <a rel="nofollow" class="share-person-twitter" title="<%= "Share #{@person.name} quotes on Twitter" %>" target="_blank" href="<%= twitter_person_url(@person) %>"><%= image_tag('social/twitter.png') %></a>
     <a rel="nofollow" class="share-person-facebook" title="<%= "Share #{@person.name} quotes on Facebook" %>" target="_blank" href="<%= facebook_person_url(@person) %>"><%= image_tag('social/facebook.png') %></a>
-    <% if @topic.image.present? %>
+    <% if @person.image.present? %>
       <a rel="nofollow" class="share-person-pinterest" title="<%= "Share #{@person.name} quotes on Pinterest" %>" target="_blank" href="<%= pinterest_person_url(@person) %>"><%= image_tag('social/pinterest.png') %></a>
     <% end %>
 <% end %>
