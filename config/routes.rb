@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
       get ':redirect_to_person', action: 'redirect_to_person', constraints: { page: /\D+/ }
       get 'facebook'
+      get 'pinterest'
       get 'twitter'
       get 'google_plus'
     end
