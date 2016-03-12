@@ -7,7 +7,13 @@ Rails.application.routes.draw do
   get 'static_pages/disclaimer'
 
   get 'static_pages/terms_and_conditions'
-
+  
+  
+  get "system/*path", to: redirect("/", status:301)
+  get "pictures", to: redirect("/", status:301)
+  get "pictures/*path", to: redirect("/", status:301)
+  get "quote-of-the-day", to: redirect("/", status:301)
+  get "quote-of-the-day/*path", to: redirect("/", status:301)
   get "authors/:slug", to: redirect("/people/%{slug}", status: 301)
   get "authors/:slug/:page", to: redirect("/people/%{slug}/%{page}", status: 301)
   
