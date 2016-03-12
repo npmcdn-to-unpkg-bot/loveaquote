@@ -6,7 +6,11 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @quotes = @movie.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    if params[:search].present?
+      @quotes = @movie.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    else
+      @quotes = @movie.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    end
     render layout: "single"
   end
   

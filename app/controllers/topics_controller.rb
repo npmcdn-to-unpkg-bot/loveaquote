@@ -6,7 +6,11 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @quotes = @topic.quotes.order(total_share_count: :desc).order(text: :asc).page params[:page]
+    if params[:search].present?
+      @quotes = @topic.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page params[:page]
+    else
+      @quotes = @topic.quotes.order(total_share_count: :desc).order(text: :asc).page params[:page]
+    end
     render layout: "single"
   end
   
@@ -21,9 +25,9 @@ class TopicsController < ApplicationController
     redirect_to "https://twitter.com/intent/tweet?text=#{text}&amp;url=#{url}&amp;via=DoYouLoveAQuote"
   end
   
-  def facetopic
+  def facebook
     url = URI.encode(topic_url(@topic))
-    redirect_to "https://www.facetopic.com/sharer/sharer.php?u=#{url}"
+    redirect_to "https://www.facebook.com/sharer/sharer.php?u=#{url}"
   end
   
   def pinterest

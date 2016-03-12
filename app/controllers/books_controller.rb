@@ -6,7 +6,11 @@ class BooksController < ApplicationController
   end
 
   def show
-    @quotes = @book.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    if params[:search].present? 
+      @quotes = @book.quotes.search_by_text(params[:search_by_text]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    else
+      @quotes = @book.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    end
     render layout: "single"
   end
   

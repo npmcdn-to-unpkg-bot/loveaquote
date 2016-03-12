@@ -13,7 +13,11 @@ class PeopleController < ApplicationController
   end
 
   def show
-    @quotes = @person.all_quotes.order(total_share_count: :desc).order(text: :asc).page params[:page]
+    if params[:search].present?
+      @quotes = @person.all_quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page params[:page]
+    else
+      @quotes = @person.all_quotes.order(total_share_count: :desc).order(text: :asc).page params[:page]
+    end
     render layout: "single"
   end
   

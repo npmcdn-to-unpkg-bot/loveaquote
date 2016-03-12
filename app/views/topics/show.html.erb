@@ -44,6 +44,14 @@
   Last Updated - <time itemprop="dateModified" datetime="<%= @topic.updated_at.to_datetime %>"><%= @topic.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
 <% end %>
 
+<% content_for :social_sharing do %>
+    <a rel="nofollow" class="share-topic-twitter" title="Share this topic on Twitter" target="_blank" href="<%= twitter_topic_url(@topic) %>"><%= image_tag('social/twitter.png') %></a>
+    <a rel="nofollow" class="share-topic-facebook" title="Share this topic on Facebook" target="_blank" href="<%= facebook_topic_url(@topic) %>"><%= image_tag('social/facebook.png') %></a>
+    <% if @topic.image.present? %>
+      <a rel="nofollow" class="share-topic-pinterest" title="Share this topic on Pinterest" target="_blank" href="<%= pinterest_topic_url(@topic) %>"><%= image_tag('social/pinterest.png') %></a>
+    <% end %>
+<% end %>
+
 <% content_for :aside do %>
   <div class="widget">
     <div class="heading">

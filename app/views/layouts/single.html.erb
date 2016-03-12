@@ -19,6 +19,23 @@
                   <header>
                     <h1 itemprop="headline" class="text-center"><%= yield :heading %></h1>
                   </header>
+                  <div class="row">
+                    <div class="small-12 medium-4 columns">
+                      <div class="social-sharing">
+                        <%= yield :social_sharing %>
+                      </div>
+                    </div>
+                    <div class="small-12 medium-6 columns last">
+                      <%= form_tag "", method: :get do %>
+                        <div class="input-group">
+                          <%= text_field_tag :search, params[:search], class: "input-group-field small" %>
+                          <div class="input-group-button">
+                            <%= submit_tag "Search", class: "button small secondary" %>
+                          </div>
+                        </div>
+                      <% end %>            
+                    </div>
+                  </div>
                   <div itemprop="text">
                     <%= yield :content %>
                   </div>

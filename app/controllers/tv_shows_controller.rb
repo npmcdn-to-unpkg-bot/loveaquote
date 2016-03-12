@@ -6,7 +6,11 @@ class TvShowsController < ApplicationController
   end
 
   def show
-    @quotes = @tv_show.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    if params[:search].present?
+      @quotes = @tv_show.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    else
+      @quotes = @tv_show.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    end
     render layout: "single"
   end
   
