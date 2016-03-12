@@ -7,6 +7,7 @@ class TopicsController < ApplicationController
 
   def show
     if params[:search].present?
+      UserSearchWorker.perform_async(@topic.class.name, @topic.id, params[:search])
       @quotes = @topic.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page params[:page]
     else
       @quotes = @topic.quotes.order(total_share_count: :desc).order(text: :asc).page params[:page]

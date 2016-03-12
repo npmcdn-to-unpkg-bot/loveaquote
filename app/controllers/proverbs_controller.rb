@@ -8,6 +8,7 @@ class ProverbsController < ApplicationController
 
   def show
     if params[:search].present?
+      UserSearchWorker.perform_async(@proverb.class.name, @proverb.id, params[:search])
       @quotes = @proverb.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
     else
       @quotes = @proverb.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])

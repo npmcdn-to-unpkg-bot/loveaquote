@@ -7,6 +7,7 @@ class TvShowsController < ApplicationController
 
   def show
     if params[:search].present?
+      UserSearchWorker.perform_async(@tv_show.class.name, @tv_show.id, params[:search])
       @quotes = @tv_show.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
     else
       @quotes = @tv_show.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])

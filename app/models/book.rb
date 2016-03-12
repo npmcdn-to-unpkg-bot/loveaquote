@@ -2,6 +2,7 @@ class Book < ActiveRecord::Base
     include PgSearch
     include Quotable
     include Loggable
+    include Searchable    
     
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
     

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @user_search.text %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @user_search.source %>
+</p>
+
+<%= link_to 'Edit', edit_user_search_path(@user_search) %> |
+<%= link_to 'Back', user_searches_path %>

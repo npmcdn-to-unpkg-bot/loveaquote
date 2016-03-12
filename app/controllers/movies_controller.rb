@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
 
   def show
     if params[:search].present?
+      UserSearchWorker.perform_async(@movie.class.name, @movie.id, params[:search])
       @quotes = @movie.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
     else
       @quotes = @movie.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])

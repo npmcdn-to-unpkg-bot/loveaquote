@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160311141107) do
+ActiveRecord::Schema.define(version: 20160312203555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -311,6 +311,16 @@ ActiveRecord::Schema.define(version: 20160311141107) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "user_searches", force: :cascade do |t|
+    t.string   "text"
+    t.integer  "source_id"
+    t.string   "source_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "user_searches", ["source_type", "source_id"], name: "index_user_searches_on_source_type_and_source_id", using: :btree
 
   add_foreign_key "books", "people"
   add_foreign_key "chapter_and_pages", "quotes"

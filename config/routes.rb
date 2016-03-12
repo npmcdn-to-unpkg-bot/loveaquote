@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
   
   get 'static_pages/privacy_policy'
-
   get 'static_pages/about_us'
-
   get 'static_pages/disclaimer'
-
   get 'static_pages/terms_and_conditions'
   
   

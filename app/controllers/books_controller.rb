@@ -7,6 +7,7 @@ class BooksController < ApplicationController
 
   def show
     if params[:search].present? 
+      UserSearchWorker.perform_async(@book.class.name, @book.id, params[:search])
       @quotes = @book.quotes.search_by_text(params[:search_by_text]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
     else
       @quotes = @book.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])

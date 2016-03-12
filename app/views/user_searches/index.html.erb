@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing User Searches</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Text</th>
+      <th>Source</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_searches.each do |user_search| %>
+      <tr>
+        <td><%= user_search.text %></td>
+        <td><%= user_search.source %></td>
+        <td><%= link_to 'Show', user_search %></td>
+        <td><%= link_to 'Edit', edit_user_search_path(user_search) %></td>
+        <td><%= link_to 'Destroy', user_search, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User search', new_user_search_path %>
