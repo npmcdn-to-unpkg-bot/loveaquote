@@ -25,9 +25,9 @@ class TvShowsController < ApplicationController
     redirect_to "https://twitter.com/intent/tweet?text=#{text}&amp;url=#{url}&amp;via=DoYouLoveAQuote"
   end
   
-  def facetv_show
+  def facebook
     url = URI.encode(tv_show_url(@tv_show))
-    redirect_to "https://www.facetv_show.com/sharer/sharer.php?u=#{url}"
+    redirect_to "https://www.facebook.com/sharer/sharer.php?u=#{url}"
   end
   
   def pinterest

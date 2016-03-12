@@ -41,3 +41,11 @@
 <% content_for :updated do %>
   Last Updated - <time itemprop="dateModified" datetime="<%= @tv_show.updated_at.to_datetime %>"><%= @tv_show.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
 <% end %>
+
+<% content_for :social_sharing do %>
+    <a rel="nofollow" class="share-tv-show-twitter" title="<%= "Share #{@tv_show.name} quotes on Twitter" %>" target="_blank" href="<%= twitter_tv_show_url(@tv_show) %>"><%= image_tag('social/twitter.png') %></a>
+    <a rel="nofollow" class="share-tv-show-facebook" title="<%= "Share #{@tv_show.name} quotes on Facebook" %>" target="_blank" href="<%= facebook_tv_show_url(@tv_show) %>"><%= image_tag('social/facebook.png') %></a>
+    <% if @tv_show.image.present? %>
+      <a rel="nofollow" class="share-tv-show-pinterest" title="<%= "Share #{@tv_show.name} quotes on Pinterest" %>" target="_blank" href="<%= pinterest_tv_show_url(@tv_show) %>"><%= image_tag('social/pinterest.png') %></a>
+    <% end %>
+<% end %>

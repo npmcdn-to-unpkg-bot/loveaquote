@@ -41,3 +41,11 @@
 <% content_for :updated do %>
   Last Updated - <time itemprop="dateModified" datetime="<%= @character.updated_at.to_datetime %>"><%= @character.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
 <% end %>
+
+<% content_for :social_sharing do %>
+    <a rel="nofollow" class="share-character-twitter" title="<%= "Share #{@character.name} quotes on Twitter" %>" target="_blank" href="<%= twitter_character_url(@character) %>"><%= image_tag('social/twitter.png') %></a>
+    <a rel="nofollow" class="share-character-facebook" title="<%= "Share #{@character.name} quotes on Facebook" %>" target="_blank" href="<%= facebook_character_url(@character) %>"><%= image_tag('social/facebook.png') %></a>
+    <% if @topic.image.present? %>
+      <a rel="nofollow" class="share-character-pinterest" title="<%= "Share #{@character.name} quotes on Pinterest" %>" target="_blank" href="<%= pinterest_character_url(@character) %>"><%= image_tag('social/pinterest.png') %></a>
+    <% end %>
+<% end %>
