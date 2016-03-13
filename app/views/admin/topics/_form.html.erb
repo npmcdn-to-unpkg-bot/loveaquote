@@ -17,6 +17,7 @@
           <div class="panel-options">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#topic" data-toggle="tab">Topic</a></li>
+              <li><a href="#seo" data-toggle="tab">SEO</a></li>
               <li><a href="#combinations" data-toggle="tab">Combinations</a></li>              
             </ul>
           </div>
@@ -32,6 +33,13 @@
                 <%= f.input :very_popular %>
                 <%= f.input :published %>
               </div>
+            </div>
+            
+            <div class="tab-pane" id="seo">
+              <%= f.simple_fields_for :seo do |seo| %>
+                <%= seo.input :title %>
+                <%= seo.input :description %>
+              <% end %>
             </div>
             
             <div class="tab-pane" id="combinations">

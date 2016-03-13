@@ -43,6 +43,7 @@ class Admin::TvShowsController < ApplicationController
 
   # GET /tv_shows/1/edit
   def edit
+    @tv_show.build_seo if @tv_show.seo.nil?
   end
 
   # POST /tv_shows
@@ -52,7 +53,7 @@ class Admin::TvShowsController < ApplicationController
 
     respond_to do |format|
       if @tv_show.save
-        format.html { redirect_to admin_tv_shows_url, notice: 'Tv_show was successfully created.' }
+        format.html { redirect_to admin_tv_show_path(@tv_show), notice: 'Tv_show was successfully created.' }
         format.json { render :show, status: :created, location: @tv_show }
       else
         format.html { render :new }
@@ -66,7 +67,7 @@ class Admin::TvShowsController < ApplicationController
   def update
     respond_to do |format|
       if @tv_show.update(tv_show_params)
-        format.html { redirect_to admin_tv_shows_url, notice: 'Tv_show was successfully updated.' }
+        format.html { redirect_to admin_tv_show_path(@tv_show), notice: 'Tv_show was successfully updated.' }
         format.json { render :show, status: :ok, location: @tv_show }
       else
         format.html { render :edit }
@@ -93,6 +94,6 @@ class Admin::TvShowsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tv_show_params
-      params.require(:tv_show).permit(:name, :slug, :published, :popular, :very_popular, :image, character_sources_attributes: [:id, :character_id, :person_id, :_destroy])
+      params.require(:tv_show).permit(:name, :slug, :published, :popular, :very_popular, :image, character_sources_attributes: [:id, :character_id, :person_id, :_destroy], seo_attributes: [:id, :title, :description, :_destroy])
     end
 end

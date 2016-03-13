@@ -9,6 +9,7 @@
           <div class="panel-options">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#author" data-toggle="tab">Author</a></li>
+              <li><a href="#seo" data-toggle="tab">SEO</a></li>
               <li><a href="#fetch" data-toggle="tab">Fetch</a></li>
             </ul>
           </div>
@@ -46,6 +47,13 @@
                   
                 </div>
               </div>  
+            </div>
+
+            <div class="tab-pane" id="seo">
+              <%= f.simple_fields_for :seo do |seo| %>
+                <%= seo.input :title %>
+                <%= seo.input :description %>
+              <% end %>
             </div>
             
             <div class="tab-pane" id="fetch">

@@ -43,6 +43,7 @@ class Admin::PeopleController < ApplicationController
 
   # GET /people/1/edit
   def edit
+    @person.build_seo if @person.seo.nil?
   end
 
   # POST /people
@@ -93,6 +94,6 @@ class Admin::PeopleController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
-      params.require(:person).permit(:name, :fetch_url, :nationality_id, :profession_id, :published, :popular, :very_popular, :image)
+      params.require(:person).permit(:name, :fetch_url, :nationality_id, :profession_id, :published, :popular, :very_popular, :image, seo_attributes: [:id, :title, :description, :_destroy])
     end
 end

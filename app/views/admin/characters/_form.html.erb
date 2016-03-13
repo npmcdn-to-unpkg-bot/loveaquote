@@ -9,12 +9,41 @@
   }) do |f| %>
   <div class="row">
     <div class="col-sm-9">
-      <div class="form-inputs">
-        <%= f.input :name %>
-        <%= f.input :image %>
-        <%= f.input :published %>
-        <%= f.input :popular %>
-        <%= f.input :very_popular %>
+      <div class="panel minimal minimal-gray">
+        <div class="panel-heading">
+          <div class="panel-title">
+            
+          </div>
+          <div class="panel-options">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#character" data-toggle="tab">Character</a></li>
+              <li><a href="#seo" data-toggle="tab">SEO</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="panel-body">
+          <div class="tab-content">
+            
+            <div class="tab-pane active" id="character">
+              <div class="form-inputs">
+                <%= f.input :name %>
+                <%= f.input :image %>
+                <%= f.input :published %>
+                <%= f.input :popular %>
+                <%= f.input :very_popular %>
+              </div>
+            </div>
+            
+            <div class="tab-pane" id="seo">
+              <%= f.simple_fields_for :seo do |seo| %>
+                <%= seo.input :title %>
+                <%= seo.input :description %>
+              <% end %>
+            </div>
+            
+          </div>
+        </div>  
       </div>
     </div>
     <div class="col-sm-3 text-center">
@@ -27,5 +56,6 @@
         <%= f.button :submit %>
       </div>
     </div>
+    
   </div>
 <% end %>

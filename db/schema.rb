@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160312203555) do
+ActiveRecord::Schema.define(version: 20160313075654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -242,6 +242,17 @@ ActiveRecord::Schema.define(version: 20160312203555) do
   end
 
   add_index "season_and_episodes", ["quote_id"], name: "index_season_and_episodes_on_quote_id", using: :btree
+
+  create_table "seos", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "source_id"
+    t.string   "source_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "seos", ["source_type", "source_id"], name: "index_seos_on_source_type_and_source_id", using: :btree
 
   create_table "settings", force: :cascade do |t|
     t.text     "google_analytics"

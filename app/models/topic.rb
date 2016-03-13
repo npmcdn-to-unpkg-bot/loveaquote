@@ -2,6 +2,7 @@ class Topic < ActiveRecord::Base
     include PgSearch
     include Loggable
     include Searchable
+    include Seoable
     
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
     

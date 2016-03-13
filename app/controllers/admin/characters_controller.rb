@@ -43,6 +43,7 @@ class Admin::CharactersController < ApplicationController
 
   # GET /characters/1/edit
   def edit
+    @character.build_seo if @character.seo.nil?
   end
 
   # POST /characters
@@ -52,7 +53,7 @@ class Admin::CharactersController < ApplicationController
 
     respond_to do |format|
       if @character.save
-        format.html { redirect_to admin_characters_path, notice: 'Character was successfully created.' }
+        format.html { redirect_to admin_character_path(@character), notice: 'Character was successfully created.' }
         format.json { render :show, status: :created, location: @character }
       else
         format.html { render :new }
@@ -66,7 +67,7 @@ class Admin::CharactersController < ApplicationController
   def update
     respond_to do |format|
       if @character.update(character_params)
-        format.html { redirect_to admin_characters_path, notice: 'Character was successfully updated.' }
+        format.html { redirect_to admin_character_path(@character), notice: 'Character was successfully updated.' }
         format.json { render :show, status: :ok, location: @character }
       else
         format.html { render :edit }
@@ -93,6 +94,6 @@ class Admin::CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name, :image, :published, :popular, :very_popular)
+      params.require(:character).permit(:name, :image, :published, :popular, :very_popular, seo_attributes: [:id, :title, :description, :_destroy])
     end
 end

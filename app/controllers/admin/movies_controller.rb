@@ -43,6 +43,7 @@ class Admin::MoviesController < ApplicationController
 
   # GET /movies/1/edit
   def edit
+    @movie.build_seo if @movie.seo.nil?
   end
 
   # POST /movies
@@ -93,6 +94,6 @@ class Admin::MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.require(:movie).permit(:name, :slug, :published, :popular, :very_popular, :image, character_sources_attributes: [:id, :character_id, :person_id, :_destroy])
+      params.require(:movie).permit(:name, :slug, :published, :popular, :very_popular, :image, character_sources_attributes: [:id, :character_id, :person_id, :_destroy], seo_attributes: [:id, :title, :description, :_destroy])
     end
 end

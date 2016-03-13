@@ -21,6 +21,7 @@ class Admin::ProverbsController < ApplicationController
 
   # GET /proverbs/1/edit
   def edit
+    @proverb.build_seo if @proverb.seo.nil?
   end
 
   # POST /proverbs
@@ -71,6 +72,6 @@ class Admin::ProverbsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def proverb_params
-      params.require(:proverb).permit(:name, :slug, :published, :popular, :very_popular)
+      params.require(:proverb).permit(:name, :slug, :published, :popular, :very_popular, seo_attributes: [:id, :title, :description, :_destroy])
     end
 end
