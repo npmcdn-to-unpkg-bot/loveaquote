@@ -1,31 +1,33 @@
-<div class="row footer-widgets">
-	<div class="small-12 medium-12 large-4 columns">
-		<section class="about">
-			<h4>About LoveAQuote</h4>
-			<p>LoveAQuote is an amazing and extensive online compendium of quotes and proverbs, diligently and carefully categorised under various topics for easy reference. We have a collection of <%= (Quote.count) %> Quotes and Proverbs from <%= Person.count %> <%= link_to "People", people_url, :title => "People Quotes" %>, <%= Book.count %> <%= link_to "Books", books_url, :title => "Book Quotes" %> and <%= Movie.count %> <%= link_to "Movies", movies_url, :title => "Movie Quotes" %> categorized under <%= Topic.count %> <%= link_to "Topics", topics_url, :title => "Quotes by Topic" %>.</p>
-
-			<div class="social-links">
-				<%= link_to Setting.facebook_url, target: "_blank"  do %>
-					<%= image_tag('social/facebook.png', :size=>"32x32", :alt => "Follow LoveAQuote on Facebook") %>
-				<% end %>
-				
-				<%= link_to Setting.twitter_url, target: "_blank"  do %>
-					<%= image_tag('social/twitter.png', :size=>"32x32", :alt => "Follow LoveAQuote on Twitter") %>
-				<% end %>
-				
-				<%= link_to Setting.pinterest_url, target: "_blank"  do %>
-					<%= image_tag('social/pinterest.png', :size=>"32x32", :alt => "Follow LoveAQuote on Pinterest") %>
-				<% end %>
-			</div>
-		</section>
+<% cache "footer_widgets" do %>
+	<div class="row footer-widgets">
+		<div class="small-12 medium-12 large-4 columns">
+			<section class="about">
+				<h4>About LoveAQuote</h4>
+				<p>LoveAQuote is an amazing and extensive online compendium of quotes and proverbs, diligently and carefully categorised under various topics for easy reference. We have a collection of <%= (Quote.count) %> Quotes and Proverbs from <%= Person.count %> <%= link_to "People", people_url, :title => "People Quotes" %>, <%= Book.count %> <%= link_to "Books", books_url, :title => "Book Quotes" %> and <%= Movie.count %> <%= link_to "Movies", movies_url, :title => "Movie Quotes" %> categorized under <%= Topic.count %> <%= link_to "Topics", topics_url, :title => "Quotes by Topic" %>.</p>
+	
+				<div class="social-links">
+					<%= link_to Setting.facebook_url, target: "_blank"  do %>
+						<%= image_tag('social/facebook.png', :size=>"32x32", :alt => "Follow LoveAQuote on Facebook") %>
+					<% end %>
+					
+					<%= link_to Setting.twitter_url, target: "_blank"  do %>
+						<%= image_tag('social/twitter.png', :size=>"32x32", :alt => "Follow LoveAQuote on Twitter") %>
+					<% end %>
+					
+					<%= link_to Setting.pinterest_url, target: "_blank"  do %>
+						<%= image_tag('social/pinterest.png', :size=>"32x32", :alt => "Follow LoveAQuote on Pinterest") %>
+					<% end %>
+				</div>
+			</section>
+		</div>
+		<div class="small-12 medium-12 large-4 columns">
+			<section class="recent-posts">
+			</section>
+		</div>
+		<div class="small-12 medium-12 large-4 columns">
+			<section class="footer-logo">
+				<a href="<%= root_url %>"><%= image_tag('logo_256.png', size: "128x128") %></a>
+			</section>
+		</div>
 	</div>
-	<div class="small-12 medium-12 large-4 columns">
-		<section class="recent-posts">
-		</section>
-	</div>
-	<div class="small-12 medium-12 large-4 columns">
-		<section class="footer-logo">
-			<a href="<%= root_url %>"><%= image_tag('logo_256.png', size: "128x128") %></a>
-		</section>
-	</div>
-</div>
+<% end %>

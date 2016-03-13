@@ -64,13 +64,7 @@ class Person < ActiveRecord::Base
         TimeLine.create(item: self) if self.published
     end
     
-    def self.cached_very_popular
-        Rails.cache.fetch("very-popular-person") do
-            very_popular
-        end
-    end
-    
     def expire_cache
-        Rails.cache.delete("very-popular-person") if self.very_popular? && self.very_popular.changed?
+        Rails.cache.delete("front_page") if self.very_popular? && self.very_popular_changed?
     end
 end
