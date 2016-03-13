@@ -36,7 +36,7 @@ class Book < ActiveRecord::Base
     
     before_validation :strip_name, :generate_slug
     after_commit :fetch_quotes, on: [:create, :update]
-    after_save :add_to_time_line
+    after_save :add_to_time_line, :expire_cache
     
     def to_param
         slug
@@ -56,5 +56,15 @@ class Book < ActiveRecord::Base
 
     def add_to_time_line
         TimeLine.create(item: self) if self.published
+    end
+    
+    def self.cached_very_popular
+        Rails.cache.fetch("very-popular-book") do
+            very_popular
+        end
+    end
+    
+    def expire_cache
+        Rails.cache.delete("very-popular-book") if self.very_popular? && self.very_popular.changed?
     end
 end

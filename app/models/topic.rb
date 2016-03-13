@@ -57,4 +57,14 @@ class Topic < ActiveRecord::Base
     def all_topic_combinations
         TopicCombination.where("primary_topic_id = ? OR secondary_topic_id = ?", self.id, self.id)
     end
+    
+    def self.cached_very_popular
+        Rails.cache.fetch("very-popular-topic") do
+            very_popular
+        end
+    end
+    
+    def expire_cache
+        Rails.cache.delete("very-popular-topic") if self.very_popular? && self.very_popular.changed?
+    end
 end

@@ -41,6 +41,7 @@ gem 'fog'
 gem 'pg'
 gem 'pg_search'
 
+gem 'dalli'
 gem "rack-cache"
 
 group :development, :test do
