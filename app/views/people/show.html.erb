@@ -23,17 +23,17 @@
 <% end %>
 
 <% content_for :content do %>
-
+  <% cache "#{@person.slug}-#{@person.updated_at.to_s(:number)}-#{params[:page]}" do %>
   <ul itemscope itemtype="http://schema.org/ItemList">
     <% @quotes.each do |quote| %>
       <%= render partial: "people/quote", object: quote %>
     <% end %>
   </ul>
+  <% end %>
   
   <div class="text-center">
     <%= paginate @quotes, :views_prefix => 'kaminari_foundation' %>
   </div>
-  
 <% end %>
 
 <% content_for :comments do %>

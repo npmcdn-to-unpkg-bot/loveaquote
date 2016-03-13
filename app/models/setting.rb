@@ -1,4 +1,11 @@
 class Setting < ActiveRecord::Base
+    
+    after_save :expire_cache
+    
+    def expire_cache
+       Rails.cache.delete("settings") 
+    end
+    
     def self.google_verification
         if self.first
             self.first.google_verification

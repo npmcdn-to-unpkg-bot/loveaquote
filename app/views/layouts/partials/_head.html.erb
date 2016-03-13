@@ -27,10 +27,13 @@
 <meta name="twitter:creator" content="@DoYouLoveAQuote"/>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<% cache "settings" do %>
 <meta name="google-site-verification" content="<%= Setting.google_verification %>" />
 <meta name="msvalidate.01" content="<%= Setting.bing_verification %>" />
 <meta name="yandex-verification" content="<%= Setting.yandex_verification %>" />
 <meta name="alexaVerifyID" content="<%= Setting.alexa_verification %>" />
+<% end %>
 
 <%= favicon_link_tag %>
 <%= csrf_meta_tags %>
