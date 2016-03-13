@@ -25,6 +25,8 @@
                 <%= f.association :profession, collection: Profession.all.order(name: :ASC) %>
                 <div class="row">
                   <div class="col-sm-4">
+                    <%= f.input :born, as: :string, input_html: {type: "date"} %>
+                    <%= f.input :died, as: :string, input_html: {type: "date"} %>
                     <%= f.input :published %>
                     <%= f.input :popular %>
                     <%= f.input :very_popular %>
