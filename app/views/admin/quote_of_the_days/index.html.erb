@@ -1,0 +1,23 @@
+<div class="col-sm-12">
+  <h2 style="margin-top: 0px">Quote Of The Day</h2>
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th width="15%" class="text-center">Date</th>
+        <th width="85%" class="text-center">Quote</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @qotds.each do |qotd| %>
+        <tr>
+          <td  class="text-center"><%= qotd.date %></td>
+          <td><%= qotd.quote.text %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <%= paginate @qotds, :views_prefix => 'kaminari_bootstrap' %>
+  </div>
+</div>

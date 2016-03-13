@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160313075654) do
+ActiveRecord::Schema.define(version: 20160313143119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -166,6 +166,15 @@ ActiveRecord::Schema.define(version: 20160313075654) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "quote_of_the_days", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "quote_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "quote_of_the_days", ["quote_id"], name: "index_quote_of_the_days_on_quote_id", using: :btree
+
   create_table "quote_topic_suggestions", force: :cascade do |t|
     t.integer  "quote_id",                   null: false
     t.integer  "topic_id",                   null: false
@@ -211,6 +220,7 @@ ActiveRecord::Schema.define(version: 20160313075654) do
     t.integer  "google_plus_share_count", default: 0
     t.integer  "total_share_count",       default: 0
     t.integer  "character_id"
+    t.integer  "quote_of_the_day_count",  default: 0
   end
 
   add_index "quotes", ["character_id"], name: "index_quotes_on_character_id", using: :btree
@@ -337,6 +347,7 @@ ActiveRecord::Schema.define(version: 20160313075654) do
   add_foreign_key "chapter_and_pages", "quotes"
   add_foreign_key "character_sources", "characters"
   add_foreign_key "character_sources", "people"
+  add_foreign_key "quote_of_the_days", "quotes"
   add_foreign_key "quote_topic_suggestions", "quotes"
   add_foreign_key "quote_topic_suggestions", "topics"
   add_foreign_key "quote_topics", "quotes"

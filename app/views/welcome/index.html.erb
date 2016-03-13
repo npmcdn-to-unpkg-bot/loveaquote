@@ -7,6 +7,15 @@
 <% content_for :canonical, root_url %>
 
 <% content_for :content do %>
+  <% if @qotd %>
+    <div class="row">
+      <div class="small-12 medium-10 medium-centered columns">
+        <h2 class="text-center">Quote Of The Day</h2>
+        <p class="text-center"><%=  @qotd.quote.text %> - <%= link_to @qotd.quote.source.name, model_url(@qotd.quote.source), title: "#{@qotd.quote.source.name} Quotes" %></p>
+      </div>
+    </div>
+  <% end %>
+  
   <div class="row">
   	<div class="small-12 medium-12 large-6 columns">
   		<h2 class="text-center">Topics</h2>

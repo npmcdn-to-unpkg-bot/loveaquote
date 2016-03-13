@@ -144,7 +144,11 @@ Rails.application.routes.draw do
   
   namespace :admin do
     root 'dashboard#index'
-    resources :quotes
+    resources :quotes do
+      member do
+        get "qotd", action: "qotd", as: "qotd"
+      end
+    end
     resources :people
     resources :books
     resources :movies
@@ -162,6 +166,7 @@ Rails.application.routes.draw do
         get 'decline', as: 'decline'
       end
     end
+    resources :quote_of_the_days, path: "quote-of-the-day", only: [:index]
     resources :messages, only: [:index, :show, :destroy]
     resources :logs, only: [:index]
     resources :redirects, except: [:show]

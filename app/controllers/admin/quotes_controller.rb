@@ -1,6 +1,6 @@
 class Admin::QuotesController < ApplicationController
   before_filter :authenticate_admin!
-  before_action :set_quote, only: [:edit, :update, :destroy]
+  before_action :set_quote, only: [:edit, :update, :destroy, :qotd]
   layout "admin"
   
   def index
@@ -58,6 +58,22 @@ class Admin::QuotesController < ApplicationController
   def destroy
     @quote.destroy
     head :ok
+  end
+  
+  def qotd
+    if QuoteOfTheDay.exists?(date: Date.today)
+      date = QuoteOfTheDay.maximum("date").next_day
+    else
+      date = Date.today
+    end
+    @qotd = QuoteOfTheDay.new(quote: @quote, date: date)
+    
+    respond_to do |format|
+      if @qotd.save
+        QuoteOfTheDayWorker.perform_async(@quote.id)
+        format.js
+      end
+    end
   end
 
   private

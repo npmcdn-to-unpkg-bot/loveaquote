@@ -1,0 +1,3 @@
+$("#new-qotd-modal .modal-title").text("Quote Of The Day - <%= @qotd.date.strftime("%e %b, %Y") %>");
+$("#qotd").text("<%= @qotd.quote.text.html_safe %>");
+$("#new-qotd-modal").modal('show');
