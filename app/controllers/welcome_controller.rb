@@ -1,8 +1,8 @@
 class WelcomeController < ApplicationController
   def index
-    @people = Person.very_popular.published.order(name: "ASC")
-    @topics = Topic.very_popular.published.order(name: "ASC")
-    @books = Book.very_popular.published.order(name: "ASC")
-    @qotd = QuoteOfTheDay.find_by(date: Date.today)
+    @people = Person.cached_very_popular
+    @topics = Topic.cached_very_popular
+    @books = Book.cached_very_popular
+    @qotd = QuoteOfTheDay.today
   end
 end

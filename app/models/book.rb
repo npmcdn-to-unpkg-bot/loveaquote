@@ -58,7 +58,13 @@ class Book < ActiveRecord::Base
         TimeLine.create(item: self) if self.published
     end
     
+    def self.cached_very_popular
+        Rails.cache.fetch("very_popular_book") do
+            very_popular.published.order(name: "ASC").to_a
+        end
+    end
+    
     def expire_cache
-        Rails.cache.delete("front_page") if self.very_popular? && self.very_popular_changed?
+        Rails.cache.delete("very_popular_book") if self.very_popular? && self.very_popular_changed?
     end
 end

@@ -58,7 +58,13 @@ class Topic < ActiveRecord::Base
         TopicCombination.where("primary_topic_id = ? OR secondary_topic_id = ?", self.id, self.id)
     end
     
+    def self.cached_very_popular
+        Rails.cache.fetch("very_popular_topic") do
+            very_popular.published.order(name: "ASC").to_a
+        end
+    end
+    
     def expire_cache
-        Rails.cache.delete("front_page") if self.very_popular? && self.very_popular_changed?
+        Rails.cache.delete("very_popular_topic") if self.very_popular? && self.very_popular_changed?
     end
 end
