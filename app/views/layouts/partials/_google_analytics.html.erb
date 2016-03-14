@@ -1,5 +1,5 @@
 <% unless admin_signed_in? %>
-    <% cache "site_settings" do %>
+    <% cache "site_settings_analytics" do %>
         <%= raw Setting.google_analytics %>
     <% end %>
 <% end %>
