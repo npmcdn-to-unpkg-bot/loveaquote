@@ -3,7 +3,7 @@ class Setting < ActiveRecord::Base
     after_save :expire_cache
     
     def expire_cache
-       Rails.cache.delete("settings") 
+       Rails.cache.delete("site_settings") 
     end
     
     def self.google_verification
