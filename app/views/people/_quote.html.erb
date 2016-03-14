@@ -30,11 +30,13 @@
       </div>
 
       <div class="quote-meta">
-        <% cache "quote-meta-#{quote.id}-#{quote.updated_at.to_s(:number)}-source-#{quote.source.updated_at.to_s(:number)}" do %>
+        <% cache "quote-info-#{quote.id}-topic-count-#{quote.topics.count}" do %>
           <div class="quote-info">
             <%= link_to quote.topics.published.first.name, topic_url(quote.topics.published.first), title: "#{quote.topics.published.first.name} Quotes" if quote.topics.published.any? %>
           </div>
-  
+        <% end %>
+        
+        <% cache "quote-meta-#{quote.id}-#{quote.updated_at.to_s(:number)}-source-#{quote.source.updated_at.to_s(:number)}" do %>
           <div class="social-sharing">
             <a rel="nofollow" class="share-quote-twitter" title="Share this quote on Twitter" target="_blank" href="<%= twitter_quote_url(quote) %>"><%= image_tag('twitter.png') %></a>
             <a rel="nofollow" class="share-quote-facebook" title="Share this quote on Facebook" target="_blank" href="<%= facebook_quote_url(quote) %>"><%= image_tag('facebook.png') %></a>

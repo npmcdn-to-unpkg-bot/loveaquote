@@ -8,20 +8,24 @@
       <div class="quote-meta">
 
         <div class="quote-info">
-          <% if quote.source.published? %>
-            <%= link_to quote.source.name, quote_source_url(quote) %>
-          <% else %>
-            <%= quote.source.name %>
+          <% cache "quote-info-#{quote.id}-#{quote.updated_at.to_s(:number)}-source-#{quote.source.updated_at.to_s(:number)}" do %>
+            <% if quote.source.published? %>
+              <%= link_to quote.source.name, quote_source_url(quote) %>
+            <% else %>
+              <%= quote.source.name %>
+            <% end %>
           <% end %>
         </div>
 
-        <div class="social-sharing">
-          <a rel="nofollow" class="share-quote-twitter" title="Share this quote on Twitter" target="_blank" href="<%= twitter_quote_url(quote) %>"><%= image_tag('twitter.png') %></a>
-          <a rel="nofollow" class="share-quote-facebook" title="Share this quote on Facebook" target="_blank" href="<%= facebook_quote_url(quote) %>"><%= image_tag('facebook.png') %></a>
-          <% if quote.source.image.present? %>
-            <a rel="nofollow" class="share-quote-pinterest" title="Share this quote on Pinterest" target="_blank" href="<%= pinterest_quote_url(quote) %>"><%= image_tag('pinterest.png') %></a>
-          <% end %>
-        </div>
+        <% cache "quote-meta-#{quote.id}-#{quote.updated_at.to_s(:number)}-source-#{quote.source.updated_at.to_s(:number)}" do %>
+          <div class="social-sharing">
+            <a rel="nofollow" class="share-quote-twitter" title="Share this quote on Twitter" target="_blank" href="<%= twitter_quote_url(quote) %>"><%= image_tag('twitter.png') %></a>
+            <a rel="nofollow" class="share-quote-facebook" title="Share this quote on Facebook" target="_blank" href="<%= facebook_quote_url(quote) %>"><%= image_tag('facebook.png') %></a>
+            <% if quote.source.image.present? %>
+              <a rel="nofollow" class="share-quote-pinterest" title="Share this quote on Pinterest" target="_blank" href="<%= pinterest_quote_url(quote) %>"><%= image_tag('pinterest.png') %></a>
+            <% end %>
+          </div>
+        <% end %>
 
       </div>
 
