@@ -20,7 +20,7 @@
         <% books.each do |book| %>
           <div class="column">
             <div class="more-link text-center">
-              <%= link_to book.name, book_url(book), title: book.name + " Quotes" %>
+              <%= link_to book.name, book_url(book, format: :html), title: book.name + " Quotes" %>
             </div>
           </div>
         <% end %>
