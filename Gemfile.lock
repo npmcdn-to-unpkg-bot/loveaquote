@@ -247,7 +247,6 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.99.1)
-    mini_magick (4.4.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
@@ -308,6 +307,7 @@ GEM
       redis (~> 3.0, >= 3.0.4)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
+    rmagick (2.15.4)
     sass (3.4.21)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -392,7 +392,6 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari!
-  mini_magick
   pg
   pg_search
   puma
@@ -400,6 +399,7 @@ DEPENDENCIES
   rack-mini-profiler
   rails (= 4.2.3)
   redis-namespace
+  rmagick
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   sidekiq

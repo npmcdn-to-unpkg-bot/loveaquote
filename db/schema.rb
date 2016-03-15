@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160313162019) do
+ActiveRecord::Schema.define(version: 20160315102437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -281,6 +281,18 @@ ActiveRecord::Schema.define(version: 20160313162019) do
     t.string   "google_plus_url"
     t.string   "pinterest_url"
   end
+
+  create_table "social_images", force: :cascade do |t|
+    t.integer  "source_id",   null: false
+    t.string   "source_type", null: false
+    t.string   "twitter"
+    t.string   "facebook"
+    t.string   "google_plus"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "social_images", ["source_type", "source_id"], name: "index_social_images_on_source_type_and_source_id", using: :btree
 
   create_table "time_lines", force: :cascade do |t|
     t.integer  "item_id",    null: false
