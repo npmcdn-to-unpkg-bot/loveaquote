@@ -19,9 +19,11 @@ class SocialImageWorker
 
       draw.pointsize = 108
       draw.gravity = Magick::CenterGravity
-      draw.annotate(facebook_image, 0, 0, 0, 0, source_name) {
-        self.fill = "#FFFFFF"
-      }
+      source_name.split("/n").each do |row|
+        draw.annotate(facebook_image, 1200, 627, 0, 0, row) {
+          self.fill = "#FFFFFF"
+        }
+      end
 
       #Generate Google Plus Image
       google_plus_image = Magick::Image.new(1200, 500) {
