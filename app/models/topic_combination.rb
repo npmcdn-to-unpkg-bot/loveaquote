@@ -29,6 +29,10 @@ class TopicCombination < ActiveRecord::Base
         self.primary_topic.name + " and " + self.secondary_topic.name
     end
     
+    def image
+        ""
+    end
+    
     def quotes
         primary_topic_quotes = self.primary_topic.quotes.pluck(:id)
         secondary_topic_quotes = self.secondary_topic.quotes.pluck(:id)
@@ -44,6 +48,22 @@ class TopicCombination < ActiveRecord::Base
     def combination_should_not_exist
         if TopicCombination.exists?(primary_topic_id: self.primary_topic_id, secondary_topic_id: self.secondary_topic_id) || TopicCombination.exists?(primary_topic_id: self.secondary_topic_id, secondary_topic_id: self.primary_topic_id)
             errors[:base] << "This topic combination already exists."
+        end
+    end
+    
+    def similar_combinations
+        first_primary = TopicCombination.where(primary_topic_id: self.primary_topic_id).where.not(id: self.id)
+        second_primary = TopicCombination.where(primary_topic_id: self.secondary_topic_id).where.not(id: self.id)
+        
+        first_secondary = TopicCombination.where(secondary_topic_id: self.primary_topic_id).where.not(id: self.id)
+        second_secondary = TopicCombination.where(secondary_topic_id: self.secondary_topic_id).where.not(id: self.id)
+        
+        first_primary | second_primary | first_secondary | second_secondary
+    end
+    
+    def cached_similar_combinations
+        Rails.cache.fetch("combination-#{self.id}-#{Date.today.to_s(:number)}") do
+            similar_combinations
         end
     end
 end

@@ -1,9 +1,8 @@
-<% content_for :title, "Quote Topics - Read quotes by topic" %>
-<% content_for :title, "Quote Topics - Read quotes by topic" %>
-<% content_for :description, "Quote Topics - Read quotes by topic" %>
+<% content_for :title, "Topic Combinations - Read quotes by topic" %>
+<% content_for :description, "Topic Combinations - Read quotes by topic" %>
 <% content_for :canonical, @canonical %>
 
-<% content_for :heading, "Topics" %>
+<% content_for :heading, "Topic Combinations" %>
 
 <% content_for :content do %>
 
@@ -21,13 +20,10 @@
         <% topics.each do |topic| %>
           <div class="column">
             <div class="more-link text-center">
-              <%= link_to topic.name, topic_url(topic), title: topic.name + " Quotes" %>
+              <%= link_to topic.name, topics_topic_combination_url(topic), title: topic.name + " Quotes" %>
             </div>
           </div>
         <% end %>
-      </div>
-      <div class="more-link text-center">
-        <%= link_to "More ...", alphabet_topics_url(letter.upcase) %>
       </div>
     </div>
   <% end %>

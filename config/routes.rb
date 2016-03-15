@@ -58,6 +58,18 @@ Rails.application.routes.draw do
     end
   end
   
+  namespace :topics do
+    resources :topic_combinations, path: "combinations", only: [:index, :show] do
+      member do
+        get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
+        get 'pinterest'
+        get 'facebook'
+        get 'twitter'
+        get 'google_plus'
+      end
+    end
+  end
+  
   resources :topics, only: [:index, :show] do
     collection do
       get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
