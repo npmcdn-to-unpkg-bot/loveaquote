@@ -45,7 +45,7 @@ SitemapGenerator::Sitemap.create do
     add topic_path(topic, format: :html), :lastmod => topic.updated_at
   end
   
-  TopicCombination.each do |topic|
+  TopicCombination.all.each do |topic|
     add topics_topic_combination_path(topic, format: :html), :lastmod => topic.updated_at
   end
 end
