@@ -7,7 +7,7 @@
           <% if quote.source_type == "Book" %>
             <%= " - " %>
             <% if quote.source.published? %>
-              <%= link_to quote.source.name, model_url(quote.source), title: "Quotes from #{quote.source.name} book" %>
+              <%= link_to quote.source.name, model_url(quote.source, format: :html), title: "Quotes from #{quote.source.name} book" %>
             <% else %>
               <%= quote.source.name %>
             <% end %>
@@ -15,13 +15,13 @@
           <% if quote.source_type == "Movie" || quote.source_type == "TvShow" %>
             <%= " - as " %>
             <% if quote.character.published? %>
-              <%= link_to quote.character.name, model_url(quote.character) %>
+              <%= link_to quote.character.name, model_url(quote.character, format: :html) %>
             <% else %>
               <%= quote.character.name %>
             <% end %>
             <%= " in " %>
             <% if quote.source.published? %>
-              <%= link_to quote.source.name, model_url(quote.source), title: "Quotes from #{quote.source.name}" %>
+              <%= link_to quote.source.name, model_url(quote.source, format: :html), title: "Quotes from #{quote.source.name}" %>
             <% else %>
               <%= quote.source.name %>
             <% end %>
@@ -32,7 +32,7 @@
       <div class="quote-meta">
         <% cache "quote-info-#{quote.id}-topic-count-#{quote.topics.count}" do %>
           <div class="quote-info">
-            <%= link_to quote.topics.published.first.name, topic_url(quote.topics.published.first), title: "#{quote.topics.published.first.name} Quotes" if quote.topics.published.any? %>
+            <%= link_to quote.topics.published.first.name, topic_url(quote.topics.published.first, format: :html), title: "#{quote.topics.published.first.name} Quotes" if quote.topics.published.any? %>
           </div>
         <% end %>
         

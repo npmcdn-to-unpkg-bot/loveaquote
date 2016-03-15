@@ -3,6 +3,8 @@ class TopicsController < ApplicationController
   
   def index
     @topics = Topic.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
+    @canonical = topics_url(format: :html)
+    render layout: "archive"
   end
 
   def show
@@ -18,6 +20,8 @@ class TopicsController < ApplicationController
   def alphabet
     @alphabet = params[:alphabet].upcase
     @topics = Topic.by_alphabet(@alphabet).published.order(name: "ASC")
+    @canonical = alphabet_topics_url(format: :html)
+    render layout: "alphabet"
   end
   
   def twitter

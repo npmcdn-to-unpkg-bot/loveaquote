@@ -3,6 +3,8 @@ class CharactersController < ApplicationController
   
   def index
     @books = Character.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
+    @canonical = characters_url(format: :html)
+    render layout: "archive"
   end
 
   def show
@@ -18,6 +20,8 @@ class CharactersController < ApplicationController
   def alphabet
     @alphabet = params[:alphabet].upcase
     @characters = Character.by_alphabet(@alphabet).published.order(name: "ASC")
+    @canonical = alphabet_characters_url(format: :html)
+    render layout: "alphabet"
   end
   
   def twitter

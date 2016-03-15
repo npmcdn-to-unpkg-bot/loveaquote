@@ -10,7 +10,7 @@
         <div class="quote-info">
           <% cache "quote-info-#{quote.id}-#{quote.updated_at.to_s(:number)}-source-#{quote.source.updated_at.to_s(:number)}" do %>
             <% if quote.source.published? %>
-              <%= link_to quote.source.name, quote_source_url(quote) %>
+              <%= link_to quote.source.name, quote_source_url(quote, format: :html) %>
             <% else %>
               <%= quote.source.name %>
             <% end %>

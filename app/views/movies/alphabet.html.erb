@@ -9,7 +9,7 @@
     <% @movies.each do |movie| %>
       <div class="column text-center">
         <div class="more-link">
-          <%= link_to movie.name, movie_url(movie), title: movie.name + " Quotes" %>
+          <%= link_to movie.name, movie_url(movie, format: :html), title: movie.name + " Quotes" %>
         </div>
       </div>
     <% end %>

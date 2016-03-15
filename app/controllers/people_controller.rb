@@ -4,12 +4,15 @@ class PeopleController < ApplicationController
   def index
     @people = Person.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
     @title = "Person List"
-    @canonical = "#{people_url}"
+    @canonical = people_url(format: :html)
+    render layout: "archive"
   end
   
   def alphabet
     @alphabet = params[:alphabet].upcase
     @people = Person.by_alphabet(@alphabet).published.order(name: "ASC")
+    @canonical = alphabet_people_url(format: :html)
+    render layout: "alphabet"
   end
 
   def show

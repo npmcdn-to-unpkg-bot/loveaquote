@@ -3,6 +3,8 @@ class MoviesController < ApplicationController
   
   def index
     @movies = Movie.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
+    @canonical = movies_url(format: :html)
+    render layout: "archive"
   end
 
   def show
@@ -18,6 +20,8 @@ class MoviesController < ApplicationController
   def alphabet
     @alphabet = params[:alphabet].upcase
     @movies = Movie.by_alphabet(@alphabet).published.order(name: "ASC")
+    @canonical = alphabet_movies_url(format: :html)
+    render layout: "alphabet"
   end
   
   def twitter

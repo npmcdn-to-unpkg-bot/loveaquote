@@ -21,11 +21,11 @@ Rails.application.routes.draw do
     
     member do
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
-      get ':redirect_to_person', action: 'redirect_to_person', constraints: { page: /\D+/ }
       get 'facebook'
       get 'pinterest'
       get 'twitter'
       get 'google_plus'
+      get ':redirect_to_person', action: 'redirect_to_person', constraints: { page: /\D+/ }
     end
   end
   
@@ -35,11 +35,11 @@ Rails.application.routes.draw do
     end  
     member do
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
-      get ':redirect_to_proverb', action: 'redirect_to_proverb', constraints: { page: /\D+/ }
       get 'pinterest'
       get 'facebook'
       get 'twitter'
       get 'google_plus'
+      get ':redirect_to_proverb', action: 'redirect_to_proverb', constraints: { page: /\D+/ }
     end
   end
   
@@ -50,11 +50,11 @@ Rails.application.routes.draw do
     
     member do
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
-      get ':redirect_to_book', action: 'redirect_to_book', constraints: { page: /\D+/ }
       get 'pinterest'
       get 'facebook'
       get 'twitter'
       get 'google_plus'
+      get ':redirect_to_book', action: 'redirect_to_book', constraints: { page: /\D+/ }
     end
   end
   

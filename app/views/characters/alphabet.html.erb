@@ -9,7 +9,7 @@
     <% @characters.each do |character| %>
       <div class="column text-center">
         <div class="more-link">
-          <%= link_to character.name, character_url(character), title: character.name + " Quotes" %>
+          <%= link_to character.name, character_url(character, format: :html), title: character.name + " Quotes" %>
         </div>
       </div>
     <% end %>

@@ -4,21 +4,13 @@
       <div class="quote-text">
         <p itemprop="itemListElement">
           <%= quote.text %>
-          <% if quote.character.present? %>
-            <%= " - " %>
-            <% if quote.character.published? %>
-              <%= link_to quote.character.name, character_url(quote.character), title: "#{quote.character.name} Quotes" %>
-            <% else %>
-              <%= quote.character.name %>
-            <% end %>
-          <% end %>
-          </p>
+        </p>
       </div>
 
       <div class="quote-meta">
         <% cache "quote-info-#{quote.id}-topic-count-#{quote.topics.count}" do %>
           <div class="quote-info">
-            <%= link_to quote.topics.published.first.name, topic_url(quote.topics.published.first), title: "#{quote.topics.published.first.name} Quotes" if quote.topics.published.any? %>
+            <%= link_to quote.topics.published.first.name, topic_url(quote.topics.published.first, format: :html), title: "#{quote.topics.published.first.name} Quotes" if quote.topics.published.any? %>
           </div>
         <% end %>
 

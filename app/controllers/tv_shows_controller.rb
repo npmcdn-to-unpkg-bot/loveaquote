@@ -3,6 +3,8 @@ class TvShowsController < ApplicationController
   
   def index
     @tv_shows = TvShow.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
+    @canonical = tv_shows_url(format: :html)
+    render layout: "archive"
   end
 
   def show
@@ -18,6 +20,8 @@ class TvShowsController < ApplicationController
   def alphabet
     @alphabet = params[:alphabet].upcase
     @tv_shows = TvShow.by_alphabet(@alphabet).published.order(name: "ASC")
+    @canonical = alphabet_tv_shows_url(format: :html)
+    render layout: "alphabet"
   end
   
   def twitter

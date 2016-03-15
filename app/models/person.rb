@@ -15,7 +15,7 @@ class Person < ActiveRecord::Base
     has_many :character_sources
     has_many :characters, -> {uniq}, through: :character_sources
     has_many :character_quotes, through: :characters, source: :quotes
-    has_many :search_suggestions, dependent: :destroy
+    has_many :search_suggestions, as: :source, dependent: :destroy
 
     # has many books
     has_many :books
@@ -73,5 +73,4 @@ class Person < ActiveRecord::Base
     def expire_cache
         Rails.cache.delete("very_popular_people") if self.very_popular? && self.very_popular_changed?
     end
-
 end

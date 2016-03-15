@@ -3,6 +3,7 @@ class ProverbsController < ApplicationController
   
   def index
     @proverbs = Proverb.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
+    @canonical = proverbs_url(format: :html)
     render layout: "archive"
   end
 
@@ -19,6 +20,7 @@ class ProverbsController < ApplicationController
   def alphabet
     @alphabet = params[:alphabet].upcase
     @proverbs = Proverb.by_alphabet(@alphabet).published.order(name: "ASC")
+    @canonical = alphabet_proverbs_url(format: :html)
     render layout: "alphabet"
   end
   

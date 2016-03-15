@@ -3,6 +3,8 @@ class BooksController < ApplicationController
   
   def index
     @books = Book.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
+    @canonical = books_url(format: :html)
+    render layout: "archive"
   end
 
   def show
@@ -18,6 +20,8 @@ class BooksController < ApplicationController
   def alphabet
     @alphabet = params[:alphabet].upcase
     @books = Book.by_alphabet(@alphabet).published.order(name: "ASC")
+    @canonical = alphabet_books_url(format: :html)
+    render layout: "alphabet"
   end
   
   def redirect_to_book

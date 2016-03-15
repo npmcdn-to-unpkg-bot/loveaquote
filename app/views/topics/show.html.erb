@@ -1,9 +1,9 @@
 <% if params.has_key?(:page) %>
-  <% content_for :canonical, "#{page_topic_url(@topic, params[:page])}" %>
+  <% content_for :canonical, "#{canonical_url(@topic, params[:page], format: :html)}" %>
   <% content_for :title, "#{@topic.name} Quotes - #{@topic.quotes.count.to_s} quotes about #{@topic.name} - Page #{params[:page]}"  %>
   <% content_for :description, "Quotes about #{@topic.name} - page #{params[:page]}. Best collection of #{@topic.name} quotes. Read, comment and share these quotes." %>
 <% else %>
-  <% content_for :canonical, "#{topic_url(@topic)}" %>
+  <% content_for :canonical, "#{canonical_url(@topic, format: :html)}" %>
   <% content_for :title, "#{@topic.name} Quotes - #{@topic.quotes.count.to_s} quotes about #{@topic.name}"  %>
   <% content_for :description, "Quotes about #{@topic.name}. Best collection of #{@topic.name} quotes. Read, comment and share these quotes." %>
 <% end %>
@@ -23,7 +23,6 @@
 <% end %>
 
 <% content_for :content do %>
-
   <ul>
     <% @quotes.each do |quote| %>
         <%= render partial: "topics/quote", object: quote %>

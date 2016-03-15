@@ -1,5 +1,5 @@
 upstream puma_<%= fetch(:nginx_config_name) %> { <%
-                                                 flags = 'fail_timeout=0'
+  flags = 'fail_timeout=0'
 @backends = [fetch(:puma_bind)].flatten.map do |m|
   etype, address  = /(tcp|unix|ssl):\/{1,2}(.+)/.match(m).captures
   if etype =='unix'
@@ -122,7 +122,7 @@ if (-f $document_root/system/maintenance.html) {
 return 503;
 }
 
-location ~ \.(php|html)$ {
+location ~ \.(php)$ {
 return 405;
 }
 }

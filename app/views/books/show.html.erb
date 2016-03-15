@@ -1,9 +1,9 @@
 <% if params.has_key?(:page) %>
-  <% content_for :canonical, "#{page_book_url(@book, params[:page])}" %>
+  <% content_for :canonical, "#{canonical_url(@book, params[:page], format: :html)}}" %>
   <% content_for :title, "#{@book.name} Quotes - #{@book.quotes.count.to_s} quotes - Page #{params[:page]}" %>
   <% content_for :description, "Quotes from #{@book.name} - page #{params[:page]}. Best collection of #{@book.name} quotes. Read, comment and share these quotes." %>
 <% else %>
-  <% content_for :canonical, "#{book_url(@book)}" %>
+  <% content_for :canonical, "#{canonical_url(@book, format: :html)}" %>
   <% content_for :title, "#{@book.name} Quotes - #{@book.quotes.count.to_s} quotes" %>
   <% content_for :description, "Quotes from #{@book.name}. Best collection of #{@book.name} quotes. Read, comment and share these quotes." %>
 <% end %>
