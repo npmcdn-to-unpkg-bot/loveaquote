@@ -18,7 +18,10 @@ class Book < ActiveRecord::Base
     has_many :characters, through: :character_sources
     has_many :search_suggestions, dependent: :destroy
     
-    belongs_to :person
+    has_many :compositions
+    accepts_nested_attributes_for :compositions, reject_if: :all_blank, allow_destroy: true
+    has_many :people, through: :compositions
+    
     
     mount_uploader :image, ImageUploader
     

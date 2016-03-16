@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316181159) do
+ActiveRecord::Schema.define(version: 20160316183437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,13 +41,11 @@ ActiveRecord::Schema.define(version: 20160316181159) do
     t.boolean  "published",    default: false, null: false
     t.boolean  "popular",      default: false, null: false
     t.boolean  "very_popular", default: false, null: false
-    t.integer  "person_id",                    null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.string   "image"
   end
 
-  add_index "books", ["person_id"], name: "index_books_on_person_id", using: :btree
   add_index "books", ["slug"], name: "index_books_on_slug", using: :btree
 
   create_table "chapter_and_pages", force: :cascade do |t|
@@ -385,7 +383,6 @@ ActiveRecord::Schema.define(version: 20160316181159) do
 
   add_index "user_searches", ["source_type", "source_id"], name: "index_user_searches_on_source_type_and_source_id", using: :btree
 
-  add_foreign_key "books", "people"
   add_foreign_key "chapter_and_pages", "quotes"
   add_foreign_key "character_sources", "characters"
   add_foreign_key "character_sources", "people"

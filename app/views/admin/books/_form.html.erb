@@ -9,6 +9,7 @@
           <div class="panel-options">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#book" data-toggle="tab">Book</a></li>
+              <li><a href="#authors" data-toggle="tab">Authors</a></li>
               <li><a href="#seo" data-toggle="tab">SEO</a></li>
               <li><a href="#characters" data-toggle="tab">Characters</a></li>
               <li><a href="#fetch" data-toggle="tab">Fetch</a></li>
@@ -21,7 +22,6 @@
             <div class="tab-pane active" id="book">
               <div class="form-inputs">
                 <%= f.input :name %>
-                <%= f.association :person, collection: Person.all.order(name: :asc) %>
                 <div class="row">
                   <div class="col-sm-4">
                     <%= f.input :published %>
@@ -44,6 +44,17 @@
                     </div>
                   </div>
                 </div>  
+              </div>
+            </div>
+            
+            <div class="tab-pane" id="authors">
+              <div id='book_authors'>
+                <%= f.simple_fields_for :compositions do |composition| %>
+                  <%= render 'composition_fields', :f => composition %>
+                <% end %>
+                <div class='links'>
+                  <%= link_to_add_association '<i class="e-icon-squared-plus"></i> author'.html_safe, f, :compositions %>
+                </div>
               </div>
             </div>
             
