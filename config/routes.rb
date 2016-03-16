@@ -179,6 +179,7 @@ Rails.application.routes.draw do
       end
     end
     resources :quote_of_the_days, path: "quote-of-the-day", only: [:index]
+    resources :color_schemes, path: "color-schemes"
     resources :messages, only: [:index, :show, :destroy]
     resources :logs, only: [:index]
     resources :redirects, except: [:show]

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315102437) do
+ActiveRecord::Schema.define(version: 20160316043106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,13 @@ ActiveRecord::Schema.define(version: 20160315102437) do
     t.boolean  "published",    default: false, null: false
     t.boolean  "popular",      default: false, null: false
     t.boolean  "very_popular", default: false, null: false
+  end
+
+  create_table "color_schemes", force: :cascade do |t|
+    t.string   "background_color"
+    t.string   "foreground_color"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "featured_topics", force: :cascade do |t|
@@ -290,6 +297,7 @@ ActiveRecord::Schema.define(version: 20160315102437) do
     t.string   "google_plus"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "pinterest"
   end
 
   add_index "social_images", ["source_type", "source_id"], name: "index_social_images_on_source_type_and_source_id", using: :btree
