@@ -14,10 +14,11 @@
     <thead>
       <tr>
         <th width="10%" class="text-center">Date</th>
-        <th width="30%" class="text-center">Category</th>
+        <th width="20%" class="text-center">Category</th>
         <th width="20%" class="text-center">Sub-Category</th>
         <th width="10%" class="text-center">Source</th>
-        <th width="30%">Description</th>
+        <th width="30%" class="text-center">Description</th>
+        <th width="10%" class="text-center">Manage</th>
       </tr>
     </thead>
   
@@ -29,6 +30,7 @@
           <td class="text-center"><%= log.sub_category %></td>
           <td class="text-center"><%= link_to "View", edit_admin_model_url(log.source) if log.source.present? %></td>
           <td><%= log.description %></td>
+          <td class="text-center"><%= link_to '<i class="fa fa-times"></i>'.html_safe, admin_log_url(log) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
