@@ -25,6 +25,7 @@
         </ul>
         
         <ul class="nav navbar-right pull-right">
+            <li><%= link_to '<i class="e-icon-mail"></i><span class="title">Messages</span>'.html_safe, admin_messages_url %></li>
             <li><%= link_to '<i class="e-icon-database"></i><span class="title">Logs</span>'.html_safe, admin_logs_url %></li>
             <li><%= link_to '<i class="e-icon-cog"></i><span class="title">Settings</span>'.html_safe, admin_settings_url %></li>
             <li><%= link_to '<i class="e-icon-logout"></i><span class="title">Logout</span>'.html_safe, destroy_admin_session_path, method:"delete" %>      </li>
