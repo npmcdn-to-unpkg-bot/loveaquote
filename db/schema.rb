@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316051954) do
+ActiveRecord::Schema.define(version: 20160316092506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,16 @@ ActiveRecord::Schema.define(version: 20160316051954) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
+
+  create_table "compositions", force: :cascade do |t|
+    t.integer  "person_id",  null: false
+    t.integer  "book_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "compositions", ["book_id"], name: "index_compositions_on_book_id", using: :btree
+  add_index "compositions", ["person_id"], name: "index_compositions_on_person_id", using: :btree
 
   create_table "featured_topics", force: :cascade do |t|
     t.integer  "source_id",   null: false
@@ -370,6 +380,8 @@ ActiveRecord::Schema.define(version: 20160316051954) do
   add_foreign_key "chapter_and_pages", "quotes"
   add_foreign_key "character_sources", "characters"
   add_foreign_key "character_sources", "people"
+  add_foreign_key "compositions", "books"
+  add_foreign_key "compositions", "people"
   add_foreign_key "quote_of_the_days", "quotes"
   add_foreign_key "quote_topic_suggestions", "quotes"
   add_foreign_key "quote_topic_suggestions", "topics"
