@@ -12,8 +12,8 @@
         <div class="col-sm-3">
           <% if @character.image.present? %>
             <%= image_tag @character.image_url(:small), class: "thumbnail", style: "margin-bottom: 0px" %>
-          <% else %>
-            <%= image_tag "http://placehold.it/150x150", class: "thumbnail" %>
+          <% elsif @character.social_image.present? && @character.social_image.facebook.present? %>
+            <%= image_tag @character.social_image.facebook, width: "150" %>
           <% end %>
         </div>
         <div class="col-sm-9">
