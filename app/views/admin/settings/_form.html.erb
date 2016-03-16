@@ -1,29 +1,35 @@
-<%= simple_form_for([:admin, @setting],
-  html: { class: 'form-horizontal form-groups-bordered' },
-  wrapper: :horizontal_form,
-  wrapper_mappings: {
-    check_boxes: :horizontal_radio_and_checkboxes,
-    radio_buttons: :horizontal_radio_and_checkboxes,
-    file: :horizontal_file_input,
-    boolean: :horizontal_boolean
-  }) do |f| %>
-  <%= f.error_notification %>
+<div class="row">
+  <%= simple_form_for([:admin, @setting]) do |f| %>
+    <div class="col-sm-9">
+      <div class="form-inputs">
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :facebook_url %>
+        <%= f.input :twitter_url %>
+        <%= f.input :google_plus_url %>
+        <%= f.input :pinterest_url %>
+        <%= f.input :google_verification %>
+        <%= f.input :yandex_verification %>
+        <%= f.input :bing_verification %>
+        <%= f.input :alexa_verification %>
+        <%= f.input :google_analytics, input_html: {rows: "8"} %>
+      </div>
+    </div>
+    
+    <div class="col-sm-3 text-center">
+      <% if @setting.errors.any? %>
+        <div class="alert alert-danger">
+          <%= "#{@setting.errors.count} error found" %>
+        </div>
+      <% end %>
+      
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :facebook_url %>
-    <%= f.input :twitter_url %>
-    <%= f.input :google_plus_url %>
-    <%= f.input :pinterest_url %>
-    <%= f.input :google_verification %>
-    <%= f.input :yandex_verification %>
-    <%= f.input :bing_verification %>
-    <%= f.input :alexa_verification %>
-    <%= f.input :google_analytics, input_html: {rows: "8"} %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+
+
