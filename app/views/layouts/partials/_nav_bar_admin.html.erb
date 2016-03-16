@@ -25,10 +25,14 @@
         </ul>
         
         <ul class="nav navbar-right pull-right">
-            <li><%= link_to '<i class="e-icon-mail"></i><span class="title">Messages</span>'.html_safe, admin_messages_url %></li>
-            <li><%= link_to '<i class="e-icon-database"></i><span class="title">Logs</span>'.html_safe, admin_logs_url %></li>
-            <li><%= link_to '<i class="e-icon-cog"></i><span class="title">Settings</span>'.html_safe, admin_settings_url %></li>
-            <li><%= link_to '<i class="e-icon-logout"></i><span class="title">Logout</span>'.html_safe, destroy_admin_session_path, method:"delete" %>      </li>
+            <% if Message.unread.any? %>
+                <li class="notifications dropdown"><%= link_to ('<i class="e-icon-mail"></i><span class="badge badge-secondary">' + Message.unread.count.to_s + '</span>').html_safe, admin_messages_url %></li>
+            <% else %>
+                <li><%= link_to '<i class="e-icon-mail"></i>'.html_safe, admin_messages_url %></li>
+            <% end %>
+            <li><%= link_to '<i class="e-icon-database"></i>'.html_safe, admin_logs_url %></li>
+            <li><%= link_to '<i class="e-icon-cog"></i>'.html_safe, admin_settings_url %></li>
+            <li><%= link_to '<i class="e-icon-logout"></i>'.html_safe, destroy_admin_session_path, method:"delete" %>      </li>
             <li class="visible-xs"> <div class="horizontal-mobile-menu visible-xs"> <a href="#" class="with-animation"><i class="e-icon-list"></i> </a> </div> </li>
         </ul>
     </div>
