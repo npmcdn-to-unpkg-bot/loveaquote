@@ -19,7 +19,8 @@ class Person < ActiveRecord::Base
     has_many :search_suggestions, as: :source, dependent: :destroy
 
     # has many books
-    has_many :books
+    has_many :compositions
+    has_many :books, through: :compositions
     has_many :book_quotes, through: :books, source: :quotes
 
     mount_uploader :image, ImageUploader
