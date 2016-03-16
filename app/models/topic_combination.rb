@@ -1,4 +1,9 @@
 class TopicCombination < ActiveRecord::Base
+    include Loggable
+    include Seoable
+    include SocialImageable
+    include TimeLineable
+    
     belongs_to :topic, foreign_key: "primary_topic_id"
     
     validates :primary_topic_id, presence: true, blank: false

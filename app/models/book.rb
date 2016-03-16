@@ -5,11 +5,11 @@ class Book < ActiveRecord::Base
     include Searchable
     include Seoable
     include SocialImageable
+    include TimeLineable
     
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
     
     # has many quotes
-    has_one :time_line, as: :item, dependent: :destroy
     has_many :quote_topic_suggestions, through: :quotes
     has_many :featured_topics, as: :source, dependent: :destroy
     
@@ -37,7 +37,7 @@ class Book < ActiveRecord::Base
     
     before_validation :strip_name, :generate_slug
     after_commit :fetch_quotes, on: [:create, :update]
-    after_save :add_to_time_line, :expire_cache
+    after_save :expire_cache
     
     def to_param
         slug
@@ -55,10 +55,6 @@ class Book < ActiveRecord::Base
         GoodreadsWorker.perform_async(self.id) if self.fetch_url.present? && URI::parse(self.fetch_url).host == "www.goodreads.com"        
     end
 
-    def add_to_time_line
-        TimeLine.create(item: self) if self.published
-    end
-    
     def self.cached_very_popular
         Rails.cache.fetch("very_popular_book") do
             very_popular.published.order(name: "ASC").to_a

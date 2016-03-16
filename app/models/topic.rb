@@ -3,6 +3,8 @@ class Topic < ActiveRecord::Base
     include Loggable
     include Searchable
     include Seoable
+    include SocialImageable
+    include TimeLineable
     
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
     
@@ -28,8 +30,7 @@ class Topic < ActiveRecord::Base
 
     before_validation :strip_name, :capitalize_name, :generate_slug
     after_create :get_quote_suggestions
-    after_save :add_to_time_line    
-
+    
     def to_param
         slug
     end

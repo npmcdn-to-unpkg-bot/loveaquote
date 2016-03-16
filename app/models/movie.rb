@@ -4,7 +4,9 @@ class Movie < ActiveRecord::Base
     include Loggable
     include Searchable
     include Seoable
-
+    include SocialImageable
+    include TimeLineable
+    
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
     
     # has many quotes
@@ -29,8 +31,7 @@ class Movie < ActiveRecord::Base
     scope :by_alphabet, ->(alphabet) {where('name like ?', "#{alphabet}%")}
     
     before_validation :strip_name, :generate_slug
-    after_save :add_to_time_line
-    
+
     def to_param
         slug
     end

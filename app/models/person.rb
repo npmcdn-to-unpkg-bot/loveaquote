@@ -5,12 +5,12 @@ class Person < ActiveRecord::Base
     include Searchable
     include Seoable
     include SocialImageable
+    include TimeLineable
     
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
     
     belongs_to :nationality
     belongs_to :profession
-    has_one :time_line, as: :item, dependent: :destroy
     has_many :quote_topic_suggestions, through: :quotes
     has_many :featured_topics, as: :source, dependent: :destroy
     has_many :character_sources
@@ -38,7 +38,7 @@ class Person < ActiveRecord::Base
     
     before_validation :strip_name, :generate_slug
     after_commit :fetch_quotes, on: [:create, :update]
-    after_save :add_to_time_line, :expire_cache
+    after_save :expire_cache
     
     def to_param
         slug
@@ -60,11 +60,7 @@ class Person < ActiveRecord::Base
     def fetch_quotes
         BrainyquoteWorker.perform_async(self.id) if self.fetch_url.present? && URI::parse(self.fetch_url).host == "www.brainyquote.com"
     end
-    
-    def add_to_time_line
-        TimeLine.create(item: self) if self.published
-    end
-    
+
     def self.cached_very_popular
         Rails.cache.fetch("very_popular_people") do
             very_popular.published.order(name: "ASC").to_a
