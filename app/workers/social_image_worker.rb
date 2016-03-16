@@ -8,7 +8,7 @@ class SocialImageWorker
     if source
       offset = rand(ColorScheme.count)
       color_scheme = ColorScheme.offset(offset).first
-      
+
       if source.class.name == "Proverb"
         facebook_source_name = do_word_wrap(source.name + " Proverbs", 22)
         google_plus_source_name = do_word_wrap(source.name + " Proverbs", 22)
@@ -21,10 +21,10 @@ class SocialImageWorker
         pinterest_source_name = do_word_wrap(source.name + " Quotes", 10)
       end
       
-      facebook_position = calculate_position(facebook_source_name.split("\n").count, 627, 108, 20)
-      google_plus_position = calculate_position(google_plus_source_name.split("\n").count, 500, 96, 20)
-      twitter_position = calculate_position(twitter_source_name.split("\n").count, 600, 108, 20)
-      pinterest_position = calculate_position(pinterest_source_name.split("\n").count, 1128, 108, 20)
+      facebook_position = calculate_position(facebook_source_name.split("\n").count + 1, 627, 108, 20)
+      google_plus_position = calculate_position(google_plus_source_name.split("\n").count + 1, 500, 96, 20)
+      twitter_position = calculate_position(twitter_source_name.split("\n").count + 1, 600, 108, 20)
+      pinterest_position = calculate_position(pinterest_source_name.split("\n").count + 1, 1128, 108, 20)
 
       #Generate Facebook Image
       facebook_image = Magick::Image.new(1200,627) {
@@ -43,6 +43,11 @@ class SocialImageWorker
         }
         facebook_position += 128
       end
+      
+      draw.pointsize = 48
+      draw.annotate(facebook_image, 1000, 50, 100, facebook_position + 50, "www.LoveAQuote.com") {
+        self.fill = "##{color_scheme.foreground_color}"
+      }
 
       #Generate Google Plus Image
       google_plus_image = Magick::Image.new(1200, 500) {
@@ -61,6 +66,11 @@ class SocialImageWorker
         }
         google_plus_position += 116
       end
+      
+      draw.pointsize = 48
+      draw.annotate(google_plus_image, 1000, 50, 100, google_plus_position + 50, "www.LoveAQuote.com") {
+        self.fill = "##{color_scheme.foreground_color}"
+      }
 
       #Generate Twitter Image
       twitter_image = Magick::Image.new(1200,600) {
@@ -80,6 +90,11 @@ class SocialImageWorker
         twitter_position += 128
       end
       
+      draw.pointsize = 48
+      draw.annotate(twitter_image, 1000, 50, 100, twitter_position + 50, "www.LoveAQuote.com") {
+        self.fill = "##{color_scheme.foreground_color}"
+      }
+      
       #Generate Pinterest Image
       pinterest_image = Magick::Image.new(736,1128) {
         self.background_color = "##{color_scheme.background_color}"
@@ -97,6 +112,11 @@ class SocialImageWorker
         }
         pinterest_position += 116
       end
+      
+      draw.pointsize = 48
+      draw.annotate(pinterest_image, 636, 50, 50, pinterest_position + 50, "www.LoveAQuote.com") {
+        self.fill = "##{color_scheme.foreground_color}"
+      }
 
       require 'fileutils'
       Thread.new do
