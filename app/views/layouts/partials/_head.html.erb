@@ -16,7 +16,10 @@
 <meta property="og:description" content="<%= yield :description %>" />
 <meta property="og:url" content="<%= yield :canonical %>" />
 <meta property="og:site_name" content="LoveAQuote" />
-<meta property="og:image" content="<%= yield :image_url || image_url("logo.png") %>" />
+<% if content_for?(:facebook_image) %>
+  <meta property="og:image" content="<%= yield(:facebook_image) %>">
+<% end %>
+
 <meta property="fb:app_id" content="521716514627837">
 <meta property="fb:admins" content="100005957710189">
 

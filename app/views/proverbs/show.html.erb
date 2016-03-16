@@ -10,8 +10,8 @@
 
 <% content_for :heading, "#{@proverb.name} Proverbs" %>
 
-<% if @proverb.image.present? %>
-  <% content_for :image_url, URI.join( root_url, @proverb.image.url).to_s %>
+<% if @proverb.social_image.present? %>
+  <% content_for :facebook_image, @proverb.social_image.facebook %>
 <% end %>
 
 <% content_for :breadcrumbs do %>
