@@ -10,7 +10,7 @@ class TimeLine < ActiveRecord::Base
     end
     
     def self.recent
-        all.limit(10)
+        all.order(created_at: :desc).limit(10)
     end
     
     def self.cached_recent
