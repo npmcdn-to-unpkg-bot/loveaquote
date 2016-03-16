@@ -4,6 +4,7 @@ class Proverb < ActiveRecord::Base
     include Loggable
     include Searchable
     include Seoable
+    include SocialImageable
     include TimeLineable
     
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }

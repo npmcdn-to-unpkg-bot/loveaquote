@@ -8,11 +8,18 @@ class SocialImageWorker
     if source
       offset = rand(ColorScheme.count)
       color_scheme = ColorScheme.offset(offset).first
-    
-      facebook_source_name = do_word_wrap(source.name + " Quotes", 22)
-      google_plus_source_name = do_word_wrap(source.name + " Quotes", 22)
-      twitter_source_name = do_word_wrap(source.name + " Quotes", 22)
-      pinterest_source_name = do_word_wrap(source.name + " Quotes", 10)
+      
+      if source.class.name == "Proverb"
+        facebook_source_name = do_word_wrap(source.name + " Proverbs", 22)
+        google_plus_source_name = do_word_wrap(source.name + " Proverbs", 22)
+        twitter_source_name = do_word_wrap(source.name + " Proverbs", 22)
+        pinterest_source_name = do_word_wrap(source.name + " Proverbs", 10)
+      else
+        facebook_source_name = do_word_wrap(source.name + " Quotes", 22)
+        google_plus_source_name = do_word_wrap(source.name + " Quotes", 22)
+        twitter_source_name = do_word_wrap(source.name + " Quotes", 22)
+        pinterest_source_name = do_word_wrap(source.name + " Quotes", 10)
+      end
       
       facebook_position = calculate_position(facebook_source_name.split("\n").count, 627, 108, 20)
       google_plus_position = calculate_position(google_plus_source_name.split("\n").count, 500, 96, 20)
@@ -118,6 +125,8 @@ class SocialImageWorker
         FileUtils.rm(Rails.root.join("public/generatedimages/pinterest/#{class_name.downcase}/#{source.slug}.jpg"))
       end
     end
+    
+    sleep(5)
   end
   
   def do_word_wrap(text, line_width)
