@@ -12,8 +12,6 @@
         <div class="col-sm-3">
           <% if @proverb.image.present? %>
             <%= image_tag @proverb.image_url(:small), class: "thumbnail", style: "margin-bottom: 0px" %>
-          <% else %>
-            <%= image_tag "http://placehold.it/150x150", class: "thumbnail" %>
           <% end %>
         </div>
         <div class="col-sm-9">
@@ -28,12 +26,11 @@
           </div>
           <div class="panel-options">
             <ul class="nav nav-tabs">
-              <li class="active">
-                <a href="#quotes" data-toggle="tab">Quotes</a>
-              </li>
-              <li>
-                <a href="#quote-topic-suggestions" data-toggle="tab">Topic Suggestions</a>
-              </li>
+              <li class="active"><a href="#quotes" data-toggle="tab">Quotes</a></li>
+              <li><a href="#quote-topic-suggestions" data-toggle="tab">Topic Suggestions</a></li>
+              <% if @proverb.social_image.present? %>
+                <li><a href="#social-image" data-toggle="tab">Social Images</a></li>
+              <% end %>
             </ul>
           </div>
         </div>
@@ -85,6 +82,22 @@
                 </table>
               </div>          
             </div>
+            
+            <% if @proverb.social_image.present? %>
+              <div class="tab-pane" id="social-image">
+                <h4>Facebook</h4>
+                <%= image_tag @proverb.social_image.facebook, style: "max-width: 100%" %>
+                
+                <h4>Twitter</h4>
+                <%= image_tag @proverb.social_image.twitter, style: "max-width: 100%" %>
+                
+                <h4>Google Plus</h4>
+                <%= image_tag @proverb.social_image.google_plus, style: "max-width: 100%" %>
+                
+                <h4>Pinterest</h4>
+                <%= image_tag @proverb.social_image.pinterest, style: "max-width: 100%" %>
+              </div>
+            <% end %>  
             
           </div>
         </div>
