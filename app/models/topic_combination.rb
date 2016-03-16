@@ -8,6 +8,7 @@ class TopicCombination < ActiveRecord::Base
     validate :combination_should_not_exist
     
     before_validation :generate_slug
+    after_commit :expire_cache, on: [:create, :destroy]
     
     def to_param
         slug
@@ -62,8 +63,14 @@ class TopicCombination < ActiveRecord::Base
     end
     
     def cached_similar_combinations
-        Rails.cache.fetch("combination-#{self.id}-#{Date.today.to_s(:number)}") do
+        Rails.cache.fetch("topic-combination-#{self.id}") do
             similar_combinations
+        end
+    end
+    
+    def expire_cache
+        self.similar_combinations.each do |sc|
+            Rails.cache.delete("topic-combination-#{sc.id}")
         end
     end
 end
