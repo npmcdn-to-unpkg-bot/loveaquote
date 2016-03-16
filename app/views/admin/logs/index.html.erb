@@ -30,7 +30,7 @@
           <td class="text-center"><%= log.sub_category %></td>
           <td class="text-center"><%= link_to "View", edit_admin_model_url(log.source) if log.source.present? %></td>
           <td><%= log.description %></td>
-          <td class="text-center"><%= link_to '<i class="fa fa-times"></i>'.html_safe, admin_log_url(log) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td class="text-center" style="vertical-align: middle"><%= link_to '<i class="fa fa-times"></i>'.html_safe, admin_log_url(log) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>

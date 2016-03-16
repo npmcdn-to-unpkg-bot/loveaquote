@@ -22,6 +22,6 @@ class Admin::LogsController < ApplicationController
   private
   
     def set_log
-      @book = Log.find(params[:id])
+      @log = Log.find(params[:id])
     end
 end
