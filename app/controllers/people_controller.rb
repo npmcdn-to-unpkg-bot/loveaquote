@@ -42,7 +42,7 @@ class PeopleController < ApplicationController
   
   def pinterest
     url = URI.encode(person_url(@person))
-    media = URI.encode(@author.image_url(:large))
+    media = URI.encode(@person.image_url(:large))
     description = CGI::escape(@person.name +  ' #quotes')
     redirect_to "http://www.pinterest.com/pin/create/bookmarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"
   end
