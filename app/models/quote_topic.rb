@@ -1,5 +1,5 @@
 class QuoteTopic < ActiveRecord::Base
-    belongs_to :quote, touch :true
+    belongs_to :quote, touch: true
     belongs_to :topic, touch: true
 
     validates :quote_id, presence: true
