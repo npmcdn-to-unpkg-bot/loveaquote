@@ -1,0 +1,81 @@
+<% if params.has_key?(:page) %>
+  <% content_for :canonical, "#{canonical_url(@person, params[:page], format: :html)}" %>
+  <% content_for :title, "#{@person.name} Quotes - #{@person.all_quotes.count.to_s} quotes - Page #{params[:page]}" %>
+  <% content_for :description, "Quotes by #{@person.name} - page #{params[:page]}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
+<% else %>
+  <% content_for :canonical, "#{canonical_url(@person, format: :html)}" %>
+  <% content_for :title, "#{@person.name} Quotes - #{@person.all_quotes.count.to_s} quotes" %>
+  <% content_for :description, "Quotes by #{@person.name}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
+<% end %>
+
+<% content_for :heading, "#{@person.name} Quotes" %>
+
+<% if @person.social_image.present? %>
+  <% content_for :facebook_image, @person.social_image.facebook %>
+<% end %>
+
+<% content_for :breadcrumbs do %>
+	<ul class="breadcrumbs">
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= people_url(format: :html) %>" itemprop="url"><span itemprop="title">People</span></a></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @person.name %></span></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <ul itemscope itemtype="http://schema.org/ItemList">
+    <% @quotes.each do |quote| %>
+      <%= render partial: "people/quote", object: quote %>
+    <% end %>
+  </ul>
+
+  <div class="text-center">
+    <%= paginate @quotes, :views_prefix => 'kaminari_foundation' %>
+  </div>
+<% end %>
+
+<% content_for :comments do %>
+  <div class="fb-comments" data-href="<%= person_url(@person) %>" data-numposts="10" data-colorscheme="light" data-width="100%"></div>
+<% end %>
+
+<% content_for :updated do %>
+  Last Updated - <time itemprop="dateModified" datetime="<%= @person.updated_at.to_datetime %>"><%= @person.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
+<% end %>
+
+<% content_for :aside do %>
+  <div class="widget">
+    <div class="heading">
+      <h5>Follow on Facebook</h5>
+    </div>
+    <div class="content">
+      <div class="fb-page" data-href="https://www.facebook.com/doyouloveaquote/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/doyouloveaquote/"><a href="https://www.facebook.com/doyouloveaquote/">Doyouloveaquote</a></blockquote></div></div>
+    </div>
+  </div>
+  
+  <% if @person.books.any? %>
+    <div class="widget">  
+      <div class="heading">
+        <h5>Books by <%= @person.name %></h5>
+      </div>
+      <div class="content">
+        <div class="row small-up-1 medium-up-1 large-up-1">
+          <% @person.books.each do |book| %>
+            <div class="column">
+              <div class="more-link">
+                <%= book.published? ? (link_to book.name, book_url(book)) : (book.name) %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<% content_for :social_sharing do %>
+    <a rel="nofollow" class="share-person-twitter" title="<%= "Share #{@person.name} quotes on Twitter" %>" target="_blank" href="<%= twitter_person_url(@person) %>"><%= image_tag('social/twitter.png') %></a>
+    <a rel="nofollow" class="share-person-facebook" title="<%= "Share #{@person.name} quotes on Facebook" %>" target="_blank" href="<%= facebook_person_url(@person) %>"><%= image_tag('social/facebook.png') %></a>
+    <% if @person.image.present? %>
+      <a rel="nofollow" class="share-person-pinterest" title="<%= "Share #{@person.name} quotes on Pinterest" %>" target="_blank" href="<%= pinterest_person_url(@person) %>"><%= image_tag('social/pinterest.png') %></a>
+    <% end %>
+<% end %>

@@ -30,6 +30,7 @@ class Admin::BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    @book.build_seo
   end
 
   # GET /books/1/edit

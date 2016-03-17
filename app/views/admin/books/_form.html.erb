@@ -4,7 +4,7 @@
       <div class="panel minimal minimal-gray">
         <div class="panel-heading">
           <div class="panel-title">
-            
+
           </div>
           <div class="panel-options">
             <ul class="nav nav-tabs">
@@ -16,7 +16,7 @@
             </ul>
           </div>
         </div>
-        
+
         <div class="panel-body">
           <div class="tab-content">
             <div class="tab-pane active" id="book">
@@ -28,7 +28,7 @@
                     <%= f.input :popular %>
                     <%= f.input :very_popular %>
                   </div>
-                  
+
                   <div class="col-sm-8">
                     <div class="row">
                       <div class="col-sm-6">
@@ -39,14 +39,14 @@
                         <% end %>
                       </div>
                       <div class="col-sm-6">
-                        <%= f.input :image %>                        
+                        <%= f.input :image %>
                       </div>
                     </div>
                   </div>
-                </div>  
+                </div>
               </div>
             </div>
-            
+
             <div class="tab-pane" id="authors">
               <div id='book_authors'>
                 <%= f.simple_fields_for :compositions do |composition| %>
@@ -57,7 +57,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="tab-pane" id="seo">
               <%= f.simple_fields_for :seo do |seo| %>
                 <%= seo.input :title %>
@@ -76,7 +76,7 @@
               </div>
             </div>
 
-            
+
             <div class="tab-pane" id="fetch">
               <div class="form-inputs">
                 <%= f.input :fetch_url %>
@@ -84,20 +84,25 @@
             </div>
           </div>
         </div>
-      </div>  
-    </div>  
+      </div>
+    </div>
 
     <div class="col-sm-3 text-center">
       <% if @book.errors.any? %>
         <div class="alert alert-danger">
           <%= "#{@book.errors.count} error found" %>
+          <ul class="list-unstyled text-left">
+            <% @book.errors.full_messages.each do |msg| %>
+              <li><%= "=> #{msg}" %></li>
+            <% end %>
+          </ul>
         </div>
       <% end %>
       <div class="form-actions">
         <%= f.button :submit %>
       </div>
     </div>
-  </div>  
+  </div>
 <% end %>
 
 <script type="text/javascript">
