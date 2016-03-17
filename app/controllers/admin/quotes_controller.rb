@@ -2,7 +2,7 @@ class Admin::QuotesController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_quote, only: [:edit, :update, :destroy, :qotd]
   layout "admin"
-  
+
   def index
     if params[:search].present?
       @quotes = Quote.search_by_text(params[:search]).page params[:page]
@@ -15,7 +15,7 @@ class Admin::QuotesController < ApplicationController
   def new
     @quote = Quote.new
   end
-  
+
   def edit
     @quote.build_chapter_and_page if @quote.chapter_and_page.nil? && @quote.source_type == "Book"
     @quote.build_season_and_episode if @quote.season_and_episode.nil? && @quote.source_type == "TvShow"
@@ -25,10 +25,10 @@ class Admin::QuotesController < ApplicationController
   # POST /quotes.json
   def create
     @quote = Quote.new(quote_params)
-    
+
     respond_to do |format|
       if @quote.save
-        format.html { 
+        format.html {
           redirect_to view_context.admin_model_url(@quote.source), notice: 'quote was successfully created.'
         }
         format.json { render :show, status: :created, location: @quote }
@@ -59,7 +59,7 @@ class Admin::QuotesController < ApplicationController
     @quote.destroy
     head :ok
   end
-  
+
   def qotd
     if QuoteOfTheDay.exists?(date: Date.today)
       date = QuoteOfTheDay.maximum("date").next_day
@@ -67,7 +67,7 @@ class Admin::QuotesController < ApplicationController
       date = Date.today
     end
     @qotd = QuoteOfTheDay.new(quote: @quote, date: date)
-    
+
     respond_to do |format|
       if @qotd.save
         QuoteOfTheDayWorker.perform_async(@quote.id)
@@ -84,6 +84,6 @@ class Admin::QuotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quote_params
-      params.require(:quote).permit(:text, :character_id, :source_id, :source_type, :topic_ids => [], quote_topics_attributes: [:id, :topic_id, :_destroy], chapter_and_page_attributes: [:id, :chapter, :page, :_destroy], quoted_in_books_attributes: [:id, :name, :author, :chapter, :page, :_destroy], season_and_episode_attributes: [:id, :season, :episode, :_destroy], found_ats_attributes: [:id, :link, :_destroy])
+      params.require(:quote).permit(:text, :character_id, :source_id, :source_type, :topic_ids => [], quote_topics_attributes: [:id, :topic_id, :_destroy], chapter_and_page_attributes: [:id, :chapter, :page, :_destroy], quoted_in_books_attributes: [:id, :isbn, :name, :author, :chapter, :page, :_destroy], season_and_episode_attributes: [:id, :season, :episode, :_destroy], found_ats_attributes: [:id, :link, :_destroy])
     end
 end

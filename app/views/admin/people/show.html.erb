@@ -206,11 +206,66 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for([:admin, Quote.new]) do |f| %>
-          <div class="form-inputs">
-            <%= f.input :text, input_html: {rows: 5} %>
-            <%= f.hidden_field :source_id, value: @person.id %>
-            <%= f.hidden_field :source_type, value: @person.class.name %>
+          <div class="panel minimal minimal-gray">
+            <div class="panel-heading">
+              <div class="panel-title">
+
+              </div>
+              <div class="panel-options">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#quote" data-toggle="tab">Quote</a></li>
+                  <li><a href="#quote-topics" data-toggle="tab">Topics</a></li>
+                  <li><a href="#quoted-in-books" data-toggle="tab">Quoted in Books</a></li>
+                  <li><a href="#found-ats" data-toggle="tab">Found At</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="panel-body">
+              <div class="tab-content">
+                <div class="tab-pane active" id="quote">
+                  <div class="form-inputs">
+                    <%= f.input :text, input_html: {rows: 5} %>
+                  </div>
+                </div>
+
+                <div class="tab-pane" id="quote-topics">
+                  <div id='quote_topics'>
+                    <%= f.simple_fields_for :quote_topics do |quote_topic| %>
+                      <%= render 'quote_topic_fields', :f => quote_topic %>
+                    <% end %>
+                    <div class='links'>
+                      <%= link_to_add_association '<i class="e-icon-squared-plus"></i> topic'.html_safe, f, :quote_topics %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane" id="quoted-in-books">
+                  <div id='quoted_in_books'>
+                    <%= f.simple_fields_for :quoted_in_books do |quoted_in_book| %>
+                      <%= render 'quoted_in_book_fields', :f => quoted_in_book %>
+                    <% end %>
+                    <div class='links'>
+                      <%= link_to_add_association '<i class="e-icon-squared-plus"></i> quoted in book'.html_safe, f, :quoted_in_books %>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="tab-pane" id="found-ats">
+                  <div id='found_ats'>
+                    <%= f.simple_fields_for :found_ats do |found_at| %>
+                      <%= render 'found_at_fields', :f => found_at %>
+                    <% end %>
+                    <div class='links'>
+                      <%= link_to_add_association '<i class="e-icon-squared-plus"></i> found_at'.html_safe, f, :found_ats %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+          <%= f.hidden_field :source_id, value: @person.id %>
+          <%= f.hidden_field :source_type, value: @person.class.name %>
           <div class="form-actions">
             <%= f.button :submit %>
           </div>

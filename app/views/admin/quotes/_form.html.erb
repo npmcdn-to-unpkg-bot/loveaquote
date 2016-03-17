@@ -12,7 +12,7 @@
     <div class="panel minimal minimal-gray">
       <div class="panel-heading">
         <div class="panel-title">
-          
+
         </div>
         <div class="panel-options">
           <ul class="nav nav-tabs">
@@ -22,27 +22,27 @@
             <% if @quote.quote_topic_suggestions.where(read: false)  .any? %>
               <li><a href="#quote-topic-suggestions" data-toggle="tab">Topic Suggestions</a></li>
             <% end %>
-            
+
             <% if @quote.source_type == "Person" %>
               <li><a href="#quoted-in-books" data-toggle="tab">Quoted in Books</a></li>
               <li><a href="#found-ats" data-toggle="tab">Found At</a></li>
             <% end %>
-            
+
             <% if @quote.source_type == "Book" %>
               <li><a href="#chapter-and-page" data-toggle="tab">Chapter And Page</a></li>
             <% end %>
-            
+
             <% if @quote.source_type == "TvShow" %>
               <li><a href="#season-and-episode" data-toggle="tab">Season And Episode</a></li>
             <% end %>
-            
+
             <% if (@quote.source_type == "Book" || @quote.source_type == "TvShow" || @quote.source_type == "Movie") && @quote.source.characters.present? %>
               <li><a href="#quote-character" data-toggle="tab">Quote Character</a></li>
             <% end %>
           </ul>
         </div>
       </div>
-      
+
       <div class="panel-body">
         <div class="tab-content">
           <div class="tab-pane active" id="quote">
@@ -50,7 +50,7 @@
               <%= f.input :text, input_html: {rows: 5} %>
             </div>
           </div>
-          
+
           <div class="tab-pane" id="quote-topics">
             <div id='quote_topics'>
               <%= f.simple_fields_for :quote_topics do |quote_topic| %>
@@ -61,7 +61,7 @@
               </div>
             </div>
           </div>
-          
+
           <% if @quote.quote_topic_suggestions.any? %>
             <div class="tab-pane" id="quote-topic-suggestions">
               <div id='quote_topic_suggestions'>
@@ -72,7 +72,7 @@
                       <th width="40%" class="text-center" colspan="2">Manage</th>
                     </tr>
                   </thead>
-                
+
                   <tbody>
                     <% @quote.quote_topic_suggestions.where(read: false).each do |quote_topic_suggestion| %>
                       <tr>
@@ -85,14 +85,14 @@
                 </table>
               </div>
             </div>
-            
+
             <script type="text/javascript">
               $(function() {
                 $(".accept_suggestion")
                 .on("ajax:complete", function(e, data, status, xhr) {
                     $(this).closest("tr").remove();
                 });
-              
+
                 $(".decline_suggestion")
                 .on("ajax:complete", function(e, data, status, xhr) {
                     $(this).closest("tr").remove();
@@ -100,7 +100,7 @@
               });
             </script>
           <% end %>
-          
+
           <% if @quote.source_type == "Person" %>
             <div class="tab-pane" id="quoted-in-books">
               <div id='quoted_in_books'>
@@ -124,7 +124,7 @@
               </div>
             </div>
           <% end %>
-          
+
           <% if @quote.source_type == "Book" %>
             <div class="tab-pane" id="chapter-and-page">
               <%= f.simple_fields_for :chapter_and_page do |cap| %>
@@ -133,7 +133,7 @@
               <% end %>
             </div>
           <% end %>
-          
+
           <% if @quote.source_type == "TvShow" %>
             <div class="tab-pane" id="season-and-episode">
               <%= f.simple_fields_for :season_and_episode do |sae| %>
@@ -142,18 +142,18 @@
               <% end %>
             </div>
           <% end %>
-          
+
           <% if (@quote.source_type == "Book" || @quote.source_type == "TvShow" || @quote.source_type == "Movie") && @quote.source.characters.present? %>
             <div class="tab-pane" id="quote-character">
               <%= f.association :character, collection: @quote.source.characters.order(name: :asc) %>
             </div>
           <% end %>
-          
+
         </div>
       </div>
     </div>
   </div>
-  
+
   <div class="col-sm-3 text-center">
     <% if @quote.errors.any? %>
       <div class="alert alert-danger">
