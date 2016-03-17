@@ -11,7 +11,7 @@
 <% content_for :heading, "#{@topic.name} Quotes" %>
 
 <% if @topic.social_image.present? %>
-  <% content_for :facebook_image, @person.social_image.facebook %>
+  <% content_for :facebook_image, @topic.social_image.facebook %>
 <% end %>
 
 <% content_for :breadcrumbs do %>
