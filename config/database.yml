@@ -1,21 +1,18 @@
-default: &default
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
-
 development:
   adapter: postgresql
   database: loveaquote_development
   username: postgres
   password: postgres
   host: localhost
+  template: template0
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: db/test.sqlite3
+  adapter: postgresql
+  database: loveaquote_test
+  username: postgres
+  password: postgres
+  template: template0
+  host: localhost
 
 production:
   adapter: postgresql

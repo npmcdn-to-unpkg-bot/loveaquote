@@ -45,8 +45,18 @@ gem 'dalli'
 gem "rack-cache"
 
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'rack-mini-profiler'
+end
+
+group :test do
+  gem 'faker'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
 end
