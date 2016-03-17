@@ -4,6 +4,6 @@ class WelcomeController < ApplicationController
     @topics = Topic.cached_very_popular
     @books = Book.cached_very_popular
     @qotd = QuoteOfTheDay.today
-    @recents = TimeLine.cached_recent
+    @recents = TimeLine.recent
   end
 end
