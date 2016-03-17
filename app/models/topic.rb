@@ -5,6 +5,7 @@ class Topic < ActiveRecord::Base
     include Seoable
     include SocialImageable
     include TimeLineable
+    include SearchSuggestable
     
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
     
@@ -14,7 +15,6 @@ class Topic < ActiveRecord::Base
     has_many :topic_aliases, dependent: :destroy
     has_many :topic_combinations, foreign_key: "primary_topic_id", dependent: :destroy
     accepts_nested_attributes_for :topic_combinations, reject_if: :all_blank, allow_destroy: true
-    has_many :search_suggestions, dependent: :destroy
     has_many :quote_topic_suggestions, dependent: :destroy
     
     # name should be present and unique

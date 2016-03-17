@@ -6,6 +6,7 @@ class Person < ActiveRecord::Base
     include Seoable
     include SocialImageable
     include TimeLineable
+    include SearchSuggestable
     
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
     
@@ -16,7 +17,6 @@ class Person < ActiveRecord::Base
     has_many :character_sources
     has_many :characters, -> {uniq}, through: :character_sources
     has_many :character_quotes, through: :characters, source: :quotes
-    has_many :search_suggestions, as: :source, dependent: :destroy
 
     # has many books
     has_many :compositions

@@ -5,6 +5,7 @@ class Character < ActiveRecord::Base
     include Seoable
     include SocialImageable
     include TimeLineable
+    include SearchSuggestable
     
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
     
@@ -12,8 +13,7 @@ class Character < ActiveRecord::Base
     has_many :books, through: :character_sources, source: :source, source_type: "Book"
     has_many :people, through: :character_sources
     has_many :quotes
-    has_many :search_suggestions, dependent: :destroy
-    
+
     mount_uploader :image, ImageUploader
     
     validates :name, presence: true, uniqueness: true, blank: false

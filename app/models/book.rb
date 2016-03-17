@@ -6,6 +6,7 @@ class Book < ActiveRecord::Base
     include Seoable
     include SocialImageable
     include TimeLineable
+    include SearchSuggestable
     
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
     
@@ -16,8 +17,7 @@ class Book < ActiveRecord::Base
     has_many :character_sources, as: :source, dependent: :destroy
     accepts_nested_attributes_for :character_sources, reject_if: :all_blank, allow_destroy: true
     has_many :characters, through: :character_sources
-    has_many :search_suggestions, dependent: :destroy
-    
+
     has_many :compositions
     accepts_nested_attributes_for :compositions, reject_if: :all_blank, allow_destroy: true
     has_many :people, through: :compositions

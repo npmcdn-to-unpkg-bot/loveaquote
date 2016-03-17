@@ -6,6 +6,7 @@ class Proverb < ActiveRecord::Base
     include Seoable
     include SocialImageable
     include TimeLineable
+    include SearchSuggestable
     
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
     
@@ -13,8 +14,7 @@ class Proverb < ActiveRecord::Base
     has_one :time_line, as: :item, dependent: :destroy
     has_many :quote_topic_suggestions, through: :quotes
     has_many :featured_topics, as: :source, dependent: :destroy
-    has_many :search_suggestions, as: :source, dependent: :destroy
-    
+
     mount_uploader :image, ImageUploader
     
     # name should be present and unique
