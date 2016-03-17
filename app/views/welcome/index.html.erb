@@ -7,17 +7,15 @@
 <% content_for :canonical, root_url %>
 
 <% content_for :content do %>
-  <% cache "qotd-#{Date.today.to_s}" do %>
-    <% if @qotd %>
-      <div class="row">
-        <div class="small-12 medium-10 medium-centered columns">
-          <h2 class="text-center">Quote Of The Day</h2>
-          <p class="text-center"><%=  @qotd.quote.text %> - <%= link_to @qotd.quote.source.name, model_url(@qotd.quote.source, format: :html), title: "#{@qotd.quote.source.name} Quotes" %></p>
-        </div>
+  <% if @qotd %>
+    <div class="row">
+      <div class="small-12 medium-10 medium-centered columns">
+        <h2 class="text-center">Quote Of The Day</h2>
+        <p class="text-center"><%=  @qotd.quote.text %> - <%= link_to @qotd.quote.source.name, model_url(@qotd.quote.source, format: :html), title: "#{@qotd.quote.source.name} Quotes" %></p>
       </div>
-    <% end %>
+    </div>
   <% end %>
-  
+
   <div class="row">
   	<div class="small-12 medium-12 large-6 columns">
   		<h2 class="text-center">Topics</h2>
@@ -34,7 +32,7 @@
         <%= link_to "More Topics", topics_url %>
       </div>
   	</div>
-  	
+
   	<div class="small-12 medium-12 large-6 columns">
   	  <div class="row">
   	    <div class="small-12 columns">
@@ -52,7 +50,7 @@
             <%= link_to "More People", people_url %>
           </div>
   	    </div>
-  	    
+
   	    <div class="small-12 columns">
       	  <h2 class="text-center">Books</h2>
     		  <div class="row small-up-1 medium-up-2 large-up-2">
@@ -66,9 +64,9 @@
           </div>
           <div class="more-link text-center">
             <%= link_to "More Books", books_url %>
-          </div>  	      
+          </div>
   	    </div>
-  	    
+
   	  </div>
   	</div>
   </div>
