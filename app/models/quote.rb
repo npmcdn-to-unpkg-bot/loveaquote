@@ -5,7 +5,7 @@ class Quote < ActiveRecord::Base
     pg_search_scope :search_by_text, against: :text, using: { tsearch: {prefix: true} }
 
     # belongs to source
-    belongs_to :source, polymorphic: true
+    belongs_to :source, polymorphic: true, touch: true
     belongs_to :character
 
     has_one :chapter_and_page, inverse_of: :quote, dependent: :destroy
@@ -31,7 +31,6 @@ class Quote < ActiveRecord::Base
 
     before_validation :strip_text
     after_commit :get_topic_suggestions, on: [:create, :update]
-    after_update :touch_source
 
     def strip_text
         self.text = self.text.strip
@@ -39,12 +38,5 @@ class Quote < ActiveRecord::Base
 
     def get_topic_suggestions
         SuggestTopicsWorker.perform_async(self.id)
-    end
-
-    def touch_source
-        if self.text_changed?
-            self.source.touch
-            self.topics.each {|t| t.touch }
-        end
     end
 end
