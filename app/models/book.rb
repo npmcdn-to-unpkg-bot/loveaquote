@@ -18,7 +18,7 @@ class Book < ActiveRecord::Base
     accepts_nested_attributes_for :character_sources, reject_if: :all_blank, allow_destroy: true
     has_many :characters, through: :character_sources
 
-    has_many :compositions
+    has_many :compositions, dependent: :destroy
     accepts_nested_attributes_for :compositions, reject_if: :all_blank, allow_destroy: true
     has_many :people, through: :compositions
 

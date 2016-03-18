@@ -16,7 +16,7 @@ class Admin::BooksController < ApplicationController
         @books = Book.published.search_by_name(params[:search]).order(name: :ASC).page params[:page]
       end
     elsif params[:person].present?
-      @books = Book.where(person_id: params[:person]).order(name: :ASC).page params[:page]
+      @books = Book.joins(:compositions).where(compositions: { person_id: params[:person] }).order(name: :ASC).page params[:page]
     else
       @books = Book.order(name: :ASC).page params[:page]
     end
