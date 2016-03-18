@@ -24,7 +24,7 @@
 			<section class="recent-posts">
 				<h4>Recently Added</h4>
 				<ul class="list-unstyled">
-					<% TimeLine.recent do |recent| %>
+					<% TimeLine.recent.each do |recent| %>
 						<li><%= link_to recent.item.name + " Quotes", model_url(recent.item, format: :html) %></li>
 					<% end %>
 				</ul>
