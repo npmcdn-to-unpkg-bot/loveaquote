@@ -30,9 +30,9 @@
   </ul>
 
   <div class="text-center">
-    <%= paginate @quotes, :views_prefix => 'kaminari_foundation' %>    
+    <%= paginate @quotes, :views_prefix => 'kaminari_foundation' %>
   </div>
-  
+
 <% end %>
 
 <% content_for :comments do %>
@@ -60,8 +60,8 @@
       <div class="fb-page" data-href="https://www.facebook.com/doyouloveaquote/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/doyouloveaquote/"><a href="https://www.facebook.com/doyouloveaquote/">Doyouloveaquote</a></blockquote></div></div>
     </div>
   </div>
-  
-  <% if @topic.topic_combinations.any? %>
+
+  <% if @topic.all_topic_combinations.any? %>
     <div class="widget">
       <div class="heading">
         <h5>Similar Topics</h5>
