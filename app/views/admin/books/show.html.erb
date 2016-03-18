@@ -154,16 +154,48 @@
         <% @new_quote = Quote.new %>
         <% @new_quote.build_chapter_and_page %>
         <%= simple_form_for([:admin, @new_quote]) do |f| %>
-          <div class="form-inputs">
-            <%= f.input :text, input_html: {rows: 5} %>
-            <%= f.association :character, collection: @book.characters.order(name: :asc) if @book.characters.any? %>
-            <%= f.simple_fields_for :chapter_and_page do |cap| %>
-              <%= cap.input :chapter %>
-              <%= cap.input :page %>
-            <% end %>
-            <%= f.hidden_field :source_id, value: @book.id %>
-            <%= f.hidden_field :source_type, value: @book.class.name %>
+          <div class="panel minimal minimal-gray">
+            <div class="panel-heading">
+              <div class="panel-title">
+
+              </div>
+              <div class="panel-options">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#quote" data-toggle="tab">Quote</a></li>
+                  <li><a href="#quote-topics" data-toggle="tab">Topics</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="panel-body">
+              <div class="tab-content">
+                <div class="tab-pane active" id="quote">
+                  <div class="form-inputs">
+                    <%= f.input :text, input_html: {rows: 5} %>
+                    <%= f.simple_fields_for :chapter_and_page do |cap| %>
+                      <%= cap.input :chapter %>
+                      <%= cap.input :page %>
+                    <% end %>
+                    <%= f.association :character, collection: @book.characters.order(name: :asc) if @book.characters.any? %>
+                  </div>
+                </div>
+
+                <div class="tab-pane" id="quote-topics">
+                  <div id='quote_topics'>
+                    <%= f.simple_fields_for :quote_topics do |quote_topic| %>
+                      <%= render 'quote_topic_fields', :f => quote_topic %>
+                    <% end %>
+                    <div class='links'>
+                      <%= link_to_add_association '<i class="e-icon-squared-plus"></i> topic'.html_safe, f, :quote_topics %>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
+          <%= f.hidden_field :source_id, value: @book.id %>
+          <%= f.hidden_field :source_type, value: @book.class.name %>
           <div class="form-actions">
             <%= f.button :submit %>
           </div>
