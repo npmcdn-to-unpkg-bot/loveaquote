@@ -51,13 +51,13 @@
                 <thead>
                   <% if @book.characters.any? %>
                     <th width="5%" class="text-center">Verified</th>
-                    <th width="65%" class="text-center">Quote</th>
+                    <th width="60%" class="text-center">Quote</th>
                     <th width="20%" class="text-center">Character</th>
                   <% else %>
                     <th width="5%" class="text-center">Verified</th>
-                    <th width="85%" class="text-center">Quote</th>
+                    <th width="80%" class="text-center">Quote</th>
                   <% end %>
-                  <th width="10%" class="text-center" colspan="2">Manage</th>
+                  <th width="15%" class="text-center" colspan="3">Manage</th>
                 </thead>
 
                 <tbody>
@@ -68,8 +68,9 @@
                     <% if @book.characters.any? %>
                       <td><%= link_to quote.character.name, admin_character_path(quote.character) if quote.character.present? %></td>
                     <% end %>
-                    <td class="text-center"><%= link_to "Edit", edit_admin_quote_url(quote), target: "_blank", class: "btn btn-primary btn-xs" %></td>
-                    <td class="text-center"><%= link_to "Delete", admin_quote_url(quote), method: :delete, remote: true, class: "delete-quote btn btn-red btn-xs" %></td>
+                    <td class="text-center"><%= link_to '<i class="fa fa-calendar"></i>'.html_safe, qotd_admin_quote_url(quote), remote: true %></td>
+                    <td class="text-center"><%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_admin_quote_url(quote), target: "_blank" %></td>
+                    <td class="text-center"><%= link_to '<i class="fa fa-times"></i>'.html_safe, admin_quote_url(quote), method: :delete, remote: true %></td>
                   </tr>
                   <% end %>
                 </tbody>
@@ -200,6 +201,20 @@
             <%= f.button :submit %>
           </div>
         <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade in" id="new-qotd-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <p id="qotd"></p>
       </div>
     </div>
   </div>
