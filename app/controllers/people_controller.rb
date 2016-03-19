@@ -19,12 +19,14 @@ class PeopleController < ApplicationController
     @quotes = @person.all_quotes.order(total_share_count: :desc).order(text: :asc).page params[:page]
 
     expires_in 1.hour, public: true, must_revalidate: true
+
     if stale?(@person)
       respond_to do |format|
         format.html { render layout: "single" }
         format.amp { render layout: "single" }
       end
     end
+
   end
 
   def search
@@ -38,18 +40,18 @@ class PeopleController < ApplicationController
   end
 
   def twitter
-    url = URI.encode(person_url(@person))
+    url = URI.encode(person_url(@person, format: :html))
     text = CGI::escape("#{@person.name} Quotes")
     redirect_to "https://twitter.com/intent/tweet?text=#{text}&amp;url=#{url}&amp;via=DoYouLoveAQuote"
   end
 
   def facebook
-    url = URI.encode(person_url(@person))
+    url = URI.encode(person_url(@person, format: :html))
     redirect_to "https://www.facebook.com/sharer/sharer.php?u=#{url}"
   end
 
   def pinterest
-    url = URI.encode(person_url(@person))
+    url = URI.encode(person_url(@person, format: :html))
     if @person.social_image && @person.social_image.pinterest.present?
       media = URI.encode(@person.social_image.pinterest_url)
     elsif @person.image.present?

@@ -1,6 +1,6 @@
 class ProverbsController < ApplicationController
   before_action :set_proverb, only: [:show, :twitter, :faceproverb, :pinterest]
-  
+
   def index
     @proverbs = Proverb.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
     @canonical = proverbs_url(format: :html)
@@ -16,34 +16,34 @@ class ProverbsController < ApplicationController
     end
     render layout: "single"
   end
-  
+
   def alphabet
     @alphabet = params[:alphabet].upcase
     @proverbs = Proverb.by_alphabet(@alphabet).published.order(name: "ASC")
     @canonical = alphabet_proverbs_url(format: :html)
     render layout: "alphabet"
   end
-  
+
   def twitter
-    url = URI.encode(proverb_url(@proverb))
+    url = URI.encode(proverb_url(@proverb, format: :html))
     text = CGI::escape("#{@proverb.name} Quotes")
     redirect_to "https://twitter.com/intent/tweet?text=#{text}&amp;url=#{url}&amp;via=DoYouLoveAQuote"
   end
-  
+
   def facebook
-    url = URI.encode(proverb_url(@proverb))
+    url = URI.encode(proverb_url(@proverb, format: :html))
     redirect_to "https://www.facebook.com/sharer/sharer.php?u=#{url}"
   end
-  
+
   def pinterest
-    url = URI.encode(proverb_url(@proverb))
+    url = URI.encode(proverb_url(@proverb, format: :html))
     media = URI.encode(@author.image_url(:large))
     description = CGI::escape(@proverb.name +  ' #quotes')
     redirect_to "http://www.pinterest.com/pin/create/proverbmarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"
   end
-  
+
   private
-  
+
   def set_proverb
     @proverb = Proverb.published.find_by_slug(params[:id])
     if ! @proverb

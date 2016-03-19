@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :twitter, :facebook, :pinterest]
-  
+
   def index
     @topics = Topic.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
     @canonical = topics_url(format: :html)
@@ -16,34 +16,34 @@ class TopicsController < ApplicationController
     end
     render layout: "single"
   end
-  
+
   def alphabet
     @alphabet = params[:alphabet].upcase
     @topics = Topic.by_alphabet(@alphabet).published.order(name: "ASC")
     @canonical = alphabet_topics_url(format: :html)
     render layout: "alphabet"
   end
-  
+
   def twitter
-    url = URI.encode(topic_url(@topic))
+    url = URI.encode(topic_url(@topic, format: :html))
     text = CGI::escape("#{@topic.name} Quotes")
     redirect_to "https://twitter.com/intent/tweet?text=#{text}&amp;url=#{url}&amp;via=DoYouLoveAQuote"
   end
-  
+
   def facebook
-    url = URI.encode(topic_url(@topic))
+    url = URI.encode(topic_url(@topic, format: :html))
     redirect_to "https://www.facebook.com/sharer/sharer.php?u=#{url}"
   end
-  
+
   def pinterest
-    url = URI.encode(topic_url(@topic))
+    url = URI.encode(topic_url(@topic, format: :html))
     media = URI.encode(@author.image_url(:large))
     description = CGI::escape(@topic.name +  ' #quotes')
     redirect_to "http://www.pinterest.com/pin/create/topicmarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"
   end
-  
+
   private
-  
+
   def set_topic
       @topic = Topic.published.find_by_slug(params[:id])
       if ! @topic
