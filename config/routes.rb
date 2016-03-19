@@ -143,7 +143,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'feed' => 'welcome#feed', :as => :feed, :defaults => { :format => 'atom' }
+  get 'feed' => 'welcome#feed', :as => :feed
   get 'privacy-policy' => 'static_pages#privacy_policy', as: :privacy_policy
 	get 'about-us' => 'static_pages#about_us', as: :about_us
 	get 'disclaimer' => 'static_pages#disclaimer', as: :disclaimer

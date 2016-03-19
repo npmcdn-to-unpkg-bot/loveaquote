@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
   def feed
     @timelines = TimeLine.all.order(created_at: :DESC).limit(20)
     respond_to do |format|
-			format.atom { render :layout => false }
+			format.xml { render :layout => false }
 			format.rss { render :layout => false }
 		end
   end

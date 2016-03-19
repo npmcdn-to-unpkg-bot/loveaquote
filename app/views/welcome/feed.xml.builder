@@ -13,7 +13,7 @@ xml.rss :version => "2.0" do
         xml.title timeline.item.name + "Quotes"
         xml.pubDate timeline.created_at.to_s(:rfc822)
         xml.link model_url(timeline.item, format: :html)
-        xml.guid timeline.id
+        xml.guid model_url(timeline.item, format: :html)
       end
     end
   end
