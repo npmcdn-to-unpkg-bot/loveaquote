@@ -5,4 +5,12 @@ class WelcomeController < ApplicationController
     @books = Book.cached_very_popular
     @qotd = QuoteOfTheDay.today
   end
+
+  def feed
+    @timelines = TimeLine.all.order(created_at: :DESC).limit(20)
+    respond_to do |format|
+			format.atom { render :layout => false }
+			format.rss { render :layout => false }
+		end
+  end
 end
