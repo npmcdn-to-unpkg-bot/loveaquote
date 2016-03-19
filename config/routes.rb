@@ -49,6 +49,7 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show] do
     collection do
       get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
+      get 'feed'
     end
 
     member do

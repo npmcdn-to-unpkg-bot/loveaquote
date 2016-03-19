@@ -3,9 +3,9 @@
 xml.instruct! :xml, :version => "1.0"
 xml.rss :version => "2.0" do
   xml.channel do
-    xml.title "LoveAQuote People Feed"
+    xml.title "LoveAQuote Book Feed"
     xml.description "The Quote Lover's Community"
-    xml.link "#{feed_people_url}"
+    xml.link "#{feed_books_url}"
     xml.language "en"
 
     for timeline in @timelines
