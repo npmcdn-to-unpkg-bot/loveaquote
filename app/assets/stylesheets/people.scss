@@ -1,9 +1,11 @@
 .people.index main ul,
+.people.search main ul,
 .people.alphabet main ul {
   list-style-type: none;
 }
 
 .people.show main ul,
+.people.search main ul,
 .people.alphabet main ul {
   list-style-type: none;
 }
@@ -17,7 +19,8 @@
   border: 1px solid #E7E7E7;
 }
 
-.people.show {
+.people.show,
+.people.search {
   header {
     h1 {
       font-size: 30px;
@@ -28,7 +31,7 @@
       margin-bottom: 20px;
     }
   }
-  
+
   main#content {
     margin: 20px 0;
 
@@ -36,7 +39,7 @@
       margin: 0 auto;
       margin-bottom: 20px;
     }
-    
+
     .featured-topic-sub-heading {
       font-weight: bold;
       font-size: 100%;

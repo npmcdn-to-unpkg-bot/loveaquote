@@ -18,7 +18,8 @@
 	<ul class="breadcrumbs">
     <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
     <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= people_url(format: :html) %>" itemprop="url"><span itemprop="title">People</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @person.name %></span></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= person_url(@person, format: :html) %>" itemprop="url"><span itemprop="title"><%= @person.name + " Quotes" %></span></a></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">Search</span></li>
   </ul>
 <% end %>
 
@@ -89,4 +90,8 @@
       </div>
     </div>
   <% end %>
+<% end %>
+
+<% content_for :additional_tags do %>
+  <meta name="robots" content="noindex,follow">
 <% end %>

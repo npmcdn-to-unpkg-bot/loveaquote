@@ -6,7 +6,7 @@
   <body class="<%= controller.controller_name %> <%= controller.action_name  %>" itemscope="itemscope" itemtype="http://schema.org/WebPage">
     <%= render "layouts/partials/google_analytics" %>
     <%= render "layouts/partials/facebook_sdk" %>
-    
+
     <div class="row">
       <div class="large-12 columns">
         <%= render "layouts/partials/nav_bar" %>
@@ -26,14 +26,7 @@
                       </div>
                     </div>
                     <div class="small-12 medium-6 columns last">
-                      <%= form_tag request.path, method: :get do %>
-                        <div class="input-group">
-                          <%= text_field_tag :search, params[:search], class: "input-group-field small" %>
-                          <div class="input-group-button">
-                            <%= submit_tag "Search", class: "button small secondary" %>
-                          </div>
-                        </div>
-                      <% end %>            
+                      <%= yield :search_form %>
                     </div>
                   </div>
                   <div itemprop="text">

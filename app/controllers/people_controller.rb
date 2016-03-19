@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_action :set_person, only: [:show, :redirect_to_person, :twitter, :facebook, :pinterest]
+  before_action :set_person, only: [:show, :redirect_to_person, :twitter, :facebook, :pinterest, :search]
 
   def index
     @people = Person.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
@@ -16,16 +16,21 @@ class PeopleController < ApplicationController
   end
 
   def show
-    if params[:search].present?
-      UserSearchWorker.perform_async(@person.class.name, @person.id, params[:search])
-      @quotes = @person.all_quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page params[:page]
-    else
-      @quotes = @person.all_quotes.order(total_share_count: :desc).order(text: :asc).page params[:page]
+    @quotes = @person.all_quotes.order(total_share_count: :desc).order(text: :asc).page params[:page]
+
+    expires_in 1.hour, public: true, must_revalidate: true
+    if stale?(@person)
+      respond_to do |format|
+        format.html { render layout: "single" }
+        format.amp { render layout: "single" }
+      end
     end
-    respond_to do |format|
-      format.html { render layout: "single" }
-      format.amp {render   layout: "single"}
-    end
+  end
+
+  def search
+    UserSearchWorker.perform_async(@person.class.name, @person.id, params[:search]) if params[:search].present?
+    @quotes = @person.all_quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page params[:page]
+    render layout: "single"
   end
 
   def redirect_to_person

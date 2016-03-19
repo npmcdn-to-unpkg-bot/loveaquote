@@ -38,5 +38,7 @@
 <meta name="alexaVerifyID" content="<%= Setting.alexa_verification %>" />
 <% end %>
 
+<%= yield :additional_tags %>
+
 <%= favicon_link_tag %>
 <%= csrf_meta_tags %>
