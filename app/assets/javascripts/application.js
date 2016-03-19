@@ -1,6 +1,9 @@
-$(function(){ $(document).foundation(); });
+//= require jquery
+//= require jquery_ujs
+//= require foundation
+//= require_tree .
 
-/* global ga */
+$(function(){ $(document).foundation(); });
 
 $(function() {
     $(".share-quote-twitter").on("click", function(){
@@ -13,5 +16,5 @@ $(function() {
 
     $(".share-quote-pinterest").on("click", function(){
         ga('send', 'event', 'Quote', 'Shared', 'Pinterest');
-    });
+    })
 });
