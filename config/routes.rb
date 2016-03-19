@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   resources :proverbs, only: [:index, :show] do
     collection do
       get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
+      get 'feed'
     end
     member do
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
@@ -77,6 +78,7 @@ Rails.application.routes.draw do
   resources :topics, only: [:index, :show] do
     collection do
       get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
+      get 'feed'
     end
 
     member do
@@ -91,6 +93,7 @@ Rails.application.routes.draw do
   resources :movies, only: [:index, :show] do
     collection do
       get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
+      get 'feed'
     end
 
     member do
@@ -105,6 +108,7 @@ Rails.application.routes.draw do
   resources :tv_shows, only: [:index, :show], path: "tv-shows" do
     collection do
       get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
+      get 'feed'
     end
 
     member do
@@ -119,6 +123,7 @@ Rails.application.routes.draw do
   resources :characters, only: [:index, :show] do
     collection do
       get ':alphabet', action: 'alphabet', as: 'alphabet', alphabet: /[A-Z]/
+      get 'feed'
     end
 
     member do

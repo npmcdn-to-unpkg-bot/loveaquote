@@ -5,7 +5,7 @@ xml.rss :version => "2.0" do
   xml.channel do
     xml.title "LoveAQuote People Feed"
     xml.description "The Quote Lover's Community"
-    xml.link "#{feed_people_url}"
+    xml.link "#{people_url(format: :html)}"
     xml.language "en"
 
     for timeline in @timelines

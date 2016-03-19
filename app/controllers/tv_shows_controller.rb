@@ -42,6 +42,14 @@ class TvShowsController < ApplicationController
     redirect_to "http://www.pinterest.com/pin/create/tv_showmarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"
   end
 
+  def feed
+    @timelines = TimeLine.where(item_type: "TvShow").order(created_at: :DESC).limit(20)
+    respond_to do |format|
+      format.html { redirect_to feed_url, status: 301 }
+      format.rss { render layout: false }
+    end
+  end
+
   private
 
   def set_tv_show
