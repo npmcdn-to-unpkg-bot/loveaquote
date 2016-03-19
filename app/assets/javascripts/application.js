@@ -4,6 +4,10 @@
 
 $(document).foundation();
 
+$(function(){
+  console.log("Working");
+});
+
 $(function() {
     $(".share-quote-twitter").on("click", function(){
         ga('send', 'event', 'Quote', 'Shared', 'Twitter');
