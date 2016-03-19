@@ -3,7 +3,7 @@
 //= require foundation
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(document).foundation();
 
 $(function() {
     $(".share-quote-twitter").on("click", function(){
