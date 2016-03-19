@@ -34,7 +34,7 @@ gem 'kaminari', github: 'amatsuda/kaminari'
 gem 'entypo-rails'
 gem 'stringex'
 gem 'sitemap_generator'
-gem 'carrierwave'
+gem 'carrierwave', github: "carrierwaveuploader/carrierwave"
 gem 'rmagick'
 gem 'fog'
 
@@ -44,11 +44,12 @@ gem 'pg_search'
 gem 'dalli'
 gem "rack-cache"
 
+gem 'web-console', '~> 2.0', group: :development
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 

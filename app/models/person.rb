@@ -7,9 +7,9 @@ class Person < ActiveRecord::Base
     include SocialImageable
     include TimeLineable
     include SearchSuggestable
-    
+
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
-    
+
     belongs_to :nationality
     belongs_to :profession
     has_many :quote_topic_suggestions, through: :quotes
@@ -27,37 +27,37 @@ class Person < ActiveRecord::Base
 
     # name should be present and unique
     # slug should be present and unique
-    
+
     validates :name, presence: true, uniqueness: true, blank: false
     validates :slug, presence: true, uniqueness: true, blank: false
-    
+
     scope :published, -> {where(published: true)}
     scope :draft, -> {where(published: false)}
     scope :popular, -> { where(popular: true) }
     scope :very_popular, -> { where(very_popular: true) }
     scope :by_alphabet, ->(alphabet) {where('name like ?', "#{alphabet}%")}
-    
-    before_validation :strip_name, :generate_slug
+
+    before_validation :strip_name, :generate_slug, if: :name
     after_commit :fetch_quotes, on: [:create, :update]
     after_save :expire_cache
-    
+
     def to_param
         slug
-    end    
-    
+    end
+
     def strip_name
         self.name = self.name.strip
     end
-    
+
     def generate_slug
         self.slug = (self.name + " " + "Quotes").to_url if !self.slug.present?
     end
-    
+
     def all_quotes
         quotes = self.quotes.pluck(:id) + self.book_quotes.pluck(:id) + self.character_quotes.pluck(:id)
         Quote.where(id: quotes)
     end
-    
+
     def fetch_quotes
         BrainyquoteWorker.perform_async(self.id) if self.fetch_url.present? && URI::parse(self.fetch_url).host == "www.brainyquote.com"
     end
@@ -67,7 +67,7 @@ class Person < ActiveRecord::Base
             very_popular.published.order(name: "ASC").to_a
         end
     end
-    
+
     def expire_cache
         Rails.cache.delete("very_popular_people") if self.very_popular? && self.very_popular_changed?
     end

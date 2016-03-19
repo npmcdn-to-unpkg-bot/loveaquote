@@ -1,10 +1,19 @@
 GIT
   remote: git://github.com/amatsuda/kaminari.git
-  revision: 27a0c850b50a8bf095665ad3c0907efada919533
+  revision: 3974ae5f39ce31bfca28d17eccd8daf3ca263aa3
   specs:
     kaminari (1.0.0.alpha)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+
+GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: a2c93fe1a9d3a3f60d1662e5ec34fdba7bf2b304
+  specs:
+    carrierwave (0.10.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
 
 GIT
   remote: git://github.com/seuros/capistrano-sidekiq.git
@@ -59,7 +68,7 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
-    bcrypt (3.1.10)
+    bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -87,11 +96,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    carrierwave (0.10.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
     chronic (0.10.2)
@@ -119,7 +123,7 @@ GEM
     entypo-rails (2.2.3)
       railties (>= 3.1, <= 5)
     erubis (2.7.0)
-    excon (0.47.0)
+    excon (0.48.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -167,7 +171,7 @@ GEM
     fog-atmos (0.1.0)
       fog-core
       fog-xml
-    fog-aws (0.8.1)
+    fog-aws (0.9.1)
       fog-core (~> 1.27)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
@@ -180,7 +184,7 @@ GEM
       builder
       excon (~> 0.45)
       formatador (~> 0.2)
-    fog-dynect (0.0.2)
+    fog-dynect (0.0.3)
       fog-core
       fog-json
       fog-xml
@@ -194,7 +198,7 @@ GEM
     fog-json (1.0.2)
       fog-core (~> 1.0)
       multi_json (~> 1.10)
-    fog-local (0.2.1)
+    fog-local (0.3.0)
       fog-core (~> 1.27)
     fog-powerdns (0.1.1)
       fog-core (~> 1.27)
@@ -233,7 +237,7 @@ GEM
     fog-voxel (0.1.0)
       fog-core
       fog-xml
-    fog-vsphere (0.6.0)
+    fog-vsphere (0.6.3)
       fog-core
       rbvmomi (~> 1.8)
     fog-xenserver (0.2.3)
@@ -245,7 +249,7 @@ GEM
     font-awesome-rails (4.5.0.1)
       railties (>= 3.2, < 5.1)
     formatador (0.2.5)
-    foundation-rails (6.2.0.0)
+    foundation-rails (6.2.0.1)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
       sprockets-es6 (>= 0.9.0)
@@ -257,8 +261,8 @@ GEM
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
-    jquery-rails (4.1.0)
-      rails-dom-testing (~> 1.0)
+    jquery-rails (4.1.1)
+      rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
@@ -274,7 +278,7 @@ GEM
     multi_json (1.11.2)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-ssh (3.0.2)
+    net-ssh (3.1.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
@@ -283,7 +287,7 @@ GEM
       activerecord (>= 3.1)
       activesupport (>= 3.1)
       arel
-    puma (3.0.2)
+    puma (3.1.1)
     rack (1.6.4)
     rack-cache (1.6.1)
       rack (>= 0.4)
@@ -315,7 +319,7 @@ GEM
       activesupport (= 4.2.3)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.5.0)
+    rake (11.1.1)
     rbvmomi (1.8.2)
       builder
       nokogiri (>= 1.4.1)
@@ -360,7 +364,7 @@ GEM
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
-    sidekiq (4.1.0)
+    sidekiq (4.1.1)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
       redis (~> 3.2, >= 3.2.1)
@@ -386,7 +390,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.11)
-    sshkit (1.8.1)
+    sshkit (1.9.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     stringex (2.6.0)
@@ -425,7 +429,7 @@ DEPENDENCIES
   capistrano-sidekiq!
   capistrano3-puma
   capybara
-  carrierwave
+  carrierwave!
   cocoon
   coffee-rails (~> 4.1.0)
   dalli
