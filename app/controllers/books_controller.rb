@@ -50,7 +50,7 @@ class BooksController < ApplicationController
 
   def pinterest
     url = URI.encode(book_url(@book, format: :html))
-    media = URI.encode(@author.image_url(:large))
+    media = URI.encode(@book.image_url(:large))
     description = CGI::escape(@book.name +  ' #quotes')
     redirect_to "http://www.pinterest.com/pin/create/bookmarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"
   end
