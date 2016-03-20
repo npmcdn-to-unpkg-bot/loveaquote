@@ -61,8 +61,8 @@
                     <% if @movie.characters.any? %>
                       <td><%= link_to quote.character.name, admin_character_path(quote.character) if quote.character.present? %></td>
                     <% end %>
-                    <td class="text-center"><%= link_to "Edit", edit_admin_quote_url(quote), target: "_blank", class: "btn btn-primary btn-xs" %></td>
-                    <td class="text-center"><%= link_to "Delete", admin_quote_url(quote), method: :delete, remote: true, class: "delete-quote btn btn-red btn-xs" %></td>
+                    <td class="text-center"><%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_admin_quote_url(quote), target: "_blank" %></td>
+                    <td class="text-center"><%= link_to '<i class="fa fa-times"></i>'.html_safe, admin_quote_url(quote), method: :delete, remote: true, class: "delete-quote" %></td>
                   </tr>
                   <% end %>
                 </tbody>
