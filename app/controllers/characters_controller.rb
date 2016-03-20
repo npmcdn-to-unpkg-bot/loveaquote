@@ -2,7 +2,7 @@ class CharactersController < ApplicationController
   before_action :set_character, only: [:show, :twitter, :facecharacter, :pinterest, :search]
 
   def index
-    @books = Character.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
+    @characters = Character.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
     @canonical = characters_url(format: :html)
     render layout: "archive"
   end
