@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_action :set_topic, only: [:show, :twitter, :facebook, :pinterest]
+  before_action :set_topic, only: [:show, :twitter, :facebook, :pinterest, :search]
 
   def index
     @topics = Topic.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
@@ -8,12 +8,21 @@ class TopicsController < ApplicationController
   end
 
   def show
-    if params[:search].present?
-      UserSearchWorker.perform_async(@topic.class.name, @topic.id, params[:search])
-      @quotes = @topic.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page params[:page]
-    else
-      @quotes = @topic.quotes.order(total_share_count: :desc).order(text: :asc).page params[:page]
+    @quotes = @topic.quotes.order(total_share_count: :desc).order(text: :asc).page params[:page]
+    expires_in 1.hour, public: true, must_revalidate: true
+
+    if stale?(@topic)
+      respond_to do |format|
+        format.html { render layout: "single" }
+        format.amp { render layout: "single" }
+      end
     end
+
+  end
+
+  def search
+    UserSearchWorker.perform_async(@topic.class.name, @topic.id, params[:search]) if params[:search].present?
+    @quotes = @topic.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page params[:page]
     render layout: "single"
   end
 
