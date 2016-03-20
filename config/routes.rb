@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get 'static_pages/disclaimer'
   get 'static_pages/terms_and_conditions'
 
-
   get "system/*path", to: redirect("/", status: 301)
   get "pictures", to: redirect("/", status: 301)
   get "pictures/*path", to: redirect("/", status: 301)
@@ -14,6 +13,8 @@ Rails.application.routes.draw do
   get "authors", to: redirect("/people", status: 301)
   get "authors/:slug", to: redirect("/people/%{slug}", status: 301)
   get "authors/:slug/:page", to: redirect("/people/%{slug}/%{page}", status: 301)
+
+  devise_for :users, path: "user", path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}, controllers: {sessions: "user/sessions"}
 
   resources :people, only: [:index, :show] do
     collection do
@@ -54,6 +55,7 @@ Rails.application.routes.draw do
     end
 
     member do
+      get 'search'
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
       get 'pinterest'
       get 'facebook'
@@ -198,5 +200,9 @@ Rails.application.routes.draw do
     resources :professions
     require 'sidekiq/web'
     mount Sidekiq::Web => '/sidekiq'
+  end
+
+  namespace :user do
+    root 'dashboard#index'
   end
 end
