@@ -14,8 +14,8 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
-.login-container .main-content {
-    padding: 20px;
+.login-page .login-header {
+    padding: 1rem 0;
 }
 
 .select.inline {
@@ -27,11 +27,11 @@ body {
     margin: 1rem 0;
     padding: 1rem 0;
     overflow: hidden;
-    
+
     .remove_fields.existing {
         float: right;
     }
-    
+
     .remove_fields.dynamic {
         float: right;
     }
