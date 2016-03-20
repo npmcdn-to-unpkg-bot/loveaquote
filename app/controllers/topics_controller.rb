@@ -17,7 +17,6 @@ class TopicsController < ApplicationController
         format.amp { render layout: "single" }
       end
     end
-
   end
 
   def search
