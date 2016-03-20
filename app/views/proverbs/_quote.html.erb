@@ -8,7 +8,7 @@
       </div>
 
       <div class="quote-meta">
-        <% cache "quote-info-#{quote.id}-topic-count-#{quote.topics.count}" do %>
+        <% cache "quote-info-#{quote.id}-#{quote.updated_at.to_s(:number)}" do %>
           <div class="quote-info">
             <%= link_to quote.topics.published.first.name, topic_url(quote.topics.published.first, format: :html), title: "#{quote.topics.published.first.name} Quotes" if quote.topics.published.any? %>
           </div>
