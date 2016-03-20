@@ -39,6 +39,7 @@ Rails.application.routes.draw do
       get 'feed'
     end
     member do
+      get 'search'
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
       get 'pinterest'
       get 'facebook'
@@ -100,6 +101,7 @@ Rails.application.routes.draw do
     end
 
     member do
+      get 'search'
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
       get 'pinterest'
       get 'facebook'
@@ -115,6 +117,7 @@ Rails.application.routes.draw do
     end
 
     member do
+      get 'search'
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
       get 'pinterest'
       get 'facebook'
@@ -130,6 +133,7 @@ Rails.application.routes.draw do
     end
 
     member do
+      get 'search'
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
       get 'pinterest'
       get 'facebook'

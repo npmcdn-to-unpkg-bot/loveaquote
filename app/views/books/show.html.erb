@@ -62,7 +62,7 @@
 <% end %>
 
 <% content_for :search_form do %>
-  <%= form_tag search_book_url(format: :html), method: :get do %>
+  <%= form_tag search_book_url(@book, format: :html), method: :get do %>
     <div class="input-group">
       <%= text_field_tag :search, params[:search], class: "input-group-field small" %>
       <div class="input-group-button">

@@ -1,5 +1,5 @@
 class ProverbsController < ApplicationController
-  before_action :set_proverb, only: [:show, :twitter, :faceproverb, :pinterest]
+  before_action :set_proverb, only: [:show, :twitter, :facebook, :pinterest, :search]
 
   def index
     @proverbs = Proverb.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
@@ -8,12 +8,20 @@ class ProverbsController < ApplicationController
   end
 
   def show
-    if params[:search].present?
-      UserSearchWorker.perform_async(@proverb.class.name, @proverb.id, params[:search])
-      @quotes = @proverb.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
-    else
-      @quotes = @proverb.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    @quotes = @proverb.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    expires_in 1.hour, public: true, must_revalidate: true
+
+    if stale?(@proverb)
+      respond_to do |format|
+        format.html { render layout: "single" }
+        format.amp { render layout: "single" }
+      end
     end
+  end
+
+  def search
+    UserSearchWorker.perform_async(@proverb.class.name, @proverb.id, params[:search]) if params[:search].present?
+    @quotes = @proverb.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
     render layout: "single"
   end
 

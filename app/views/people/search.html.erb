@@ -1,12 +1,6 @@
-<% if params.has_key?(:page) %>
-  <% content_for :canonical, "#{canonical_url(@person, params[:page], format: :html)}" %>
-  <% content_for :title, "#{@person.name} Quotes - #{@person.all_quotes.count.to_s} quotes - Page #{params[:page]}" %>
-  <% content_for :description, "Quotes by #{@person.name} - page #{params[:page]}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
-<% else %>
-  <% content_for :canonical, "#{canonical_url(@person, format: :html)}" %>
-  <% content_for :title, "#{@person.name} Quotes - #{@person.all_quotes.count.to_s} quotes" %>
-  <% content_for :description, "Quotes by #{@person.name}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
-<% end %>
+<% content_for :canonical, "#{canonical_url(@person, format: :html)}" %>
+<% content_for :title, "#{@person.name} Quotes - #{@person.all_quotes.count.to_s} quotes" %>
+<% content_for :description, "Quotes by #{@person.name}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
 
 <% content_for :heading, "#{@person.name} Quotes" %>
 
@@ -82,7 +76,7 @@
 <% end %>
 
 <% content_for :search_form do %>
-  <%= form_tag search_person_url(format: :html), method: :get do %>
+  <%= form_tag search_person_url(@person, format: :html), method: :get do %>
     <div class="input-group">
       <%= text_field_tag :search, params[:search], class: "input-group-field small" %>
       <div class="input-group-button">

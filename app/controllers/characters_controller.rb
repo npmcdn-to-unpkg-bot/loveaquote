@@ -1,5 +1,5 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :twitter, :facecharacter, :pinterest]
+  before_action :set_character, only: [:show, :twitter, :facecharacter, :pinterest, :search]
 
   def index
     @books = Character.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
@@ -8,12 +8,20 @@ class CharactersController < ApplicationController
   end
 
   def show
-    if params[:search].present?
-      UserSearchWorker.perform_async(@character.class.name, @character.id, params[:search])
-      @quotes = @character.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
-    else
-      @quotes = @character.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    @quotes = @character.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    expires_in 1.hour, public: true, must_revalidate: true
+
+    if stale?(@characters)
+      respond_to do |format|
+        format.html { render layout: "single" }
+        format.amp { render layout: "single" }
+      end
     end
+  end
+
+  def search
+    UserSearchWorker.perform_async(@character.class.name, @character.id, params[:search]) if params[:search].present?
+    @quotes = @character.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
     render layout: "single"
   end
 

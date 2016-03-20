@@ -1,5 +1,5 @@
 class TvShowsController < ApplicationController
-  before_action :set_tv_show, only: [:show, :twitter, :facetv_show, :pinterest]
+  before_action :set_tv_show, only: [:show, :twitter, :facebook, :pinterest, :search]
 
   def index
     @tv_shows = TvShow.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
@@ -8,12 +8,20 @@ class TvShowsController < ApplicationController
   end
 
   def show
-    if params[:search].present?
-      UserSearchWorker.perform_async(@tv_show.class.name, @tv_show.id, params[:search])
-      @quotes = @tv_show.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
-    else
-      @quotes = @tv_show.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    @quotes = @tv_show.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    expires_in 1.hour, public: true, must_revalidate: true
+
+    if stale?(@tv_show)
+      respond_to do |format|
+        format.html { render layout: "single" }
+        format.amp { render layout: "single" }
+      end
     end
+  end
+
+  def search
+    UserSearchWorker.perform_async(@tv_show.class.name, @tv_show.id, params[:search]) if params[:search].present?
+    @quotes = @tv_show.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
     render layout: "single"
   end
 

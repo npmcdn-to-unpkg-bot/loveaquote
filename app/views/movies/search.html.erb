@@ -1,12 +1,6 @@
-<% if params.has_key?(:page) %>
-  <% content_for :canonical, "#{canonical_url(@movie, params[:page], format: :html)}" %>
-  <% content_for :title, "#{@movie.name} Quotes - #{@movie.quotes.count.to_s} quotes - Page #{params[:page]}" %>
-  <% content_for :description, "Quotes from #{@movie.name} - page #{params[:page]}. Best collection of #{@movie.name} quotes. Read, comment and share these quotes." %>
-<% else %>
-  <% content_for :canonical, "#{canonical_url(@movie, format: :html)}" %>
-  <% content_for :title, "#{@movie.name} Quotes - #{@movie.quotes.count.to_s} quotes" %>
-  <% content_for :description, "Quotes from #{@movie.name}. Best collection of #{@movie.name} quotes. Read, comment and share these quotes." %>
-<% end %>
+<% content_for :canonical, "#{canonical_url(@movie, format: :html)}" %>
+<% content_for :title, "#{@movie.name} Quotes - #{@movie.quotes.count.to_s} quotes" %>
+<% content_for :description, "Quotes from #{@movie.name}. Best collection of #{@movie.name} quotes. Read, comment and share these quotes." %>
 
 <% content_for :heading, "#{@movie.name} Quotes" %>
 
@@ -18,7 +12,8 @@
 	<ul class="breadcrumbs">
     <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
     <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= movies_url(format: :html) %>" itemprop="url"><span itemprop="title">Movies</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @movie.name %></span></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= movie_url(@movie, format: :html) %>" itemprop="url"><span itemprop="title"><%= @movie.name %></span></a></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">Search</span></li>
   </ul>
 <% end %>
 
@@ -59,4 +54,8 @@
       </div>
     </div>
   <% end %>
+<% end %>
+
+<% content_for :additional_tags do %>
+  <meta name="robots" content="noindex,follow">
 <% end %>

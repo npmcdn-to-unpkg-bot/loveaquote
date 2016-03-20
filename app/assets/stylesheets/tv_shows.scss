@@ -17,7 +17,8 @@
   border: 1px solid #E7E7E7;
 }
 
-.tv_shows.show {
+.tv_shows.show,
+.tv_shows.search {
   header {
     h1 {
       font-size: 30px;
@@ -28,7 +29,7 @@
       margin-bottom: 20px;
     }
   }
-  
+
   main#content {
     margin: 20px 0;
 
@@ -36,7 +37,7 @@
       margin: 0 auto;
       margin-bottom: 20px;
     }
-    
+
     .featured-topic-sub-heading {
       font-weight: bold;
       font-size: 100%;

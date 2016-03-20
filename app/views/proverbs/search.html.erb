@@ -1,6 +1,12 @@
-<% content_for :canonical, "#{canonical_url(@proverb, format: :html)}" %>
-<% content_for :title, "#{@proverb.name} Proverbs - #{@proverb.quotes.count.to_s} quotes" %>
-<% content_for :description, "Proverbs from #{@proverb.name}. Best collection of #{@proverb.name} proverbs. Read, comment and share these proverbs." %>
+<% if params.has_key?(:page) %>
+  <% content_for :canonical, "#{canonical_url(@proverb, params[:page], format: :html)}" %>
+  <% content_for :title, "#{@proverb.name} Proverbs - #{@proverb.quotes.count.to_s} quotes - Page #{params[:page]}" %>
+  <% content_for :description, "Proverbs from #{@proverb.name} - page #{params[:page]}. Best collection of #{@proverb.name} proverbs. Read, comment and share these proverbs." %>
+<% else %>
+  <% content_for :canonical, "#{canonical_url(@proverb, format: :html)}" %>
+  <% content_for :title, "#{@proverb.name} Proverbs - #{@proverb.quotes.count.to_s} quotes" %>
+  <% content_for :description, "Proverbs from #{@proverb.name}. Best collection of #{@proverb.name} proverbs. Read, comment and share these proverbs." %>
+<% end %>
 
 <% content_for :heading, "#{@proverb.name} Proverbs" %>
 
@@ -12,7 +18,8 @@
 	<ul class="breadcrumbs">
     <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
     <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= proverbs_url(format: :html) %>" itemprop="url"><span itemprop="title">Proverbs</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @proverb.name %></span></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= proverb_url(@proverb, format: :html) %>" itemprop="url"><span itemprop="title"><%= @proverb.name %></span></a></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title">Search</span></li>
   </ul>
 <% end %>
 
@@ -53,4 +60,8 @@
       </div>
     </div>
   <% end %>
+<% end %>
+
+<% content_for :additional_tags do %>
+  <meta name="robots" content="noindex,follow">
 <% end %>

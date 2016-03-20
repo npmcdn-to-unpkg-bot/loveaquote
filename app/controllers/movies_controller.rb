@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :twitter, :facemovie, :pinterest]
+  before_action :set_movie, only: [:show, :twitter, :facebook, :pinterest, :search]
 
   def index
     @movies = Movie.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
@@ -8,12 +8,20 @@ class MoviesController < ApplicationController
   end
 
   def show
-    if params[:search].present?
-      UserSearchWorker.perform_async(@movie.class.name, @movie.id, params[:search])
-      @quotes = @movie.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
-    else
-      @quotes = @movie.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    @quotes = @movie.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
+    expires_in 1.hour, public: true, must_revalidate: true
+
+    if stale?(@movie)
+      respond_to do |format|
+        format.html { render layout: "single" }
+        format.amp { render layout: "single" }
+      end
     end
+  end
+
+  def search
+    UserSearchWorker.perform_async(@movie.class.name, @movie.id, params[:search]) if params[:search].present?
+    @quotes = @movie.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
     render layout: "single"
   end
 
