@@ -1,13 +1,13 @@
 <div class="col-sm-12">
-  <ol class="breadcrumb bc-3"> 
+  <ol class="breadcrumb bc-3">
     <li><%= link_to "Home", admin_root_url %></li>
-    <li><%= link_to "Tv Shows", admin_tv_shows_url %></li> 
+    <li><%= link_to "Tv Shows", admin_tv_shows_url %></li>
     <li class="active"><%= @tv_show.name %></li>
   </ol>
-  
+
   <div class="row">
     <div class="col-sm-9">
-      
+
       <div class="row">
         <div class="col-sm-3">
           <% if @tv_show.image.present? %>
@@ -16,13 +16,14 @@
         </div>
         <div class="col-sm-9">
           <h2 class="text-right"><%= link_to "view", tv_show_url(@tv_show), class: "btn btn-primary btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_tv_show_url(@tv_show), class: "btn btn-blue btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %> <%= @tv_show.name %></h2>
+          <p class="text-right">Last updated at: <%= @tv_show.updated_at.strftime("%d %b, %Y - %H:%M:%S") %></p>
         </div>
       </div>
-  
+
       <div class="panel minimal minimal-gray">
         <div class="panel-heading">
           <div class="panel-title">
-            
+
           </div>
           <div class="panel-options">
             <ul class="nav nav-tabs">
@@ -34,11 +35,11 @@
             </ul>
           </div>
         </div>
-        
+
         <div class="panel-body">
-          
+
           <div class="tab-content">
-            
+
             <div class="tab-pane active" id="quotes">
               <table class="table table-striped table-bordered table-hover">
                 <thead>
@@ -52,9 +53,9 @@
                   <% end %>
                   <th width="10%" class="text-center" colspan="2">Manage</th>
                 </thead>
-                
+
                 <tbody>
-                  <% @tv_show.quotes.order(text: :asc).each do |quote| %>  
+                  <% @tv_show.quotes.order(text: :asc).each do |quote| %>
                   <tr>
                     <td class="text-center"><%= quote.season_and_episode.present? ? '<i class="e-icon-check"></i>'.html_safe : '<i class="e-icon-cross"></i>'.html_safe %></td>
                     <td><%= quote.text %></td>
@@ -68,7 +69,7 @@
                 </tbody>
               </table>
             </div>
-            
+
             <div class="tab-pane" id="quote-topic-suggestions">
               <div class="row">
                 <table class="table table-striped table-bordered table-hover">
@@ -79,7 +80,7 @@
                       <th width="20%" class="text-center" colspan="2">Manage</th>
                     </tr>
                   </thead>
-                
+
                   <tbody>
                     <% @tv_show.quote_topic_suggestions.where(read: false).each do |quote_topic_suggestion| %>
                       <tr>
@@ -91,30 +92,30 @@
                     <% end %>
                   </tbody>
                 </table>
-              </div>          
+              </div>
             </div>
-            
+
             <% if @tv_show.social_image.present? %>
               <div class="tab-pane" id="social-image">
                 <h4>Facebook</h4>
                 <%= image_tag @tv_show.social_image.facebook, style: "max-width: 100%" %>
-                
+
                 <h4>Twitter</h4>
                 <%= image_tag @tv_show.social_image.twitter, style: "max-width: 100%" %>
-                
+
                 <h4>Google Plus</h4>
                 <%= image_tag @tv_show.social_image.google_plus, style: "max-width: 100%" %>
-                
+
                 <h4>Pinterest</h4>
                 <%= image_tag @tv_show.social_image.pinterest, style: "max-width: 100%" %>
               </div>
-            <% end %>  
-            
+            <% end %>
+
           </div>
         </div>
       </div>
     </div>
-    
+
     <div class="col-sm-3">
       <% if @tv_show.characters.any? %>
         <div class="panel panel-default panel-shadow">
@@ -133,7 +134,7 @@
         </div>
       <% end %>
     </div>
-  </div>  
+  </div>
 </div>
 
 <div class="modal fade in" id="new-quote-modal">
@@ -147,7 +148,7 @@
         <% @new_quote = Quote.new %>
         <% @new_quote.build_season_and_episode %>
         <%= simple_form_for([:admin, @new_quote]) do |f| %>
-          <div class="form-inputs">          
+          <div class="form-inputs">
             <%= f.input :text, input_html: {rows: 5} %>
             <%= f.association :character, collection: @tv_show.characters.order(name: :asc) if @tv_show.characters.any? %>
             <%= f.simple_fields_for :season_and_episode do |sae| %>
@@ -172,17 +173,17 @@
     .on("ajax:complete", function(e, data, status, xhr) {
         $(this).closest("tr").remove();
     });
-  
+
     $(".decline_suggestion")
     .on("ajax:complete", function(e, data, status, xhr) {
         $(this).closest("tr").remove();
     });
-    
+
     $(".add_new_quote").on("click", function(e) {
       e.preventDefault();
       $("#new-quote-modal").modal('show');
     });
-    
+
     $(".delete-quote").on("ajax:complete", function(xhr, status) {
       $(this).closest("tr").remove();
     });

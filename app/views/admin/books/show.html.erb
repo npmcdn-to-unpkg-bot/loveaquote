@@ -23,6 +23,7 @@
               <%= link_to person.name, admin_person_url(person) %>
             <% end %>
           </h4>
+          <p class="text-right">Last updated at: <%= @book.updated_at.strftime("%d %b, %Y - %H:%M:%S") %></p>
         </div>
       </div>
 

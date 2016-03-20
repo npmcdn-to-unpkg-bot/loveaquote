@@ -1,13 +1,13 @@
 <div class="col-sm-12">
-  <ol class="breadcrumb bc-3"> 
+  <ol class="breadcrumb bc-3">
     <li><%= link_to "Home", admin_root_url %></li>
-    <li><%= link_to "Character", admin_character_url %></li> 
+    <li><%= link_to "Character", admin_character_url %></li>
     <li class="active"><%= @character.name %></li>
   </ol>
-  
+
   <div class="row">
     <div class="col-sm-9">
-      
+
       <div class="row">
         <div class="col-sm-3">
           <% if @character.image.present? %>
@@ -18,13 +18,14 @@
         </div>
         <div class="col-sm-9">
           <h2 class="text-right"><%= link_to "view", character_url(@character), class: "btn btn-primary btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_character_url(@character), class: "btn btn-blue btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %> <%= @character.name %></h2>
+          <p class="text-right">Last updated at: <%= @character.updated_at.strftime("%d %b, %Y - %H:%M:%S") %></p>
         </div>
       </div>
-  
+
       <div class="panel minimal minimal-gray">
         <div class="panel-heading">
           <div class="panel-title">
-            
+
           </div>
           <div class="panel-options">
             <ul class="nav nav-tabs">
@@ -35,7 +36,7 @@
             </ul>
           </div>
         </div>
-        
+
         <div class="panel-body">
           <div class="tab-content">
             <div class="tab-pane active" id="quotes">
@@ -45,9 +46,9 @@
                   <th width="20%" class="text-center">Source</th>
                   <th width="10%" class="text-center" colspan="2">Manage</th>
                 </thead>
-                
+
                 <tbody>
-                  <% @character.quotes.order(text: :asc).each do |quote| %>  
+                  <% @character.quotes.order(text: :asc).each do |quote| %>
                   <tr>
                     <td><%= quote.text %></td>
                     <td><%= link_to quote.source.name, admin_quote_source_url(quote) %></td>
@@ -58,29 +59,29 @@
                 </tbody>
               </table>
             </div>
-            
+
             <% if @character.social_image.present? %>
               <div class="tab-pane" id="social-image">
                 <h4>Facebook</h4>
                 <%= image_tag @character.social_image.facebook, style: "max-width: 100%" %>
-                
+
                 <h4>Twitter</h4>
                 <%= image_tag @character.social_image.twitter, style: "max-width: 100%" %>
-                
+
                 <h4>Google Plus</h4>
                 <%= image_tag @character.social_image.google_plus, style: "max-width: 100%" %>
-                
+
                 <h4>Pinterest</h4>
                 <%= image_tag @character.social_image.pinterest, style: "max-width: 100%" %>
               </div>
             <% end %>
-          </div>  
+          </div>
         </div>
-            
+
       </div>
-          
+
     </div>
-    
+
     <div class="col-sm-3">
       <% if @character.books.any? %>
         <div class="panel panel-default panel-shadow">

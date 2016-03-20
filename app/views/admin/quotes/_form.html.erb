@@ -48,6 +48,9 @@
           <div class="tab-pane active" id="quote">
             <div class="form-inputs">
               <%= f.input :text, input_html: {rows: 5} %>
+              <% if @quote.updated_at.present? %>
+                <p>Last updated at: <%= @quote.updated_at.strftime("%d %b, %Y - %H:%M:%S") %></p>
+              <% end %>
             </div>
           </div>
 
@@ -112,7 +115,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="tab-pane" id="found-ats">
               <div id='found_ats'>
                 <%= f.simple_fields_for :found_ats do |found_at| %>
