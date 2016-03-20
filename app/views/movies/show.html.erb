@@ -60,3 +60,8 @@
     </div>
   <% end %>
 <% end %>
+
+<% content_for :aside do %>
+  <%= render partial: "partials/facebook_like_box" %>
+  <%= render partial: "partials/character_quotes", locals: {model: @movie} %>
+<% end %>

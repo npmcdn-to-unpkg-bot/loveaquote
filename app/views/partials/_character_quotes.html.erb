@@ -1,0 +1,18 @@
+<% if model.characters.published.any? %>
+<div class="widget">
+  <div class="heading">
+    <h5>Quotes by Book Characters</h5>
+  </div>
+  <div class="content">
+    <div class="row small-up-1 medium-up-1 large-up-1">
+      <% model.characters.published.each do |character| %>
+        <div class="column">
+          <div class="more-link">
+            <%= link_to character.name + " Quotes", character_url(character, format: :html), title: character.name + " Quotes" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>
