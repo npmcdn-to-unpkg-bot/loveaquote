@@ -47,7 +47,7 @@ class TopicCombination < ActiveRecord::Base
     def suggested_quotes
         primary_topic_suggested_quotes = self.primary_topic.quote_topic_suggestions.where(read: false).pluck(:quote_id)
         secondary_topic_suggested_quotes = self.secondary_topic.quote_topic_suggestions.where(read: false).pluck(:quote_id)
-        QuoteTopicSuggestion.where(quote_id: primary_topic_suggested_quotes & secondary_topic_suggested_quotes, topic_id: [self.primary_topic_id, self.secondary_topic_id])
+        Quote.where(id: primary_topic_suggested_quotes & secondary_topic_suggested_quotes)
     end
 
     def combination_should_not_exist
