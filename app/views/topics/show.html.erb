@@ -4,6 +4,12 @@
 
 <% content_for :heading, "#{@topic.name} Quotes" %>
 
+<% if @topic.byline.present? %>
+<% content_for :byline do %>
+  <p class="byline">(<%= "#{@topic.name.downcase} - #{@topic.byline}" %>)</p>
+<% end %>
+<% end %>
+
 <% if @topic.social_image.present? %>
   <% content_for :facebook_image, @topic.social_image.facebook %>
 <% end %>

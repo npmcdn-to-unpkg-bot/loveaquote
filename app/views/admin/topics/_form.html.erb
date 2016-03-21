@@ -12,36 +12,37 @@
       <div class="panel minimal minimal-gray">
         <div class="panel-heading">
           <div class="panel-title">
-            
+
           </div>
           <div class="panel-options">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#topic" data-toggle="tab">Topic</a></li>
               <li><a href="#seo" data-toggle="tab">SEO</a></li>
-              <li><a href="#combinations" data-toggle="tab">Combinations</a></li>              
+              <li><a href="#combinations" data-toggle="tab">Combinations</a></li>
             </ul>
           </div>
         </div>
-        
+
         <div class="panel-body">
           <div class="tab-content">
-            
+
             <div class="tab-pane active" id="book">
               <div class="form-inputs">
                 <%= f.input :name %>
+                <%= f.input :byline %>
                 <%= f.input :popular %>
                 <%= f.input :very_popular %>
                 <%= f.input :published %>
               </div>
             </div>
-            
+
             <div class="tab-pane" id="seo">
               <%= f.simple_fields_for :seo do |seo| %>
                 <%= seo.input :title %>
                 <%= seo.input :description %>
               <% end %>
             </div>
-            
+
             <div class="tab-pane" id="combinations">
               <div id='topic_combinations'>
                 <%= f.simple_fields_for :topic_combinations do |topic_combination| %>
@@ -52,7 +53,7 @@
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>

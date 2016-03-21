@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319223325) do
+ActiveRecord::Schema.define(version: 20160321134727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -262,6 +262,16 @@ ActiveRecord::Schema.define(version: 20160319223325) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "source_id"
+    t.string   "source_type"
+    t.date     "date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "reviews", ["source_type", "source_id"], name: "index_reviews_on_source_type_and_source_id", using: :btree
+
   create_table "search_suggestions", force: :cascade do |t|
     t.string   "name"
     t.integer  "source_id",   null: false
@@ -360,6 +370,7 @@ ActiveRecord::Schema.define(version: 20160319223325) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.string   "image"
+    t.string   "byline"
   end
 
   add_index "topics", ["slug"], name: "index_topics_on_slug", using: :btree

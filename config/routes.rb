@@ -178,7 +178,11 @@ Rails.application.routes.draw do
         get "qotd", action: "qotd", as: "qotd"
       end
     end
-    resources :people
+    resources :people do
+      member do
+        get "review"
+      end
+    end
     resources :books
     resources :movies
     resources :proverbs

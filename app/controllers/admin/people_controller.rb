@@ -1,6 +1,6 @@
 class Admin::PeopleController < ApplicationController
   before_filter :authenticate_admin!
-  before_action :set_person, only: [:show, :edit, :update, :destroy]
+  before_action :set_person, only: [:show, :edit, :update, :destroy, :review]
   layout "admin"
 
   # GET /people
@@ -30,7 +30,7 @@ class Admin::PeopleController < ApplicationController
       end
     end
   end
-  
+
   # GET /people/1
   # GET /people/1.json
   def show
@@ -74,6 +74,13 @@ class Admin::PeopleController < ApplicationController
         format.json { render json: @person.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def review
+    @review = @person.review || @person.build_review
+    @review.date = Date.today
+    @review.save
+    redirect_to admin_person_path(@person)
   end
 
   # DELETE /people/1
