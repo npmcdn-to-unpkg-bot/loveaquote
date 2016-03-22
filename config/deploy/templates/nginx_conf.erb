@@ -16,7 +16,7 @@ server {
   listen 443;
   ssl on;
   ssl_certificate /etc/ssl/loveaquote.crt;
-  ssl_certificate_key /etc/ssl/loveaquote.csr;
+  ssl_certificate_key /etc/ssl/loveaquote.key;
 
   server_name www.loveaquote.com;
   rewrite ^/(.*)/$ /$1 permanent;
