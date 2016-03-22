@@ -13,13 +13,45 @@ end
 }
 
 server {
+  listen 443;
+  ssl on;
+  ssl_certificate /etc/ssl/loveaquote.crt;
+  ssl_certificate_key /etc/ssl/loveaquote.csr;
+
+  server_name www.loveaquote.com;
+  rewrite ^/(.*)/$ /$1 permanent;
+
+  root <%= current_path %>/public;
+  try_files $uri @puma_<%= fetch(:nginx_config_name) %>;
+
+  location @puma_<%= fetch(:nginx_config_name) %> {
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $http_host;
+    proxy_redirect off;
+    <% if fetch(:nginx_use_ssl) %>
+      proxy_set_header X-Forwarded-Proto https;
+    <% end %>
+    proxy_pass http://puma_<%= fetch(:nginx_config_name) %>;
+    # limit_req zone=one;
+    access_log <%= shared_path %>/log/nginx.access.log;
+    error_log <%= shared_path %>/log/nginx.error.log;
+  }
+
+  location ^~ /assets/ {
+    gzip_static on;
+    expires max;
+    add_header Cache-Control public;
+  }
+}
+
+server {
   listen 80;
   server_name laq.brahmadpk.com;
   rewrite ^/(.*)/$ /$1 permanent;
-  
+
   auth_basic "Restricted";
   auth_basic_user_file /etc/nginx/.htpasswd;
-  
+
   root <%= current_path %>/public;
   try_files $uri @puma_<%= fetch(:nginx_config_name) %>;
 
