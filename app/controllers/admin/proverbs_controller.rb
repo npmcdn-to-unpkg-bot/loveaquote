@@ -1,6 +1,6 @@
 class Admin::ProverbsController < ApplicationController
   before_filter :authenticate_admin!
-  before_action :set_proverb, only: [:show, :edit, :update, :destroy]
+  before_action :set_proverb, only: [:show, :edit, :update, :destroy, :review]
   layout "admin"
 
   # GET /proverbs
@@ -52,6 +52,13 @@ class Admin::ProverbsController < ApplicationController
         format.json { render json: @proverb.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def review
+    @review = @proverb.review || @proverb.build_review
+    @review.date = Date.today
+    @review.save
+    redirect_to admin_proverb_path(@proverb)
   end
 
   # DELETE /proverbs/1

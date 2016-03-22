@@ -1,0 +1,14 @@
+<div class="panel panel-default panel-shadow">
+	<div class="panel-heading">
+	  <div class="panel-title">
+	    Editorial Review
+	  </div>
+	</div>
+	<div class="panel-body text-center">
+	  <% if model.review.present? %>
+	    <p>Last reviewed on - <%= model.review.date.strftime("%d %b, %Y") %></p>
+	  <% end %>
+
+	  <%= link_to "Mark Reviewed", review_admin_model_url(model), class: "btn btn-tiny btn-default" %>
+	</div>
+</div>

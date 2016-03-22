@@ -1,6 +1,6 @@
 class Admin::TvShowsController < ApplicationController
   before_filter :authenticate_admin!
-  before_action :set_tv_show, only: [:show, :edit, :update, :destroy]
+  before_action :set_tv_show, only: [:show, :edit, :update, :destroy, :review]
   layout "admin"
 
   # GET /tv_shows
@@ -74,6 +74,13 @@ class Admin::TvShowsController < ApplicationController
         format.json { render json: @tv_show.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def review
+    @review = @tv_show.review || @tv_show.build_review
+    @review.date = Date.today
+    @review.save
+    redirect_to admin_tv_show_path(@tv_show)
   end
 
   # DELETE /tv_shows/1

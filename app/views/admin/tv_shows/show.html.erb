@@ -117,6 +117,7 @@
     </div>
 
     <div class="col-sm-3">
+      <%= render partial: "admin/partials/review", locals: {model: @tv_show} %>
       <% if @tv_show.characters.any? %>
         <div class="panel panel-default panel-shadow">
           <div class="panel-heading">

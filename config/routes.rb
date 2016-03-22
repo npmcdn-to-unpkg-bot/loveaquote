@@ -188,12 +188,32 @@ Rails.application.routes.draw do
         get "review"
       end
     end
-    resources :movies
-    resources :proverbs
-    resources :tv_shows, path: "tv-shows"
-    resources :characters
+    resources :movies do
+      member do
+        get "review"
+      end
+    end
+    resources :proverbs do
+      member do
+        get "review"
+      end
+    end
+    resources :tv_shows, path: "tv-shows" do
+      member do
+        get "review"
+      end
+    end
+    resources :characters do
+      member do
+        get "review"
+      end
+    end
+
     resources :featured_topics
     resources :topics do
+      member do
+        get "review"
+      end
       resources :topic_aliases
     end
     resources :topic_combinations, only: [:index, :show], path: "topic-combinations"

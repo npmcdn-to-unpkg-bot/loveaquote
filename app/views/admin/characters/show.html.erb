@@ -83,6 +83,8 @@
     </div>
 
     <div class="col-sm-3">
+      <%= render partial: "admin/partials/review", locals: {model: @character} %>
+
       <% if @character.books.any? %>
         <div class="panel panel-default panel-shadow">
           <div class="panel-heading">

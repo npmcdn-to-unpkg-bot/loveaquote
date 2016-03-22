@@ -1,6 +1,6 @@
 class Admin::CharactersController < ApplicationController
   before_filter :authenticate_admin!
-  before_action :set_character, only: [:show, :edit, :update, :destroy]
+  before_action :set_character, only: [:show, :edit, :update, :destroy, :review]
   layout "admin"
 
   # GET /characters
@@ -74,6 +74,13 @@ class Admin::CharactersController < ApplicationController
         format.json { render json: @character.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def review
+    @review = @character.review || @character.build_review
+    @review.date = Date.today
+    @review.save
+    redirect_to admin_character_path(@character)
   end
 
   # DELETE /characters/1

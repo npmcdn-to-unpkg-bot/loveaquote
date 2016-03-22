@@ -1,6 +1,6 @@
 class Admin::TopicsController < ApplicationController
   before_filter :authenticate_admin!
-  before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  before_action :set_topic, only: [:show, :edit, :update, :destroy, :review]
   layout "admin"
 
   # GET /topics
@@ -74,6 +74,13 @@ class Admin::TopicsController < ApplicationController
         format.json { render json: @topic.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def review
+    @review = @topic.review || @topic.build_review
+    @review.date = Date.today
+    @review.save
+    redirect_to admin_topic_path(@topic)
   end
 
   # DELETE /topics/1
