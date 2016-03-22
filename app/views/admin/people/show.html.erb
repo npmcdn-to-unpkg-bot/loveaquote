@@ -170,7 +170,7 @@
         </div>
         <div class="panel-body text-center">
           <% if @person.review.present? %>
-            <p>Last reviewed on - <%= @person.review.date %></p>
+            <p>Last reviewed on - <%= @person.review.date.strftime("%d %b, %Y") %></p>
           <% end %>
 
           <%= link_to "Mark Reviewed", review_admin_person_path(@person), class: "btn btn-tiny btn-default" %>

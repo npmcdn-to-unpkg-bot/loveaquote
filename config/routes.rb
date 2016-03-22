@@ -183,7 +183,11 @@ Rails.application.routes.draw do
         get "review"
       end
     end
-    resources :books
+    resources :books do
+      member do
+        get "review"
+      end
+    end
     resources :movies
     resources :proverbs
     resources :tv_shows, path: "tv-shows"

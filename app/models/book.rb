@@ -7,6 +7,7 @@ class Book < ActiveRecord::Base
     include SocialImageable
     include TimeLineable
     include SearchSuggestable
+    include Reviewable
 
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
 

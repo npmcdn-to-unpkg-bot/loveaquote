@@ -125,6 +125,22 @@
     </div>
 
     <div class="col-sm-3">
+
+      <div class="panel panel-default panel-shadow">
+        <div class="panel-heading">
+          <div class="panel-title">
+            Editorial Review
+          </div>
+        </div>
+        <div class="panel-body text-center">
+          <% if @book.review.present? %>
+            <p>Last reviewed on - <%= @book.review.date.strftime("%d %b, %Y") %></p>
+          <% end %>
+
+          <%= link_to "Mark Reviewed", review_admin_book_path(@book), class: "btn btn-tiny btn-default" %>
+        </div>
+      </div>
+
       <% if @book.characters.any? %>
         <div class="panel panel-default panel-shadow">
           <div class="panel-heading">

@@ -1,6 +1,6 @@
 class Admin::BooksController < ApplicationController
   before_filter :authenticate_admin!
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_book, only: [:show, :edit, :update, :destroy, :review]
   layout "admin"
 
   # GET /books
@@ -66,6 +66,13 @@ class Admin::BooksController < ApplicationController
         format.json { render json: @book.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def review
+    @review = @book.review || @book.build_review
+    @review.date = Date.today
+    @review.save
+    redirect_to admin_book_path(@book)
   end
 
   # DELETE /books/1
