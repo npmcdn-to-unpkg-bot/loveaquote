@@ -15,6 +15,16 @@ end
 server {
   listen 80;
   server_name laq.brahmadpk.com;
+  return 301 https://laq.brahmadpk.com$request_uri;
+}
+
+server {
+  listen 443;
+  ssl on;
+  ssl_certificate /etc/ssl/loveaquote.crt;
+  ssl_certificate_key /etc/ssl/loveaquote.key;
+  
+  server_name laq.brahmadpk.com;
   rewrite ^/(.*)/$ /$1 permanent;
 
   auth_basic "Restricted";
