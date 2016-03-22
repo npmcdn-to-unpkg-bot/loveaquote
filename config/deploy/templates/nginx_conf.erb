@@ -13,38 +13,6 @@ end
 }
 
 server {
-  listen 443;
-  ssl on;
-  ssl_certificate /etc/ssl/loveaquote.crt;
-  ssl_certificate_key /etc/ssl/loveaquote.key;
-
-  server_name www.loveaquote.com;
-  rewrite ^/(.*)/$ /$1 permanent;
-
-  root <%= current_path %>/public;
-  try_files $uri @puma_<%= fetch(:nginx_config_name) %>;
-
-  location @puma_<%= fetch(:nginx_config_name) %> {
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header Host $http_host;
-    proxy_redirect off;
-    <% if fetch(:nginx_use_ssl) %>
-      proxy_set_header X-Forwarded-Proto https;
-    <% end %>
-    proxy_pass http://puma_<%= fetch(:nginx_config_name) %>;
-    # limit_req zone=one;
-    access_log <%= shared_path %>/log/nginx.access.log;
-    error_log <%= shared_path %>/log/nginx.error.log;
-  }
-
-  location ^~ /assets/ {
-    gzip_static on;
-    expires max;
-    add_header Cache-Control public;
-  }
-}
-
-server {
   listen 80;
   server_name laq.brahmadpk.com;
   rewrite ^/(.*)/$ /$1 permanent;
@@ -78,83 +46,83 @@ server {
 server {
   listen 80;
   server_name loveaquote.com;
-  return 301 $scheme://www.loveaquote.com$request_uri;
+  return 301 https://www.loveaquote.com$request_uri;
 }
-
-<% if fetch(:nginx_use_ssl) %>
-  server {
-  listen 80;
-  rewrite ^(.*) https://$host$1 permanent;
-  }
-<% end %>
 
 server {
-<% if fetch(:nginx_use_ssl) %>
+  listen 80;
+  server_name www.loveaquote.com;
+  return 301 https://www.loveaquote.com$request_uri;
+}
+
+server {
+  listen 443;
+  server_name loveaquote.com;
+  return 301 https://www.loveaquote.com$request_uri;
+}
+
+server {
   listen 443;
   ssl on;
-  ssl_certificate /etc/ssl/certs/<%= fetch(:nginx_config_name) %>.crt;
-  ssl_certificate_key /etc/ssl/private/<%= fetch(:nginx_config_name) %>.key;
-<% else %>
-  listen 80;
-<% end %>
+  ssl_certificate /etc/ssl/loveaquote.crt;
+  ssl_certificate_key /etc/ssl/loveaquote.key;
 
+  server_name www.loveaquote.com;
+  rewrite ^/(.*)/$ /$1 permanent;
 
-client_max_body_size 4G;
-keepalive_timeout 10;
+  root <%= current_path %>/public;
+  try_files $uri @puma_<%= fetch(:nginx_config_name) %>;
 
-error_page 500 502 504 /500.html;
-error_page 503 @503;
+  location @puma_<%= fetch(:nginx_config_name) %> {
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $http_host;
+    proxy_redirect off;
+    <% if fetch(:nginx_use_ssl) %>
+      proxy_set_header X-Forwarded-Proto https;
+    <% end %>
+    proxy_pass http://puma_<%= fetch(:nginx_config_name) %>;
+    # limit_req zone=one;
+    access_log <%= shared_path %>/log/nginx.access.log;
+    error_log <%= shared_path %>/log/nginx.error.log;
+  }
 
-server_name www.loveaquote.com;
-rewrite ^/(.*)/$ /$1 permanent;
+  location ^~ /assets/ {
+    gzip_static on;
+    expires max;
+    add_header Cache-Control public;
+  }
 
-root <%= current_path %>/public;
-try_files $uri @puma_<%= fetch(:nginx_config_name) %>;
+  client_max_body_size 4G;
+  keepalive_timeout 10;
 
-location @puma_<%= fetch(:nginx_config_name) %> {
-proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-proxy_set_header Host $http_host;
-proxy_redirect off;
-<% if fetch(:nginx_use_ssl) %>
-  proxy_set_header X-Forwarded-Proto https;
-<% end %>
-proxy_pass http://puma_<%= fetch(:nginx_config_name) %>;
-# limit_req zone=one;
-access_log <%= shared_path %>/log/nginx.access.log;
-error_log <%= shared_path %>/log/nginx.error.log;
-}
+  error_page 500 502 504 /500.html;
+  error_page 503 @503;
 
-location ^~ /assets/ {
-gzip_static on;
-expires max;
-add_header Cache-Control public;
-}
+  location = /50x.html {
+    root html;
+  }
 
-location = /50x.html {
-root html;
-}
+  location = /404.html {
+    root html;
+  }
 
-location = /404.html {
-root html;
-}
+  location @503 {
+    error_page 405 = /system/maintenance.html;
+    if (-f $document_root/system/maintenance.html) {
+      rewrite ^(.*)$ /system/maintenance.html break;
+    }
+    rewrite ^(.*)$ /503.html break;
+  }
 
-location @503 {
-error_page 405 = /system/maintenance.html;
-if (-f $document_root/system/maintenance.html) {
-rewrite ^(.*)$ /system/maintenance.html break;
-}
-rewrite ^(.*)$ /503.html break;
-}
+  if ($request_method !~ ^(GET|HEAD|PUT|PATCH|POST|DELETE|OPTIONS)$ ){
+    return 405;
+  }
 
-if ($request_method !~ ^(GET|HEAD|PUT|PATCH|POST|DELETE|OPTIONS)$ ){
-return 405;
-}
+  if (-f $document_root/system/maintenance.html) {
+    return 503;
+  }
 
-if (-f $document_root/system/maintenance.html) {
-return 503;
-}
-
-location ~ \.(php)$ {
-return 405;
-}
+  location ~ \.(php)$ {
+    return 405;
+  }
 }
