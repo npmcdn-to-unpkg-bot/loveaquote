@@ -1,6 +1,4 @@
-<% cache "seo-#{@topic.slug}-#{@topic.updated_at.to_s(:number)}" do %>
-  <%= render partial: "partials/seo", locals: {model: @topic} %>
-<% end %>
+<%= render partial: "partials/seo", locals: {model: @topic} %>
 
 <% content_for :heading, "#{@topic.name} Quotes" %>
 
