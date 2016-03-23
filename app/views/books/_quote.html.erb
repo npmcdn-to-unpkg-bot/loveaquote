@@ -24,11 +24,11 @@
 
         <% cache "quote-meta-#{quote.id}-#{quote.updated_at.to_s(:number)}-source-#{quote.source.updated_at.to_s(:number)}" do %>
           <div class="social-sharing">
-            <a rel="nofollow" class="share-quote-twitter" title="Share this quote on Twitter" target="_blank" href="<%= twitter_quote_url(quote) %>"><%= image_tag('twitter.png') %></a>
-            <a rel="nofollow" class="share-quote-facebook" title="Share this quote on Facebook" target="_blank" href="<%= facebook_quote_url(quote) %>"><%= image_tag('facebook.png') %></a>
+            <%= image_tag 'twitter.png', class: "share-quote-twitter", data: {url: twitter_quote_url(quote, human: "t")} %>
+            <%= image_tag 'facebook.png', class: "share-quote-facebook", data: {url: facebook_quote_url(quote, human: "t")} %>
             <% if quote.source.image.present? %>
-              <a rel="nofollow" class="share-quote-pinterest" title="Share this quote on Pinterest" target="_blank" href="<%= pinterest_quote_url(quote) %>"><%= image_tag('pinterest.png') %></a>
-              <% end %>
+              <%= image_tag 'pinterest.png', class: "share-quote-pinterest", data: {url: pinterest_quote_url(quote, human: "t")} %>
+            <% end %>
           </div>
         <% end %>
       </div>
