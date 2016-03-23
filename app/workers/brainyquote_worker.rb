@@ -23,10 +23,11 @@ class BrainyquoteWorker
 
       page = Nokogiri::HTML(open(fetch_url))
       page.css('span.bqQuoteLink').each do |q|
-        Quote.create(text: q.text.strip, source: person)
+        ActiveRecord::Base.no_touching do
+          Quote.create(text: q.text.strip, source: person)
+        end
       end
     end
-    person.fetch_url = ""
-    person.save
+    person.update_column(fetch_url: "")
   end
 end
