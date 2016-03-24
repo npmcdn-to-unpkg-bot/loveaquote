@@ -55,14 +55,14 @@
   <% if @person.featured_topics.any? %>
     <div class="widget">
       <div class="heading">
-        <h5><%= @person.name %> Quotes by topic</h5>
+        <h5><%= @person.name %> Quotes on</h5>
       </div>
       <div class="content">
-        <div class="row small-up-1 medium-up-1 large-up-1">
+        <div class="row small-up-1 medium-up-1 large-up-2">
           <% @person.featured_topics.each do |ft| %>
             <div class="column">
-              <div class="more-link">
-                <%= link_to "#{@person.name} Quotes on #{ft.topic.name}", featured_topic_person_url(@person, featured_topic: ft, format: :html) %>
+              <div class="more-link text-center">
+                <%= link_to ft.topic.name, featured_topic_person_url(@person, featured_topic: ft, format: :html) %>
               </div>
             </div>
           <% end %>
