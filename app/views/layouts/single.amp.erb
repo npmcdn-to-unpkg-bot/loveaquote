@@ -6,6 +6,27 @@
   <body class="<%= controller.controller_name %> <%= controller.action_name  %>" itemscope="itemscope" itemtype="http://schema.org/WebPage">
     <%= render "layouts/partials/google_analytics" %>
     <div class="row">
+      <div class="small-12 columns">
+        <div class="top-bar">
+          <% unless controller.controller_name == "index" %>
+          <p class="site-title">
+            <%= link_to root_url do %>
+              <amp-img src="<%= asset_url "logo.png" %>" width="36" height="36"></amp-img>
+            <% end %>
+            <%= link_to "LoveAQuote", root_url %>
+          </p>
+          <% else %>
+            <h1 class="site-title">
+              <%= link_to root_url do %>
+                <amp-img src="<%= asset_url "logo.png" %>" width="36" height="36"></amp-img>
+              <% end %>
+              <%= link_to "LoveAQuote", root_url %>
+            </h1>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
       <div class="small-12 large-6 large-offset-3 columns">
     	  <div class="wrapper">
           <main id="content" role="main" itemprop="mainContentOfPage">
