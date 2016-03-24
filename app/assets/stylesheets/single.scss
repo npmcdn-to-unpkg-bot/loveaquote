@@ -58,7 +58,8 @@
 }
 
 .show article ul,
-.search article ul {
+.search article ul,
+.featured_topic article ul {
 	margin-left: 0px;
 }
 
@@ -67,7 +68,8 @@
 }
 
 .show article ul li,
-.search article ul li {
+.search article ul li,
+.featured_topic article ul li{
 	list-style-type: none;
 	margin: 0 0 1rem 0;
 }
@@ -90,7 +92,8 @@
 }
 
 .show .entry-meta .last-updated,
-.search .entry-meta .last-updated {
+.search .entry-meta .last-updated,
+.featured_topic .entry-meta .last-updated {
 	text-align: right;
 	display: block;
 	font-size: 0.75rem;
@@ -98,21 +101,24 @@
 
 @media only screen and (min-width: 64.063em) {
 	.show ul.breadcrumbs,
-	.search ul.breadcrumbs {
+	.search ul.breadcrumbs,
+	.featured_topic ul.breadcrumbs {
 		margin: 0px -2rem;
 	}
 }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
 	.show ul.breadcrumbs,
-	.search ul.breadcrumbs {
+	.search ul.breadcrumbs,
+	.featured_topic ul.breadcrumbs {
 		margin: 0px -1rem;
 	}
 }
 
 @media only screen and (max-width: 40.063em) {
 	.show ul.breadcrumbs,
-	.search ul.breadcrumbs {
+	.search ul.breadcrumbs,
+	.featured_topic ul.breadcrumbs {
 		margin: 0px -0.25rem;
 	}
 }

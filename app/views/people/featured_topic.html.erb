@@ -1,14 +1,14 @@
 <% if params.has_key?(:page) %>
-  <% content_for :canonical, "#{canonical_url(@person, params[:page], format: :html)}" %>
-  <% content_for :title, "#{@person.name} Quotes - #{@person.all_quotes.count.to_s} quotes - Page #{params[:page]}" %>
+  <% content_for :canonical, "#{featured_topic_person_url(@person, @featured_topic, params[:page], format: :html)}" %>
+  <% content_for :title, "#{@person.name} Quotes on #{@featured_topic.topic.name} - Page #{params[:page]}" %>
   <% content_for :description, "Quotes by #{@person.name} - page #{params[:page]}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
 <% else %>
-  <% content_for :canonical, "#{canonical_url(@person, format: :html)}" %>
-  <% content_for :title, "#{@person.name} Quotes - #{@person.all_quotes.count.to_s} quotes" %>
+  <% content_for :canonical, "#{featured_topic_person_url(@person, @featured_topic, format: :html)}" %>
+  <% content_for :title, "#{@person.name} Quotes on #{@featured_topic.topic.name}" %>
   <% content_for :description, "Quotes by #{@person.name}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
 <% end %>
 
-<% content_for :heading, "#{@person.name} Quotes" %>
+<% content_for :heading, "#{@person.name} Quotes on #{@featured_topic.topic.name}" %>
 
 <% if @person.social_image.present? %>
   <% content_for :facebook_image, @person.social_image.facebook %>
@@ -18,7 +18,8 @@
 	<ul class="breadcrumbs">
     <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
     <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= people_url(format: :html) %>" itemprop="url"><span itemprop="title">People</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @person.name %></span></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= person_url(@person, format: :html) %>" itemprop="url"><span itemprop="title"><%= "#{@person.name} Quotes" %></span></a></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= "on #{@featured_topic.topic.name}" %></span></li>
   </ul>
 <% end %>
 
@@ -52,14 +53,14 @@
     </div>
   </div>
 
-  <% if @person.featured_topics.any? %>
+  <% if @person.featured_topics.where.not(id: [@featured_topic.id]).any? %>
     <div class="widget">
       <div class="heading">
         <h5><%= @person.name %> Quotes by topic</h5>
       </div>
       <div class="content">
         <div class="row small-up-1 medium-up-1 large-up-1">
-          <% @person.featured_topics.each do |ft| %>
+          <% @person.featured_topics.where.not(id: [@featured_topic.id]).each do |ft| %>
             <div class="column">
               <div class="more-link">
                 <%= link_to "#{@person.name} Quotes on #{ft.topic.name}", featured_topic_person_url(@person, featured_topic: ft, format: :html) %>

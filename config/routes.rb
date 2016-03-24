@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
     member do
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
+      get ':featured_topic', action: 'featured_topic', as: 'featured_topic', featured_topic: /on-.+/, format: true
       get 'facebook'
       get 'pinterest'
       get 'twitter'
@@ -181,6 +182,7 @@ Rails.application.routes.draw do
     resources :people do
       member do
         get "review"
+        get ':featured_topic', action: 'featured_topic', as: 'featured_topic', featured_topic: /on-.*/
       end
     end
     resources :books do

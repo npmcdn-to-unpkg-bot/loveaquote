@@ -164,6 +164,21 @@
 
       <%= render partial: "admin/partials/review", locals: {model: @person} %>
 
+      <% if @person.featured_topics.any? %>
+        <div class="panel panel-default panel-shadow">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <%= "Featured Topics of #{@person.name}" %>
+            </div>
+          </div>
+          <div class="panel-body">
+            <%= form_tag "", method: :get do %>
+              <%= select_tag "featured_topic", options_for_select(@person.featured_topics.collect {|ft| [ft.topic.name, ft.id]}, params[:featured_topic]), prompt: "Filter by Featured Topic", onchange: "this.form.submit()", class: "form-control" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
       <% if @person.books.any? %>
         <div class="panel panel-default panel-shadow">
           <div class="panel-heading">

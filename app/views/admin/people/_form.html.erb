@@ -4,20 +4,21 @@
       <div class="panel minimal minimal-gray">
         <div class="panel-heading">
           <div class="panel-title">
-            
+
           </div>
           <div class="panel-options">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#author" data-toggle="tab">Author</a></li>
+              <li><a href="#featured_topics" data-toggle="tab">Featured Topics</a></li>
               <li><a href="#seo" data-toggle="tab">SEO</a></li>
               <li><a href="#fetch" data-toggle="tab">Fetch</a></li>
             </ul>
           </div>
         </div>
-        
+
         <div class="panel-body">
           <div class="tab-content">
-            
+
             <div class="tab-pane active" id="author">
               <div class="form-inputs">
                 <%= f.input :name %>
@@ -31,7 +32,7 @@
                     <%= f.input :popular %>
                     <%= f.input :very_popular %>
                   </div>
-                  
+
                   <div class="col-sm-8">
                     <div class="row">
                       <div class="col-sm-6">
@@ -42,13 +43,23 @@
                         <% end %>
                       </div>
                       <div class="col-sm-6">
-                        <%= f.input :image %>                        
+                        <%= f.input :image %>
                       </div>
                     </div>
                   </div>
-                  
+
                 </div>
-              </div>  
+              </div>
+            </div>
+
+            <div class="tab-pane" id="featured_topics">
+              <%= f.simple_fields_for :featured_topics do |featured_topic| %>
+                <%= render 'featured_topic_fields', :f => featured_topic %>
+              <% end %>
+
+              <div class='links'>
+                <%= link_to_add_association '<i class="e-icon-squared-plus"></i> featured topic'.html_safe, f, :featured_topics %>
+              </div>
             </div>
 
             <div class="tab-pane" id="seo">
@@ -57,16 +68,16 @@
                 <%= seo.input :description %>
               <% end %>
             </div>
-            
+
             <div class="tab-pane" id="fetch">
               <%= f.input :fetch_url %>
             </div>
-            
+
           </div>
         </div>
       </div>
     </div>
-    
+
     <div class="col-sm-3 text-center">
       <% if @person.errors.any? %>
         <div class="alert alert-danger">

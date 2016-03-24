@@ -41,4 +41,6 @@ class Quote < ActiveRecord::Base
     def get_topic_suggestions
         SuggestTopicsWorker.perform_async(self.id)
     end
+
+    scope :filter_by_topic, -> (id) {joins(:quote_topics).where(quote_topics: {topic_id: id})}
 end

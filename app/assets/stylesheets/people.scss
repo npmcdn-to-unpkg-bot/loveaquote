@@ -6,6 +6,7 @@
 
 .people.show main ul,
 .people.search main ul,
+.people.featured_topic main ul,
 .people.alphabet main ul {
   list-style-type: none;
 }
@@ -20,7 +21,8 @@
 }
 
 .people.show,
-.people.search {
+.people.search,
+.people.featured_topic {
   header {
     h1 {
       font-size: 30px;

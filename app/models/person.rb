@@ -8,13 +8,13 @@ class Person < ActiveRecord::Base
     include TimeLineable
     include SearchSuggestable
     include Reviewable
+    include FeaturedTopicable
 
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
 
     belongs_to :nationality
     belongs_to :profession
     has_many :quote_topic_suggestions, through: :quotes
-    has_many :featured_topics, as: :source, dependent: :destroy
     has_many :character_sources
     has_many :characters, -> {uniq}, through: :character_sources
     has_many :character_quotes, through: :characters, source: :quotes

@@ -1,6 +1,6 @@
 class Admin::PeopleController < ApplicationController
   before_filter :authenticate_admin!
-  before_action :set_person, only: [:show, :edit, :update, :destroy, :review]
+  before_action :set_person, only: [:show, :edit, :update, :destroy, :review, :featured_topic]
   layout "admin"
 
   # GET /people
@@ -101,6 +101,6 @@ class Admin::PeopleController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def person_params
-      params.require(:person).permit(:name, :fetch_url, :born, :died, :nationality_id, :profession_id, :published, :popular, :very_popular, :image, seo_attributes: [:id, :title, :description, :_destroy])
+      params.require(:person).permit(:name, :fetch_url, :born, :died, :nationality_id, :profession_id, :published, :popular, :very_popular, :image, seo_attributes: [:id, :title, :description, :_destroy], featured_topics_attributes: [:id, :topic_id, :_destroy])
     end
 end
