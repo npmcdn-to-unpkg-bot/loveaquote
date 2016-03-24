@@ -179,6 +179,21 @@
         </div>
       <% end %>
 
+      <% if QuoteTopic.where(quote_id: @person.quotes.pluck(:id)).where.not(topic_id: @person.featured_topics.pluck(:topic_id)).group(:topic_id).count.any? %>
+      <div class="panel panel-default panel-shadow">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <%= "Other Topics of #{@person.name}" %>
+          </div>
+        </div>
+        <div class="panel-body">
+          <%= form_tag "", method: :get do %>
+            <%= select_tag "topic", options_for_select(QuoteTopic.where(quote_id: @person.quotes.pluck(:id)).where.not(topic_id: @person.featured_topics.pluck(:topic_id)).group(:topic_id).count.collect {|topic_id,count| ["#{Topic.find(topic_id).name} - #{count}", topic_id]}, params[:topic]), prompt: "Filter by Topic", onchange: "this.form.submit()", class: "form-control" %>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+
       <% if @person.books.any? %>
         <div class="panel panel-default panel-shadow">
           <div class="panel-heading">
