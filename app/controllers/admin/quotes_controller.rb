@@ -29,11 +29,11 @@ class Admin::QuotesController < ApplicationController
     respond_to do |format|
       if @quote.save
         format.html {
-          redirect_to view_context.admin_model_url(@quote.source), notice: 'quote was successfully created.'
+          redirect_to view_context.admin_model_url(@quote.source), notice: 'Quote was successfully created.'
         }
         format.json { render :show, status: :created, location: @quote }
       else
-        format.html { render :new }
+        format.html { redirect_to view_context.admin_model_url(@quote.source), notice: 'Oops! an error occurred while creating the quote.' }
         format.json { render json: @quote.errors, status: :unprocessable_entity }
       end
     end
@@ -44,10 +44,10 @@ class Admin::QuotesController < ApplicationController
   def update
     respond_to do |format|
       if @quote.update(quote_params)
-        format.html { redirect_to edit_admin_quote_url(@quote), notice: 'quote was successfully updated.' }
+        format.html { redirect_to edit_admin_quote_url(@quote), notice: 'Quote was successfully updated.' }
         format.json { render json: @quote, status: :ok }
       else
-        format.html { render :edit }
+        format.html { redirect_to view_context.admin_model_url(@quote.source), notice: 'Oops! an error occurred while updating the quote.' }
         format.json { render json: @quote.errors, status: :unprocessable_entity }
       end
     end

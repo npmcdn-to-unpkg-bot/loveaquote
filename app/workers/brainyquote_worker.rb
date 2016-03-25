@@ -28,6 +28,6 @@ class BrainyquoteWorker
         end
       end
     end
-    person.update_column(fetch_url: "")
+    person.update_columns(fetch_url: "")
   end
 end
