@@ -1,5 +1,5 @@
 class FeaturedTopic < ActiveRecord::Base
-  belongs_to :source, polymorphic: true
+  belongs_to :source, polymorphic: true, touch: true
   belongs_to :topic
 
   validates :topic_id, presence: true, blank: false
@@ -13,5 +13,5 @@ class FeaturedTopic < ActiveRecord::Base
 
   def to_param
       slug
-  end  
+  end
 end

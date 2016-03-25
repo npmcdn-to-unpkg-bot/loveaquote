@@ -60,4 +60,8 @@ module ApplicationHelper
             model_url(model, options)
         end
     end
+
+    def featured_topic_model_url(model, featured_topic, options={})
+        eval("featured_topic_#{model.model_name.param_key}_url(model, featured_topic, options)")
+    end
 end
