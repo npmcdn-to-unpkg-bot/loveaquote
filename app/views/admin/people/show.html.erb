@@ -203,7 +203,7 @@
           </div>
           <div class="panel-body">
             <ul class="list-unstyled">
-              <% @person.books.each do |book| %>
+              <% @person.books.order(name: :ASC).each do |book| %>
                 <li><%= link_to book.name, admin_book_url(book) %></li>
               <% end %>
             </ul>
