@@ -9,11 +9,11 @@ class Person < ActiveRecord::Base
     include SearchSuggestable
     include Reviewable
     include FeaturedTopicable
+    include Details
 
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
 
     belongs_to :nationality
-    belongs_to :profession
 
     has_many :person_professions, dependent: :destroy
     accepts_nested_attributes_for :person_professions, reject_if: :all_blank, allow_destroy: true

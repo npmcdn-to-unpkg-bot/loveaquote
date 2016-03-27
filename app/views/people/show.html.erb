@@ -102,3 +102,7 @@
     <link rel="amphtml" href="<%= "#{canonical_url(@person, format: :amp)}" %>">
   <% end %>
 <% end %>
+
+<% content_for :byline do %>
+  <p class="byline">(<%= "#{@person.byline}" %>)</p>
+<% end %>
