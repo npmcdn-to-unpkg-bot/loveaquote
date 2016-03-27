@@ -8,7 +8,8 @@
           </div>
           <div class="panel-options">
             <ul class="nav nav-tabs">
-              <li class="active"><a href="#author" data-toggle="tab">Author</a></li>
+              <li class="active"><a href="#person" data-toggle="tab">Person</a></li>
+              <li><a href="#person_details" data-toggle="tab">Person Details</a></li>
               <li><a href="#featured_topics" data-toggle="tab">Featured Topics</a></li>
               <li><a href="#seo" data-toggle="tab">SEO</a></li>
               <li><a href="#fetch" data-toggle="tab">Fetch</a></li>
@@ -19,11 +20,10 @@
         <div class="panel-body">
           <div class="tab-content">
 
-            <div class="tab-pane active" id="author">
+            <div class="tab-pane active" id="person">
               <div class="form-inputs">
                 <%= f.input :name %>
                 <%= f.association :nationality, collection: Nationality.all.order(name: :ASC) %>
-                <%= f.association :profession, collection: Profession.all.order(name: :ASC) %>
                 <div class="row">
                   <div class="col-sm-4">
                     <%= f.input :born, as: :string, input_html: {type: "date"} %>
@@ -49,6 +49,16 @@
                   </div>
 
                 </div>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="person_details">
+              <%= f.simple_fields_for :person_professions do |person_profession| %>
+                <%= render 'person_profession_fields', :f => person_profession %>
+              <% end %>
+
+              <div class='links'>
+                <%= link_to_add_association '<i class="e-icon-squared-plus"></i> profession'.html_safe, f, :person_professions %>
               </div>
             </div>
 

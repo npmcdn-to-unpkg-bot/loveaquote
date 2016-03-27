@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324124533) do
+ActiveRecord::Schema.define(version: 20160327104612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -177,6 +177,16 @@ ActiveRecord::Schema.define(version: 20160324124533) do
   end
 
   add_index "people", ["slug"], name: "index_people_on_slug", using: :btree
+
+  create_table "person_professions", force: :cascade do |t|
+    t.integer  "person_id"
+    t.integer  "profession_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "person_professions", ["person_id"], name: "index_person_professions_on_person_id", using: :btree
+  add_index "person_professions", ["profession_id"], name: "index_person_professions_on_profession_id", using: :btree
 
   create_table "professions", force: :cascade do |t|
     t.string   "name"
@@ -424,6 +434,8 @@ ActiveRecord::Schema.define(version: 20160324124533) do
   add_foreign_key "compositions", "books"
   add_foreign_key "compositions", "people"
   add_foreign_key "found_ats", "quotes"
+  add_foreign_key "person_professions", "people"
+  add_foreign_key "person_professions", "professions"
   add_foreign_key "quote_of_the_days", "quotes"
   add_foreign_key "quote_topic_suggestions", "quotes"
   add_foreign_key "quote_topic_suggestions", "topics"

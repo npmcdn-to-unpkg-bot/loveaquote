@@ -1,4 +1,4 @@
 class Profession < ActiveRecord::Base
-    has_many :people
-    validates :name, presence: true, uniqueness: true, blank: false    
+    has_many :person_professions, dependent: :destroy
+    validates :name, presence: true, uniqueness: true, blank: false
 end

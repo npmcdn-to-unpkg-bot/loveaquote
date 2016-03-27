@@ -14,6 +14,11 @@ class Person < ActiveRecord::Base
 
     belongs_to :nationality
     belongs_to :profession
+
+    has_many :person_professions, dependent: :destroy
+    accepts_nested_attributes_for :person_professions, reject_if: :all_blank, allow_destroy: true
+    has_many :professions, through: :person_professions
+
     has_many :quote_topic_suggestions, through: :quotes
     has_many :character_sources
     has_many :characters, -> {uniq}, through: :character_sources
