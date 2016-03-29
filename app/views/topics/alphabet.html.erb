@@ -9,7 +9,7 @@
     <% @topics.each do |topic| %>
       <div class="column text-center">
         <div class="more-link">
-          <%= link_to topic.name, topic_url(topic, format: :html), title: topic.name + " Quotes" %>
+          <%= link_to topic.name + " Quotes", topic_url(topic, format: :html), title: topic.name + " Quotes" %>
         </div>
       </div>
     <% end %>

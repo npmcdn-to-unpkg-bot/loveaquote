@@ -9,7 +9,7 @@
     <% @people.each do |person| %>
       <div class="column text-center">
         <div class="more-link">
-          <%= link_to person.name, person_url(person, format: :html), title: person.name + " Quotes" %>
+          <%= link_to person.name + " Quotes", person_url(person, format: :html), title: person.name + " Quotes" %>
         </div>
       </div>
     <% end %>
