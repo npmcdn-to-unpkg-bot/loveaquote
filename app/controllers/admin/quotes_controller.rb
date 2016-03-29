@@ -17,8 +17,6 @@ class Admin::QuotesController < ApplicationController
   end
 
   def edit
-    @quote.build_chapter_and_page if @quote.chapter_and_page.nil? && @quote.source_type == "Book"
-    @quote.build_season_and_episode if @quote.season_and_episode.nil? && @quote.source_type == "TvShow"
   end
 
   # POST /quotes
