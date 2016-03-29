@@ -274,27 +274,6 @@
                   </div>
                 </div>
 
-                <div class="tab-pane" id="quoted-in-books">
-                  <div id='quoted_in_books'>
-                    <%= f.simple_fields_for :quoted_in_books do |quoted_in_book| %>
-                      <%= render 'quoted_in_book_fields', :f => quoted_in_book %>
-                    <% end %>
-                    <div class='links'>
-                      <%= link_to_add_association '<i class="e-icon-squared-plus"></i> quoted in book'.html_safe, f, :quoted_in_books %>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="tab-pane" id="found-ats">
-                  <div id='found_ats'>
-                    <%= f.simple_fields_for :found_ats do |found_at| %>
-                      <%= render 'found_at_fields', :f => found_at %>
-                    <% end %>
-                    <div class='links'>
-                      <%= link_to_add_association '<i class="e-icon-squared-plus"></i> found_at'.html_safe, f, :found_ats %>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

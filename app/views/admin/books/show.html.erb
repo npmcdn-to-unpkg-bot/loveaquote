@@ -156,9 +156,7 @@
         <h4 class="modal-title">Edit Quote</h4>
       </div>
       <div class="modal-body">
-        <% @new_quote = Quote.new %>
-        <% @new_quote.build_chapter_and_page %>
-        <%= simple_form_for([:admin, @new_quote]) do |f| %>
+        <%= simple_form_for([:admin, Quote.new]) do |f| %>
           <div class="panel minimal minimal-gray">
             <div class="panel-heading">
               <div class="panel-title">
@@ -177,10 +175,6 @@
                 <div class="tab-pane active" id="quote">
                   <div class="form-inputs">
                     <%= f.input :text, input_html: {rows: 5} %>
-                    <%= f.simple_fields_for :chapter_and_page do |cap| %>
-                      <%= cap.input :chapter %>
-                      <%= cap.input :page %>
-                    <% end %>
                     <%= f.association :character, collection: @book.characters.order(name: :asc) if @book.characters.any? %>
                   </div>
                 </div>

@@ -146,16 +146,10 @@
         <h4 class="modal-title">Edit Quote</h4>
       </div>
       <div class="modal-body">
-        <% @new_quote = Quote.new %>
-        <% @new_quote.build_season_and_episode %>
-        <%= simple_form_for([:admin, @new_quote]) do |f| %>
+        <%= simple_form_for([:admin, Quote.new]) do |f| %>
           <div class="form-inputs">
             <%= f.input :text, input_html: {rows: 5} %>
             <%= f.association :character, collection: @tv_show.characters.order(name: :asc) if @tv_show.characters.any? %>
-            <%= f.simple_fields_for :season_and_episode do |sae| %>
-              <%= sae.input :season %>
-              <%= sae.input :episode %>
-            <% end %>
             <%= f.hidden_field :source_id, value: @tv_show.id %>
             <%= f.hidden_field :source_type, value: @tv_show.class.name %>
           </div>

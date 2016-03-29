@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329112242) do
+ActiveRecord::Schema.define(version: 20160329150930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,16 +48,6 @@ ActiveRecord::Schema.define(version: 20160329112242) do
   end
 
   add_index "books", ["slug"], name: "index_books_on_slug", using: :btree
-
-  create_table "chapter_and_pages", force: :cascade do |t|
-    t.integer  "quote_id",   null: false
-    t.integer  "chapter"
-    t.integer  "page"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "chapter_and_pages", ["quote_id"], name: "index_chapter_and_pages_on_quote_id", using: :btree
 
   create_table "character_sources", force: :cascade do |t|
     t.integer  "character_id", null: false
@@ -111,15 +101,6 @@ ActiveRecord::Schema.define(version: 20160329112242) do
 
   add_index "featured_topics", ["source_type", "source_id"], name: "index_featured_topics_on_source_type_and_source_id", using: :btree
   add_index "featured_topics", ["topic_id"], name: "index_featured_topics_on_topic_id", using: :btree
-
-  create_table "found_ats", force: :cascade do |t|
-    t.string   "link"
-    t.integer  "quote_id",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "found_ats", ["quote_id"], name: "index_found_ats_on_quote_id", using: :btree
 
   create_table "logs", force: :cascade do |t|
     t.integer  "source_id"
@@ -234,19 +215,6 @@ ActiveRecord::Schema.define(version: 20160329112242) do
   add_index "quote_topics", ["quote_id"], name: "index_quote_topics_on_quote_id", using: :btree
   add_index "quote_topics", ["topic_id"], name: "index_quote_topics_on_topic_id", using: :btree
 
-  create_table "quoted_in_books", force: :cascade do |t|
-    t.string   "name"
-    t.string   "author"
-    t.integer  "quote_id",   null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "chapter"
-    t.integer  "page"
-    t.string   "isbn"
-  end
-
-  add_index "quoted_in_books", ["quote_id"], name: "index_quoted_in_books_on_quote_id", using: :btree
-
   create_table "quotes", force: :cascade do |t|
     t.text     "text"
     t.integer  "source_id",                               null: false
@@ -292,16 +260,6 @@ ActiveRecord::Schema.define(version: 20160329112242) do
   end
 
   add_index "search_suggestions", ["source_type", "source_id"], name: "index_search_suggestions_on_source_type_and_source_id", using: :btree
-
-  create_table "season_and_episodes", force: :cascade do |t|
-    t.integer  "quote_id",   null: false
-    t.integer  "season"
-    t.integer  "episode"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "season_and_episodes", ["quote_id"], name: "index_season_and_episodes_on_quote_id", using: :btree
 
   create_table "seos", force: :cascade do |t|
     t.string   "title"
@@ -428,12 +386,10 @@ ActiveRecord::Schema.define(version: 20160329112242) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "chapter_and_pages", "quotes"
   add_foreign_key "character_sources", "characters"
   add_foreign_key "character_sources", "people"
   add_foreign_key "compositions", "books"
   add_foreign_key "compositions", "people"
-  add_foreign_key "found_ats", "quotes"
   add_foreign_key "person_professions", "people"
   add_foreign_key "person_professions", "professions"
   add_foreign_key "quote_of_the_days", "quotes"
@@ -441,9 +397,7 @@ ActiveRecord::Schema.define(version: 20160329112242) do
   add_foreign_key "quote_topic_suggestions", "topics"
   add_foreign_key "quote_topics", "quotes"
   add_foreign_key "quote_topics", "topics"
-  add_foreign_key "quoted_in_books", "quotes"
   add_foreign_key "quotes", "characters", on_delete: :nullify
-  add_foreign_key "season_and_episodes", "quotes"
   add_foreign_key "topic_aliases", "topics"
   add_foreign_key "topic_combinations", "topics", column: "primary_topic_id", on_delete: :cascade
   add_foreign_key "topic_combinations", "topics", column: "secondary_topic_id", on_delete: :cascade
