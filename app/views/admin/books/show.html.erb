@@ -64,7 +64,7 @@
                 <tbody>
                   <% @book.quotes.order(text: :asc).each do |quote| %>
                   <tr>
-                    <td class="text-center"><%= quote.chapter_and_page.present? ? '<i class="e-icon-check"></i>'.html_safe : '<i class="e-icon-cross"></i>'.html_safe %></td>
+                    <td class="text-center"><%= quote.verified ? '<i class="e-icon-check"></i>'.html_safe : '<i class="e-icon-cross"></i>'.html_safe %></td>
                     <td><%= quote.text %></td>
                     <% if @book.characters.any? %>
                       <td><%= link_to quote.character.name, admin_character_path(quote.character) if quote.character.present? %></td>

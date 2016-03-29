@@ -23,19 +23,6 @@
               <li><a href="#quote-topic-suggestions" data-toggle="tab">Topic Suggestions</a></li>
             <% end %>
 
-            <% if @quote.source_type == "Person" %>
-              <li><a href="#quoted-in-books" data-toggle="tab">Quoted in Books</a></li>
-              <li><a href="#found-ats" data-toggle="tab">Found At</a></li>
-            <% end %>
-
-            <% if @quote.source_type == "Book" %>
-              <li><a href="#chapter-and-page" data-toggle="tab">Chapter And Page</a></li>
-            <% end %>
-
-            <% if @quote.source_type == "TvShow" %>
-              <li><a href="#season-and-episode" data-toggle="tab">Season And Episode</a></li>
-            <% end %>
-
             <% if (@quote.source_type == "Book" || @quote.source_type == "TvShow" || @quote.source_type == "Movie") && @quote.source.characters.present? %>
               <li><a href="#quote-character" data-toggle="tab">Quote Character</a></li>
             <% end %>
@@ -48,6 +35,7 @@
           <div class="tab-pane active" id="quote">
             <div class="form-inputs">
               <%= f.input :text, input_html: {rows: 5} %>
+              <%= f.input :verified %>
               <% if @quote.updated_at.present? %>
                 <p>Last updated at: <%= @quote.updated_at.strftime("%d %b, %Y - %H:%M:%S") %></p>
               <% end %>
@@ -102,48 +90,6 @@
                 });
               });
             </script>
-          <% end %>
-
-          <% if @quote.source_type == "Person" %>
-            <div class="tab-pane" id="quoted-in-books">
-              <div id='quoted_in_books'>
-                <%= f.simple_fields_for :quoted_in_books do |quoted_in_book| %>
-                  <%= render 'quoted_in_book_fields', :f => quoted_in_book %>
-                <% end %>
-                <div class='links'>
-                  <%= link_to_add_association '<i class="e-icon-squared-plus"></i> quoted in book'.html_safe, f, :quoted_in_books %>
-                </div>
-              </div>
-            </div>
-
-            <div class="tab-pane" id="found-ats">
-              <div id='found_ats'>
-                <%= f.simple_fields_for :found_ats do |found_at| %>
-                  <%= render 'found_at_fields', :f => found_at %>
-                <% end %>
-                <div class='links'>
-                  <%= link_to_add_association '<i class="e-icon-squared-plus"></i> found_at'.html_safe, f, :found_ats %>
-                </div>
-              </div>
-            </div>
-          <% end %>
-
-          <% if @quote.source_type == "Book" %>
-            <div class="tab-pane" id="chapter-and-page">
-              <%= f.simple_fields_for :chapter_and_page do |cap| %>
-               <%= cap.input :chapter %>
-               <%= cap.input :page %>
-              <% end %>
-            </div>
-          <% end %>
-
-          <% if @quote.source_type == "TvShow" %>
-            <div class="tab-pane" id="season-and-episode">
-              <%= f.simple_fields_for :season_and_episode do |sae| %>
-               <%= sae.input :season %>
-               <%= sae.input :episode %>
-              <% end %>
-            </div>
           <% end %>
 
           <% if (@quote.source_type == "Book" || @quote.source_type == "TvShow" || @quote.source_type == "Movie") && @quote.source.characters.present? %>

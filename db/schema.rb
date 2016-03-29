@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160327113057) do
+ActiveRecord::Schema.define(version: 20160329112242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -249,10 +249,10 @@ ActiveRecord::Schema.define(version: 20160327113057) do
 
   create_table "quotes", force: :cascade do |t|
     t.text     "text"
-    t.integer  "source_id",                           null: false
-    t.string   "source_type",                         null: false
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.integer  "source_id",                               null: false
+    t.string   "source_type",                             null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.integer  "twitter_share_count",     default: 0
     t.integer  "facebook_share_count",    default: 0
     t.integer  "pinterest_share_count",   default: 0
@@ -260,6 +260,7 @@ ActiveRecord::Schema.define(version: 20160327113057) do
     t.integer  "total_share_count",       default: 0
     t.integer  "character_id"
     t.integer  "quote_of_the_day_count",  default: 0
+    t.boolean  "verified",                default: false
   end
 
   add_index "quotes", ["character_id"], name: "index_quotes_on_character_id", using: :btree

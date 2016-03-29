@@ -94,6 +94,6 @@ class Admin::QuotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def quote_params
-      params.require(:quote).permit(:text, :character_id, :source_id, :source_type, :topic_ids => [], quote_topics_attributes: [:id, :topic_id, :_destroy], chapter_and_page_attributes: [:id, :chapter, :page, :_destroy], quoted_in_books_attributes: [:id, :isbn, :name, :author, :chapter, :page, :_destroy], season_and_episode_attributes: [:id, :season, :episode, :_destroy], found_ats_attributes: [:id, :link, :_destroy])
+      params.require(:quote).permit(:text, :verified, :character_id, :source_id, :source_type, :topic_ids => [], quote_topics_attributes: [:id, :topic_id, :_destroy])
     end
 end
