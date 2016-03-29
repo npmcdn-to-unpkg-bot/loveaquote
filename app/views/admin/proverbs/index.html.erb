@@ -48,6 +48,28 @@
     </div>
     
     <div class="col-sm-3">
+      
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <div class="panel-title">
+            Add new
+          </div>
+        </div>
+        <div class="panel-body">
+          <%= simple_form_for([:admin, Quote.new]) do |f| %>
+            <div class="form-inputs">
+              <%= f.input :text, input_html: {rows: 5} %>
+              <%= f.input :source_id, as: :select, collection: Proverb.all.order(name: :ASC) %>
+              <%= f.hidden_field :source_type, value: "Proverb" %>
+              <%= f.hidden_field :redirect_to, value: admin_proverbs_url %>
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    
       <div class="panel panel-primary">
         <div class="panel-heading">
           <div class="panel-title">
@@ -68,5 +90,6 @@
         </div>
       </div>
     </div>
+    
   </div>
 </div>

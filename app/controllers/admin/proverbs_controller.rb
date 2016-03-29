@@ -6,7 +6,7 @@ class Admin::ProverbsController < ApplicationController
   # GET /proverbs
   # GET /proverbs.json
   def index
-    @proverbs = Proverb.all.page params[:page]
+    @proverbs = Proverb.all.order(name: :ASC).page params[:page]
   end
 
   # GET /proverbs/1

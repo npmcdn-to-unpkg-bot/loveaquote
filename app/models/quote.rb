@@ -30,6 +30,8 @@ class Quote < ActiveRecord::Base
 
     # text should be present and unique
     validates :text, presence: true, uniqueness: true
+    validates :source_id, presence: true
+    validates :source_type, presence: true
 
     before_validation :strip_text
     after_commit :get_topic_suggestions, on: [:create, :update]

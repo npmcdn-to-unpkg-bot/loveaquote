@@ -29,11 +29,21 @@ class Admin::QuotesController < ApplicationController
     respond_to do |format|
       if @quote.save
         format.html {
-          redirect_to view_context.admin_model_url(@quote.source), notice: 'Quote was successfully created.'
+          if params[:quote][:redirect_to].present?
+            redirect_to params[:quote][:redirect_to], notice: 'Quote was successfully created.'
+          else
+            redirect_to view_context.admin_model_url(@quote.source), notice: 'Quote was successfully created.'
+          end
         }
         format.json { render :show, status: :created, location: @quote }
       else
-        format.html { redirect_to view_context.admin_model_url(@quote.source), notice: 'Oops! an error occurred while creating the quote.' }
+        format.html {
+          if params[:quote][:redirect_to].present?
+            redirect_to params[:quote][:redirect_to], alert: 'Oops! an error occurred while creating the quote.'
+          else
+            redirect_to view_context.admin_model_url(@quote.source), alert: 'Oops! an error occurred while creating the quote.'
+          end
+        }
         format.json { render json: @quote.errors, status: :unprocessable_entity }
       end
     end
