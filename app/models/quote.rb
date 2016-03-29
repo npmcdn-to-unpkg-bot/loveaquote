@@ -8,18 +8,6 @@ class Quote < ActiveRecord::Base
     belongs_to :source, polymorphic: true, touch: true
     belongs_to :character
 
-    has_one :chapter_and_page, inverse_of: :quote, dependent: :destroy
-    accepts_nested_attributes_for :chapter_and_page, reject_if: :all_blank, allow_destroy: true
-
-    has_one :season_and_episode, inverse_of: :quote, dependent: :destroy
-    accepts_nested_attributes_for :season_and_episode, reject_if: :all_blank, allow_destroy: true
-
-    has_many :quoted_in_books, dependent: :destroy
-    accepts_nested_attributes_for :quoted_in_books, reject_if: :all_blank, allow_destroy: true
-
-    has_many :found_ats, dependent: :destroy
-    accepts_nested_attributes_for :found_ats, reject_if: :all_blank, allow_destroy: true
-
     has_many :quote_topics, dependent: :destroy
     accepts_nested_attributes_for :quote_topics, reject_if: :all_blank, allow_destroy: true
 
