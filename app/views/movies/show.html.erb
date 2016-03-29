@@ -34,10 +34,6 @@
   </div>
 <% end %>
 
-<% content_for :comments do %>
-  <div class="fb-comments" data-href="<%= movie_url(@movie) %>" data-numposts="10" data-colorscheme="light" data-width="100%"></div>
-<% end %>
-
 <% content_for :updated do %>
   Last Updated - <time itemprop="dateModified" datetime="<%= @movie.updated_at.to_datetime %>"><%= @movie.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
 <% end %>

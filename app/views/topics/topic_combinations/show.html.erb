@@ -36,10 +36,6 @@
 
 <% end %>
 
-<% content_for :comments do %>
-  <div class="fb-comments" data-href="<%= topic_url(@topic) %>" data-numposts="10" data-colorscheme="light" data-width="100%"></div>
-<% end %>
-
 <% content_for :updated do %>
   Last Updated - <time itemprop="dateModified" datetime="<%= @topic.updated_at.to_datetime %>"><%= @topic.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
 <% end %>
