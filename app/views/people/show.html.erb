@@ -61,10 +61,10 @@
       </div>
       <div class="content">
         <div class="row small-up-1 medium-up-1 large-up-1">
-          <% @person.books.order(name: :ASC).each do |book| %>
+          <% @person.books.published.order(name: :ASC).each do |book| %>
             <div class="column">
               <div class="more-link">
-                <%= book.published? ? (link_to book.name, book_url(book)) : (book.name) %>
+                <%= link_to book.name, book_url(book) %>
               </div>
             </div>
           <% end %>
