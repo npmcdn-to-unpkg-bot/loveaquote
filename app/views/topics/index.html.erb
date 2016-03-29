@@ -21,7 +21,7 @@
         <% topics.each do |topic| %>
           <div class="column">
             <div class="more-link text-center">
-              <%= link_to topic.name + " Quotes", topic_url(topic, format: :html), title: topic.name + " Quotes" %>
+              <%= link_to topic.name, topic_url(topic, format: :html), title: topic.name + " Quotes" %>
             </div>
           </div>
         <% end %>

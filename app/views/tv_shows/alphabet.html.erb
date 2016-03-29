@@ -9,7 +9,7 @@
     <% @tv_shows.each do |tv_show| %>
       <div class="column text-center">
         <div class="more-link">
-          <%= link_to tv_show.name + " Quotes", tv_show_url(tv_show, format: :html), title: tv_show.name + " Quotes" %>
+          <%= link_to tv_show.name, tv_show_url(tv_show, format: :html), title: tv_show.name + " Quotes" %>
         </div>
       </div>
     <% end %>

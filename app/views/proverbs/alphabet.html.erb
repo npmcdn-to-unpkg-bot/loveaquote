@@ -9,7 +9,7 @@
     <% @proverbs.each do |proverb| %>
       <div class="column text-center">
         <div class="more-link">
-          <%= link_to proverb.name + " Proverbs", proverb_url(proverb, format: :html), title: proverb.name + " Quotes" %>
+          <%= link_to proverb.name, proverb_url(proverb, format: :html), title: proverb.name + " Quotes" %>
         </div>
       </div>
     <% end %>
