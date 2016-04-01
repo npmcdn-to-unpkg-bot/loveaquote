@@ -12,10 +12,9 @@ class GoodreadsWorker
   def fetch_quotes(book, fetch_url, current_page)
     page = Nokogiri::HTML(open(fetch_url))
     page.css('div.quoteText').each do |q|
-      quote = Quote.new
-      quote.text = q.children.first.text[8..-5]
-      quote.source = book
-      quote.save
+      ActiveRecord::Base.no_touching do
+        Quote.create(text: q.children.first.text[8..-5], source: book)
+      end
     end
 
     unless page.css('a.next_page').empty?
