@@ -22,7 +22,6 @@
             <div class="tab-pane active" id="book">
               <div class="form-inputs">
                 <%= f.input :name %>
-                <%= f.input :slug %>
                 <%= f.input :isbn %>
                 <div class="row">
                   <div class="col-sm-4">
@@ -64,6 +63,7 @@
               <%= f.simple_fields_for :seo do |seo| %>
                 <%= seo.input :title %>
                 <%= seo.input :description %>
+                <%= f.input :slug %>
               <% end %>
             </div>
 

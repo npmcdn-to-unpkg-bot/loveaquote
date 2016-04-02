@@ -67,6 +67,8 @@ module Seoable
             Redirect.create(from: "/tv-shows/#{self.slug_was}", to: "/tv-shows/#{self.slug}.html") if self.slug_changed?
         when "Character"
             Redirect.create(from: "/characters/#{self.slug_was}", to: "/characters/#{self.slug}.html") if self.slug_changed?            
+        when "Proverb"
+            Redirect.create(from: "/proverbs/#{self.slug_was}", to: "/proverbs/#{self.slug}.html") if self.slug_changed?                        
         end
     end
 end

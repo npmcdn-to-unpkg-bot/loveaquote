@@ -101,6 +101,6 @@ class Admin::CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:name, :image, :published, :popular, :very_popular, seo_attributes: [:id, :title, :description, :_destroy])
+      params.require(:character).permit(:name, :slug, :image, :published, :popular, :very_popular, seo_attributes: [:id, :title, :description, :_destroy])
     end
 end
