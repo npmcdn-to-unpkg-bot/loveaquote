@@ -23,6 +23,7 @@
             <div class="tab-pane active" id="person">
               <div class="form-inputs">
                 <%= f.input :name %>
+                <%= f.input :slug %>
                 <%= f.association :nationality, collection: Nationality.all.order(name: :ASC) %>
                 <div class="row">
                   <div class="col-sm-4">
