@@ -181,7 +181,7 @@
         </div>
       <% end %>
 
-      <% if QuoteTopic.where(quote_id: @person.quotes.pluck(:id)).where.not(topic_id: @person.featured_topics.pluck(:topic_id)).group(:topic_id).count.any? %>
+      <% if QuoteTopic.where(quote_id: @person.all_quotes.pluck(:id)).where.not(topic_id: @person.featured_topics.pluck(:topic_id)).group(:topic_id).count.any? %>
       <div class="panel panel-default panel-shadow">
         <div class="panel-heading">
           <div class="panel-title">
