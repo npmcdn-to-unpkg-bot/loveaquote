@@ -314,11 +314,11 @@
       toastr.success('Quote added to Quote of The Day queue.');
     });    
     
-    $(".tweetable-quote").on("ajax:success", function(xhr, status) {
+    $(".tweetable-quote").on("ajax:success", function(data, status, xhr) {
       toastr.success('Quote added to TweetableQuote list.');
-    });    
+    });
     
-    $(".tweetable-quote").on("ajax:error", function(xhr, status) {
+    $(".tweetable-quote").on("ajax:error", function(xhr, status, error) {
       toastr.error('Oops! this quote could not be added to TweetableQuote list.');
     });    
     

@@ -5,6 +5,6 @@ class TweetableQuote < ActiveRecord::Base
   validate :quote_length
   
   def quote_length
-    errors.add(:quote_id, "quote length is greater than 95 characters")
+    errors.add(:quote_id, "quote length is greater than 95 characters") if self.quote.text.length > 95
   end
 end

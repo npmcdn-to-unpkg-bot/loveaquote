@@ -227,7 +227,7 @@ Rails.application.routes.draw do
         get 'decline', as: 'decline'
       end
     end
-    resources :tweetable_quotes, path: "tweetable-quotes", only: [:index]
+    resources :tweetable_quotes, path: "tweetable-quotes", only: [:index, :destroy]
     resources :quote_of_the_days, path: "quote-of-the-day", only: [:index]
     resources :color_schemes, path: "color-schemes"
     resources :messages, only: [:index, :show, :destroy]

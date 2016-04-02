@@ -3,7 +3,8 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
-        <th width="100%" class="text-center">Quotes</th>
+        <th width="90%" class="text-center">Quotes</th>
+        <th width="10%" class="text-center">Manage</th>
       </tr>
     </thead>
   
@@ -11,6 +12,7 @@
       <% @tweetable_quotes.each do |tq| %>
         <tr>
           <td><%= tq.quote.text %></td>
+          <td class="text-center"><%= link_to '<i class="fa fa-times"></i>'.html_safe, admin_tweetable_quote_url(tq), method: :delete, class: "delete-quote" %></td>
         </tr>
       <% end %>
     </tbody>

@@ -30,7 +30,7 @@ class Admin::QuotesController < ApplicationController
     @tweetable_quote = TweetableQuote.new(quote: @quote)
     if @tweetable_quote.save
       respond_to  do |format|
-        format.json { head :ok }
+        format.json { render json: @tweetable_quote, status: :ok }
       end
     else
       respond_to  do |format|
