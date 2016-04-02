@@ -50,7 +50,7 @@
                 <thead>
                   <th width="5%" class="text-center">Verified</th>
                   <th width="80%" class="text-center">Quote</th>
-                  <th width="15%" class="text-center" colspan="3">Manage</th>
+                  <th width="15%" class="text-center" colspan="5">Manage</th>
                 </thead>
 
                 <tbody>
@@ -58,7 +58,9 @@
                   <tr>
                     <td class="text-center"><%= quote.verified ? '<i class="e-icon-check"></i>'.html_safe : '<i class="e-icon-cross"></i>'.html_safe %></td>
                     <td><%= quote.text %></td>
-                    <td class="text-center"><%= link_to '<i class="fa fa-calendar"></i>'.html_safe, qotd_admin_quote_url(quote), remote: true %></td>
+                    <td class="text-center"><%= link_to '<i class="fa fa-twitter"></i>'.html_safe, "" %></td>
+                    <td class="text-center"><%= link_to '<i class="fa fa-calendar"></i>'.html_safe, qotd_admin_quote_url(quote), remote: true, "data-type": "json", class: "qotd-quote" %></td>
+                    <td class="text-center"><%= link_to '<i class="fa fa-check"></i>'.html_safe, verify_admin_quote_url(quote), remote: :true, "data-type": "json", class: "verify-quote" %></td>
                     <td class="text-center"><%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_admin_quote_url(quote), target: "_blank" %></td>
                     <td class="text-center"><%= link_to '<i class="fa fa-times"></i>'.html_safe, admin_quote_url(quote), method: :delete, remote: true, class: "delete-quote" %></td>
                   </tr>
@@ -287,20 +289,6 @@
   </div>
 </div>
 
-<div class="modal fade in" id="new-qotd-modal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title"></h4>
-      </div>
-      <div class="modal-body">
-        <p id="qotd"></p>
-      </div>
-    </div>
-  </div>
-</div>
-
 <script type="text/javascript">
   $(function() {
     $(".accept_suggestion")
@@ -321,5 +309,20 @@
     $(".delete-quote").on("ajax:complete", function(xhr, status) {
       $(this).closest("tr").remove();
     });
+    
+    $(".qotd-quote").on("ajax:complete", function(xhr, status) {
+      toastr.success('Quote added to Quote of The Day queue.');
+    });    
+    
+    $(".verify-quote").on("ajax:complete", function(e, data, status, xhr) {
+      var response = jQuery.parseJSON(data.responseText);
+      if (response.verification_status) {
+        $(this).parent().siblings().first().children("i").attr('class', 'e-icon-check');
+        toastr.success('Quote marked as verified.');
+      } else {
+        $(this).parent().siblings().first().children("i").attr('class', 'e-icon-cross');
+        toastr.warning('Quote marked as unverified.');
+      }
+    });    
   });
 </script>

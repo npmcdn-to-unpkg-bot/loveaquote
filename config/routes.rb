@@ -176,7 +176,8 @@ Rails.application.routes.draw do
     root 'dashboard#index'
     resources :quotes do
       member do
-        get "qotd", action: "qotd", as: "qotd"
+        get "qotd"
+        get "verify"
       end
     end
     resources :people do
@@ -225,6 +226,7 @@ Rails.application.routes.draw do
         get 'decline', as: 'decline'
       end
     end
+    resources :tweetable_quotes, path: "tweetable-quotes", only: [:index]
     resources :quote_of_the_days, path: "quote-of-the-day", only: [:index]
     resources :color_schemes, path: "color-schemes"
     resources :messages, only: [:index, :show, :destroy]

@@ -1,0 +1,2 @@
+module TweetableQuotesHelper
+end

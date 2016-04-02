@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160329150930) do
+ActiveRecord::Schema.define(version: 20160402063133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -355,6 +355,14 @@ ActiveRecord::Schema.define(version: 20160329150930) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "tweetable_quotes", force: :cascade do |t|
+    t.integer  "quote_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "tweetable_quotes", ["quote_id"], name: "index_tweetable_quotes_on_quote_id", using: :btree
+
   create_table "user_searches", force: :cascade do |t|
     t.string   "text"
     t.integer  "source_id"
@@ -401,4 +409,5 @@ ActiveRecord::Schema.define(version: 20160329150930) do
   add_foreign_key "topic_aliases", "topics"
   add_foreign_key "topic_combinations", "topics", column: "primary_topic_id", on_delete: :cascade
   add_foreign_key "topic_combinations", "topics", column: "secondary_topic_id", on_delete: :cascade
+  add_foreign_key "tweetable_quotes", "quotes"
 end

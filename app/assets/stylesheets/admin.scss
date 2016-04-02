@@ -1,13 +1,14 @@
 $icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
 @import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass/assets/stylesheets/bootstrap";
+@import "toastr/toastr.scss";
 @import "neon-core";
 @import "neon-theme";
 @import "neon-forms";
 @import "font-awesome";
 @import "entypo";
 @import "fonts";
-@import "multiselect/css/multi-select";
+
 
 body {
     color: #949494;

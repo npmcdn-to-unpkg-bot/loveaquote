@@ -1,6 +1,6 @@
 class Admin::QuotesController < ApplicationController
   before_filter :authenticate_admin!
-  before_action :set_quote, only: [:edit, :update, :destroy, :qotd]
+  before_action :set_quote, only: [:edit, :update, :destroy, :qotd, :verify]
   layout "admin"
 
   def index
@@ -14,6 +14,16 @@ class Admin::QuotesController < ApplicationController
   # GET /quotes/new
   def new
     @quote = Quote.new
+  end
+  
+  def verify
+    respond_to do |format|
+      ActiveRecord::Base.no_touching do
+        if @quote.toggle!(:verified)
+          format.json {render json: {verification_status: @quote.verified}}
+        end
+      end
+    end
   end
 
   def edit
@@ -78,8 +88,7 @@ class Admin::QuotesController < ApplicationController
 
     respond_to do |format|
       if @qotd.save
-        QuoteOfTheDayWorker.perform_async(@quote.id)
-        format.js
+        format.json { head :ok }
       end
     end
   end

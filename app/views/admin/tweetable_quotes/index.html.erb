@@ -1,0 +1,21 @@
+<div class="col-sm-12">
+  <h2 style="margin-top: 0px">Tweetable Quotes</h2>
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th width="100%" class="text-center">Quotes</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <% @tweetable_quotes.each do |tq| %>
+        <tr>
+          <td><%= tq.quote.text %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <%= paginate @tweetable_quotes, :views_prefix => 'kaminari_bootstrap' %>
+  </div>
+</div>
