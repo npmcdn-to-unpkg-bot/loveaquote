@@ -15,6 +15,7 @@ class Quote < ActiveRecord::Base
     has_many :quote_topic_suggestions, dependent: :destroy
 
     has_many :quote_of_the_days, dependent: :destroy
+    has_many :tweetable_quotes, dependent: :destroy
 
     # text should be present and unique
     validates :text, presence: true, uniqueness: true

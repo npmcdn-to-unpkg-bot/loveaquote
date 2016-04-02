@@ -58,7 +58,7 @@
                   <tr>
                     <td class="text-center"><%= quote.verified ? '<i class="e-icon-check"></i>'.html_safe : '<i class="e-icon-cross"></i>'.html_safe %></td>
                     <td><%= quote.text %></td>
-                    <td class="text-center"><%= link_to '<i class="fa fa-twitter"></i>'.html_safe, "" %></td>
+                    <td class="text-center"><%= link_to '<i class="fa fa-twitter"></i>'.html_safe, tweetable_admin_quote_url(quote), remote: true, "data-type": "json", class: "tweetable-quote" %></td>
                     <td class="text-center"><%= link_to '<i class="fa fa-calendar"></i>'.html_safe, qotd_admin_quote_url(quote), remote: true, "data-type": "json", class: "qotd-quote" %></td>
                     <td class="text-center"><%= link_to '<i class="fa fa-check"></i>'.html_safe, verify_admin_quote_url(quote), remote: :true, "data-type": "json", class: "verify-quote" %></td>
                     <td class="text-center"><%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_admin_quote_url(quote), target: "_blank" %></td>
@@ -312,6 +312,14 @@
     
     $(".qotd-quote").on("ajax:complete", function(xhr, status) {
       toastr.success('Quote added to Quote of The Day queue.');
+    });    
+    
+    $(".tweetable-quote").on("ajax:success", function(xhr, status) {
+      toastr.success('Quote added to TweetableQuote list.');
+    });    
+    
+    $(".tweetable-quote").on("ajax:error", function(xhr, status) {
+      toastr.error('Oops! this quote could not be added to TweetableQuote list.');
     });    
     
     $(".verify-quote").on("ajax:complete", function(e, data, status, xhr) {

@@ -178,6 +178,7 @@ Rails.application.routes.draw do
       member do
         get "qotd"
         get "verify"
+        get "tweetable"
       end
     end
     resources :people do

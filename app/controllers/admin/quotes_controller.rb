@@ -1,6 +1,6 @@
 class Admin::QuotesController < ApplicationController
   before_filter :authenticate_admin!
-  before_action :set_quote, only: [:edit, :update, :destroy, :qotd, :verify]
+  before_action :set_quote, only: [:edit, :update, :destroy, :qotd, :verify, :tweetable]
   layout "admin"
 
   def index
@@ -23,6 +23,19 @@ class Admin::QuotesController < ApplicationController
           format.json {render json: {verification_status: @quote.verified}}
         end
       end
+    end
+  end
+  
+  def tweetable
+    @tweetable_quote = TweetableQuote.new(quote: @quote)
+    if @tweetable_quote.save
+      respond_to  do |format|
+        format.json { head :ok }
+      end
+    else
+      respond_to  do |format|
+        format.json { render json: @tweetable_quote.errors, status: :unprocessable_entity }
+      end      
     end
   end
 
