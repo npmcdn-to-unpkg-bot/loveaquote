@@ -78,3 +78,11 @@
     </div>
   <% end %>
 <% end %>
+
+<% content_for :additional_tags do %>
+  <% if params.has_key?(:page) %>
+    <link rel="amphtml" href="<%= "#{canonical_url(@topic, params[:page], format: :amp)}" %>">
+  <% else %>
+    <link rel="amphtml" href="<%= "#{canonical_url(@topic, format: :amp)}" %>">
+  <% end %>
+<% end %>
