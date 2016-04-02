@@ -15,7 +15,7 @@
           <% end %>
         </div>
         <div class="col-sm-9">
-          <h2 class="text-right"><%= link_to "view", person_url(@person), class: "btn btn-primary btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_person_url(@person), class: "btn btn-blue btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %> <%= @person.name %></h2>
+          <h2 class="text-right"><%= link_to "view", person_url(@person, format: :html), class: "btn btn-primary btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_person_url(@person), class: "btn btn-blue btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %> <%= @person.name %></h2>
           <p class="text-right">Last updated at: <%= @person.updated_at.strftime("%d %b, %Y - %H:%M:%S") %></p>
         </div>
       </div>

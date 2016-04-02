@@ -17,7 +17,7 @@
           <% end %>
         </div>
         <div class="col-sm-9">
-          <h2 class="text-right"><%= link_to "view", movie_url(@movie), class: "btn btn-primary btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_movie_url(@movie), class: "btn btn-blue btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %> <%= @movie.name %></h2>
+          <h2 class="text-right"><%= link_to "view", movie_url(@movie, format: :html), class: "btn btn-primary btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_movie_url(@movie), class: "btn btn-blue btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %> <%= @movie.name %></h2>
           <p class="text-right">Last updated at: <%= @movie.updated_at.strftime("%d %b, %Y - %H:%M:%S") %></p>
         </div>
       </div>

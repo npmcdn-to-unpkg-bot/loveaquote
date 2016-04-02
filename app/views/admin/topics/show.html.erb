@@ -7,7 +7,7 @@
 
   <div class="row">
     <div class="col-sm-9">
-      <h2><%= @topic.name %> <%= link_to "view", topic_url(@topic), class: "btn btn-default btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_topic_url(@topic), class: "btn btn-default btn-sm" %></h2>
+      <h2><%= @topic.name %> <%= link_to "view", topic_url(@topic, format: :html), class: "btn btn-default btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_topic_url(@topic), class: "btn btn-default btn-sm" %></h2>
 
       <div class="panel minimal minimal-gray">
 
