@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160402063133) do
+ActiveRecord::Schema.define(version: 20160402115332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -409,5 +409,5 @@ ActiveRecord::Schema.define(version: 20160402063133) do
   add_foreign_key "topic_aliases", "topics"
   add_foreign_key "topic_combinations", "topics", column: "primary_topic_id", on_delete: :cascade
   add_foreign_key "topic_combinations", "topics", column: "secondary_topic_id", on_delete: :cascade
-  add_foreign_key "tweetable_quotes", "quotes"
+  add_foreign_key "tweetable_quotes", "quotes", on_delete: :cascade
 end
