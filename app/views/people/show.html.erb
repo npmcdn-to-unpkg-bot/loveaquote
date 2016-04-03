@@ -50,7 +50,7 @@
 
   <%= render partial: "partials/featured_topics", locals: {model: @person} %>
 
-  <% if @person.books.any? %>
+  <% if @person.books.published.any? %>
     <div class="widget">
       <div class="heading">
         <h5>Books by <%= @person.name %></h5>
