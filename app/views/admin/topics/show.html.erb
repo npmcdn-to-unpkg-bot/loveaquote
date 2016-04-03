@@ -65,7 +65,7 @@
                 </thead>
               
                 <tbody>
-                  <% @topic.quote_topic_suggestions.each do |quote_topic_suggestion| %>
+                  <% @topic.quote_topic_suggestions.where(read: false).order(quote_id: :ASC).each do |quote_topic_suggestion| %>
                     <tr>
                       <td><%= quote_topic_suggestion.quote.text %></td>
                       <td class="text-center"><%= link_to quote_topic_suggestion.quote.source.name, admin_quote_source_url(quote_topic_suggestion.quote) %> <%= quote_topic_suggestion.quote.source.published ? '<span class="badge badge-default">P</span>'.html_safe : '<span class="badge badge-default">D</span>'.html_safe %></td>
