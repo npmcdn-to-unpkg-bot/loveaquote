@@ -6,7 +6,7 @@ class Admin::ProfessionsController < ApplicationController
   # GET /professions
   # GET /professions.json
   def index
-    @professions = Profession.all
+    @professions = Profession.all.order(name: :ASC)
   end
 
   # GET /professions/1
