@@ -100,5 +100,7 @@
 <% end %>
 
 <% content_for :byline do %>
-  <p class="byline">(<%= "#{@person.byline}" %>)</p>
+  <% if @person.byline.present? %>
+    <p class="byline">(<%= "#{@person.byline}" %>)</p>
+  <% end %>
 <% end %>

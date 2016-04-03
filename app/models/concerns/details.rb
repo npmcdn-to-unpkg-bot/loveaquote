@@ -15,8 +15,10 @@ module Details
 	end
 
 	def born_and_died
-		born = self.born.present? ? self.born.strftime("%Y").to_s : ""
-		died = self.died.present? ? self.died.strftime("%Y").to_s : ""
-		born + "-" + died
+		if self.born.present?
+			born = self.born.present? ? self.born.strftime("%Y").to_s : ""
+			died = self.died.present? ? self.died.strftime("%Y").to_s : ""
+			born + "-" + died
+		end
 	end
 end
