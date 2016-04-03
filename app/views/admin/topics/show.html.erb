@@ -133,5 +133,32 @@
     .on("ajax:complete", function(e, data, status, xhr) {
         $(this).closest("tr").remove();
     });
+    
+    $(".delete-quote").on("ajax:complete", function(xhr, status) {
+      $(this).closest("tr").remove();
+    });
+    
+    $(".qotd-quote").on("ajax:complete", function(xhr, status) {
+      toastr.success('Quote added to Quote of The Day queue.');
+    });    
+    
+    $(".tweetable-quote").on("ajax:success", function(data, status, xhr) {
+      toastr.success('Quote added to TweetableQuote list.');
+    });
+    
+    $(".tweetable-quote").on("ajax:error", function(xhr, status, error) {
+      toastr.error('Oops! this quote could not be added to TweetableQuote list.');
+    });    
+    
+    $(".verify-quote").on("ajax:complete", function(e, data, status, xhr) {
+      var response = jQuery.parseJSON(data.responseText);
+      if (response.verification_status) {
+        $(this).parent().siblings().first().children("i").attr('class', 'e-icon-check');
+        toastr.success('Quote marked as verified.');
+      } else {
+        $(this).parent().siblings().first().children("i").attr('class', 'e-icon-cross');
+        toastr.warning('Quote marked as unverified.');
+      }
+    });        
   });
 </script>
