@@ -10,3 +10,7 @@
     <p>If you want like to contact us, send us some feedback or would like to work with us, please use the form below to connect with us. We read every email and usually reply within one business day.</p>
     <%= render 'form' %>
 <% end %>
+
+<% content_for :additional_tags do %>
+  <meta name="robots" content="noindex,follow">
+<% end %>
