@@ -1,4 +1,3 @@
-# Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "https://www.loveaquote.com"
 
 SitemapGenerator::Sitemap.create do
