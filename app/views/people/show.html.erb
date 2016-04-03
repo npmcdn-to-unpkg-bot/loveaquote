@@ -100,7 +100,9 @@
 <% end %>
 
 <% content_for :byline do %>
-  <% if @person.byline.present? %>
-    <p class="byline">(<%= "#{@person.byline}" %>)</p>
+  <% cache "person-byline-#{@person.slug}-#{@person.updated_at.to_s(:number)}" do %>
+    <% if @person.byline.present? %>
+      <p class="byline">(<%= "#{@person.byline}" %>)</p>
+    <% end %>
   <% end %>
 <% end %>
