@@ -17,6 +17,7 @@
           <div class="panel-options">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#topic" data-toggle="tab">Topic</a></li>
+              <li><a href="#topic-aliases" data-toggle="tab">Topic Aliases</a></li>
               <li><a href="#seo" data-toggle="tab">SEO</a></li>
               <li><a href="#combinations" data-toggle="tab">Combinations</a></li>
             </ul>
@@ -36,6 +37,17 @@
               </div>
             </div>
 
+            <div class="tab-pane" id="topic-aliases">
+              <div id='topic_aliases'>
+                <%= f.simple_fields_for :topic_aliases do |topic_alias| %>
+                  <%= render 'topic_alias_fields', :f => topic_alias %>
+                <% end %>
+                <div class='links'>
+                  <%= link_to_add_association '<i class="e-icon-squared-plus"></i> alias'.html_safe, f, :topic_aliases %>
+                </div>
+              </div>
+            </div>
+              
             <div class="tab-pane" id="seo">
               <%= f.simple_fields_for :seo do |seo| %>
                 <%= seo.input :title %>

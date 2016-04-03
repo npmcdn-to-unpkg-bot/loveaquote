@@ -17,8 +17,7 @@
           <div class="panel-options">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#quotes" data-toggle="tab" aria-expanded="true">Quotes</a></li>
-              <li class=""><a href="#topic-aliases" data-toggle="tab" aria-expanded="false">Topic Aliases</a></li>
-              <li class=""><a href="#topic-suggestions" data-toggle="tab" aria-expanded="false">Topic Aliases</a></li>
+              <li class=""><a href="#quote-suggestions" data-toggle="tab" aria-expanded="false">Quote Suggestions</a></li>
               <% if @topic.social_image.present? %>
                 <li><a href="#social-image" data-toggle="tab">Social Images</a></li>
               <% end %>
@@ -47,41 +46,8 @@
                 </tbody>
               </table>
             </div>
-
-            <div class="tab-pane" id="topic-aliases">
-              <div class="row">
-                <div class="col-sm-6">
-                  <h5 class="text-center">Add new</h5>
-                  <div id="new_topic_alias_errors"></div>
-                  <%= simple_form_for([:admin, @topic, TopicAlias.new], remote: true) do |f|%>
-                      <%= f.input :name %>
-                      <%= f.hidden_field :topic_id, value: @topic.id %>
-                      <%= f.button :submit, id: "new_topic_alias_submit" %>
-                  <% end %>
-                </div>
-                <div class="col-sm-6">
-                  <h5 class="text-center">Topic Aliases</h5>
-                  <table id="topic_aliases_table" class="table table-striped table-bordered table-hover">
-                    <thead>
-                      <th class="text-center" width="60%">Alias Name</th>
-                      <th class="text-center" width="40%" colspan="2">Manage</th>
-                    </thead>
-
-                    <tbody>
-                      <% @topic.topic_aliases.each do |topic_alias| %>
-                        <tr>
-                          <td><%= topic_alias.name %></td>
-                          <td class="text-center">Edit</td>
-                          <td class="text-center">Delete</td>
-                        </tr>
-                      <% end %>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
             
-            <div class="tab-pane" id="topic-suggestions">
+            <div class="tab-pane" id="quote-suggestions">
               <table class="table table-striped table-bordered table-hover">
                 <thead>
                   <tr>
@@ -150,24 +116,6 @@
 
 <script type="text/javascript">
   $(function() {
-    $("#new_topic_alias")
-    .on("ajax:before", function() {
-      $("#new_topic_alias_errors").empty();
-      $("#new_topic_alias_submit").val("Submitting ...");
-    })
-    .on("ajax:success", function(e, data, status, xhr) {
-      $("#topic_alias_name").val("");
-      $('#topic_aliases_table').append("<tr><td>" + data.name + "</td><td class='text-center'>Edit</td><td class='text-center'>Delete</td></tr>");
-    })
-    .on("ajax:error", function(e, xhr, status, error){
-      $.each(xhr.responseJSON.name, function(index, value) {
-        $("#new_topic_alias_errors").append('<div class="alert alert-danger">' + value + '</div>');
-      });
-    })
-    .on("ajax:complete", function() {
-      $("#new_topic_alias_submit").val("Create Topic alias");
-    });
-    
     $(".accept_suggestion")
     .on("ajax:complete", function(e, data, status, xhr) {
         $(this).closest("tr").remove();

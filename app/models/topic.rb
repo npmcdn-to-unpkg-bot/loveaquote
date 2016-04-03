@@ -14,6 +14,7 @@ class Topic < ActiveRecord::Base
     has_many :quote_topics, dependent: :destroy
     has_many :quotes, through: :quote_topics
     has_many :topic_aliases, dependent: :destroy
+    accepts_nested_attributes_for :topic_aliases, reject_if: :all_blank, allow_destroy: true
     has_many :topic_combinations, foreign_key: "primary_topic_id", dependent: :destroy
     accepts_nested_attributes_for :topic_combinations, reject_if: :all_blank, allow_destroy: true
     has_many :quote_topic_suggestions, dependent: :destroy
