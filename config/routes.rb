@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get "authors/:slug", to: redirect("/people/%{slug}", status: 301)
   get "authors/:slug/:page", to: redirect("/people/%{slug}/%{page}", status: 301)
 
-  devise_for :users, path: "user", path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}, controllers: {sessions: "user/sessions", registrations: "user/registrations"}
+  devise_for :users, path: "user", path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}, controllers: {sessions: "user/sessions", omniauth_callbacks: "user/omniauth_callbacks"}
 
   resources :people, only: [:index, :show] do
     collection do

@@ -25,6 +25,7 @@ gem 'redis-namespace'
 gem 'sinatra', :require => nil
 
 gem 'devise'
+gem "omniauth-google-oauth2"
 
 gem 'foundation-rails'
 gem 'font-awesome-rails'

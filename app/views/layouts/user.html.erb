@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loveaquote</title>
+  <%= stylesheet_link_tag    'admin', media: 'all' %>
+  <%= javascript_include_tag 'admin' %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="page-body loaded <%= controller.controller_name %> <%= controller.action_name %>">
+    <div class="page-container sidebar-collapsed horizontal-menu with-sidebar">
+      <%= render "layouts/partials/nav_bar_admin" %>
+      <%= render "layouts/partials/sidebar" %>
+      <div class="main-content">
+        <%= render "layouts/partials/notification" %>
+        <div class="row">  
+          <%= yield %>
+        </div>
+        <%= render "layouts/partials/admin_footer" %>
+      </div>
+    </div>
+  </body>
+</html>
