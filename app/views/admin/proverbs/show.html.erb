@@ -49,7 +49,7 @@
                 </thead>
 
                 <tbody>
-                  <% @person.quotes.order(text: :asc).each do |quote| %>
+                  <% @proverb.quotes.order(text: :asc).each do |quote| %>
                   <tr>
                     <td class="text-center"><%= quote.verified ? '<i class="e-icon-check"></i>'.html_safe : '<i class="e-icon-cross"></i>'.html_safe %></td>
                     <td><%= quote.text %></td>
