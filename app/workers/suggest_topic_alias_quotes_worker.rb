@@ -8,7 +8,7 @@ class SuggestTopicAliasQuotesWorker
         words = quote.text.split(" ")
         words.each do |word|
           word = cleanup_word(word)
-          if word.downcase == topic_alias.name.downcase
+          if word.downcase == topic_alias.name.downcase && !QuoteTopic.exists?(quote_id: quote.id, topic_id: topic_alias.topic.id)
             QuoteTopicSuggestion.create(quote_id: quote.id, topic_id: topic_alias.topic.id)
             break
           end

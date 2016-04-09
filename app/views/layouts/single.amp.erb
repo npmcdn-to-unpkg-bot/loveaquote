@@ -3,8 +3,7 @@
   <head>
     <%= render "layouts/partials/head.amp.erb" %>
   </head>
-  <body class="<%= controller.controller_name %> <%= controller.action_name  %>" itemscope="itemscope" itemtype="http://schema.org/WebPage">
-    <%= render "layouts/partials/google_analytics" %>
+  <body class="<%= controller.controller_name %> <%= controller.action_name  %>">
     <div class="row">
       <div class="small-12 columns">
         <div class="top-bar">
@@ -29,9 +28,9 @@
     <div class="row">
       <div class="small-12 large-6 large-offset-3 columns">
     	  <div class="wrapper">
-          <main id="content" role="main" itemprop="mainContentOfPage">
-            <article itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
-              <header><h1 itemprop="headline" class="text-center"><%= yield :heading %></h1></header>
+          <main id="content">
+            <article>
+              <header><h1 class="text-center"><%= yield :heading %></h1></header>
               <div itemprop="text">
                 <%= yield :content %>
               </div>

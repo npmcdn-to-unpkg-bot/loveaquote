@@ -7,7 +7,9 @@ class SuggestTopicsWorker
     Topic.all.each do |topic|
       words.each do |word|
         word = cleanup_word(word)
-        QuoteTopicSuggestion.create(quote_id: quote.id, topic_id: topic.id) if word.downcase == topic.name.downcase || find_alias_match(topic, word)
+        if (word.downcase == topic.name.downcase || find_alias_match(topic, word)) && !QuoteTopic.exists?(quote_id: quote.id, topic_id: topic.id)
+          QuoteTopicSuggestion.create(quote_id: quote.id, topic_id: topic.id)
+        end
       end
     end
 

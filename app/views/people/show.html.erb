@@ -91,14 +91,6 @@
   <% end %>
 <% end %>
 
-<% content_for :additional_tags do %>
-  <% if params.has_key?(:page) %>
-    <link rel="amphtml" href="<%= "#{canonical_url(@person, params[:page], format: :amp)}" %>">
-  <% else %>
-    <link rel="amphtml" href="<%= "#{canonical_url(@person, format: :amp)}" %>">
-  <% end %>
-<% end %>
-
 <% content_for :byline do %>
   <% cache "person-byline-#{@person.slug}-#{@person.updated_at.to_s(:number)}" do %>
     <% if @person.byline.present? %>
