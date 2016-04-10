@@ -18,3 +18,24 @@
         </div>
     <% end %>
 <% end %>
+
+<% if model.class.name == "Proverb" %>
+  <% cache "more-proverbs-#{model.slug}-#{model.updated_at.to_s(:number)}" do %>
+    <div class="widget">
+      <div class="heading">
+        <h5>More Proverbs</h5>
+      </div>
+      <div class="content">
+        <div class="row small-up-1 medium-up-1 large-up-1">
+          <% Proverb.where.not(id: model.id).limit(10).each do |proverb| %>
+            <div class="column">
+              <div class="more-link">
+                <%= link_to proverb.name + " Proverbs", proverb_url(proverb, format: :html), title: proverb.name + " Proverbs" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

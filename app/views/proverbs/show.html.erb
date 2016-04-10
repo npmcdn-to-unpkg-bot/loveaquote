@@ -48,3 +48,7 @@
     </div>
   <% end %>
 <% end %>
+
+<% content_for :aside do %>
+  <%= render partial: "partials/aside", locals: { model: @proverb } %>
+<% end %>
