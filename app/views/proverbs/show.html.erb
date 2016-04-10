@@ -1,6 +1,4 @@
-<% content_for :canonical, "#{canonical_url(@proverb, format: :html)}" %>
-<% content_for :title, "#{@proverb.name} Proverbs - #{@proverb.quotes.count.to_s} quotes" %>
-<% content_for :description, "Proverbs from #{@proverb.name}. Best collection of #{@proverb.name} proverbs. Read, comment and share these proverbs." %>
+<%= render partial: "partials/seo", locals: {model: @proverb} %>
 
 <% content_for :heading, "#{@proverb.name} Proverbs" %>
 

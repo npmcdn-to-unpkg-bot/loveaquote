@@ -9,7 +9,7 @@ module Seoable
 
     def title
         if self.seo_title
-            #do something
+            clean_string(self.seo_title)
         else
             generate_title
         end
@@ -17,7 +17,7 @@ module Seoable
 
     def description
         if self.seo_description
-            #do something
+            clean_string(self.seo_description)
         else
             generate_description
         end
@@ -43,6 +43,8 @@ module Seoable
         case self.class.name
         when "Topic"
             "#{self.name} Quotes - #{self.quotes.count} Best Quotes about #{self.name}"
+        when "Proverb"
+            "#{self.name} Proverbs - #{self.quotes.count} Best #{self.name} Proverbs"
         end
     end
 
@@ -50,6 +52,8 @@ module Seoable
         case self.class.name
         when "Topic"
             "Quotes about #{self.name}. Best collection of #{self.name} quotes brought to you by LoveAQuote. Enjoy reading these quotes on #{self.name}."
+        when "Proverb"
+            "#{self.name} Proverbs. Best collection of #{self.name} proverbs brought to you by LoveAQuote. Enjoy reading these #{self.name} proverbs."            
         end
     end
     
@@ -70,5 +74,9 @@ module Seoable
         when "Proverb"
             Redirect.create(from: "/proverbs/#{self.slug_was}", to: "/proverbs/#{self.slug}.html") if self.slug_changed?                        
         end
+    end
+    
+    def clean_string(str)
+        str.gsub("{{count}}", self.quotes.count.to_s)
     end
 end
