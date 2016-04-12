@@ -1,0 +1,4 @@
+<div class='nested-fields'>
+    <%= f.association :topic, collection: Topic.all.order(name: :asc) %>
+    <%= link_to_remove_association '<i class="e-icon-squared-cross"></i>'.html_safe, f %>
+</div>

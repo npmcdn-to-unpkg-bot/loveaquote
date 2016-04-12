@@ -40,12 +40,13 @@ Rails.application.routes.draw do
       get 'feed'
     end
     member do
-      get 'search'
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
+      get ':featured_topic', action: 'featured_topic', as: 'featured_topic', featured_topic: /on-.+/, format: true
       get 'pinterest'
       get 'facebook'
       get 'twitter'
       get 'google_plus'
+      get 'search'
       get ':redirect_to_proverb', action: 'redirect_to_proverb', constraints: { page: /\D+/ }
     end
   end

@@ -8,6 +8,7 @@ class Proverb < ActiveRecord::Base
     include TimeLineable
     include SearchSuggestable
     include Reviewable
+    include FeaturedTopicable
     
     pg_search_scope :search_by_name, against: :name, using: { tsearch: {prefix: true} }
 

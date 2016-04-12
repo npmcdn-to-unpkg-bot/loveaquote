@@ -2,14 +2,18 @@
   <% if model.featured_topics.any? %>
     <div class="widget">
       <div class="heading">
-        <h5><%= model.name %> Quotes on</h5>
+        <% unless model.class.name == "Proverb" %>
+          <h5><%= model.name %> Quotes on</h5>
+        <% else %>
+          <h5><%= model.name %> Proverbs on</h5>
+        <% end %>
       </div>
       <div class="content">
         <div class="row small-up-1 medium-up-1 large-up-2">
           <% model.featured_topics.order(slug: :ASC).each do |ft| %>
             <div class="column">
               <div class="more-link text-center">
-                <%= link_to ft.topic.name, featured_topic_model_url(@person, ft, format: :html), title: "#{model.name} Quotes on #{ft.topic.name}" %>
+                <%= link_to ft.topic.name, featured_topic_model_url(model, ft, format: :html), title: "#{model.name} Quotes on #{ft.topic.name}" %>
               </div>
             </div>
           <% end %>

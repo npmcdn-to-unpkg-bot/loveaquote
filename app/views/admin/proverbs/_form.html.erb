@@ -9,6 +9,7 @@
           <div class="panel-options">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#proverb" data-toggle="tab">Proverb</a></li>
+              <li><a href="#featured_topics" data-toggle="tab">Featured Topics</a></li>
               <li><a href="#seo" data-toggle="tab">SEO</a></li>
             </ul>
           </div>
@@ -43,7 +44,6 @@
                 </div>  
               </div>
             </div>
-            
             <div class="tab-pane" id="seo">
               <%= f.simple_fields_for :seo do |seo| %>
                 <%= seo.input :title %>
@@ -51,7 +51,15 @@
                 <%= f.input :slug %>
               <% end %>
             </div>
-            
+            <div class="tab-pane" id="featured_topics">
+              <%= f.simple_fields_for :featured_topics do |featured_topic| %>
+                <%= render 'featured_topic_fields', :f => featured_topic %>
+              <% end %>
+
+              <div class='links'>
+                <%= link_to_add_association '<i class="e-icon-squared-plus"></i> featured topic'.html_safe, f, :featured_topics %>
+              </div>
+            </div>
           </div>
         </div>
       </div>  

@@ -79,6 +79,6 @@ class Admin::ProverbsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def proverb_params
-      params.require(:proverb).permit(:name, :slug, :published, :popular, :very_popular, seo_attributes: [:id, :title, :description, :_destroy])
+      params.require(:proverb).permit(:name, :slug, :published, :popular, :very_popular, seo_attributes: [:id, :title, :description, :_destroy], featured_topics_attributes: [:id, :topic_id, :_destroy])
     end
 end

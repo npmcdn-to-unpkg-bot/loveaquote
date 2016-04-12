@@ -1,10 +1,18 @@
 class ProverbsController < ApplicationController
-  before_action :set_proverb, only: [:show, :twitter, :facebook, :pinterest, :search]
-
+  before_action :set_proverb, only: [:show, :twitter, :facebook, :pinterest, :search, :featured_topic]
+  before_action :set_featured_topic, only: [:featured_topic]
+  
   def index
     @proverbs = Proverb.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
     @canonical = proverbs_url(format: :html)
     render layout: "archive"
+  end
+  
+  def featured_topic
+    @quotes = @proverb.quotes.filter_by_topic(@featured_topic.topic.id).order(total_share_count: :desc).order(text: :asc).page params[:page]
+    respond_to do |format|
+      format.html { render layout: "single" }
+    end
   end
 
   def show
@@ -71,5 +79,9 @@ class ProverbsController < ApplicationController
         redirect_to @redirect.to, status: 301
       end
     end
+  end
+  
+  def set_featured_topic
+    @featured_topic = FeaturedTopic.where(source: @proverb).find_by_slug(params[:featured_topic])
   end
 end

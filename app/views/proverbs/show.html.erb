@@ -50,5 +50,6 @@
 <% end %>
 
 <% content_for :aside do %>
+  <%= render partial: "partials/featured_topics", locals: {model: @proverb} %>
   <%= render partial: "partials/aside", locals: { model: @proverb } %>
 <% end %>

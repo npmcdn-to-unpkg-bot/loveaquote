@@ -112,6 +112,36 @@
 
     <div class="col-sm-3">
       <%= render partial: "admin/partials/review", locals: {model: @proverb} %>
+      
+      <% if @proverb.featured_topics.any? %>
+        <div class="panel panel-default panel-shadow">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <%= "Featured Topics of #{@proverb.name} Proverbs" %>
+            </div>
+          </div>
+          <div class="panel-body">
+            <%= form_tag "", method: :get do %>
+              <%= select_tag "featured_topic", options_for_select(@proverb.featured_topics.collect {|ft| [ft.topic.name, ft.id]}, params[:featured_topic]), prompt: "Filter by Featured Topic", onchange: "this.form.submit()", class: "form-control" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+      <% if QuoteTopic.where(quote_id: @proverb.quotes.pluck(:id)).where.not(topic_id: @proverb.featured_topics.pluck(:topic_id)).group(:topic_id).count.any? %>
+        <div class="panel panel-default panel-shadow">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <%= "Other Topics of #{@person.name} Proverbs" %>
+            </div>
+          </div>
+          <div class="panel-body">
+            <%= form_tag "", method: :get do %>
+              <%= select_tag "topic", options_for_select(QuoteTopic.where(quote_id: @proverb.quotes.pluck(:id)).where.not(topic_id: @proverb.featured_topics.pluck(:topic_id)).select("topic_id, count(*) as topic_count").group(:topic_id).order("topic_count DESC").map {|ft| ["#{Topic.find(ft.topic_id).name} - #{ft.topic_count}", ft.topic_id]}, params[:topic]), prompt: "Filter by Topic", onchange: "this.form.submit()", class: "form-control" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

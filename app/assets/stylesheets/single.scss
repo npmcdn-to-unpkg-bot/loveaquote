@@ -63,7 +63,9 @@
 	margin-left: 0px;
 }
 
-.show article {
+.show article,
+.search article,
+.featured_topic article {
 	padding: 1rem 0;
 }
 

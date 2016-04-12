@@ -1,0 +1,89 @@
+<% if params.has_key?(:page) %>
+  <% content_for :canonical, "#{featured_topic_proverb_url(@proverb, @featured_topic, params[:page], format: :html)}" %>
+  <% content_for :title, "#{@proverb.name} Proverbs on #{@featured_topic.topic.name} - Page #{params[:page]}" %>
+  <% content_for :description, "#{@proverb.name} Proverbs - page #{params[:page]}. Best collection of #{@proverb.name} proverbs. Read, comment and share these proverbs." %>
+<% else %>
+  <% content_for :canonical, "#{featured_topic_proverb_url(@proverb, @featured_topic, format: :html)}" %>
+  <% content_for :title, "#{@proverb.name} Quotes on #{@featured_topic.topic.name}" %>
+  <% content_for :description, "#{@proverb.name} Proverbs. Best collection of #{@proverb.name} proverbs. Read, comment and share these proverbs." %>
+<% end %>
+
+<% content_for :heading, "#{@proverb.name} Proverbs on #{@featured_topic.topic.name}" %>
+
+<% if @proverb.social_image.present? %>
+  <% content_for :facebook_image, @proverb.social_image.facebook %>
+<% end %>
+
+<% content_for :breadcrumbs do %>
+	<ul class="breadcrumbs">
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= proverbs_url(format: :html) %>" itemprop="url"><span itemprop="title">Proverbs</span></a></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= proverb_url(@proverb, format: :html) %>" itemprop="url"><span itemprop="title"><%= "#{@proverb.name} Proverbs" %></span></a></li>
+    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= "on #{@featured_topic.topic.name}" %></span></li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <ul itemscope itemtype="http://schema.org/ItemList">
+    <% @quotes.each do |quote| %>
+      <%= render partial: "proverbs/quote", object: quote %>
+    <% end %>
+  </ul>
+
+  <div class="text-center">
+    <%= paginate @quotes, :views_prefix => 'kaminari_foundation' %>
+  </div>
+<% end %>
+
+<% content_for :updated do %>
+  Last Updated - <time itemprop="dateModified" datetime="<%= @proverb.updated_at.to_datetime %>"><%= @proverb.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
+<% end %>
+
+<% content_for :aside do %>
+  <div class="widget">
+    <div class="heading">
+      <h5>Follow on Facebook</h5>
+    </div>
+    <div class="content">
+      <div class="fb-page" data-href="https://www.facebook.com/doyouloveaquote/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/doyouloveaquote/"><a href="https://www.facebook.com/doyouloveaquote/">Doyouloveaquote</a></blockquote></div></div>
+    </div>
+  </div>
+
+  <% if @proverb.featured_topics.where.not(id: [@featured_topic.id]).any? %>
+    <div class="widget">
+      <div class="heading">
+        <h5><%= @proverb.name %> Proverbs by topic</h5>
+      </div>
+      <div class="content">
+        <div class="row small-up-1 medium-up-1 large-up-1">
+          <% @proverb.featured_topics.where.not(id: [@featured_topic.id]).each do |ft| %>
+            <div class="column">
+              <div class="more-link">
+                <%= link_to "#{@proverb.name} Proverbs on #{ft.topic.name}", featured_topic_proverb_url(@proverb, featured_topic: ft, format: :html) %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<% content_for :social_sharing do %>
+    <a rel="nofollow" class="share-proverb-twitter" title="<%= "Share #{@proverb.name} proverbs on Twitter" %>" target="_blank" href="<%= twitter_proverb_url(@proverb) %>"><%= image_tag('social/twitter.png') %></a>
+    <a rel="nofollow" class="share-proverb-facebook" title="<%= "Share #{@proverb.name} proverbs on Facebook" %>" target="_blank" href="<%= facebook_proverb_url(@proverb) %>"><%= image_tag('social/facebook.png') %></a>
+    <% if (@proverb.social_image && @proverb.social_image.pinterest.present?) || @proverb.image.present? %>
+      <a rel="nofollow" class="share-proverb-pinterest" title="<%= "Share #{@proverb.name} proverbs on Pinterest" %>" target="_blank" href="<%= pinterest_proverb_url(@proverb) %>"><%= image_tag('social/pinterest.png') %></a>
+    <% end %>
+<% end %>
+
+<% content_for :search_form do %>
+  <%= form_tag search_proverb_url(@proverb, format: :html), method: :get do %>
+    <div class="input-group">
+      <%= text_field_tag :search, params[:search], class: "input-group-field small" %>
+      <div class="input-group-button">
+        <%= submit_tag "Search", class: "button small secondary" %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
