@@ -44,7 +44,7 @@ module Seoable
         when "Topic"
             "#{self.name} Quotes - #{self.quotes.count} Best Quotes about #{self.name}"
         when "Proverb"
-            "#{self.name} Proverbs - #{self.quotes.count} Best #{self.name} Proverbs"
+            "#{self.quotes.count} Best #{self.name} Proverbs, Sayings, and Truisms"
         end
     end
 
@@ -53,7 +53,7 @@ module Seoable
         when "Topic"
             "Quotes about #{self.name}. Best collection of #{self.name} quotes brought to you by LoveAQuote. Enjoy reading these quotes on #{self.name}."
         when "Proverb"
-            "#{self.name} Proverbs. Best collection of #{self.name} proverbs brought to you by LoveAQuote. Enjoy reading these #{self.name} proverbs."            
+            "#{self.name} Proverbs, Sayings, and Truisms. Best collection of #{self.name} thoughts brought to you by LoveAQuote. Enjoy reading these #{self.name} proverbs."            
         end
     end
     
