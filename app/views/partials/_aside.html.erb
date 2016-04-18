@@ -27,7 +27,7 @@
       </div>
       <div class="content">
         <div class="row small-up-1 medium-up-1 large-up-1">
-          <% Proverb.where.not(id: model.id).limit(10).each do |proverb| %>
+          <% Proverb.published.where.not(id: model.id).limit(10).each do |proverb| %>
             <div class="column">
               <div class="more-link">
                 <%= link_to proverb.name + " Proverbs", proverb_url(proverb, format: :html), title: proverb.name + " Proverbs" %>

@@ -11,7 +11,7 @@
           <% cache "quote-info-#{quote.id}-#{quote.updated_at.to_s(:number)}-source-#{quote.source.updated_at.to_s(:number)}" do %>
             <% if quote.source.published? %>
               <% if quote.source.class.name == "Proverb" %>
-                <%= link_to quote.source.name, model_url(quote.source, format: :html), title: quote.source.name + " Proverbs" %>
+                <%= link_to quote.source.name + " Proverb", model_url(quote.source, format: :html), title: quote.source.name + " Proverbs" %>
               <% else %>
                 <%= link_to quote.source.name, model_url(quote.source, format: :html), title: quote.source.name + " Quotes" %>
               <% end %>
