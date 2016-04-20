@@ -32,7 +32,7 @@ class Proverb < ActiveRecord::Base
     scope :by_alphabet, ->(alphabet) {where('name like ?', "#{alphabet}%")}
 
     before_validation :strip_name, :generate_slug
-    after_save :add_to_time_line
+    after_save :expire_cache
 
     def to_param
         slug
@@ -48,5 +48,15 @@ class Proverb < ActiveRecord::Base
 
     def add_to_time_line
         TimeLine.create(item: self) if self.published
+    end
+    
+    def self.cached_very_popular
+        Rails.cache.fetch("very_popular_proverb") do
+            very_popular.published.order(name: "ASC").to_a
+        end
+    end
+
+    def expire_cache
+        Rails.cache.delete("very_popular_proverb") if self.very_popular? && self.very_popular_changed?
     end
 end

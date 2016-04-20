@@ -3,6 +3,7 @@ class WelcomeController < ApplicationController
     @people = Person.cached_very_popular
     @topics = Topic.cached_very_popular
     @books = Book.cached_very_popular
+    @proverbs = Proverb.cached_very_popular
     @qotd = QuoteOfTheDay.today
   end
 
