@@ -24,7 +24,7 @@ module Seoable
     end
 
     def seo_title
-        if self.seo && self.seo.title
+        if self.seo && self.seo.title.present?
             self.seo.title
         else
             nil
@@ -32,7 +32,7 @@ module Seoable
     end
 
     def seo_description
-        if self.seo && self.seo.description
+        if self.seo && self.seo.description.present?
             self.seo.description
         else
             nil
