@@ -1,11 +1,9 @@
-<% cache "seo-#{model.class.name.downcase}-#{model.slug}-#{model.updated_at.to_s(:number)}" do %>
-  <% if params.has_key?(:page) %>
-    <% content_for :canonical, "#{canonical_url(model, params[:page], format: :html)}" %>
-    <% content_for :title, "#{model.title} - Page #{params[:page]}"  %>
-    <% content_for :description, model.description %>
-  <% else %>
-    <% content_for :canonical, "#{canonical_url(model, format: :html)}" %>
-    <% content_for :title, model.title  %>
-    <% content_for :description, model.description %>
-  <% end %>
+<% if params.has_key?(:page) %>
+  <% content_for :canonical, "#{canonical_url(model, params[:page], format: :html)}" %>
+  <% content_for :title, "#{model.title} - Page #{params[:page]}"  %>
+  <% content_for :description, model.description %>
+<% else %>
+  <% content_for :canonical, "#{canonical_url(model, format: :html)}" %>
+  <% content_for :title, model.title  %>
+  <% content_for :description, model.description %>
 <% end %>
