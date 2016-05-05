@@ -1,4 +1,4 @@
-lock '3.4.0'
+lock '3.5.0'
 
 set :application, 'loveaquote'
 set :repo_url, 'https://github.com/brahmadpk/loveaquote.git'
