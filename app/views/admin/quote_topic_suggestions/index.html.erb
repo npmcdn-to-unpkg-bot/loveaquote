@@ -45,11 +45,13 @@
     $(".accept_suggestion")
     .on("ajax:complete", function(e, data, status, xhr) {
         $(this).closest("tr").remove();
+        toastr.success('Suggestion accepted.');
     });
   
     $(".decline_suggestion")
     .on("ajax:complete", function(e, data, status, xhr) {
         $(this).closest("tr").remove();
+        toastr.warning('Suggestion rejected.');
     });
   });
 </script>
