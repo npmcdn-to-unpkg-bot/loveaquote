@@ -20,13 +20,13 @@
         <% people.each do |person| %>
           <div class="column">
             <div class="more-link text-center">
-              <%= link_to person.name, person_url(person, format: :html), title: person.name + " Quotes" %>
+              <%= link_to person.name, person_url(person), title: person.name + " Quotes" %>
             </div>
           </div>
         <% end %>
       </div>
       <div class="more-link text-center">
-        <%= link_to "More ...", alphabet_people_url(letter.upcase, format: :html) %>
+        <%= link_to "More ...", alphabet_people_url(letter.upcase) %>
       </div>
     </div>  
   <% end %>
