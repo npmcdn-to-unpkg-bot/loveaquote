@@ -1,5 +1,7 @@
 .site-container {
-	margin: 2rem 0;
+	margin-top: 4rem;
+	margin-bottom: 4rem;
+	max-width: 1000px;
 }
 
 .wrapper {
@@ -9,22 +11,22 @@
 
 @media only screen and (min-width: 64.063em) {
 	.wrapper {
-	padding: 0 2rem;
+	padding: 0 4rem;
 }
 }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
 	.wrapper {
-		padding: 0 1rem;
+		padding: 0 2rem;
 	}
 }
 
 @media only screen and (max-width: 40em) {
 	.wrapper {
-		padding: 0 0.25rem;
+		padding: 0 0.5rem;
 	}
 }
 
 .application main {
-	padding: 2rem 0;
+	padding: 4rem 0;
 }

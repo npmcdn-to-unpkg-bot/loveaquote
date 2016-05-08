@@ -1,4 +1,10 @@
+$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
+@import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "bootstrap-sass/assets/stylesheets/bootstrap";
+@import "global";
+@import "structure";
 @import "fonts";
+
 @import "welcome";
 @import "people";
 @import "books";
@@ -9,9 +15,7 @@
 @import "proverbs";
 @import "quotes";
 
-@import "foundation_and_overrides";
-@import "global";
-@import "structure";
+
 @import "header";
 @import "footer";
 @import "single";

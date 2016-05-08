@@ -9,7 +9,7 @@
 <% content_for :content do %>
   <% if @qotd %>
     <div class="row">
-      <div class="small-12 large-12 medium-10 medium-centered columns">
+      <div class="col-sm-12 col-lg-12 col-md-10 col-md-offset-1">
         <h2 class="text-center">Quote Of The Day</h2>
         <p class="text-center"><%=  @qotd.quote.text %><br><%= link_to @qotd.quote.source.name, model_url(@qotd.quote.source, format: :html), title: "#{@qotd.quote.source.name} Quotes" %></p>
       </div>
@@ -17,11 +17,11 @@
   <% end %>
 
   <div class="row">
-    <div class="small-12 columns">
+    <div class="col-sm-12">
   		<h2 class="text-center">Topics</h2>
-		  <div class="row small-up-1 medium-up-3 large-up-3">
+		  <div class="row">
         <% @topics.each do |topic| %>
-        <div class="column">
+        <div class="col-sm-12 col-md-6 col-lg-4">
           <div class="more-link text-center">
             <%= link_to topic.name, topic_url(topic, format: :html), title: topic.name + " Quotes" %>
           </div>
@@ -32,11 +32,11 @@
         <%= link_to "More Topics", topics_url %>
       </div>      
     </div>
-    <div class="small-12 columns">
+    <div class="col-sm-12">
       <h2 class="text-center">People</h2>
-		  <div class="row small-up-1 medium-up-3 large-up-3">
+		  <div class="row">
         <% @people.each do |person| %>
-        <div class="column">
+        <div class="col-sm-12 col-md-6 col-lg-4">
           <div class="more-link text-center">
             <%= link_to person.name, person_url(person, format: :html), title: person.name + " Quotes" %>
           </div>
@@ -47,11 +47,11 @@
         <%= link_to "More People", people_url %>
       </div>
 	 </div>
-    <div class="small-12 columns">
+    <div class="col-sm-12">
       <h2 class="text-center">Books</h2>
-		  <div class="row small-up-1 medium-up-3 large-up-3">
+		  <div class="row">
         <% @books.each do |book| %>
-        <div class="column">
+        <div class="col-sm-12 col-md-6 col-lg-4">
           <div class="more-link text-center">
             <%= link_to book.name, book_url(book, format: :html), title: book.name + " Quotes" %>
           </div>
@@ -62,11 +62,11 @@
         <%= link_to "More Books", books_url %>
       </div>
     </div>
-    <div class="small-12 columns">
+    <div class="col-sm-12">
       <h2 class="text-center">Proverbs</h2>
-  	  <div class="row small-up-1 medium-up-3 large-up-3">
+  	  <div class="row">
         <% @proverbs.each do |proverb| %>
-        <div class="column">
+        <div class="col-sm-12 col-md-6 col-lg-4">
           <div class="more-link text-center">
             <%= link_to proverb.name, proverb_url(proverb, format: :html), title: proverb.name + " Proverbs" %>
           </div>

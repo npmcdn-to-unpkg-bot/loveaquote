@@ -6,9 +6,9 @@
 <body class="application antialiased <%= controller.controller_name %> <%= controller.action_name  %>">
   <%= render "layouts/partials/google_analytics" %>
   <%= render "layouts/partials/facebook_sdk" %>
-  <div class="site-container">
+  <div class="site-container container">
   	<div class="row">
-			<div class="large-8 columns">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
 			  <div class="wrapper">
 			    <main id="content" role="main" itemprop="mainContentOfPage">
 						<header>
@@ -20,7 +20,7 @@
 				  </main>
 			  </div>
 			</div>
-			<div class="large-4 columns">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
 				<%= render "layouts/partials/aside" %>
 			</div>
 		</div>

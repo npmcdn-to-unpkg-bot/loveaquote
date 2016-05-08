@@ -1,21 +1,21 @@
 .widget {
     background-color: #FFF;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     
     .heading {
         background-color: #F2F2F2;
         border: 1px solid #E7E7E7;
-        padding: 0.407rem;
+        padding: 0.8rem;
         
         h5 {
-            font-size: 1rem;
+            font-size: 2rem;
             margin-bottom: 0px;
         }
     }
     
     .content {
-        padding: 0.5rem;
+        padding: 1rem;
         
         ul, ol, dl {
             margin: 0px;
