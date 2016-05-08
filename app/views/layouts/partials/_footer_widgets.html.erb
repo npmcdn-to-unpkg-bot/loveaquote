@@ -3,8 +3,6 @@
 		<div class="small-12 medium-12 large-4 columns">
 			<section class="about">
 				<h4>About LoveAQuote</h4>
-				<p>LoveAQuote is an amazing and extensive online compendium of quotes and proverbs, diligently and carefully categorised under various topics for easy reference. We have a collection of <%= (Quote.count) %> Quotes and Proverbs from <%= Person.count %> <%= link_to "People", people_url(format: :html), :title => "People Quotes" %>, <%= Book.count %> <%= link_to "Books", books_url(format: :html), :title => "Book Quotes" %> and <%= Movie.count %> <%= link_to "Movies", movies_url(format: :html), :title => "Movie Quotes" %> categorized under <%= Topic.count %> <%= link_to "Topics", topics_url, :title => "Quotes by Topic" %>.</p>
-
 				<div class="social-links">
 					<%= link_to Setting.facebook_url, target: "_blank"  do %>
 						<%= image_tag('social/facebook.png', :size=>"32x32", :alt => "Follow LoveAQuote on Facebook") %>

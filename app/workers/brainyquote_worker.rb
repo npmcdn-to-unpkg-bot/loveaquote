@@ -10,7 +10,7 @@ class BrainyquoteWorker
 
     if !page.css('ul.pagination').empty?
       page.css('ul.pagination li').each do |pagination|
-        unless pagination.text.to_i == 0
+        unless pagination.text.to_i == 0 
           total_pages = pagination.text.to_i
         end
       end

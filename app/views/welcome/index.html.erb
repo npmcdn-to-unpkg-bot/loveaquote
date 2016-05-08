@@ -9,17 +9,17 @@
 <% content_for :content do %>
   <% if @qotd %>
     <div class="row">
-      <div class="small-12 medium-10 medium-centered columns">
+      <div class="small-12 large-12 medium-10 medium-centered columns">
         <h2 class="text-center">Quote Of The Day</h2>
         <p class="text-center"><%=  @qotd.quote.text %><br><%= link_to @qotd.quote.source.name, model_url(@qotd.quote.source, format: :html), title: "#{@qotd.quote.source.name} Quotes" %></p>
       </div>
     </div>
   <% end %>
 
-  <div class="row small-up-1 medium-up-1 large-up-2">
-    <div class="column">
+  <div class="row">
+    <div class="small-12 columns">
   		<h2 class="text-center">Topics</h2>
-		  <div class="row small-up-1 medium-up-2 large-up-2">
+		  <div class="row small-up-1 medium-up-3 large-up-3">
         <% @topics.each do |topic| %>
         <div class="column">
           <div class="more-link text-center">
@@ -32,9 +32,9 @@
         <%= link_to "More Topics", topics_url %>
       </div>      
     </div>
-    <div class="column">
+    <div class="small-12 columns">
       <h2 class="text-center">People</h2>
-		  <div class="row small-up-1 medium-up-2 large-up-2">
+		  <div class="row small-up-1 medium-up-3 large-up-3">
         <% @people.each do |person| %>
         <div class="column">
           <div class="more-link text-center">
@@ -47,9 +47,9 @@
         <%= link_to "More People", people_url %>
       </div>
 	 </div>
-    <div class="column">
+    <div class="small-12 columns">
       <h2 class="text-center">Books</h2>
-		  <div class="row small-up-1 medium-up-2 large-up-2">
+		  <div class="row small-up-1 medium-up-3 large-up-3">
         <% @books.each do |book| %>
         <div class="column">
           <div class="more-link text-center">
@@ -62,9 +62,9 @@
         <%= link_to "More Books", books_url %>
       </div>
     </div>
-    <div class="column">
+    <div class="small-12 columns">
       <h2 class="text-center">Proverbs</h2>
-  	  <div class="row small-up-1 medium-up-2 large-up-2">
+  	  <div class="row small-up-1 medium-up-3 large-up-3">
         <% @proverbs.each do |proverb| %>
         <div class="column">
           <div class="more-link text-center">
@@ -78,5 +78,4 @@
       </div>
     </div>
   </div>
-
 <% end %>
