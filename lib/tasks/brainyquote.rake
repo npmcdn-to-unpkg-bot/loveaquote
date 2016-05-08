@@ -1,10 +1,7 @@
-class BrainyquoteWorker
-  include Sidekiq::Worker
-
-  def perform(id)
-    person = Person.find(id)
+namespace :brainyquote do
+    task :fetch => :environment do
     require 'open-uri'
-    fetch_url = person.fetch_url
+    fetch_url = "http://www.brainyquote.com/quotes/authors/r/robert_green_ingersoll.html"
     page = Nokogiri::HTML(open(fetch_url))
     total_pages = 1
 
@@ -18,16 +15,16 @@ class BrainyquoteWorker
 
     (1..total_pages).each do |page_number|
       if page_number != 1
-        fetch_url = person.fetch_url[0..-6] + '_' + page_number.to_s + '.html'
+        fetch_url = fetch_url[0..-6] + '_' + page_number.to_s + '.html'
       end
-      
+        puts fetch_url
+        
       page = Nokogiri::HTML(open(fetch_url))
       page.css('span.bqQuoteLink').each do |q|
         ActiveRecord::Base.no_touching do
-          Quote.create(text: q.text.strip, source: person)
+          puts q.text.strip
         end
       end
     end
-    person.update_columns(fetch_url: "")
-  end
+    end
 end
