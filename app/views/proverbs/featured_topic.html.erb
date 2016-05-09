@@ -15,23 +15,21 @@
 <% end %>
 
 <% content_for :breadcrumbs do %>
-	<ul class="breadcrumbs">
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= proverbs_url(format: :html) %>" itemprop="url"><span itemprop="title">Proverbs</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= proverb_url(@proverb, format: :html) %>" itemprop="url"><span itemprop="title"><%= "#{@proverb.name} Proverbs" %></span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= "on #{@featured_topic.topic.name}" %></span></li>
-  </ul>
+	<ol class="breadcrumb">
+    <li><a href="<%= root_url %>">Home</a></li>
+    <li><a href="<%= proverbs_url(format: :html) %>">Proverbs</a></li>
+    <li><a href="<%= proverb_url(@proverb, format: :html) %>"><%= "#{@proverb.name} Proverbs" %></a></li>
+    <li><%= "on #{@featured_topic.topic.name}" %></li>
+  </ol>
 <% end %>
 
 <% content_for :content do %>
-  <ul itemscope itemtype="http://schema.org/ItemList">
-    <% @quotes.each do |quote| %>
-      <%= render partial: "proverbs/quote", object: quote %>
-    <% end %>
-  </ul>
+  <% @quotes.each do |quote| %>
+    <%= render partial: "proverbs/quote", object: quote %>
+  <% end %>
 
   <div class="text-center">
-    <%= paginate @quotes, :views_prefix => 'kaminari_foundation' %>
+    <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
   </div>
 <% end %>
 
@@ -55,9 +53,9 @@
         <h5><%= @proverb.name %> Proverbs by topic</h5>
       </div>
       <div class="content">
-        <div class="row small-up-1 medium-up-1 large-up-1">
+        <div class="row">
           <% @proverb.featured_topics.where.not(id: [@featured_topic.id]).each do |ft| %>
-            <div class="column">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <div class="more-link">
                 <%= link_to "#{@proverb.name} Proverbs on #{ft.topic.name}", featured_topic_proverb_url(@proverb, featured_topic: ft, format: :html) %>
               </div>
@@ -75,15 +73,4 @@
     <% if (@proverb.social_image && @proverb.social_image.pinterest.present?) || @proverb.image.present? %>
       <a rel="nofollow" class="share-proverb-pinterest" title="<%= "Share #{@proverb.name} proverbs on Pinterest" %>" target="_blank" href="<%= pinterest_proverb_url(@proverb) %>"><%= image_tag('social/pinterest.png') %></a>
     <% end %>
-<% end %>
-
-<% content_for :search_form do %>
-  <%= form_tag search_proverb_url(@proverb, format: :html), method: :get do %>
-    <div class="input-group">
-      <%= text_field_tag :search, params[:search], class: "input-group-field small" %>
-      <div class="input-group-button">
-        <%= submit_tag "Search", class: "button small secondary" %>
-      </div>
-    </div>
-  <% end %>
 <% end %>

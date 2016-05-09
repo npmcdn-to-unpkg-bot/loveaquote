@@ -15,23 +15,21 @@
 <% end %>
 
 <% content_for :breadcrumbs do %>
-	<ul class="breadcrumbs">
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= people_url(format: :html) %>" itemprop="url"><span itemprop="title">People</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= person_url(@person, format: :html) %>" itemprop="url"><span itemprop="title"><%= "#{@person.name} Quotes" %></span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= "on #{@featured_topic.topic.name}" %></span></li>
-  </ul>
+	<ol class="breadcrumb">
+    <li><a href="<%= root_url %>">Home</a></li>
+    <li><a href="<%= people_url(format: :html) %>">People</a></li>
+    <li><a href="<%= person_url(@person, format: :html) %>"><%= "#{@person.name} Quotes" %></a></li>
+    <li><%= "on #{@featured_topic.topic.name}" %></li>
+  </ol>
 <% end %>
 
 <% content_for :content do %>
-  <ul itemscope itemtype="http://schema.org/ItemList">
-    <% @quotes.each do |quote| %>
-      <%= render partial: "people/quote", object: quote %>
-    <% end %>
-  </ul>
+  <% @quotes.each do |quote| %>
+    <%= render partial: "people/quote", object: quote %>
+  <% end %>
 
   <div class="text-center">
-    <%= paginate @quotes, :views_prefix => 'kaminari_foundation' %>
+    <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
   </div>
 <% end %>
 
@@ -59,9 +57,9 @@
         <h5><%= @person.name %> Quotes by topic</h5>
       </div>
       <div class="content">
-        <div class="row small-up-1 medium-up-1 large-up-1">
+        <div class="row">
           <% @person.featured_topics.where.not(id: [@featured_topic.id]).each do |ft| %>
-            <div class="column">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <div class="more-link">
                 <%= link_to "#{@person.name} Quotes on #{ft.topic.name}", featured_topic_person_url(@person, featured_topic: ft, format: :html) %>
               </div>
@@ -78,9 +76,9 @@
         <h5>Books by <%= @person.name %></h5>
       </div>
       <div class="content">
-        <div class="row small-up-1 medium-up-1 large-up-1">
+        <div class="row">
           <% @person.books.each do |book| %>
-            <div class="column">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <div class="more-link">
                 <%= book.published? ? (link_to book.name, book_url(book)) : (book.name) %>
               </div>
@@ -100,15 +98,4 @@
     <% if (@person.social_image && @person.social_image.pinterest.present?) || @person.image.present? %>
       <a rel="nofollow" class="share-person-pinterest" title="<%= "Share #{@person.name} quotes on Pinterest" %>" target="_blank" href="<%= pinterest_person_url(@person) %>"><%= image_tag('social/pinterest.png') %></a>
     <% end %>
-<% end %>
-
-<% content_for :search_form do %>
-  <%= form_tag search_person_url(@person, format: :html), method: :get do %>
-    <div class="input-group">
-      <%= text_field_tag :search, params[:search], class: "input-group-field small" %>
-      <div class="input-group-button">
-        <%= submit_tag "Search", class: "button small secondary" %>
-      </div>
-    </div>
-  <% end %>
 <% end %>

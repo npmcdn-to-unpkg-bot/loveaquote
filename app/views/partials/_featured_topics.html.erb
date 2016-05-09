@@ -9,9 +9,9 @@
         <% end %>
       </div>
       <div class="content">
-        <div class="row small-up-1 medium-up-1 large-up-2">
+        <div class="row">
           <% model.featured_topics.order(slug: :ASC).each do |ft| %>
-            <div class="column">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <div class="more-link text-center">
                 <%= link_to ft.topic.name, featured_topic_model_url(model, ft, format: :html), title: "#{model.name} Quotes on #{ft.topic.name}" %>
               </div>
