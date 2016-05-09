@@ -17,11 +17,11 @@
   border: 1px solid #E7E7E7;
 }
 
-.characters.show,
-.characters.search {
+.characters.show {
   header {
     h1 {
       font-size: 30px;
+      margin-top: 10px;
       margin-bottom: 10px;
     }
     .character-social-sharing {

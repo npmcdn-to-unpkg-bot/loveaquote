@@ -11,9 +11,11 @@
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
 		  <div class="wrapper">
 		    <main id="content" role="main" itemprop="mainContentOfPage">
-				<header>
-					<h1 itemprop="headline"><%= yield :heading %></h1>
-				</header>
+		    <% if content_for?(:heading) %>
+					<header>
+						<h1 itemprop="headline"><%= yield :heading %></h1>
+					</header>
+				<% end %>
 				<div itemprop="text">
 					<%= yield :content %>
 				</div>
