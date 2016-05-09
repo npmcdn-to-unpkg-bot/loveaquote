@@ -5,10 +5,10 @@
 <% content_for :heading, "Topics by Alphabet #{@alphabet}" %>
 
 <% content_for :content do %>
-  <div class="row small-up-1 medium-up-2 large-up-3">
+  <div class="row">
     <% @topics.each do |topic| %>
-      <div class="column text-center">
-        <div class="more-link">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="more-link text-center">
           <%= link_to topic.name, topic_url(topic, format: :html), title: topic.name + " Quotes" %>
         </div>
       </div>
