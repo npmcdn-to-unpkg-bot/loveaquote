@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_action :set_topic, only: [:show, :twitter, :facebook, :pinterest, :search]
+  before_action :set_topic, only: [:show, :twitter, :facebook, :pinterest]
 
   def index
     @topics = Topic.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
@@ -17,12 +17,6 @@ class TopicsController < ApplicationController
         format.amp { render layout: "single" }
       end
     end
-  end
-
-  def search
-    UserSearchWorker.perform_async(@topic.class.name, @topic.id, params[:search]) if params[:search].present?
-    @quotes = @topic.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page params[:page]
-    render layout: "single"
   end
 
   def alphabet

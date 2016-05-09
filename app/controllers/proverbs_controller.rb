@@ -1,5 +1,5 @@
 class ProverbsController < ApplicationController
-  before_action :set_proverb, only: [:show, :twitter, :facebook, :pinterest, :search, :featured_topic]
+  before_action :set_proverb, only: [:show, :twitter, :facebook, :pinterest, :featured_topic]
   before_action :set_featured_topic, only: [:featured_topic]
   
   def index
@@ -25,12 +25,6 @@ class ProverbsController < ApplicationController
         format.amp { render layout: "single" }
       end
     end
-  end
-
-  def search
-    UserSearchWorker.perform_async(@proverb.class.name, @proverb.id, params[:search]) if params[:search].present?
-    @quotes = @proverb.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
-    render layout: "single"
   end
 
   def alphabet

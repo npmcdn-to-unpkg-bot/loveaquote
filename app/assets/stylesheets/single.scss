@@ -1,6 +1,6 @@
-.breadcrumbs {
+.breadcrumb {
     display: block;
-    padding: 0.5625rem 0.875rem 0.5625rem;
+    padding: 1.125rem 0.1.75rem 1.125rem;
     overflow: hidden;
     margin-left: 0;
     list-style: none;
@@ -8,13 +8,14 @@
     border-width: 1px;
     background-color: #f4f4f4;
     border-color: gainsboro;
-    border-radius: 3px;
+    text-transform: uppercase;
 }
 
-.breadcrumbs {
+.breadcrumb {
 	background-color: #F2F2F2;
 	border: 1px solid #E7E7E7;
 	border-radius: 0px;
+	font-size: 1.2rem;
 }
 
 .entry-image {
@@ -98,29 +99,29 @@
 .featured_topic .entry-meta .last-updated {
 	text-align: right;
 	display: block;
-	font-size: 0.75rem;
+	font-size: 1.2rem;
 }
 
 @media only screen and (min-width: 64.063em) {
-	.show ul.breadcrumbs,
-	.search ul.breadcrumbs,
-	.featured_topic ul.breadcrumbs {
-		margin: 0px -2rem;
+	.show ol.breadcrumb,
+	.search ol.breadcrumb,
+	.featured_topic ol.breadcrumb {
+		margin: 0px -4rem;
 	}
 }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
 	.show ul.breadcrumbs,
-	.search ul.breadcrumbs,
-	.featured_topic ul.breadcrumbs {
-		margin: 0px -1rem;
+	.search ol.breadcrumbs,
+	.featured_topic ol.breadcrumbs {
+		margin: 0px -2rem;
 	}
 }
 
 @media only screen and (max-width: 40.063em) {
-	.show ul.breadcrumbs,
-	.search ul.breadcrumbs,
-	.featured_topic ul.breadcrumbs {
-		margin: 0px -0.25rem;
+	.show ol.breadcrumb,
+	.search ol.breadcrumb,
+	.featured_topic ol.breadcrumb {
+		margin: 0px -0.5rem;
 	}
 }

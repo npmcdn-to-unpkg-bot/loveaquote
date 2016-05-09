@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  before_action :set_person, only: [:show, :redirect_to_person, :twitter, :facebook, :pinterest, :search, :featured_topic]
+  before_action :set_person, only: [:show, :redirect_to_person, :twitter, :facebook, :pinterest, :featured_topic]
   before_action :set_featured_topic, only: [:featured_topic]
   def index
     @people = Person.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
@@ -34,12 +34,6 @@ class PeopleController < ApplicationController
       end
     end
 
-  end
-
-  def search
-    UserSearchWorker.perform_async(@person.class.name, @person.id, params[:search]) if params[:search].present?
-    @quotes = @person.all_quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page params[:page]
-    render layout: "single"
   end
 
   def redirect_to_person

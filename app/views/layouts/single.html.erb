@@ -7,9 +7,9 @@
     <%= render "layouts/partials/google_analytics" %>
     <%= render "layouts/partials/facebook_sdk" %>
 
-    <div class="site-container">
+    <div class="site-container container">
       <div class="row">
-  			<div class="large-8 medium-12 small-12 columns">
+  			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
   			  <div class="wrapper">
   			    <%= yield :breadcrumbs %>
             <main id="content" role="main" itemprop="mainContentOfPage">
@@ -18,16 +18,6 @@
                   <h1 itemprop="headline" class="text-center"><%= yield :heading %></h1>
                   <%= yield :byline %>
                 </header>
-                <div class="row">
-                  <div class="small-12 medium-4 columns">
-                    <div class="social-sharing">
-                      <%= yield :social_sharing %>
-                    </div>
-                  </div>
-                  <div class="small-12 medium-6 columns last">
-                    <%= yield :search_form %>
-                  </div>
-                </div>
                 <div itemprop="text">
                   <%= yield :content %>
                 </div>
@@ -42,7 +32,7 @@
             </main>
   			  </div>
   			</div>
-  			<div class="large-4 medium-12 small-12 columns">
+  			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
           <aside>
             <%= render "layouts/partials/aside" %>
             <%= yield :aside %>

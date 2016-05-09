@@ -29,7 +29,6 @@ Rails.application.routes.draw do
       get 'pinterest'
       get 'twitter'
       get 'google_plus'
-      get 'search'
       get ':redirect_to_person', action: 'redirect_to_person', constraints: { page: /\D+/ }
     end
   end
@@ -46,7 +45,6 @@ Rails.application.routes.draw do
       get 'facebook'
       get 'twitter'
       get 'google_plus'
-      get 'search'
       get ':redirect_to_proverb', action: 'redirect_to_proverb', constraints: { page: /\D+/ }
     end
   end
@@ -58,7 +56,6 @@ Rails.application.routes.draw do
     end
 
     member do
-      get 'search'
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
       get 'pinterest'
       get 'facebook'
@@ -87,7 +84,6 @@ Rails.application.routes.draw do
     end
 
     member do
-      get 'search'
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
       get 'pinterest'
       get 'facebook'
@@ -103,7 +99,6 @@ Rails.application.routes.draw do
     end
 
     member do
-      get 'search'
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
       get 'pinterest'
       get 'facebook'
@@ -119,7 +114,6 @@ Rails.application.routes.draw do
     end
 
     member do
-      get 'search'
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
       get 'pinterest'
       get 'facebook'
@@ -135,7 +129,6 @@ Rails.application.routes.draw do
     end
 
     member do
-      get 'search'
       get ':page', action: 'show', constraints: { page: /\d+/ }, as: 'page'
       get 'pinterest'
       get 'facebook'

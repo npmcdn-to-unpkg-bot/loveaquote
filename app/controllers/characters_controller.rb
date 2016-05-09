@@ -1,5 +1,5 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :twitter, :facecharacter, :pinterest, :search]
+  before_action :set_character, only: [:show, :twitter, :facecharacter, :pinterest]
 
   def index
     @characters = Character.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
@@ -17,12 +17,6 @@ class CharactersController < ApplicationController
         format.amp { render layout: "single" }
       end
     end
-  end
-
-  def search
-    UserSearchWorker.perform_async(@character.class.name, @character.id, params[:search]) if params[:search].present?
-    @quotes = @character.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
-    render layout: "single"
   end
 
   def alphabet

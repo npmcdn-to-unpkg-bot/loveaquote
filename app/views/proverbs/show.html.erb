@@ -7,19 +7,17 @@
 <% end %>
 
 <% content_for :breadcrumbs do %>
-	<ul class="breadcrumbs">
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= proverbs_url(format: :html) %>" itemprop="url"><span itemprop="title">Proverbs</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @proverb.name + " Proverbs" %></span></li>
-  </ul>
+	<ol class="breadcrumb">
+    <li><a href="<%= root_url %>">Home</a></li>
+    <li><a href="<%= proverbs_url(format: :html) %>">Proverbs</a></li>
+    <li><%= @proverb.name + " Proverbs" %></li>
+  </ol>
 <% end %>
 
 <% content_for :content do %>
-  <ul itemscope itemtype="http://schema.org/ItemList">
-    <% @quotes.each do |quote| %>
-      <%= render partial: "proverbs/quote", object: quote %>
-    <% end %>
-  </ul>
+  <% @quotes.each do |quote| %>
+    <%= render partial: "proverbs/quote", object: quote %>
+  <% end %>
 
   <div class="text-center">
     <%= paginate @quotes, :views_prefix => 'kaminari_foundation' %>
@@ -36,17 +34,6 @@
     <% if @proverb.social_image.present? && @proverb.social_image.pinterest.present? %>
       <a rel="nofollow" class="share-proverb-pinterest" title="<%= "Share #{@proverb.name} proverbs on Pinterest" %>" target="_blank" href="<%= pinterest_proverb_url(@proverb) %>"><%= image_tag('social/pinterest.png') %></a>
     <% end %>
-<% end %>
-
-<% content_for :search_form do %>
-  <%= form_tag search_proverb_url(@proverb, format: :html), method: :get do %>
-    <div class="input-group">
-      <%= text_field_tag :search, params[:search], class: "input-group-field small" %>
-      <div class="input-group-button">
-        <%= submit_tag "Search", class: "button small secondary" %>
-      </div>
-    </div>
-  <% end %>
 <% end %>
 
 <% content_for :aside do %>

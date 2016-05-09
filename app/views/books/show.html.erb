@@ -15,11 +15,11 @@
 <% end %>
 
 <% content_for :breadcrumbs do %>
-	<ul class="breadcrumbs">
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= books_url(format: :html) %>" itemprop="url"><span itemprop="title">Books</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @book.name + " Quotes" %></span></li>
-  </ul>
+	<ol class="breadcrumb">
+    <li><a href="<%= root_url %>">Home</a></li>
+    <li><a href="<%= books_url(format: :html) %>">Books</a></li>
+    <li><%= @book.name + " Quotes" %></li>
+  </ol>
 <% end %>
 
 <% content_for :content do %>
@@ -48,15 +48,4 @@
     <% if @book.image.present? %>
       <a rel="nofollow" class="share-book-pinterest" title="<%= "Share #{@book.name} quotes on Pinterest" %>" target="_blank" href="<%= pinterest_book_url(@book) %>"><%= image_tag('social/pinterest.png') %></a>
     <% end %>
-<% end %>
-
-<% content_for :search_form do %>
-  <%= form_tag search_book_url(@book, format: :html), method: :get do %>
-    <div class="input-group">
-      <%= text_field_tag :search, params[:search], class: "input-group-field small" %>
-      <div class="input-group-button">
-        <%= submit_tag "Search", class: "button small secondary" %>
-      </div>
-    </div>
-  <% end %>
 <% end %>

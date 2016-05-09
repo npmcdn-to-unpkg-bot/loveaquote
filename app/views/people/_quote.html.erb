@@ -1,51 +1,49 @@
-<li>
-    <div class="quote">
+<div class="quote">
 
-      <div class="quote-text">
-        <p itemprop="itemListElement">
-          <%= quote.text %>
-          <% if quote.source_type == "Book" %>
-            <%= " - " %>
-            <% if quote.source.published? %>
-              <%= link_to quote.source.name, model_url(quote.source, format: :html), title: "Quotes from #{quote.source.name} book" %>
-            <% else %>
-              <%= quote.source.name %>
-            <% end %>
-          <% end %>
-          <% if quote.source_type == "Movie" || quote.source_type == "TvShow" %>
-            <%= " - as " %>
-            <% if quote.character.published? %>
-              <%= link_to quote.character.name, model_url(quote.character, format: :html) %>
-            <% else %>
-              <%= quote.character.name %>
-            <% end %>
-            <%= " in " %>
-            <% if quote.source.published? %>
-              <%= link_to quote.source.name, model_url(quote.source, format: :html), title: "Quotes from #{quote.source.name}" %>
-            <% else %>
-              <%= quote.source.name %>
-            <% end %>
-          <% end %>
-          </p>
-      </div>
-
-      <div class="quote-meta">
-        <% cache "quote-info-#{quote.id}-#{quote.updated_at.to_s(:number)}" do %>
-          <div class="quote-info">
-            <%= link_to quote.topics.published.first.name, topic_url(quote.topics.published.first, format: :html), title: "#{quote.topics.published.first.name} Quotes" if quote.topics.published.any? %>
-          </div>
+  <div class="quote-text">
+    <p itemprop="itemListElement">
+      <%= quote.text %>
+      <% if quote.source_type == "Book" %>
+        <%= " - " %>
+        <% if quote.source.published? %>
+          <%= link_to quote.source.name, model_url(quote.source, format: :html), title: "Quotes from #{quote.source.name} book" %>
+        <% else %>
+          <%= quote.source.name %>
         <% end %>
+      <% end %>
+      <% if quote.source_type == "Movie" || quote.source_type == "TvShow" %>
+        <%= " - as " %>
+        <% if quote.character.published? %>
+          <%= link_to quote.character.name, model_url(quote.character, format: :html) %>
+        <% else %>
+          <%= quote.character.name %>
+        <% end %>
+        <%= " in " %>
+        <% if quote.source.published? %>
+          <%= link_to quote.source.name, model_url(quote.source, format: :html), title: "Quotes from #{quote.source.name}" %>
+        <% else %>
+          <%= quote.source.name %>
+        <% end %>
+      <% end %>
+      </p>
+  </div>
 
-        <% cache "quote-meta-#{quote.id}-#{quote.updated_at.to_s(:number)}-source-#{quote.source.updated_at.to_s(:number)}" do %>
-          <div class="social-sharing">
-            <%= image_tag 'twitter.png', class: "share-quote-twitter", data: {url: twitter_quote_url(quote, human: "t")} %>
-            <%= image_tag 'facebook.png', class: "share-quote-facebook", data: {url: facebook_quote_url(quote, human: "t")} %>
-            <% if quote.source.image.present? %>
-              <%= image_tag 'pinterest.png', class: "share-quote-pinterest", data: {url: pinterest_quote_url(quote, human: "t")} %>
-            <% end %>
-          </div>
+  <div class="quote-meta">
+    <% cache "quote-info-#{quote.id}-#{quote.updated_at.to_s(:number)}" do %>
+      <div class="quote-info">
+        <%= link_to quote.topics.published.first.name, topic_url(quote.topics.published.first, format: :html), title: "#{quote.topics.published.first.name} Quotes" if quote.topics.published.any? %>
+      </div>
+    <% end %>
+
+    <% cache "quote-meta-#{quote.id}-#{quote.updated_at.to_s(:number)}-source-#{quote.source.updated_at.to_s(:number)}" do %>
+      <div class="social-sharing">
+        <%= image_tag 'twitter.png', class: "share-quote-twitter", data: {url: twitter_quote_url(quote, human: "t")} %>
+        <%= image_tag 'facebook.png', class: "share-quote-facebook", data: {url: facebook_quote_url(quote, human: "t")} %>
+        <% if quote.source.image.present? %>
+          <%= image_tag 'pinterest.png', class: "share-quote-pinterest", data: {url: pinterest_quote_url(quote, human: "t")} %>
         <% end %>
       </div>
+    <% end %>
+  </div>
 
-    </div>
-</li>
+</div>

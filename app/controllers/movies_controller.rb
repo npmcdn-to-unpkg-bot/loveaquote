@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :twitter, :facebook, :pinterest, :search]
+  before_action :set_movie, only: [:show, :twitter, :facebook, :pinterest]
 
   def index
     @movies = Movie.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
@@ -17,12 +17,6 @@ class MoviesController < ApplicationController
         format.amp { render layout: "single" }
       end
     end
-  end
-
-  def search
-    UserSearchWorker.perform_async(@movie.class.name, @movie.id, params[:search]) if params[:search].present?
-    @quotes = @movie.quotes.search_by_text(params[:search]).order(total_share_count: :desc).order(text: :asc).page (params[:page])
-    render layout: "single"
   end
 
   def alphabet

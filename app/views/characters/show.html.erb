@@ -15,19 +15,17 @@
 <% end %>
 
 <% content_for :breadcrumbs do %>
-	<ul class="breadcrumbs">
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= characters_url(format: :html) %>" itemprop="url"><span itemprop="title">Characters</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @character.name + " Quotes" %></span></li>
-  </ul>
+	<ol class="breadcrumb">
+    <li><a href="<%= root_url %>">Home</a></li>
+    <li><a href="<%= characters_url(format: :html) %>">Characters</a></li>
+    <li><%= @character.name + " Quotes" %></li>
+  </ol>
 <% end %>
 
 <% content_for :content do %>
-  <ul itemscope itemtype="http://schema.org/ItemList">
-    <% @quotes.each do |quote| %>
-      <%= render partial: "characters/quote", object: quote %>
-    <% end %>
-  </ul>
+  <% @quotes.each do |quote| %>
+    <%= render partial: "characters/quote", object: quote %>
+  <% end %>
 
   <div class="text-center">
     <%= paginate @quotes, :views_prefix => 'kaminari_foundation' %>
@@ -44,15 +42,4 @@
     <% if @character.image.present? %>
       <a rel="nofollow" class="share-character-pinterest" title="<%= "Share #{@character.name} quotes on Pinterest" %>" target="_blank" href="<%= pinterest_character_url(@character) %>"><%= image_tag('social/pinterest.png') %></a>
     <% end %>
-<% end %>
-
-<% content_for :search_form do %>
-  <%= form_tag search_character_url(@character, format: :html), method: :get do %>
-    <div class="input-group">
-      <%= text_field_tag :search, params[:search], class: "input-group-field small" %>
-      <div class="input-group-button">
-        <%= submit_tag "Search", class: "button small secondary" %>
-      </div>
-    </div>
-  <% end %>
 <% end %>

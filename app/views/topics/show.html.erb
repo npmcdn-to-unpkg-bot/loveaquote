@@ -13,19 +13,17 @@
 <% end %>
 
 <% content_for :breadcrumbs do %>
-	<ul class="breadcrumbs">
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= topics_url(format: :html) %>" itemprop="url"><span itemprop="title">Topics</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @topic.name + " Quotes" %></span></li>
-  </ul>
+	<ol class="breadcrumb">
+    <li><a href="<%= root_url %>">Home</a></li>
+    <li><a href="<%= topics_url(format: :html) %>">Topics</a></li>
+    <li><%= @topic.name + " Quotes" %></li>
+  </ol>
 <% end %>
 
 <% content_for :content do %>
-  <ul>
-    <% @quotes.each do |quote| %>
-        <%= render partial: "topics/quote", object: quote %>
-    <% end %>
-  </ul>
+  <% @quotes.each do |quote| %>
+      <%= render partial: "topics/quote", object: quote %>
+  <% end %>
 
   <div class="text-center">
     <%= paginate @quotes, :views_prefix => 'kaminari_foundation' %>
@@ -47,15 +45,4 @@
 
 <% content_for :aside do %>
   <%= render partial: "partials/aside", locals: { model: @topic } %>
-<% end %>
-
-<% content_for :search_form do %>
-  <%= form_tag search_topic_url(@topic, format: :html), method: :get do %>
-    <div class="input-group">
-      <%= text_field_tag :search, params[:search], class: "input-group-field small" %>
-      <div class="input-group-button">
-        <%= submit_tag "Search", class: "button small secondary" %>
-      </div>
-    </div>
-  <% end %>
 <% end %>
