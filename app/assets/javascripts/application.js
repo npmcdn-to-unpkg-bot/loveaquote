@@ -1,11 +1,5 @@
 //= require jquery
 //= require jquery_ujs
-//= require foundation
-
-$(function(){
-  $(document).foundation();
-  console.log("Working");
-});
 
 $(function() {
   $(".share-quote-twitter").on("click", function(){
