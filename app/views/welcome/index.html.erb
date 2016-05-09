@@ -20,7 +20,7 @@
         <% end %>
       </div>
       <div class="more-link text-center">
-        <%= link_to "More Topics", topics_url %>
+        <%= link_to "#{Topic.where(very_popular: false).count} More Topics", topics_url %>
       </div>      
     </div>
     <div class="col-sm-12">
@@ -35,7 +35,7 @@
         <% end %>
       </div>
       <div class="more-link text-center">
-        <%= link_to "More People", people_url %>
+        <%= link_to "#{Person.where(very_popular: false).count} More People", people_url %>
       </div>
 	 </div>
     <div class="col-sm-12">
@@ -50,11 +50,11 @@
         <% end %>
       </div>
       <div class="more-link text-center">
-        <%= link_to "More Books", books_url %>
+        <%= link_to "#{Book.where(very_popular: false).count} More Books", books_url %>
       </div>
     </div>
     <div class="col-sm-12">
-      <h2 class="text-center">Proverbs<br><small>Proverbs by Country</small></h2>
+      <h2 class="text-center">Proverbs<br><small>Proverbs by Theme</small></h2>
   	  <div class="row">
         <% @proverbs.each do |proverb| %>
         <div class="col-sm-12 col-md-6 col-lg-6">
@@ -65,7 +65,7 @@
         <% end %>
       </div>
       <div class="more-link text-center">
-        <%= link_to "More Proverbs", proverbs_url %>
+        <%= link_to "#{Proverb.where(very_popular: false).count} More Proverb Themes", proverbs_url %>
       </div>
     </div>
   </div>
