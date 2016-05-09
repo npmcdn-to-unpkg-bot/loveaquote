@@ -19,7 +19,7 @@
       <a class="name" name="<%= letter %>"><%= letter %></a>
       <div class="row">
         <% topics.each do |topic| %>
-          <div class="col-xs-1 col-sm-1 col-md-6 col-lg-4">
+          <div class="col-xs-1 col-sm-1 col-md-6 col-lg-6">
             <div class="more-link text-center">
               <%= link_to topic.name, topic_url(topic, format: :html), title: topic.name + " Quotes" %>
             </div>

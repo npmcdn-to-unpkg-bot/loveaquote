@@ -18,7 +18,7 @@
       <a class="name" name="<%= letter %>"><%= letter %></a>
       <div class="row">
         <% tv_shows.each do |tv_show| %>
-          <div class="col-xs-1 col-sm-1 col-md-6 col-lg-4">
+          <div class="col-xs-1 col-sm-1 col-md-6 col-lg-6">
             <div class="more-link text-center">
               <%= link_to tv_show.name, tv_show_url(tv_show, format: :html), title: tv_show.name + " Quotes" %>
             </div>

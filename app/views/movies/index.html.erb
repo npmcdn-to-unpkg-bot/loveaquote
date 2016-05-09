@@ -18,7 +18,7 @@
       <a class="name" name="<%= letter %>"><%= letter %></a>
       <div class="row">
         <% movies.each do |movie| %>
-          <div class="col-xs-1 col-sm-1 col-md-6 col-lg-4">
+          <div class="col-xs-1 col-sm-1 col-md-6 col-lg-6">
             <div class="more-link text-center">
               <%= link_to movie.name, movie_url(movie, fomat: :html), title: movie.name + " Quotes" %>
             </div>

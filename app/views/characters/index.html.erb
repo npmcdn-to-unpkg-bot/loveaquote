@@ -18,7 +18,7 @@
       <a class="name" name="<%= letter %>"><%= letter %></a>
       <div class="row">
         <% characters.each do |character| %>
-          <div class="col-xs-1 col-sm-1 col-md-6 col-lg-4">
+          <div class="col-xs-1 col-sm-1 col-md-6 col-lg-6">
             <div class="more-link text-center">
               <%= link_to character.namechar, character_url(character, format: :html), title: character.name + " Quotes" %>
             </div>
