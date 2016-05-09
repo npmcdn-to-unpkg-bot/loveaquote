@@ -12,7 +12,7 @@
   		<h2 class="text-center" style="margin-top: 0px">Topics</h2>
 		  <div class="row">
         <% @topics.each do |topic| %>
-        <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="col-sm-12 col-md-6 col-lg-6">
           <div class="more-link text-center">
             <%= link_to topic.name, topic_url(topic, format: :html), title: topic.name + " Quotes" %>
           </div>
@@ -27,7 +27,7 @@
       <h2 class="text-center">People</h2>
 		  <div class="row">
         <% @people.each do |person| %>
-        <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="col-sm-12 col-md-6 col-lg-6">
           <div class="more-link text-center">
             <%= link_to person.name, person_url(person, format: :html), title: person.name + " Quotes" %>
           </div>
@@ -42,7 +42,7 @@
       <h2 class="text-center">Books</h2>
 		  <div class="row">
         <% @books.each do |book| %>
-        <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="col-sm-12 col-md-6 col-lg-6">
           <div class="more-link text-center">
             <%= link_to book.name, book_url(book, format: :html), title: book.name + " Quotes" %>
           </div>
@@ -57,7 +57,7 @@
       <h2 class="text-center">Proverbs</h2>
   	  <div class="row">
         <% @proverbs.each do |proverb| %>
-        <div class="col-sm-12 col-md-6 col-lg-4">
+        <div class="col-sm-12 col-md-6 col-lg-6">
           <div class="more-link text-center">
             <%= link_to proverb.name, proverb_url(proverb, format: :html), title: proverb.name + " Proverbs" %>
           </div>
