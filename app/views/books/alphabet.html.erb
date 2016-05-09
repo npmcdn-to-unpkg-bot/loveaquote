@@ -8,7 +8,7 @@
   <div class="row">
     <% @books.each do |book| %>
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        <div class="more-link">
+        <div class="more-link text-center">
           <%= link_to book.name, book_url(book, format: :html), title: book.name + " Quotes" %>
         </div>
       </div>

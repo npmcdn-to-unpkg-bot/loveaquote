@@ -8,7 +8,7 @@
   <div class="row">
     <% @characters.each do |character| %>
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        <div class="more-link">
+        <div class="more-link text-center">
           <%= link_to character.name, character_url(character, format: :html), title: character.name + " Quotes" %>
         </div>
       </div>
