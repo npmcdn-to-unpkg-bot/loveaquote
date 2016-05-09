@@ -1,7 +1,7 @@
 .widget {
     background-color: #FFF;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 3rem;
+    margin-bottom: 30px;
     
     .heading {
         background-color: #F2F2F2;
@@ -9,13 +9,14 @@
         padding: 0.8rem;
         
         h5 {
-            font-size: 2rem;
+            font-size: 16px;
+            margin-top: 0px;
             margin-bottom: 0px;
         }
     }
     
     .content {
-        padding: 1rem;
+        padding: 8px;
         
         ul, ol, dl {
             margin: 0px;
