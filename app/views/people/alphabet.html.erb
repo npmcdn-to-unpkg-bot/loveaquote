@@ -5,9 +5,9 @@
 <% content_for :heading, "People by Alphabet #{@alphabet}" %>
 
 <% content_for :content do %>
-  <div class="row small-up-1 medium-up-2 large-up-3">
+  <div class="row">
     <% @people.each do |person| %>
-      <div class="column text-center">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="more-link">
           <%= link_to person.name, person_url(person, format: :html), title: person.name + " Quotes" %>
         </div>
