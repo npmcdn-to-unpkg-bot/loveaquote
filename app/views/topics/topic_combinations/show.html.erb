@@ -15,20 +15,18 @@
 <% end %>
 
 <% content_for :breadcrumbs do %>
-	<ul class="breadcrumbs">
+	<ol class="breadcrumb">
     <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
     <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= topics_url(format: :html) %>" itemprop="url"><span itemprop="title">Topics</span></a></li>
     <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= topics_topic_combinations_url(format: :html) %>" itemprop="url"><span itemprop="title">Combinations</span></a></li>
     <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @topic.name %></span></li>
-  </ul>
+  </ol>
 <% end %>
 
 <% content_for :content do %>
-  <ul>
-    <% @quotes.each do |quote| %>
-        <%= render partial: "topics/quote", object: quote %>
-    <% end %>
-  </ul>
+  <% @quotes.each do |quote| %>
+      <%= render partial: "topics/quote", object: quote %>
+  <% end %>
 
   <div class="text-center">
     <%= paginate @quotes, :views_prefix => 'kaminari_foundation' %>

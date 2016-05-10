@@ -20,7 +20,7 @@
         <% characters.each do |character| %>
           <div class="col-xs-1 col-sm-1 col-md-6 col-lg-6">
             <div class="more-link text-center">
-              <%= link_to character.namechar, character_url(character, format: :html), title: character.name + " Quotes" %>
+              <%= link_to character.name + " Quotes", character_url(character, format: :html), title: character.name + " Quotes" %>
             </div>
           </div>
         <% end %>

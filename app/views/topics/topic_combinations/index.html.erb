@@ -20,7 +20,7 @@
         <% topics.each do |topic| %>
           <div class="column">
             <div class="more-link text-center">
-              <%= link_to topic.name, topics_topic_combination_url(topic, format: :html), title: topic.name + " Quotes" %>
+              <%= link_to topic.name + " Quotes", topics_topic_combination_url(topic, format: :html), title: topic.name + " Quotes" %>
             </div>
           </div>
         <% end %>
