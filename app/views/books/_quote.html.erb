@@ -1,5 +1,10 @@
 <div class="quote">
-
+  <% if quote.image.present? %>
+    <div class="quote-image">
+      <%= image_tag quote.image, style: "width: 100%" %>
+    </div>
+  <% end %>
+  
   <div class="quote-text">
     <p itemprop="itemListElement">
       <%= quote.text %>

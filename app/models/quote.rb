@@ -1,4 +1,5 @@
 class Quote < ActiveRecord::Base
+    include ActionView::Helpers::TextHelper
     include PgSearch
     include Loggable
     mount_uploader :image, QuoteImageUploader
@@ -22,11 +23,19 @@ class Quote < ActiveRecord::Base
     validates :source_id, presence: true
     validates :source_type, presence: true
 
-    before_validation :strip_text
+    before_validation :strip_text, :generate_slug
     after_commit :get_topic_suggestions, on: [:create, :update]
 
     def strip_text
         self.text = self.text.strip
+    end
+    
+    def generate_slug
+        unless self.slug.present?
+            quote_length = 70 - self.source.name.length - 4
+            slug = truncate(self.text, length: quote_length, separator: ' ').tr('.','')
+            self.slug = slug.to_url
+        end
     end
 
     def get_topic_suggestions

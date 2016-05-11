@@ -23,11 +23,9 @@
 <% end %>
 
 <% content_for :content do %>
-  <ul itemscope itemtype="http://schema.org/ItemList">
-    <% @quotes.each do |quote| %>
-      <%= render partial: "books/quote", object: quote %>
-    <% end %>
-  </ul>
+  <% @quotes.each do |quote| %>
+    <%= render partial: "books/quote", object: quote %>
+  <% end %>
 
   <div class="text-center">
     <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>

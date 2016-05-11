@@ -17,6 +17,7 @@
         <div class="panel-options">
           <ul class="nav nav-tabs">
             <li class="active"><a href="#quote" data-toggle="tab">Quote</a></li>
+            <li><a href="#quote-seo" data-toggle="tab">Quote SEO</a></li>
             <li><a href="#quote-topics" data-toggle="tab">Topics</a></li>
 
             <% if @quote.quote_topic_suggestions.where(read: false)  .any? %>
@@ -40,6 +41,12 @@
             <div class="form-inputs">
               <%= f.input :text, input_html: {rows: 5} %>
               <%= f.input :verified %>
+            </div>
+          </div>
+          
+          <div class="tab-pane" id="quote-seo">
+            <div class="form-inputs">
+              <%= f.input :slug %>
             </div>
           </div>
 

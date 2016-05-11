@@ -4,6 +4,7 @@ class QuoteImageWorker
     
     def perform(id)
         quote = Quote.find(id)
+        quote.generate_slug unless quote.slug.present?
         offset = rand(ColorScheme.count)
         color_scheme = ColorScheme.offset(offset).first
         
@@ -56,12 +57,12 @@ class QuoteImageWorker
         require 'fileutils'
         Thread.new do
             FileUtils.mkdir_p(Rails.root + "public/generatedimages/quotes")
-            quote_image.write(Rails.root.join("public/generatedimages/quotes/#{quote.id}.jpg"))
-            quote.image = Rails.root.join("public/generatedimages/quotes/#{quote.id}.jpg").open
+            quote_image.write(Rails.root.join("public/generatedimages/quotes/#{quote.slug}.jpg"))
+            quote.image = Rails.root.join("public/generatedimages/quotes/#{quote.slug}.jpg").open
             ActiveRecord::Base.no_touching do
                 quote.save
             end
-            FileUtils.rm(Rails.root.join("public/generatedimages/quotes/#{quote.id}.jpg"))
+            FileUtils.rm(Rails.root.join("public/generatedimages/quotes/#{quote.slug}.jpg"))
         end
     end
 end

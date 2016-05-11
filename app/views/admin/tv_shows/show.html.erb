@@ -182,6 +182,10 @@
       e.preventDefault();
       $("#new-quote-modal").modal('show');
     });
+    
+    $(".image-quote").on("ajax:complete", function(xhr, status) {
+      toastr.success('Image generate started for quote.');
+    });  
 
     $(".delete-quote").on("ajax:complete", function(xhr, status) {
       $(this).closest("tr").remove();
