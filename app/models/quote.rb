@@ -32,7 +32,18 @@ class Quote < ActiveRecord::Base
     
     def generate_slug
         unless self.slug.present?
-            quote_length = 70 - self.source.name.length - 4
+            case self.source.class.name
+            where "Person"
+                quote_length = 70 - self.source.name.length - 4
+            where "Book"
+                quote_length = 70 - self.source.name.length - 6
+            where "Movie"
+                quote_length = 70 - self.source.name.length - 6
+            where "TvShow"
+                quote_length = 70 - self.source.name.length - 6
+            where "Proverb"
+                quote_length = 70 - (self.source.name + " Proverb").length - 3
+            end
             slug = truncate(self.text, length: quote_length, separator: ' ').tr('.','')
             self.slug = slug.to_url
         end
