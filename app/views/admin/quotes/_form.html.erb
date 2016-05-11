@@ -26,6 +26,10 @@
             <% if (@quote.source_type == "Book" || @quote.source_type == "TvShow" || @quote.source_type == "Movie") && @quote.source.characters.present? %>
               <li><a href="#quote-character" data-toggle="tab">Quote Character</a></li>
             <% end %>
+            
+            <% if @quote.image.present? %>
+              <li><a href="#quote-image" data-toggle="tab">Quote Image</a></li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -92,6 +96,12 @@
           <% if (@quote.source_type == "Book" || @quote.source_type == "TvShow" || @quote.source_type == "Movie") && @quote.source.characters.present? %>
             <div class="tab-pane" id="quote-character">
               <%= f.association :character, collection: @quote.source.characters.order(name: :asc) %>
+            </div>
+          <% end %>
+          
+          <% if @quote.image.present? %>
+            <div class="tab-pane" id="quote-image">
+              <%= image_tag @quote.image %>
             </div>
           <% end %>
 

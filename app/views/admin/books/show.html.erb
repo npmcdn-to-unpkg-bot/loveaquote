@@ -52,13 +52,13 @@
                 <thead>
                   <% if @book.characters.any? %>
                     <th width="5%" class="text-center">Verified</th>
-                    <th width="60%" class="text-center">Quote</th>
+                    <th width="55%" class="text-center">Quote</th>
                     <th width="20%" class="text-center">Character</th>
                   <% else %>
                     <th width="5%" class="text-center">Verified</th>
                     <th width="80%" class="text-center">Quote</th>
                   <% end %>
-                  <th width="15%" class="text-center" colspan="5">Manage</th>
+                  <th width="20%" class="text-center" colspan="6">Manage</th>
                 </thead>
 
                 <tbody>
@@ -69,6 +69,7 @@
                     <% if @book.characters.any? %>
                       <td><%= link_to quote.character.name, admin_character_path(quote.character) if quote.character.present? %></td>
                     <% end %>
+                    <td class="text-center"><%= link_to '<i class="fa fa-picture-o"></i>'.html_safe, image_admin_quote_url(quote), remote: true, "data-type": "json", class: "image-quote" %></td>
                     <td class="text-center"><%= link_to '<i class="fa fa-twitter"></i>'.html_safe, tweetable_admin_quote_url(quote), remote: true, "data-type": "json", class: "tweetable-quote" %></td>
                     <td class="text-center"><%= link_to '<i class="fa fa-calendar"></i>'.html_safe, qotd_admin_quote_url(quote), remote: true, "data-type": "json", class: "qotd-quote" %></td>
                     <td class="text-center"><%= link_to '<i class="fa fa-check"></i>'.html_safe, verify_admin_quote_url(quote), remote: :true, "data-type": "json", class: "verify-quote" %></td>

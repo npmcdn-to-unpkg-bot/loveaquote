@@ -1,7 +1,7 @@
 class Quote < ActiveRecord::Base
     include PgSearch
     include Loggable
-
+    mount_uploader :image, QuoteImageUploader
     pg_search_scope :search_by_text, against: :text, using: { tsearch: {prefix: true} }
 
     # belongs to source

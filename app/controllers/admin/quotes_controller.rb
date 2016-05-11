@@ -1,6 +1,6 @@
 class Admin::QuotesController < ApplicationController
   before_filter :authenticate_admin!
-  before_action :set_quote, only: [:edit, :update, :destroy, :qotd, :verify, :tweetable]
+  before_action :set_quote, only: [:edit, :update, :destroy, :qotd, :verify, :tweetable, :image]
   layout "admin"
 
   def index
@@ -103,6 +103,13 @@ class Admin::QuotesController < ApplicationController
       if @qotd.save
         format.json { head :ok }
       end
+    end
+  end
+  
+  def image
+    QuoteImageWorker.perform_async(@quote.id)
+    respond_to do |format|
+      format.json { head :ok }
     end
   end
 

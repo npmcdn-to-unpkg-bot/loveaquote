@@ -102,7 +102,7 @@ class SocialImageWorker
       }
 
       draw = Magick::Draw.new
-      draw.font = "#{Rails.root}/app/assets/fonts/OpenSans-Regular.ttf"
+      draw.font = "#{Rails.root}/app/assets/fonts/OpenSans-Regular-webfont.ttf"
 
       draw.pointsize = 108
       draw.gravity = Magick::CenterGravity

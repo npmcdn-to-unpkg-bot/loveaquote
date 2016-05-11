@@ -1,10 +1,9 @@
-namespace :quote_image do
-    task :generate => :environment do
-        include ActionView::Helpers::TextHelper
-        
-        quote = Quote.first
-        source = quote.source.name
-        
+class QuoteImageWorker
+    include Sidekiq::Worker
+    include ActionView::Helpers::TextHelper
+    
+    def perform(id)
+        quote = Quote.find(id)
         offset = rand(ColorScheme.count)
         color_scheme = ColorScheme.offset(offset).first
         
@@ -13,22 +12,20 @@ namespace :quote_image do
         quote_padding = 10
         source_name_font_size = 30
         source_name_padding = 60
-        laq_font_size = 16
-        laq_padding = 80
-        
-        quote_image = Magick::Image.new(600,400) {
+
+        quote_image = Magick::Image.new(600,300) {
             self.background_color = "##{color_scheme.background_color}"
             self.quality = 100
         }
 
         draw = Magick::Draw.new
-        draw.font = "#{Rails.root}/app/assets/fonts/OpenSans-Regular.ttf"
-
+        draw.font = "#{Rails.root}/app/assets/fonts/OpenSans-Regular-webfont.ttf"
+        
         draw.pointsize = quote_font_size
         draw.gravity = Magick::CenterGravity
         
-        text = do_word_wrap("I do not think much of a man who is not wiser today than he was yesterday. I do not think much of a man who is not wiser today than he was yesterday.", 40)
-        position = calculate_position(400, text.split("\n").count, quote_font_size, quote_padding, source_name_font_size, source_name_padding, laq_font_size, laq_padding)
+        text = do_word_wrap(quote.text, 40)
+        position = calculate_position(300, text.split("\n").count, quote_font_size, quote_padding, source_name_font_size, source_name_padding)
 
         text.split("\n").each do |row|
             draw.annotate(quote_image, 580, 54, 10, position, row) {
@@ -40,13 +37,7 @@ namespace :quote_image do
         position += (source_name_padding - quote_padding)
       
         draw.pointsize = source_name_font_size
-        draw.annotate(quote_image, 580, 54, 10, position, "Deepak Kundu") {
-            self.fill = "##{color_scheme.foreground_color}"
-        }
-        
-        position += laq_padding    
-        draw.pointsize = laq_font_size
-        draw.annotate(quote_image, 580, 25, 10, position, "www.LOVEAQUOTE.com") {
+        draw.annotate(quote_image, 580, 54, 10, position, quote.source.name) {
             self.fill = "##{color_scheme.foreground_color}"
         }
         
@@ -57,16 +48,20 @@ namespace :quote_image do
         word_wrap(text, line_width: line_width)
     end
     
-    def calculate_position(height, lines, quote_font_size, quote_padding, source_name_font_size, source_name_padding, laq_font_size, laq_padding)
-        (height - (lines*quote_font_size) - (lines - 1)*(quote_padding) - source_name_font_size - source_name_padding - laq_font_size - laq_padding)/2
+    def calculate_position(height, lines, quote_font_size, quote_padding, source_name_font_size, source_name_padding)
+        (height - (lines*quote_font_size) - (lines - 1)*(quote_padding) - source_name_font_size - source_name_padding)/2
     end
     
     def save_quote_image(quote_image, quote)
+        require 'fileutils'
         Thread.new do
             FileUtils.mkdir_p(Rails.root + "public/generatedimages/quotes")
             quote_image.write(Rails.root.join("public/generatedimages/quotes/#{quote.id}.jpg"))
             quote.image = Rails.root.join("public/generatedimages/quotes/#{quote.id}.jpg").open
-            quote.save
+            ActiveRecord::Base.no_touching do
+                quote.save
+            end
+            FileUtils.rm(Rails.root.join("public/generatedimages/quotes/#{quote.id}.jpg"))
         end
     end
 end
