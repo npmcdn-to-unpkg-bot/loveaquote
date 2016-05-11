@@ -20,7 +20,7 @@
         <% end %>
       </div>
       <div class="more-link text-center">
-        <%= link_to "#{Topic.where(very_popular: false).count} More Topics", topics_url %>
+        <%= link_to "#{Topic.where(very_popular: false).count} More Topics ...", topics_url %>
       </div>      
     </div>
     <div class="col-sm-12">
@@ -35,7 +35,7 @@
         <% end %>
       </div>
       <div class="more-link text-center">
-        <%= link_to "#{Person.where(very_popular: false).count} More People", people_url %>
+        <%= link_to "#{Person.where(very_popular: false).count} More People ...", people_url %>
       </div>
 	 </div>
     <div class="col-sm-12">
