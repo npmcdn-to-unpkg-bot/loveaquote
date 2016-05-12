@@ -54,4 +54,12 @@ class Quote < ActiveRecord::Base
     end
 
     scope :filter_by_topic, -> (id) {joins(:quote_topics).where(quote_topics: {topic_id: id})}
+    
+    scope :with_image, -> (count) {where.not(image: '').limit(count)}
+    
+    def self.cached_with_image(count)
+        Rails.cache.fetch("quotes_with_images") do
+            with_image(count)
+        end
+    end
 end

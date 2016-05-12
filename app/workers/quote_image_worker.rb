@@ -43,6 +43,7 @@ class QuoteImageWorker
         }
         
         save_quote_image(quote_image, quote)
+        expire_cache
     end
     
     def do_word_wrap(text, line_width)
@@ -64,5 +65,9 @@ class QuoteImageWorker
             end
             FileUtils.rm(Rails.root.join("public/generatedimages/quotes/#{quote.slug}.jpg"))
         end
+    end
+    
+    def expire_cache
+        Rails.cache.delete("quotes_with_images")
     end
 end
