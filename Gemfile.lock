@@ -7,6 +7,13 @@ GIT
       activesupport (>= 3.0.0)
 
 GIT
+  remote: git://github.com/bodrovis/jquery-slick-rails.git
+  revision: 9809185c7ae30f1e92ce31bdc0da5c158fc9c15e
+  specs:
+    jquery-slick-rails (1.6.0.2)
+      railties (>= 3.1)
+
+GIT
   remote: git://github.com/carrierwaveuploader/carrierwave.git
   revision: b893859067d6aea497809ace68293633e1d64672
   specs:
@@ -477,6 +484,7 @@ DEPENDENCIES
   font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-slick-rails!
   kaminari!
   launchy
   omniauth-google-oauth2

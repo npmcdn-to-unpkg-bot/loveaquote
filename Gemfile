@@ -28,6 +28,7 @@ gem 'devise'
 gem "omniauth-google-oauth2"
 
 gem 'font-awesome-rails'
+gem 'jquery-slick-rails', github: 'bodrovis/jquery-slick-rails'
 gem 'simple_form'
 gem 'cocoon'
 gem 'kaminari', github: 'amatsuda/kaminari'

@@ -1,6 +1,6 @@
 //= require jquery
 //= require jquery_ujs
-//= require slick-carousel/slick/slick.js
+//= require jquery.slick
 //= require jquery_lazyload/jquery.lazyload.js
 
 $(function() {
