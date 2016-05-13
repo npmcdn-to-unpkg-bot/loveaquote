@@ -28,7 +28,7 @@
           <td class="text-center"><%= quote_topic_suggestion.quote.verified ? '<i class="e-icon-check"></i>'.html_safe : '<i class="e-icon-cross"></i>'.html_safe %></td>
           <td><%= quote_topic_suggestion.quote.text %></td>
           <td class="text-center"><%= link_to quote_topic_suggestion.topic.name, admin_topic_url(quote_topic_suggestion.topic) %></td>
-          <td class="text-center"><%= link_to quote_topic_suggestion.quote.source.name, admin_quote_source_url(quote_topic_suggestion.quote) %> <%= quote_topic_suggestion.quote.source.published ? '<span class="badge badge-default">P</span>'.html_safe : '<span class="badge badge-default">D</span>'.html_safe %></td>
+          <td class="text-center"><%= link_to quote_topic_suggestion.quote.source.name, admin_quote_source_url(quote_topic_suggestion.quote) %></td>
           <td class="text-center"><%= link_to '<i class="fa fa-picture-o"></i>'.html_safe, image_admin_quote_url(quote_topic_suggestion.quote), remote: true, "data-type": "json", class: "image-quote" %></td>
           <td class="text-center"><%= link_to '<i class="fa fa-twitter"></i>'.html_safe, tweetable_admin_quote_url(quote_topic_suggestion.quote), remote: true, "data-type": "json", class: "tweetable-quote" %></td>
           <td class="text-center"><%= link_to '<i class="fa fa-calendar"></i>'.html_safe, qotd_admin_quote_url(quote_topic_suggestion.quote), remote: true, "data-type": "json", class: "qotd-quote" %></td>
