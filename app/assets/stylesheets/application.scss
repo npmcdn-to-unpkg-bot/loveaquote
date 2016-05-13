@@ -51,3 +51,18 @@ ol.list-unstyled {
   text-align: center;
   font-size: 12.8px;
 }
+
+.slider {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.slick-dots li button:before {
+  color: #FFF;
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1.0;
+  color: #FFF;
+}

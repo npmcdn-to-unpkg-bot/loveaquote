@@ -108,7 +108,7 @@
           
           <% if @quote.image.present? %>
             <div class="tab-pane" id="quote-image">
-              <%= image_tag @quote.image %>
+              <%= image_tag @quote.image.medium.url %>
             </div>
           <% end %>
 

@@ -68,12 +68,13 @@
         <%= link_to "#{Proverb.where(very_popular: false).count} More Proverb Themes ... ", proverbs_url %>
       </div>
     </div>
-    <div class="col-sm-12">
-      <div class="quote-images">
-        <% @image_quotes.each do |image_quote| %>
-          <div><%= image_tag image_quote.image, style: "width: 100%"  %></div>
-        <% end %>
-      </div>
-    </div>
+  </div>
+<% end %>
+
+<% content_for :slider do %>
+  <div class="quote-images">
+    <% @image_quotes.each do |image_quote| %>
+      <div><%= image_tag image_quote.image, style: "width: 100%"  %></div>
+    <% end %>
   </div>
 <% end %>

@@ -9,18 +9,23 @@
   <div class="site-container container">
   	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
-		  <div class="wrapper">
-		    <main id="content" role="main" itemprop="mainContentOfPage">
-		    <% if content_for?(:heading) %>
-					<header>
-						<h1 itemprop="headline"><%= yield :heading %></h1>
-					</header>
-				<% end %>
-				<div itemprop="text">
-					<%= yield :content %>
-				</div>
-			  </main>
-		  </div>
+		  	<% if content_for?(:slider) %>
+				<div class="slider">
+					<%= yield :slider %>
+				</div>		
+			<% end %>	
+			<div class="wrapper">
+				<main id="content" role="main" itemprop="mainContentOfPage">
+					<% if content_for?(:heading) %>
+						<header>
+							<h1 itemprop="headline"><%= yield :heading %></h1>
+						</header>
+					<% end %>
+					<div itemprop="text">
+						<%= yield :content %>
+					</div>
+				</main>
+			</div>
 		</div>
 		
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">

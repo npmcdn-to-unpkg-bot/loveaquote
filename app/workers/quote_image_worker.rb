@@ -9,12 +9,12 @@ class QuoteImageWorker
         color_scheme = ColorScheme.offset(offset).first
         
         #Generate quote Image
-        quote_font_size = 30
-        quote_padding = 10
-        source_name_font_size = 30
-        source_name_padding = 60
+        quote_font_size = 60
+        quote_padding = 20
+        source_name_font_size = 60
+        source_name_padding = 120
 
-        quote_image = Magick::Image.new(600,300) {
+        quote_image = Magick::Image.new(1200,600) {
             self.background_color = "##{color_scheme.background_color}"
             self.quality = 100
         }
@@ -26,10 +26,10 @@ class QuoteImageWorker
         draw.gravity = Magick::CenterGravity
         
         text = do_word_wrap(quote.text, 40)
-        position = calculate_position(300, text.split("\n").count, quote_font_size, quote_padding, source_name_font_size, source_name_padding)
+        position = calculate_position(600, text.split("\n").count, quote_font_size, quote_padding, source_name_font_size, source_name_padding)
 
         text.split("\n").each do |row|
-            draw.annotate(quote_image, 580, 54, 10, position, row) {
+            draw.annotate(quote_image, 1160, 108, 20, position, row) {
                 self.fill = "##{color_scheme.foreground_color}"
             }
             position += (quote_font_size + quote_padding)
@@ -38,7 +38,7 @@ class QuoteImageWorker
         position += (source_name_padding - quote_padding)
       
         draw.pointsize = source_name_font_size
-        draw.annotate(quote_image, 580, 54, 10, position, quote.source.name) {
+        draw.annotate(quote_image, 1160, 108, 20, position, quote.source.name) {
             self.fill = "##{color_scheme.foreground_color}"
         }
         
