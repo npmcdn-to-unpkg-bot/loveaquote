@@ -1,9 +1,4 @@
 <div class="quote">
-  <% if quote.image.present? %>
-    <div class="quote-image">
-      <img class="lazy" data-original="<%= quote.image.url%>" width="100%">
-    </div>
-  <% end %>
   <div class="quote-text">
     <p itemprop="itemListElement">
       <%= quote.text %>
