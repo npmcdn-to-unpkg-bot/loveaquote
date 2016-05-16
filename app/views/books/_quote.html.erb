@@ -1,4 +1,9 @@
 <div class="quote">
+  <% if quote.image.present? %>		
+    <div class="quote-image">		
+      <%= image_tag quote.image, style: "width: 100%" %>		
+    </div>		
+  <% end %>  
   <div class="quote-text">
     <p itemprop="itemListElement">
       <%= quote.text %>
@@ -9,6 +14,10 @@
         <% else %>
           <%= quote.character.name %>
         <% end %>
+      <% end %>
+      <% if quote.topics.published.any? %>      
+        <%= " - " %>
+        <%= link_to "#{quote.topics.published.first.name.downcase} quotes", topic_url(quote.topics.published.first, format: :html), title: "#{quote.topics.published.first.name} Quotes" %>
       <% end %>
       </p>
   </div>

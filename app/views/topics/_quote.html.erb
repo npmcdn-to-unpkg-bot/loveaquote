@@ -1,12 +1,26 @@
 <div class="quote">
+  <% if quote.image.present? %>		
+    <div class="quote-image">		
+      <%= image_tag quote.image, style: "width: 100%" %>		
+    </div>		
+  <% end %>
   <div class="quote-text">
-    <p itemprop="itemListElement"><%= quote.text %></p>
-  </div>
-
-  <div class="quote-meta">
-
-    <div class="quote-info">
-      <% cache "quote-info-#{quote.id}-#{quote.updated_at.to_s(:number)}-source-#{quote.source.updated_at.to_s(:number)}" do %>
+    <p>
+      <%= quote.text %>
+      <span class="quote-source">
+        <%= " - " %>
+        <% case quote.source.class.name %>
+        <% when "Person" %>
+          <%= "quote by " %>
+        <% when "Book" %>
+          <%= "quote from " %>
+        <% when "Character" %>  
+          <%= "quote by " %>
+        <% when "Movie" %>  
+          <%= "quote from " %>
+        <% when "TvShow" %>  
+          <%= "quote from " %>
+        <% end %>
         <% if quote.source.published? %>
           <% if quote.source.class.name == "Proverb" %>
             <%= link_to quote.source.name + " Proverb", model_url(quote.source, format: :html), title: quote.source.name + " Proverbs" %>
@@ -15,10 +29,12 @@
           <% end %>
         <% else %>
           <%= quote.source.name %>
-        <% end %>
-      <% end %>
-    </div>
+        <% end %>        
+      </span>
+    </p>
+  </div>
 
+  <div class="quote-meta">
     <% cache "quote-meta-#{quote.id}-#{quote.updated_at.to_s(:number)}-source-#{quote.source.updated_at.to_s(:number)}" do %>
       <div class="social-sharing">
         <%= image_tag 'twitter.png', class: "share-quote-twitter", data: {url: twitter_quote_url(quote, human: "t")} %>

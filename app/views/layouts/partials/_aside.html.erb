@@ -25,6 +25,43 @@
     </div>
 </div>
 
+<% unless user_signed_in? %>
+  <div class="widget">
+    <div class="heading">
+      <h5>Login</h5>
+    </div>
+    <div class="content">
+      <%= link_to user_omniauth_authorize_path(:google_oauth2), class: "btn btn-block btn-social btn-google" do %>
+          <span class="fa fa-google"></span>
+          Sign in with Google
+      <% end %>
+  
+    </div>
+  </div>
+
+<% else %> 
+  <div class="widget">
+    <div class="heading">
+      <h5>My Account</h5>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="more-link text-center">
+            <%= link_to "Dashboard", my_root_url %>
+          </div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="more-link text-center">
+            <%= link_to "Sign out", destroy_user_session_path %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <div class="widget">
     <div class="heading">
       <h5>Follow on Facebook</h5>

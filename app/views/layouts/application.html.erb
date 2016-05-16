@@ -10,7 +10,11 @@
   	<div class="row">
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
 			<div class="wrapper">
+				<% if content_for?(:breadcrumbs) %>
+					<%= yield :breadcrumbs %>
+				<% end %>
 				<main id="content" role="main" itemprop="mainContentOfPage">
+					<%= render "layouts/partials/notification" %>
 					<% if content_for?(:heading) %>
 						<header>
 							<h1 itemprop="headline"><%= yield :heading %></h1>

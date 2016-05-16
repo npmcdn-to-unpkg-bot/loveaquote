@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   get "authors/:slug", to: redirect("/people/%{slug}", status: 301)
   get "authors/:slug/:page", to: redirect("/people/%{slug}/%{page}", status: 301)
 
-  devise_for :users, path: "user", path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register'}, controllers: {sessions: "user/sessions", omniauth_callbacks: "user/omniauth_callbacks"}
+  devise_for :users, path: "user", controllers: {:omniauth_callbacks => "user/omniauth_callbacks"}
+  devise_scope :user do
+    get 'logout', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
+  devise_for :admins, path: "admin", path_names: {sign_in: "login", sign_out: "logout"}, controllers: {sessions: "admin/sessions"}
 
   resources :people, only: [:index, :show] do
     collection do
@@ -158,8 +162,6 @@ Rails.application.routes.draw do
 	get 'disclaimer' => 'static_pages#disclaimer', as: :disclaimer
 	get 'terms-and-conditions' => 'static_pages#terms_and_conditions', as: :terms_and_conditions
 
-  devise_for :admins, path: "admin", path_names: {sign_in: "login", sign_out: "logout"}, controllers: {sessions: "admin/sessions"}
-
   get "/404" => "exceptions#serve_404", as: "serve_404"
 
   get "/500" => "exceptions#serve_500"
@@ -235,7 +237,7 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
-  namespace :user do
-    root 'dashboard#index'
+  namespace :my do
+    root "dashboard#index"
   end
 end

@@ -9,13 +9,9 @@ class MoviesController < ApplicationController
 
   def show
     @quotes = @movie.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
-    expires_in 1.hour, public: true, must_revalidate: true
 
-    if stale?(@movie)
-      respond_to do |format|
-        format.html { render layout: "single" }
-        format.amp { render layout: "single" }
-      end
+    respond_to do |format|
+      format.html { render layout: "single" }
     end
   end
 

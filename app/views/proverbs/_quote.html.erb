@@ -1,17 +1,20 @@
 <div class="quote">
+  <% if quote.image.present? %>		
+    <div class="quote-image">		
+      <%= image_tag quote.image, style: "width: 100%" %>		
+    </div>		
+  <% end %>
   <div class="quote-text">
     <p itemprop="itemListElement">
       <%= quote.text %>
+      <% if quote.topics.published.any? %>      
+        <%= " - " %>
+        <%= link_to "#{quote.topics.published.first.name.downcase} quotes", topic_url(quote.topics.published.first, format: :html), title: "#{quote.topics.published.first.name} Quotes" %>
+      <% end %>      
     </p>
   </div>
 
   <div class="quote-meta">
-    <% cache "quote-info-#{quote.id}-#{quote.updated_at.to_s(:number)}" do %>
-      <div class="quote-info">
-        <%= link_to quote.topics.published.first.name, topic_url(quote.topics.published.first, format: :html), title: "#{quote.topics.published.first.name} Quotes" if quote.topics.published.any? %>
-      </div>
-    <% end %>
-
     <% cache "quote-meta-#{quote.id}-#{quote.updated_at.to_s(:number)}-source-#{quote.source.updated_at.to_s(:number)}" do %>
       <div class="social-sharing">
         <%= image_tag 'twitter.png', class: "share-quote-twitter", data: {url: twitter_quote_url(quote, human: "t")} %>
