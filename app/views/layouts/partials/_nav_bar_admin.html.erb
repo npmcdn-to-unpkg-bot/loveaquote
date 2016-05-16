@@ -25,6 +25,7 @@
         </ul>
         
         <ul class="nav navbar-right pull-right">
+            <li><%= link_to '<i class="e-icon-users"></i>'.html_safe, admin_users_url %></li>            
             <% if Message.unread.any? %>
                 <li class="notifications dropdown"><%= link_to ('<i class="e-icon-mail"></i><span class="badge badge-secondary">' + Message.unread.count.to_s + '</span>').html_safe, admin_messages_url %></li>
             <% else %>
