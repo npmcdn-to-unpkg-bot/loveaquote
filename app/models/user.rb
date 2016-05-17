@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:google_oauth2, :facebook]
   
   def self.from_omniauth(auth)
-    user = User.first_or_create(email: auth.info.email)
+    user = User.where(email: auth.info.email).first_or_create
     Identity.where(provider: auth.provider, uid: auth.uid).first_or_create do |identity|
       identity.user = user
     end
