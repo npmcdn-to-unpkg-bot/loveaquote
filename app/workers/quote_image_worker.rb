@@ -25,7 +25,7 @@ class QuoteImageWorker
         draw.pointsize = quote_font_size
         draw.gravity = Magick::CenterGravity
         
-        text = do_word_wrap(quote.text, 40)
+        text = do_word_wrap(quote.text, 38)
         position = calculate_position(600, text.split("\n").count, quote_font_size, quote_padding, source_name_font_size, source_name_padding)
 
         text.split("\n").each do |row|
