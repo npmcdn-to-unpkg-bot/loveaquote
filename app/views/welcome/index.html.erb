@@ -9,9 +9,11 @@
 <% content_for :content do %>
   <div class="row">
     <% if @qotd.present? %>
-      <div class="text-center">
-        <h2 style="margin-top:0px">Quote Of The Day</h2>
-        <%= image_tag @qotd.quote.image_url(:medium), width: "100%", height: "auto" %>
+      <div class="col-sm-12">
+        <div class="text-center">
+          <h2 style="margin-top:0px">Quote Of The Day</h2>
+          <%= image_tag @qotd.quote.image_url(:medium), width: "100%", height: "auto" %>
+        </div>      
       </div>
     <% end %>
     <div class="col-sm-12">
@@ -74,5 +76,17 @@
         <%= link_to "#{Proverb.where(very_popular: false).count} More Proverb Themes ... ", proverbs_url %>
       </div>
     </div>
+    
+    <% if @image_quotes.count > 0 %>
+    <div class="col-sm-12">
+      <div class="quote-slider" style="margin-top:20px">
+        <% @image_quotes.each do |image_quote| %>
+          <div>
+            <%= image_tag image_quote.image, style: "width: 100%"  %>
+          </div>
+        <% end %>            
+      </div>
+    </div>
+    <% end %>
   </div>
 <% end %>

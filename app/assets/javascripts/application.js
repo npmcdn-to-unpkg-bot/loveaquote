@@ -4,7 +4,7 @@
 //= require jquery_lazyload/jquery.lazyload.js
 
 $(function() {
-  $(".quote-images").slick({
+  $(".quote-slider").slick({
     dots: true,
     arrows: false
   });
