@@ -9,7 +9,9 @@
     <thead>
       <tr>
         <th width="10%" class="text-center">Date</th>    
-        <th width="90%" class="text-center">Email</th>
+        <th width="40%" class="text-center">Email</th>
+        <th width="40%" class="text-center">Provider</th>
+        <th width="10%" class="text-center">Manage</th>
       </tr>
     </thead>
   
@@ -17,7 +19,9 @@
       <% @users.each do |user| %>
         <tr>
           <td class="text-center"><%= user.created_at.strftime("%B %d, %Y") %></td>
-          <td><%= user.email %></td>
+          <td class="text-center"><%= user.email %></td>
+          <td class="text-center"><%= user.identities.last.provider %></td>
+          <td class="text-center"><%= link_to '<i class="fa fa-trash"></i>'.html_safe, admin_user_url(user), method: :delete, remote: true, class: "delete-user" %></td>
         </tr>
       <% end %>
     </tbody>
@@ -27,3 +31,11 @@
     <%= paginate @users, :views_prefix => 'kaminari_bootstrap' %>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(function() {
+    $(".delete-user").on("ajax:complete", function(xhr, status) {
+      $(this).closest("tr").remove();
+    });    
+  });
+</script>

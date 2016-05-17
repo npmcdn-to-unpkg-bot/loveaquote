@@ -8,7 +8,11 @@
           <li><%= link_to "Quote Of The Days", admin_quote_of_the_days_url %></li>
         </ul>
       </li>
-      <li><%= link_to '<i class="e-icon-user"></i><span class="title">People</span>'.html_safe, admin_people_url %></li>
+      <li><%= link_to '<i class="e-icon-user"></i><span class="title">People</span>'.html_safe, admin_people_url %>
+        <ul>
+          <li><%= link_to "Characters", admin_characters_url %></li>
+        </ul>
+      </li>
       <li><%= link_to '<i class="e-icon-book"></i><span class="title">Books</span>'.html_safe, admin_books_url %></li>
       <li><%= link_to '<i class="e-icon-flag"></i><span class="title">Proverbs</span>'.html_safe, admin_proverbs_url %></li>
       <li><%= link_to '<i class="e-icon-video"></i><span class="title">Movies</span>'.html_safe, admin_movies_url %></li>
@@ -20,7 +24,6 @@
           <li><%= link_to "Quote Topic Suggestions", admin_quote_topic_suggestions_url %></li>
         </ul>
       </li>
-      <li><%= link_to '<i class="e-icon-users"></i><span class="title">Characters</span>'.html_safe, admin_characters_url %></li>
       <li><%= link_to '<i class="e-icon-cycle"></i><span class="title">Redirects</span>'.html_safe, admin_redirects_url %></li>
       <li><%= link_to '<i class="e-icon-brush"></i><span class="title">ColorScheme</span>'.html_safe, admin_color_schemes_url %></li>
       <li><%= link_to '<i class="e-icon-line-graph"></i><span class="title">Sidekiq</span>'.html_safe, "/admin/sidekiq", target: "_blank" %></li>
