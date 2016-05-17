@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516101939) do
+ActiveRecord::Schema.define(version: 20160517014439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,6 +101,16 @@ ActiveRecord::Schema.define(version: 20160516101939) do
 
   add_index "featured_topics", ["source_type", "source_id"], name: "index_featured_topics_on_source_type_and_source_id", using: :btree
   add_index "featured_topics", ["topic_id"], name: "index_featured_topics_on_topic_id", using: :btree
+
+  create_table "identities", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
   create_table "logs", force: :cascade do |t|
     t.integer  "source_id"
@@ -394,8 +404,6 @@ ActiveRecord::Schema.define(version: 20160516101939) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.string   "provider"
-    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -404,6 +412,7 @@ ActiveRecord::Schema.define(version: 20160516101939) do
   add_foreign_key "character_sources", "people"
   add_foreign_key "compositions", "books"
   add_foreign_key "compositions", "people"
+  add_foreign_key "identities", "users"
   add_foreign_key "my_quotes", "quotes"
   add_foreign_key "my_quotes", "users"
   add_foreign_key "person_professions", "people"

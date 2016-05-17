@@ -26,6 +26,7 @@ gem 'sinatra', :require => nil
 
 gem 'devise'
 gem "omniauth-google-oauth2"
+gem 'omniauth-facebook'
 
 gem 'font-awesome-rails'
 gem 'jquery-slick-rails', github: 'bodrovis/jquery-slick-rails'
