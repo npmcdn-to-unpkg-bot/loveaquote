@@ -8,8 +8,13 @@
 
 <% content_for :content do %>
   <div class="row">
+    <% if @qotd.present? %>
+      <div class="text-center" style="margin-bottom: 10px">
+        <%= image_tag @qotd.quote.image_url(:medium), width: "100%", height: "auto" %>
+      </div>
+    <% end %>
     <div class="col-sm-12">
-  		<h2 class="text-center">Topics<br><small>Read Quotes on Topics</small></h2>
+  		<h2 class="text-center" style="margin-top: 0px">Topics<br><small>Read Quotes on Topics</small></h2>
 		  <div class="row">
         <% @topics.each do |topic| %>
         <div class="col-sm-12 col-md-6 col-lg-6">
