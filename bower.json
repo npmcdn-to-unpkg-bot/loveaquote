@@ -15,6 +15,7 @@
   "dependencies": {
     "bootstrap-sass": "~3.3.6",
     "toastr": "^2.1.2",
-    "jquery_lazyload": "jquery.lazyload#^1.9.7"
+    "jquery_lazyload": "jquery.lazyload#^1.9.7",
+    "ouibounce": "^0.0.12"
   }
 }
