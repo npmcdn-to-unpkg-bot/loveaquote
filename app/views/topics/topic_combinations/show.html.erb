@@ -47,24 +47,15 @@
 <% end %>
 
 <% content_for :aside do %>
-  <div class="widget">
-    <div class="heading">
-      <h5>Follow on Facebook</h5>
-    </div>
-    <div class="content">
-      <div class="fb-page" data-href="https://www.facebook.com/doyouloveaquote/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/doyouloveaquote/"><a href="https://www.facebook.com/doyouloveaquote/">Doyouloveaquote</a></blockquote></div></div>
-    </div>
-  </div>
-
   <% if @topic.similar_combinations.any? %>
     <div class="widget">
       <div class="heading">
         <h5>Similar Combinations</h5>
       </div>
       <div class="content">
-        <div class="row small-up-1 medium-up-1 large-up-1">
+        <div class="row">
           <% @topic.cached_similar_combinations.each do |combination| %>
-            <div class="column">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <div class="more-link">
                 <%= link_to combination.name + " Quotes", topics_topic_combination_url(combination, format: :html), title: combination.name + " Quotes" %>
               </div>
