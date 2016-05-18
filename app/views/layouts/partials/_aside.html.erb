@@ -10,18 +10,13 @@
         <% end %>
         <p class="text-center">The Quote Lover's Community</p>
         
-        <div class="more-link text-center">
-          <%= link_to "People", people_url %>
-        </div>
-        <div class="more-link text-center">
-          <%= link_to "Topics", topics_url %>
-        </div>
-        <div class="more-link text-center">
-          <%= link_to "Books", books_url %>
-        </div>  
-        <div class="more-link text-center">
-          <%= link_to "Proverbs", proverbs_url %>
-        </div>
+        <%= link_to "People<br><small>Quotes by People</small>".html_safe, people_url, class: "link-box menu-item" %>
+      
+        <%= link_to "Topics<br><small>Quotes on Topics</small>".html_safe, topics_url, class: "link-box menu-item" %>
+
+        <%= link_to "Books<br><small>Quotes from Books</small>".html_safe, books_url, class: "link-box menu-item" %>
+
+        <%= link_to "Proverbs<br><small>Proverbs by Theme</small>".html_safe, proverbs_url, class: "link-box menu-item" %>
     </div>
 </div>
 

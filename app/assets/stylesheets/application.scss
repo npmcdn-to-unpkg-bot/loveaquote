@@ -69,3 +69,24 @@ ol.list-unstyled {
   opacity: 1.0;
   color: #303641;
 }
+
+.link-box {
+  display: block;
+  background-color: #F2F2F2;
+  border: 1px solid #E2E2E2;
+  padding: 0.25rem;
+  margin: 0.25rem 0;
+  text-align: center;
+}
+
+.menu-item {
+  small {
+    font-size: 75%;
+  }  
+}
+
+a.link-box.menu-item:hover {
+  background-color: #3B5998;
+  color: #FFF;
+}
+
