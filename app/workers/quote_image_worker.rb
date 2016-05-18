@@ -4,6 +4,7 @@ class QuoteImageWorker
     
     def perform(id)
         quote = Quote.find(id)
+        
         quote.generate_slug unless quote.slug.present?
         offset = rand(ColorScheme.count)
         color_scheme = ColorScheme.offset(offset).first
@@ -39,7 +40,7 @@ class QuoteImageWorker
         position += (source_name_padding - quote_padding)
       
         draw.pointsize = source_name_font_size
-        draw.annotate(quote_image, 1160, 108, 20, position, quote.source.name) {
+        draw.annotate(quote_image, 1160, 108, 20, position, quote_source_name(quote)) {
             self.fill = "##{color_scheme.foreground_color}"
         }
         
@@ -70,5 +71,14 @@ class QuoteImageWorker
     
     def expire_cache
         Rails.cache.delete("quotes_with_images")
+    end
+    
+    def quote_source_name(quote)
+        case quote.source.class.name
+        when "Proverb"
+            return "#{quote.source.name} Proverb"
+        else
+            return quote.source.name
+        end
     end
 end
