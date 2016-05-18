@@ -12,7 +12,13 @@
       <div class="col-sm-12">
         <div class="text-center">
           <h2 style="margin-top:0px">Quote Of The Day</h2>
-          <%= image_tag @qotd.quote.image_url(:medium), width: "100%", height: "auto" %>
+          <% if @qotd.quote.source.published? %>
+            <%= link_to model_url(@qotd.quote.source, format: :html) do %>
+              <%= image_tag @qotd.quote.image_url(:medium), width: "100%", height: "auto" %>
+            <% end %>
+          <% else %>
+            <%= image_tag @qotd.quote.image_url(:medium), width: "100%", height: "auto" %>
+          <% end %>
         </div>      
       </div>
     <% end %>
@@ -82,7 +88,13 @@
       <div class="quote-slider" style="margin-top:20px">
         <% @image_quotes.each do |image_quote| %>
           <div>
-            <%= image_tag image_quote.image, style: "width: 100%"  %>
+            <% if image_quote.source.published? %>
+              <%= link_to model_url(image_quote.source) do %>
+                <%= image_tag image_quote.image, style: "width: 100%"  %>
+              <% end %>
+            <% else %>
+              <%= image_tag image_quote.image, style: "width: 100%"  %>
+            <% end %>
           </div>
         <% end %>            
       </div>
