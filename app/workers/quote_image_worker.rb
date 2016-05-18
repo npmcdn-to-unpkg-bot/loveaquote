@@ -17,6 +17,7 @@ class QuoteImageWorker
         quote_image = Magick::Image.new(1200,600) {
             self.background_color = "##{color_scheme.background_color}"
             self.quality = 100
+            self.density = 300
         }
 
         draw = Magick::Draw.new
