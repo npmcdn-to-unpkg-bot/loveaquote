@@ -10,9 +10,8 @@ p {
     text-rendering: optimizeLegibility;
 }
 
-a,
-a:hover,
-a:active {
+a {
     color: #3B5998;
-    text-decoration: none;
+    
+    &:hover {text-decoration: underline;}
 }
