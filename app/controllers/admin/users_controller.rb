@@ -4,6 +4,7 @@ class Admin::UsersController < ApplicationController
     layout "admin"
     
     def index
+        User.update_all(read: true)
         @users = User.order(created_at: :DESC).page params[:page]
     end
     

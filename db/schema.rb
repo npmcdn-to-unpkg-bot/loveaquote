@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160517014439) do
+ActiveRecord::Schema.define(version: 20160518113609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -396,14 +396,15 @@ ActiveRecord::Schema.define(version: 20160517014439) do
   add_index "user_searches", ["source_type", "source_id"], name: "index_user_searches_on_source_type_and_source_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",              default: "", null: false
-    t.integer  "sign_in_count",      default: 0,  null: false
+    t.string   "email",              default: "",    null: false
+    t.integer  "sign_in_count",      default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.boolean  "read",               default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

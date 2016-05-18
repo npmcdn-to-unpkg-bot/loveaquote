@@ -12,4 +12,6 @@ class User < ActiveRecord::Base
   
   has_many :my_quotes, dependent: :destroy
   has_many :identities, dependent: :destroy
+  
+  scope :unread, -> {where(read: false)}
 end
