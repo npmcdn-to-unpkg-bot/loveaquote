@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518113609) do
+ActiveRecord::Schema.define(version: 20160519143759) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,6 +112,24 @@ ActiveRecord::Schema.define(version: 20160518113609) do
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
 
+  create_table "list_quotes", force: :cascade do |t|
+    t.integer  "quote_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "list_id"
+  end
+
+  add_index "list_quotes", ["quote_id"], name: "index_list_quotes_on_quote_id", using: :btree
+
+  create_table "lists", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "lists", ["user_id"], name: "index_lists_on_user_id", using: :btree
+
   create_table "logs", force: :cascade do |t|
     t.integer  "source_id"
     t.string   "source_type"
@@ -144,16 +162,6 @@ ActiveRecord::Schema.define(version: 20160518113609) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
-
-  create_table "my_quotes", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "quote_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "my_quotes", ["quote_id"], name: "index_my_quotes_on_quote_id", using: :btree
-  add_index "my_quotes", ["user_id"], name: "index_my_quotes_on_user_id", using: :btree
 
   create_table "nationalities", force: :cascade do |t|
     t.string   "name"
@@ -414,8 +422,8 @@ ActiveRecord::Schema.define(version: 20160518113609) do
   add_foreign_key "compositions", "books"
   add_foreign_key "compositions", "people"
   add_foreign_key "identities", "users"
-  add_foreign_key "my_quotes", "quotes"
-  add_foreign_key "my_quotes", "users"
+  add_foreign_key "list_quotes", "quotes"
+  add_foreign_key "lists", "users"
   add_foreign_key "person_professions", "people"
   add_foreign_key "person_professions", "professions"
   add_foreign_key "quote_of_the_days", "quotes"

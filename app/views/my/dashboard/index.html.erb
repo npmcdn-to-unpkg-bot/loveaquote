@@ -17,11 +17,11 @@
         <th width="25%" class="text-center">Source Name</th>
     </thead>
     <tbody>
-        <% if @my_quotes.count > 0 %>
-            <% @my_quotes.each do |quote| %>
+        <% if @list_quotes.count > 0 %>
+            <% @list_quotes.each do |lq| %>
                 <tr>
-                    <td><%= quote.text %></td>
-                    <td class="text-center"><%= link_to quote.source.name, quote_source_url(quote.source) %></td>
+                    <td><%= lq.quote.text %></td>
+                    <td class="text-center"><%= link_to la.quote.source.name, la.quote_source_url(quote.source) %></td>
                 </tr>
             <% end %>
         <% else %>

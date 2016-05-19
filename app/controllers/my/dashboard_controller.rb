@@ -3,6 +3,6 @@ class My::DashboardController < ApplicationController
   layout "user"
   
   def index
-    @my_quotes = current_user.my_quotes
+    @list_quotes = current_user.list_quotes
   end
 end

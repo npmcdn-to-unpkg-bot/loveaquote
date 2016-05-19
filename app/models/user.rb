@@ -10,8 +10,15 @@ class User < ActiveRecord::Base
     user
   end
   
-  has_many :my_quotes, dependent: :destroy
   has_many :identities, dependent: :destroy
-  
+  has_many :lists, dependent: :destroy
+  has_many :list_quotes, through: :lists
+
   scope :unread, -> {where(read: false)}
+  
+  after_create :create_default_list
+  
+  def create_default_list
+    List.create(name: "Default", user: self)
+  end
 end
