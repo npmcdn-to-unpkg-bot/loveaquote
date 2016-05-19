@@ -56,7 +56,7 @@
         <div class="panel-body">
           <table class="table table-striped table-bordered table-hover">
             <tbody>
-              <% Movie.order(created_at: :DESC).limit(25).each do |movie| %>
+              <% Movie.order(created_at: :DESC).limit(5).each do |movie| %>
                 <tr>
                   <td><%= movie.name %></td>
                   <td class="text-center"><%= link_to "View", admin_movie_url(movie) %></td>

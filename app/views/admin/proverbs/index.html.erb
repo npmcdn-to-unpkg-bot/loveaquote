@@ -78,7 +78,7 @@
         <div class="panel-body">
           <table class="table table-striped table-bordered table-hover">
             <tbody>
-              <% Proverb.order(created_at: :DESC).limit(25).each do |proverb| %>
+              <% Proverb.order(created_at: :DESC).limit(5).each do |proverb| %>
                 <tr>
                   <td><%= proverb.name %></td>
                   <td class="text-center"><%= link_to "View", admin_proverb_url(proverb) %></td>
