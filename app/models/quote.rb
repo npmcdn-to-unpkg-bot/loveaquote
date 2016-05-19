@@ -52,7 +52,8 @@ class Quote < ActiveRecord::Base
     def get_topic_suggestions
         SuggestTopicsWorker.perform_async(self.id)
     end
-
+    
+    scope :verified, -> {where(verified: true)}
     scope :filter_by_topic, -> (id) {joins(:quote_topics).where(quote_topics: {topic_id: id})}
     
     scope :with_image, -> (count, exclude=[]) { where.not(id: exclude).where.not(image: '').order(updated_at: :DESC).limit(count)}
