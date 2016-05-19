@@ -58,7 +58,7 @@ class Quote < ActiveRecord::Base
     scope :with_image, -> (count, exclude=[]) { where.not(id: exclude).where.not(image: '').order(updated_at: :DESC).limit(count)}
     
     def self.cached_with_image(count, exclude=[])
-        Rails.cache.fetch("quotes_with_images") do
+        Rails.cache.fetch("quotes-with-images-#{Date.today.to_s(:number)}") do
             with_image(count, exclude)
         end
     end

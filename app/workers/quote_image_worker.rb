@@ -70,7 +70,7 @@ class QuoteImageWorker
     end
     
     def expire_cache
-        Rails.cache.delete("quotes_with_images")
+        Rails.cache.delete("quotes-with-images-#{Date.today.to_s(:number)}")
     end
     
     def quote_source_name(quote)
