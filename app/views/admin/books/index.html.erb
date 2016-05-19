@@ -28,8 +28,8 @@
           <tr>
             <th width="40%" class="text-center">Name</th>
             <th width="30%" class="text-center">Author</th>
-            <th width="15%" class="text-center">Status</th>
-            <th width="15%" class="text-center" colspan="3">Manage</th>
+            <th width="20%" class="text-center">Status</th>
+            <th width="10%" class="text-center" colspan="2">Manage</th>
           </tr>
         </thead>
 
@@ -45,7 +45,6 @@
               <td class="text-center"><%= book.published? ? "Published" : "Draft" %></td>
               <td class="text-center" style="vertical-align: middle"><%= link_to '<i class="fa fa-arrow-right"></i>'.html_safe, admin_book_url(book) %></td>
               <td class="text-center" style="vertical-align: middle"><%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_admin_book_url(book) %></td>
-              <td class="text-center" style="vertical-align: middle"><%= link_to '<i class="fa fa-times"></i>'.html_safe, admin_book_url(book) , method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
         </tbody>
