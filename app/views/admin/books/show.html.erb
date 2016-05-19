@@ -74,7 +74,7 @@
                     <td class="text-center"><%= link_to '<i class="fa fa-calendar"></i>'.html_safe, qotd_admin_quote_url(quote), remote: true, "data-type": "json", class: "qotd-quote" %></td>
                     <td class="text-center"><%= link_to '<i class="fa fa-check"></i>'.html_safe, verify_admin_quote_url(quote), remote: :true, "data-type": "json", class: "verify-quote" %></td>
                     <td class="text-center"><%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_admin_quote_url(quote), target: "_blank" %></td>
-                    <td class="text-center"><%= link_to '<i class="fa fa-times"></i>'.html_safe, admin_quote_url(quote), method: :delete, remote: true, class: "delete-quote" %></td>
+                    <td class="text-center"><%= link_to '<i class="fa fa-trash"></i>'.html_safe, admin_quote_url(quote), method: :delete, remote: true, class: "delete-quote" %></td>
                   </tr>
                   <% end %>
                 </tbody>
