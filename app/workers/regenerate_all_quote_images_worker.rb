@@ -3,8 +3,9 @@ class RegenerateAllQuoteImagesWorker
     include ActionView::Helpers::TextHelper
     
     def perform
-        Quote.find_each(batch_size: 100) do |quote|
+        Quote.where.not(image: '').find_each(batch_size: 100) do |quote|
             QuoteImageWorker.perform_async(quote.id)
+            sleep(5)
         end
     end
 end
