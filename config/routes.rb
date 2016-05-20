@@ -179,6 +179,9 @@ Rails.application.routes.draw do
         get "tweetable"
         get "image"
       end
+      collection do
+        get "regenerate_all_images"
+      end
     end
     resources :people do
       member do
