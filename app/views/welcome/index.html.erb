@@ -8,7 +8,7 @@
 
 <% content_for :content do %>
   <div class="row">
-    <% if @qotd.present? %>
+    <% if @qotd.present? && @qotd.quote.image.present? %>
       <div class="col-sm-12">
         <div class="text-center">
           <h2 style="margin-top:0px">Quote Of The Day</h2>
