@@ -1,4 +1,4 @@
 <div class="col-sm-12">
-    <h2>Edit <%= link_to "character", admin_character_url(@character), class: "btn btn-default dtn-sm" %> <%= link_to "characters", admin_characters_url, class: "btn btn-default dtn-sm" %></h2>
+    <h2>Edit <%= link_to "character", admin_character_url(@character), class: "btn btn-default btn-sm" %> <%= link_to "Delete", admin_character_url(@character), method: :delete, class: "btn btn-danger btn-sm" %></h2>
     <%= render 'form' %>
 </div>
