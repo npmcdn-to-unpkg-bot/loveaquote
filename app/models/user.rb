@@ -22,16 +22,10 @@ class User < ActiveRecord::Base
 
   scope :unread, -> {where(read: false)}
   
-  after_create :create_default_list, :add_as_subscriber
+  after_create :create_default_list, :add_as_subscriber, :send_welcome_email
   
-  def add_geoip_data(request)
-    self.update_columns(
-      city: request.location.city,
-      state: request.location.state,
-      state_code: request.location.state_code,
-      country: request.location.country,
-      country_code: request.location.country_code
-    )
+  def send_welcome_email
+    UserMailer.welcome_email(self.id).deliver_now
   end
   
   def create_default_list
