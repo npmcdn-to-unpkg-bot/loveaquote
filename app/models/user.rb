@@ -24,6 +24,16 @@ class User < ActiveRecord::Base
   
   after_create :create_default_list, :add_as_subscriber
   
+  def add_geoip_data(request)
+    self.update_columns(
+      city: request.location.city,
+      state: request.location.state,
+      state_code: request.location.state_code,
+      country: request.location.country,
+      country_code: request.location.country_code
+    )
+  end
+  
   def create_default_list
     List.create(name: "Default", user: self)
   end
@@ -36,6 +46,18 @@ class User < ActiveRecord::Base
     first_name = self.identities.order(updated_at: :asc).last.first_name || ""
     last_name = self.identities.order(updated_at: :asc).last.last_name || ""
     first_name + " " + last_name
+  end
+  
+  def first_name
+    self.identities.order(updated_at: :asc).last.first_name || ""
+  end
+  
+  def region
+    if self.city.present? && self.country.present?
+      "#{self.city}, #{self.country}"
+    else
+      ""
+    end
   end
   
   def image

@@ -11,7 +11,8 @@
         <th width="10%" class="text-center">Date</th> 
         <th width="20%" class="text-center">Image</th>
         <th width="20%" class="text-center">Name</th>
-        <th width="40%" class="text-center">Email</th>
+        <th width="20%" class="text-center">Email</th>
+        <th width="20%" class="text-center">Region</th>
         <th width="10%" class="text-center">Manage</th>
       </tr>
     </thead>
@@ -23,6 +24,7 @@
           <td class="text-center"><%= image_tag user.image, width: "50" %></td>
           <td class="text-center"><%= link_to user.name, user.profile %></td>
           <td class="text-center"><%= user.email %></td>
+          <td class="text-center"><%= user.region %></td>
           <td class="text-center"><%= link_to '<i class="fa fa-trash"></i>'.html_safe, admin_user_url(user), method: :delete, remote: true, class: "delete-user" %></td>
         </tr>
       <% end %>
