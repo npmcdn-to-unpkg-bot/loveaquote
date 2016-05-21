@@ -30,6 +30,11 @@
             <% else %>
                 <li><%= link_to '<i class="e-icon-users"></i>'.html_safe, admin_users_url %></li>            
             <% end %>
+            <% if Subscriber.unread.any? %>
+                <li class="notifications dropdown"><%= link_to ('<i class="e-icon-rocket"></i><span class="badge badge-secondary">' + Subscriber.unread.count.to_s + '</span>').html_safe, admin_subscribers_url %></li>
+            <% else %>
+                <li><%= link_to '<i class="e-icon-rocket"></i>'.html_safe, admin_subscribers_url %></li>            
+            <% end %>            
             <% if Message.unread.any? %>
                 <li class="notifications dropdown"><%= link_to ('<i class="e-icon-mail"></i><span class="badge badge-secondary">' + Message.unread.count.to_s + '</span>').html_safe, admin_messages_url %></li>
             <% else %>

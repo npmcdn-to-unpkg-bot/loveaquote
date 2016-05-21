@@ -22,10 +22,14 @@ class User < ActiveRecord::Base
 
   scope :unread, -> {where(read: false)}
   
-  after_create :create_default_list
+  after_create :create_default_list, :add_as_subscriber
   
   def create_default_list
     List.create(name: "Default", user: self)
+  end
+  
+  def add_as_subscriber
+    Subscriber.create(email: self.email)
   end
   
   def name

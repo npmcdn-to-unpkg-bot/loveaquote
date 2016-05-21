@@ -171,6 +171,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'dashboard#index'
     resources :users, only: [:index, :destroy]
+    resources :subscribers, only: [:index, :destroy]
     
     resources :quotes do
       member do

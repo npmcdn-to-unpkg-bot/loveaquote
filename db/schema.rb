@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160520143224) do
+ActiveRecord::Schema.define(version: 20160521023344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -335,6 +335,13 @@ ActiveRecord::Schema.define(version: 20160520143224) do
   end
 
   add_index "social_images", ["source_type", "source_id"], name: "index_social_images_on_source_type_and_source_id", using: :btree
+
+  create_table "subscribers", force: :cascade do |t|
+    t.string   "email"
+    t.boolean  "read",       default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
 
   create_table "time_lines", force: :cascade do |t|
     t.integer  "item_id",    null: false
