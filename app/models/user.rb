@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   after_create :create_default_list, :add_as_subscriber, :send_welcome_email
   
   def send_welcome_email
-    UserMailer.welcome_email(self.id).deliver_now
+    UserMailer.delay.welcome_email(self.id)
   end
   
   def create_default_list
