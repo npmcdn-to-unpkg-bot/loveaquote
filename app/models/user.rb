@@ -5,44 +5,14 @@ class User < ActiveRecord::Base
   def self.from_facebook(auth)
     user = User.where(email: auth.info.email).first_or_create
     identity = Identity.where(provider: auth.provider, uid: auth.uid, user_id: user.id).first_or_create
-    case auth["extra"]["raw_info"]["gender"]
-    when "male"
-      gender = "Male"
-    when "female"
-      gender = "Female"
-    else
-      gender = ""
-    end
-
-    identity.update(
-      first_name: auth["info"]["first_name"],
-      last_name: auth["info"]["last_name"],
-      image: auth["info"]["image"],    
-      profile: auth["extra"]["raw_info"]["link"],
-      gender: gender
-    )    
+    identity.update_facebook_identity(auth)
     user
   end
   
   def self.from_google_oauth2(auth)
     user = User.where(email: auth.info.email).first_or_create
     identity = Identity.where(provider: auth.provider, uid: auth.uid, user_id: user.id).first_or_create
-    case auth["extra"]["raw_info"]["gender"]
-    when "male"
-      gender = "Male"
-    when "female"
-      gender = "Female"
-    else
-      gender = ""
-    end
-
-    identity.update(
-      first_name: auth["info"]["first_name"],
-      last_name: auth["info"]["last_name"],
-      image: auth["info"]["image"],    
-      profile: auth["extra"]["raw_info"]["profile"],
-      gender: gender
-    )
+    identity.update_google_identity(auth)
     user    
   end
   
