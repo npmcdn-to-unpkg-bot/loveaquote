@@ -22,18 +22,14 @@ class User < ActiveRecord::Base
 
   scope :unread, -> {where(read: false)}
   
-  after_create :create_default_list, :add_as_subscriber, :send_welcome_email
+  after_create :create_default_list, :send_welcome_email
   
   def send_welcome_email
-    UserMailer.delay.welcome_email(self.id)
+    UserMailer.delay.welcome_email(self.id) if Rails.env.production?
   end
   
   def create_default_list
     List.create(name: "Default", user: self)
-  end
-  
-  def add_as_subscriber
-    Subscriber.create(email: self.email)
   end
   
   def name
@@ -61,5 +57,4 @@ class User < ActiveRecord::Base
   def profile
     self.identities.order(updated_at: :asc).last.profile || "#"
   end
-  
 end

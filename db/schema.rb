@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160521040344) do
+ActiveRecord::Schema.define(version: 20160522150354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -341,6 +341,10 @@ ActiveRecord::Schema.define(version: 20160521040344) do
     t.boolean  "read",       default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.boolean  "verified",   default: false
+    t.string   "time_zone"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   create_table "time_lines", force: :cascade do |t|
@@ -430,6 +434,9 @@ ActiveRecord::Schema.define(version: 20160521040344) do
     t.string   "state_code"
     t.string   "country"
     t.string   "country_code"
+    t.string   "time_zone"
+    t.string   "latitude"
+    t.string   "longitude"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
