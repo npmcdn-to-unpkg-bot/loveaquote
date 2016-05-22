@@ -46,7 +46,7 @@ gem 'pg_search'
 gem 'dalli'
 gem "rack-cache"
 gem "geocoder"
-
+gem 'premailer-rails'
 gem 'web-console', '~> 2.0', group: :development
 
 group :development, :test do

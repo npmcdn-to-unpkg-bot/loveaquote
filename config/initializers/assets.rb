@@ -8,4 +8,4 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w( favicon.ico admin.scss admin.js entypo.css )
+Rails.application.config.assets.precompile += %w( favicon.ico admin.scss admin.js entypo.css welcome_email.css)
