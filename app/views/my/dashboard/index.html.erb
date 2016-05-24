@@ -8,27 +8,31 @@
 <% end %>
 
 <% content_for :content do %>
-<h2 class="text-center">My Favourite Quotes</h2>
-
-
-<table class="table table-striped table-bordered table-hover">
-    <thead>
-        <th width="75%" class="text-center">Quote</th>
-        <th width="25%" class="text-center">Source Name</th>
-    </thead>
-    <tbody>
-        <% if @list_quotes.count > 0 %>
-            <% @list_quotes.each do |lq| %>
-                <tr>
-                    <td><%= lq.quote.text %></td>
-                    <td class="text-center"><%= link_to la.quote.source.name, la.quote_source_url(quote.source) %></td>
-                </tr>
-            <% end %>
-        <% else %>
-            <tr>
-                <td colspan="2">No quote added as favourite.</td>
-            </tr>
+<h2 class="text-center">My Quotes</h2>
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <%= form_tag my_root_url, method: "GET" do %>
+            <%= select_tag "list", options_from_collection_for_select(current_user.lists, "id", "name"), prompt: "Filter by List", class: "form-control", onchange: "this.form.submit();" %>
         <% end %>
-    </tbody>
-</table>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+        <div class="add-new-list">
+            <%= link_to "Add New List", "#", class: "btn btn-small btn-primary" %>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+<% if @list_quotes.count > 0 %>
+    <% @list_quotes.each do |lq| %>
+        <%= render partial: "my/dashboard/quote", object: lq.quote %>
+    <% end %>
+    <%= paginate @list_quotes, :views_prefix => 'kaminari_bootstrap' %>
+<% else %>
+    <p>No quotes found. Add some to your list and they will appear here.</p>                
+<% end %>            
+</div>
+</div>
+
 <% end %>

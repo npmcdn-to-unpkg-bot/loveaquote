@@ -1,36 +1,37 @@
 .site-container {
-	margin-top: 4rem;
-	margin-bottom: 4rem;
+	margin-top: 40px;
+	margin-bottom: 40px;
 	max-width: 1000px;
 }
 
 .wrapper {
 	background-color: #FFF;
 	box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+	padding: 0 0.5rem;
 }
 
-@media only screen and (min-width: 64.063em) {
+@media (min-width: 768px) {
 	.wrapper {
-	padding: 0 4rem;
-}
-}
-
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-	.wrapper {
-		padding: 0 2rem;
+		padding: 0 20px;
 	}
 }
 
-@media only screen and (max-width: 40em) {
+@media (min-width: 992px) { 
 	.wrapper {
-		padding: 0 0.5rem;
-	}
+		padding: 0 40px;
+	}	
+}
+
+@media (max-width: 1200px) { 
+	.wrapper {
+		margin-bottom: 30px;
+	}	
 }
 
 .application main {
-	padding: 2rem 0;
+	padding: 20px 0;
 }
 
 .user main {
-	padding: 1rem 0;
+	padding: 10px 0;
 }

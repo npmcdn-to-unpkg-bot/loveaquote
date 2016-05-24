@@ -1,0 +1,50 @@
+<div class="quote">
+  <% if quote.image.present? %>		
+    <div class="quote-image">		
+      <%= image_tag quote.image, style: "width: 100%" %>		
+    </div>		
+  <% end %>
+  <div class="quote-text">
+    <p>
+      <%= quote.text %>
+      <span class="quote-source">
+        <%= " - " %>
+        <% case quote.source.class.name %>
+        <% when "Person" %>
+          <%= "quote by " %>
+        <% when "Book" %>
+          <%= "quote from " %>
+        <% when "Character" %>  
+          <%= "quote by " %>
+        <% when "Movie" %>  
+          <%= "quote from " %>
+        <% when "TvShow" %>  
+          <%= "quote from " %>
+        <% end %>
+        <% if quote.source.published? %>
+          <% if quote.source.class.name == "Proverb" %>
+            <%= link_to quote.source.name + " Proverb", model_url(quote.source, format: :html), title: quote.source.name + " Proverbs" %>
+          <% else %>
+            <%= link_to quote.source.name, model_url(quote.source, format: :html), title: quote.source.name + " Quotes" %>
+          <% end %>
+        <% else %>
+          <%= quote.source.name %>
+        <% end %>        
+      </span>
+    </p>
+  </div>
+
+  <div class="quote-meta">
+    <% cache "quote-meta-#{quote.id}-#{quote.updated_at.to_s(:number)}-source-#{quote.source.updated_at.to_s(:number)}" do %>
+      <div class="social-sharing">
+        <%= image_tag 'twitter.png', class: "share-quote-twitter", data: {url: twitter_quote_url(quote, human: "t")} %>
+        <%= image_tag 'facebook.png', class: "share-quote-facebook", data: {url: facebook_quote_url(quote, human: "t")} %>
+        <% if quote.source.image.present? %>
+          <%= image_tag 'pinterest.png', class: "share-quote-pinterest", data: {url: pinterest_quote_url(quote, human: "t")} %>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>

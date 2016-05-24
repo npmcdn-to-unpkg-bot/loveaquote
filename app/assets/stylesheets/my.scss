@@ -1,0 +1,9 @@
+.add-new-list {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .add-new-list {
+        text-align: right;
+    }
+}
