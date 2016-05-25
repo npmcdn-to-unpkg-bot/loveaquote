@@ -143,6 +143,10 @@
       toastr.success('Quote added to Quote of The Day queue.');
     });    
     
+    $(".image-quote").on("ajax:complete", function(xhr, status) {
+      toastr.success('Image generate started for quote.');
+    });      
+    
     $(".tweetable-quote").on("ajax:success", function(data, status, xhr) {
       toastr.success('Quote added to TweetableQuote list.');
     });
