@@ -1,4 +1,4 @@
-class RegenerateAllSocialImagesWorker
+class RegenerateAllQuoteImagesWorker
     include Sidekiq::Worker
     
     def perform
