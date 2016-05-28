@@ -26,7 +26,7 @@ $(function() {
     ga('send', 'event', 'Social', 'QuoteShare', 'Twitter');
   });
 
-  $(".share-quote-faceook").on("click", function(){
+  $(".share-quote-facebook").on("click", function(){
     window.open($(this).attr("data-url"), "_blank");
     ga('send', 'event', 'Social', 'QuoteShare', 'Facebook');
   });
