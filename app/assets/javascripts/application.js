@@ -17,7 +17,7 @@ $(function() {
   
   $("img.lazy").lazyload();
   
-  $(".social-share-image").on("click", function(){
+  $(".social-share-icon i").on("click", function(){
     window.open($(this).attr("data-url"), "_blank");
   });
   

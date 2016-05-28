@@ -5,8 +5,11 @@
     border: 1px solid #E2E2E2;
     padding: 5px;
     
-    .social-share-image {
+    .social-share-icon {
         cursor: pointer;
-        width: 28px;
+        
+        .fa {
+            margin: 0 2px;   
+        }
     }
 }
