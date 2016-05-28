@@ -14,7 +14,7 @@ gem 'capistrano-rails'
 gem 'capistrano-bundler'
 gem 'capistrano3-puma'
 gem 'capistrano-rbenv'
-gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
+gem 'capistrano-sidekiq', github: 'brahmadpk/capistrano-sidekiq'
 
 gem 'puma'
 gem 'figaro'

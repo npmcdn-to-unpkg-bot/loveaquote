@@ -14,6 +14,14 @@ GIT
       railties (>= 3.1)
 
 GIT
+  remote: git://github.com/brahmadpk/capistrano-sidekiq.git
+  revision: d9babac093ac26dcdd31a164e7b40f238f95d32c
+  specs:
+    capistrano-sidekiq (0.5.4)
+      capistrano
+      sidekiq (>= 3.4)
+
+GIT
   remote: git://github.com/carrierwaveuploader/carrierwave.git
   revision: b893859067d6aea497809ace68293633e1d64672
   specs:
@@ -21,14 +29,6 @@ GIT
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-
-GIT
-  remote: git://github.com/seuros/capistrano-sidekiq.git
-  revision: 0794cf99be7bfe7f3e6828c4965db135d7e1c20b
-  specs:
-    capistrano-sidekiq (0.5.4)
-      capistrano
-      sidekiq (>= 3.4)
 
 GEM
   remote: https://rubygems.org/
