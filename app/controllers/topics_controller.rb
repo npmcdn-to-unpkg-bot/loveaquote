@@ -36,7 +36,7 @@ class TopicsController < ApplicationController
 
   def pinterest
     url = URI.encode(topic_url(@topic, format: :html))
-    media = URI.encode(@author.image_url(:large))
+    media = URI.encode(@topic.image_url(:large))
     description = CGI::escape(@topic.name +  ' #quotes')
     redirect_to "http://www.pinterest.com/pin/create/topicmarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"
   end
