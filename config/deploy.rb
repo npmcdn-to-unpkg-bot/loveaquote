@@ -20,8 +20,9 @@ set :rbenv_map_bins, %w{rake gem bundle ruby rails sidekiq sidekiqctl}
 set :puma_init_active_record, true
 
 after "deploy:started", "figaro:setup"
+after 'deploy:started', 'puma:nginx_config'
+after 'deploy:started', 'puma:monit:config'
+after 'deploy:started', 'sidekiq:monit:config'
 after "deploy:updating", "figaro:symlink"
 after "deploy:finishing", "deploy:restart"
-after 'deploy:finished', 'puma:nginx_config'
-after 'deploy:finished', 'puma:monit:config'
 after "deploy:finished", "deploy:sitemap:create"
