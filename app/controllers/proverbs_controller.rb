@@ -44,7 +44,11 @@ class ProverbsController < ApplicationController
 
   def pinterest
     url = URI.encode(proverb_url(@proverb, format: :html))
-    media = URI.encode(@proverb.social_image.pinterest.url)
+    if @proverb.social_image && @proverb.social_image.pinterest.present?
+      media = URI.encode(@proverb.social_image.pinterest_url)
+    elsif @proverb.image.present?
+      media = URI.encode(@proverb.image_url(:large))
+    end
     description = CGI::escape("#{@proverb.quotes.count} #{@proverb.name} Proverbs - ##{@proverb.name.downcase} #proverbs")
     redirect_to "http://www.pinterest.com/pin/create/proverbmarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"
   end

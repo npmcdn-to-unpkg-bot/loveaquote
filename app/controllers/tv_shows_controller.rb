@@ -36,7 +36,11 @@ class TvShowsController < ApplicationController
 
   def pinterest
     url = URI.encode(tv_show_url(@tv_show, format: :html))
-    media = URI.encode(@author.image_url(:large))
+    if @tv_show.social_image && @tv_show.social_image.pinterest.present?
+      media = URI.encode(@tv_show.social_image.pinterest_url)
+    elsif @tv_show.image.present?
+      media = URI.encode(@tv_show.image_url(:large))
+    end
     description = CGI::escape(@tv_show.name +  ' #quotes')
     redirect_to "http://www.pinterest.com/pin/create/tv_showmarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"
   end

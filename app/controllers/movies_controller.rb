@@ -35,7 +35,11 @@ class MoviesController < ApplicationController
 
   def pinterest
     url = URI.encode(movie_url(@movie, format: :html))
-    media = URI.encode(@author.image_url(:large))
+    if @movie.social_image && @movie.social_image.pinterest.present?
+      media = URI.encode(@movie.social_image.pinterest_url)
+    elsif @movie.image.present?
+      media = URI.encode(@movie.image_url(:large))
+    end
     description = CGI::escape(@movie.name +  ' #quotes')
     redirect_to "http://www.pinterest.com/pin/create/moviemarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"
   end

@@ -36,7 +36,11 @@ class CharactersController < ApplicationController
 
   def pinterest
     url = URI.encode(character_url(@character, format: :html))
-    media = URI.encode(@author.image_url(:large))
+    if @character.social_image && @character.social_image.pinterest.present?
+      media = URI.encode(@character.social_image.pinterest_url)
+    elsif @character.image.present?
+      media = URI.encode(@character.image_url(:large))
+    end
     description = CGI::escape(@character.name +  ' #quotes')
     redirect_to "http://www.pinterest.com/pin/create/charactermarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"
   end
