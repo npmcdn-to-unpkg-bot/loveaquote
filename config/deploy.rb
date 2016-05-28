@@ -4,7 +4,6 @@ set :application, 'loveaquote'
 set :repo_url, 'https://github.com/brahmadpk/loveaquote.git'
 
 set :user, 'dpk'
-set :sidekiq_user, 'dpk'
 
 set :deploy_to, "/home/#{fetch(:user)}/apps/#{fetch(:application)}"
 
