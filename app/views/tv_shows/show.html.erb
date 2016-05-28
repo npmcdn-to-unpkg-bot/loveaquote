@@ -47,3 +47,7 @@
 <% content_for :aside do %>
   <%= render partial: "partials/character_quotes", locals: {model: @tv_show} %>
 <% end %>
+
+<% content_for :top_social_bar do %>
+  <%= render partial: "partials/top_social_bar", locals: {model: @tv_show} %>
+<% end %>

@@ -46,3 +46,7 @@
 <% content_for :aside do %>
   <%= render partial: "partials/aside", locals: { model: @topic } %>
 <% end %>
+
+<% content_for :top_social_bar do %>
+  <%= render partial: "partials/top_social_bar", locals: {model: @topic} %>
+<% end %>

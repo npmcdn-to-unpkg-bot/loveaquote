@@ -64,4 +64,16 @@ module ApplicationHelper
     def featured_topic_model_url(model, featured_topic, options={})
         eval("featured_topic_#{model.model_name.param_key}_url(model, featured_topic, options)")
     end
+    
+    def twitter_model_url(model)
+        eval("twitter_#{model.model_name.param_key}_url(model)")
+    end    
+    
+    def pinterest_model_url(model)
+        eval("pinterest_#{model.model_name.param_key}_url(model)")
+    end    
+
+    def facebook_model_url(model)
+        eval("facebook_#{model.model_name.param_key}_url(model)")
+    end        
 end

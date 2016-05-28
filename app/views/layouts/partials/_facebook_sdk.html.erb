@@ -5,6 +5,13 @@
       xfbml      : true,
       version    : 'v2.5'
     });
+    
+    FB.Event.subscribe('edge.create', function(url) {
+      ga('send', 'event', 'Social', 'Facebook Like', 'url');
+    });
+    FB.Event.subscribe('edge.remove',function(url) {
+      ga('send', 'event', 'Social', 'Facebook Unlike', 'url');
+    });    
   };
 
   (function(d, s, id){
