@@ -112,13 +112,6 @@ class Admin::QuotesController < ApplicationController
       format.json { head :ok }
     end
   end
-  
-  def regenerate_all_images
-    RegenerateAllQuoteImagesWorker.perform_async
-    respond_to do |format|
-      format.json { head :ok }
-    end    
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

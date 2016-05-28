@@ -170,6 +170,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root 'dashboard#index'
+    get "regenerate-social-images" => "dashboard#regenerate_social_images", as: :regenerate_social_images
+    get "regenerate-quote-images" => "dashboard#regenerate_quote_images", as: :regenerate_quote_images
+    
     resources :users, only: [:index, :destroy]
     resources :subscribers, only: [:index, :destroy]
     
@@ -179,9 +182,6 @@ Rails.application.routes.draw do
         get "verify"
         get "tweetable"
         get "image"
-      end
-      collection do
-        get "regenerate_all_images"
       end
     end
     resources :people do
