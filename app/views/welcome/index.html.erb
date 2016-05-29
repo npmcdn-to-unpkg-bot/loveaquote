@@ -49,7 +49,7 @@
       </div>
       <% end %>
     </div>
-    <%= link_to "#{Book.where(very_popular: false).count} More Books ...", books_url, class: "link-box" %>
+    <%= link_to "#{Book.where(very_popular: false).count} More Books ...", books_url, class: "link-box text-center" %>
     
     <h2 class="text-center">Proverbs<br><small>Read Proverbs by Theme</small></h2>
 	  <div class="row">
@@ -59,7 +59,7 @@
       </div>
       <% end %>
     </div>
-    <%= link_to "#{Proverb.where(very_popular: false).count} More Proverb Themes ... ", proverbs_url, class: "link-box" %>
+    <%= link_to "#{Proverb.where(very_popular: false).count} More Proverb Themes ... ", proverbs_url, class: "link-box text-center" %>
     
     <% if @image_quotes.present? %>
       <div class="quote-slider" style="margin-top:20px">
