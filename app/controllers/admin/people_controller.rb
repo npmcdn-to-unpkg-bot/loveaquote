@@ -1,7 +1,6 @@
 class Admin::PeopleController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_person, only: [:show, :edit, :update, :destroy, :review, :featured_topic]
-  layout "admin"
 
   # GET /people
   # GET /people.json

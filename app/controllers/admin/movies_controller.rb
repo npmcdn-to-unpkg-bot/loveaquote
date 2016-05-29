@@ -1,7 +1,6 @@
 class Admin::MoviesController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_movie, only: [:show, :edit, :update, :destroy, :review]
-  layout "admin"
 
   # GET /movies
   # GET /movies.json

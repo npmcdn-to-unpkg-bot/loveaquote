@@ -1,7 +1,6 @@
 class Admin::TopicsController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_topic, only: [:show, :edit, :update, :destroy, :review]
-  layout "admin"
 
   # GET /topics
   # GET /topics.json

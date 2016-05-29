@@ -1,7 +1,6 @@
 class Admin::NationalitiesController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_nationality, only: [:show, :edit, :update, :destroy]
-  layout "admin"
   
   # GET /nationalities
   # GET /nationalities.json

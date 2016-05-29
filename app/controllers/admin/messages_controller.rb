@@ -1,7 +1,6 @@
 class Admin::MessagesController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_message, only: [:show, :destroy]
-  layout "admin"
 
   def index
     @messages = Message.order(created_at: :DESC).page params[:page]

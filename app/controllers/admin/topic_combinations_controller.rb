@@ -1,7 +1,6 @@
 class Admin::TopicCombinationsController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_topic_combination, only: [:show, :edit, :update, :destroy]
-  layout "admin"
 
   # GET /topic_combinations
   # GET /topic_combinations.json

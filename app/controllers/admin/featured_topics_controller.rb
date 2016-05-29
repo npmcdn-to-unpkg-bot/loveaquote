@@ -1,6 +1,7 @@
 class Admin::FeaturedTopicsController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_featured_topic, only: [:destroy]
+  
   # GET /topics/new
   def new
     @featured_topic = FeaturedTopic.new

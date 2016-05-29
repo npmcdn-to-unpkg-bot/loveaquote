@@ -1,7 +1,6 @@
 class Admin::SubscribersController < ApplicationController
     before_filter :authenticate_admin!
     before_action :set_subscriber, only: [:destroy]
-    layout "admin"
     
     def index
         Subscriber.update_all(read: true)

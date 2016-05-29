@@ -1,7 +1,6 @@
 class Admin::BooksController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_book, only: [:show, :edit, :update, :destroy, :review]
-  layout "admin"
 
   # GET /books
   # GET /books.json

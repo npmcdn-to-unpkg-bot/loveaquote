@@ -1,7 +1,6 @@
 class Admin::CharactersController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_character, only: [:show, :edit, :update, :destroy, :review]
-  layout "admin"
 
   # GET /characters
   # GET /characters.json

@@ -1,7 +1,6 @@
 class Admin::QuotesController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_quote, only: [:edit, :update, :destroy, :qotd, :verify, :tweetable, :image]
-  layout "admin"
 
   def index
     if params[:search].present?

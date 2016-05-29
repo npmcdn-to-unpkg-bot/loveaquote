@@ -1,7 +1,6 @@
 class Admin::LogsController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_log, only: [:destroy]
-  layout "admin"
   
   def index
     if params[:category].present?

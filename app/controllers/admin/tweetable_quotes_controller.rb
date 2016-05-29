@@ -1,7 +1,6 @@
 class Admin::TweetableQuotesController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_tweetable_quote, only: [:destroy]
-  layout "admin"
 
   def index
     @tweetable_quotes = TweetableQuote.order(created_at: :DESC).page params[:page]

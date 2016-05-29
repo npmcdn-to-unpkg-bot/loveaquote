@@ -1,7 +1,6 @@
 class Admin::TvShowsController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_tv_show, only: [:show, :edit, :update, :destroy, :review]
-  layout "admin"
 
   # GET /tv_shows
   # GET /tv_shows.json

@@ -1,7 +1,6 @@
 class Admin::ColorSchemesController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_color_scheme, only: [:show, :edit, :update, :destroy]
-  layout "admin"
 
   # GET /color_schemes
   # GET /color_schemes.json

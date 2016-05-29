@@ -1,7 +1,6 @@
 class Admin::RedirectsController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_redirect, only: [:edit, :update, :destroy]
-  layout "admin"
 
   # GET /redirects
   # GET /redirects.json

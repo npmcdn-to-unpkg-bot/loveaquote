@@ -1,7 +1,6 @@
 class Admin::ProverbsController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_proverb, only: [:show, :edit, :update, :destroy, :review]
-  layout "admin"
 
   # GET /proverbs
   # GET /proverbs.json

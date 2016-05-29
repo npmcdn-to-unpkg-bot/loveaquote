@@ -1,7 +1,6 @@
 class Admin::ProfessionsController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_profession, only: [:show, :edit, :update, :destroy]
-  layout "admin"
 
   # GET /professions
   # GET /professions.json

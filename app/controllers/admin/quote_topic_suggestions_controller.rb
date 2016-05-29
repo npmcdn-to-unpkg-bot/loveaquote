@@ -1,7 +1,6 @@
 class Admin::QuoteTopicSuggestionsController < ApplicationController
   before_filter :authenticate_admin!
   before_action :set_quote_topic_suggestion, only: [:accept, :decline]
-  layout "admin"
 
   def index
     if params[:topic].present?
