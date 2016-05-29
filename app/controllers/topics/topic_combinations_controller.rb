@@ -3,8 +3,6 @@ class Topics::TopicCombinationsController < ApplicationController
   
   def index
     @topics = TopicCombination.order(slug: "ASC").group_by{|a| a.name[0]}
-    @canonical = topics_topic_combinations_url(format: :html)
-    render layout: "archive"
   end
 
   def show
@@ -14,14 +12,12 @@ class Topics::TopicCombinationsController < ApplicationController
     else
       @quotes = @topic.quotes.order(total_share_count: :desc).order(text: :asc).page params[:page]
     end
-    render layout: "single"
   end
   
   def alphabet
     @alphabet = params[:alphabet].upcase
     @topic_combination_combinations = topic_combination.by_alphabet(@alphabet).published.order(name: "ASC")
     @canonical = alphabet_topic_topic_combinations_url(format: :html)
-    render layout: "alphabet"
   end
   
   def twitter

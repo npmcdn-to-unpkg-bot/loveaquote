@@ -1,68 +1,41 @@
-<% if params.has_key?(:page) %>
-  <% content_for :canonical, "#{topics_topic_combination_url(@topic, params[:page], format: :html)}" %>
-  <% content_for :title, "#{@topic.name} Quotes - #{@topic.quotes.count.to_s} quotes about #{@topic.name} - Page #{params[:page]}"  %>
-  <% content_for :description, "Quotes about #{@topic.name} - page #{params[:page]}. Best collection of #{@topic.name} quotes. Read, comment and share these quotes." %>
-<% else %>
-  <% content_for :canonical, "#{topics_topic_combination_url(@topic, format: :html)}" %>
-  <% content_for :title, "#{@topic.name} Quotes - #{@topic.quotes.count.to_s} quotes about #{@topic.name}"  %>
-  <% content_for :description, "Quotes about #{@topic.name}. Best collection of #{@topic.name} quotes. Read, comment and share these quotes." %>
-<% end %>
+<% content_for :canonical, "#{topics_topic_combination_url(@topic, format: :html)}" %>
+<% content_for :title, "#{@topic.name} Quotes - #{@topic.quotes.count.to_s} quotes about #{@topic.name}"  %>
+<% content_for :description, "Quotes about #{@topic.name}. Best collection of #{@topic.name} quotes. Read, comment and share these quotes." %>
 
-<% content_for :heading, "#{@topic.name} Quotes" %>
-
-<% if @topic.social_image.present? %>
+<% if @topic.social_image.present? && topic.social_image.facebook.present? %>
   <% content_for :facebook_image, @topic.social_image.facebook %>
 <% end %>
 
-<% content_for :breadcrumbs do %>
-	<ol class="breadcrumb">
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= root_url %>" itemprop="url"><span itemprop="title">Home</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= topics_url(format: :html) %>" itemprop="url"><span itemprop="title">Topics</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="<%= topics_topic_combinations_url(format: :html) %>" itemprop="url"><span itemprop="title">Combinations</span></a></li>
-    <li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><span itemprop="title"><%= @topic.name %></span></li>
-  </ol>
-<% end %>
-
 <% content_for :content do %>
-  <% @quotes.each do |quote| %>
-      <%= render partial: "topics/quote", object: quote %>
-  <% end %>
-
-  <div class="text-center">
-    <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
-  </div>
-
-<% end %>
-
-<% content_for :updated do %>
-  Last Updated - <time itemprop="dateModified" datetime="<%= @topic.updated_at.to_datetime %>"><%= @topic.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
-<% end %>
-
-<% content_for :social_sharing do %>
-    <a rel="nofollow" class="share-topic-twitter" title="<%= "Share #{@topic.name} quotes on Twitter" %>" target="_blank" href="<%= twitter_topics_topic_combination_url(@topic) %>"><%= image_tag('social/twitter.png') %></a>
-    <a rel="nofollow" class="share-topic-facebook" title="<%= "Share #{@topic.name} quotes on Facebook" %>" target="_blank" href="<%= facebook_topics_topic_combination_url(@topic) %>"><%= image_tag('social/facebook.png') %></a>
-    <% if @topic.image.present? %>
-      <a rel="nofollow" class="share-topic-pinterest" title="<%= "Share #{@topic.name} quotes on Pinterest" %>" target="_blank" href="<%= pinterest_topics_topic_combination_url(@topic) %>"><%= image_tag('social/pinterest.png') %></a>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <h1 class="main-title text-center"><%= #{@topic.name} Quotes %></h1>
+    <% @quotes.each do |quote| %>
+        <%= render partial: "topics/quote", object: quote %>
     <% end %>
-<% end %>
-
-<% content_for :aside do %>
-  <% if @topic.similar_combinations.any? %>
-    <div class="widget">
-      <div class="heading">
-        <h5>Similar Combinations</h5>
-      </div>
-      <div class="content">
-        <div class="row">
-          <% @topic.cached_similar_combinations.each do |combination| %>
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <div class="more-link">
-                <%= link_to combination.name + " Quotes", topics_topic_combination_url(combination, format: :html), title: combination.name + " Quotes" %>
+  
+    <div class="text-center">
+      <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
+    </div>    
+    <p>Last Updated - <time itemprop="dateModified" datetime="<%= @topic.updated_at.to_datetime %>"><%= @topic.updated_at.to_datetime.strftime("%B %d, %Y")  %></time></p>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+    <%= render "partials/facebook_like_box" %>  
+    <% if @topic.similar_combinations.any? %>
+      <div class="panel panel-default panel-shadow">
+        <div class="panel-heading">
+          <div class="panel-title">Similar Combinations</div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <% @topic.cached_similar_combinations.each do |combination| %>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <%= link_to combination.name + " Quotes", topics_topic_combination_url(combination, format: :html), title: combination.name + " Quotes", class: "link-box" %>
               </div>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>    
+    
+  </div>
 <% end %>
