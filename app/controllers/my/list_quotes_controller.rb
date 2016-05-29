@@ -14,6 +14,7 @@ class My::ListQuotesController < ApplicationController
         format.json { render json: @list.errors, status: :unprocessable_entity }
       end
     end
+  end  
     
   private
     # Never trust parameters from the scary internet, only allow the white list through.
