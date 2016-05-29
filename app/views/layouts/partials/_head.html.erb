@@ -1,4 +1,8 @@
-<title><%= yield :title %></title>
+<% if content_for?(:title) %>
+    <title><%= yield :title %></title>
+<% else %>
+    "LoveAQuote"
+<% end %>
 <meta charset="utf-8">
 <meta name="description" content="<%= yield :description %>">
 <meta name="keywords" content="<%= yield :keywords %>">
