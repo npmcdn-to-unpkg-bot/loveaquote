@@ -8,7 +8,7 @@ class Admin::MessagesController < ApplicationController
   end
 
   def show
-    @message.update_column(read: true)
+    @message.update_columns(read: true)
   end
 
   # DELETE /books/1
