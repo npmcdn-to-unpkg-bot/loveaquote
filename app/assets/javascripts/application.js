@@ -1,5 +1,13 @@
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
+//= require TweenMax
+//= require resizeable
+//= require neon-api
+//= require neon-custom 
+//= require joinable
+//= require cocoon
+//= require toastr
 //= require jquery.slick
 //= require jquery_lazyload/jquery.lazyload.js
 //= require sticky-kit/jquery.sticky-kit.js
@@ -12,7 +20,7 @@ $(function() {
   });
   
   $(".top-social-bar").stick_in_parent({
-    parent: $("article")
+    parent: $(".main-content")
   });
   
   $("img.lazy").lazyload();

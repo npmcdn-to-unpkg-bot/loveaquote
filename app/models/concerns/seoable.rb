@@ -41,8 +41,12 @@ module Seoable
 
     def generate_title
         case self.class.name
+        when "Person", "Character"
+            "#{self.name} Quotes - #{self.quotes.count} Best Quotes by #{self.name}"                    
         when "Topic"
             "#{self.name} Quotes - #{self.quotes.count} Best Quotes about #{self.name}"
+        when "TvShow", "Movie", "Book"
+            "#{self.name} Quotes - #{self.quotes.count} Best Quotes from #{self.name}"            
         when "Proverb"
             "#{self.quotes.count} Best #{self.name} Proverbs, Sayings, and Truisms"
         end
@@ -50,8 +54,12 @@ module Seoable
 
     def generate_description
         case self.class.name
+        when "Person", "Character"
+            "Quotes by #{self.name}. Best collection of #{self.name} quotes brought to you by LoveAQuote. Enjoy reading these quotes by #{self.name}."            
         when "Topic"
             "Quotes about #{self.name}. Best collection of #{self.name} quotes brought to you by LoveAQuote. Enjoy reading these quotes on #{self.name}."
+        when "TvShow", "Movie", "Book"
+            "Quotes from #{self.name}. Best collection of #{self.name} quotes brought to you by LoveAQuote. Enjoy reading these quotes from #{self.name}."            
         when "Proverb"
             "#{self.name} Proverbs, Sayings, and Truisms. Best collection of #{self.name} thoughts brought to you by LoveAQuote. Enjoy reading these #{self.name} proverbs."            
         end

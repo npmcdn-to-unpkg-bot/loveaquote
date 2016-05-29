@@ -1,92 +1,60 @@
-<% if params.has_key?(:page) %>
-  <% content_for :canonical, "#{featured_topic_person_url(@person, @featured_topic, params[:page], format: :html)}" %>
-  <% content_for :title, "#{@person.name} Quotes on #{@featured_topic.topic.name} - Page #{params[:page]}" %>
-  <% content_for :description, "Quotes by #{@person.name} - page #{params[:page]}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
-<% else %>
-  <% content_for :canonical, "#{featured_topic_person_url(@person, @featured_topic, format: :html)}" %>
-  <% content_for :title, "#{@person.name} Quotes on #{@featured_topic.topic.name}" %>
-  <% content_for :description, "Quotes by #{@person.name}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
-<% end %>
+<% content_for :canonical, "#{featured_topic_person_url(@person, @featured_topic, format: :html)}" %>
+<% content_for :title, "#{@person.name} Quotes on #{@featured_topic.topic.name}" %>
+<% content_for :description, "Quotes by #{@person.name}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
 
-<% content_for :heading, "#{@person.name} Quotes on #{@featured_topic.topic.name}" %>
-
-<% if @person.social_image.present? %>
+<% if @person.social_image.present? && @person.social_image.facebook.present? %>
   <% content_for :facebook_image, @person.social_image.facebook %>
 <% end %>
 
-<% content_for :breadcrumbs do %>
-	<ol class="breadcrumb">
-    <li><a href="<%= root_url %>">Home</a></li>
-    <li><a href="<%= people_url(format: :html) %>">People</a></li>
-    <li><a href="<%= person_url(@person, format: :html) %>"><%= "#{@person.name} Quotes" %></a></li>
-    <li><%= "on #{@featured_topic.topic.name}" %></li>
-  </ol>
-<% end %>
-
 <% content_for :content do %>
-  <% @quotes.each do |quote| %>
-    <%= render partial: "people/quote", object: quote %>
-  <% end %>
-
-  <div class="text-center">
-    <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
-  </div>
-<% end %>
-
-<% content_for :comments do %>
-  <div class="fb-comments" data-href="<%= person_url(@person) %>" data-numposts="10" data-colorscheme="light" data-width="100%"></div>
-<% end %>
-
-<% content_for :updated do %>
-  Last Updated - <time itemprop="dateModified" datetime="<%= @person.updated_at.to_datetime %>"><%= @person.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
-<% end %>
-
-<% content_for :aside do %>
-  <% if @person.featured_topics.where.not(id: [@featured_topic.id]).any? %>
-    <div class="widget">
-      <div class="heading">
-        <h5><%= @person.name %> Quotes by topic</h5>
-      </div>
-      <div class="content">
-        <div class="row">
-          <% @person.featured_topics.where.not(id: [@featured_topic.id]).each do |ft| %>
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <div class="more-link">
-                <%= link_to "#{@person.name} Quotes on #{ft.topic.name}", featured_topic_person_url(@person, featured_topic: ft, format: :html) %>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-
-  <% if @person.books.any? %>
-    <div class="widget">
-      <div class="heading">
-        <h5>Books by <%= @person.name %></h5>
-      </div>
-      <div class="content">
-        <div class="row">
-          <% @person.books.each do |book| %>
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-              <div class="more-link">
-                <%= book.published? ? (link_to book.name, book_url(book)) : (book.name) %>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-
-
-<% end %>
-
-<% content_for :social_sharing do %>
-    <a rel="nofollow" class="share-person-twitter" title="<%= "Share #{@person.name} quotes on Twitter" %>" target="_blank" href="<%= twitter_person_url(@person) %>"><%= image_tag('social/twitter.png') %></a>
-    <a rel="nofollow" class="share-person-facebook" title="<%= "Share #{@person.name} quotes on Facebook" %>" target="_blank" href="<%= facebook_person_url(@person) %>"><%= image_tag('social/facebook.png') %></a>
-    <% if (@person.social_image && @person.social_image.pinterest.present?) || @person.image.present? %>
-      <a rel="nofollow" class="share-person-pinterest" title="<%= "Share #{@person.name} quotes on Pinterest" %>" target="_blank" href="<%= pinterest_person_url(@person) %>"><%= image_tag('social/pinterest.png') %></a>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+    <h1 class="main-title text-center"><%= "#{@person.name} Quotes on #{@featured_topic.topic.name}" %></h1>
+    
+    <% @quotes.each do |quote| %>
+      <%= render partial: "people/quote", object: quote %>
     <% end %>
+  
+    <div class="text-center">
+      <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
+    </div>    
+    
+    <p>Last Updated - <time itemprop="dateModified" datetime="<%= @person.updated_at.to_datetime %>"><%= @person.updated_at.to_datetime.strftime("%B %d, %Y")  %></time></p>
+  </div>
+  
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+    <%= render "partials/facebook_like_box" %>  
+    <% if @person.featured_topics.where.not(id: [@featured_topic.id]).any? %>
+      <div class="panel panel-default panel-shadow text-center">
+        <div class="panel-heading">
+          <div class="panel-title"><%= @person.name %> Quotes by topic</div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <% @person.featured_topics.where.not(id: [@featured_topic.id]).each do |ft| %>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <%= link_to "#{@person.name} Quotes on #{ft.topic.name}", featured_topic_person_url(@person, featured_topic: ft, format: :html), class: "link-box text-center" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  
+    <% if @person.books.any? %>
+      <div class="panel panel-default panel-shadow text-center">
+        <div class="panel-heading">
+          <div class="panel-title">Books by <%= @person.name %></div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <% @person.books.each do |book| %>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <%= book.published? ? (link_to book.name, book_url(book), class: "link-box text-center") : (book.name) %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>    
+  </div>
 <% end %>

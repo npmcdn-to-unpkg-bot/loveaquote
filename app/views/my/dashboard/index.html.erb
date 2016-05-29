@@ -1,23 +1,19 @@
 <% content_for :title, "My Account" %>
 
-<% content_for :breadcrumbs do %>
-    <ol class="breadcrumb">
-        <li><a href="<%= root_url %>">Home</a></li>
-        <li>My Dashboard</li>
-    </ol>
-<% end %>
-
 <% content_for :content do %>
-<h2 class="text-center">My Quotes</h2>
+
 <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        <%= form_tag my_root_url, method: "GET" do %>
+    <div class="col-md-6">
+        <h2 style="margin-top: 10px">My Quotes</h2>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+        <%= form_tag my_root_url, method: "GET", style: "margin-top: 10px" do %>
             <%= select_tag "list", options_from_collection_for_select(current_user.lists, "id", "name"), prompt: "Filter by List", class: "form-control", onchange: "this.form.submit();" %>
         <% end %>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
-        <div class="add-new-list">
-            <%= link_to "Add New List", "#", class: "btn btn-small btn-primary" %>
+    <div class="col-xs-12 col-sm-6 col-md-2">
+        <div class="add-new-list" style="margin-top: 10px">
+            <%= link_to "My Lists", my_lists_url, class: "btn btn-small btn-primary" %>
         </div>
     </div>
 </div>

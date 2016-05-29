@@ -1,16 +1,14 @@
 <% if model.class.name == "Topic" %>
     <% if model.all_topic_combinations.any? %>
-        <div class="widget">
-          <div class="heading">
-            <h5>Similar Topics</h5>
+        <div class="panel panel-default panel-shadow">
+          <div class="panel-heading">
+            <div class="panel-title">Similar Topics</div>
           </div>
-          <div class="content">
+          <div class="panel-body">
             <div class="row">
               <% model.all_topic_combinations.each do |combination| %>
                 <div class="col-xs-12">
-                  <div class="more-link">
-                    <%= link_to combination.name + " Quotes", topics_topic_combination_url(combination, format: :html), title: combination.name + " Quotes" %>
-                  </div>
+                  <%= link_to combination.name + " Quotes", topics_topic_combination_url(combination, format: :html), title: combination.name + " Quotes", class: "link-box" %>
                 </div>
               <% end %>
             </div>
@@ -21,17 +19,15 @@
 
 <% if model.class.name == "Proverb" %>
   <% cache "more-proverbs-#{model.slug}-#{model.updated_at.to_s(:number)}" do %>
-    <div class="widget">
-      <div class="heading">
-        <h5>More Proverbs</h5>
+    <div class="panel panel-default panel-shadow">
+      <div class="panel-heading">
+        <div class="panel-title">More Proverbs</div>
       </div>
-      <div class="content">
+      <div class="panel-body">
         <div class="row">
           <% Proverb.published.where.not(id: model.id).limit(10).each do |proverb| %>
             <div class="col-xs-12">
-              <div class="more-link">
-                <%= link_to proverb.name + " Proverbs", proverb_url(proverb, format: :html), title: proverb.name + " Proverbs" %>
-              </div>
+              <%= link_to proverb.name + " Proverbs", proverb_url(proverb, format: :html), title: proverb.name + " Proverbs", class: "link-box" %>
             </div>
           <% end %>
         </div>

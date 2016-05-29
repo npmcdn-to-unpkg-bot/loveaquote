@@ -3,23 +3,15 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
-    @canonical = movies_url(format: :html)
-    render layout: "archive"
   end
 
   def show
     @quotes = @movie.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
-
-    respond_to do |format|
-      format.html { render layout: "single" }
-    end
   end
 
   def alphabet
     @alphabet = params[:alphabet].upcase
     @movies = Movie.by_alphabet(@alphabet).published.order(name: "ASC")
-    @canonical = alphabet_movies_url(format: :html)
-    render layout: "alphabet"
   end
 
   def twitter
@@ -28,9 +20,9 @@ class MoviesController < ApplicationController
     redirect_to "https://twitter.com/intent/tweet?text=#{text}&amp;url=#{url}&amp;via=DoYouLoveAQuote"
   end
 
-  def facemovie
+  def facebook
     url = URI.encode(movie_url(@movie, format: :html))
-    redirect_to "https://www.facemovie.com/sharer/sharer.php?u=#{url}"
+    redirect_to "https://www.facebook.com/sharer/sharer.php?u=#{url}"
   end
 
   def pinterest

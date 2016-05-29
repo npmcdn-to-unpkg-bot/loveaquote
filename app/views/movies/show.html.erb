@@ -1,46 +1,24 @@
-<% if params.has_key?(:page) %>
-  <% content_for :canonical, "#{canonical_url(@movie, params[:page], format: :html)}" %>
-  <% content_for :title, "#{@movie.name} Quotes - #{@movie.quotes.count.to_s} quotes - Page #{params[:page]}" %>
-  <% content_for :description, "Quotes from #{@movie.name} - page #{params[:page]}. Best collection of #{@movie.name} quotes. Read, comment and share these quotes." %>
-<% else %>
-  <% content_for :canonical, "#{canonical_url(@movie, format: :html)}" %>
-  <% content_for :title, "#{@movie.name} Quotes - #{@movie.quotes.count.to_s} quotes" %>
-  <% content_for :description, "Quotes from #{@movie.name}. Best collection of #{@movie.name} quotes. Read, comment and share these quotes." %>
-<% end %>
-
-<% content_for :heading, "#{@movie.name} Quotes" %>
-
-<% if @movie.social_image.present? %>
-  <% content_for :facebook_image, @movie.social_image.facebook %>
-<% end %>
-
-<% content_for :breadcrumbs do %>
-	<ol class="breadcrumb">
-    <li><a href="<%= root_url %>">Home</a></li>
-    <li><a href="<%= movies_url(format: :html) %>">Movies</a></li>
-    <li><%= @movie.name + " Quotes" %></li>
-  </ol>
-<% end %>
+<%= render partial: "partials/seo", locals: {model: @movie} %>
 
 <% content_for :content do %>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+    <h1 class="main-title text-center"><%= "#{@movie.name} Quotes" %></h1>
 
-  <% @quotes.each do |quote| %>
-    <%= render partial: "movies/quote", object: quote %>
-  <% end %>
-
-  <div class="text-center">
-    <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
+    <%= render partial: "partials/top_social_bar", locals: {model: @movie} %>    
+    
+    <% @quotes.each do |quote| %>
+        <%= render partial: "movies/quote", object: quote %>
+    <% end %>
+  
+    <div class="text-center">
+      <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
+    </div>
+    
+    <p>Last Updated - <time itemprop="dateModified" datetime="<%= @movie.updated_at.to_datetime %>"><%= @movie.updated_at.to_datetime.strftime("%B %d, %Y")  %></time></p>
   </div>
-<% end %>
-
-<% content_for :updated do %>
-  Last Updated - <time itemprop="dateModified" datetime="<%= @movie.updated_at.to_datetime %>"><%= @movie.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
-<% end %>
-
-<% content_for :aside do %>
-  <%= render partial: "partials/character_quotes", locals: {model: @movie} %>
-<% end %>
-
-<% content_for :top_social_bar do %>
-  <%= render partial: "partials/top_social_bar", locals: {model: @movie} %>
+  
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+    <%= render "partials/facebook_like_box" %>  
+    <%= render partial: "partials/aside", locals: { model: @movie } %>    
+  </div>
 <% end %>

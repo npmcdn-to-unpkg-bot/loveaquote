@@ -1,18 +1,16 @@
-<% content_for :title, @title %>
-
-<% content_for :canonical, @canonical %>
-
-<% content_for :heading, "Books by Alphabet #{@alphabet}" %>
+<% content_for :title, "Books by Alphabet #{@alphabet}" %>
+<% content_for :canonical, "#{alphabet_books_url(@alphabet, format: :html)}" %>
 
 <% content_for :content do %>
-  <div class="row">
-    <% @books.each do |book| %>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        <div class="more-link text-center">
-          <%= link_to book.name + " Quotes", book_url(book, format: :html), title: book.name + " Quotes" %>
+  <div class="col-xs-12">
+    <h1 class="main-title text-center"><%= "Books by Alphabet #{@alphabet}" %></h1>
+    <div class="row">
+      <% @books.each do |book| %>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <%= link_to book.name + " Quotes", book_url(book, format: :html), title: book.name + " Quotes", class: "link-box text-center" %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 <% end %>
 

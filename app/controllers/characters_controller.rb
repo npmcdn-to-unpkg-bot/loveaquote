@@ -3,24 +3,15 @@ class CharactersController < ApplicationController
 
   def index
     @characters = Character.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
-    @canonical = characters_url(format: :html)
-    render layout: "archive"
   end
 
   def show
     @quotes = @character.quotes.order(total_share_count: :desc).order(text: :asc).page (params[:page])
-
-    respond_to do |format|
-      format.html { render layout: "single" }
-      format.amp { render layout: "single" }
-    end
   end
 
   def alphabet
     @alphabet = params[:alphabet].upcase
     @characters = Character.by_alphabet(@alphabet).published.order(name: "ASC")
-    @canonical = alphabet_characters_url(format: :html)
-    render layout: "alphabet"
   end
 
   def twitter
@@ -29,7 +20,7 @@ class CharactersController < ApplicationController
     redirect_to "https://twitter.com/intent/tweet?text=#{text}&amp;url=#{url}&amp;via=DoYouLoveAQuote"
   end
 
-  def facecharacter
+  def facebook
     url = URI.encode(character_url(@character, format: :html))
     redirect_to "https://www.facecharacter.com/sharer/sharer.php?u=#{url}"
   end

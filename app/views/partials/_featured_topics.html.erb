@@ -1,20 +1,18 @@
 <% cache "#{model.class.name.downcase}-#{model.slug}-featured-topics-#{model.updated_at.to_s(:number)}" do %>
   <% if model.featured_topics.any? %>
-    <div class="widget">
-      <div class="heading">
+    <div class="panel panel-default panel-shadow text-center">
+      <div class="panel-heading">
         <% unless model.class.name == "Proverb" %>
-          <h5><%= model.name %> Quotes on</h5>
+          <div class="panel-title"><%= model.name %> Quotes on</div>
         <% else %>
-          <h5><%= model.name %> Proverbs on</h5>
+          <div class="panel-title"><%= model.name %> Proverbs on</div>
         <% end %>
       </div>
-      <div class="content">
+      <div class="panel-body">
         <div class="row">
           <% model.featured_topics.order(slug: :ASC).each do |ft| %>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <div class="more-link text-center">
-                <%= link_to ft.topic.name, featured_topic_model_url(model, ft, format: :html), title: "#{model.name} Quotes on #{ft.topic.name}" %>
-              </div>
+              <%= link_to ft.topic.name, featured_topic_model_url(model, ft, format: :html), title: "#{model.name} Quotes on #{ft.topic.name}", class: "link-box text-center" %>
             </div>
           <% end %>
         </div>

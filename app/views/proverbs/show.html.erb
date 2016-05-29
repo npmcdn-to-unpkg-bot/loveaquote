@@ -1,38 +1,24 @@
 <%= render partial: "partials/seo", locals: {model: @proverb} %>
 
-<% content_for :heading, "#{@proverb.name} Proverbs" %>
-
-<% if @proverb.social_image.present? && @proverb.social_image.facebook.present? %>
-  <% content_for :facebook_image, @proverb.social_image.facebook %>
-<% end %>
-
-<% content_for :breadcrumbs do %>
-	<ol class="breadcrumb">
-    <li><a href="<%= root_url %>">Home</a></li>
-    <li><a href="<%= proverbs_url(format: :html) %>">Proverbs</a></li>
-    <li><%= @proverb.name + " Proverbs" %></li>
-  </ol>
-<% end %>
-
 <% content_for :content do %>
-  <% @quotes.each do |quote| %>
-    <%= render partial: "proverbs/quote", object: quote %>
-  <% end %>
-
-  <div class="text-center">
-    <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+    <h1 class="main-title text-center"><%= "#{@proverb.name} Proverbs" %></h1>
+    
+    <%= render partial: "partials/top_social_bar", locals: {model: @proverb} %>    
+    
+    <% @quotes.each do |quote| %>
+        <%= render partial: "proverbs/quote", object: quote %>
+    <% end %>
+  
+    <div class="text-center">
+      <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
+    </div>
+    
+    <p>Last Updated - <time itemprop="dateModified" datetime="<%= @proverb.updated_at.to_datetime %>"><%= @proverb.updated_at.to_datetime.strftime("%B %d, %Y")  %></time></p>
   </div>
-<% end %>
-
-<% content_for :updated do %>
-  Last Updated - <time itemprop="dateModified" datetime="<%= @proverb.updated_at.to_datetime %>"><%= @proverb.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
-<% end %>
-
-<% content_for :aside do %>
-  <%= render partial: "partials/featured_topics", locals: {model: @proverb} %>
-  <%= render partial: "partials/aside", locals: { model: @proverb } %>
-<% end %>
-
-<% content_for :top_social_bar do %>
-  <%= render partial: "partials/top_social_bar", locals: {model: @proverb} %>
+  
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+    <%= render "partials/facebook_like_box" %>  
+    <%= render partial: "partials/aside", locals: { model: @proverb } %>    
+  </div>
 <% end %>

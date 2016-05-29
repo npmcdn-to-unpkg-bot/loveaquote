@@ -1,18 +1,16 @@
-<% content_for :title, @title %>
-
-<% content_for :canonical, @canonical %>
-
-<% content_for :heading, "Movies by Alphabet #{@alphabet}" %>
+<% content_for :title, "Movies by Alphabet #{@alphabet}" %>
+<% content_for :canonical, "#{alphabet_movies_url(@alphabet, format: :html)}" %>
 
 <% content_for :content do %>
-  <div class="row">
-    <% @movies.each do |movie| %>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        <div class="more-link text-center">
-          <%= link_to movie.name + " Quotes", movie_url(movie, format: :html), title: movie.name + " Quotes" %>
+  <div class="col-xs-12">
+    <h1 class="main-title text-center"><%= "Movies by Alphabet #{@alphabet}" %></h1>
+    <div class="row">
+      <% @movies.each do |movie| %>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <%= link_to movie.name + " Quotes", movie_url(movie, format: :html), title: movie.name + " Quotes", class: "link-box text-center" %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 <% end %>
 

@@ -1,18 +1,16 @@
-<% content_for :title, @title %>
-
-<% content_for :canonical, @canonical %>
-
-<% content_for :heading, "Proverbs by Alphabet #{@alphabet}" %>
+<% content_for :title, "Proverbs by Alphabet #{@alphabet}" %>
+<% content_for :canonical, "#{alphabet_proverbs_url(@alphabet, format: :html)}" %>
 
 <% content_for :content do %>
-  <div class="row">
-    <% @proverbs.each do |proverb| %>
-      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        <div class="more-link text-center">
-          <%= link_to proverb.name + " Proverbs", proverb_url(proverb, format: :html), title: proverb.name + " Quotes" %>
+  <div class="col-xs-12">
+    <h1 class="main-title text-center"><%= "Proverbs by Alphabet #{@alphabet}" %></h1>
+    <div class="row">
+      <% @proverbs.each do |proverb| %>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+          <%= link_to proverb.name + " Proverbs", proverb_url(proverb, format: :html), title: proverb.name + " Proverbs", class: "link-box text-center" %>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 <% end %>
 

@@ -1,36 +1,34 @@
-<% content_for :title, @title %>
-
-<% content_for :canonical, @canonical %>
-
-<% content_for :heading, "Proverbs" %>
+<% content_for :title, "Proverb Themes - Read proverbs by themes" %>
+<% content_for :description, "Proverb Themes - Read proverbs by themes" %>
+<% content_for :canonical, "#{proverbs_url(format: :html)}" %>
 
 <% content_for :content do %>
+  <div class="col-xs-12">
+    <h1 class="main-title text-center">Proverbs</h1>
 
-  <div class="row jumps text-center">
+    <div class="jumps text-center">
+      <% @proverbs.each do |letter, proverbs| %>
+        <%= link_to letter, "##{letter}" %>
+      <% end %>
+    </div>
+    
     <% @proverbs.each do |letter, proverbs| %>
-      <%= link_to letter, "##{letter}" %>
-    <% end %>
-  </div>
-
-
-  <% @proverbs.each do |letter, proverbs| %>
-    <div class="alphabet">
-      <a class="name" name="<%= letter %>"><%= letter %></a>
-      <div class="row">
-        <% proverbs.each do |proverb| %>
-          <div class="col-xs-1 col-sm-1 col-md-6 col-lg-6">
-            <div class="more-link text-center">
-              <%= link_to proverb.name + " Proverbs", proverb_url(proverb, format: :html), title: proverb.name + " Quotes" %>
+      <div class="alphabet">
+        <a class="name" name="<%= letter %>"><%= letter %></a>
+        <div class="row">
+          <% proverbs.each do |proverb| %>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <%= link_to proverb.name + " Proverbs", proverb_url(proverb, format: :html), title: proverb.name + " Proverb", class: "link-box text-center" %>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
+        <div class="more-link text-center">
+          <%= link_to "More ...", alphabet_proverbs_url(letter.upcase) %>
+        </div>
       </div>
-      <div class="more-link text-center">
-        <%= link_to "More ...", alphabet_proverbs_url(letter.upcase) %>
-      </div>
-    </div>  
-  <% end %>
-
+    <% end %>        
+    
+  </div>    
 <% end %>
 
 <% content_for :additional_tags do %>

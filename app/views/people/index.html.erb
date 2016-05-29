@@ -1,36 +1,34 @@
-<% content_for :title, @title %>
-
-<% content_for :canonical, @canonical %>
-
-<% content_for :heading, "People" %>
+<% content_for :title, "People Quotes - Read quotes by People" %>
+<% content_for :description, "People Quotes - Read quotes by People" %>
+<% content_for :canonical, "#{people_url(format: :html)}" %>
 
 <% content_for :content do %>
+  <div class="col-xs-12">
+    <h1 class="main-title text-center">People</h1>
 
-  <div class="row jumps text-center">
+    <div class="jumps text-center">
+      <% @people.each do |letter, people| %>
+        <%= link_to letter, "##{letter}" %>
+      <% end %>
+    </div>
+    
     <% @people.each do |letter, people| %>
-      <%= link_to letter, "##{letter}" %>
-    <% end %>
-  </div>
-
-
-  <% @people.each do |letter, people| %>
-    <div class="alphabet">
-      <a class="name" name="<%= letter %>"><%= letter %></a>
-      <div class="row">
-        <% people.each do |person| %>
-          <div class="col-xs-12 col-xm-12 col-md-6 col-lg-6">
-            <div class="more-link text-center">
-              <%= link_to person.name + " Quotes", person_url(person, format: :html), title: person.name + " Quotes" %>
+      <div class="alphabet">
+        <a class="name" name="<%= letter %>"><%= letter %></a>
+        <div class="row">
+          <% people.each do |person| %>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+                <%= link_to person.name + " Quotes", person_url(person, format: :html), title: person.name + " Quotes", class: "link-box text-center" %>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
+        <div class="more-link text-center">
+          <%= link_to "More ...", alphabet_people_url(letter.upcase) %>
+        </div>
       </div>
-      <div class="more-link text-center">
-        <%= link_to "More ...", alphabet_people_url(letter.upcase) %>
-      </div>
-    </div>  
-  <% end %>
-
+    <% end %>        
+    
+  </div>
 <% end %>
 
 <% content_for :additional_tags do %>

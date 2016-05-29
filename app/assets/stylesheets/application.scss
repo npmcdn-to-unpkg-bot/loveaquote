@@ -1,56 +1,39 @@
-$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
 @import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass/assets/stylesheets/bootstrap";
+@import "toastr/toastr.scss";
+@import "neon-core";
+@import "neon-theme";
+@import "neon-forms";
+@import "font-awesome";
+@import "font-awesome-custom";
+@import "entypo";
+@import "fonts";
+@import "quotes";
 @import "bootstrap-social";
 @import "font-awesome";
-@import "global";
-@import "structure";
-@import "breadcrumb";
-@import "fonts";
 @import "slick";
 @import "slick-theme";
-
 @import "welcome";
-@import "people";
-@import "books";
-@import "movies";
-@import "tv_shows";
-@import "characters";
-@import "topics";
-@import "proverbs";
-@import "quotes";
-
-
-@import "header";
-@import "footer";
-@import "single";
-@import "aside";
-@import "widgets";
-@import "my";
 @import "top-social-bar";
-@import "fontawesome";
+@import "nav-bar";
 
-ul.list-unstyled,
-ol.list-unstyled {
-    list-style-type: none;
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.6rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.input-group-field.small {
-    height: 34.375px;
+.page-container .main-content {
+  display: block;
 }
 
-.no-js .top-bar {
-  display: none;
+.page-container.with-sidebar .main-content {
+  display: table-cell;
 }
 
-@media screen and (min-width: 40em) {
-  .no-js .top-bar {
-    display: block;
-  }
-
-  .no-js .title-bar {
-    display: none;
-  }
+.main-title {
+  margin-top: 0px;
 }
 
 .byline {
@@ -77,9 +60,8 @@ ol.list-unstyled {
   display: block;
   background-color: #F2F2F2;
   border: 1px solid #E2E2E2;
-  padding: 0.25rem;
-  margin: 0.25rem 0;
-  text-align: center;
+  padding: 5px;
+  margin: 5px 0;
 }
 
 .menu-item {

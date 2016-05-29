@@ -690,6 +690,7 @@ select[multiple].input-lg {
 .panel-heading > .panel-options > .nav-tabs > li:last-child {
   margin-right: 0;
 }
+
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
@@ -5602,8 +5603,8 @@ body {
 }
 .page-container .sidebar-menu #main-menu li.has-sub > a:before {
   position: relative;
-  content: '\e760';
-  content: '\e760';
+  content: '\e877';
+  content: '\e879';
   display: inline-block;
   font-family: "Entypo";
   color: #454a54;

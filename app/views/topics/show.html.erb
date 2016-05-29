@@ -1,52 +1,28 @@
 <%= render partial: "partials/seo", locals: {model: @topic} %>
 
-<% content_for :heading, "#{@topic.name} Quotes" %>
-
-<% if @topic.byline.present? %>
-<% content_for :byline do %>
-  <p class="byline">(<%= "#{@topic.name.downcase} - #{@topic.byline}" %>)</p>
-<% end %>
-<% end %>
-
-<% if @topic.social_image.present? %>
-  <% content_for :facebook_image, @topic.social_image.facebook %>
-<% end %>
-
-<% content_for :breadcrumbs do %>
-	<ol class="breadcrumb">
-    <li><a href="<%= root_url %>">Home</a></li>
-    <li><a href="<%= topics_url(format: :html) %>">Topics</a></li>
-    <li><%= @topic.name + " Quotes" %></li>
-  </ol>
-<% end %>
-
 <% content_for :content do %>
-  <% @quotes.each do |quote| %>
-      <%= render partial: "topics/quote", object: quote %>
-  <% end %>
-
-  <div class="text-center">
-    <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
-  </div>
-
-<% end %>
-
-<% content_for :updated do %>
-  Last Updated - <time itemprop="dateModified" datetime="<%= @topic.updated_at.to_datetime %>"><%= @topic.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
-<% end %>
-
-<% content_for :social_sharing do %>
-    <a rel="nofollow" class="share-topic-twitter" title="<%= "Share #{@topic.name} quotes on Twitter" %>" target="_blank" href="<%= twitter_topic_url(@topic) %>"><%= image_tag('social/twitter.png') %></a>
-    <a rel="nofollow" class="share-topic-facebook" title="<%= "Share #{@topic.name} quotes on Facebook" %>" target="_blank" href="<%= facebook_topic_url(@topic) %>"><%= image_tag('social/facebook.png') %></a>
-    <% if @topic.image.present? %>
-      <a rel="nofollow" class="share-topic-pinterest" title="<%= "Share #{@topic.name} quotes on Pinterest" %>" target="_blank" href="<%= pinterest_topic_url(@topic) %>"><%= image_tag('social/pinterest.png') %></a>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+    <h1 class="main-title text-center"><%= "#{@topic.name} Quotes" %></h1>
+    
+    <% if @topic.byline.present? %>
+      <p class="byline">(<%= "#{@topic.name.downcase} - #{@topic.byline}" %>)</p>
     <% end %>
-<% end %>
-
-<% content_for :aside do %>
-  <%= render partial: "partials/aside", locals: { model: @topic } %>
-<% end %>
-
-<% content_for :top_social_bar do %>
-  <%= render partial: "partials/top_social_bar", locals: {model: @topic} %>
+    
+    <%= render partial: "partials/top_social_bar", locals: {model: @topic} %>    
+    
+    <% @quotes.each do |quote| %>
+        <%= render partial: "topics/quote", object: quote %>
+    <% end %>
+  
+    <div class="text-center">
+      <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
+    </div>
+    
+    <p>Last Updated - <time itemprop="dateModified" datetime="<%= @topic.updated_at.to_datetime %>"><%= @topic.updated_at.to_datetime.strftime("%B %d, %Y")  %></time></p>
+  </div>
+  
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+    <%= render "partials/facebook_like_box" %>  
+    <%= render partial: "partials/aside", locals: { model: @topic } %>    
+  </div>
 <% end %>

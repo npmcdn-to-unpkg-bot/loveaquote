@@ -1,73 +1,25 @@
-<% if params.has_key?(:page) %>
-  <% content_for :canonical, "#{canonical_url(@person, params[:page], format: :html)}" %>
-  <% content_for :title, "#{@person.name} Quotes - #{@person.all_quotes.count.to_s} quotes - Page #{params[:page]}" %>
-  <% content_for :description, "Quotes by #{@person.name} - page #{params[:page]}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
-<% else %>
-  <% content_for :canonical, "#{canonical_url(@person, format: :html)}" %>
-  <% content_for :title, "#{@person.name} Quotes - #{@person.all_quotes.count.to_s} quotes" %>
-  <% content_for :description, "Quotes by #{@person.name}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
-<% end %>
-
-<% content_for :heading, "#{@person.name} Quotes" %>
-
-<% if @person.social_image.present? %>
-  <% content_for :facebook_image, @person.social_image.facebook %>
-<% end %>
-
-<% content_for :breadcrumbs do %>
-	<ol class="breadcrumb">
-    <li><a href="<%= root_url %>">Home</a></li>
-    <li><a href="<%= people_url(format: :html) %>">People</a></li>
-    <li><%= @person.name + " Quotes" %></li>
-  </ol>
-<% end %>
+<%= render partial: "partials/seo", locals: {model: @person} %>
 
 <% content_for :content do %>
-  <% @quotes.each do |quote| %>
-    <%= render partial: "people/quote", object: quote %>
-  <% end %>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+    <h1 class="main-title text-center"><%= "#{@person.name} Quotes" %></h1>
 
-  <div class="text-center">
-    <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
-  </div>
-<% end %>
-
-<% content_for :updated do %>
-  Last Updated - <time itemprop="dateModified" datetime="<%= @person.updated_at.to_datetime %>"><%= @person.updated_at.to_datetime.strftime("%B %d, %Y")  %></time>
-<% end %>
-
-<% content_for :aside do %>
-  <%= render partial: "partials/featured_topics", locals: {model: @person} %>
-
-  <% if @person.books.published.any? %>
-    <div class="widget">
-      <div class="heading">
-        <h5>Books by <%= @person.name %></h5>
-      </div>
-      <div class="content">
-        <div class="row">
-          <% @person.books.published.order(name: :ASC).each do |book| %>
-            <div class="col-xs-12">
-              <div class="more-link">
-                <%= link_to book.name, book_url(book) %>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  <% end %>
-
-<% end %>
-
-<% content_for :byline do %>
-  <% cache "person-byline-#{@person.slug}-#{@person.updated_at.to_s(:number)}" do %>
-    <% if @person.byline.present? %>
-      <p class="byline">(<%= "#{@person.byline}" %>)</p>
+    <%= render partial: "partials/top_social_bar", locals: {model: @person} %>    
+    
+    <% @quotes.each do |quote| %>
+        <%= render partial: "people/quote", object: quote %>
     <% end %>
-  <% end %>
-<% end %>
-
-<% content_for :top_social_bar do %>
-  <%= render partial: "partials/top_social_bar", locals: {model: @person} %>
+  
+    <div class="text-center">
+      <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
+    </div>
+    
+    <p>Last Updated - <time itemprop="dateModified" datetime="<%= @person.updated_at.to_datetime %>"><%= @person.updated_at.to_datetime.strftime("%B %d, %Y")  %></time></p>
+  </div>
+  
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+    <%= render "partials/facebook_like_box" %>  
+    <%= render partial: "partials/featured_topics", locals: {model: @person} %>
+    <%= render partial: "partials/aside", locals: { model: @person } %>    
+  </div>
 <% end %>
