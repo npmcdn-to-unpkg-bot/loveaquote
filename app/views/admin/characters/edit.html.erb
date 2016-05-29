@@ -1,4 +1,6 @@
+<% content_for :content do %>
 <div class="col-sm-12">
     <h2>Edit <%= link_to "character", admin_character_url(@character), class: "btn btn-default btn-sm" %> <%= link_to "Delete", admin_character_url(@character), method: :delete, class: "btn btn-danger btn-sm" %></h2>
     <%= render 'form' %>
 </div>
+<% end %>

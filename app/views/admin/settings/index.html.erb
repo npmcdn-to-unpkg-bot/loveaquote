@@ -1,5 +1,4 @@
-<p id="notice"><%= notice %></p>
-
+<% content_for :content do %>
 <h1>Listing Settings</h1>
 
 <table>
@@ -29,7 +28,4 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Setting', new_setting_path %>
+<% end %>
