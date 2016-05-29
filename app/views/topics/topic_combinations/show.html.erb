@@ -2,7 +2,7 @@
 <% content_for :title, "#{@topic.name} Quotes - #{@topic.quotes.count.to_s} quotes about #{@topic.name}"  %>
 <% content_for :description, "Quotes about #{@topic.name}. Best collection of #{@topic.name} quotes. Read, comment and share these quotes." %>
 
-<% if @topic.social_image.present? && topic.social_image.facebook.present? %>
+<% if @topic.social_image.present? && @topic.social_image.facebook.present? %>
   <% content_for :facebook_image, @topic.social_image.facebook %>
 <% end %>
 
