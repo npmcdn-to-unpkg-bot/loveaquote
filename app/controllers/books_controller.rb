@@ -31,11 +31,7 @@ class BooksController < ApplicationController
 
   def pinterest
     url = URI.encode(book_url(@book, format: :html))
-    if @book.social_image && @book.social_image.pinterest.present?
-      media = URI.encode(@book.social_image.pinterest_url)
-    elsif @book.image.present?
-      media = URI.encode(@book.image_url(:large))
-    end
+    media = URI.encode(@book.social_image.pinterest_url)
     description = CGI::escape(@book.name +  ' #quotes')
     redirect_to "http://www.pinterest.com/pin/create/bookmarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"
   end

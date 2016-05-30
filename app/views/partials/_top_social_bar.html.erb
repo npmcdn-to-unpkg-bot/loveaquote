@@ -1,6 +1,6 @@
 <div class="top-social-bar">
     <span class="social-share-icon"><i class="fa fa-facebook-official fa-2x" aria-hidden="true" data-url="<%= facebook_model_url(model) %>"></i></span>
-    <% if (model.social_image && model.social_image.pinterest.present?) || model.image.present? %>
+    <% if model.social_image && model.social_image.pinterest.present? %>
         <span class="social-share-icon"><i class="fa fa-pinterest-square fa-2x" aria-hidden="true" data-url="<%= pinterest_model_url(model) %>"></i></span>
     <% end %>
     <span class="social-share-icon"><i class="fa fa-twitter-square fa-2x" aria-hidden="true" data-url="<%= twitter_model_url(model) %>"></i></span>
