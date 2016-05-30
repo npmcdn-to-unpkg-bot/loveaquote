@@ -9,8 +9,6 @@
 //= require cocoon
 //= require toastr
 //= require jquery.slick
-//= require jquery_lazyload/jquery.lazyload.js
-//= require sticky-kit/jquery.sticky-kit.js
 //= require masonry/dist/masonry.pkgd.js
 //= require imagesloaded/imagesloaded.pkgd.js
 
