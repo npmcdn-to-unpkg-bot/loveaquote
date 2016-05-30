@@ -27,10 +27,6 @@ $(function() {
     dots: true,
     arrows: false
   });
-  
-  $(".top-social-bar").stick_in_parent({
-    parent: $(".main-content")
-  });
 
   $(".social-share-icon i").on("click", function(){
     window.open($(this).attr("data-url"), "_blank");

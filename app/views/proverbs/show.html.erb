@@ -4,8 +4,6 @@
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
     <h1 class="main-title text-center"><%= "#{@proverb.name} Proverbs" %></h1>
     
-    <%= render partial: "partials/top_social_bar", locals: {model: @proverb} %>    
-    
     <div class="row">
       <div class="grid">    
         <% @quotes.each do |quote| %>

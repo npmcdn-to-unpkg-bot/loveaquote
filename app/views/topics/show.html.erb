@@ -8,8 +8,6 @@
       <p class="byline">(<%= "#{@topic.name.downcase} - #{@topic.byline}" %>)</p>
     <% end %>
     
-    <%= render partial: "partials/top_social_bar", locals: {model: @topic} %>    
-    
     <div class="row">
       <div class="grid">    
         <% @quotes.each do |quote| %>
