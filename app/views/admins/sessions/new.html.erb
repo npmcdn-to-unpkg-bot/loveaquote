@@ -1,3 +1,4 @@
+<% content_for :content do %>
 <div class="login-form">
   <div class="login-content">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -24,3 +25,4 @@
     <% end %>
   </div>
 </div>
+<% end %>

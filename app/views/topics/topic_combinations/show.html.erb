@@ -9,9 +9,14 @@
 <% content_for :content do %>
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
     <h1 class="main-title text-center"><%= "#{@topic.name} Quotes" %></h1>
-    <% @quotes.each do |quote| %>
-        <%= render partial: "topics/quote", object: quote %>
-    <% end %>
+    
+    <div class="row">
+      <div class="grid">    
+        <% @quotes.each do |quote| %>
+            <%= render partial: "partials/quote", object: quote %>
+        <% end %>
+      </div>
+    </div>
   
     <div class="text-center">
       <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>

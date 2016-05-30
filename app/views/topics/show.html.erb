@@ -10,9 +10,13 @@
     
     <%= render partial: "partials/top_social_bar", locals: {model: @topic} %>    
     
-    <% @quotes.each do |quote| %>
-        <%= render partial: "topics/quote", object: quote %>
-    <% end %>
+    <div class="row">
+      <div class="grid">    
+        <% @quotes.each do |quote| %>
+            <%= render partial: "partials/quote", object: quote %>
+        <% end %>
+      </div>
+    </div>
   
     <div class="text-center">
       <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>

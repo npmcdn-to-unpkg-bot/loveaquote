@@ -1,9 +1,11 @@
+@import "compass";
 @import "bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass/assets/stylesheets/bootstrap";
-@import "toastr/toastr.scss";
 @import "neon-core";
 @import "neon-theme";
 @import "neon-forms";
+@import "colors";
+@import "panels";
 @import "font-awesome";
 @import "font-awesome-custom";
 @import "entypo";
@@ -16,12 +18,21 @@
 @import "welcome";
 @import "top-social-bar";
 @import "nav-bar";
+@import "toastr/toastr.scss";
 
 body {
     font-family: "Open Sans", sans-serif;
-    font-size: 1.6rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+}
+
+a {
+  color: $link-color;
+}
+
+a:hover {
+  color: $link-hover-color;
 }
 
 .page-container .main-content {
@@ -74,4 +85,8 @@ a.link-box.menu-item:hover {
   background-color: #3B5998;
   color: #FFF;
   text-decoration: none;
+}
+
+.no-margin {
+  margin: 0px;
 }

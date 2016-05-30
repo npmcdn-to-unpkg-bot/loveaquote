@@ -6,9 +6,14 @@
 
     <%= render partial: "partials/top_social_bar", locals: {model: @person} %>    
     
-    <% @quotes.each do |quote| %>
-        <%= render partial: "people/quote", object: quote %>
-    <% end %>
+    <div class="row">
+      <div class="grid">
+        <% @quotes.each do |quote| %>
+            <%= render partial: "partials/quote", locals: {quote: quote, source: @person} %>
+        <% end %>              
+      </div>
+    </div>
+
   
     <div class="text-center">
       <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>

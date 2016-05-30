@@ -1,0 +1,36 @@
+<div class="grid-item col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <div class="quote">
+      <% if quote.image.present? %>		
+        <div class="quote-image">		
+          <%= image_tag quote.image, style: "width: 100%" %>		
+        </div>		
+      <% end %>
+      <div class="quote-text">
+        <p>
+          <%= quote.text %>
+        </p>
+      </div>
+      
+      <% if quote.topics.any? %>
+        <div class="quote-topics">
+          <p class="no-margin">
+            <% quote.topics.each do |topic| %>
+              <%= link_to topic.name, topic_url(topic, format: :html) %>
+            <% end %>
+          </p>
+        </div>
+      <% end %>
+      
+      <div class="quote-meta">
+          <div class="social-sharing">
+            <% cache "quote-meta-#{quote.id}-#{quote.updated_at.to_s(:number)}-source-#{quote.source.updated_at.to_s(:number)}" do %>
+              <i class="fa fa-facebook-official share-quote-facebook" aria-hidden="true" data-url="<%= facebook_quote_url(quote, human: "t") %>"></i>              
+              <% if quote.source.image.present? %>
+                <i class="fa fa-pinterest-square share-quote-pinterest" aria-hidden="true" data-url="<%= pinterest_quote_url(quote, human: "t") %>"></i>
+              <% end %>
+              <i class="fa fa-twitter-square share-quote-twitter" aria-hidden="true" data-url="<%= twitter_quote_url(quote, human: "t") %>"></i>
+            <% end %>
+          </div>
+      </div>
+    </div>
+</div>

@@ -11,8 +11,14 @@
 //= require jquery.slick
 //= require jquery_lazyload/jquery.lazyload.js
 //= require sticky-kit/jquery.sticky-kit.js
+//= require masonry/dist/masonry.pkgd.js
 
 $(function() {
+  
+  $('.grid').masonry({
+    itemSelector: '.grid-item',
+    columnWidth: '.grid-item',
+  });  
   
   $(".quote-slider").slick({
     dots: true,
@@ -22,9 +28,7 @@ $(function() {
   $(".top-social-bar").stick_in_parent({
     parent: $(".main-content")
   });
-  
-  $("img.lazy").lazyload();
-  
+
   $(".social-share-icon i").on("click", function(){
     window.open($(this).attr("data-url"), "_blank");
   });
