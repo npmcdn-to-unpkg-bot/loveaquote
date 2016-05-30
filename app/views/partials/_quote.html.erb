@@ -11,14 +11,23 @@
         </p>
       </div>
       
-      <% if quote.topics.any? %>
-        <div class="quote-topics">
-          <p class="no-margin">
-            <% quote.topics.each do |topic| %>
-              <%= link_to topic.name, topic_url(topic, format: :html) %>
-            <% end %>
-          </p>
-        </div>
+      <% case source.class.name %>
+      <% when "Topic" %>
+        <% if quote.topics.where.not(id: source.id).any? %>
+          <div class="quote-topics">
+            <p class="no-margin">
+              <%= quote.topics.where.not(id: source.id).map{|t| link_to t.name, topic_url(t)}.join(', ').html_safe %>
+            </p>
+          </div>
+        <% end %>
+      <% else %>  
+        <% if quote.topics.any? %>
+            <div class="quote-topics">
+              <p class="no-margin">
+                <%= quote.topics.map{|t| link_to t.name, topic_url(t)}.join(', ').html_safe %>
+              </p>
+            </div>
+          <% end %>      
       <% end %>
       
       <div class="quote-meta">
