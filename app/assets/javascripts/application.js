@@ -12,14 +12,17 @@
 //= require jquery_lazyload/jquery.lazyload.js
 //= require sticky-kit/jquery.sticky-kit.js
 //= require masonry/dist/masonry.pkgd.js
+//= require imagesloaded/imagesloaded.pkgd.js
 
 $(function() {
   
-  $('.grid').masonry({
-    itemSelector: '.grid-item',
-    columnWidth: '.grid-item',
+  var $grid = $('.grid').imagesLoaded( function() {
+    $grid.masonry({
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-item'
+    });
   });  
-  
+
   $(".quote-slider").slick({
     dots: true,
     arrows: false
