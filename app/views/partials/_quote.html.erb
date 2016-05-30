@@ -6,9 +6,18 @@
         </div>		
       <% end %>
       <div class="quote-text">
-        <p>
-          <%= quote.text %>
-        </p>
+        <p><%= quote.text %></p>
+        <% if source.class.name == "Topic" %>
+          <% if quote.source.class.name == "Proverb" %>
+            <div class="quote-source">
+              <%= link_to quote.source.name + " Proverb", model_url(quote.source, format: :html) %>
+            </div>          
+          <% else %>
+            <div class="quote-source">
+              <%= link_to quote.source.name, model_url(quote.source, format: :html) %>
+            </div>          
+          <% end %>
+        <% end %>
       </div>
       
       <% case source.class.name %>
