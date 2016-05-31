@@ -51,11 +51,21 @@
     font-size: 1.25em;
     line-height: inherit;
     cursor: pointer;
-  }
   
-  i:hover {
-    background-color: #54728C;
-    color: #FFF;
+    &.fa-facebook:hover {
+      background-color: #3B5998;
+      color: #FFF;
+    }
+    
+    &.fa-twitter:hover {
+      background-color: #56A3D9;
+      color: #FFF;
+    }
+    
+    &.fa-pinterest:hover {
+      background-color: #CB211D;
+      color: #FFF;
+    }    
   }  
 }
 
