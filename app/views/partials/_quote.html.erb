@@ -42,11 +42,11 @@
       <div class="quote-meta">
           <div class="social-sharing">
             <% cache "quote-meta-#{quote.id}-#{quote.updated_at.to_s(:number)}-source-#{quote.source.updated_at.to_s(:number)}" do %>
-              <i class="fa fa-facebook-official share-quote-facebook" aria-hidden="true" data-url="<%= facebook_quote_url(quote, human: "t") %>"></i>              
+              <i class="fa fa-facebook share-quote-facebook fa-border" aria-hidden="true" data-url="<%= facebook_quote_url(quote, human: "t") %>"></i>              
               <% if quote.source.image.present? %>
-                <i class="fa fa-pinterest-square share-quote-pinterest" aria-hidden="true" data-url="<%= pinterest_quote_url(quote, human: "t") %>"></i>
+                <i class="fa fa-pinterest fa-border share-quote-pinterest" aria-hidden="true" data-url="<%= pinterest_quote_url(quote, human: "t") %>"></i>
               <% end %>
-              <i class="fa fa-twitter-square share-quote-twitter" aria-hidden="true" data-url="<%= twitter_quote_url(quote, human: "t") %>"></i>
+              <i class="fa fa-twitter fa-border share-quote-twitter" aria-hidden="true" data-url="<%= twitter_quote_url(quote, human: "t") %>"></i>
             <% end %>
           </div>
       </div>

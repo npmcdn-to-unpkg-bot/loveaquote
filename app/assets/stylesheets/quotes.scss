@@ -48,10 +48,15 @@
   padding: 2px 10px;
   
   i {
-    font-size: 1.4em;
+    font-size: 1.25em;
     line-height: inherit;
     cursor: pointer;
   }
+  
+  i:hover {
+    background-color: #54728C;
+    color: #FFF;
+  }  
 }
 
 .quote-topics {
