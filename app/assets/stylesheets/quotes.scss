@@ -51,6 +51,18 @@
     font-size: 1.25em;
     line-height: inherit;
     cursor: pointer;
+    
+    &.fa-facebook {
+        color: #3B5998;
+    }
+    
+    &.fa-twitter {
+        color: #56A3D9;
+    }
+    
+    &.fa-pinterest {
+        color: #CB211D;
+    }           
   
     &.fa-facebook:hover {
       background-color: #3B5998;

@@ -7,7 +7,6 @@
 @import "colors";
 @import "panels";
 @import "font-awesome";
-@import "font-awesome-custom";
 @import "entypo";
 @import "fonts";
 @import "quotes";
@@ -19,12 +18,14 @@
 @import "top-social-bar";
 @import "nav-bar";
 @import "toastr/toastr.scss";
+@import "account";
 
 body {
     font-family: "Open Sans", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
+    font-weight: 400;
 }
 
 a {
@@ -89,4 +90,20 @@ a.link-box.menu-item:hover {
 
 .no-margin {
   margin: 0px;
+}
+
+.no-top-margin {
+  margin-top: 0px;
+}
+
+.no-bottom-margin {
+  margin-top: 0px;
+}
+
+.weight-light {
+  font-weight: 300;
+}
+
+.color-white {
+  color: #FFF;
 }

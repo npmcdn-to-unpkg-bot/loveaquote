@@ -1,31 +1,68 @@
-.page-container.horizontal-menu header.navbar {
-    background-color: $nav-bar-background-color;    
+.page-container.horizontal-menu {
+    
+    header.navbar {
+        background-color: $nav-bar-background-color; 
+        padding: 0 20px;
+        
+        .navbar-brand {
+            padding: 10px !important;
+            margin-bottom: 10px;
+            .logo {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        
+        .navbar-nav {
+            // border-left: 1px solid shade($nav-bar-background-color, 10);
+            border-left: initial;
+            
+            > li > a,
+            > li > span {
+                position: relative;
+                display: block;
+                padding: 20px 20px;
+                font-size: 16px;
+                -webkit-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+                -moz-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+                -o-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+                transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+                z-index: 10;    
+                color: $nav-bar-color;
+                // border-right: 1px solid shade($nav-bar-background-color, 10);    
+                border-right: initial;                
+            }
+            
+            &.nav {
+                > li:hover > a {
+                    background-color: shade($nav-bar-background-color, 10);                    
+                }
+            }
+        }
+        
+        .navbar-right {
+            margin-right: initial;
+            
+            > li.login > a,
+            > li.login > span {
+                position: relative;
+                display: block;
+                padding: 20px 20px;
+                font-size: 16px;
+                -webkit-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+                -moz-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+                -o-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+                transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+                z-index: 10;    
+                color: $nav-bar-color;
+                // border-right: 1px solid shade($nav-bar-background-color, 10);    
+                border-right: initial; 
+                background-color: #E45857; 
+                
+                &:hover {
+                    background-color: shade(#E45857, 10); 
+                }
+            }
+        }
+    }    
 }
-
-.page-container.horizontal-menu header.navbar .navbar-nav > li > a {
-    color: $nav-bar-color;
-    border-right: 1px solid shade($nav-bar-background-color, 10);
-}
-
-.page-container.horizontal-menu header.navbar .navbar-nav > li:hover > a {
-    background-color: shade($nav-bar-background-color, 10);
-}
-
-.page-container.horizontal-menu header.navbar .navbar-nav {
-    border-left: 1px solid shade($nav-bar-background-color, 10);
-}
-
-.navbar-brand {
-    padding: 10px !important;
-    margin-bottom: 10px;
-    .logo {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-.page-container.horizontal-menu header.navbar .navbar-nav > li > a,
-.page-container.horizontal-menu header.navbar .navbar-nav > li > a span {
-    font-size: 16px;
-}
-

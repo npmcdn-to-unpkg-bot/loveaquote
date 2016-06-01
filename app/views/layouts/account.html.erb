@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+  <%= render "layouts/partials/head" %>
+</head>
+<body class="page-body account <%= controller.controller_name %> <%= controller.action_name %>">
+  <%= render "layouts/partials/google_analytics" %>
+  <%= render "layouts/partials/facebook_sdk" %>
+    <div class="page-container" style="background-color: #54728C">
+      <div class="main-content">
+        <%= render "layouts/partials/notification" %>
+        <div class="row">  
+          <%= yield :content %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

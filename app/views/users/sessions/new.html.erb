@@ -1,0 +1,40 @@
+<% content_for :content do %>
+  <div class="col-xs-12">
+    <div class="branding">
+      <h1><%= link_to "LoveAQuote", root_url %></h1>
+      <p>The Quote Lover's Community</p>
+    </div>
+    
+    <div class="wrapper">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="row">
+            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+              <h2 class="text-center color-white weight-light no-top-margin">Do You LoveAQuote?</h2>
+              <p class="text-center color-white"><i class="fa fa-quote-left fa-2x" style="padding-right:10px"></i><i class="fa fa-quote-right fa-2x" style="padding-left:10px"></i></p>
+              <p class="text-justify">You like reading and collecting quotes, proverbs, and sayings? Great, we like that too. We have built advanced tools for fellow quote lovers like you. Access them by logging in right now!</p>
+              <p class="text-justify"><i class="fa fa-heart" aria-hidden="true" style="color: #E45857"></i> <strong>Save Quotes</strong> - Save quotes as you browse them for easy access at a later time.</p>
+              <p class="text-justify"><i class="fa fa-list" aria-hidden="true"></i> <strong>Create Lists</strong> - Categorize the quotes you like into lists.</p>              
+              <p class="text-justify"><i class="fa fa-cogs" aria-hidden="true"></i> <strong>Advanced Tools</strong> - Be the first one to access the advanced tools as they become available.</p>              
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="row">
+            <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3"
+          </div>
+          <h2 class="text-center color-white weight-light no-top-margin">Login</h2>
+          <%= link_to user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social btn-google" do %>
+              <span class="fa fa-google"></span>
+              Sign in with Google
+          <% end %>
+          <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social btn-facebook" do %>
+            <span class="fa fa-facebook"></span>
+            Sign in with Facebook
+          <% end %>                        
+        </div>        
+      </div>
+    </div>
+    
+  </div>
+<% end %>

@@ -14,10 +14,11 @@ Rails.application.routes.draw do
   get "authors/:slug", to: redirect("/people/%{slug}", status: 301)
   get "authors/:slug/:page", to: redirect("/people/%{slug}/%{page}", status: 301)
 
-  devise_for :users, path: "user", controllers: {:omniauth_callbacks => "user/omniauth_callbacks"}
+  devise_for :users, path: "my", controllers: {omniauth_callbacks: "my/omniauth_callbacks"}
   devise_scope :user do
-    get 'logout', :to => 'devise/sessions#destroy', :as => :destroy_user_session
-  end
+    get 'login', :to => 'my/sessions#new', :as => :new_user_session
+    get 'logout', :to => 'my/sessions#destroy', :as => :destroy_user_session
+  end  
   devise_for :admins, path: "admin", path_names: {sign_in: "login", sign_out: "logout"}, controllers: {sessions: "admin/sessions"}
 
   resources :people, only: [:index, :show] do
