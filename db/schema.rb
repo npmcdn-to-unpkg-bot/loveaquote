@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160522150354) do
+ActiveRecord::Schema.define(version: 20160602120959) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,24 +116,6 @@ ActiveRecord::Schema.define(version: 20160522150354) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
-
-  create_table "list_quotes", force: :cascade do |t|
-    t.integer  "quote_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "list_id"
-  end
-
-  add_index "list_quotes", ["quote_id"], name: "index_list_quotes_on_quote_id", using: :btree
-
-  create_table "lists", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "lists", ["user_id"], name: "index_lists_on_user_id", using: :btree
 
   create_table "logs", force: :cascade do |t|
     t.integer  "source_id"
@@ -409,6 +391,24 @@ ActiveRecord::Schema.define(version: 20160522150354) do
 
   add_index "tweetable_quotes", ["quote_id"], name: "index_tweetable_quotes_on_quote_id", using: :btree
 
+  create_table "user_lists", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_lists", ["user_id"], name: "index_user_lists_on_user_id", using: :btree
+
+  create_table "user_quotes", force: :cascade do |t|
+    t.integer  "quote_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "user_quotes", ["quote_id"], name: "index_user_quotes_on_quote_id", using: :btree
+
   create_table "user_searches", force: :cascade do |t|
     t.string   "text"
     t.integer  "source_id"
@@ -446,8 +446,6 @@ ActiveRecord::Schema.define(version: 20160522150354) do
   add_foreign_key "compositions", "books"
   add_foreign_key "compositions", "people"
   add_foreign_key "identities", "users"
-  add_foreign_key "list_quotes", "quotes"
-  add_foreign_key "lists", "users"
   add_foreign_key "person_professions", "people"
   add_foreign_key "person_professions", "professions"
   add_foreign_key "quote_of_the_days", "quotes"
@@ -460,4 +458,6 @@ ActiveRecord::Schema.define(version: 20160522150354) do
   add_foreign_key "topic_combinations", "topics", column: "primary_topic_id", on_delete: :cascade
   add_foreign_key "topic_combinations", "topics", column: "secondary_topic_id", on_delete: :cascade
   add_foreign_key "tweetable_quotes", "quotes", on_delete: :cascade
+  add_foreign_key "user_lists", "users"
+  add_foreign_key "user_quotes", "quotes"
 end

@@ -1,34 +1,27 @@
-<% content_for :title, "My Account" %>
-
 <% content_for :content do %>
-
-<div class="row">
-    <div class="col-md-6">
-        <h2 style="margin-top: 10px">My Quotes</h2>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= form_tag my_root_url, method: "GET", style: "margin-top: 10px" do %>
-            <%= select_tag "list", options_from_collection_for_select(current_user.lists, "id", "name"), prompt: "Filter by List", class: "form-control", onchange: "this.form.submit();" %>
-        <% end %>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-2">
-        <div class="add-new-list" style="margin-top: 10px">
-            <%= link_to "My Lists", my_lists_url, class: "btn btn-small btn-primary" %>
+    <div class="col-xs-6">
+        <h1 class="no-top-margin">Welcome <%= current_user.first_name%></h1>
+        
+        <div class="row">
+            <div class="col-sm-4">
+              <div class="tile-stats tile-aqua">
+                <div class="icon"><i class="e-icon-quote"></i></div>
+                <div class="num"><%= number_with_delimiter(current_user.user_quotes.count) %></div>
+                <h3>Quotes</h3>
+                <p></p>
+              </div>
+              <p class="text-center"><%= link_to "View My Quotes", my_user_quotes_url, class: "btn btn-primary" %></p>
+            </div>
+            
+            <div class="col-sm-4">
+              <div class="tile-stats tile-aqua">
+                <div class="icon"><i class="e-icon-list"></i></div>
+                <div class="num"><%= number_with_delimiter(current_user.user_lists.count) %></div>
+                <h3>Lists</h3>
+                <p></p>
+              </div>          
+              <p class="text-center"><%= link_to "View My Lists", my_user_lists_url, class: "btn btn-primary" %></p>                          
+            </div>            
         </div>
     </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-12">
-<% if @list_quotes.count > 0 %>
-    <% @list_quotes.each do |lq| %>
-        <%= render partial: "my/dashboard/quote", object: lq.quote %>
-    <% end %>
-    <%= paginate @list_quotes, :views_prefix => 'kaminari_bootstrap' %>
-<% else %>
-    <p>No quotes found. Add some to your list and they will appear here.</p>                
-<% end %>            
-</div>
-</div>
-
 <% end %>

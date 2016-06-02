@@ -246,8 +246,7 @@ Rails.application.routes.draw do
 
   namespace :my do
     root "dashboard#index"
-    resources :lists
-    resources :quotes, only: [:index]
-    resources :list_quotes, only: [:create]
+    resources :user_lists, path: "lists"
+    resources :user_quotes, path: "quotes", only: [:index]
   end
 end

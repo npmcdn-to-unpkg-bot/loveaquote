@@ -19,6 +19,7 @@
 @import "nav-bar";
 @import "toastr/toastr.scss";
 @import "account";
+@import "my";
 
 body {
     font-family: "Open Sans", sans-serif;
@@ -106,4 +107,8 @@ a.link-box.menu-item:hover {
 
 .color-white {
   color: #FFF;
+}
+
+.tile-stats .icon {
+  top: 50px;
 }

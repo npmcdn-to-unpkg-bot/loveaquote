@@ -20,7 +20,7 @@
         <% end %>
       </div>
       
-      <% case source.class.name %>
+      <% case context.class.name %>
       <% when "Topic" %>
         <% if quote.topics.where.not(id: source.id).any? %>
           <div class="quote-topics">

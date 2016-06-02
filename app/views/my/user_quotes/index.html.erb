@@ -1,0 +1,34 @@
+<% content_for :title, "My Account" %>
+
+<% content_for :content do %>
+<div class="col-xs-12">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h2 class="no-top-margin">My Quotes</h2>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-offset-2 col-lg-4">
+            <div class="my-quotes-filter">
+                <%= form_tag my_root_url, method: "GET" do %>
+                    <%= select_tag "list", options_for_select(current_user.user_lists.map {|l| [l.name, l.id]}, selected: params[:list]), prompt: "Filter by List", class: "form-control", onchange: "this.form.submit();" %>
+                <% end %>                                  
+            </div>            
+        </div>
+    </div>
+
+    <% if @user_quotes.any? %>    
+        <div class="row">
+          <div class="grid">
+            <% @user_quotes.each do |uq| %>
+                <%= render partial: "partials/quote", locals: {quote: uq.quote, context: current_user} %>
+            <% end %>              
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
+        </div>            
+    <% else %>
+        <p>No quotes found. Save quotes you like and they will appear here.</p>                
+    <% end %>
+</div>
+<% end %>

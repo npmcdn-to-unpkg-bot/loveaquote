@@ -53,6 +53,10 @@
                 <li><%= link_to "People", people_url %></li>
                 <li><%= link_to "Books", books_url %></li>
                 <li><%= link_to "Proverbs", proverbs_url %></li>
+                <li><%= link_to '<i class="e-icon-layout"></i><span class="title">Dashboard</span>'.html_safe, my_root_url %></li>                
+                <li><%= link_to '<i class="fa fa-quote-left"></i> <span class="title">My Quotes</span>'.html_safe, my_user_quotes_url %></li>                
+                <li><%= link_to '<i class="fa fa-list"></i> <span class="title">My Lists</span>'.html_safe, my_user_lists_url %></li>                
+                </li>                                
             </ul>      
             <ul class="nav navbar-right pull-right">
                 <li class="hidden-xs"><%= link_to 'Logout <i class="e-icon-logout"></i>'.html_safe, destroy_user_session_path %></li>            

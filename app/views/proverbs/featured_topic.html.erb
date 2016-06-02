@@ -11,7 +11,7 @@
     <h1 class="main-title text-center"><%= "#{@proverb.name} Proverbs on #{@featured_topic.topic.name}" %></h1>
     
     <% @quotes.each do |quote| %>
-      <%= render partial: "proverbs/quote", locals: {quote: quote, source: @proverb} %>
+      <%= render partial: "proverbs/quote", locals: {quote: quote, context: @proverb} %>
     <% end %>
   
     <div class="text-center">

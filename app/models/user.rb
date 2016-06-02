@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
   end
   
   has_many :identities, dependent: :destroy
-  has_many :lists, dependent: :destroy
-  has_many :list_quotes, through: :lists
+  has_many :user_lists, dependent: :destroy
+  has_many :user_quotes, dependent: :destroy
 
   scope :unread, -> {where(read: false)}
   

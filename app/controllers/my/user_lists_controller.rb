@@ -1,12 +1,11 @@
-class My::ListsController < ApplicationController
+class My::UserListsController < ApplicationController
   before_filter :authenticate_user!
-  before_action :set_list, only: [:show, :edit, :update, :destroy]
-  layout "user"
+  before_action :set_user_list, only: [:show, :edit, :update, :destroy]
   
   # GET /lists
   # GET /lists.json
   def index
-    @lists = current_user.lists.order(name: :ASC)
+    @lists = current_user.user_lists.order(name: :ASC)
   end
 
   # GET /lists/1
@@ -16,7 +15,7 @@ class My::ListsController < ApplicationController
 
   # GET /lists/new
   def new
-    @list = List.new
+    @list = UserList.new
   end
 
   # GET /lists/1/edit
@@ -26,12 +25,12 @@ class My::ListsController < ApplicationController
   # POST /lists
   # POST /lists.json
   def create
-    @list = List.new(list_params)
+    @list = UserList.new(list_params)
     @list.user = current_user
 
     respond_to do |format|
       if @list.save
-        format.html { redirect_to my_lists_url, notice: 'List was successfully created.' }
+        format.html { redirect_to my_user_lists_url, notice: 'List was successfully created.' }
         format.json { render :show, status: :created, location: @list }
       else
         format.html { render :new }
@@ -45,7 +44,7 @@ class My::ListsController < ApplicationController
   def update
     respond_to do |format|
       if @list.update(list_params)
-        format.html { redirect_to my_lists_url, notice: 'List was successfully updated.' }
+        format.html { redirect_to my_user_lists_url, notice: 'List was successfully updated.' }
         format.json { render :show, status: :ok, location: @list }
       else
         format.html { render :edit }
@@ -59,20 +58,20 @@ class My::ListsController < ApplicationController
   def destroy
     @list.destroy
     respond_to do |format|
-      format.html { redirect_to my_lists_url, notice: 'List was successfully destroyed.' }
+      format.html { redirect_to my_user_lists_url, notice: 'List was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_list
-      @list = current_user.lists.where(id: params[:id]).first
+    def set_user_list
+      @list = current_user.user_lists.where(id: params[:id]).first
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_params
-      params.require(:list).permit(:name)
+      params.require(:user_list).permit(:name)
     end  
   
 end

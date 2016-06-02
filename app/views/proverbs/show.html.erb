@@ -7,7 +7,7 @@
     <div class="row">
       <div class="grid">    
         <% @quotes.each do |quote| %>
-            <%= render partial: "partials/quote", locals: {quote: quote, source: @proverb} %>
+            <%= render partial: "partials/quote", locals: {quote: quote, context: @proverb} %>
         <% end %>
       </div>
     </div>
