@@ -246,6 +246,8 @@ Rails.application.routes.draw do
 
   namespace :my do
     root "dashboard#index"
+    get "mark-for-deletion" => "dashboard#mark_for_deletion", as: :account_mark_for_deletion
+    
     resources :user_lists, path: "lists"
     resources :user_quotes, path: "quotes", only: [:index]
   end

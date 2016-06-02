@@ -1,27 +1,47 @@
 <% content_for :content do %>
-    <div class="col-xs-6">
-        <h1 class="no-top-margin">Welcome <%= current_user.first_name%></h1>
-        
-        <div class="row">
-            <div class="col-sm-4">
-              <div class="tile-stats tile-aqua">
-                <div class="icon"><i class="e-icon-quote"></i></div>
-                <div class="num"><%= number_with_delimiter(current_user.user_quotes.count) %></div>
-                <h3>Quotes</h3>
-                <p></p>
+    <div class="col-xs-12">
+      <ul class="nav nav-tabs right-aligned no-top-margin">
+        <li class="active"><a href="#quotes-and-lists" data-toggle="tab">Quotes & Lists</a></li>
+        <li><a href="#account" data-toggle="tab">Account</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div class="tab-pane active" id="quotes-and-lists">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+              <h1 class="no-top-margin">Welcome <%= current_user.first_name%></h1>
+              <div class="row">
+                <div class="col-sm-4">
+                  <div class="tile-stats tile-aqua">
+                    <div class="icon"><i class="e-icon-quote"></i></div>
+                    <div class="num"><%= number_with_delimiter(current_user.user_quotes.count) %></div>
+                    <h3>Quotes</h3>
+                    <p></p>
+                  </div>
+                  <p class="text-center"><%= link_to "View My Quotes", my_user_quotes_url, class: "btn btn-primary" %></p>
+                </div>
+                
+                <div class="col-sm-4">
+                  <div class="tile-stats tile-aqua">
+                    <div class="icon"><i class="e-icon-list"></i></div>
+                    <div class="num"><%= number_with_delimiter(current_user.user_lists.count) %></div>
+                    <h3>Lists</h3>
+                    <p></p>
+                  </div>          
+                  <p class="text-center"><%= link_to "View My Lists", my_user_lists_url, class: "btn btn-primary" %></p>                          
+                </div>                            
               </div>
-              <p class="text-center"><%= link_to "View My Quotes", my_user_quotes_url, class: "btn btn-primary" %></p>
             </div>
-            
-            <div class="col-sm-4">
-              <div class="tile-stats tile-aqua">
-                <div class="icon"><i class="e-icon-list"></i></div>
-                <div class="num"><%= number_with_delimiter(current_user.user_lists.count) %></div>
-                <h3>Lists</h3>
-                <p></p>
-              </div>          
-              <p class="text-center"><%= link_to "View My Lists", my_user_lists_url, class: "btn btn-primary" %></p>                          
-            </div>            
+          </div>
         </div>
+        
+        <div class="tab-pane" id="account">
+          <% unless current_user.marked_for_deletion %>
+            <p class="text-center"><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i> Deactivate My Account'.html_safe, my_account_mark_for_deletion_url, class: "btn btn-danger btn-lg" %></p>
+          <% else %>
+            <p class="text-center"><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i> Reactivate My Account'.html_safe, my_account_mark_for_deletion_url, class: "btn btn-success btn-lg" %></p>
+          <% end %>
+        </div>
+      </div>
     </div>
 <% end %>

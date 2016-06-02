@@ -61,4 +61,8 @@ class User < ActiveRecord::Base
   def profile
     self.identities.order(updated_at: :asc).last.profile || "#"
   end
+  
+  def marked_for_deletion
+    self.mark_for_deletion ? true : false
+  end
 end
