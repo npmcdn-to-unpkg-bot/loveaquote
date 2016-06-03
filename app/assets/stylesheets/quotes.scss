@@ -34,12 +34,18 @@
 }
 
 .save-quote {
-  float: left;
+  float: right;
   padding: 2px 10px;  
   
-  i.fa-heart-o {
-    color: red;
+  i {
+    font-size: 1.25em;
+    line-height: inherit;
     cursor: pointer;
+    
+    &.fa-heart-o {
+      color: red;
+      cursor: pointer;
+    }
   }
 }
 

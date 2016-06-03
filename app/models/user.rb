@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   end
   
   def create_default_list
-    List.create(name: "Default", user: self)
+    UserList.create(name: "Default", user: self)
   end
   
   def name

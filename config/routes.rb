@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'login', :to => 'my/sessions#new', :as => :new_user_session
     get 'logout', :to => 'my/sessions#destroy', :as => :destroy_user_session
-  end  
+  end
+  
   devise_for :admins, path: "admin", path_names: {sign_in: "login", sign_out: "logout"}, controllers: {sessions: "admin/sessions"}
 
   resources :people, only: [:index, :show] do

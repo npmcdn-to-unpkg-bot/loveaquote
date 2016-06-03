@@ -1,0 +1,39 @@
+<% unless current_user %>
+<div class="modal fade" tabindex="-1" role="dialog" id="not-logged-in-save-quote">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Save this quote</h4>
+      </div>
+      <div class="modal-body">
+        <h2 class="text-center weight-light no-top-margin">You need to Sign in</h2>
+        <%= link_to user_google_oauth2_omniauth_authorize_path, class: "btn btn-block btn-social btn-google" do %>
+            <span class="fa fa-google"></span>
+            Sign in with Google
+        <% end %>                  
+        <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social btn-facebook" do %>
+          <span class="fa fa-facebook"></span>
+          Sign in with Facebook
+        <% end %>                      
+        <div class="quote">
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+       $(".save-quote i.fa-heart-o").on("click", function() {
+          quoteText = $(this).parent().parent().parent().html();
+          $('#not-logged-in-save-quote .quote').html(quoteText);
+          $('#not-logged-in-save-quote').modal('show');
+       }); 
+    });
+</script>
+<% end %>

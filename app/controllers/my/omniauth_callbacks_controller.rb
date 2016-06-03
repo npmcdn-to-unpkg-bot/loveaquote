@@ -4,7 +4,8 @@ class My::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if @user.persisted?
       UserGeoipDataWorker.perform_async(@user.id, request.remote_ip)
       UserAddAsSubscriber.perform_async(@user.id, request.remote_ip)
-      sign_in_and_redirect @user
+      sign_in @user
+      redirect_to after_sign_in_path_for(@user), notice: "You are now logged in"
     else
       redirect_to root_url
     end
@@ -15,7 +16,8 @@ class My::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if @user.persisted?
       UserGeoipDataWorker.perform_async(@user.id, request.remote_ip)      
       UserAddAsSubscriber.perform_async(@user.id, request.remote_ip)
-      sign_in_and_redirect @user
+      sign_in @user
+      redirect_to after_sign_in_path_for(@user), notice: "You are now logged in"
     else
       redirect_to root_url
     end    

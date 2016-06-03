@@ -20,6 +20,7 @@
 @import "toastr/toastr.scss";
 @import "account";
 @import "my";
+@import "modals";
 
 body {
     font-family: "Open Sans", sans-serif;
@@ -111,4 +112,9 @@ a.link-box.menu-item:hover {
 
 .tile-stats .icon {
   top: 50px;
+}
+
+.btn-social {
+    max-width: 200px;
+    margin: 0 auto;
 }

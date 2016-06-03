@@ -7,7 +7,7 @@
       <% end %>
       <div class="quote-text">
         <p><%= quote.text %></p>
-        <% if source.class.name == "Topic" %>
+        <% if context.class.name == "Topic" %>
           <% if quote.source.class.name == "Proverb" %>
             <div class="quote-source">
               <%= link_to quote.source.name + " Proverb", model_url(quote.source, format: :html) %>
@@ -22,10 +22,10 @@
       
       <% case context.class.name %>
       <% when "Topic" %>
-        <% if quote.topics.where.not(id: source.id).any? %>
+        <% if quote.topics.where.not(id: context.id).any? %>
           <div class="quote-topics">
             <p class="no-margin">
-              <%= quote.topics.where.not(id: source.id).map{|t| link_to t.name, topic_url(t)}.join(', ').html_safe %>
+              <%= quote.topics.where.not(id: context.id).map{|t| link_to t.name, topic_url(t)}.join(', ').html_safe %>
             </p>
           </div>
         <% end %>
@@ -48,6 +48,10 @@
               <% end %>
               <i class="fa fa-twitter fa-border share-quote-twitter" aria-hidden="true" data-url="<%= twitter_quote_url(quote, human: "t") %>"></i>
             <% end %>
+          </div>
+          
+          <div class="save-quote">
+            <i class="fa fa-heart-o fa-border" aria-hidden="true"></i>            
           </div>
       </div>
     </div>

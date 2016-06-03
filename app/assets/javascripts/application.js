@@ -26,22 +26,22 @@ $(function() {
     arrows: false
   });
 
-  $(".social-share-icon i").on("click", function(){
+  $("body").on("click", ".social-sharing i", function(){
     window.open($(this).attr("data-url"), "_blank");
   });
   
-  $(".share-quote-twitter").on("click", function(){
-    window.open($(this).attr("data-url"), "_blank");
-    ga('send', 'event', 'Social', 'QuoteShare', 'Twitter');
-  });
+  // $(".share-quote-twitter").on("click", function(){
+  //   window.open($(this).attr("data-url"), "_blank");
+  //   ga('send', 'event', 'Social', 'QuoteShare', 'Twitter');
+  // });
 
-  $(".share-quote-facebook").on("click", function(){
-    window.open($(this).attr("data-url"), "_blank");
-    ga('send', 'event', 'Social', 'QuoteShare', 'Facebook');
-  });
+  // $(".share-quote-facebook").on("click", function(){
+  //   window.open($(this).attr("data-url"), "_blank");
+  //   ga('send', 'event', 'Social', 'QuoteShare', 'Facebook');
+  // });
 
-  $(".share-quote-pinterest").on("click", function(){
-    window.open($(this).attr("data-url"), "_blank");
-    ga('send', 'event', 'Social', 'QuoteShare', 'Pinterest');
-  })
+  // $(".share-quote-pinterest").on("click", function(){
+  //   window.open($(this).attr("data-url"), "_blank");
+  //   ga('send', 'event', 'Social', 'QuoteShare', 'Pinterest');
+  // })
 });
