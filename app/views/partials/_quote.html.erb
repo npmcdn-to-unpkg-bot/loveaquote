@@ -1,5 +1,5 @@
-<div class="grid-item col-xs-12 col-sm-12 col-md-6 col-lg-6">
-    <div class="quote">
+<div class="grid-item <%= grid_class %>">
+    <div class="quote" data-quote-id="<%= quote.id %>">
       <% if quote.image.present? %>		
         <div class="quote-image">		
           <%= image_tag quote.image, style: "width: 100%" %>		
@@ -50,9 +50,15 @@
             <% end %>
           </div>
           
-          <div class="save-quote">
-            <i class="fa fa-heart-o fa-border" aria-hidden="true"></i>            
-          </div>
+          <% if current_user && current_user.user_quotes_array.include?(quote.id) %>
+            <div class="save-quote">
+              <i class="fa fa-heart fa-border" aria-hidden="true"></i>            
+            </div>
+          <% else %>
+            <div class="save-quote">
+              <i class="fa fa-heart-o fa-border" aria-hidden="true"></i>            
+            </div>
+          <% end %>
       </div>
     </div>
 </div>

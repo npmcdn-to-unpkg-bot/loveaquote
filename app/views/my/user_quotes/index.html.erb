@@ -1,5 +1,3 @@
-<% content_for :title, "My Account" %>
-
 <% content_for :content do %>
 <div class="col-xs-12">
     <div class="row">
@@ -19,13 +17,13 @@
         <div class="row">
           <div class="grid">
             <% @user_quotes.each do |uq| %>
-                <%= render partial: "partials/quote", locals: {quote: uq.quote, context: current_user} %>
+                <%= render partial: "partials/quote", locals: {quote: uq.quote, context: current_user, grid_class:"col-xs-12 col-sm-6 col-md-6 col-lg-4" } %>
             <% end %>              
           </div>
         </div>
         
         <div class="text-center">
-          <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
+          <%= paginate @user_quotes, :views_prefix => 'kaminari_bootstrap' %>
         </div>            
     <% else %>
         <p>No quotes found. Save quotes you like and they will appear here.</p>                

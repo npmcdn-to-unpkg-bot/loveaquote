@@ -11,7 +11,7 @@
     <h1 class="main-title text-center"><%= "#{@proverb.name} Proverbs on #{@featured_topic.topic.name}" %></h1>
     
     <% @quotes.each do |quote| %>
-      <%= render partial: "proverbs/quote", locals: {quote: quote, context: @proverb} %>
+      <%= render partial: "proverbs/quote", locals: {quote: quote, context: @proverb, grid_class: "col-xs-12 col-sm-6 col-md-6 col-lg-6"} %>
     <% end %>
   
     <div class="text-center">
@@ -22,7 +22,8 @@
   </div>
   
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-    <%= render "partials/facebook_like_box" %>  
+    <%= render "partials/facebook_like_box" %>
+    
     <% if @proverb.featured_topics.where.not(id: [@featured_topic.id]).any? %>
       <div class="panel panel-default panel-shadow text-center">
         <div class="panel-heading">
@@ -39,22 +40,7 @@
         </div>
       </div>
     <% end %>
-  
-    <% if @proverb.books.any? %>
-      <div class="panel panel-default panel-shadow text-center">
-        <div class="panel-heading">
-          <div class="panel-title">Books by <%= @proverb.name %></div>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <% @proverb.books.each do |book| %>
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <%= book.published? ? (link_to book.name, book_url(book), class: "link-box text-center") : (book.name) %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>    
   </div>
+  
+  <%= render "partials/after_content" %>
 <% end %>

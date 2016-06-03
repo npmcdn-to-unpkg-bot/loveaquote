@@ -7,7 +7,7 @@
     <div class="row">
       <div class="grid">    
         <% @quotes.each do |quote| %>
-            <%= render partial: "partials/quote", locals: {quote: quote, context: @tv_show} %>
+            <%= render partial: "partials/quote", locals: {quote: quote, context: @tv_show, grid_class: "col-xs-12 col-sm-6 col-md-6 col-lg-6"} %>
         <% end %>
       </div>
     </div>
@@ -23,4 +23,6 @@
     <%= render "partials/facebook_like_box" %>  
     <%= render partial: "partials/aside", locals: { model: @tv_show } %>    
   </div>
+  
+  <%= render "partials/after_content" %>
 <% end %>

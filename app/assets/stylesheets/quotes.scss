@@ -42,7 +42,8 @@
     line-height: inherit;
     cursor: pointer;
     
-    &.fa-heart-o {
+    &.fa-heart-o,
+    &.fa-heart {
       color: red;
       cursor: pointer;
     }

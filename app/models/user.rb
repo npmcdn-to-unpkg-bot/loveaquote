@@ -65,4 +65,8 @@ class User < ActiveRecord::Base
   def marked_for_deletion
     self.mark_for_deletion ? true : false
   end
+  
+  def user_quotes_array
+    self.user_quotes.pluck(:quote_id)
+  end
 end
