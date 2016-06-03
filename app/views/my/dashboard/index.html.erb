@@ -39,7 +39,8 @@
           <% unless current_user.marked_for_deletion %>
             <p class="text-center"><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i> Deactivate My Account'.html_safe, my_account_mark_for_deletion_url, class: "btn btn-danger btn-lg" %></p>
           <% else %>
-            <p class="text-center"><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i> Reactivate My Account'.html_safe, my_account_mark_for_deletion_url, class: "btn btn-success btn-lg" %></p>
+            <div class="alert alert-danger"><p>This account is marked for deletion and will be removed soon.</p></div>          
+            <p class="text-center"><%= link_to '<i class="fa fa-check" aria-hidden="true"></i> Reactivate My Account'.html_safe, my_account_unmark_for_deletion_url, class: "btn btn-success btn-lg" %></p>
           <% end %>
         </div>
       </div>
