@@ -5,7 +5,7 @@ class My::UserListsController < ApplicationController
   # GET /lists
   # GET /lists.json
   def index
-    @lists = current_user.user_lists.order(name: :ASC)
+    @user_lists = current_user.user_lists.order(name: :ASC)
   end
 
   # GET /lists/1

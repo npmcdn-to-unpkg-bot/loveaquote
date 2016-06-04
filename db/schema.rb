@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160602161209) do
+ActiveRecord::Schema.define(version: 20160603185950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -400,6 +400,16 @@ ActiveRecord::Schema.define(version: 20160602161209) do
 
   add_index "user_lists", ["user_id"], name: "index_user_lists_on_user_id", using: :btree
 
+  create_table "user_quote_user_lists", force: :cascade do |t|
+    t.integer  "user_quote_id", null: false
+    t.integer  "user_list_id",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "user_quote_user_lists", ["user_list_id"], name: "index_user_quote_user_lists_on_user_list_id", using: :btree
+  add_index "user_quote_user_lists", ["user_quote_id"], name: "index_user_quote_user_lists_on_user_quote_id", using: :btree
+
   create_table "user_quotes", force: :cascade do |t|
     t.integer  "quote_id"
     t.datetime "created_at", null: false
@@ -460,5 +470,7 @@ ActiveRecord::Schema.define(version: 20160602161209) do
   add_foreign_key "topic_combinations", "topics", column: "secondary_topic_id", on_delete: :cascade
   add_foreign_key "tweetable_quotes", "quotes", on_delete: :cascade
   add_foreign_key "user_lists", "users"
+  add_foreign_key "user_quote_user_lists", "user_lists"
+  add_foreign_key "user_quote_user_lists", "user_quotes"
   add_foreign_key "user_quotes", "quotes"
 end

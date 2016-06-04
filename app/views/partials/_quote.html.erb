@@ -1,5 +1,5 @@
 <div class="grid-item <%= grid_class %>">
-    <div class="quote" data-quote-id="<%= quote.id %>">
+    <div class="quote" data-quote-id="<%= quote.id %>" <% if current_user && current_user.user_quotes_array.include?(quote.id) %> data-user-quote-id="<%= current_user.user_quotes.where(quote_id: quote.id).first.id %>" <% end %>>
       <% if quote.image.present? %>		
         <div class="quote-image">		
           <%= image_tag quote.image, style: "width: 100%" %>		
@@ -25,7 +25,7 @@
         <% if quote.topics.where.not(id: context.id).any? %>
           <div class="quote-topics">
             <p class="no-margin">
-              <%= quote.topics.where.not(id: context.id).map{|t| link_to t.name, topic_url(t)}.join(', ').html_safe %>
+              <%= quote.topics.where.not(id: context.id).map{|t| link_to t.name, topic_url(t, format: :html)}.join(', ').html_safe %>
             </p>
           </div>
         <% end %>
@@ -33,7 +33,7 @@
         <% if quote.topics.any? %>
             <div class="quote-topics">
               <p class="no-margin">
-                <%= quote.topics.map{|t| link_to t.name, topic_url(t)}.join(', ').html_safe %>
+                <%= quote.topics.map{|t| link_to t.name, topic_url(t, format: :html)}.join(', ').html_safe %>
               </p>
             </div>
           <% end %>      

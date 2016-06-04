@@ -1,10 +1,10 @@
 <% if current_user %>
-<div class="modal fade" tabindex="-1" role="dialog" id="logged-in-save-quote">
+<div class="modal fade" tabindex="-1" role="dialog" id="logged-in-update-quote">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Update</h4>
+        <h4 class="modal-title">Save this quote</h4>
       </div>
       <div class="modal-body">
         <div class="form"></div>
@@ -16,13 +16,17 @@
 
 <script type="text/javascript">
     $(function(){
-      $(".save-quote").on("click", "i.fa-heart-o", function() {
-        quoteId = $(this).parent().parent().parent().data("quote-id");
+      $(".save-quote").on("click", "i.fa-heart", function() {
+        userQuoteId = $(this).parent().parent().parent().data("user-quote-id");
         quoteText = $(this).parent().parent().parent().html();
-        $('#logged-in-save-quote .quote').html(quoteText);
-        $('#logged-in-save-quote .modal-body .form').load("<%= new_my_user_quote_url %>", function() {
-          $("#logged-in-save-quote .form #user_quote_quote_id").val(quoteId);
-          $("#logged-in-save-quote .form #user_quote_user_list_ids").multiselect({
+        
+        $('#logged-in-update-quote .quote').html(quoteText);
+        
+        updateUrl = "<%= edit_my_user_quote_url(id: 'id') %>";
+        quoteUpdateUrl = updateUrl.replace("id", userQuoteId);
+
+        $('#logged-in-update-quote .modal-body .form').load(quoteUpdateUrl, function() {
+          $("#logged-in-update-quote .form #user_quote_user_list_ids").multiselect({
             maxHeight: 200,
             buttonClass: 'btn btn-primary',
             buttonWidth: '200px',
@@ -48,13 +52,12 @@
             }
           });
         });
-        $('#logged-in-save-quote').modal('show');
+        
+        $('#logged-in-update-quote').modal('show');
       });
       
-      $("#logged-in-save-quote .modal-body").on("ajax:success", "#user-add-quote", function(e, data, status, xhr) {
-        $('#logged-in-save-quote').modal('hide');
-        $('.quote[data-quote-id="' + data.quote_id + '"]').data("user-quote-id", data.id);
-        $('.quote[data-quote-id="' + data.quote_id + '"]').find(".save-quote i").removeClass("fa-heart-o").addClass("fa-heart");
+      $("#logged-in-update-quote .modal-body").on("ajax:success", "#user-add-quote", function(e, data, status, xhr) {
+        $('#logged-in-update-quote').modal('hide');
       });
     });
 </script>

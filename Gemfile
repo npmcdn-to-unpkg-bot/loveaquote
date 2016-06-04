@@ -10,12 +10,7 @@ gem 'compass-rails', github: 'Compass/compass-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'capistrano'
-gem 'capistrano-rails'
-gem 'capistrano-bundler'
-gem 'capistrano3-puma'
-gem 'capistrano-rbenv'
-gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
+gem 'bootstrap-multiselect-rails'
 
 gem 'puma'
 gem 'figaro'
@@ -49,6 +44,15 @@ gem "rack-cache"
 gem "geocoder"
 gem 'premailer-rails'
 gem 'web-console', '~> 2.0', group: :development
+
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'  
+end
 
 group :development, :test do
   gem 'rspec-rails'

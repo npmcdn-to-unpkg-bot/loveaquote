@@ -12,13 +12,13 @@
     </thead>
   
     <tbody>
-      <% @lists.each do |list| %>
+      <% @user_lists.each do |user_list| %>
         <tr>
-          <td><%= list.name %></td>
-          <td class="text-center"></td>
-          <td class="text-center"><%= link_to 'Show', my_user_quotes_url(list: list.id) %></td>
-          <td class="text-center"><%= link_to 'Edit', edit_my_user_list_url(list) %></td>
-          <td class="text-center"><%= link_to 'Destroy', my_user_list_url(list), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= user_list.name %></td>
+          <td class="text-center"><%= user_list.user_quotes.count %></td>
+          <td class="text-center"><%= link_to 'Show', my_user_quotes_url(list: user_list.id) %></td>
+          <td class="text-center"><%= link_to 'Edit', edit_my_user_list_url(user_list) %></td>
+          <td class="text-center"><%= link_to 'Destroy', my_user_list_url(user_list), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>

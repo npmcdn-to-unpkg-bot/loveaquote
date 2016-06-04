@@ -1,5 +1,5 @@
-<%= simple_form_for([:my, @user_quote], remote: true) do |f| %>
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+<%= simple_form_for([:my, @user_quote], remote: true, html: {class: "form-inline text-center", id: "user-add-quote"}) do |f| %>
+    <%= f.hidden_field :quote_id %>
+    <%= f.association :user_lists, label: false %>
+    <%= f.submit "Save Quote", class: "btn btn-blue" %>
 <% end %>

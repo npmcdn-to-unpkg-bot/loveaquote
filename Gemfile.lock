@@ -85,6 +85,8 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-multiselect-rails (0.9.9)
+      rails (>= 4.0.0)
     builder (3.2.2)
     byebug (8.2.5)
     capistrano (3.5.0)
@@ -499,6 +501,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-multiselect-rails
   byebug
   capistrano
   capistrano-bundler

@@ -11,6 +11,7 @@
 //= require jquery.slick
 //= require masonry/dist/masonry.pkgd.js
 //= require imagesloaded/imagesloaded.pkgd.js
+//= require bootstrap-multiselect
 
 $(function() {
   

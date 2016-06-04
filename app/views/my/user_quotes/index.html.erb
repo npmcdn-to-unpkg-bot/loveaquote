@@ -6,7 +6,7 @@
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-offset-2 col-lg-4">
             <div class="my-quotes-filter">
-                <%= form_tag my_root_url, method: "GET" do %>
+                <%= form_tag my_user_quotes_url, method: "GET" do %>
                     <%= select_tag "list", options_for_select(current_user.user_lists.map {|l| [l.name, l.id]}, selected: params[:list]), prompt: "Filter by List", class: "form-control", onchange: "this.form.submit();" %>
                 <% end %>                                  
             </div>            
