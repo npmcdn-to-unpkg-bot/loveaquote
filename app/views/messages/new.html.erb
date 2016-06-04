@@ -7,8 +7,11 @@
 <% content_for :heading, "Contact us" %>
 
 <%= content_for :content do %>
+  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+    <h1 class="no-top-margin text-center">Contact Us</h1>
     <p>If you want like to contact us, send us some feedback or would like to work with us, please use the form below to connect with us. We read every email and usually reply within one business day.</p>
-    <%= render 'form' %>
+    <%= render 'form' %>    
+  </div>
 <% end %>
 
 <% content_for :additional_tags do %>

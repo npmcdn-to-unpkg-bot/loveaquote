@@ -1,8 +1,36 @@
-.page-container.horizontal-menu {
+@media (max-width: 767px) {
+    .navbar {
+        .navbar-nav {
+            .open {
+                .dropdown-menu {
+                    > li > a {
+                        padding: 8px 20px;
+                        color: $nav-bar-color;
+                        
+                        &:hover,
+                        &:focus {
+                            color: $nav-bar-color;
+                            background-color: $nav-bar-background-color;
+                        }
+                    }                
+                }                
+            }
+        }
+    }
+}
+
+.navbar {
+    background-color: $nav-bar-background-color; 
+    border-radius: initial;
+    border: 0px;
     
-    header.navbar {
-        background-color: $nav-bar-background-color; 
-        padding: 0 20px;
+    .navbar-header {
+        .navbar-toggle {
+            border-radius: initial;    
+            padding: 9px 5px;
+            margin-top: 13px;
+            background-color: #ddd;
+        }
         
         .navbar-brand {
             padding: 10px !important;
@@ -12,61 +40,79 @@
                 height: 40px;
             }
         }
+    }        
         
-        .navbar-nav {
-            // border-left: 1px solid shade($nav-bar-background-color, 10);
-            border-left: initial;
-            
-            > li > a,
-            > li > span {
-                position: relative;
-                display: block;
-                padding: 20px 20px;
-                font-size: 16px;
-                -webkit-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
-                -moz-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
-                -o-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
-                transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
-                z-index: 10;    
-                color: $nav-bar-color;
-                // border-right: 1px solid shade($nav-bar-background-color, 10);    
-                border-right: initial;                
-            }
-            
-            > li > a span {
-                font-size: 16px;
-            }
-            
-            &.nav {
-                > li:hover > a {
-                    background-color: shade($nav-bar-background-color, 10);                    
-                }
-            }
+    .navbar-nav {
+        > li > a,
+        > li > span {
+            position: relative;
+            display: block;
+            padding: 20px 20px;
+            font-size: 16px;
+            -webkit-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+            -moz-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+            -o-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+            transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+            z-index: 10;    
+            color: $nav-bar-color;
+            // border-right: 1px solid shade($nav-bar-background-color, 10);    
+            border-right: initial;                
         }
         
-        .navbar-right {
-            margin-right: initial;
+        > li > a span {
+            font-size: 16px;
+        }
+        > li:hover > a,
+        > li:hover > a:hover,
+        > li:hover > a:focus {
+            background-color: shade($nav-bar-background-color, 10);                    
+            color: $nav-bar-color;
+        }
+        
+        > li.login > a,
+        > li.login > span {
+            position: relative;
+            display: block;
+            padding: 20px 20px;
+            font-size: 16px;
+            -webkit-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+            -moz-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+            -o-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+            transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+            z-index: 10;    
+            color: $nav-bar-color;
+            // border-right: 1px solid shade($nav-bar-background-color, 10);    
+            border-right: initial; 
+            background-color: #E45857; 
             
-            > li.login > a,
-            > li.login > span {
-                position: relative;
-                display: block;
-                padding: 20px 20px;
-                font-size: 16px;
-                -webkit-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
-                -moz-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
-                -o-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
-                transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
-                z-index: 10;    
+            &:hover {
+                background-color: shade(#E45857, 10); 
+            }
+        }        
+        
+        > .open > a, 
+        > .open > a:hover, 
+        > .open > a:focus {
+            background-color: shade($nav-bar-background-color, 10);                    
+            color: $nav-bar-color;            
+        }
+        
+        .dropdown-menu {
+            background-color: tint($nav-bar-background-color, 25);
+            color: $nav-bar-color;
+            padding: 0px;
+            border: 0px;
+            
+            > li > a {
+                padding: 8px 20px;
                 color: $nav-bar-color;
-                // border-right: 1px solid shade($nav-bar-background-color, 10);    
-                border-right: initial; 
-                background-color: #E45857; 
                 
-                &:hover {
-                    background-color: shade(#E45857, 10); 
+                &:hover,
+                &:focus {
+                    color: $nav-bar-color;
+                    background-color: $nav-bar-background-color;
                 }
             }
         }
-    }    
+    }
 }

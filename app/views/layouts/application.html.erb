@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-US" prefix="og: http://ogp.me/ns#">
-<head>
-  <%= render "layouts/partials/head" %>
-</head>
-<body class="page-body loaded <%= controller.controller_name %> <%= controller.action_name %>">
-  <%= render "layouts/partials/google_analytics" %>
-  <%= render "layouts/partials/facebook_sdk" %>
-    <% if current_admin %>
-      <div class="page-container sidebar-collapsed horizontal-menu with-sidebar">
-    <% else %>
-      <div class="page-container horizontal-menu">
-    <% end %>
-      <%= render "layouts/partials/nav_bar" %>
-      <% if current_admin %>
-      	<%= render "layouts/partials/sidebar" %>
-      <% end %>
+  <head>
+    <%= render "layouts/partials/head" %>
+  </head>
+  <body class="page-body loaded <%= controller.controller_name %> <%= controller.action_name %>">
+    <%= render "layouts/partials/google_analytics" %>
+    <%= render "layouts/partials/facebook_sdk" %>
+    <%= render "layouts/partials/nav_bar" %>  
+    <div class="container">
       <div class="main-content">
         <%= render "layouts/partials/notification" %>
         <div class="row">  
           <%= yield :content %>
         </div>
-        <%= render "layouts/partials/admin_footer" %>
+        <%= render "layouts/partials/footer" %>
       </div>
     </div>
   </body>

@@ -1,11 +1,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
-//= require TweenMax
-//= require resizeable
-//= require neon-api
-//= require neon-custom 
-//= require joinable
 //= require cocoon
 //= require toastr
 //= require jquery.slick

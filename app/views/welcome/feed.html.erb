@@ -7,48 +7,51 @@
 <% content_for :heading, "LoveAQuote Feeds" %>
 
 <% content_for :content do %>
-<table>
-	<thead>
-		<tr>
-			<th class="text-center">Feed</th>
-			<th class="text-center">RSS feed link</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td class="text-center">Entire Site</td>
-			<td class="text-center"><%= link_to "RSS", feed_url(format: :rss) %></td>
-		</tr>
-		<tr>
-			<td class="text-center">People</td>
-			<td class="text-center"><%= link_to "RSS", feed_people_url(format: :rss) %></td>
-		</tr>
-		<tr>
-			<td class="text-center">Books</td>
-			<td class="text-center"><%= link_to "RSS", feed_books_url(format: :rss) %></td>
-		</tr>
-		<tr>
-			<td class="text-center">Movies</td>
-			<td class="text-center"><%= link_to "RSS", feed_movies_url(format: :rss) %></td>
-		</tr>
-		<tr>
-			<td class="text-center">Tv Shows</td>
-			<td class="text-center"><%= link_to "RSS", feed_tv_shows_url(format: :rss) %></td>
-		</tr>
-		<tr>
-			<td class="text-center">Characters</td>
-			<td class="text-center"><%= link_to "RSS", feed_characters_url(format: :rss) %></td>
-		</tr>
-		<tr>
-			<td class="text-center">Topics</td>
-			<td class="text-center"><%= link_to "RSS", feed_topics_url(format: :rss) %></td>
-		</tr>
-		<tr>
-			<td class="text-center">Proverbs</td>
-			<td class="text-center"><%= link_to "RSS", feed_proverbs_url(format: :rss) %></td>
-		</tr>
-	</tbody>
-</table>
+<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+	<h1 class="no-top-margin text-center">RSS Feeds</h1>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th class="text-center">Feed</th>
+				<th class="text-center">RSS feed link</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="text-center">Entire Site</td>
+				<td class="text-center"><%= link_to "RSS", feed_url(format: :rss) %></td>
+			</tr>
+			<tr>
+				<td class="text-center">People</td>
+				<td class="text-center"><%= link_to "RSS", feed_people_url(format: :rss) %></td>
+			</tr>
+			<tr>
+				<td class="text-center">Books</td>
+				<td class="text-center"><%= link_to "RSS", feed_books_url(format: :rss) %></td>
+			</tr>
+			<tr>
+				<td class="text-center">Movies</td>
+				<td class="text-center"><%= link_to "RSS", feed_movies_url(format: :rss) %></td>
+			</tr>
+			<tr>
+				<td class="text-center">Tv Shows</td>
+				<td class="text-center"><%= link_to "RSS", feed_tv_shows_url(format: :rss) %></td>
+			</tr>
+			<tr>
+				<td class="text-center">Characters</td>
+				<td class="text-center"><%= link_to "RSS", feed_characters_url(format: :rss) %></td>
+			</tr>
+			<tr>
+				<td class="text-center">Topics</td>
+				<td class="text-center"><%= link_to "RSS", feed_topics_url(format: :rss) %></td>
+			</tr>
+			<tr>
+				<td class="text-center">Proverbs</td>
+				<td class="text-center"><%= link_to "RSS", feed_proverbs_url(format: :rss) %></td>
+			</tr>
+		</tbody>
+	</table>	
+</div>
 <% end %>
 
 <% content_for :additional_tags do %>
