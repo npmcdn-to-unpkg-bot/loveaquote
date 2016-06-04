@@ -1,7 +1,7 @@
 <%= render partial: "partials/seo", locals: {model: @proverb} %>
 
 <% content_for :content do %>
-  <main class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+  <main class="col-xs-12">
     <h1 class="main-title text-center"><%= "#{@proverb.name} Proverbs" %></h1>
     
     <div class="row">
@@ -19,7 +19,7 @@
     <p>Last Updated - <time itemprop="dateModified" datetime="<%= @proverb.updated_at.to_datetime %>"><%= @proverb.updated_at.to_datetime.strftime("%B %d, %Y")  %></time></p>
   </main>
   
-  <aside class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+  <aside class="col-xs-12">
     <%= render "partials/facebook_like_box" %>  
     <%= render partial: "partials/aside", locals: { context: @proverb } %>    
   </aside>
