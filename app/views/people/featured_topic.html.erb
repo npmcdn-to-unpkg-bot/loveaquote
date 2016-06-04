@@ -22,40 +22,7 @@
   </main>
   
   <aside class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-    <%= render "partials/facebook_like_box" %>  
-    <% if @person.featured_topics.where.not(id: [@featured_topic.id]).any? %>
-      <div class="panel panel-default panel-shadow text-center">
-        <div class="panel-heading">
-          <div class="panel-title"><%= @person.name %> Quotes by topic</div>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <% @person.featured_topics.where.not(id: [@featured_topic.id]).each do |ft| %>
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <%= link_to "#{@person.name} Quotes on #{ft.topic.name}", featured_topic_person_url(@person, featured_topic: ft, format: :html), class: "link-box text-center" %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  
-    <% if @person.books.any? %>
-      <div class="panel panel-default panel-shadow text-center">
-        <div class="panel-heading">
-          <div class="panel-title">Books by <%= @person.name %></div>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <% @person.books.each do |book| %>
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <%= book.published? ? (link_to book.name, book_url(book), class: "link-box text-center") : (book.name) %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>    
+    <%= render partial: "partials/aside", locals: { context: @person } %>    
   </aside>
   
   <%= render "partials/after_content" %>

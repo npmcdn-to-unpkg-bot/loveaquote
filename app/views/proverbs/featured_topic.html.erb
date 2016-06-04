@@ -22,24 +22,7 @@
   </main>
   
   <aside class="col-xs-12">
-    <%= render "partials/facebook_like_box" %>
-    
-    <% if @proverb.featured_topics.where.not(id: [@featured_topic.id]).any? %>
-      <div class="panel panel-default panel-shadow text-center">
-        <div class="panel-heading">
-          <div class="panel-title"><%= @proverb.name %> Proverbs by topic</div>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <% @proverb.featured_topics.where.not(id: [@featured_topic.id]).each do |ft| %>
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <%= link_to "#{@proverb.name} Proverbs on #{ft.topic.name}", featured_topic_proverb_url(@proverb, featured_topic: ft, format: :html), class: "link-box text-center" %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    <%= render partial: "partials/aside", locals: { context: @proverb } %>
   </aside>
   
   <%= render "partials/after_content" %>

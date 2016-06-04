@@ -24,24 +24,7 @@
     <p>Last Updated - <time itemprop="dateModified" datetime="<%= @topic.updated_at.to_datetime %>"><%= @topic.updated_at.to_datetime.strftime("%B %d, %Y")  %></time></p>
   </main>
   <aside class="col-xs-12">
-    <%= render "partials/facebook_like_box" %>  
-    <% if @topic.similar_combinations.any? %>
-      <div class="panel panel-default panel-shadow">
-        <div class="panel-heading">
-          <div class="panel-title">Similar Combinations</div>
-        </div>
-        <div class="panel-body">
-          <div class="row">
-            <% @topic.cached_similar_combinations.each do |combination| %>
-              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <%= link_to combination.name + " Quotes", topics_topic_combination_url(combination, format: :html), title: combination.name + " Quotes", class: "link-box" %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>    
-    
+    <%= render partial: "partials/aside", locals: { context: @topic } %>
   </aside>
   
   <%= render "partials/after_content" %>

@@ -1,27 +1,87 @@
-<% if context.class.name == "Topic" %>
-    <% if context.all_topic_combinations.any? %>
-      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-12">
-        <div class="panel panel-default panel-shadow">
+<div class="row">
+<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+	<div class="panel panel-default panel-shadow text-center">
+		<div class="panel-heading">
+			<div class="panel-title">Follow on Facebook</div>
+		</div>
+		<div class="panel-body">
+			<div class="fb-page" data-href="https://www.facebook.com/doyouloveaquote/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/doyouloveaquote/"><a href="https://www.facebook.com/doyouloveaquote/">Doyouloveaquote</a></blockquote></div></div>
+		</div>
+	</div>	
+</div>
+
+<% if context.class.name == "Person" || context.class.name == "Proverb" %>
+  <% cache "#{context.class.name.downcase}-#{context.slug}-featured-topics-#{context.updated_at.to_s(:number)}" do %>
+    <% if context.featured_topics.any? %>
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="panel panel-default panel-shadow text-center">
           <div class="panel-heading">
-            <div class="panel-title">Similar Topics</div>
+            <% unless context.class.name == "Proverb" %>
+              <div class="panel-title"><%= context.name %> Quotes on</div>
+            <% else %>
+              <div class="panel-title"><%= context.name %> Proverbs on</div>
+            <% end %>
           </div>
           <div class="panel-body">
             <div class="row">
-              <% context.all_topic_combinations.each do |combination| %>
-                <div class="col-xs-12">
-                  <%= link_to combination.name + " Quotes", topics_topic_combination_url(combination, format: :html), title: combination.name + " Quotes", class: "link-box" %>
+              <% context.featured_topics.order(slug: :ASC).each do |ft| %>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                  <%= link_to ft.topic.name, featured_topic_model_url(context, ft, format: :html), title: "#{context.name} Quotes on #{ft.topic.name}", class: "link-box text-center" %>
                 </div>
               <% end %>
             </div>
           </div>
-        </div>
+        </div>      
       </div>
     <% end %>
+  <% end %>
+<% end %>
+
+<% if context.class.name == "Person" %>
+  <% if context.books.any? %>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+      <div class="panel panel-default panel-shadow">
+        <div class="panel-heading">
+          <div class="panel-title">Books by <%= context.name %></div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <% context.books.each do |book| %>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <%= book.published? ? (link_to book.name, book_url(book), class: "link-box text-center") : (book.name) %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<% if context.class.name == "Topic" %>
+  <% if context.all_topic_combinations.any? %>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+      <div class="panel panel-default panel-shadow">
+        <div class="panel-heading">
+          <div class="panel-title">Similar Topics</div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <% context.all_topic_combinations.each do |combination| %>
+              <div class="col-xs-12">
+                <%= link_to combination.name + " Quotes", topics_topic_combination_url(combination, format: :html), title: combination.name + " Quotes", class: "link-box" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 <% end %>
 
 <% if context.class.name == "Proverb" %>
   <% cache "more-proverbs-#{context.slug}-#{context.updated_at.to_s(:number)}" do %>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-12">
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
       <div class="panel panel-default panel-shadow">
         <div class="panel-heading">
           <div class="panel-title">More Proverbs</div>
@@ -39,3 +99,25 @@
     </div>
   <% end %>
 <% end %>
+
+<% if context.class.name == "TopicCombination" %>
+  <% if context.similar_combinations.any? %>
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+      <div class="panel panel-default panel-shadow">
+        <div class="panel-heading">
+          <div class="panel-title">Similar Combinations</div>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <% context.cached_similar_combinations.each do |combination| %>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <%= link_to combination.name + " Quotes", topics_topic_combination_url(combination, format: :html), title: combination.name + " Quotes", class: "link-box" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>    
+<% end %>
+</div>
