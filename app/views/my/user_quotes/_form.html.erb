@@ -1,5 +1,9 @@
-<%= simple_form_for([:my, @user_quote], remote: true, html: {class: "form-inline text-center", id: "user-add-quote"}) do |f| %>
+<%= simple_form_for([:my, @user_quote], remote: true, html: {class: "text-center", id: "user-add-quote"}) do |f| %>
     <%= f.hidden_field :quote_id %>
+    <% if @user_quote.persisted? %>
+        <%= f.submit "Update", class: "btn btn-blue btn-lg" %>
+    <% else %>
+        <%= f.submit "Add Quote", class: "btn btn-blue btn-lg" %>
+    <% end %>
     <%= f.association :user_lists, label: false %>
-    <%= f.submit "Save Quote", class: "btn btn-blue" %>
 <% end %>

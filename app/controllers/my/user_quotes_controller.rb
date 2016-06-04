@@ -1,6 +1,6 @@
 class My::UserQuotesController < ApplicationController
   before_filter :authenticate_user!
-  before_action :set_user_quote, only: [:edit, :update]
+  before_action :set_user_quote, only: [:edit, :update, :destroy]
   
   def index
     if params[:list].present? && current_user.user_lists.pluck(:id).include?(params[:list].to_i)
@@ -41,6 +41,13 @@ class My::UserQuotesController < ApplicationController
       end
     end    
   end  
+  
+  def destroy
+    @user_quote.destroy
+    respond_to do |format|
+      format.json { render json: {id: @user_quote.id, quote_id: @user_quote.quote_id} }
+    end
+  end
   
   private
     def set_user_quote

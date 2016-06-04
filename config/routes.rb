@@ -250,6 +250,6 @@ Rails.application.routes.draw do
     get "mark-for-deletion" => "dashboard#mark_for_deletion", as: :account_mark_for_deletion
     get "unmark-for-deletion" => "dashboard#unmark_for_deletion", as: :account_unmark_for_deletion
     resources :user_lists, path: "lists"
-    resources :user_quotes, path: "quotes", only: [:index, :new, :create, :update, :edit]
+    resources :user_quotes, path: "quotes", except: [:show]
   end
 end

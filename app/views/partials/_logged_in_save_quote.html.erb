@@ -4,11 +4,10 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Update</h4>
+        <h4 class="modal-title">Add Quote To Favorites</h4>
       </div>
       <div class="modal-body">
         <div class="form"></div>
-        <div class="quote"></div>
       </div>
     </div>
   </div>
@@ -19,32 +18,20 @@
       $(".save-quote").on("click", "i.fa-heart-o", function() {
         quoteId = $(this).parent().parent().parent().data("quote-id");
         quoteText = $(this).parent().parent().parent().html();
-        $('#logged-in-save-quote .quote').html(quoteText);
+        //$('#logged-in-save-quote .quote').html(quoteText);
         $('#logged-in-save-quote .modal-body .form').load("<%= new_my_user_quote_url %>", function() {
           $("#logged-in-save-quote .form #user_quote_quote_id").val(quoteId);
           $("#logged-in-save-quote .form #user_quote_user_list_ids").multiselect({
             maxHeight: 200,
-            buttonClass: 'btn btn-primary',
-            buttonWidth: '200px',
+            buttonClass: 'btn btn-link',
+            includeSelectAllOption: true,
             buttonText: function(options, select) {
               if (options.length === 0) {
-                  return 'Add To List (optional)';
+                  return 'Choose List (optional)';
               }
-              else if (options.length > 3) {
-                  return 'More than 3 options selected!';
+              else if (options.length > 0) {
+                  return 'Added to ' + options.length + ' lists';
               }
-             else {
-                 var labels = [];
-                 options.each(function() {
-                     if ($(this).attr('label') !== undefined) {
-                         labels.push($(this).attr('label'));
-                     }
-                     else {
-                         labels.push($(this).html());
-                     }
-                 });
-                 return labels.join(', ') + '';
-             }
             }
           });
         });
@@ -53,7 +40,7 @@
       
       $("#logged-in-save-quote .modal-body").on("ajax:success", "#user-add-quote", function(e, data, status, xhr) {
         $('#logged-in-save-quote').modal('hide');
-        $('.quote[data-quote-id="' + data.quote_id + '"]').data("user-quote-id", data.id);
+        $('.quote[data-quote-id="' + data.quote_id + '"]').attr("data-user-quote-id", data.id);
         $('.quote[data-quote-id="' + data.quote_id + '"]').find(".save-quote i").removeClass("fa-heart-o").addClass("fa-heart");
       });
     });

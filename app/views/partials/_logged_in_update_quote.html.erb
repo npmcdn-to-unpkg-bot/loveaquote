@@ -4,11 +4,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Save this quote</h4>
+        <h4 class="modal-title">Quote In Your Favorites</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body text-center">
         <div class="form"></div>
-        <div class="quote"></div>
+        <%= link_to "remove from favorites", "#", remote: true, method: :delete, id: "remove-quote-from-favorites", style: "font-size:14px; color:red" %>
       </div>
     </div>
   </div>
@@ -17,48 +17,43 @@
 <script type="text/javascript">
     $(function(){
       $(".save-quote").on("click", "i.fa-heart", function() {
-        userQuoteId = $(this).parent().parent().parent().data("user-quote-id");
-        quoteText = $(this).parent().parent().parent().html();
+        userQuoteId = $(this).parent().parent().parent().attr("data-user-quote-id");
         
-        $('#logged-in-update-quote .quote').html(quoteText);
+        //quoteText = $(this).parent().parent().parent().html();
+        //$('#logged-in-update-quote .quote').html(quoteText);
         
+        deleteUrl = "<%= my_user_quote_url(id: 'id') %>";
         updateUrl = "<%= edit_my_user_quote_url(id: 'id') %>";
+        quoteDeleteUrl = deleteUrl.replace("id", userQuoteId);
         quoteUpdateUrl = updateUrl.replace("id", userQuoteId);
-
         $('#logged-in-update-quote .modal-body .form').load(quoteUpdateUrl, function() {
           $("#logged-in-update-quote .form #user_quote_user_list_ids").multiselect({
             maxHeight: 200,
-            buttonClass: 'btn btn-primary',
-            buttonWidth: '200px',
+            buttonClass: 'btn btn-link',
+            includeSelectAllOption: true,
             buttonText: function(options, select) {
               if (options.length === 0) {
-                  return 'Add To List (optional)';
+                  return 'Choose List (optional)';
               }
-              else if (options.length > 3) {
-                  return 'More than 3 options selected!';
+              else if (options.length > 0) {
+                  return 'Added to ' + options.length + ' lists';
               }
-             else {
-                 var labels = [];
-                 options.each(function() {
-                     if ($(this).attr('label') !== undefined) {
-                         labels.push($(this).attr('label'));
-                     }
-                     else {
-                         labels.push($(this).html());
-                     }
-                 });
-                 return labels.join(', ') + '';
-             }
             }
           });
         });
-        
+        $('#logged-in-update-quote .modal-body #remove-quote-from-favorites').prop("href", quoteDeleteUrl);
         $('#logged-in-update-quote').modal('show');
       });
       
       $("#logged-in-update-quote .modal-body").on("ajax:success", "#user-add-quote", function(e, data, status, xhr) {
         $('#logged-in-update-quote').modal('hide');
       });
+      
+      $("#logged-in-update-quote .modal-body").on("ajax:success", "#remove-quote-from-favorites", function(e, data, status, xhr) {
+        $('.quote[data-user-quote-id="' + data.id + '"]').find(".save-quote i").removeClass("fa-heart").addClass("fa-heart-o");                
+        $('.quote[data-user-quote-id="' + data.id + '"]').removeAttr("data-user-quote-id");
+        $('#logged-in-update-quote').modal('hide');
+      })
     });
 </script>
 <% end %>
