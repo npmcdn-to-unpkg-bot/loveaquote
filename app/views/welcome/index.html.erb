@@ -7,7 +7,7 @@
 <% content_for :canonical, root_url %>
 
 <% content_for :content do %>
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+  <main class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
     <% if @qotd.present? && @qotd.quote.image.present? %>
       <div class="text-center">
         <h2 style="margin-top:0px">Quote Of The Day</h2>
@@ -60,24 +60,11 @@
       <% end %>
     </div>
     <%= link_to "#{Proverb.where(very_popular: false).count} More Proverb Themes ... ", proverbs_url, class: "link-box text-center" %>
-    
-    <% if @image_quotes.present? %>
-      <div class="quote-slider" style="margin-top:20px">
-        <% @image_quotes.each do |image_quote| %>
-          <div>
-            <% if image_quote.source.published? %>
-              <%= link_to model_url(image_quote.source, format: :html) do %>
-                <%= image_tag image_quote.image, style: "width: 100%"  %>
-              <% end %>
-            <% else %>
-              <%= image_tag image_quote.image, style: "width: 100%"  %>
-            <% end %>
-          </div>
-        <% end %>            
-      </div>
-    <% end %>
-  </div>
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-    <%= render "partials/facebook_like_box" %>  
-  </div>
+  </main>
+  
+  <aside class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+    <div class="row">
+      <%= render "partials/facebook_like_box" %>  
+    </div>
+  </aside>
 <% end %>

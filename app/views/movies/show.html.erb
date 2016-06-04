@@ -1,7 +1,7 @@
 <%= render partial: "partials/seo", locals: {model: @movie} %>
 
 <% content_for :content do %>
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+  <main class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
     <h1 class="main-title text-center"><%= "#{@movie.name} Quotes" %></h1>
     
     <div class="row">
@@ -17,12 +17,12 @@
     </div>
     
     <p>Last Updated - <time itemprop="dateModified" datetime="<%= @movie.updated_at.to_datetime %>"><%= @movie.updated_at.to_datetime.strftime("%B %d, %Y")  %></time></p>
-  </div>
+  </main>
   
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+  <aside class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
     <%= render "partials/facebook_like_box" %>  
     <%= render partial: "partials/aside", locals: { model: @movie } %>    
-  </div>
+  </aside>
   
   <%= render "partials/after_content" %>
 <% end %>
