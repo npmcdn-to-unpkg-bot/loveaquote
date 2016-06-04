@@ -21,7 +21,7 @@
   
   <aside class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
     <%= render "partials/facebook_like_box" %>  
-    <%= render partial: "partials/aside", locals: { model: @book } %>    
+    <%= render partial: "partials/aside", locals: { context: @book } %>    
   </aside>
   
   <%= render "partials/after_content" %>
