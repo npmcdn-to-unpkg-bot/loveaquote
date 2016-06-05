@@ -157,6 +157,7 @@ Rails.application.routes.draw do
       get "success", action: "success", as: "success"
     end
   end
+  resources :subscribers, only: [:create]
 
   get 'feed' => 'welcome#feed', :as => :feed
   get 'privacy-policy' => 'static_pages#privacy_policy', as: :privacy_policy

@@ -1,0 +1,54 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="not-logged-in-subscription-box">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h1 class="text-center weight-light">Do You <span style="letter-spacing:1.5px">LOVEA<span style="font-weight:400;">QUOTE</span></span></h1>
+          <p class="text-center">Subscribe to receive awesome quotes in your inbox.<br>You will <i class="fa fa-heart" style="color:#FFF"></i> it.</p>
+          <%= simple_form_for Subscriber.new, remote: true, html: {class: "text-center"} do |f| %>
+            <%= f.input :email, label: false, placeholder: "Your email", input_html: { class: "input-lg text-center" } %>
+            <%= f.submit "Subscribe", class: "btn btn-lg btn-primary btn-block" %>
+          <% end %>
+          <h2 class="text-center thank-you">Thank you.</h2>
+          <p class="text-center"><i class="fa fa-lock" aria-hidden="true"></i> Your email is safe with us</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+      $("#new_subscriber").validate();
+      
+      var show = false;
+      
+      if (Cookies.get("subscribed") || Cookies.get("delay_subscription")) {
+        
+      } else {
+        show = true;  
+      }
+
+      if (show) {
+        $("aside").on("appear", function(event, $all_appeared_elements) {
+          $('#not-logged-in-subscription-box').modal('show');
+        });
+      }
+      
+      $('#not-logged-in-subscription-box').on("ajax:complete", "#new_subscriber", function(e, data, status, xhr) {
+        Cookies.set('subscribed', 'true');
+        $("#not-logged-in-subscription-box #new_subscriber").remove();
+        $("#not-logged-in-subscription-box .thank-you").show();
+        setTimeout(function() {
+          $("#not-logged-in-subscription-box").modal('hide');
+        }, 2000);
+      });
+      
+      $("#not-logged-in-subscription-box").on('hidden.bs.modal', function () {
+        if (Cookies.get("subscribed")) {
+          
+        } else {
+          Cookies.set("delay_subscription", true,{ expires: 7 })
+        }        
+      });
+    });
+</script>
