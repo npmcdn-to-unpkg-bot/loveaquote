@@ -35,9 +35,24 @@
         .navbar-brand {
             padding: 10px !important;
             margin-bottom: 10px;
-            .logo {
+            img.logo {
                 width: 40px;
                 height: 40px;
+            }
+            
+            span.logo {
+                color: white;
+                font-weight: 300;
+                font-size: 24px;
+                line-height: 1.55;                
+                letter-spacing: 1.5px;
+            }
+            
+            span.logo .quote {
+                font-weight: 400;
+                background-color: initial;
+                border: 0px;
+                margin-bottom: initial;                
             }
         }
     }        
