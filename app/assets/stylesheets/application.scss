@@ -13,8 +13,6 @@
 @import "quotes";
 @import "bootstrap-social";
 @import "font-awesome";
-@import "slick";
-@import "slick-theme";
 @import "welcome";
 @import "top-social-bar";
 @import "nav-bar";
@@ -29,6 +27,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
     font-weight: 400;
+    background-color: $body-background-color;
 }
 
 a {
@@ -61,22 +60,18 @@ a:hover {
   margin-bottom: 30px;
 }
 
-.slick-dots li button:before {
-  opacity: 0.5;
-  color: #303641;
-}
-
-.slick-dots li.slick-active button:before {
-  opacity: 1.0;
-  color: #303641;
-}
-
 .link-box {
   display: block;
-  background-color: #F2F2F2;
-  border: 1px solid #E2E2E2;
+  background-color: $link-box-background-color;
+  border: 1px solid $link-box-border-color;
   padding: 5px;
   margin: 2.5px 0;
+}
+
+.link-box:hover {
+  background-color: $link-box-hover-background-color;
+  border: 1px solid $link-box-hover-border-color;
+  color: $link-box-hover-link-color;
 }
 
 .menu-item {

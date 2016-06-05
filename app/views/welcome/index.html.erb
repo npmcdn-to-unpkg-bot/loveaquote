@@ -7,7 +7,7 @@
 <% content_for :canonical, root_url %>
 
 <% content_for :content do %>
-  <main class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+  <main class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <% if @qotd.present? && @qotd.quote.image.present? %>
       <div class="text-center">
         <h2 style="margin-top:0px">Quote Of The Day</h2>
@@ -24,7 +24,7 @@
 		<h2 class="text-center" <% unless @qotd.present? %> style="margin-top: 0px" <% end %>>Topics<br><small>Read Quotes on Topics</small></h2>
 	  <div class="row">
       <% @topics.each do |topic| %>
-      <div class="col-sm-12 col-md-6 col-lg-6">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <%= link_to topic.name + " Quotes", topic_url(topic, format: :html), title: topic.name + " Quotes", class: "link-box text-center" %>
       </div>
       <% end %>
@@ -34,7 +34,7 @@
     <h2 class="text-center">People<br><small>Read Quotes by People</small></h2>
 	  <div class="row">
       <% @people.each do |person| %>
-      <div class="col-sm-12 col-md-6 col-lg-6">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <%= link_to person.name + " Quotes", person_url(person, format: :html), title: person.name + " Quotes", class: "link-box text-center" %>
       </div>
       <% end %>
@@ -44,7 +44,7 @@
     <h2 class="text-center">Books<br><small>Read Quotes from Books</small></h2>
 	  <div class="row">
       <% @books.each do |book| %>
-      <div class="col-sm-12 col-md-6 col-lg-6">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <%= link_to book.name + " Quotes", book_url(book, format: :html), title: book.name + " Quotes", class: "link-box text-center" %>
       </div>
       <% end %>
@@ -54,17 +54,11 @@
     <h2 class="text-center">Proverbs<br><small>Read Proverbs by Theme</small></h2>
 	  <div class="row">
       <% @proverbs.each do |proverb| %>
-      <div class="col-sm-12 col-md-6 col-lg-6">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
         <%= link_to proverb.name + " Proverbs", proverb_url(proverb, format: :html), title: proverb.name + " Proverbs", class: "link-box text-center" %>
       </div>
       <% end %>
     </div>
     <%= link_to "#{Proverb.where(very_popular: false).count} More Proverb Themes ... ", proverbs_url, class: "link-box text-center" %>
   </main>
-  
-  <aside class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-    <div class="row">
-      <%= render "partials/facebook_like_box" %>  
-    </div>
-  </aside>
 <% end %>

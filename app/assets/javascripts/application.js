@@ -3,7 +3,6 @@
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require cocoon
 //= require toastr
-//= require jquery.slick
 //= require masonry/dist/masonry.pkgd.js
 //= require imagesloaded/imagesloaded.pkgd.js
 //= require bootstrap-multiselect
