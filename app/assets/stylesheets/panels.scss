@@ -9,3 +9,7 @@
 .panel-default > .panel-body .link-box {
     background-color: tint($nav-bar-background-color, 75);
 }
+
+.panel-default > .panel-body .link-box:hover {
+    background-color: $link-box-hover-background-color;
+}
