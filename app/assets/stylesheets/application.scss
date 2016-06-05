@@ -120,10 +120,6 @@ a.link-box.menu-item:hover {
   margin: 0 auto;
 }
 
-.user_quotes .save-quote {
-  display: none;
-}
-
 .site-footer {
     margin-top: 15px;
     padding-top: 15px;
@@ -133,4 +129,12 @@ a.link-box.menu-item:hover {
 
 .alert {
   border-radius: initial;
+}
+
+.fa.fa-heart {
+  color: red;
+}
+
+.fa.fa-heart-o {
+  color: red;
 }
