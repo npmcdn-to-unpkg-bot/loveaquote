@@ -22,9 +22,7 @@
             </div>
           <% end %>
         </div>
-        <div class="more-link text-center">
-          <%= link_to "More ...", alphabet_topics_url(letter.upcase) %>
-        </div>
+        <%= link_to "More ...", alphabet_topics_url(letter.upcase), class: "link-box text-center" %>
       </div>
     <% end %>        
     

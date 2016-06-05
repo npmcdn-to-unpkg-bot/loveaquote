@@ -14,7 +14,7 @@ body, #bodyTable, #bodyCell{height:100% !important; margin:0; padding:0; width:1
 #templateContainer{width:600px;}
 
 body, #bodyTable{
-    background-color:#CCCCCC;
+    background-color:#F0F0F1;
 }
 
 #bodyCell{

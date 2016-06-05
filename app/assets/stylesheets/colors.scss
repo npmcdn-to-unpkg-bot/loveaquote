@@ -1,4 +1,4 @@
-$body-background-color: #AAAAAA;
+$body-background-color: #F0F0F1;
 $nav-bar-background-color: #54728C;
 $nav-bar-color: #FFF;
 
@@ -6,11 +6,11 @@ $link-color: #07C;
 $link-hover-color: shade($link-color, 25);
 
 $link-box-background-color: #FFF;
-$link-box-border-color: shade($body-background-color, 25);
+$link-box-border-color: shade($body-background-color, 10);
 
-$link-box-hover-background-color: $nav-bar-background-color;
-$link-box-hover-border-color: shade($nav-bar-background-color, 25);
+$link-box-hover-background-color: tint($nav-bar-background-color, 10);
+$link-box-hover-border-color: shade($nav-bar-background-color, 10);
 $link-box-hover-link-color: $nav-bar-color;
 
 $quote-background-color: #FFF;
-$quote-border-color: shade($body-background-color, 25);
+$quote-border-color: shade($body-background-color, 10);

@@ -1,3 +1,11 @@
 .panel > .panel-heading .panel-title {
     font-size: 16px;
 }
+
+.panel-default > .panel-heading {
+    background-color: tint($nav-bar-background-color, 50);
+}
+
+.panel-default > .panel-body > .link-box {
+    background-color: tint($nav-bar-background-color, 75);
+}
