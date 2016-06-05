@@ -18,21 +18,16 @@
 
 <script type="text/javascript">
     $(function(){
+      
       $("#new_subscriber").validate();
       
-      var show = false;
-      
-      if (Cookies.get("subscribed") || Cookies.get("delay_subscription")) {
+      $("aside").on("appear", function(event, $all_appeared_elements) {
+        if (Cookies.get("subscribed") || Cookies.get("delay_subscription")) {
         
-      } else {
-        show = true;  
-      }
-
-      if (show) {
-        $("aside").on("appear", function(event, $all_appeared_elements) {
+        } else {
           $('#not-logged-in-subscription-box').modal('show');
-        });
-      }
+        }
+      });
       
       $('#not-logged-in-subscription-box').on("ajax:complete", "#new_subscriber", function(e, data, status, xhr) {
         Cookies.set('subscribed', 'true');
