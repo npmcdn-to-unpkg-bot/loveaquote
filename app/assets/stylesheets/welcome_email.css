@@ -14,7 +14,7 @@ body, #bodyTable, #bodyCell{height:100% !important; margin:0; padding:0; width:1
 #templateContainer{width:600px;}
 
 body, #bodyTable{
-    background-color:#54728C;
+    background-color:#CCCCCC;
 }
 
 #bodyCell{
@@ -109,9 +109,9 @@ h4{
 }
 
 #templateHeader{
-    background-color:#F4F4F4;
-    border-top:1px solid #FFFFFF;
-    border-bottom:1px solid #CCCCCC;
+    background-color:#54728C;
+    border-top:1px solid #4c677e;
+    border-bottom:1px solid #4c677e;
 }
 
 .headerContent{

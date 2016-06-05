@@ -47,9 +47,10 @@
     
     function showSubscription() {
       if (Cookies.get("subscribed") || Cookies.get("delay_subscription")) {
-        return false
-      } else {
-        return true
+        return false;
+      } else if(Cookies.get("page_view_count") && (parseInt(Cookies.get("page_view_count")) > 2)) {
+        console.log("Its Working");
+        return true;
       }
     }
 </script>

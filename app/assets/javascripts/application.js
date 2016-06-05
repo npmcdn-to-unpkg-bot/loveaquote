@@ -18,7 +18,13 @@ $(function() {
       itemSelector: '.grid-item',
       columnWidth: '.grid-item'
     });
-  });  
+  });
+  
+  if (Cookies.get("page_view_count")) {
+    Cookies.set("page_view_count", parseInt(Cookies.get("page_view_count")) + 1);
+  } else {
+    Cookies.set("page_view_count", 1);
+  }
 
   $(".quote-slider").slick({
     dots: true,
