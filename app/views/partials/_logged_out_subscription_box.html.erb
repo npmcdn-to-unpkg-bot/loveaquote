@@ -21,13 +21,11 @@
       
       $("#new_subscriber").validate();
       
-      $("aside").on("appear", function(event, $all_appeared_elements) {
-        if (Cookies.get("subscribed") || Cookies.get("delay_subscription")) {
-        
-        } else {
+      if (showSubscription()) {
+        $("aside").one('inview', function() {
           $('#not-logged-in-subscription-box').modal('show');
-        }
-      });
+        });
+      }
       
       $('#not-logged-in-subscription-box').on("ajax:complete", "#new_subscriber", function(e, data, status, xhr) {
         Cookies.set('subscribed', 'true');
@@ -46,4 +44,12 @@
         }        
       });
     });
+    
+    function showSubscription() {
+      if (Cookies.get("subscribed") || Cookies.get("delay_subscription")) {
+        return false
+      } else {
+        return true
+      }
+    }
 </script>

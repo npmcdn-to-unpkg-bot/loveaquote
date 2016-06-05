@@ -9,7 +9,7 @@
 //= require bootstrap-multiselect
 //= require js-cookie/src/js.cookie.js
 //= require jquery-validation/dist/jquery.validate.js
-//= require jquery_appear/jquery.appear.js
+//= require protonet/jquery.inview/jquery.inview.js
 
 $(function() {
   

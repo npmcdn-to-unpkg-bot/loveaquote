@@ -19,6 +19,6 @@
     "imagesloaded": "^4.1.0",
     "jquery-validation": "^1.15.0",
     "js-cookie": "^2.1.2",
-    "jquery_appear": "^0.3.6"
+    "protonet/jquery.inview": "jquery.inview#^1.1.2"
   }
 }
