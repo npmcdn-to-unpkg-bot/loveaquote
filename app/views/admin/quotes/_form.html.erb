@@ -56,7 +56,7 @@
                 <%= render 'quote_topic_fields', :f => quote_topic %>
               <% end %>
               <div class='links'>
-                <%= link_to_add_association '<i class="e-icon-squared-plus"></i> topic'.html_safe, f, :quote_topics %>
+                <%= link_to_add_association '<i class="fa fa-plus-square"></i> topic'.html_safe, f, :quote_topics %>
               </div>
             </div>
           </div>
@@ -76,8 +76,8 @@
                     <% @quote.quote_topic_suggestions.where(read: false).each do |quote_topic_suggestion| %>
                       <tr>
                         <td class="text-center"><%= link_to quote_topic_suggestion.topic.name, admin_topic_url(quote_topic_suggestion.topic) %></td>
-                        <td class="text-center"><%= link_to '<i class="e-icon-check"></i>'.html_safe, accept_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"accept_suggestion", remote: true %></td>
-                        <td class="text-center"><%= link_to '<i class="e-icon-cross"></i>'.html_safe, decline_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"decline_suggestion", remote: true %></td>
+                        <td class="text-center"><%= link_to '<i class="fa fa-check"></i>'.html_safe, accept_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"accept_suggestion", remote: true %></td>
+                        <td class="text-center"><%= link_to '<i class="fa fa-times"></i>'.html_safe, decline_admin_quote_topic_suggestion_url(id: quote_topic_suggestion.id), class:"decline_suggestion", remote: true %></td>
                       </tr>
                     <% end %>
                   </tbody>
