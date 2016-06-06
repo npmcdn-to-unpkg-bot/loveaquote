@@ -42,8 +42,8 @@
         if (Cookies.get("subscribed")) {
           
         } else {
-          ga('send', 'event', 'Subscription Box', 'Delay');
           Cookies.set("delay_subscription", true,{ expires: 7 })
+          ga('send', 'event', 'Subscription Box', 'Delay');
         }        
       });
     });

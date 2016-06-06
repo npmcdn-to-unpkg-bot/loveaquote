@@ -16,7 +16,9 @@
           Sign in with Facebook
         <% end %>                      
         <div class="quote">
-
+          <div class="quote-text">
+            
+          </div>
         </div>
       </div>
     </div>
@@ -26,9 +28,20 @@
 <script type="text/javascript">
     $(function(){
        $(".save-quote i.fa-heart-o").on("click", function() {
-          quoteText = $(this).parent().parent().parent().html();
-          $('#not-logged-in-save-quote .quote').html(quoteText);
+          quoteText = $(this).parent().parent().parent().find(".quote-text").html();
+          $('#not-logged-in-save-quote .quote .quote-text').html(quoteText);
           $('#not-logged-in-save-quote').modal('show');
-       }); 
+          ga('send', 'event', "Login", "Show", "Quote Like");
+       });
+       
+       $("#not-logged-in-save-quote").on("click", ".btn-social", function() {
+         console.log("attempted");
+         ga('send', 'event', "Login", "Attempt", "Quote Like");
+       });
+       
+       $("#not-logged-in-save-quote").on('hidden.bs.modal', function () {
+         console.log("hidden");
+         ga('send', 'event', "Login", "Hide", "Quote Like");
+       });       
     });
 </script>
