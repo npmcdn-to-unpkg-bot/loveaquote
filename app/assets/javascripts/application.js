@@ -25,11 +25,6 @@ $(function() {
     Cookies.set("page_view_count", 1);
   }
 
-  $(".quote-slider").slick({
-    dots: true,
-    arrows: false
-  });
-
   $("body").on("click", ".social-sharing i", function(){
     window.open($(this).attr("data-url"), "_blank");
   });
