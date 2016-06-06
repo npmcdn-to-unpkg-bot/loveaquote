@@ -26,7 +26,7 @@
     <tbody>
       <% @quote_topic_suggestions.each do |quote_topic_suggestion| %>
         <tr>
-          <td class="text-center"><%= quote_topic_suggestion.quote.verified ? '<i class="e-icon-check"></i>'.html_safe : '<i class="e-icon-cross"></i>'.html_safe %></td>
+          <td class="text-center"><%= quote_topic_suggestion.quote.verified ? '<i class="fa fa-check"></i>'.html_safe : '<i class="fa fa-times"></i>'.html_safe %></td>
           <td><%= quote_topic_suggestion.quote.text %></td>
           <td class="text-center"><%= link_to quote_topic_suggestion.topic.name, admin_topic_url(quote_topic_suggestion.topic) %></td>
           <td class="text-center"><%= link_to quote_topic_suggestion.quote.source.name, admin_quote_source_url(quote_topic_suggestion.quote) %></td>
@@ -80,10 +80,10 @@
     $(".verify-quote").on("ajax:complete", function(e, data, status, xhr) {
       var response = jQuery.parseJSON(data.responseText);
       if (response.verification_status) {
-        $(this).parent().siblings().first().children("i").attr('class', 'e-icon-check');
+        $(this).parent().siblings().first().children("i").attr('class', 'fa fa-check');
         toastr.success('Quote marked as verified.');
       } else {
-        $(this).parent().siblings().first().children("i").attr('class', 'e-icon-cross');
+        $(this).parent().siblings().first().children("i").attr('class', 'fa fa-times');
         toastr.warning('Quote marked as unverified.');
       }
     });        
