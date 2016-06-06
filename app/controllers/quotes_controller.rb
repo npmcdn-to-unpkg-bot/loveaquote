@@ -18,7 +18,7 @@ class QuotesController < ApplicationController
   def pinterest
     QuotePinterestWorker.perform_async(@quote.id, request.user_agent) if params[:human].present? && params[:human] == "t"
     url = URI.encode(view_context.quote_source_url(@quote))
-    media = URI.encode(@quote.image_url(:large))
+    media = URI.encode(@quote.image.url)
     description = CGI::escape(@quote.text + ' - ' + @quote.source.name +  ' #quotes')
     redirect_to "http://www.pinterest.com/pin/create/bookmarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"
   end
