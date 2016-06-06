@@ -15,10 +15,10 @@
   "dependencies": {
     "bootstrap-sass": "~3.3.6",
     "toastr": "^2.1.2",
-    "masonry": "^4.1.0",
-    "imagesloaded": "^4.1.0",
-    "jquery-validation": "^1.15.0",
+    "jquery_lazyload": "jquery.lazyload#^1.9.7",
+    "protonet/jquery.inview": "1.1.2",
+    "jquery-placeholder": "^2.3.1",
     "js-cookie": "^2.1.2",
-    "protonet/jquery.inview": "jquery.inview#^1.1.2"
+    "jquery-validation": "^1.15.0"
   }
 }

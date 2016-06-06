@@ -8,20 +8,36 @@
 
 <% content_for :content do %>
   <main class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <% if @qotd.present? && @qotd.quote.image.present? %>
-      <div class="text-center">
-        <h2 style="margin-top:0px">Quote Of The Day</h2>
-        <% if @qotd.quote.source.published? %>
-          <%= link_to model_url(@qotd.quote.source, format: :html) do %>
-            <%= image_tag @qotd.quote.image_url(:medium), width: "100%", height: "auto" %>
+    <% if @image_quotes.present? %>
+      <div id="welcome-slider" class="carousel slide" data-ride="carousel">
+        
+        <ol class="carousel-indicators">
+          <% @image_quotes.each_with_index do |image_quote, index| %>
+            <li data-target="#welcome-slider" data-slide-to="<%= index %>" <% if index == 0 %>class="active"<% end %>></li>
           <% end %>
-        <% else %>
-          <%= image_tag @qotd.quote.image_url(:medium), width: "100%", height: "auto" %>
-        <% end %>
-      </div>      
-    <% end %>
+        </ol>
 
-		<h2 class="text-center" <% unless @qotd.present? %> style="margin-top: 0px" <% end %>>Topics<br><small>Read Quotes on Topics</small></h2>
+        <div class="carousel-inner" role="listbox">
+          <% @image_quotes.each_with_index do |image_quote, index| %>
+            <div class="item <% if index == 0 %>active<% end %>">
+              <%= image_tag image_quote.image %>
+            </div>
+          <% end %>
+        </div>
+        
+        <a class="left carousel-control" href="#welcome-slider" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#welcome-slider" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        
+      </div>
+    <% end %>  
+
+		<h2 class="text-center" >Topics<br><small>Read Quotes on Topics</small></h2>
 	  <div class="row">
       <% @topics.each do |topic| %>
       <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">

@@ -9,6 +9,7 @@
 //= require js-cookie/src/js.cookie.js
 //= require jquery-validation/dist/jquery.validate.js
 //= require protonet/jquery.inview/jquery.inview.js
+//= require jquery-placeholder/jquery.placeholder.js
 
 $(function() {
   
@@ -18,6 +19,8 @@ $(function() {
       columnWidth: '.grid-item'
     });
   });
+  
+  $("input").placeholder();
   
   if (Cookies.get("page_view_count")) {
     Cookies.set("page_view_count", parseInt(Cookies.get("page_view_count")) + 1);

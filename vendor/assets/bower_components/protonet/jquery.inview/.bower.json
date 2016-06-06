@@ -11,7 +11,6 @@
     "commit": "d3621c68f1860d01813447c58e05d385318aff94"
   },
   "_source": "https://github.com/protonet/jquery.inview.git",
-  "_target": "^1.1.2",
-  "_originalSource": "jquery.inview",
-  "_direct": true
+  "_target": "1.1.2",
+  "_originalSource": "protonet/jquery.inview=protonet/jquery.inview"
 }
