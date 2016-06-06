@@ -57,11 +57,11 @@ class Quote < ActiveRecord::Base
     scope :verified, -> {where(verified: true)}
     scope :filter_by_topic, -> (id) {joins(:quote_topics).where(quote_topics: {topic_id: id})}
     
-    scope :with_image, -> (count, exclude=[]) { where.not(id: exclude).where.not(image: '').order(updated_at: :DESC).limit(count)}
+    scope :with_image, -> (count) { where.not(image: '').order(updated_at: :DESC).limit(count)}
     
-    def self.cached_with_image(count, exclude=[])
-        Rails.cache.fetch("quotes-with-images-#{Date.today.to_s(:number)}") do
-            with_image(count, exclude)
+    def self.cached_with_image(count)
+        Rails.cache.fetch("quotes-with-images-#{count.to_s}") do
+            with_image(count)
         end
     end
 end

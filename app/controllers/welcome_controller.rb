@@ -4,8 +4,7 @@ class WelcomeController < ApplicationController
     @topics = Topic.cached_very_popular
     @books = Book.cached_very_popular
     @proverbs = Proverb.cached_very_popular
-    @qotd = QuoteOfTheDay.today
-    @image_quotes = @qotd.present? ? Quote.cached_with_image(6, [@qotd.quote.id]) : Quote.cached_with_image(5)
+    @image_quotes = Quote.cached_with_image(6)
   end
 
   def feed
