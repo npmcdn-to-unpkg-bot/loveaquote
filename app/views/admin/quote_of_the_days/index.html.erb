@@ -5,15 +5,17 @@
     <thead>
       <tr>
         <th width="15%" class="text-center">Date</th>
-        <th width="85%" class="text-center">Quote</th>
+        <th width="60%" class="text-center">Quote</th>
+        <th width="60%" class="text-center">Source</th>
       </tr>
     </thead>
   
     <tbody>
       <% @qotds.each do |qotd| %>
         <tr>
-          <td  class="text-center"><%= qotd.date %></td>
+          <td class="text-center"><%= qotd.date %></td>
           <td><%= qotd.quote.text %></td>
+          <td class="text-center"><%= link_to qotd.quote.source.name, admin_model_url(qotd.quote.source) %></td>
         </tr>
       <% end %>
     </tbody>

@@ -57,7 +57,7 @@ class Quote < ActiveRecord::Base
     scope :verified, -> {where(verified: true)}
     scope :filter_by_topic, -> (id) {joins(:quote_topics).where(quote_topics: {topic_id: id})}
     
-    scope :with_image, -> (count) { where.not(image: '').order(updated_at: :DESC).limit(count)}
+    scope :with_image, -> (count) { where(id: QuoteOfTheDay.pluck(:quote_id)).where.not(image: '').order(updated_at: :DESC).limit(count)}
     
     def self.cached_with_image(count)
         Rails.cache.fetch("quotes-with-images-#{count.to_s}") do
