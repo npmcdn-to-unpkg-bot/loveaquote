@@ -25,18 +25,18 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><%= link_to '<i class="e-icon-layout"></i> Dashboard'.html_safe, my_root_url %></li>                
+                        <li><%= link_to '<i class="fa fa-tachometer"></i> Dashboard'.html_safe, my_root_url %></li>                
                         <li><%= link_to '<i class="fa fa-quote-left"></i> My Quotes'.html_safe, my_user_quotes_url %></li>                
                         <li><%= link_to '<i class="fa fa-list"></i> My Lists'.html_safe, my_user_lists_url %></li>                                
-                        <li><%= link_to 'Logout <i class="e-icon-logout"></i>'.html_safe, destroy_user_session_path %></li>                                                    
+                        <li><%= link_to 'Logout <i class="fa fa-sign-out"></i>'.html_safe, destroy_user_session_path %></li>                                                    
                     </ul>
                 </li>
             </ul>            
         <% elsif current_admin %>
             <ul class="nav navbar-nav">
-                <li><%= link_to '<i class="e-icon-layout"></i><span class="title">Dashboard</span>'.html_safe, admin_root_url %></li>
+                <li><%= link_to '<i class="fa fa-tachometer"></i> Dashboard'.html_safe, admin_root_url %></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="e-icon-plus"></i><span class="title">Add new</span> <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus"></i> Add new <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><%= link_to "Person", new_admin_person_url %></li>
                         <li><%= link_to "Book", new_admin_book_url %></li>
@@ -52,23 +52,23 @@
             
             <ul class="nav navbar-nav navbar-right">
                 <% if User.unread.any? %>
-                    <li class="notifications dropdown"><%= link_to ('<i class="e-icon-users"></i><span class="badge badge-secondary">' + User.unread.count.to_s + '</span>').html_safe, admin_users_url %></li>
+                    <li class="notifications dropdown"><%= link_to ('<i class="fa fa-user"></i><span class="badge badge-secondary">' + User.unread.count.to_s + '</span>').html_safe, admin_users_url %></li>
                 <% else %>
-                    <li><%= link_to '<i class="e-icon-users"></i>'.html_safe, admin_users_url %></li>            
+                    <li><%= link_to '<i class="fa fa-user"></i>'.html_safe, admin_users_url %></li>            
                 <% end %>
                 <% if Subscriber.unread.any? %>
-                    <li class="notifications dropdown"><%= link_to ('<i class="e-icon-rocket"></i><span class="badge badge-secondary">' + Subscriber.unread.count.to_s + '</span>').html_safe, admin_subscribers_url %></li>
+                    <li class="notifications dropdown"><%= link_to ('<i class="fa fa-envelope-o"></i><span class="badge badge-secondary">' + Subscriber.unread.count.to_s + '</span>').html_safe, admin_subscribers_url %></li>
                 <% else %>
-                    <li><%= link_to '<i class="e-icon-rocket"></i>'.html_safe, admin_subscribers_url %></li>            
+                    <li><%= link_to '<i class="fa fa-envelope-o"></i>'.html_safe, admin_subscribers_url %></li>            
                 <% end %>            
                 <% if Message.unread.any? %>
-                    <li class="notifications dropdown"><%= link_to ('<i class="e-icon-mail"></i><span class="badge badge-secondary">' + Message.unread.count.to_s + '</span>').html_safe, admin_messages_url %></li>
+                    <li class="notifications dropdown"><%= link_to ('<i class="fa fa-inbox"></i><span class="badge badge-secondary">' + Message.unread.count.to_s + '</span>').html_safe, admin_messages_url %></li>
                 <% else %>
-                    <li><%= link_to '<i class="e-icon-mail"></i>'.html_safe, admin_messages_url %></li>
+                    <li><%= link_to '<i class="fa fa-inbox"></i>'.html_safe, admin_messages_url %></li>
                 <% end %>
-                <li><%= link_to '<i class="e-icon-database"></i>'.html_safe, admin_logs_url %></li>
-                <li><%= link_to '<i class="e-icon-cog"></i>'.html_safe, admin_settings_url %></li>
-                <li><%= link_to '<i class="e-icon-logout"></i>'.html_safe, destroy_admin_session_path, method:"delete" %></li>
+                <li><%= link_to '<i class="fa fa-database"></i>'.html_safe, admin_logs_url %></li>
+                <li><%= link_to '<i class="fa fa-cog"></i>'.html_safe, admin_settings_url %></li>
+                <li><%= link_to '<i class="fa fa-sign-out"></i>'.html_safe, destroy_admin_session_path, method:"delete" %></li>
             </ul>                    
         <% else %>
             <ul class="nav navbar-nav">

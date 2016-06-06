@@ -29,7 +29,6 @@ gem 'jquery-slick-rails', github: 'bodrovis/jquery-slick-rails'
 gem 'simple_form'
 gem 'cocoon'
 gem 'kaminari', github: 'amatsuda/kaminari'
-gem 'entypo-rails'
 gem 'stringex'
 gem 'sitemap_generator'
 gem 'carrierwave', github: "carrierwaveuploader/carrierwave"

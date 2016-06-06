@@ -153,8 +153,6 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
-    entypo-rails (2.2.3)
-      railties (>= 3.1, <= 5)
     erubis (2.7.0)
     excon (0.49.0)
     execjs (2.6.0)
@@ -517,7 +515,6 @@ DEPENDENCIES
   dalli
   database_cleaner
   devise
-  entypo-rails
   factory_girl_rails
   faker
   figaro
