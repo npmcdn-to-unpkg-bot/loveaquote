@@ -2,7 +2,7 @@
     <div class="quote" data-quote-id="<%= quote.id %>" <% if current_user && current_user.user_quotes_array.include?(quote.id) %> data-user-quote-id="<%= current_user.user_quotes.where(quote_id: quote.id).first.id %>" <% end %>>
       <% if quote.image.present? %>		
         <div class="quote-image">		
-          <%= image_tag quote.image, style: "width: 100%" %>		
+          <%= image_tag quote.image.medium.url, style: "width: 100%" %>		
         </div>		
       <% end %>
       <div class="quote-text">
