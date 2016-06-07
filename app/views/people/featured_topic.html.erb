@@ -7,21 +7,26 @@
 <% end %>
 
 <% content_for :content do %>
-  <main class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+  <main class="col-xs-12">
     <h1 class="main-title text-center"><%= "#{@person.name} Quotes on #{@featured_topic.topic.name}" %></h1>
     
-    <% @quotes.each do |quote| %>
-      <%= render partial: "people/quote", locals: {quote: quote, context: @person, grid_class: "col-xs-12 col-sm-6 col-md-6 col-lg-4"} %>
-    <% end %>
+    <div class="row">
+      <div class="grid">
+        <% @quotes.each do |quote| %>
+            <%= render partial: "partials/quote", locals: {quote: quote, context: @person, grid_class: "col-xs-12 col-sm-6 col-md-4 col-lg-4"} %>
+        <% end %>              
+      </div>
+    </div>
+
   
     <div class="text-center">
       <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
-    </div>    
+    </div>
     
     <p>Last Updated - <time itemprop="dateModified" datetime="<%= @person.updated_at.to_datetime %>"><%= @person.updated_at.to_datetime.strftime("%B %d, %Y")  %></time></p>
   </main>
   
-  <aside class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+  <aside class="col-xs-12">
     <%= render partial: "partials/aside", locals: { context: @person } %>    
   </aside>
   

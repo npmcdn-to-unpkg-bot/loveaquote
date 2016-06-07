@@ -10,19 +10,23 @@
   <main class="col-xs-12">
     <h1 class="main-title text-center"><%= "#{@proverb.name} Proverbs on #{@featured_topic.topic.name}" %></h1>
     
-    <% @quotes.each do |quote| %>
-      <%= render partial: "proverbs/quote", locals: {quote: quote, context: @proverb, grid_class: "col-xs-12 col-sm-6 col-md-4 col-lg-4"} %>
-    <% end %>
+    <div class="row">
+      <div class="grid">    
+        <% @quotes.each do |quote| %>
+            <%= render partial: "partials/quote", locals: {quote: quote, context: @proverb, grid_class: "col-xs-12 col-sm-6 col-md-6 col-lg-6"} %>
+        <% end %>
+      </div>
+    </div>
   
     <div class="text-center">
       <%= paginate @quotes, :views_prefix => 'kaminari_bootstrap' %>
-    </div>    
+    </div>
     
     <p>Last Updated - <time itemprop="dateModified" datetime="<%= @proverb.updated_at.to_datetime %>"><%= @proverb.updated_at.to_datetime.strftime("%B %d, %Y")  %></time></p>
   </main>
   
   <aside class="col-xs-12">
-    <%= render partial: "partials/aside", locals: { context: @proverb } %>
+    <%= render partial: "partials/aside", locals: { context: @proverb } %>    
   </aside>
   
   <%= render "partials/after_content" %>
