@@ -15,7 +15,7 @@ class QuoteImageUploader < CarrierWave::Uploader::Base
   end
 
   version :medium do
-    process :resize_to_limit => [600, 300]
+    process :resize_to_limit => [600, 10000]
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

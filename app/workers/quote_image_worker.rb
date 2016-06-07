@@ -19,11 +19,12 @@ class QuoteImageWorker
         source_name_font_size = 60
         source_name_padding = 120        
         image_width = 1200
-        image_height = [600, (top_bottom_padding*2 + source_name_font_size+ source_name_padding + (lines)*quote_font_size + (lines-1)*quote_padding)].max
+        calculated_image_height = (top_bottom_padding*2 + source_name_font_size + source_name_padding + (lines)*quote_font_size + (lines-1)*quote_padding)
+        image_height = [600, calculated_image_height].max
 
-        position = calculate_position(600, text.split("\n").count, quote_font_size, quote_padding, source_name_font_size, source_name_padding)
+        position = calculate_position(image_height, text.split("\n").count, quote_font_size, quote_padding, source_name_font_size, source_name_padding)
         
-        quote_image = Magick::Image.new(1200,600) {
+        quote_image = Magick::Image.new(1200,image_height) {
             self.background_color = "##{color_scheme.background_color}"
             self.quality = 100
             self.density = 300
