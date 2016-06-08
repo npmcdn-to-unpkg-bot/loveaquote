@@ -31,17 +31,15 @@
           quoteText = $(this).parent().parent().parent().find(".quote-text").html();
           $('#not-logged-in-save-quote .quote .quote-text').html(quoteText);
           $('#not-logged-in-save-quote').modal('show');
-          ga('send', 'event', "Login", "Show", "Quote Like");
+          ga('send', 'event', "Login", "Show");
        });
        
        $("#not-logged-in-save-quote").on("click", ".btn-social", function() {
-         console.log("attempted");
-         ga('send', 'event', "Login", "Attempt", "Quote Like");
+         ga('send', 'event', "Login", "Attempt");
        });
        
        $("#not-logged-in-save-quote").on('hidden.bs.modal', function () {
-         console.log("hidden");
-         ga('send', 'event', "Login", "Hide", "Quote Like");
+         ga('send', 'event', "Login", "Hide");
        });       
     });
 </script>
