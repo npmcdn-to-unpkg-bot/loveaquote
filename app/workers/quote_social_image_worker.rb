@@ -64,12 +64,12 @@ class QuoteSocialImageWorker
     def save_quote_image(quote_image, quote)
         require 'fileutils'
         Thread.new do
-            FileUtils.mkdir_p(Rails.root + "public/generatedimages/quotes")
-            quote_image.write(Rails.root.join("public/generatedimages/quotes/#{quote.slug}.jpg"))
+            FileUtils.mkdir_p(Rails.root + "public/generatedimages/pinterest/quotes")
+            quote_image.write(Rails.root.join("public/generatedimages/pinterest/quotes/#{quote.slug}.jpg"))
             social_image = SocialImage.find_or_create_by(source_type: quote.class.name, source_id: quote.id)    
-            social_image.pinterest = Rails.root.join("public/generatedimages/quotes/#{quote.slug}.jpg").open
+            social_image.pinterest = Rails.root.join("public/generatedimages/pinterest/quotes/#{quote.slug}.jpg").open
             social_image.save
-            FileUtils.rm(Rails.root.join("public/generatedimages/quotes/#{quote.slug}.jpg"))
+            FileUtils.rm(Rails.root.join("public/generatedimages/pinterest/quotes/#{quote.slug}.jpg"))
         end
     end
     
