@@ -43,7 +43,7 @@
           <div class="social-sharing">
             <% cache "quote-meta-#{quote.id}-#{quote.updated_at.to_s(:number)}-source-#{quote.source.updated_at.to_s(:number)}" do %>
               <i class="fa fa-facebook share-quote-facebook fa-border" aria-hidden="true" data-url="<%= facebook_quote_url(quote, human: "t") %>"></i>              
-              <% if quote.image.present? %>
+              <% if quote.social_image.present? && quote.social_image.pinterest.present? %>
                 <i class="fa fa-pinterest fa-border share-quote-pinterest" aria-hidden="true" data-url="<%= pinterest_quote_url(quote, human: "t") %>"></i>
               <% end %>
               <i class="fa fa-twitter fa-border share-quote-twitter" aria-hidden="true" data-url="<%= twitter_quote_url(quote, human: "t") %>"></i>

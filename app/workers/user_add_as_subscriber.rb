@@ -12,7 +12,6 @@ class UserAddAsSubscriber
         subscriber.update_columns(
             first_name: user.first_name,
             last_name: user.last_name,
-            verified: true,
             time_zone: time_zone
         )
     end

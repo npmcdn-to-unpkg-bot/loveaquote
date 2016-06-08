@@ -107,6 +107,7 @@ class Admin::QuotesController < ApplicationController
   
   def image
     QuoteImageWorker.perform_async(@quote.id)
+    QuoteSocialImageWorker.perform_async(@quote.id)
     respond_to do |format|
       format.json { head :ok }
     end

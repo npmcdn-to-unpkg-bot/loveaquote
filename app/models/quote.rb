@@ -2,6 +2,8 @@ class Quote < ActiveRecord::Base
     include ActionView::Helpers::TextHelper
     include PgSearch
     include Loggable
+    include SocialImageable
+    
     mount_uploader :image, QuoteImageUploader
     pg_search_scope :search_by_text, against: :text, using: { tsearch: {prefix: true} }
 
@@ -25,7 +27,7 @@ class Quote < ActiveRecord::Base
     validates :source_type, presence: true
 
     before_validation :strip_text, :generate_slug
-    after_save :get_topic_suggestions
+    before_save :get_topic_suggestions
 
     def strip_text
         self.text = self.text.strip

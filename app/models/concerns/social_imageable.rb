@@ -7,6 +7,9 @@ module SocialImageable
     end
 
     def generate_social_image
-        SocialImageWorker.perform_async(self.class.name, self.id)
+        if self.class.name == "Quote"
+        else
+            SocialImageWorker.perform_async(self.class.name, self.id)
+        end
     end
 end
