@@ -1,5 +1,4 @@
 class QuoteGooglePlusWorker
-    include Sidekiq::Worker
 
     def perform(id, ua)
         quote = Quote.find(id)
