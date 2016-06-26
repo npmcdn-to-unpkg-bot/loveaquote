@@ -1,5 +1,4 @@
 class GoodreadsWorker
-  include Sidekiq::Worker
 
   def perform(id)
     book = Book.find(id)

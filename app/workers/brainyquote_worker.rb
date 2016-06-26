@@ -1,5 +1,4 @@
 class BrainyquoteWorker
-  include Sidekiq::Worker
 
   def perform(id)
     person = Person.find(id)

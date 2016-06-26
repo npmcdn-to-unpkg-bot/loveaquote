@@ -1,5 +1,4 @@
 class QuoteFacebookWorker
-    include Sidekiq::Worker
 
     def perform(id, ua)
         quote = Quote.find(id)

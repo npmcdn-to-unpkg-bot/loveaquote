@@ -1,5 +1,4 @@
 class SubscriberGeoipDataWorker
-  include Sidekiq::Worker
   
   def perform(id, ip)
     subscriber = Subscriber.find(id)

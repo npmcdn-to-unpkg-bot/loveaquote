@@ -1,6 +1,5 @@
 class UserAddAsSubscriber
-    include Sidekiq::Worker
-    
+
     def perform(id, ip)
         user = User.find(id)
         subscriber = Subscriber.where(email: user.email).first_or_create

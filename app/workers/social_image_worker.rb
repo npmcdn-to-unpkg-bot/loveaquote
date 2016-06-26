@@ -1,5 +1,4 @@
 class SocialImageWorker
-  include Sidekiq::Worker
   include ActionView::Helpers::TextHelper
 
   def perform(class_name, id)

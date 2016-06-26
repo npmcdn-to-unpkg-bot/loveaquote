@@ -1,5 +1,4 @@
 class QuoteSocialImageWorker
-    include Sidekiq::Worker
     include ActionView::Helpers::TextHelper
     
     def perform(id)

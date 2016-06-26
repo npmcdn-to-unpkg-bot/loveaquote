@@ -1,5 +1,4 @@
 class SuggestTopicsWorker
-  include Sidekiq::Worker
 
   def perform(id)
     quote = Quote.find(id)

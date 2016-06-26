@@ -1,6 +1,5 @@
 class UserGeoipDataWorker
-  include Sidekiq::Worker
-  
+
   def perform(id, ip)
     user = User.find(id)
     if user.city.blank? || user.last_sign_in_ip.to_s !=  ip
