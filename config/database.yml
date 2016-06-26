@@ -13,9 +13,3 @@ test:
   password: postgres
   template: template0
   host: localhost
-
-production:
-  adapter: postgresql
-  database: <%= ENV['DATABASE'] %>
-  username: <%= ENV['USERNAME'] %>
-  password: <%= ENV['PASSWORD'] %>

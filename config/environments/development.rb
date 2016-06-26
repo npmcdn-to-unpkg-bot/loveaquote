@@ -12,7 +12,7 @@ Rails.application.configure do
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = true
-  config.cache_store = :dalli_store, 'localhost:11211'
+  # config.cache_store = :dalli_store, 'localhost:11211'
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -40,5 +40,5 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = {host: "https://www.loveaquote.com"}
+  config.action_mailer.default_url_options = {host: "http://www.loveaquote.com"}
 end

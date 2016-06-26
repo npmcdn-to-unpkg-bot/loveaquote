@@ -242,8 +242,6 @@ Rails.application.routes.draw do
     resources :settings
     resources :nationalities
     resources :professions
-    require 'sidekiq/web'
-    mount Sidekiq::Web => '/sidekiq'
   end
 
   namespace :my do

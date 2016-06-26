@@ -12,14 +12,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-multiselect-rails'
 
-gem 'puma'
-gem 'figaro'
-gem 'whenever', :require => false
-
-gem 'sidekiq'
-gem 'redis-namespace'
-gem 'sinatra', :require => nil
-
 gem 'devise'
 gem "omniauth-google-oauth2"
 gem 'omniauth-facebook'
@@ -33,25 +25,14 @@ gem 'stringex'
 gem 'sitemap_generator'
 gem 'carrierwave', github: "carrierwaveuploader/carrierwave"
 gem 'rmagick'
-gem 'fog'
 
 gem 'pg'
 gem 'pg_search'
 
-gem 'dalli'
 gem "rack-cache"
 gem "geocoder"
 gem 'premailer-rails'
 gem 'web-console', '~> 2.0', group: :development
-
-group :development do
-  gem 'capistrano'
-  gem 'capistrano-rails'
-  gem 'capistrano-bundler'
-  gem 'capistrano3-puma'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'  
-end
 
 group :development, :test do
   gem 'rspec-rails'
