@@ -9,7 +9,7 @@ module SocialImageable
     def generate_social_image
         if self.class.name == "Quote"
         else
-            SocialImageWorker.perform_async(self.class.name, self.id)
+            Delayed::Job.enqueue SocialImageJob.new(self.class.name, self.id)
         end
     end
 end

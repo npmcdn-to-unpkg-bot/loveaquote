@@ -1,6 +1,5 @@
-class SuggestTopicsWorker
-
-  def perform(id)
+class SuggestTopicsJob < Struct.new(:id)
+  def perform
     quote = Quote.find(id)
     words = quote.text.split(" ")
     Topic.all.each do |topic|

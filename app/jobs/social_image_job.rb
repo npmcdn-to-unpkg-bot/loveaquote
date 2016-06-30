@@ -1,7 +1,7 @@
-class SocialImageWorker
+class SocialImageJob < Struct.new(:class_name, :id)
   include ActionView::Helpers::TextHelper
 
-  def perform(class_name, id)
+  def perform
     source = class_name.constantize.find(id)
 
     if source

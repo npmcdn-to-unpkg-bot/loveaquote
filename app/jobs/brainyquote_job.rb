@@ -1,6 +1,5 @@
-class BrainyquoteWorker
-
-  def perform(id)
+class BrainyquoteJob < Struct.new(:id)
+  def perform
     person = Person.find(id)
     require 'open-uri'
     fetch_url = person.fetch_url

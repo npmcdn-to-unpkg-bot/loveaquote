@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]  
   get 'static_pages/privacy_policy'
   get 'static_pages/about_us'
   get 'static_pages/disclaimer'

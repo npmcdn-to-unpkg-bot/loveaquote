@@ -1,6 +1,6 @@
 development:
   adapter: postgresql
-  database: loveaquote_development
+  database: laq_development
   username: postgres
   password: postgres
   host: localhost

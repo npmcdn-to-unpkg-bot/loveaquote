@@ -65,7 +65,7 @@ class Person < ActiveRecord::Base
     end
 
     def fetch_quotes
-        BrainyquoteWorker.perform_async(self.id) if self.fetch_url.present? && URI::parse(self.fetch_url).host == "www.brainyquote.com"
+        Delayed::Job.enqueue BrainyquoteJob.new(self.id) if self.fetch_url.present? && URI::parse(self.fetch_url).host == "www.brainyquote.com"
     end
 
     def self.cached_very_popular

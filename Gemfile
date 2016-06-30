@@ -29,6 +29,9 @@ gem 'rmagick'
 
 gem 'pg'
 gem 'pg_search'
+gem 'delayed_job_active_record'
+gem 'delayed_job_web'
+gem 'daemons'
 
 gem "rack-cache"
 gem "geocoder"

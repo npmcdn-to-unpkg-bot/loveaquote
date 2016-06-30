@@ -27,7 +27,7 @@ class Quote < ActiveRecord::Base
     validates :source_type, presence: true
 
     before_validation :strip_text, :generate_slug
-    before_save :get_topic_suggestions
+    after_save :get_topic_suggestions
 
     def strip_text
         self.text = self.text.strip
@@ -53,7 +53,7 @@ class Quote < ActiveRecord::Base
     end
 
     def get_topic_suggestions
-        SuggestTopicsWorker.perform_async(self.id)
+        Delayed::Job.enqueue SuggestTopicsJob.new(self.id)
     end
     
     scope :verified, -> {where(verified: true)}
