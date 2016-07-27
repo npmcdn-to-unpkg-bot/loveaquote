@@ -27,7 +27,7 @@
   	  <div class="row">
         <% @topics.each do |topic| %>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-          <%= link_to topic.name + " Quotes", topic_url(topic, format: :html), title: topic.name + " Quotes", class: "link-box text-center" %>
+          <%= link_to topic.name + " Quotes", topic_url(topic), title: topic.name + " Quotes", class: "link-box text-center" %>
         </div>
         <% end %>
       </div>
@@ -39,7 +39,7 @@
   	  <div class="row">
         <% @people.each do |person| %>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-          <%= link_to person.name + " Quotes", person_url(person, format: :html), title: person.name + " Quotes", class: "link-box text-center" %>
+          <%= link_to person.name + " Quotes", person_url(person), title: person.name + " Quotes", class: "link-box text-center" %>
         </div>
         <% end %>
       </div>
@@ -51,7 +51,7 @@
   	  <div class="row">
         <% @books.each do |book| %>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-          <%= link_to book.name + " Quotes", book_url(book, format: :html), title: book.name + " Quotes", class: "link-box text-center" %>
+          <%= link_to book.name + " Quotes", book_url(book), title: book.name + " Quotes", class: "link-box text-center" %>
         </div>
         <% end %>
       </div>
@@ -63,7 +63,7 @@
   	  <div class="row">
         <% @proverbs.each do |proverb| %>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-          <%= link_to proverb.name + " Proverbs", proverb_url(proverb, format: :html), title: proverb.name + " Proverbs", class: "link-box text-center" %>
+          <%= link_to proverb.name + " Proverbs", proverb_url(proverb), title: proverb.name + " Proverbs", class: "link-box text-center" %>
         </div>
         <% end %>
       </div>

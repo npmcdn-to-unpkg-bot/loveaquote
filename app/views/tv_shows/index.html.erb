@@ -1,6 +1,6 @@
 <% content_for :title, "Tv Show Quotes - Read quotes from Tv Shows" %>
 <% content_for :description, "Tv Show Quotes - Read quotes from Tv Shows" %>
-<% content_for :canonical, "#{tv_shows_url(format: :html)}" %>
+<% content_for :canonical, "#{tv_shows_url}" %>
 
 <% content_for :content do %>
   <div class="col-xs-12">
@@ -18,7 +18,7 @@
         <div class="row">
           <% tv_shows.each do |tv_show| %>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-                <%= link_to tv_show.name + " Quotes", tv_show_url(tv_show, format: :html), title: tv_show.name + " Quotes", class: "link-box text-center" %>
+                <%= link_to tv_show.name + " Quotes", tv_show_url(tv_show), title: tv_show.name + " Quotes", class: "link-box text-center" %>
             </div>
           <% end %>
         </div>

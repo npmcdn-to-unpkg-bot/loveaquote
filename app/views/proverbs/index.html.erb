@@ -1,6 +1,6 @@
 <% content_for :title, "Proverb Themes - Read proverbs by themes" %>
 <% content_for :description, "Proverb Themes - Read proverbs by themes" %>
-<% content_for :canonical, "#{proverbs_url(format: :html)}" %>
+<% content_for :canonical, "#{proverbs_url}" %>
 
 <% content_for :content do %>
   <div class="col-xs-12">
@@ -18,7 +18,7 @@
         <div class="row">
           <% proverbs.each do |proverb| %>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-                <%= link_to proverb.name + " Proverbs", proverb_url(proverb, format: :html), title: proverb.name + " Proverb", class: "link-box text-center" %>
+                <%= link_to proverb.name + " Proverbs", proverb_url(proverb), title: proverb.name + " Proverb", class: "link-box text-center" %>
             </div>
           <% end %>
         </div>

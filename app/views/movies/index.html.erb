@@ -1,6 +1,6 @@
 <% content_for :title, "Movie Quotes - Read quotes from Movies" %>
 <% content_for :description, "Movie Quotes - Read quotes from Movies" %>
-<% content_for :canonical, "#{movies_url(format: :html)}" %>
+<% content_for :canonical, "#{movies_url}" %>
 
 <% content_for :content do %>
   <div class="col-xs-12">
@@ -18,7 +18,7 @@
         <div class="row">
           <% movies.each do |movie| %>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-                <%= link_to movie.name + " Quotes", movie_url(movie, format: :html), title: movie.name + " Quotes", class: "link-box text-center" %>
+                <%= link_to movie.name + " Quotes", movie_url(movie), title: movie.name + " Quotes", class: "link-box text-center" %>
             </div>
           <% end %>
         </div>
