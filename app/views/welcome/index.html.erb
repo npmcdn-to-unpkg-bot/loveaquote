@@ -58,7 +58,7 @@
       <%= link_to "#{Book.where(very_popular: false).count} More Books ...", books_url, class: "link-box text-center" %>
     <% end %>
     
-    <% if proverbs.any? %>
+    <% if @proverbs.any? %>
       <h2 class="text-center">Proverbs<br><small>Read Proverbs by Theme</small></h2>
   	  <div class="row">
         <% @proverbs.each do |proverb| %>
