@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630143418) do
+ActiveRecord::Schema.define(version: 20160727183211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,13 +38,16 @@ ActiveRecord::Schema.define(version: 20160630143418) do
     t.string   "name"
     t.string   "fetch_url"
     t.string   "slug"
-    t.boolean  "published",    default: false, null: false
-    t.boolean  "popular",      default: false, null: false
-    t.boolean  "very_popular", default: false, null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "image"
+    t.boolean  "published",          default: false, null: false
+    t.boolean  "popular",            default: false, null: false
+    t.boolean  "very_popular",       default: false, null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "isbn"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "books", ["slug"], name: "index_books_on_slug", using: :btree
@@ -65,12 +68,15 @@ ActiveRecord::Schema.define(version: 20160630143418) do
   create_table "characters", force: :cascade do |t|
     t.string   "name"
     t.string   "slug"
-    t.string   "image"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.boolean  "published",    default: false, null: false
-    t.boolean  "popular",      default: false, null: false
-    t.boolean  "very_popular", default: false, null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
+    t.boolean  "published",          default: false, null: false
+    t.boolean  "popular",            default: false, null: false
+    t.boolean  "very_popular",       default: false, null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "color_schemes", force: :cascade do |t|
@@ -161,9 +167,12 @@ ActiveRecord::Schema.define(version: 20160630143418) do
     t.boolean  "published"
     t.boolean  "popular"
     t.boolean  "very_popular"
-    t.string   "image"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "nationalities", force: :cascade do |t|
@@ -176,15 +185,18 @@ ActiveRecord::Schema.define(version: 20160630143418) do
     t.string   "name"
     t.string   "slug"
     t.string   "fetch_url"
-    t.boolean  "published",      default: false, null: false
-    t.boolean  "popular",        default: false, null: false
-    t.boolean  "very_popular",   default: false, null: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "image"
+    t.boolean  "published",          default: false, null: false
+    t.boolean  "popular",            default: false, null: false
+    t.boolean  "very_popular",       default: false, null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.integer  "nationality_id"
     t.date     "born"
     t.date     "died"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "people", ["slug"], name: "index_people_on_slug", using: :btree
@@ -211,9 +223,12 @@ ActiveRecord::Schema.define(version: 20160630143418) do
     t.boolean  "published"
     t.boolean  "popular"
     t.boolean  "very_popular"
-    t.string   "image"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "quote_of_the_days", force: :cascade do |t|
@@ -260,10 +275,13 @@ ActiveRecord::Schema.define(version: 20160630143418) do
     t.integer  "character_id"
     t.integer  "quote_of_the_day_count",  default: 0
     t.boolean  "verified",                default: false
-    t.string   "image"
     t.string   "slug"
     t.integer  "image_width"
     t.integer  "image_height"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "quotes", ["character_id"], name: "index_quotes_on_character_id", using: :btree
@@ -324,14 +342,26 @@ ActiveRecord::Schema.define(version: 20160630143418) do
   end
 
   create_table "social_images", force: :cascade do |t|
-    t.integer  "source_id",   null: false
-    t.string   "source_type", null: false
-    t.string   "twitter"
-    t.string   "facebook"
-    t.string   "google_plus"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "pinterest"
+    t.integer  "source_id",                null: false
+    t.string   "source_type",              null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "twitter_file_name"
+    t.string   "twitter_content_type"
+    t.integer  "twitter_file_size"
+    t.datetime "twitter_updated_at"
+    t.string   "facebook_file_name"
+    t.string   "facebook_content_type"
+    t.integer  "facebook_file_size"
+    t.datetime "facebook_updated_at"
+    t.string   "google_plus_file_name"
+    t.string   "google_plus_content_type"
+    t.integer  "google_plus_file_size"
+    t.datetime "google_plus_updated_at"
+    t.string   "pinterest_file_name"
+    t.string   "pinterest_content_type"
+    t.integer  "pinterest_file_size"
+    t.datetime "pinterest_updated_at"
   end
 
   add_index "social_images", ["source_type", "source_id"], name: "index_social_images_on_source_type_and_source_id", using: :btree
@@ -378,13 +408,16 @@ ActiveRecord::Schema.define(version: 20160630143418) do
   create_table "topics", force: :cascade do |t|
     t.string   "name"
     t.string   "slug"
-    t.boolean  "popular",      default: false, null: false
-    t.boolean  "very_popular", default: false, null: false
-    t.boolean  "published",    default: false, null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "image"
+    t.boolean  "popular",            default: false, null: false
+    t.boolean  "very_popular",       default: false, null: false
+    t.boolean  "published",          default: false, null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "byline"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "topics", ["slug"], name: "index_topics_on_slug", using: :btree
@@ -395,9 +428,12 @@ ActiveRecord::Schema.define(version: 20160630143418) do
     t.boolean  "published"
     t.boolean  "popular"
     t.boolean  "very_popular"
-    t.string   "image"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "tweetable_quotes", force: :cascade do |t|

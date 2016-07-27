@@ -4,7 +4,17 @@ class Quote < ActiveRecord::Base
     include Loggable
     include SocialImageable
     
-    mount_uploader :image, QuoteImageUploader
+    has_attached_file :image, 
+        styles: { medium: "600x600>" },
+        url: "/uploads/:class/:id/:slug_:style.:extension",
+        path: ":rails_root/public:url"
+        
+    validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+    
+    Paperclip.interpolates :slug  do |attachment, style|
+        attachment.instance.slug
+    end
+    
     pg_search_scope :search_by_text, against: :text, using: { tsearch: {prefix: true} }
 
     # belongs to source
@@ -59,7 +69,7 @@ class Quote < ActiveRecord::Base
     scope :verified, -> {where(verified: true)}
     scope :filter_by_topic, -> (id) {joins(:quote_topics).where(quote_topics: {topic_id: id})}
     
-    scope :with_image, -> (count) { joins(:quote_of_the_days).where.not(image: '').where(image_width: 1200, image_height: 600).order("quote_of_the_days.created_at DESC").limit(count)}
+    scope :with_image, -> (count) { where(image_width: 1200, image_height: 600).order(created_at: :DESC).limit(count) }
     
     def self.cached_with_image(count)
         Rails.cache.fetch("quotes-with-images-#{count.to_s}-#{Date.today.to_s(:number)}") do

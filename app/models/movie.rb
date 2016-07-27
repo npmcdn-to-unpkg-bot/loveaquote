@@ -4,6 +4,7 @@ class Movie < ActiveRecord::Base
     include Loggable
     include Searchable
     include Seoable
+    include Imageable    
     include SocialImageable
     include TimeLineable
     include SearchSuggestable
@@ -19,8 +20,6 @@ class Movie < ActiveRecord::Base
     has_many :character_sources, as: :source, dependent: :destroy
     accepts_nested_attributes_for :character_sources, reject_if: :all_blank, allow_destroy: true
     has_many :characters, through: :character_sources
-
-    mount_uploader :image, ImageUploader
 
     validates :name, presence: true, uniqueness: true, blank: false
     validates :slug, presence: true, uniqueness: true, blank: false

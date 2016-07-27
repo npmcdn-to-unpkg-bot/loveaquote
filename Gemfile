@@ -24,8 +24,8 @@ gem 'cocoon'
 gem 'kaminari', github: 'amatsuda/kaminari'
 gem 'stringex'
 gem 'sitemap_generator'
-gem 'carrierwave', github: "carrierwaveuploader/carrierwave"
 gem 'rmagick'
+gem "paperclip", "~> 5.0.0"
 
 gem 'pg'
 gem 'pg_search'

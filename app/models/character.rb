@@ -3,6 +3,7 @@ class Character < ActiveRecord::Base
     include Loggable
     include Searchable
     include Seoable
+    include Imageable
     include SocialImageable
     include TimeLineable
     include SearchSuggestable
@@ -14,8 +15,6 @@ class Character < ActiveRecord::Base
     has_many :books, through: :character_sources, source: :source, source_type: "Book"
     has_many :people, through: :character_sources
     has_many :quotes
-
-    mount_uploader :image, ImageUploader
 
     validates :name, presence: true, uniqueness: true, blank: false
 

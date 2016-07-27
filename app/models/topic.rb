@@ -3,6 +3,7 @@ class Topic < ActiveRecord::Base
     include Loggable
     include Searchable
     include Seoable
+    include Imageable    
     include SocialImageable
     include TimeLineable
     include SearchSuggestable

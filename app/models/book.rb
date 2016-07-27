@@ -4,6 +4,7 @@ class Book < ActiveRecord::Base
     include Loggable
     include Searchable
     include Seoable
+    include Imageable
     include SocialImageable
     include TimeLineable
     include SearchSuggestable
@@ -22,9 +23,6 @@ class Book < ActiveRecord::Base
     has_many :compositions, dependent: :destroy
     accepts_nested_attributes_for :compositions, reject_if: :all_blank, allow_destroy: true
     has_many :people, through: :compositions
-
-
-    mount_uploader :image, ImageUploader
 
     # name should be present and unique
     # slug should be present and unique

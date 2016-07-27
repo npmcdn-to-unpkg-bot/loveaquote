@@ -4,6 +4,7 @@ class Person < ActiveRecord::Base
     include Loggable
     include Searchable
     include Seoable
+    include Imageable    
     include SocialImageable
     include TimeLineable
     include SearchSuggestable
@@ -28,8 +29,6 @@ class Person < ActiveRecord::Base
     has_many :compositions
     has_many :books, through: :compositions
     has_many :book_quotes, through: :books, source: :quotes
-
-    mount_uploader :image, ImageUploader
 
     # name should be present and unique
     # slug should be present and unique
