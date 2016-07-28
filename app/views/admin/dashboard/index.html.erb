@@ -4,123 +4,86 @@
     <div class="col-md-6">
       <div class="row">
         <div class="col-sm-4">
-          <div class="tile-stats tile-aqua">
-            <div class="icon"><i class="fa fa-quote-left"></i></div>
-            <div class="num"><%= number_with_delimiter(Quote.count) %></div>
-            <h3>Quotes</h3>
-          </div>          
+          <%= link_to admin_quotes_url do %>
+            <div class="tile-stats tile-aqua">
+              <div class="icon"><i class="fa fa-quote-left"></i></div>
+              <div class="num"><%= number_with_delimiter(Quote.count) %></div>
+              <h3>Quotes</h3>
+            </div>
+          <% end %>
         </div>
     
         <div class="col-sm-4">
-          <div class="tile-stats tile-aqua">
-            <div class="icon"><i class="fa fa-exchange"></i></div>
-            <div class="num"><%= number_with_delimiter(Topic.count) %></div>
-            <h3>Topics</h3>
-          </div>          
+          <%= link_to admin_topics_url do %>
+            <div class="tile-stats tile-aqua">
+              <div class="icon"><i class="fa fa-exchange"></i></div>
+              <div class="num"><%= number_with_delimiter(Topic.count) %></div>
+              <h3>Topics</h3>
+            </div>
+          <% end %>
         </div>      
         
         <div class="col-sm-4">
-          <div class="tile-stats tile-aqua">
-            <div class="icon"><i class="fa fa-user"></i></div>
-            <div class="num"><%= number_with_delimiter(Person.count) %></div>
-            <h3>People</h3>
-          </div>          
+          <%= link_to admin_people_url do %>
+            <div class="tile-stats tile-aqua">
+              <div class="icon"><i class="fa fa-user"></i></div>
+              <div class="num"><%= number_with_delimiter(Person.count) %></div>
+              <h3>People</h3>
+            </div>          
+          <% end %>
         </div>
         
         <div class="col-sm-4">
-          <div class="tile-stats tile-aqua">
-            <div class="icon"><i class="fa fa-book"></i></div>
-            <div class="num"><%= number_with_delimiter(Book.count) %></div>
-            <h3>Books</h3>
-          </div>          
+          <%= link_to admin_books_url do %>
+            <div class="tile-stats tile-aqua">
+              <div class="icon"><i class="fa fa-book"></i></div>
+              <div class="num"><%= number_with_delimiter(Book.count) %></div>
+              <h3>Books</h3>
+            </div>          
+          <% end %>
         </div>     
         
         <div class="col-sm-4">
-          <div class="tile-stats tile-aqua">
-            <div class="icon"><i class="fa fa-youtube-play"></i></div>
-            <div class="num"><%= number_with_delimiter(Movie.count) %></div>
-            <h3>Movies</h3>
-          </div>          
+          <%= link_to admin_movies_url do %>
+            <div class="tile-stats tile-aqua">
+              <div class="icon"><i class="fa fa-youtube-play"></i></div>
+              <div class="num"><%= number_with_delimiter(Movie.count) %></div>
+              <h3>Movies</h3>
+            </div>          
+          <% end %>
         </div>       
         
         <div class="col-sm-4">
-          <div class="tile-stats tile-aqua">
-            <div class="icon"><i class="fa fa-instagram"></i></div>
-            <div class="num"><%= number_with_delimiter(TvShow.count) %></div>
-            <h3>Tv Shows</h3>
-          </div>          
+          <%= link_to admin_tv_shows_url do %>
+            <div class="tile-stats tile-aqua">
+              <div class="icon"><i class="fa fa-instagram"></i></div>
+              <div class="num"><%= number_with_delimiter(TvShow.count) %></div>
+              <h3>Tv Shows</h3>
+            </div>          
+          <% end %>
         </div> 
         
         <div class="col-sm-4">
-          <div class="tile-stats tile-orange">
-            <div class="icon"><i class="fa fa-users"></i></div>
-            <div class="num"><%= number_with_delimiter(User.count) %></div>
-            <h3>Users</h3>
-          </div>          
+          <%= link_to admin_users_url do %>
+            <div class="tile-stats tile-orange">
+              <div class="icon"><i class="fa fa-users"></i></div>
+              <div class="num"><%= number_with_delimiter(User.count) %></div>
+              <h3>Users</h3>
+            </div>          
+          <% end %>
         </div>
         
         <div class="col-sm-4">
-          <div class="tile-stats tile-orange">
-            <div class="icon"><i class="fa fa-envelope-o"></i></div>
-            <div class="num"><%= number_with_delimiter(Subscriber.count) %></div>
-            <h3>Subscribers</h3>
-          </div>          
+          <%= link_to admin_subscribers_url do %>
+            <div class="tile-stats tile-orange">
+              <div class="icon"><i class="fa fa-envelope-o"></i></div>
+              <div class="num"><%= number_with_delimiter(Subscriber.count) %></div>
+              <h3>Subscribers</h3>
+            </div>          
+          <% end %>
         </div>           
         
       </div>
-    </div>
-    <div class="col-md-3">
-      <div class="row">
-        <div class="col-sm-12">
-          <p><%= link_to "Regenerate Social Images", admin_regenerate_social_images_url, remote: true, "data-type": "json", class: "btn btn-default regenerate-all-quote-images" %></p>
-          <p><%= link_to "Regenerate Quote Images", admin_regenerate_quote_images_url, remote: true, "data-type": "json", class: "btn btn-default regenerate-all-social-images" %></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <h3 style="margin-top: 0px">Recently Published</h3>
-      <table class="table table-striped table-bordered table-hover">
-        <tbody>
-          <% @time_lines.each do |time_line| %>
-            <tr>
-              <td width="10%" class="text-center">
-                <% case time_line.item.class.name %>
-                <% when "Person" %>
-                <%= '<i class="fa fa-user"></i>'.html_safe %>
-                <% when "Book" %>
-                <%= '<i class="fa fa-book"></i>'.html_safe %>
-                <% when "Proverb" %>
-                <%= '<i class="fa fa-flag"></i>'.html_safe %>
-                <% when "Movie" %>
-                <%= '<i class="fa fa-youtube-play"></i>'.html_safe %>            
-                <% when "TvShow" %>
-                <%= '<i class="fa fa-instagram"></i>'.html_safe %>            
-                <% when "Topic" %>
-                <%= '<i class="fa fa-exchange"></i>'.html_safe %>            
-                <% end %>
-              </td>
-              <td width="90%">
-                <% case time_line.item.class.name %>
-                <% when "Person" %>
-                <%= link_to time_line.item.name + " Quotes", admin_model_url(time_line.item) %>
-                <% when "Book" %>
-                <%= link_to time_line.item.name + " Quotes", admin_model_url(time_line.item) %>
-                <% when "Proverb" %>
-                <%= link_to time_line.item.name + " Proverbs", admin_model_url(time_line.item) %>
-                <% when "Movie" %>
-                <%= link_to time_line.item.name + " Quotes", admin_model_url(time_line.item) %>           
-                <% when "TvShow" %>
-                <%= link_to time_line.item.name + " Quotes", admin_model_url(time_line.item) %>            
-                <% when "Topic" %>
-                <%= link_to time_line.item.name + " Quotes", admin_model_url(time_line.item) %>            
-                <% else %>
-                <%= link_to time_line.item.name + " Quotes", admin_model_url(time_line.item) %>
-                <% end %>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>      
     </div>
   </div>
 </div>
