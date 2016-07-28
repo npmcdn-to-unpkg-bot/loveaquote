@@ -15,18 +15,18 @@ class CharactersController < ApplicationController
   end
 
   def twitter
-    url = URI.encode(character_url(@character, format: :html))
+    url = URI.encode(character_url( @character ))
     text = CGI::escape("#{@character.name} Quotes")
     redirect_to "https://twitter.com/intent/tweet?text=#{text}&amp;url=#{url}&amp;via=DoYouLoveAQuote"
   end
 
   def facebook
-    url = URI.encode(character_url(@character, format: :html))
+    url = URI.encode(character_url( @character ))
     redirect_to "https://www.facecharacter.com/sharer/sharer.php?u=#{url}"
   end
 
   def pinterest
-    url = URI.encode(character_url(@character, format: :html))
+    url = URI.encode(character_url( @character ))
     media = URI.encode(@character.social_image.pinterest_url)
     description = CGI::escape(@character.name +  ' #quotes')
     redirect_to "http://www.pinterest.com/pin/create/charactermarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"

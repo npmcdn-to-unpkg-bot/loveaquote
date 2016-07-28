@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.popular.published.order(name: "ASC").group_by{|a| a.name[0]}
-    @canonical = topics_url(format: :html)
+    @canonical = topics_url
   end
 
   def show
@@ -13,22 +13,22 @@ class TopicsController < ApplicationController
   def alphabet
     @alphabet = params[:alphabet].upcase
     @topics = Topic.by_alphabet(@alphabet).published.order(name: "ASC")
-    @canonical = alphabet_topics_url(format: :html)
+    @canonical = alphabet_topics_url
   end
 
   def twitter
-    url = URI.encode(topic_url(@topic, format: :html))
+    url = URI.encode(topic_url(@topic))
     text = CGI::escape("#{@topic.name} Quotes")
     redirect_to "https://twitter.com/intent/tweet?text=#{text}&amp;url=#{url}&amp;via=DoYouLoveAQuote"
   end
 
   def facebook
-    url = URI.encode(topic_url(@topic, format: :html))
+    url = URI.encode(topic_url(@topic))
     redirect_to "https://www.facebook.com/sharer/sharer.php?u=#{url}"
   end
 
   def pinterest
-    url = URI.encode(topic_url(@topic, format: :html))
+    url = URI.encode(topic_url(@topic))
     media = URI.encode(@topic.social_image.pinterest_url)
     description = CGI::escape(@topic.name +  ' #quotes')
     redirect_to "http://www.pinterest.com/pin/create/topicmarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"

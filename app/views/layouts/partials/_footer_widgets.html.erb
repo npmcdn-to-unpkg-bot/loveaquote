@@ -25,9 +25,9 @@
 					<% TimeLine.recent.each do |recent| %>
 						<li>
 							<% if recent.item.class.name == "Proverb" %>
-								<%= link_to recent.item.name + " Proverbs", model_url(recent.item, format: :html), title: recent.item.name + " Proverbs" %>
+								<%= link_to recent.item.name + " Proverbs", model_url(recent.item), title: recent.item.name + " Proverbs" %>
 							<% else %>
-								<%= link_to recent.item.name + " Quotes", model_url(recent.item, format: :html), title: recent.item.name + " Quotes" %>
+								<%= link_to recent.item.name + " Quotes", model_url(recent.item), title: recent.item.name + " Quotes" %>
 							<% end %>
 						</li>
 					<% end %>

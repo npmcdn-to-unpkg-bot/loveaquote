@@ -15,18 +15,18 @@ class MoviesController < ApplicationController
   end
 
   def twitter
-    url = URI.encode(movie_url(@movie, format: :html))
+    url = URI.encode(movie_url( @movie ))
     text = CGI::escape("#{@movie.name} Quotes")
     redirect_to "https://twitter.com/intent/tweet?text=#{text}&amp;url=#{url}&amp;via=DoYouLoveAQuote"
   end
 
   def facebook
-    url = URI.encode(movie_url(@movie, format: :html))
+    url = URI.encode(movie_url( @movie ))
     redirect_to "https://www.facebook.com/sharer/sharer.php?u=#{url}"
   end
 
   def pinterest
-    url = URI.encode(movie_url(@movie, format: :html))
+    url = URI.encode(movie_url( @movie ))
     media = URI.encode(@movie.social_image.pinterest_url)
     description = CGI::escape(@movie.name +  ' #quotes')
     redirect_to "http://www.pinterest.com/pin/create/moviemarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"

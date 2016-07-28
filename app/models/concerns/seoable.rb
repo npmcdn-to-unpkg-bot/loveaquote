@@ -81,19 +81,19 @@ module Seoable
     def add_redirect
         case self.class.name
         when "Topic"
-            Redirect.create(from: "/topics/#{self.slug_was}", to: "/topics/#{self.slug}.html") if self.slug_changed?
+            Redirect.create(from: "/topics/#{self.slug_was}", to: "/topics/#{self.slug}") if self.slug_changed?
         when "Person"
-            Redirect.create(from: "/people/#{self.slug_was}", to: "/people/#{self.slug}.html") if self.slug_changed?
+            Redirect.create(from: "/people/#{self.slug_was}", to: "/people/#{self.slug}") if self.slug_changed?
         when "Book"
-            Redirect.create(from: "/books/#{self.slug_was}", to: "/books/#{self.slug}.html") if self.slug_changed?
+            Redirect.create(from: "/books/#{self.slug_was}", to: "/books/#{self.slug}") if self.slug_changed?
         when "Movie"
-            Redirect.create(from: "/movies/#{self.slug_was}", to: "/movies/#{self.slug}.html") if self.slug_changed?
+            Redirect.create(from: "/movies/#{self.slug_was}", to: "/movies/#{self.slug}") if self.slug_changed?
         when "TvShow"
-            Redirect.create(from: "/tv-shows/#{self.slug_was}", to: "/tv-shows/#{self.slug}.html") if self.slug_changed?
+            Redirect.create(from: "/tv-shows/#{self.slug_was}", to: "/tv-shows/#{self.slug}") if self.slug_changed?
         when "Character"
-            Redirect.create(from: "/characters/#{self.slug_was}", to: "/characters/#{self.slug}.html") if self.slug_changed?            
+            Redirect.create(from: "/characters/#{self.slug_was}", to: "/characters/#{self.slug}") if self.slug_changed?            
         when "Proverb"
-            Redirect.create(from: "/proverbs/#{self.slug_was}", to: "/proverbs/#{self.slug}.html") if self.slug_changed?                        
+            Redirect.create(from: "/proverbs/#{self.slug_was}", to: "/proverbs/#{self.slug}") if self.slug_changed?                        
         end
     end
     

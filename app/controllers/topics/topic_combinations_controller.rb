@@ -17,7 +17,7 @@ class Topics::TopicCombinationsController < ApplicationController
   def alphabet
     @alphabet = params[:alphabet].upcase
     @topic_combination_combinations = topic_combination.by_alphabet(@alphabet).published.order(name: "ASC")
-    @canonical = alphabet_topic_topic_combinations_url(format: :html)
+    @canonical = alphabet_topic_topic_combinations_url
   end
   
   def twitter

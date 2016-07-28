@@ -19,18 +19,18 @@ class BooksController < ApplicationController
   end
 
   def twitter
-    url = URI.encode(book_url(@book, format: :html))
+    url = URI.encode(book_url( @book ))
     text = CGI::escape("#{@book.name} Quotes")
     redirect_to "https://twitter.com/intent/tweet?text=#{text}&amp;url=#{url}&amp;via=DoYouLoveAQuote"
   end
 
   def facebook
-    url = URI.encode(book_url(@book, format: :html))
+    url = URI.encode(book_url( @book ))
     redirect_to "https://www.facebook.com/sharer/sharer.php?u=#{url}"
   end
 
   def pinterest
-    url = URI.encode(book_url(@book, format: :html))
+    url = URI.encode(book_url( @book ))
     media = URI.encode(@book.social_image.pinterest_url)
     description = CGI::escape(@book.name +  ' #quotes')
     redirect_to "http://www.pinterest.com/pin/create/bookmarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"

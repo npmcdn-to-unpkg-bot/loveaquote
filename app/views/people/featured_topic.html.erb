@@ -1,4 +1,4 @@
-<% content_for :canonical, "#{featured_topic_person_url(@person, @featured_topic, format: :html)}" %>
+<% content_for :canonical, "#{featured_topic_person_url(@person, @featured_topic)}" %>
 <% content_for :title, "#{@person.name} Quotes on #{@featured_topic.topic.name}" %>
 <% content_for :description, "Quotes by #{@person.name}. Best collection of #{@person.name} quotes. Read, comment and share these quotes."%>
 

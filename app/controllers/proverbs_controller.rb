@@ -20,18 +20,18 @@ class ProverbsController < ApplicationController
   end
 
   def twitter
-    url = URI.encode(proverb_url(@proverb, format: :html))
+    url = URI.encode(proverb_url(@proverb))
     text = CGI::escape("#{@proverb.name} Quotes")
     redirect_to "https://twitter.com/intent/tweet?text=#{text}&amp;url=#{url}&amp;via=DoYouLoveAQuote"
   end
 
   def facebook
-    url = URI.encode(proverb_url(@proverb, format: :html))
+    url = URI.encode(proverb_url(@proverb))
     redirect_to "https://www.facebook.com/sharer/sharer.php?u=#{url}"
   end
 
   def pinterest
-    url = URI.encode(proverb_url(@proverb, format: :html))
+    url = URI.encode(proverb_url(@proverb))
     media = URI.encode(@proverb.social_image.pinterest_url)
     description = CGI::escape("#{@proverb.quotes.count} #{@proverb.name} Proverbs - ##{@proverb.name.downcase} #proverbs")
     redirect_to "http://www.pinterest.com/pin/create/proverbmarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"

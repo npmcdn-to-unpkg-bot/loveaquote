@@ -1,4 +1,4 @@
-<% content_for :canonical, "#{topics_topic_combination_url(@topic, format: :html)}" %>
+<% content_for :canonical, "#{topics_topic_combination_url(@topic)}" %>
 <% content_for :title, "#{@topic.name} Quotes - #{@topic.quotes.count.to_s} quotes about #{@topic.name}"  %>
 <% content_for :description, "Quotes about #{@topic.name}. Best collection of #{@topic.name} quotes. Read, comment and share these quotes." %>
 

@@ -15,18 +15,18 @@ class TvShowsController < ApplicationController
   end
 
   def twitter
-    url = URI.encode(tv_show_url(@tv_show, format: :html))
+    url = URI.encode(tv_show_url(@tv_show))
     text = CGI::escape("#{@tv_show.name} Quotes")
     redirect_to "https://twitter.com/intent/tweet?text=#{text}&amp;url=#{url}&amp;via=DoYouLoveAQuote"
   end
 
   def facebook
-    url = URI.encode(tv_show_url(@tv_show, format: :html))
+    url = URI.encode(tv_show_url(@tv_show))
     redirect_to "https://www.facebook.com/sharer/sharer.php?u=#{url}"
   end
 
   def pinterest
-    url = URI.encode(tv_show_url(@tv_show, format: :html))
+    url = URI.encode(tv_show_url(@tv_show))
     media = URI.encode(@tv_show.social_image.pinterest_url)
     description = CGI::escape(@tv_show.name +  ' #quotes')
     redirect_to "http://www.pinterest.com/pin/create/tv_showmarklet/?url=#{url}&amp;media=#{media}&amp;description=#{description}"

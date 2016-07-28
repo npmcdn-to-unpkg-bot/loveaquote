@@ -1,4 +1,4 @@
-SitemapGenerator::Sitemap.default_host = "https://www.loveaquote.com"
+SitemapGenerator::Sitemap.default_host = "http://www.loveaquote.com"
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
@@ -21,30 +21,30 @@ SitemapGenerator::Sitemap.create do
   # Add all authors:
 
   Person.published.each do |person|
-    add person_path(person, format: :html), :lastmod => person.updated_at
+    add person_path(person), :lastmod => person.updated_at
   end
 
   Book.published.each do |book|
-    add book_path(book, format: :html), :lastmod => book.updated_at
+    add book_path(book), :lastmod => book.updated_at
   end
 
   Movie.published.each do |movie|
-    add movie_path(movie, format: :html), :lastmod => movie.updated_at
+    add movie_path(movie), :lastmod => movie.updated_at
   end
 
   TvShow.published.each do |tv_show|
-    add tv_show_path(tv_show, format: :html), :lastmod => tv_show.updated_at
+    add tv_show_path(tv_show), :lastmod => tv_show.updated_at
   end
 
   Character.published.each do |character|
-    add character_path(character, format: :html), :lastmod => character.updated_at
+    add character_path(character), :lastmod => character.updated_at
   end
 
   Topic.published.each do |topic|
-    add topic_path(topic, format: :html), :lastmod => topic.updated_at
+    add topic_path(topic), :lastmod => topic.updated_at
   end
 
   TopicCombination.all.each do |topic|
-    add topics_topic_combination_path(topic, format: :html), :lastmod => topic.updated_at
+    add topics_topic_combination_path(topic), :lastmod => topic.updated_at
   end
 end

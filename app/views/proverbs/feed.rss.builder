@@ -5,7 +5,7 @@ xml.rss :version => "2.0" do
   xml.channel do
     xml.title "LoveAQuote Proverb Feed"
     xml.description "The Quote Lover's Community"
-    xml.link "#{proverbs_url(format: :html)}"
+    xml.link "#{proverbs_url}"
     xml.language "en"
 
     for timeline in @timelines
@@ -13,8 +13,8 @@ xml.rss :version => "2.0" do
         xml.item do
           xml.title timeline.item.name + " Proverbs"
           xml.pubDate timeline.created_at.to_s(:rfc822)
-          xml.link model_url(timeline.item, format: :html)
-          xml.guid model_url(timeline.item, format: :html)
+          xml.link model_url(timeline.item)
+          xml.guid model_url(timeline.item)
         end
       end
     end

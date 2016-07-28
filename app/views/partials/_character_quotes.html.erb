@@ -8,7 +8,7 @@
       <% model.characters.published.each do |character| %>
         <div class="column">
           <div class="more-link">
-            <%= link_to character.name + " Quotes", character_url(character, format: :html), title: character.name + " Quotes" %>
+            <%= link_to character.name + " Quotes", character_url(character), title: character.name + " Quotes" %>
           </div>
         </div>
       <% end %>

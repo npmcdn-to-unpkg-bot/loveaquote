@@ -18,7 +18,7 @@
           <% end %>
         </div>
         <div class="col-sm-9">
-          <h2 class="text-right"><%= link_to "view", book_url(@book, format: :html), class: "btn btn-primary btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_book_url(@book), class: "btn btn-blue btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %> <%= @book.name %></h2>
+          <h2 class="text-right"><%= link_to "view", book_url(@book), class: "btn btn-primary btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_book_url(@book), class: "btn btn-blue btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %> <%= @book.name %></h2>
           <h4 class="text-right"><em>by</em>
             <% @book.people.each do |person| %>
               <%= link_to person.name, admin_person_url(person) %>

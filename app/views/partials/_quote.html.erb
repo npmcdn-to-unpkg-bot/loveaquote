@@ -10,11 +10,11 @@
         <% if context.class.name == "Topic" %>
           <% if quote.source.class.name == "Proverb" %>
             <div class="quote-source">
-              <%= link_to quote.source.name + " Proverb", model_url(quote.source, format: :html) %>
+              <%= link_to quote.source.name + " Proverb", model_url(quote.source) %>
             </div>          
           <% else %>
             <div class="quote-source">
-              <%= link_to quote.source.name, model_url(quote.source, format: :html) %>
+              <%= link_to quote.source.name, model_url(quote.source) %>
             </div>          
           <% end %>
         <% end %>
@@ -25,7 +25,7 @@
         <% if quote.topics.where.not(id: context.id).any? %>
           <div class="quote-topics">
             <p class="no-margin">
-              <%= quote.topics.where.not(id: context.id).map{|t| link_to t.name, topic_url(t, format: :html)}.join(', ').html_safe %>
+              <%= quote.topics.where.not(id: context.id).map{|t| link_to t.name, topic_url(t)}.join(', ').html_safe %>
             </p>
           </div>
         <% end %>
@@ -33,7 +33,7 @@
         <% if quote.topics.any? %>
             <div class="quote-topics">
               <p class="no-margin">
-                <%= quote.topics.map{|t| link_to t.name, topic_url(t, format: :html)}.join(', ').html_safe %>
+                <%= quote.topics.map{|t| link_to t.name, topic_url(t)}.join(', ').html_safe %>
               </p>
             </div>
           <% end %>      

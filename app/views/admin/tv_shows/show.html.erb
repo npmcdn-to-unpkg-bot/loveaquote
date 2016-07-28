@@ -16,7 +16,7 @@
           <% end %>
         </div>
         <div class="col-sm-9">
-          <h2 class="text-right"><%= link_to "view", tv_show_url(@tv_show, format: :html), class: "btn btn-primary btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_tv_show_url(@tv_show), class: "btn btn-blue btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %> <%= @tv_show.name %></h2>
+          <h2 class="text-right"><%= link_to "view", tv_show_url(@tv_show), class: "btn btn-primary btn-sm", target: "_blank" %> <%= link_to "edit", edit_admin_tv_show_url(@tv_show), class: "btn btn-blue btn-sm" %> <%= link_to "new quote", "", class: "btn btn-default btn-sm add_new_quote" %> <%= @tv_show.name %></h2>
           <p class="text-right">Last updated at: <%= @tv_show.updated_at.strftime("%d %b, %Y - %H:%M:%S") %></p>
         </div>
       </div>
