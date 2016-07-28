@@ -47,7 +47,7 @@ class CharactersController < ApplicationController
       if ! @character
         @redirect = Redirect.find_by_from(character_path(id: params[:id]))
         if ! @redirect
-          NotFoundWorker.perform_async(character_path(id: params[:id]), request.user_agent)
+          Delayed::Job.enqueue NotFoundJob.new(character_path(id: params[:id]), request.user_agent)
           redirect_to serve_404_url
         else
           redirect_to @redirect.to, status: 301

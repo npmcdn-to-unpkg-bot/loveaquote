@@ -47,7 +47,7 @@ class TvShowsController < ApplicationController
     if ! @tv_show
       @redirect = Redirect.find_by_from(tv_show_path(id: params[:id]))
       if ! @redirect
-        NotFoundWorker.perform_async(tv_show_path(id: params[:id]), request.user_agent)
+        Delayed::Job.enqueue NotFoundJob.new(tv_show_path(id: params[:id]), request.user_agent)
         redirect_to serve_404_url
       else
         redirect_to @redirect.to, status: 301

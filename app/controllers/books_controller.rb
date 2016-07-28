@@ -51,7 +51,7 @@ class BooksController < ApplicationController
       if ! @book
         @redirect = Redirect.find_by_from(book_path(id: params[:id]))
         if ! @redirect
-          NotFoundWorker.perform_async(book_path(id: params[:id]), request.user_agent)
+          Delayed::Job.enqueue NotFoundJob.new(book_path(id: params[:id]), request.user_agent)
           redirect_to serve_404_url
         else
           redirect_to @redirect.to, status: 301

@@ -47,7 +47,7 @@ class MoviesController < ApplicationController
     if ! @movie
       @redirect = Redirect.find_by_from(movie_path(id: params[:id]))
       if ! @redirect
-        NotFoundWorker.perform_async(movie_path(id: params[:id]), request.user_agent)
+        Delayed::Job.enqueue NotFoundJob.new(movie_path(id: params[:id]), request.user_agent)
         redirect_to serve_404_url
       else
         redirect_to @redirect.to, status: 301
