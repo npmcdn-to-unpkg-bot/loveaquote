@@ -4,7 +4,20 @@ module Seoable
     included do
         has_one :seo, as: :source, dependent: :destroy
         accepts_nested_attributes_for :seo, reject_if: :all_blank
+        before_validation :strip_name, :titleize_name, :generate_slug
         before_update :add_redirect
+    end
+    
+    def strip_name
+        self.name = self.name.strip
+    end
+    
+    def titleize_name
+        self.name = self.name.titleize    
+    end
+    
+    def generate_slug
+        self.slug = self.name.to_url if !self.slug.present?
     end
 
     def title

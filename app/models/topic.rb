@@ -31,23 +31,10 @@ class Topic < ActiveRecord::Base
     scope :very_popular, -> {where(very_popular: true)}
     scope :by_alphabet, ->(alphabet) {where('name like ?', "#{alphabet}%")}
 
-    before_validation :strip_name, :capitalize_name, :generate_slug
     after_create :get_quote_suggestions
 
     def to_param
         slug
-    end
-
-    def strip_name
-        self.name = self.name.strip
-    end
-
-    def generate_slug
-        self.slug = (self.name + " " + "Quotes").to_url if !self.slug.present?
-    end
-
-    def capitalize_name
-        self.name = self.name.capitalize
     end
 
     def get_quote_suggestions

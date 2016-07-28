@@ -36,20 +36,11 @@ class Book < ActiveRecord::Base
     scope :very_popular, -> { where(very_popular: true) }
     scope :by_alphabet, ->(alphabet) {where('name like ?', "#{alphabet}%")}
 
-    before_validation :strip_name, :generate_slug
     after_commit :fetch_quotes, on: [:create, :update]
     after_save :expire_cache
 
     def to_param
         slug
-    end
-
-    def strip_name
-        self.name = self.name.strip
-    end
-
-    def generate_slug
-        self.slug = (self.name + " " + "Quotes").to_url if !self.slug.present?
     end
 
     def fetch_quotes
