@@ -5,7 +5,7 @@ class Admin::NationalitiesController < ApplicationController
   # GET /nationalities
   # GET /nationalities.json
   def index
-    @nationalities = Nationality.all.order(name: :DESC)
+    @nationalities = Nationality.all.order(name: :ASC)
   end
 
   # GET /nationalities/1
