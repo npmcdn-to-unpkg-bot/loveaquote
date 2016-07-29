@@ -1,6 +1,6 @@
-class GoodreadsWorker
+class GoodreadsJob < Struct.new(:id)
 
-  def perform(id)
+  def perform
     book = Book.find(id)
     require 'open-uri'
     fetch_quotes(book, book.fetch_url, 1)

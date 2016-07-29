@@ -1,6 +1,6 @@
-class SubscriberGeoipDataWorker
+class SubscriberGeoipDataJob < Struct.new(:id, :ip)
   
-  def perform(id, ip)
+  def perform
     subscriber = Subscriber.find(id)
     time_zone = ""
     location = Geocoder.search(ip).first

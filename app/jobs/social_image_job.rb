@@ -8,6 +8,14 @@ class SocialImageJob < Struct.new(:class_name, :id)
       offset = rand(ColorScheme.count)
       color_scheme = ColorScheme.offset(offset).first
 
+      if color_scheme
+        foreground_color = color_scheme.foreground_color
+        background_color = color_scheme.background_color
+      else
+        foreground_color = "FFF"
+        background_color = "#54728C"
+      end
+
       if source.class.name == "Proverb"
         facebook_source_name = do_word_wrap(source.name + " Proverbs", 22)
         google_plus_source_name = do_word_wrap(source.name + " Proverbs", 22)
@@ -27,7 +35,7 @@ class SocialImageJob < Struct.new(:class_name, :id)
 
       #Generate Facebook Image
       facebook_image = Magick::Image.new(1200,627) {
-        self.background_color = "##{color_scheme.background_color}"
+        self.background_color = "##{background_color}"
         self.quality = 100
       }
 
@@ -38,19 +46,19 @@ class SocialImageJob < Struct.new(:class_name, :id)
       draw.gravity = Magick::CenterGravity
       facebook_source_name.split("\n").each do |row|
         draw.annotate(facebook_image, 1000, 108, 100, facebook_position, row) {
-          self.fill = "##{color_scheme.foreground_color}"
+          self.fill = "##{foreground_color}"
         }
         facebook_position += 128
       end
       
       draw.pointsize = 48
       draw.annotate(facebook_image, 1000, 50, 100, facebook_position + 50, "www.LoveAQuote.com") {
-        self.fill = "##{color_scheme.foreground_color}"
+        self.fill = "##{foreground_color}"
       }
 
       #Generate Google Plus Image
       google_plus_image = Magick::Image.new(1200, 500) {
-        self.background_color = "##{color_scheme.background_color}"
+        self.background_color = "##{background_color}"
         self.quality = 100
       }
 
@@ -61,19 +69,19 @@ class SocialImageJob < Struct.new(:class_name, :id)
       draw.gravity = Magick::CenterGravity
       google_plus_source_name.split("\n").each do |row|
         draw.annotate(google_plus_image, 1000, 108, 100, google_plus_position, row) {
-          self.fill = "##{color_scheme.foreground_color}"
+          self.fill = "##{foreground_color}"
         }
         google_plus_position += 116
       end
       
       draw.pointsize = 48
       draw.annotate(google_plus_image, 1000, 50, 100, google_plus_position + 50, "www.LoveAQuote.com") {
-        self.fill = "##{color_scheme.foreground_color}"
+        self.fill = "##{foreground_color}"
       }
 
       #Generate Twitter Image
       twitter_image = Magick::Image.new(1200,600) {
-        self.background_color = "##{color_scheme.background_color}"
+        self.background_color = "##{background_color}"
         self.quality = 100
       }
 
@@ -107,14 +115,14 @@ class SocialImageJob < Struct.new(:class_name, :id)
       draw.gravity = Magick::CenterGravity
       pinterest_source_name.split("\n").each do |row|
         draw.annotate(pinterest_image, 636, 108, 50, pinterest_position, row) {
-          self.fill = "##{color_scheme.foreground_color}"
+          self.fill = "##{foreground_color}"
         }
         pinterest_position += 116
       end
       
       draw.pointsize = 48
       draw.annotate(pinterest_image, 636, 50, 50, pinterest_position + 50, "www.LoveAQuote.com") {
-        self.fill = "##{color_scheme.foreground_color}"
+        self.fill = "##{foreground_color}"
       }
 
       require 'fileutils'
@@ -131,10 +139,21 @@ class SocialImageJob < Struct.new(:class_name, :id)
         
         social_image = SocialImage.find_or_create_by(source_type: class_name, source_id: source.id)
         
-        social_image.facebook = Rails.root.join("public/generatedimages/facebook/#{class_name.downcase}/#{source.slug}.jpg").open
-        social_image.google_plus = Rails.root.join("public/generatedimages/google_plus/#{class_name.downcase}/#{source.slug}.jpg").open
-        social_image.twitter = Rails.root.join("public/generatedimages/twitter/#{class_name.downcase}/#{source.slug}.jpg").open
-        social_image.pinterest = Rails.root.join("public/generatedimages/pinterest/#{class_name.downcase}/#{source.slug}.jpg").open
+        facebook_file = File.open(Rails.root.join("public/generatedimages/facebook/#{class_name.downcase}/#{source.slug}.jpg"))
+        social_image.facebook = facebook_file
+        facebook_file.close
+        
+        google_plus_file = File.open(Rails.root.join("public/generatedimages/google_plus/#{class_name.downcase}/#{source.slug}.jpg"))
+        social_image.google_plus = google_plus_file
+        google_plus_file.close
+        
+        twitter_file = File.open(Rails.root.join("public/generatedimages/twitter/#{class_name.downcase}/#{source.slug}.jpg"))
+        social_image.twitter = twitter_file
+        twitter_file.close
+        
+        pinterest_file = File.open(Rails.root.join("public/generatedimages/pinterest/#{class_name.downcase}/#{source.slug}.jpg"))
+        social_image.pinterest = pinterest_file
+        pinterest_file.close
         
         social_image.save
 

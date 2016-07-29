@@ -1,6 +1,6 @@
-class SuggestTopicQuotesWorker
+class SuggestTopicQuotesJob < Struct.new(:id)
 
-  def perform(id)
+  def perform
     topic = Topic.find(id)
     Quote.all.find_in_batches do |quotes|
       quotes.each do |quote|

@@ -9,11 +9,6 @@ namespace :quote_share_count do
             quote.update_columns(total_share_count: total_share_count)
         end
         
-        #update based on occurence in quote of the day
-        QuoteOfTheDay.find_each(batch_size: 100) do |qotd|
-            qotd.quote.update_columns(total_share_count: qotd.quote.total_share_count + 1)
-        end
-        
         #update based on occurence in tweetable quotes
         
         TweetableQuote.find_each(batch_size: 100) do |tweetable_quote|

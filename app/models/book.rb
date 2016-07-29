@@ -44,7 +44,7 @@ class Book < ActiveRecord::Base
     end
 
     def fetch_quotes
-        GoodreadsWorker.perform_async(self.id) if self.fetch_url.present? && URI::parse(self.fetch_url).host == "www.goodreads.com"
+        Delayed::Job.enqueue GoodreadsJob.new(self.id) if self.fetch_url.present? && URI::parse(self.fetch_url).host == "www.goodreads.com"
     end
 
     def self.cached_very_popular

@@ -1,6 +1,6 @@
-class UserAddAsSubscriber
+class UserAddAsSubscriber < Structu.new(:id, :ip)
 
-    def perform(id, ip)
+    def perform
         user = User.find(id)
         subscriber = Subscriber.where(email: user.email).first_or_create
         time_zone = ""

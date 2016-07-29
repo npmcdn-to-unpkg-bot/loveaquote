@@ -181,7 +181,6 @@ Rails.application.routes.draw do
     
     resources :quotes do
       member do
-        get "qotd"
         get "verify"
         get "tweetable"
         get "image"

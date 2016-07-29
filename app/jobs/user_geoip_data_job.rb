@@ -1,6 +1,6 @@
-class UserGeoipDataWorker
+class UserGeoipDataJob < Struct.new(:id, :ip)
 
-  def perform(id, ip)
+  def perform
     user = User.find(id)
     if user.city.blank? || user.last_sign_in_ip.to_s !=  ip
       location = Geocoder.search(ip).first

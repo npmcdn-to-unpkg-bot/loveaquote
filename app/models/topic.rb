@@ -38,7 +38,7 @@ class Topic < ActiveRecord::Base
     end
 
     def get_quote_suggestions
-        SuggestTopicQuotesWorker.perform_async(self.id)
+        Delayed::Job.enqueue SuggestTopicQuotesJob.new(self.id)
     end
 
     def add_to_time_line

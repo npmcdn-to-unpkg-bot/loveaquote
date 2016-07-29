@@ -1,5 +1,4 @@
-class QuoteFacebookWorker
-
+class QuoteFacebookJob < Struct.new(:id, :ua)
     def perform(id, ua)
         quote = Quote.find(id)
         quote.update_columns(facebook_share_count: quote.facebook_share_count + 1)

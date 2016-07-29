@@ -5,7 +5,7 @@ class SubscribersController < ApplicationController
 
     respond_to do |format|
       if @subscriber.save
-        SubscriberGeoipDataWorker.perform_async(@subscriber.id, request.remote_ip)
+        Delayed::Job.enqueue SubscriberGeoipDataJob.new(@subscriber.id, request.remote_ip)
         format.js { head :ok }
       else
         format.js { head 422 }

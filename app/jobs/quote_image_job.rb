@@ -1,12 +1,20 @@
-class QuoteImageWorker
+class QuoteImageJob < Struct.new(:id)
     include ActionView::Helpers::TextHelper
     
-    def perform(id)
+    def perform
         quote = Quote.find(id)
         
         quote.generate_slug unless quote.slug.present?
         offset = rand(ColorScheme.count)
         color_scheme = ColorScheme.offset(offset).first
+        
+        if color_scheme
+            foreground_color = color_scheme.foreground_color
+            background_color = color_scheme.background_color
+        else
+            foreground_color = "FFF"
+            background_color = "#54728C"
+        end
         
         text = do_word_wrap(quote.text, 36)
         lines = text.split("\n").count
@@ -24,7 +32,7 @@ class QuoteImageWorker
         position = calculate_position(image_height, text.split("\n").count, quote_font_size, quote_padding, source_name_font_size, source_name_padding)
         
         quote_image = Magick::Image.new(1200,image_height) {
-            self.background_color = "##{color_scheme.background_color}"
+            self.background_color = "##{background_color}"
             self.quality = 100
             self.density = 300
         }
@@ -37,7 +45,7 @@ class QuoteImageWorker
 
         text.split("\n").each do |row|
             draw.annotate(quote_image, 1160, quote_font_size, 20, position, row) {
-                self.fill = "##{color_scheme.foreground_color}"
+                self.fill = "##{foreground_color}"
             }
             position += (quote_font_size + quote_padding)
         end
@@ -46,7 +54,7 @@ class QuoteImageWorker
       
         draw.pointsize = source_name_font_size
         draw.annotate(quote_image, 1160, source_name_font_size, 20, position, quote_source_name(quote)) {
-            self.fill = "##{color_scheme.foreground_color}"
+            self.fill = "##{foreground_color}"
         }
         
         save_quote_image(quote_image, image_width, image_height, quote)
@@ -66,7 +74,9 @@ class QuoteImageWorker
             FileUtils.mkdir_p(Rails.root + "public/generatedimages/quotes")
             quote_image.write(Rails.root.join("public/generatedimages/quotes/#{quote.slug}.jpg"))
             ActiveRecord::Base.no_touching do
-                quote.image = Rails.root.join("public/generatedimages/quotes/#{quote.slug}.jpg").open
+                file = File.open(Rails.root.join("public/generatedimages/quotes/#{quote.slug}.jpg"))
+                quote.image = file
+                file.close
                 quote.image_width = image_width
                 quote.image_height = image_height
                 quote.save

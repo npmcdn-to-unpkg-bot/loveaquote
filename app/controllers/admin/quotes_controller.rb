@@ -1,6 +1,6 @@
 class Admin::QuotesController < ApplicationController
   before_filter :authenticate_admin!
-  before_action :set_quote, only: [:edit, :update, :destroy, :qotd, :verify, :tweetable, :image]
+  before_action :set_quote, only: [:edit, :update, :destroy, :verify, :tweetable, :image]
 
   def index
     if params[:search].present?
@@ -90,24 +90,9 @@ class Admin::QuotesController < ApplicationController
     head :ok
   end
 
-  def qotd
-    if QuoteOfTheDay.exists?(date: Date.today)
-      date = QuoteOfTheDay.maximum("date").next_day
-    else
-      date = Date.today
-    end
-    @qotd = QuoteOfTheDay.new(quote: @quote, date: date)
-
-    respond_to do |format|
-      if @qotd.save
-        format.json { head :ok }
-      end
-    end
-  end
-  
   def image
-    QuoteImageWorker.perform_async(@quote.id)
-    QuoteSocialImageWorker.perform_async(@quote.id)
+    Delayed::Job.enqueue QuoteImageJob(@quote.id)
+    #Delayed::Job.enqueue QuoteSocialImageJob.new(@quote.id)
     respond_to do |format|
       format.json { head :ok }
     end

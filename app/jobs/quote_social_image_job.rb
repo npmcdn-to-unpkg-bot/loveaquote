@@ -1,7 +1,7 @@
-class QuoteSocialImageWorker
+class QuoteSocialImageJob < Struct.new(:id)
     include ActionView::Helpers::TextHelper
     
-    def perform(id)
+    def perform
         quote = Quote.find(id)
         
         quote.generate_slug unless quote.slug.present?
